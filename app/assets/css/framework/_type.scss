@@ -15,8 +15,14 @@ $font-default-size: 20;
 $font-default-line-height: 1.5;
 
 // Our base font stacks.
-$font-stack-regular: 	"sans-serif";
+$font-stack-regular: 	"Skolar3 PE Regular", Georgia, serif;
 $font-stack-header: 	"sans-serif";
+
+@mixin font-family-serif {
+	font-family:$font-stack-regular;
+	font-weight:normal;
+	font-style:normal;
+}
 
 /* ==|== Type =================
 	Functions

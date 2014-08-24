@@ -84,3 +84,22 @@
 	word-break: break-word;
 	hyphens: auto;
 }
+
+@mixin hover {
+	&:focus,
+	&:hover,
+	&:active {
+		.hover & {
+			@content;
+		}
+	}
+}
+
+@mixin active {
+	&:active {
+		.hover & {
+			@content;
+		}
+	}
+}
+

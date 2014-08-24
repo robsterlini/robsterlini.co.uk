@@ -80,8 +80,12 @@ gulp.task('html', function() {
 		}));
 });
 
-gulp.task('all-js', function() {
-	runSequence('plugins', 'scripts');
+gulp.task('js-modernizr', function() {
+	return gulp.src('app/assets/js/modernizr/*.js')
+		.pipe(gulp.dest('public/assets/js'))
+		.pipe(notify({
+			message: "Modernizr task complete"
+		}));
 });
 
 gulp.task('fonts', function() {
@@ -124,6 +128,7 @@ gulp.task('default', ['webserver'], function() {
 	gulp.watch('app/assets/images/**/*', ['images']);
 	gulp.watch('app/**/*.html', ['html']);
 	gulp.watch('app/assets/fonts/*', ['fonts']);
+	gulp.watch('app/assets/js/modernizr/*.js', ['js-modernizr']);
 });
 
 gulp.task('build', function() {
@@ -133,7 +138,8 @@ gulp.task('build', function() {
 		// 'regularCSS' // Uncomment to allow uncompiled CSS files to be used.
 		'images',
 		'html',
-		'fonts'
+		'fonts',
+		'js-modernizr'
 		);
 });
 

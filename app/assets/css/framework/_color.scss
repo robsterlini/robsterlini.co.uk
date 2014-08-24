@@ -17,8 +17,10 @@
  	Base
  ========================================== */
 
-$color-white: #fff;
+$color-white: #f9f9f9;
 $color-black: #1b1b1b;
+
+$color-accent: #e978ba;
 
 /* ==|== Colors =================
 	Elements
@@ -31,8 +33,8 @@ $color-text: $color-black;
    Links
 ====================================== */
 
-$color-link-primary: #ae0000;
-$color-link-primary-hover: #00ae00;
+$color-link-primary: $color-accent;
+$color-link-primary-hover: $color-black;
 $color-link-primary-active: #0000ae;
 
 

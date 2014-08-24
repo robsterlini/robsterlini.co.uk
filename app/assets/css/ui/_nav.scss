@@ -1,0 +1,21 @@
+.nav {
+
+}
+.nav__list {
+
+}
+.nav__item {
+  display: inline-block;
+  vertical-align: top;
+}
+.nav__link {
+  display: block;
+  color:$color-white;
+  @include hover {
+    color:$color-accent;
+  }
+}
+.nav__divider {
+  display: inline-block;
+  vertical-align: top;
+}

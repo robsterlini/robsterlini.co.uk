@@ -17,109 +17,55 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
 	<link rel="stylesheet" href="assets/css/screen.f.min.css" media="screen">
+	<link href="assets/fonts/ss-symbolicons-line.css" rel="stylesheet">
 	<!--<link rel="stylesheet" href="assets/build/css/print.f.min.css" media="print">-->
-	<script src="assets/build/js/modernizr-custom.js"></script>
+	<script src="assets/js/modernizr.min.js"></script>
+
+	<script type="text/javascript">
+		WebFontConfig = { fontdeck: { id: '48373' } };
+
+		(function() {
+		  var wf = document.createElement('script');
+		  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		  wf.type = 'text/javascript';
+		  wf.async = 'true';
+		  var s = document.getElementsByTagName('script')[0];
+		  s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
 </head>
 <body>
 	<!--[if lt IE 8]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or to improve your experience.</p>
 	<![endif]-->
-	<header class="">
-		<div class="group">
-			<h1>Fueled Boilerplate</h1>
-		</div>
-	</header>
-	<section class="group">
-		<aside>
-			<ul>
-				<li>
-					<a href="#lists">Lists</a>
-				</li>
-				<li>
-					<a href="#grids">Grids</a>
-				</li>
-				<li>
-					<a href="#media">Media Objects List</a>
+	<header class="masthead">
+		<a href="/" class="masthead__logo">Rob Sterlini</a>
+		<nav class="nav">
+			<ul class="nav__list group">
+				<li class="nav__item">
+					<a class="nav__link ss-nav-projects" href="/portfolio">My work</a>
+				</li><!--
+				--><li class="nav__item">
+					<a class="nav__link ss-nav-process" href="/process">My process</a>
+				</li><!--
+				--><div class="nav__divider"></div><!--
+				--><li class="nav__item">
+					<a class="nav__link ss-nav-journal" href="/journal">The journal</a>
+				</li><!--
+				--><li class="nav__item">
+					<a class="nav__link ss-nav-contact" href="/contact">Get in touch</a>
 				</li>
 			</ul>
-		</aside>
-		<main>
-			<div id="lists">
-				<h2>Lists</h2>
-				<ul>
-					<li>This is an unordered list</li>
-					<li>Lorem ipsum</li>
-					<li>Dolor sit amet</li>
-				</ul>
-				<ol>
-					<li>This is an ordered list</li>
-					<li>Lorem ipsum</li>
-					<li>Dolor sit amet</li>
-				</ol>
-				<ul class="list--basic">
-					<li>This is a basic list</li>
-					<li>With no bullet points</li>
-					<li>Lorem ipsum</li>
-				</ul>
-				<ul class="list--inline">
-					<li>This is an inline list</li>
-					<li>Separated by nothing</li>
-					<li>Lorem ipsum</li>
-				</ul>
-				<ul class="list--inline--dot">
-					<li>This is an inline list</li>
-					<li>Separated by a dot</li>
-					<li>Lorem ipsum</li>
-				</ul>
-				<ul class="list--inline--slash">
-					<li>This is an inline list</li>
-					<li>Separated by a slash</li>
-					<li>Lorem ipsum</li>
-				</ul>
-				<ul class="list--inline--pipe">
-					<li>This is an inline list</li>
-					<li>Separated by a pipe</li>
-					<li>Lorem ipsum</li>
-				</ul>
+		</nav>
+	</header>
+	<section>
+		<div class="hero">
+			<div class="hero__bg" style="background-image: url(http://robsterlini.co.uk/content/hero_main.jpg.jpg);">
 			</div>
-
-			<div id="paragraphs">
-				<h2>Paragraphs</h2>
-				<p><strong>Regular</strong></p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p><strong>Indented</strong></p>
-				<p class="indented">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
-				<p class="indented">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<div id="grid">
-				<h2>Grids</h2>
-				<div class="grid">
-					<div class="col col--3">
-						<p>Lorem ipsum</p>
-					</div><!--
-				 --><div class="col col--8">
-						<p>Lorem ipsum</p>
-					</div><!--
-				 --><div class="col col--1">
-						<p>Lorem Ipsum</p>
-					</div>
-				</div>
-			</div>
-
-			<div id="buttons">
-				<h2>Buttons</h2>
-				<div>
-					<h3>Regular Button</h3>
-					<a href="#" class="btn">Button</a>
-				</div>
-			</div>
+			<h1 class="hero__header">Hi, I’m Rob Sterlini</h1>
+		</div>
+		<main class="group">
 		</main>
 	</section> <!-- .page -->
 
