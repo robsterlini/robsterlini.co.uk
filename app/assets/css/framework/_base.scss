@@ -1,0 +1,45 @@
+/**
+ * Base SCSS File
+ *
+ * @requires _type.scss, _color.scss
+ */
+
+* {
+	box-sizing:border-box;
+}
+
+html,body {
+	min-height:100%;
+}
+
+html {
+	background: $color-background;
+	font-size:percentage($font-default-size / 16);
+	overflow-y: scroll;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	color:$color-text;
+	font-family:$font-stack-regular;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+body {
+	font-size:1em;
+	line-height:$font-default-line-height;
+}
+
+/**
+ * Revert base font to 16px when browser is <= 1024px
+**/
+
+@include respond-to(64) {
+	html {
+		font-size:100%;
+	}
+}

@@ -1,0 +1,62 @@
+/**
+ * Color SCSS File
+ */
+
+/**
+ *
+ * All color variables should start with the color- prefix, and should
+ * be descriptive to the color. $color-primary-accent is better than
+ * $color-primary, as it's easy to figure out exactly what the color
+ * is from the variable name. Avoid using specific colours for variables
+ * as these may change significantly during the build and $color-primary-red
+ * may no longer be red, but instead blue.
+ *
+ */
+
+ /* ==|== Colors =================
+ 	Base
+ ========================================== */
+
+$color-white: #fff;
+$color-black: #1b1b1b;
+
+/* ==|== Colors =================
+	Elements
+========================================== */
+
+$color-background:$color-white;
+$color-text: $color-black;
+
+/* ==|== Colors =================
+   Links
+====================================== */
+
+$color-link-primary: #ae0000;
+$color-link-primary-hover: #00ae00;
+$color-link-primary-active: #0000ae;
+
+
+/* ==|== Colors =================
+   Buttons
+====================================== */
+
+$color-btn-primary: #ae0000;
+$color-btn-primary-hover: #00ae00;
+$color-btn-primary-active: #0000ae;
+$color-btn-primary-text: #fff;
+
+/* ==|== Colors =================
+	Social
+========================================== */
+
+$color-s-twitter: 		#00ACED;
+$color-s-facebook: 		#3B5998;
+$color-s-instagram: 	#3F729B;
+$color-s-gplus: 			#CC3732;
+$color-s-dribbble: 		#EA4C89;
+$color-s-pinterest: 	#CC2127;
+$color-s-tumblr:			#44546B;
+$color-s-vine:				#00B489;
+$color-s-youtube: 		#CD201F;
+$color-s-medium: 			#1A1919;
+$color-s-vimeo:				#1AB7EA;

@@ -1,0 +1,78 @@
+/**
+ * Typography SCSS Partial
+ *
+ * @requires framework/_type.scss
+ */
+
+/* ==|== Typography =================
+	Load Typefaces from type.scss
+========================================== */
+
+/**
+ * Loads in the CSS font-face declarations based on a Sass list of fonts and their styles
+ * Set the number of fonts that you want to load in in $fonts-total
+ * Set the fonts themselves and make sure they're in the assets/fonts folder
+ * Set the styles for the fonts, if Font-number-1 is a regular weight put normal,
+ * if Font-number-2 is an italic weight put italic etc
+**/
+
+/**
+ * Only include this if you've got local fonts
+ *
+$fonts-total: 0;
+$fonts-to-load: Font-number-1, Font-number-2;
+$fonts-to-load-style: normal, italic;
+@include load-fonts;
+ *
+ */
+
+/* ==|== Typography =================
+	1. Headings
+========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	line-height:1;
+}
+
+h1 {
+	@include font-size(60);
+	margin:em(12, 60) 0 em(24, 60);
+}
+
+h2 {
+	@include font-size(48);
+	margin:rem(12, 48) 0 em(24, 48);
+}
+
+h3 {
+	@include font-size(38);
+	margin:em(8, 38) 0 em(16, 38);
+}
+
+h4 {
+	@include font-size(30);
+	margin:em(8, 30) 0 em(16, 30);
+}
+
+h5 {
+	@include font-size(24);
+	margin:em(12, 24) 0 em(12, 24);
+}
+
+h6 {
+	@include font-size(20);
+	margin:em(10, 20) 0 em(10, 20);
+}
+
+/* ==|== Typography =================
+	Paragraphs
+========================================== */
+
+p {
+	margin:1em auto;
+}
+
+.indented {
+	text-indent:2em;
+}
