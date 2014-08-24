@@ -29,6 +29,9 @@ gulp.task('styles', function() {
 			style: 'expanded'
 		}))
 		.pipe(autoprefixer('last 2 version', 'ie 10'))
+		.pipe(rename({
+			suffix: '.f' // Suffixed with .f so as to avoid any conflicts if RegularCSS files are called screen.min.css or screen.css
+		}))
 		.pipe(gulp.dest('public/assets/css'))
 		.pipe(rename({
 			suffix: '.min'
@@ -82,10 +85,24 @@ gulp.task('all-js', function() {
 });
 
 gulp.task('fonts', function() {
-	return gulp.src('assets/fonts/*')
+	return gulp.src('app/assets/fonts/*')
 		.pipe(gulp.dest('public/assets/fonts'))
 		.pipe(notify({
 			message: 'Fonts task complete',
+			onLast: true
+		}))
+});
+
+/*
+	regularCSS allows us to include CSS files that might not be able to be used within the .scss files
+	Ensure to uncomment the gulp watch task and regularCSS object from the gulp build array.
+*/
+
+gulp.task('regularCSS', function() {
+	return gulp.src('app/assets/css/*.css')
+		.pipe(gulp.dest('public/assets/css'))
+		.pipe(notify({
+			message: 'Regular CSS task complete',
 			onLast: true
 		}))
 })
@@ -103,13 +120,21 @@ gulp.task('webserver', function() {
 gulp.task('default', ['webserver'], function() {
 	gulp.watch(['app/assets/js/**/*.js'], ['scripts']);
 	gulp.watch('app/assets/css/**/*.scss', ['styles']);
+	// gulp.watch('app/assets/css/*.css', ['regularCSS']); // Uncomment to allow uncompiled CSS files to be used.
 	gulp.watch('app/assets/images/**/*', ['images']);
 	gulp.watch('app/**/*.html', ['html']);
-	gulp.watch('assets/fonts/*', ['fonts']);
+	gulp.watch('app/assets/fonts/*', ['fonts']);
 });
 
 gulp.task('build', function() {
-	runSequence('scripts', 'styles', 'images', 'fonts', 'ads');
+	runSequence(
+		'scripts',
+		'styles',
+		// 'regularCSS' // Uncomment to allow uncompiled CSS files to be used.
+		'images',
+		'html',
+		'fonts'
+		);
 });
 
 
