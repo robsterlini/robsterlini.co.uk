@@ -11,9 +11,8 @@
 
 a {
 	color:$color-link-primary;
-	text-decoration: none;
 	transition:all .25s cubic-bezier(#{$bezier-nice});
-
+	text-decoration: underline;
 	&:hover {
 		color:$color-link-primary-hover;
 	}

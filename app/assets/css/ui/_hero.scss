@@ -1,24 +1,80 @@
 .hero {
   position: relative;
-  display: table;
   width:100%;
-  min-height:em(300);
-  padding:em(20) em(10);
+  min-height:em(600);
+  height:em(600);
+  padding:em(50) em(10);
+  background:$color-black;
+  text-shadow:rgba($color-black,0.2) 0 em(1) em(2);
+  overflow: hidden;
+  display: table;
+  z-index:1;
+  &:after,
+  &:before {
+    content:'';
+    position: absolute;
+    bottom:em(-50);
+    background:$color-white;
+    height:em(100);
+    transform:rotate(2.5deg);
+    width:150%;
+    left:-25%;
+    backface-visibility: hidden;
+    z-index:1;
+  }
+  &:before {
+    transform:rotate(-5deg);
+    opacity:0.25;
+  }
 }
 .hero__bg {
+  @include animation('%fade-up-hero',0s);
   @include cover(absolute);
   background:center fixed;
   background-size:cover;
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
   filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  opacity:0.25;
+  html[data-useragent*='Chrome'][data-platform*='Mac'] & {
+    background-attachment: initial;
+  }
 }
 
-.hero__header {
-  text-align: center;
+.hero__headers {
+  @include animation('%fade-down',0s);
+  text-align: left;
   margin:0;
   display: table-cell;
   vertical-align: middle;
   z-index:1;
   position: relative;
+  color:$color-accent;
+  height:100%;
+  width:100%;
+  .btns {
+    max-width:em($layout-max-width-wide);
+    padding:0 em(10);
+  }
+  .btn {
+    margin-right:em(10);
+  }
+  .btn--outline {
+    margin-left:em(10);
+  }
+}
+.hero__header--alpha {
+  @include font-family-header(72);
+  line-height:1.3;
+  margin:0 auto;
+  max-width:em($layout-max-width-wide,72);
+  padding:0 em(10,72);
+}
+.hero__header--beta {
+  @include font-size(32);
+  line-height:1.3;
+  color:$color-white;
+  margin:0 auto;
+  max-width:em($layout-max-width-wide,32);
+  padding:0 em(10,32);
 }

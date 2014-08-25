@@ -27,9 +27,10 @@ $fonts-to-load-style: normal, italic;
 	1. Headings
 ========================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
 	font-weight:normal;
-	line-height:1;
+	line-height:1.3;
+	@include font-feature-settings(liga kern onum);
 }
 
 h1 {
@@ -39,11 +40,11 @@ h1 {
 
 h2 {
 	@include font-size(48);
-	margin:rem(12, 48) 0 em(24, 48);
+	margin:em(24, 48) 0 em(12, 48);
 }
 
 h3 {
-	@include font-size(38);
+	@include font-size(32);
 	margin:em(8, 38) 0 em(16, 38);
 }
 
@@ -60,6 +61,20 @@ h5 {
 h6 {
 	@include font-size(20);
 	margin:em(10, 20) 0 em(10, 20);
+}
+
+.type {
+	h1 {
+
+	}
+	h2 {
+		@include font-family-serif(bold);
+	}
+	h3 {
+	}
+	& > :first-child {
+		margin-top:0;
+	}
 }
 
 /* ==|== Typography =================

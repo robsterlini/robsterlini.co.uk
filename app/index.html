@@ -1,10 +1,10 @@
 <!--[]-->
 <!DOCTYPE html>
-<!--[if lt IE 8]>	<html class="no-js ie lte9 lte8 lte7 unsupported-browser"> <![endif]-->
-<!--[if IE 8]>		<html class="no-js ie ie8 lte9 lte8"> <![endif]-->
-<!--[if IE 9]>		<html class="no-js ie ie9 lte9"> <![endif]-->
-<!--[if gt IE 9]>	<html class="no-js"> <![endif]-->
-<!--[if !IE]><!-->	<html class="no-js">             <!--<![endif]-->
+<!--[if lt IE 8]>	<html class="no-js hover ie lte9 lte8 lte7 unsupported-browser"> <![endif]-->
+<!--[if IE 8]>		<html class="no-js hover ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>		<html class="no-js hover ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>	<html class="no-js hover"> <![endif]-->
+<!--[if !IE]><!-->	<html class="no-js hover">             <!--<![endif]-->
 <head>
 	<!--[if !HTML5]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,7 +22,7 @@
 	<script src="assets/js/modernizr.min.js"></script>
 
 	<script type="text/javascript">
-		WebFontConfig = { fontdeck: { id: '48373' } };
+		WebFontConfig = { fontdeck: { id: '45310' } };
 
 		(function() {
 		  var wf = document.createElement('script');
@@ -39,41 +39,99 @@
 	<!--[if lt IE 8]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or to improve your experience.</p>
 	<![endif]-->
-	<header class="masthead">
-		<a href="/" class="masthead__logo">Rob Sterlini</a>
+	<header class="masthead masthead--scrolled" data-js="scroll-trigger">
+		<!-- <a href="/" class="masthead__logo"><span class="masthead__logo--rubric">Hi I’m</span> <span class="masthead__logo--title">Rob Sterlini</span></a> -->
 		<nav class="nav">
 			<ul class="nav__list group">
 				<li class="nav__item">
+					<a class="nav__link ss-nav-home" href="/"><abbr title="Home">A casa mia</abbr></a>
+				</li><!--
+				--><li class="nav__item">
 					<a class="nav__link ss-nav-projects" href="/portfolio">My work</a>
 				</li><!--
 				--><li class="nav__item">
 					<a class="nav__link ss-nav-process" href="/process">My process</a>
 				</li><!--
-				--><div class="nav__divider"></div><!--
 				--><li class="nav__item">
 					<a class="nav__link ss-nav-journal" href="/journal">The journal</a>
 				</li><!--
 				--><li class="nav__item">
-					<a class="nav__link ss-nav-contact" href="/contact">Get in touch</a>
+					<a class="nav__link ss-nav-contact" href="/contact">Say hi</a>
+				</li><!--
+				--><li class="nav__item">
+					<a class="nav__link ss-notice" href="/cv">My <abbr title="Curriculum vitae">CV</abbr></a>
 				</li>
 			</ul>
 		</nav>
 	</header>
-	<section>
+	<section class="wrapper" data-wrapper="Eminem">
 		<div class="hero">
 			<div class="hero__bg" style="background-image: url(http://robsterlini.co.uk/content/hero_main.jpg.jpg);">
 			</div>
-			<h1 class="hero__header">Hi, I’m Rob Sterlini</h1>
+			<div class="hero__headers" data-js="header-to-offset">
+				<h1 class="hero__header--alpha">The detail matters</h1>
+				<h2 class="hero__header--beta">I’m Rob Sterlini, a web designer with a passion for gorgeous typography, attention to detail&hellip; oh, and LEGO.</h2>
+				<p class="btns">
+					<a class="btn" href="#hello">Find out more</a> or <a class="btn--outline" href="/contact">Say hi</a>
+				</p>
+			</div>
 		</div>
-		<main class="group">
+		<main id="hello">
+			<article class="type group">
+				<h2>Buon giorno</h2>
+				<p>I’m a twenty-two year old web designer, crafting and building beautiful websites for the award-winning <a href="http://fueled.com">Fueled</a> London team.</p>
+				<p>In my spare time, I have a love-hate relationship with Tottenham Hotspur FC, indulge my imagination with LEGO bricks, and doodle glyphs for any number of potential typefaces.</p>
+				<p>For more of an insight into my time studying at the world-renown Department of Typography &amp; Graphic Communication, at the University of Reading, or to find out more about my past jobs give my CV a read.</p>
+				<p>If you like what you see, and want to get me on board with your next project then reach out and say hi!</p>
+				<p class="btns">
+					<a class="btn" href="#">Hire me</a> or <a class="btn--outline" href="/contact">See my process</a>
+				</p>
+				<h2>Work that I’m proud of</h2>
+				<p>I’m a twenty-two year old web designer, crafting and building beautiful websites for the award-winning <a href="http://fueled.com">Fueled</a> London team.</p>
+				<p>In my spare time, I have a love-hate relationship with Tottenham Hotspur FC, indulge my imagination with LEGO bricks, and doodle glyphs for any number of potential typefaces.</p>
+				<p>For more of an insight into my time studying at the world-renown Department of Typography &amp; Graphic Communication, at the University of Reading, or to find out more about my past jobs give my CV a read.</p>
+				<p>If you like what you see, and want to get me on board with your next project then reach out and say hi!</p>
+			</article>
 		</main>
 	</section> <!-- .page -->
 
-	<footer class="group">
-		<p>&copy; 2013 Fueled.</p>
+	<footer class="footer">
+		<div class="footer__wrap">
+			<ul class="number-stats">
+				<li class="number-stats__item">
+					<div class="number-stats__no-link ss-ampersand">
+						<span class="number-stats__number">4</span><!--
+						--><span class="number-stats__title">Tattoos <br/>and counting</span>
+					</div>
+				</li><!--
+				--><li class="number-stats__item">
+					<div class="number-stats__no-link ss-soccer">
+						<span class="number-stats__number">13</span><!--
+						--><span class="number-stats__title"><abbr title="Tottenham Hotspur Football club">Tottenham</abbr> <br/>shirts</span>
+					</div>
+				</li><!--
+				--><li class="number-stats__item">
+					<div class="number-stats__no-link ss-runner">
+						<span class="number-stats__number">25:18</span><!--
+						--><span class="number-stats__title">5km <br/><abbr title="Personal best">PB</abbr></span>
+					</div>
+				</li><!--
+				--><li class="number-stats__item">
+					<div class="number-stats__no-link ss-picture">
+						<span class="number-stats__number">5+</span><!--
+						--><span class="number-stats__title">Daily <br/>selfies</span>
+					</div>
+				</li>
+			</ul>
+			<article class="group type">
+				<p>Made with <i class="ss-heart"><span class="visuallyhidden">love</span></i> and <i class="ss-coffee"><span class="visuallyhidden">coffee</span></i> in London using the super-powerful <a href="http://fueled.com">Fueled</a> boilerplate, set in the gorgeously delicate <a href="#" title="See Skolar on Rosetta’s website">Skolar</a> and delivered to your internets via the ever-awesome <a href="http://www.mediatemple.net/#a_aid=512a823fed22d" title="See what Mediatemple have to offer">Mediatemple</a>.</p>
+				<p>I own everything on here unless something says otherwise. By all means drop me a line to chat about anything you see, but don’t be a douche and steal any code without asking!</p>
+			</article>
+		</div>
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+	<script src="assets/js/underscore.min.js"></script>
 	<script src="assets/js/main.min.js"></script>
 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

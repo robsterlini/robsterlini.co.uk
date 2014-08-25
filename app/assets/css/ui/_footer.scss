@@ -1,0 +1,32 @@
+.footer {
+  @include animation('%fade-in',0.25s);
+  background:$color-black;
+  text-align: center;
+  color:$color-accent-mono;
+  display: table;
+  padding:em(20) 0 em(40);
+  position: fixed;
+  bottom:em(-20);
+  width:100%;
+  height:em(500);
+  [class^="ss-"] {
+    position: relative;
+    top:em(2);
+  }
+  p {
+    @include font-size(16);
+    & + p {
+      margin-bottom:0;
+    }
+    a {
+      color:$color-white;
+      @include hover {
+        color:$color-accent;
+      }
+    }
+  }
+}
+.footer__wrap {
+  display: table-cell;
+  vertical-align: bottom;
+}

@@ -6,7 +6,9 @@ var g = g || {};
 // 		easier version controlling when multiple users are collaborating
 // 		on the JS simultaneously.
 g.partials = [
-	'browserSniff'
+	'browserSniff',
+  'loadAnimation',
+  'headerScroll'
 ];
 
 // This _init function is the function which kicks everything off when

@@ -1,21 +1,83 @@
 .nav {
-
+  width:100%;
+  text-align: center;
 }
 .nav__list {
-
+  padding:0;
+  width:100%;
+  max-width:$layout-max-width-wide-suffix;
+  position: relative;
 }
 .nav__item {
+  // @include animation('%fade-down',.25s);
   display: inline-block;
   vertical-align: top;
+  // width:calc((100% - #{em(200)})/6);
+  min-width:em(125);
+  // &:nth-of-type(1) {
+  //   @include animation('%fade-down',.25s);
+  // }
+  // &:nth-of-type(2) {
+  //   @include animation('%fade-down',.375s);
+  // }
+  // &:nth-of-type(3) {
+  //   @include animation('%fade-down',.5s);
+  // }
+  // &:nth-of-type(4) {
+  //   @include animation('%fade-down',.625s);
+  // }
+  // &:nth-of-type(5) {
+  //   @include animation('%fade-down',.75s);
+  // }
+  // &:nth-of-type(6) {
+  //   @include animation('%fade-down',.875s);
+  // }
+  &:nth-of-type(1),
+  &:nth-of-type(6) {
+    @include animation('%fade-down',.5s);
+  }
+  &:nth-of-type(2),
+  &:nth-of-type(5) {
+    @include animation('%fade-down',.375s);
+  }
+  &:nth-of-type(3),
+  &:nth-of-type(4) {
+    @include animation('%fade-down',.25s);
+  }
 }
 .nav__link {
   display: block;
   color:$color-white;
+  padding:em(5) em(10);
+  text-decoration: none;
+  &:before {
+    display: block;
+    font-size:32px;
+    height:rem(40);
+    color:$color-accent-mono;
+    transition:inherit;
+    overflow: hidden;
+    opacity:1;
+    .masthead--scrolled & {
+      margin-top:rem(-40);
+      opacity:0;
+    }
+  }
   @include hover {
     color:$color-accent;
+    &:before {
+      color:$color-accent;
+    }
+  }
+  @include active {
+
+  }
+  abbr {
+    border-bottom:0;
   }
 }
 .nav__divider {
   display: inline-block;
   vertical-align: top;
+  width:em(200);
 }
