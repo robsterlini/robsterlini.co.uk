@@ -7,6 +7,12 @@
 /* ==|== Buttons =================
 	Primary
 ========================================== */
+.btns {
+
+}
+.btns--center {
+	text-align: center;
+}
 %btn {
 	@include font-family-serif(bold);
 	display: inline-block;
@@ -18,6 +24,7 @@
 	line-height:1.3;
 	border:em(2) solid $color-accent;
 	text-decoration: none;
+	margin:0 em(10);
 	@include active {
 		transform:scale(0.9);
 	}
@@ -25,19 +32,19 @@
 .btn {
 	@extend %btn;
 	background:$color-accent;
-	color:$color-black;
+	color:$color-white;
 	text-shadow: none;
 	@include hover {
-		background:$color-white;
-		border-color:$color-white;
-		color:$color-black;
+		background:$color-black;
+		border-color:$color-black;
+		color:$color-white;
 	}
 }
 .btn--outline {
 	@extend %btn;
 	border-color:$color-accent;
 	@include hover {
-		color:$color-white;
-		border-color:$color-white;
+		color:$color-black;
+		border-color:$color-black;
 	}
 }

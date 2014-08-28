@@ -57,10 +57,20 @@
     padding:0 em(10);
   }
   .btn {
-    margin-right:em(10);
+    margin: 0 em(10) 0 0;
+    color:$color-black;
+    @include hover {
+      color:$color-black;
+      background:$color-white;
+      border-color:$color-white;
+    }
   }
   .btn--outline {
-    margin-left:em(10);
+    margin: 0 0 0 em(10);
+    @include hover {
+      color:$color-white;
+      border-color:$color-white;
+    }
   }
 }
 .hero__header--alpha {

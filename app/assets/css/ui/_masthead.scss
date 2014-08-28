@@ -1,4 +1,5 @@
 .masthead {
+  @include animation('%fade-in');
   position: fixed;
   z-index:5;
   width:100%;

@@ -7,7 +7,6 @@
 
 %fade-in {
   opacity:0;
-  transform:translateY(-10px);
   .animate--end & {
     animation: fadeIn .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
   } 
@@ -43,7 +42,7 @@
 
 %fade-up-hero {
   opacity:0;
-  transform:translateY(10px);
+  transform:translateY(0px);
   .animate--end & {
     animation: fadeUpHero .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
   } 
@@ -52,10 +51,10 @@
 @keyframes fadeUpHero {
   0% {
     opacity:0;
-    transform:translateY(10px);
+    transform:translateY(0px);
   }
   100% {
     opacity:0.25;
-    transform:translateY(0);
+    transform:translateY(-50px);
   }
 }
