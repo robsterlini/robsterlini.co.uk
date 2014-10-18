@@ -7,8 +7,12 @@ var g = g || {};
 // 		on the JS simultaneously.
 g.partials = [
 	'browserSniff',
+  'history',
   'loadAnimation',
-  'headerScroll'
+  'loadImages',
+  'navToggle',
+  'codeHighlight',
+  'heroScroll'
 ];
 
 // This _init function is the function which kicks everything off when
@@ -20,9 +24,9 @@ g.partials = [
 // If we had 3 items in that array, say 'classes', 'sizing' and 'slider'
 // then this function would run g.classes(), g.sizing() and g.slider();
 g._init = function() {
-	var self = this;
-	for (var i = 0; i < this.partials.length; i++) {
-		var partial = g[this.partials[i]];
-		partial();
-	}
+  var self = this;
+  for (var i = 0; i < this.partials.length; i++) {
+    var partial = g[this.partials[i]];
+    partial();
+  }
 };

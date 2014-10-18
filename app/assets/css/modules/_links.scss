@@ -11,14 +11,23 @@
 
 a {
 	color:$color-link-primary;
-	transition:all .25s cubic-bezier(#{$bezier-nice});
-	text-decoration: underline;
-	&:hover {
+	transition:color .25s cubic-bezier(#{$bezier-nice});
+	text-decoration: none;
+	&:hover,
+	&:focus {
 		color:$color-link-primary-hover;
 	}
-
-	&:active,
-	&:focus {
+	&:active {
 		color:$color-link-primary-active;
+	}
+	.hero &,
+	.footer & {
+		color: $color-link-reverse;
+		@include hover {
+			color:$color-link-reverse-hover;
+		}
+		@include active {
+			color:$color-link-reverse-active;
+		}
 	}
 }

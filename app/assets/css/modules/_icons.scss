@@ -1,0 +1,111 @@
+$icon-size-1: rem(32);
+$icon-size-half: rem(16);
+$icon-size-2: 64;
+
+.type {
+  p {
+    [class^="ss-"] {
+      border:0;
+      display: inline;
+      background:none;
+      &:before {
+        display: inline-block;
+        padding:0 rem(5);
+        font-size:rem(16);
+        color:$color-accent-mono;
+        transform:scale(1.5);
+        position: relative;
+        top:rem(2);
+        .footer & {
+          color:rgba($color-white,0.9);
+          transform:scale(1.2);
+        }
+      }
+    }
+  }
+  h1 {
+    &[class^="ss-"] {
+      position: relative;
+      &:before {
+        font-size:rem($icon-size-2);
+        position: absolute;
+        display: block;
+        left:rem(-($icon-size-2 + 10));
+        top:rem(5);
+        color:lighten($color-accent-mono,30%);
+      }
+    }
+  }
+}
+.footer {
+  [class^="ss-"] {
+    position: relative;
+    top:em(2);
+  }
+}
+
+figcaption.ss-picture {
+  &:before {
+    font-size:$icon-size-half;
+    position: relative;
+    top: rem(2);
+    padding-right:rem(5);
+  }
+}
+
+// .intro--icon {
+//   position: relative;
+//   padding-left:rem(70);
+//   // display: inline-block;
+//   // vertical-align: top;
+//   // width:50%;
+//   &:before,
+//   &:after {
+//     width:rem(64);
+//     left:rem(-3);
+//     position: absolute;
+//     display: block;
+//     top:calc(50% - #{rem(2)});
+//   }
+//   &:before {
+//     font-size:$icon-size-1;
+//     transform:translateY(-50%);
+//     color:rgba($color-white,0.9);
+//     color:darken($color-accent-mono,10%);
+//     // text-shadow:rgba($color-black,0.25) rem(0) rem(0) rem(2);
+//     // text-shadow:rgba($color-white,0.5) 0 rem(1) 0;
+//     z-index:1;
+//     text-align: center;
+//   }
+//   &:after {
+//     content:'';
+//     border-radius:rem(30);
+//     height:rem(64);
+//     background:url(../images/icons/hex-mono.svg) center no-repeat;
+//     transform:translateY(-50%);
+//     filter:grayscale(100%);
+//     opacity:0.35;
+//     // opacity:0.05;
+//   }
+//   &.ss-fuel {
+//     &:before {
+//       top:calc(50% + #{rem(0.5)});
+//       transform:translateY(-50%) scale(0.9,0.9);
+//     }
+//   }
+//   &.ss-soccer {
+//     &:before {
+//       top:calc(50% + #{rem(1.5)});
+//     }
+//   }
+//   &.ss-graduationcap {
+//     &:before {
+//       top:calc(50% + #{rem(0.5)});
+//     }
+//   }
+//   &.ss-ellipsischat {
+//     &:before {
+//       top:calc(50% + #{rem(2.5)});
+//     }
+//   }
+// }

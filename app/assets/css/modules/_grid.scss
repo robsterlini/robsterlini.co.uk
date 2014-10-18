@@ -23,36 +23,32 @@
  *
  */
 
-$grid-max-width: $layout-max-width;
-$grid-columns: 12;
-$grid-margin: 24;
-
-$grid-margin-percentage: percentage($grid-margin / $grid-max-width);
-$grid-column-width: ($grid-max-width - ($grid-margin * ($grid-columns - 1))) / $grid-columns;
-$grid-column-percentage: percentage($grid-column-width / $grid-max-width);
+$grid-gutter: 20;
 
 
-/* ==|== Grid =================
-	Columns
-========================================== */
-
-
-
-.col {
-	display: inline-block;
-	vertical-align: top;
-
-	+ .col {
-		margin-left: $grid-margin-percentage;
+// Required by the _grid.scss file
+@mixin grid-column($cols) {
+	@each $col-break, $col-num in $cols {
+		@include respond-to($col-break) {
+			width: (100%/ $col-num);
+		}
 	}
 }
 
-/* ==|== Columns =================
-	12
-========================================== */
-
-@for $i from 1 through $grid-columns {
-	.col--#{$i} {
-		width: ($grid-column-percentage * $i) + ($grid-margin-percentage * ($i - 1));
-	}
+.grid {
+    margin: 0 em(-($grid-gutter/2));
+}
+.grid__unit {
+    display: inline-block;
+    padding: 0 em($grid-gutter/2);
+    vertical-align: top;
+    width:100%;
+    .intro-portfolio & {
+    	width:25%;
+        @include grid-column(($bp-tiny: 2, 250: 1));
+    }
+    .portfolio__item & {
+        width:50%;
+        @include grid-column(($bp-mid: 2));
+    }
 }

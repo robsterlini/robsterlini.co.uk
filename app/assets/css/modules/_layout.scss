@@ -4,43 +4,37 @@
  * @requires framework/_type.scss
  */
 
-$layout-max-width: 800;
-$layout-max-width-suffix: em($layout-max-width);
-$layout-max-width-wide: 950;
-$layout-max-width-wide-suffix: em($layout-max-width-wide);
+$layout-max-width: 650;
+$layout-max-width-suffix: rem($layout-max-width);
+$layout-max-width-wide: 1000;
+$layout-max-width-wide-suffix: rem($layout-max-width-wide);
 
 .group {
 	margin:0 auto;
-	max-width:$layout-max-width-suffix;
+	max-width:$layout-max-width-wide-suffix;
 	width:93.75%;
+
 }
 
 .wrapper {
   overflow: hidden;
   width:100%;
+  // padding-bottom:rem(110);
+  flex:1;
 }
 
 main {
   background:$color-white;
   position: relative;
   z-index:1;
-  margin-bottom:em(500);
   padding-bottom:em(50);
-  @include animation('%fade-in');
-  &:after,
-  &:before {
-    content:'';
-    position: absolute;
-    bottom:em(-50);
-    background:$color-white;
-    height:em(100);
-    transform:rotate(2.5deg);
-    width:150%;
-    left:-25%;
-    backface-visibility: hidden;
+  padding-left:rem(150);
+  // @include animation('%fade-in',.5s);
+  @include respond-to($bp-small) {
+    padding-left:rem(60);
   }
-  &:before {
-    transform:rotate(-5deg);
-    opacity:0.25;
+  @include respond-to($bp-tiny) {
+    padding-left:0;
+    padding-bottom:rem(5);
   }
 }

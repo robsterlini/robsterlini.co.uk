@@ -1,15 +1,15 @@
 @mixin animation($motion,$delay: 0s) {
-  @extend #{$motion};
+  // @extend #{$motion};
   .animate--end & {
     animation-delay: #{$delay};
   }
 }
 
 %fade-in {
-  opacity:0;
-  .animate--end & {
-    animation: fadeIn .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
-  } 
+  // opacity:0;
+  // .animate--end & {
+  //   animation: fadeIn .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
+  // } 
 }
 
 @keyframes fadeIn {
@@ -22,11 +22,30 @@
 }
 
 %fade-down {
-  opacity:0;
-  transform:translateY(-10px);
-  .animate--end & {
-    animation: fadeDown .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
-  } 
+  // opacity:0;
+  // transform:translateX(-10px);
+  // .animate--end & {
+  //   animation: fadeDown .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
+  // } 
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity:0;
+    transform:translateX(-10px);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+%fade-left {
+  // opacity:0;
+  // transform:translateX(-10px);
+  // .animate--end & {
+  //   animation: fadeDown .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
+  // } 
 }
 
 @keyframes fadeDown {
@@ -41,20 +60,20 @@
 }
 
 %fade-up-hero {
-  opacity:0;
-  transform:translateY(0px);
-  .animate--end & {
-    animation: fadeUpHero .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
-  } 
+  // opacity:0;
+  // transform:translateY(-10px);
+  // .animate--end & {
+  //   animation: fadeUpHero .5s cubic-bezier(#{$bezier-nice}) 0s forwards;
+  // } 
 }
 
 @keyframes fadeUpHero {
   0% {
     opacity:0;
-    transform:translateY(0px);
+    transform:translateY(-10px);
   }
   100% {
-    opacity:0.25;
-    transform:translateY(-50px);
+    opacity:0.33;
+    transform:translateY(0px);
   }
 }

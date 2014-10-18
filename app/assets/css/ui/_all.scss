@@ -6,8 +6,13 @@
  * Including SCSS Partial. Keeps screen.scss neater.
  */
 
-@import "hero";
-@import "masthead";
-@import "nav";
-@import "footer";
-@import "number-stats";
+@import "_hero";
+@import "_masthead";
+@import "_nav";
+@import "_footer";
+
+@import "_article";
+
+@import "_intro-portfolio";
+
+@import "_portfolio";

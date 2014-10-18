@@ -27,64 +27,159 @@ $fonts-to-load-style: normal, italic;
 	1. Headings
 ========================================== */
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ul, ol {
 	font-weight:normal;
-	line-height:1.3;
 	@include font-feature-settings(liga kern onum);
+	max-width:$layout-max-width-suffix;
+}
+
+h1,
+h2,
+h3 {
+	
+	@include font-family-serif(bold);
 }
 
 h1 {
-	@include font-size(60);
-	margin:em(12, 60) 0 em(24, 60);
+	@include font-size(52);
+	line-height:1.15;
+	margin:rem(72) auto rem(24);
+  @include respond-to($bp-small) {
+    @include font-size(48);
+  }
+  @include respond-to($bp-tiny) {
+    @include font-size(44);
+  }
 }
 
 h2 {
-	@include font-size(48);
-	margin:em(36, 48) 0 em(12, 48);
+	@include font-size(32);
+	line-height:1.35;
+	margin:0 auto rem(12);
+	padding-top:rem(48);
+	@include respond-to($bp-small) {
+		@include font-size(28);
+	}
+	@include respond-to($bp-tiny) {
+		@include font-size(24);
+	}
 }
 
 h3 {
-	@include font-size(32);
-	margin:em(8, 38) 0 em(16, 38);
+	@include font-feature-settings(smcp c2sc);
+	@include font-size(25);
+	margin:rem(20) auto rem(12);
+	line-height:1.05;
+	@include respond-to($bp-small) {
+		@include font-size(22);
+	}
+	@include respond-to($bp-tiny) {
+		@include font-size(19);
+	}
 }
 
 h4 {
 	@include font-size(30);
-	margin:em(8, 30) 0 em(16, 30);
+	margin:em(8, 30) auto em(16, 30);
 }
 
 h5 {
 	@include font-size(24);
-	margin:em(12, 24) 0 em(12, 24);
+	margin:em(12, 24) auto em(12, 24);
 }
 
 h6 {
 	@include font-size(20);
-	margin:em(10, 20) 0 em(10, 20);
+	margin:em(10, 20) auto em(10, 20);
+}
+
+.heading--has-anchor {
+	text-indent:rem(-35);
+	@include respond-to($bp-mid) {
+		text-indent:0;
+	}
+}
+.heading--anchor {
+	width:rem(35);
+	padding-right:rem(5);
+	text-indent:0;
+	text-align: right;
+	display: inline-block;
+	@include respond-to($bp-mid) {
+		width:auto;
+	}
 }
 
 .type {
-	h1 {
-
+	& > h2:first-child {
+		margin-top:rem(-48);
 	}
-	h2 {
-		@include font-family-serif(bold);
-	}
-	h3 {
-	}
-	& > :first-child {
-		margin-top:0;
+	& > h1:first-child {
+		@include respond-to($bp-tiny) {
+			margin-top:rem(36);
+		}
 	}
 }
 
 /* ==|== Typography =================
 	Paragraphs
 ========================================== */
-
+%paragraph {
+	@include font-size(18);
+	line-height:1.45;
+	margin:rem(6) auto rem(12);
+	@include respond-to($bp-small) {
+		@include font-size(17);
+	}
+	@include respond-to($bp-tiny) {
+		@include font-size(16);
+	}
+}
 p {
-	margin:1em auto;
+	@extend %paragraph;
 }
 
-.indented {
-	text-indent:2em;
+.small-caps,
+.sc {
+	@include font-feature-settings(smcp c2sc);
+}
+
+blockquote {
+	font-family:$font-stack-regular-italic;
+	font-weight:normal;
+	font-style:italic;
+	margin:rem(15) auto;
+	max-width:$layout-max-width-suffix;
+	border-left:lighten($color-accent,15%) solid rem(2);
+	padding-left:rem(23);
+	p {
+		@include font-size(24);
+		@include respond-to($bp-small) {
+			@include font-size(22);
+		}
+		@include respond-to($bp-tiny) {
+			@include font-size(20);
+		}
+	}
+	cite {
+		@include font-family-serif;
+		display: block;
+		@include font-size(18);
+		margin-top: rem(5);
+		@include respond-to($bp-small) {
+			@include font-size(17);
+		}
+		@include respond-to($bp-tiny) {
+			@include font-size(16);
+		}
+		&:before {
+			content:'— ';
+		}
+	}
+}
+
+abbr[title] {
+	border:0;
+	background:url(../images/underlines/underline-dotted.svg) repeat-x center 88%;
+	background-size:rem(2) rem(1);
 }

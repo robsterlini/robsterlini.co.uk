@@ -1,0 +1,151 @@
+/**
+ * University of Reading Case Study SCSS File
+**/
+
+$color-uor-red:       #D11620;
+$color-uor-red-dark:  #B6080C;
+$color-uor-red-black: #4D0509;
+$color-uor-blue:      #244787;
+
+$font-uor-effra: "effra", sans-serif;
+$font-uor-body: "Lucida Sans", verdana, Helvetica, ", sans-serifsans serif", sans-serif;
+
+.body--university-of-reading  {
+  #content {
+    font-family: $font-uor-body;
+    article {
+      max-width:none;
+    }
+    h1,
+    h2 {
+      font-family: $font-uor-effra;
+      font-style: normal;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    h1 {
+      @include font-size(46);
+      line-height:1;
+    }
+    h2 {
+      font-weight: 700;
+      color:$color-uor-red;
+      &#project-background {
+        margin-top:rem(50);
+      }
+    }
+    p,
+    ol,
+    ul {
+      @include font-size(16);
+      color:#444;
+      line-height:1.5;
+      a {
+        color:#444;
+        text-decoration: underline;
+        &:hover,
+        &:focus {
+          color:$color-uor-red;
+        }
+        &:active {
+          color:$color-uor-red-dark;
+        }
+      }
+    }
+    blockquote {
+      border-left:0;
+      padding-left:0;
+      border-top:rem(2) solid $color-uor-blue;
+      font-family: $font-uor-effra;
+      font-weight:400;
+      font-style:normal;
+      max-width:rem(450);
+      text-indent:rem(-10);
+      margin:rem(30) auto rem(20);
+      p {
+        @include font-size(24);
+        color:$color-uor-blue;
+      }
+    }
+    .hero__header--beta {
+      @include font-size(20);
+      font-family: $font-uor-body;
+      text-transform:none;
+      margin-bottom:0;
+      font-weight:400;
+      color:white;
+    }
+    .hero {
+      padding:rem(20) 0;
+      overflow: hidden;
+      min-height:rem(425);
+      box-shadow: #ddd 0 rem(1);
+      border-bottom: rem(1) #fff solid;
+      &:before {
+        transform:rotate(15deg);
+        opacity:0.85;
+        background:$color-uor-red;
+        height:200%;
+        width:rem(750);
+        top:rem(-200);
+        left:0;
+        bottom:auto;
+      }
+      &:after {
+        display: none;
+      }
+    }
+    .hero__bg {
+      filter:none;
+      opacity:1;
+      &:before {
+        display: none;
+      }
+    }
+    .hero__headers {
+      max-width:rem(650);
+      margin-left:rem(50);
+    }
+    .type {
+      & > h2 {
+        &:first-child {
+          margin-top:0;
+        }
+      }
+    }
+    .heading--anchor {
+      color:$color-uor-red;
+      &:hover,
+      &:focus {
+        color:$color-uor-red-dark;
+      }
+      &:active {
+        color:$color-uor-red-black;
+      }
+    }
+    .cs__image--full-bleed {
+      width:106.5%;
+      width:calc(106.5% + #{rem(4)});
+      margin:rem(100) 0 rem(50) -3.25%;
+      margin-left:calc(-3.25% - #{rem(2)});
+      background:center no-repeat fixed;
+      background-size:cover;
+      display: flex;
+      height:35vw;
+      max-height:rem(400);
+      padding:5% 0;
+      padding:calc(5% + #{rem(50)}) 0;
+      p {
+        margin: auto;
+        color: white;
+        @include font-size(26);
+        text-align: center;
+        padding: rem(20);
+        line-height:1.35;
+        font-family: $font-uor-effra;
+        font-weight:400;
+        font-style:normal;
+      }
+    }
+  }
+}
