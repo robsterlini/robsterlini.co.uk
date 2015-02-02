@@ -5,10 +5,10 @@
         <a class="nav__link ss-nav-home<% if current_page.data.nav == 'home' %> nav__link--selected<% end %>" href="/"><abbr class="nav__label" title="Home">A casa mia</abbr></a>
       </li><!--
       --><li class="nav__item">
-        <a class="nav__link ss-nav-projects" href="/portfolio"><span class="nav__label">My work</span></a>
+        <a class="nav__link ss-nav-projects<% if current_page.data.nav == 'portfolio' %> nav__link--selected<% end %>" href="/portfolio"><span class="nav__label">My work</span></a>
       </li><!--
       --><li class="nav__item">
-        <a class="nav__link ss-nav-process" href="process.html" data-history><span class="nav__label">My process</span></a>
+        <a class="nav__link ss-nav-process" href="process.html"><span class="nav__label">My process</span></a>
       </li><!--
       --><li class="nav__item">
         <a class="nav__link ss-nav-journal" href="/journal"><span class="nav__label">The journal</span></a>
@@ -18,13 +18,7 @@
       </li><!--
       --><li class="nav__item">
         <a class="nav__link ss-nav-contact" href="/contact"><span class="nav__label">Say hi</span></a>
-      </li><!--
-      <li class="nav__item">
-        <a class="nav__link ss-notice" href="/cv"><abbr class="nav__label" title="My Curriculum vitae">My CV</abbr></a>
-      <li class="nav__item">
-        <a class="nav__link ss-notice" href="/cv"><abbr class="nav__label" title="My Curriculum vitae">My CV</abbr></a>-->
       </li>
     </ul>
   </nav>
 </header>
-<%= current_page.data.nav %>

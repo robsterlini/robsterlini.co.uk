@@ -1,0 +1,22 @@
+---
+title: Welcome to Middleman
+nav: journal
+---
+
+<% page_articles.each_with_index do |article, i| %>
+  <% if i == 0 %>
+    <% localised_date = article.date.strftime("%b %e") %>
+    <%= partial "partials/hero", locals: {
+      image: "#{article.data.hero}",
+      title: "#{article.title}",
+      subtitle: article.data.description,
+      extra: "#{article.data.category}<p class='small-caps'><time>#{localised_date}</time> in <a href='/category/life-everything-else' title='See other posts about Life &amp; everything else' class=' post-list__post--category'>Life &amp; everything else</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>"
+    } %>
+    <main>
+  <% else %>
+  <% end %>
+  <h2><%= link_to article.title, article %></h2>
+  <%= article.data.description %>
+  <%= article.body %>
+<% end %>
+</main>

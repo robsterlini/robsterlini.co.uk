@@ -25,6 +25,7 @@ $layout-max-width-wide-suffix: rem($layout-max-width-wide);
 
 main {
   background:$color-white;
+  overflow: hidden;
   position: relative;
   z-index:1;
   padding-bottom:em(50);

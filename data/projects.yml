@@ -1,0 +1,36 @@
+########
+
+featured:
+
+##
+
+    -   name: "Hotspur Related"
+        slug: "hotspur-related"
+        image: "hotspur-related.jpg"
+        date: "2014"
+        role: "Design &amp; front-end"
+        description: 'As a life-long Tottenham fan, when Ross approached me about creating a website to accompany his Twitter account – of which I was a avid follower – it was an insta-yes!'
+        buttons:
+          show: true
+          live: "http://hotspurrelated.co.uk"
+          case_study: false
+
+##
+
+    -   name: "St George’s JCR 2013–14"
+        slug: "st-georges-jcr-2013-14"
+        date: "2013–14"
+        role: "Design &amp; front-end"
+        description: "Having built the previous two sites for the committee while I was a member, and then a president, the new team got me back in to revamp, and refresh it for the new year"
+        buttons:
+          show: true
+          live: "http://stgeorgesjcr.co.uk/archive/2013/"
+          case_study: false
+
+########
+
+other:
+
+##
+
+    -   name: "Oxford Times"

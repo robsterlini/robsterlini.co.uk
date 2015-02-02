@@ -52,9 +52,9 @@ body {
 	background:$color-black;
 	text-shadow:none;
 	color:$color-white;
-	html[data-useragent*='Chrome'][data-platform*='Mac'] & {
-		background:rgba($color-accent,0.2);
-		color:inherit;
-		text-shadow:inherit;
-	}
+}
+::-moz-selection {
+	background:$color-black;
+	text-shadow:none;
+	color:$color-white;
 }

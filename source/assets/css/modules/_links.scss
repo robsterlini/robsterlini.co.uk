@@ -20,8 +20,7 @@ a {
 	&:active {
 		color:$color-link-primary-active;
 	}
-	.hero &,
-	.footer & {
+	.hero & {
 		color: $color-link-reverse;
 		@include hover {
 			color:$color-link-reverse-hover;

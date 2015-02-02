@@ -6,8 +6,7 @@ var g = g || {};
 // 		easier version controlling when multiple users are collaborating
 // 		on the JS simultaneously.
 g.partials = [
-	'browserSniff',
-  'history',
+  'browserSniff',
   'loadAnimation',
   'loadImages',
   'navToggle',

@@ -7,6 +7,9 @@
 }
 .portfolio__item--has-image {
   @extend .portfolio__item;
+  img {
+    border-radius: 0;
+  }
 }
 .portfolio__copy {
   width:calc(100% - #{rem(400)});

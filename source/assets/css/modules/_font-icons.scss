@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "SSSymbolicons";
+  src: url('../fonts/ss-symbolicons-line.eot');
+  src: url('../fonts/ss-symbolicons-line.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ss-symbolicons-line.woff') format('woff'),
+       url('../fonts/ss-symbolicons-line.ttf')  format('truetype'),
+       url('../fonts/ss-symbolicons-line.svg#SSSymboliconsLine') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+html:hover [class^="ss-"]{-ms-zoom: 1;}
+
+.ss-icon, .ss-icon.ss-symbolicons-line,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-symbolicons-line:before, [class*=" ss-"].ss-symbolicons-line:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-symbolicons-line.right:after, [class*=" ss-"].ss-symbolicons-line.right:after {
+  font-family: "SSSymbolicons";
+  font-style: normal;
+  font-weight: 300;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ss-nav-home:before {
+  content:'⌂';
+}
+.ss-nav-projects:before {
+  content:'';
+}
+.ss-nav-process:before {
+  content:'';
+}
+.ss-nav-journal:before {
+  content:'';
+}
+.ss-nav-about:before {
+  content:'👶';
+}
+.ss-nav-contact:before {
+  content:'📫';
+}
