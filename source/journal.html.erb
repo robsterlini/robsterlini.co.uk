@@ -4,11 +4,8 @@ nav: journal
 ---
 
 <% page_articles.each_with_index do |article, i| %>
-  <% t_name = '' %>
-  <% t_link = '' %>
-  <% article.tags.each do |tag, articles| %>
-    <% t_link = tag_path(tag) %>
-    <% t_name = tag %>
+  <% t_name = ''; t_link = ''; article.tags.each do |tag, articles| %>
+    <% t_link = tag_path(tag); t_name = tag %>
   <% end %>
   <% if i == 0 %>
     <% localised_date = article.date.strftime("%a %b %e") %>
