@@ -69,6 +69,7 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.taglink = "journal/category/{tag}"
   blog.layout = "layout"
+  blog.layout = "blog_layout"
 end
 
 # Build-specific configuration
