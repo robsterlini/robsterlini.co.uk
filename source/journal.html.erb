@@ -13,7 +13,7 @@ nav: journal
       image: "#{article.data.hero}",
       title: "#{article.title}",
       subtitle: article.data.description,
-      extra: "<p class='small-caps'><time>#{localised_date}</time> in <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>",
+      extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>",
       featured: "<p class='hero__category'><span class='small-caps'>Featured post</span><br>#{current_page.data.title}</p>"
     } %>
 
