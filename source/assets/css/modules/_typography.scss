@@ -28,7 +28,6 @@ $fonts-to-load-style: normal, italic;
 ========================================== */
 
 h1, h2, h3, h4, h5, h6, p, ul, ol {
-	font-weight:normal;
 	@include font-feature-settings(liga kern onum);
 	max-width:$layout-max-width-suffix;
 }
@@ -36,7 +35,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 h1,
 h2,
 h3 {
-	
 	@include font-family-serif(bold);
 }
 

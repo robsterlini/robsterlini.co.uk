@@ -24,24 +24,40 @@ $font-stack-header: 	"Aisha Latin Semibold", "Skolar3 PE Regular", Georgia, seri
 $font-qualifier-header: ".wf-aishalatinsemibold-n6-active";
 
 @mixin font-family-serif($style: regular) {
-	@if $style == bold { 
-		font-family:$font-stack-regular-bold;
+	@if $style == bold {
 		font-weight:bold;
 		font-style:normal;
 	}
 	@else {
-		font-family:$font-stack-regular;
 		font-weight:normal;
 		font-style:normal;
 		em {
-			font-family:$font-stack-regular-italic;
-			font-weight:normal;
 			font-style:italic;
+			font-weight:normal;
 		}
 		strong {
-			font-family:$font-stack-regular-bold;
-			font-weight:bold;
 			font-style:normal;
+			font-weight:bold;
+		}
+	}
+	@if $style == bold { 
+		.wf-skolar3pebold-n7-active & {
+			font-family:$font-stack-regular-bold;
+		}
+	}
+	@else {
+		.wf-skolar3peregular-n4-active & {
+			font-family:$font-stack-regular;
+		}
+		.wf-skolar3peitalic-n4-inactive & {
+			em {
+				font-family:$font-stack-regular-italic;
+			}
+		}
+		.wf-skolar3pebold-n7-active & {
+			strong {
+				font-family:$font-stack-regular-bold;
+			}
 		}
 	}	
 }

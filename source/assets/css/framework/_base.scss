@@ -18,17 +18,18 @@ html {
 	background: $color-background;
 	font-size:percentage($font-default-size / 16);
 	overflow-y: scroll;
+	font-family: Georgia, serif;
 }
 
-html,
+body,
 button,
 input,
 select,
 textarea {
 	color:$color-text;
-	@include font-family-serif;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
+	@include font-family-serif;
 }
 
 body {
