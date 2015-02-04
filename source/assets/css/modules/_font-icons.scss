@@ -11,11 +11,9 @@
 
 html:hover [class^="ss-"]{-ms-zoom: 1;}
 
-.ss-icon, .ss-icon.ss-symbolicons-line,
-[class^="ss-"]:before, [class*=" ss-"]:before,
-[class^="ss-"].ss-symbolicons-line:before, [class*=" ss-"].ss-symbolicons-line:before,
-[class^="ss-"].right:after, [class*=" ss-"].right:after,
-[class^="ss-"].ss-symbolicons-line.right:after, [class*=" ss-"].ss-symbolicons-line.right:after {
+.ss-icon,
+[class^="ss-"]:before,
+[class*=" ss-"]:before, {
   font-family: "SSSymbolicons";
   font-style: normal;
   font-weight: 300;
