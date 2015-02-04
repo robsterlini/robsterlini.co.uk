@@ -1,0 +1,20 @@
+.categories {
+
+}
+.category__item {
+  display: inline-block;
+  vertical-align: top;
+}
+.category__link {
+  display: block;
+  margin: 0 16px 0 0;
+}
+[class*=" ss-cat-"] {
+  &:before {
+    color: $color-accent;
+    display: block;
+    font-size:rem(48);
+    margin:0 auto;
+    text-align: center;
+  }
+}
