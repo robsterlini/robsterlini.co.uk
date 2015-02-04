@@ -30,6 +30,7 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   -moz-osx-font-smoothing: grayscale;
 }
 
+// Navigation
 .ss-nav-home:before {
   content:'⌂';
 }
@@ -47,4 +48,12 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 }
 .ss-nav-contact:before {
   content:'📫';
+}
+.ss-nav-bucket:before {
+  content:'⏱';
+}
+.ss-nav-triathlon:before {
+  content:'🏃';
+}
+
 }
