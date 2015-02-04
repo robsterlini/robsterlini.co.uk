@@ -1,25 +1,22 @@
 ---
-pageable: true
-per_page: 12
 ---
-<h1><%= tagname %></h1>
+<% content_for(:title, "#{tagname}") %>
+<section id="content" class="wrapper">
+  <main>
+    <h1><%= tagname %></h1>
 
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+    <% page_articles.each_with_index do |article, i| %>
+      <% localised_date = "<time>#{article.date.strftime("%a %b %e")}</time>" %>
+      <h3><%= link_to article.title, article %></h3>
+      <p><%= article.data.description %></p>
+      <p class="small-caps"><%= localised_date %></p>
+    <% end %>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
-
-<ul>
-  <% page_articles.each_with_index do |article, i| %>
-    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-  <% end %>
-</ul>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
-<% end %>
+    <h2>All categories</h2>
+    <ul class="categories"><!--
+      <% blog.tags.each do |tag, articles| %>
+        --><li class="category__item"><%= link_to "#{tag}", tag_path(tag), :class => "category__link ss-cat-#{tag.to_slug}", :title => "Read the #{articles.size} posts on #{tag}" %></li><!--
+      <% end %>
+    --></ul>
+  </main>
+</section>
