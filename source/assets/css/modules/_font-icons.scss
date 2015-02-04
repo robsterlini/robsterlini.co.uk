@@ -56,4 +56,10 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   content:'🏃';
 }
 
+// Categories
+.ss-cat-design-and-dev:before {
+  content:'🎨';
+}
+.ss-cat-life-and-everything-else:before {
+  content:'';
 }
