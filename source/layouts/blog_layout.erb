@@ -1,0 +1,25 @@
+<% wrap_layout :layout do %>
+  <% t_name = ''; t_link = ''; current_article.tags.each do |tag, articles| %>
+    <% t_link = tag_path(tag); t_name = tag %>
+  <% end %>
+  <% localised_date = current_article.date.strftime("%b %e") %>
+  <% if current_article.data.hero != 'false' %>
+    <%= partial "partials/hero", locals: {
+      image: "#{current_article.data.hero}",
+      title: "#{current_article.title}",
+      subtitle: current_article.data.description,
+      extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
+    } %>
+  <% end %>
+  <main data-js="header-parent">
+    <article class="group type" id="post-38">
+      <% if current_article.data.hero == 'false' %>
+        <h1><%= current_article.title %></h1>
+        <p class="article__description"><%= current_article.data.description %></p>
+      <% end %>
+        <div class="text fulltext">
+          <%= yield %>
+        </div>
+    </article>
+  </main>
+<% end %>
