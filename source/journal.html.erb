@@ -19,14 +19,13 @@ nav: journal
       } %>
 
       <main>
-      <h2>Recent journal posts</h2>
-      <article class="type group">
-    <% else %>
+        <h2>Recent journal posts</h2>
+        <article class="type group">
+      <% else %>
     <% end %>
     <h3><%= link_to article.title, article %></h3>
     <p><%= article.data.description %></p>
     <p class="small-caps"><%= localised_date %> • <a href='<%= t_link %>' title='See other posts about <%= t_name %>'><%= t_name %></a></p>
-
   <% end %>
 
     <p class="btns--center"><a href="/archive" class="btn" title="See the rest of my blog entries">There are more in the archive</a></p>
@@ -38,6 +37,6 @@ nav: journal
       <% end %>
     --></ul>
 
-  </article>
+    </article>
   </main>
 </section>
