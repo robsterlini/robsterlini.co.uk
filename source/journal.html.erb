@@ -8,7 +8,7 @@ nav: journal
     <% t_name = ''; t_link = ''; article.tags.each do |tag, articles| %>
       <% t_link = tag_path(tag); t_name = tag %>
     <% end %>
-    <% localised_date = "<time>#{article.date.strftime("%a %b %e")}</time>" %>
+    <% localised_date = "<time>#{article.date.strftime("%e %b %y")}</time>" %>
     <% if i == 0 %>
       <%= partial "partials/hero", locals: {
         image: "#{article.data.hero}",
