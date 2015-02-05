@@ -11,11 +11,9 @@
 
 html:hover [class^="ss-"]{-ms-zoom: 1;}
 
-.ss-icon, .ss-icon.ss-symbolicons-line,
-[class^="ss-"]:before, [class*=" ss-"]:before,
-[class^="ss-"].ss-symbolicons-line:before, [class*=" ss-"].ss-symbolicons-line:before,
-[class^="ss-"].right:after, [class*=" ss-"].right:after,
-[class^="ss-"].ss-symbolicons-line.right:after, [class*=" ss-"].ss-symbolicons-line.right:after {
+.ss-icon,
+[class^="ss-"]:before,
+[class*=" ss-"]:before, {
   font-family: "SSSymbolicons";
   font-style: normal;
   font-weight: 300;
@@ -32,6 +30,7 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   -moz-osx-font-smoothing: grayscale;
 }
 
+// Navigation
 .ss-nav-home:before {
   content:'⌂';
 }
@@ -49,4 +48,18 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 }
 .ss-nav-contact:before {
   content:'📫';
+}
+.ss-nav-bucket:before {
+  content:'⏱';
+}
+.ss-nav-triathlon:before {
+  content:'🏃';
+}
+
+// Categories
+.ss-cat-design-and-dev:before {
+  content:'🎨';
+}
+.ss-cat-life-and-everything-else:before {
+  content:'';
 }

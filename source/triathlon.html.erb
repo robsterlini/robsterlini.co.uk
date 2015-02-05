@@ -1,0 +1,20 @@
+---
+title: Welcome to Middleman
+nav: home
+description: I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail.
+---
+
+<section id="content" class="wrapper" data-page="home">
+  <%= partial "partials/hero", locals: {
+    image: "main.jpg",
+    title: "Rob Sterlini",
+    subtitle: current_page.data.description,
+    extra: "<ul>
+      <li><a href='/portfolio'>Explore my life’s work</a></li><!--
+      --><li><a href='/process'>Find out how I do it</a></li><!--
+      --><li><a href='/journal'>Read what I’ve been writing about</a></li><!--
+      --><li><a href='/about'>Learn a bit more about the guy</a></li><!--
+      --><li><a href='/about'>Reach out and get in touch</a></li>
+    </ul>"
+  } %>
+</section>
