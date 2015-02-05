@@ -6,7 +6,7 @@
     <h1><%= tagname %></h1>
 
     <% page_articles.each_with_index do |article, i| %>
-      <% localised_date = "<time>#{article.date.strftime("%a %b %e")}</time>" %>
+      <% localised_date = "<time>#{article.date.strftime("%a %e %b")}</time>" %>
       <h3><%= link_to article.title, article %></h3>
       <p><%= article.data.description %></p>
       <p class="small-caps"><%= localised_date %></p>
