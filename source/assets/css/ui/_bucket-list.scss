@@ -1,0 +1,35 @@
+.bucket__list {
+  margin-top: rem(16);
+  &:hover,
+  &:focus {
+    .bucket__item {
+      opacity: 0.5;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.bucket__item {
+  @extend %big-cat-icons;
+  display: inline-block;
+  padding: rem(16);
+  text-align: left;
+  transition:opacity .25s cubic-bezier(#{$bezier-nice});
+  vertical-align: top;
+  width: 33.3%;
+  h2 {
+    @include font-size(26);
+    padding-top: 0;
+  }
+}
+.bucket__item--complete {
+  &:before {
+    color: rgba($color-success, 0.5);
+  }
+  h2 {
+    color: $color-success;
+  }
+}
