@@ -1,45 +1,106 @@
 ---
-title: OpenType and ::selection don’t mix
+title: Opentype and ::selection don’t mix
 date: 2014-04-29 00:00 UTC
 description: "Fixing the dubious way that Chrome on <span class='sc'>OSX</span> borks OpenType features when used with a custom ::selection"
 hero: blog-opentype-and-selection-dont-mix.jpg
 tags: Design and dev
 ---
 
-## 116,899,200 seconds
+## The problem
 
-1,353 days ago I moved into St. George’s Halls to begin my time at the University of Reading. I worked hard, did lots of stupid stuff and graduated with a new understanding of who I was and what I was capable of; but before graduating I was offered the opportunity to interview for the Digital Designer role at the university I'd come to love. I’d been craving a holiday or even just some time off to recover from the taxing end of the degree, but you can’t look a gift horse in the mouth, and I jumped at the chance.
+I’m a type-snob/type-nerd. I want to use the beautiful OpenType features on offer from *FF Tisa Pro* and I do, but Google Chrome seems to have a bit of a problem with it.
 
-Today was my last day in that role. Having a shade over a year building out a new, responsive, content-led design for [www.reading.ac.uk](http://www.reading.ac.uk "The University of Reading website") I’m still counting my blessings – not many people get to single-handedly tackle the design and build of a site with forty million annual hits, fewer still as their first job. That’s not to say I did it alone, because that’s not true – the rest of the team played a huge role, but being the only designer meant an unrivalled sense of freedom with an equally terrifying level of pressure.
+99.9% and maybe more of my browser issues come from Internet Explorer, but this is Chrome on <span class="sc">OSX</span> misbehaving.
 
-I could write tomes about the challenges we faced as a team, but I won’t; all I’ll say is that I’ve learned a huge amount – about designing for institutions, managing clients, disaster management, and so much more.
+It does do the OpenType bit really well, but if you’re using a custom `::selection` to add an extra level of detail then you’ll start to have problems!
 
-> “Every day, I love what I do and I think it’s a gift and privilege to love your job” <cite>Sarah Burton</cite>
+Here’s the <span class="sc">CSS</span> that will recreate the problem
 
-## What’s next?
+    ::selection {
+      background: #ff4444;
+      color: #fff;
+      text-shadow: none;
+    }
+    p {
+      font-family: "ff-tisa-web-pro", "Tisa Pro", "Tisa", "Cambo", serif;
+      font-style: normal;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -webkit-font-feature-settings: "kern", "liga", "case", "onum"; /* I‘ve left out the other prefixes as this is a Chrome-only issue */
+    }
 
-Mum. I’m coming home. London’s calling, and it’s time for me to head back.
+Which gives you this:
 
-I’ll be working freelance as of Monday morning, but in the loosest sense of the word – I’m on holiday for a little while, sorting out some bits, but mainly just resting. The World Cup is on. The sun is out (but inevitably will go away too soon). And I’ve got some old friends to catch up with.
+![The OpenType features looking beautiful](http://i.robsterlini.co.uk/posts_opentype-bug/ot-1.jpg?b=yes "The OpenType features looking beautiful")
 
-If you want to chat about a project then [drop me an email](mailto:hi@robsterlini.co.uk "Say hi"), but don’t be offended if I don’t take it on.
+![::selection looking not-so-beautiful](http://i.robsterlini.co.uk/posts_opentype-bug/ot-2.jpg?b=yes "::selection looking not-so-beautiful")
 
-Some of you, however, will know my plans to be slightly different, but in the typical web designer way: I can’t say a whole lot more than that at the moment. Soon all will be a lot clearer (for anyone that actually cares, most won’t even bat an eye lid!)
+## The solutions
 
-## Fueled
+As with all of these things there are a few solutions
 
-This has been something I’ve been bursting at the seams with excitement for, but until now haven’t properly been able to tell people about this.
+### 1. Leave it
 
-As of July 7, I’ll be [Fueled](http://www.fueled.com "Visit Fueled’s website")'s newest web designer! I’m really excited about getting stuck into some new projects with them, and am finally getting my head around the latest tech that’s running the web industry!
+The easiest solution is to not use a custom `::selection` or to not use the OpenType features, but they’re both things that I want to include.
 
-I’ll still be doing freelance work on the side, but most (if not all) of that will go on hold while I get on board with Fueled and work out how much of my time I can spare, but if you’ve got a project that you think we can handle then [get in touch](/contact "Say hi"), and we’ll get the wheels rolling on bringing an award-winning team onto your project!
+![No OT features…](http://i.robsterlini.co.uk/posts_opentype-bug/ot-3.jpg?b=yes "No OT features…")
 
-## Thanks!
+![…but no ::selection problems](http://i.robsterlini.co.uk/posts_opentype-bug/ot-4.jpg?b=yes "…but no ::selection problems")
 
-Living, progressing, and working in Reading has been an amazing experience. There are far too many people to thank everyone that has had a positive impact over the past four years. You know who you are.
+### 2. Get some, but not all of it
 
-If anyone from Reading – university or work colleagues – don’t have my phone number feel free to [drop me an email](mailto:hi@robsterlini.co.uk "Say hi"), and we’ll make sure we can stay in touch!
+Before switching over to using the `font-feature-settings` that I now use (having read [Elliot’s run down on them](http://elliotjaystocks.com/blog/a-recap-on-opentype-features/ "Elliot Jay Stocks’ recap on OT features")), I used `text-rendering: optimizeLegibility` to sort the kerning, and ligatures; but that came with performance issues and still didn’t offer the ranging numerals.
 
-Thank you everyone. For everything.
+It is however a solution to the problem.
 
-> “If you’re interested in ‘balancing’ work and pleasure, stop trying to balance them. Instead make your work more pleasurable.” <cite>Donald Trump</cite>
+    p {
+      -webkit-font-feature-settings: normal;
+      text-rendering: optimizeLegibility;
+    }
+
+It would also mean sacrificing the tasty features on all the other browsers, but *A List Apart* had a similar issue and solved it with [a bit of JS browser-sniffing](https://github.com/alistapart/AListApart/issues/53 "Find out how A List Apart fixed it"):
+
+    var b = document.documentElement;
+    b.setAttribute('data-useragent',  navigator.userAgent);
+    b.setAttribute('data-platform', navigator.platform);
+
+…and then only applying the <span class="sc">CSS</span> to those that are using Chrome on <span class="sc">OSX</span>:
+
+    html[data-useragent*='Chrome'][data-platform*='Mac'] p {
+      -webkit-font-feature-settings: normal;
+      text-rendering: optimizeLegibility;
+    }
+
+![Problem solved?](http://i.robsterlini.co.uk/posts_opentype-bug/ot-5.jpg?b=yes "Problem solved?")
+
+But even this has a problem with the `::selection`…
+
+![Nearly, but not quite](http://i.robsterlini.co.uk/posts_opentype-bug/ot-6.jpg?b=yes "Nearly, but not quite")
+
+And even then it still doesn’t deliver what I want
+
+### 3. Get the other bit of it instead
+
+But from there I thought that instead of sacrificing ranging numbers, I’d sacrifice a level of the custom `::selection` instead.
+
+    html[data-useragent*='Chrome'][data-platform*='Mac'] ::selection {
+      background: #d1d4d9;
+      color: inherit;
+      text-shadow: inherit;
+    }
+
+I worked out that it was the `colour` and `text-shadow`, but not the `background` that was breaking it, so remove them from the equation and there we have it: custom `::selection` with the beauty of the OT features.
+
+The only caveat is that you need to use a contrasting colour to the text – in this case a light grey against the dark text. Not too-big-a sacrifice to keep both of it!
+
+![Problem solved?](http://i.robsterlini.co.uk/posts_opentype-bug/ot-7.jpg?b=yes "Problem solved?")
+
+![You betcha!](http://i.robsterlini.co.uk/posts_opentype-bug/ot-8.jpg?b=yes "You betcha!")
+
+## Problem solved
+
+Feel free to use any of the techniques shown until Chrome fix it, happy OpenTyp-ing.
+
+## Let Google know
+
+A while back I added this as a Chromium issue, but it seems to have lost traction so if you can [star the bug](https://code.google.com/p/chromium/issues/detail?id=362956 "See the Chromium Issue raised on this subject"), so we can get this fixed that’d be grand!
