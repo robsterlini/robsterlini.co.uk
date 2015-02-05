@@ -14,8 +14,7 @@
 }
 
 .fulltext {
-  h2,
-  h3 {
+  h2 {
     position: relative;
     &:before {
       background: $color-background;
@@ -24,6 +23,7 @@
       opacity: 0;
       position: absolute;
       text-indent: rem(-14);
+      width: 100%;
       z-index: 1;
     }
     &:hover,
