@@ -1,0 +1,25 @@
+---
+title:  Goals for a lifetime  
+nav: bucket
+description: I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail.
+---
+
+<section id="content" class="wrapper" data-page="home">
+  <main>
+    <article class="type group">
+      <h1><%= current_page.data.title %></h1>
+      <p class="article__description">As 2014 left, and 2015 kicked into full swing I opted to &ndash; <a href="/journal/twenty-fifteen#twenty-fifteen">instead of making resolutions</a> &ndash; create a bucket list.</p>
+      <p>Here’s the plan. This is a list of things I want to do before I’ve had my lot. For every month that I don’t do one, another goes on the list.</p>
+      <p>If by some miracle, I finish them before I’ll add five more everytime that happens. Sound good? Good.</p>
+      <div class="bucket__list">
+      <!--<% data.bucket_list.all.each do |bucket| %>
+        --><div class="bucket__item<%= bucket.completed ? ' bucket__item--complete ' : ' ' %>ss-bucket-<%= bucket.slug %>">
+          <h2><%= bucket.title %></h2>
+          <p><%= bucket.desc %></p>
+          <p class="small-caps"><strong>Added</strong> <%= Date.parse(bucket.date).strftime("%e %b %y") %><br /><strong>Completed</strong> <%= bucket.completed ? Date.parse(bucket.date).strftime("%e %b %y") : 'Not yet' %></p>
+        </div><!--
+      <% end %>-->
+      </div>
+    </article>
+  </main>
+</section>
