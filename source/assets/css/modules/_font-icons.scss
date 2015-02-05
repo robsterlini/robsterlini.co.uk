@@ -56,6 +56,16 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   content:'🏃';
 }
 
+%big-cat-icons {
+  &:before {
+    color: $color-accent;
+    display: block;
+    font-size:rem(48);
+    margin:0 auto;
+    // text-align: center;
+  }
+}
+
 // Categories
 .ss-cat-design-and-dev:before {
   content:'🎨';

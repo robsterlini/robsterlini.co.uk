@@ -27,3 +27,7 @@ ol {
 ol {
 	list-style: decimal outside none;
 }
+
+.list--large-icon {
+	@extend %big-cat-icons;
+}

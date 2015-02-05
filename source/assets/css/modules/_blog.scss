@@ -10,13 +10,7 @@
   margin: 0 rem(16) 0 0;
 }
 [class*=" ss-cat-"] {
-  &:before {
-    color: $color-accent;
-    display: block;
-    font-size:rem(48);
-    margin:0 auto;
-    text-align: center;
-  }
+  @extend %big-cat-icons;
 }
 
 .fulltext {
