@@ -14,13 +14,13 @@
         <a class="nav__link ss-nav-journal" href="/journal"><span class="nav__label">The journal</span></a>
       </li><!--
       --><li class="nav__item">
-        <a class="nav__link ss-nav-about" href="/about"><span class="nav__label">About me</span></a>
+        <a class="nav__link ss-nav-about<% if current_page.data.nav == 'about' %> nav__link--selected<% end %>" href="/about"><span class="nav__label">About me</span></a>
       </li><!--
       --><li class="nav__item">
         <a class="nav__link ss-nav-contact" href="/contact"><span class="nav__label">Say hi</span></a>
       </li><!--
       --><li class="nav__item">
-        <a class="nav__link ss-nav-bucket" href="/bucket-list"><span class="nav__label">Bucket list</span></a>
+        <a class="nav__link ss-nav-bucket<% if current_page.data.nav == 'bucket' %> nav__link--selected<% end %>" href="/bucket-list"><span class="nav__label">Bucket list</span></a>
       </li><!--
       --><li class="nav__item">
         <a class="nav__link ss-nav-triathlon" href="/triathlon"><span class="nav__label">Tri rookie</span></a>
