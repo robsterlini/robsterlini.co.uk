@@ -1,0 +1,23 @@
+---
+title: How I work
+nav: process
+description: I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail.
+---
+
+<section id="content" class="wrapper" data-page="home">
+  <main>
+    <article class="type group">
+      <h1><%= current_page.data.title %></h1>
+      <h2>A few quick nuggets</h2>
+      <p>Get to know me in little, bit-size chunks. If you ever want to know which tattoo I’m getting next, which of my Spurs shirts is my favourite, or anything else for that matter, just <a href='/contact' title='Get in touch'>reach out</a>!</p>
+      <div class="list--large-icons">
+      <!--<% data.about_me.facts.each do |about| %>
+        --><div class="list--large-icons__item ss-about-<%= about.slug %>">
+          <h2><%= about.title %></h2>
+          <p><%= about.desc %></p>
+        </div><!--
+      <% end %>-->
+      </div>
+    </article>
+  </main>
+</section>
