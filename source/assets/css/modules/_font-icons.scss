@@ -84,6 +84,15 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 .ss-about-spurs:before {
   content:'⚽';
 }
+.ss-about-food:before {
+  content:'🍕';
+}
+.ss-about-christmas:before {
+  content:'🎄';
+}
+.ss-about-nfl:before {
+  content:'🏈';
+}
 
 // Bucket List
 .ss-bucket-marathon:before {
