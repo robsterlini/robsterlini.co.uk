@@ -28,6 +28,60 @@ ol {
 	list-style: decimal outside none;
 }
 
-.list--large-icon {
-	@extend %big-cat-icons;
+/* ==|== Lists =================
+	Large Icons
+========================================== */
+
+.list--large-icons {
+	margin-top: rem(16);
+	@include respond-to-min($bp-mid + 1) {
+		&:hover,
+	  &:focus {
+	    .list--large-icons__item {
+	      opacity: 0.5;
+	      &:hover,
+	      &:focus {
+	        opacity: 1;
+	      }
+	    }
+	  }
+	}
+}
+.list--large-icons__item {
+  display: inline-block;
+  padding: rem(16);
+  text-align: left;
+  transition:opacity .25s cubic-bezier(#{$bezier-nice});
+  vertical-align: top;
+  width: 33.3%;
+  &:before {
+    color: $color-accent;
+    display: block;
+    font-size:rem(48);
+    margin:0 auto;
+  }
+  h2,
+  .list--large-icons__title {
+    @include font-size(24);
+    padding-top: 0;
+  }
+  @include respond-to($bp-mid) {
+  	padding: 0 0 rem(16);
+  	width: 100%;
+  	&:before {
+  		font-size: rem(32);
+  	}
+  }
+	@include respond-to($bp-small) {
+  	h2,
+  	.list--large-icons__title {
+  		@include font-size(22);
+  	}
+  }
+  @include respond-to($bp-tiny) {
+  	h2,
+  	.list--large-icons__title {
+  		@include font-size(20);
+  	}
+  }
 }
