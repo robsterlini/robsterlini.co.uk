@@ -10,14 +10,14 @@ g.loadImages = function() {
 	self.selectors = {
 		toLoad: "[data-js='lazy-load-image']",
     headerParent:   "[data-js='header-parent']",
-    currentHeader:  "[data-js='current-header']",
+    currentHeader:  "[data-js='page-header']",
     fixedHeader:    "[data-js='fixed-header']"
 	}
 
 	self.classes = {
 		loaded:         "image--loaded",
 		parentLoaded:   "figure--loaded",
-    journal:        'body--journal',
+    journal:        'journal_article',
     headerToggled:  'article__fixed-header--toggled'
 	}
 

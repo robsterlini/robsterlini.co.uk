@@ -11,10 +11,10 @@
       extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
     } %>
   <% end %>
-  <main data-js="header-parent">
+  <main data-js="header-parent" data-js="header-parent">
     <article class="group type" id="post-38">
       <% if !current_article.data.hero %>
-        <h1><%= current_article.title %></h1>
+        <h1 data-js="page-header"><%= current_article.title %></h1>
         <p class="article__description"><%= current_article.data.description %></p>
       <% end %>
         <% if current_article.data.tldr %>
