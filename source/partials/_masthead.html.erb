@@ -1,30 +1,12 @@
 <header class="masthead" data-js="toggled-navigation-parent">
   <nav class="nav">
     <ul class="nav__list">
-      <li class="nav__item">
-        <a class="nav__link ss-nav-home<% if current_page.data.nav == 'home' %> nav__link--selected<% end %>" href="/"><abbr class="nav__label" title="Home">A casa mia</abbr></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-projects<% if current_page.data.nav == 'portfolio' %> nav__link--selected<% end %>" href="/portfolio"><span class="nav__label">My work</span></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-process<% if current_page.data.nav == 'process' %> nav__link--selected<% end %>" href="/process"><span class="nav__label">My process</span></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-journal<% if current_page.data.nav == 'journal' %> nav__link--selected<% end %>" href="/journal"><span class="nav__label">The journal</span></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-about<% if current_page.data.nav == 'about' %> nav__link--selected<% end %>" href="/about"><span class="nav__label">About me</span></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-contact<% if current_page.data.nav == 'contact' %> nav__link--selected<% end %>" href="/contact"><span class="nav__label">Say hi</span></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-bucket<% if current_page.data.nav == 'bucket' %> nav__link--selected<% end %>" href="/bucket-list"><span class="nav__label">Bucket list</span></a>
-      </li><!--
-      --><li class="nav__item">
-        <a class="nav__link ss-nav-triathlon" href="/triathlon"><span class="nav__label">Tri rookie</span></a>
-      </li>
+      <!--<% data.pages.masthead.each do |nav| %>
+        --><li class="nav__item">
+          <% label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>" %>
+          <a class="nav__link--<%= nav.icon || nav.slug %> ss-nav-<%= nav.icon || nav.slug %>" href="/<%= nav.slug %>"><%= label %></a>
+        </li><!--
+      <% end %>-->
     </ul>
   </nav>
 </header>

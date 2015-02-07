@@ -1,0 +1,48 @@
+########
+
+masthead:
+
+##
+
+    -   slug: ""
+        icon: "home"
+        abbr:
+            label: "A casa mia"
+            title: "Home"
+
+##
+
+    -   slug: "portfolio"
+        icon: "projects"
+        label: "My work"
+
+##
+
+    -   slug: "process"
+        label: "My process"
+
+##
+
+    -   slug: "journal"
+        label: "The journal"
+
+##
+
+    -   slug: "about"
+        label: "About me"
+
+##
+
+    -   slug: "contact"
+        label: "Say hi"
+
+##
+
+    -   slug: "bucket-list"
+        icon: "bucket"
+        label: "Bucket list"
+
+##
+
+    -   slug: "triathlon"
+        label: "Tri rookie"

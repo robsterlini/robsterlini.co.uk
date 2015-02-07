@@ -1,3 +1,14 @@
+$pages: (
+  home: index,
+  projects: portfolio,
+  journal: journal,
+  process: process,
+  about: about,
+  contact: contact,
+  bucket: bucket-list,
+  triathlon: triathlon
+);
+
 .nav {
   width:rem(150);
   height:100%;
@@ -109,7 +120,7 @@
     @include animation('%fade-left',1s);
   }
 }
-.nav__link {
+[class^="nav__link--"] {
   @include font-size(18);
   display: block;
   color:$color-white;
@@ -151,10 +162,17 @@
 
   }
 }
-.nav__link--selected {
+%nav__link--selected {
   background:rgba($color-accent,0.1);
   &:before {
     color:$color-white;
+  }
+}
+@each $selected, $page in $pages {
+  .nav__link--#{$selected} {
+    body.#{$page} & {
+      @extend %nav__link--selected;
+    }
   }
 }
 .nav__label {
