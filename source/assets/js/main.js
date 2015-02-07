@@ -1,4 +1,5 @@
 //= require _g
+//= require _plugins
 //= require _browserSniff
 //= require _loadAnimation
 //= require _codeHighlight
