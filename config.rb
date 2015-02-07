@@ -53,6 +53,28 @@ String.class_eval do
   end
 end
 
+#Create full image markup helper
+helpers do
+  def blog_image(image, caption, alt)
+    "<div class='figure-wrap'>
+      <noscript>
+        <figure>  
+          <img src='#{image}' alt='#{alt}' title='#{caption}'>
+          <figcaption class='ss-picture'>#{caption}</figcaption>
+        </figure>
+      </noscript>
+      <figure class='ss-picture image--to-load figure--loaded'>
+        <img src='/assets/images/helpers/image-placeholder.png'
+          data-src='#{image}'
+          data-js='lazy-load-image'
+          alt='#{alt}'
+          title='#{caption}'>
+        <figcaption class='ss-picture'>#{caption}</figcaption>
+      </figure>
+    </div>"
+  end
+end
+
 set :css_dir, 'assets/css'
 
 set :js_dir, 'assets/js'
