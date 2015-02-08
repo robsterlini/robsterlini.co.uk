@@ -29,6 +29,23 @@ ol {
 }
 
 /* ==|== Lists =================
+  Inline
+========================================== */
+
+.list--inline {
+  text-align: center;
+  li {
+    display: inline;
+    & + li {
+      &:before {
+        color: $color-accent;
+        content:' • ';
+      }
+    }
+  }
+}
+
+/* ==|== Lists =================
 	Large Icons
 ========================================== */
 
