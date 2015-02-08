@@ -33,12 +33,15 @@
     display: none;
   }
   h1 {
-    pointer-events:auto;
     @include font-size(19);
     margin:rem(5) auto rem(7);
     span {
       @include font-family-serif();
     }
+  }
+  h1,
+  .btn {
+    pointer-events:auto;
   }
 }
 .article__fixed-header--toggled {
