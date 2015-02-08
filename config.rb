@@ -55,15 +55,15 @@ end
 
 #Create full image markup helper
 helpers do
-  def blog_image(image, caption, alt)
+  def blog_image(image, caption, alt, position)
     "<div class='figure-wrap'>
       <noscript>
-        <figure>  
+        <figure class='image--#{position}'>  
           <img src='#{image}' alt='#{alt}' title='#{caption}'>
           <figcaption class='ss-picture'>#{caption}</figcaption>
         </figure>
       </noscript>
-      <figure class='ss-picture image--to-load figure--loaded'>
+      <figure class='image--#{position} ss-picture image--to-load'>
         <img src='/assets/images/helpers/image-placeholder.png'
           data-src='#{image}'
           data-js='lazy-load-image'
