@@ -107,16 +107,6 @@ h6 {
 		width:auto;
 	}
 }
-
-.type {
-	& > h2:first-child {
-		margin-top:rem(-48);
-	}
-	& > h1:first-child {
-		@include respond-to($bp-tiny) {
-			margin-top:rem(36);
-		}
-	}
 }
 
 /* ==|== Typography =================
