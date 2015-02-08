@@ -59,6 +59,9 @@ g.loadImages = function() {
       $(self.selectors.headerParent).before(headerToInsert);
       self.wpHeaderSet();
     }
+    if ($('body').hasClass('triathlon')) {
+      self.wpHeaderSet();
+    }
   }
 
 	$(document).ready(function() {
