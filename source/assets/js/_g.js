@@ -11,7 +11,8 @@ g.partials = [
   'loadImages',
   'navToggle',
   'codeHighlight',
-  'heroScroll'
+  'heroScroll',
+  'anchorScroll'
 ];
 
 // This _init function is the function which kicks everything off when
