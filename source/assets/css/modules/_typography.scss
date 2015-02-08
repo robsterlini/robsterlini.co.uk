@@ -43,10 +43,10 @@ h1 {
 	line-height:1.15;
 	margin:rem(72) auto rem(24);
   @include respond-to($bp-small) {
-    @include font-size(48);
+    @include font-size(46);
   }
   @include respond-to($bp-tiny) {
-    @include font-size(44);
+    @include font-size(40);
   }
 }
 
