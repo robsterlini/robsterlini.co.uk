@@ -1,0 +1,43 @@
+body.triathlon {
+  main {
+    a {
+      color: $color-b-macmillan-2;
+      @include hover {
+        color: $color-b-macmillan-1;
+      }
+      @include active {
+        color: $color-black;
+      }
+    }
+  }
+  .btn {
+    background-color: $color-b-macmillan-2;
+    border-color: $color-b-macmillan-2;
+    // color: $color-white;
+    @include hover {
+      background-color: $color-b-macmillan-1;
+      border-color: $color-b-macmillan-1;
+    }
+  }
+  .btn--outline {
+    border-color: $color-b-macmillan-2;
+    color: $color-b-macmillan-2;
+    @include hover {
+      border-color: $color-b-macmillan-1;
+      color: $color-b-macmillan-1;
+    }
+  }
+  main {
+    .btn {
+      color: $color-white;
+      @include hover {
+        color: $color-white;
+      }
+    }
+  }
+  // .hero__headers {
+  //   .btn--outline {
+  //     margin-left: 0;
+  //   }
+  // }
+}
