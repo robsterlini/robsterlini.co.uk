@@ -17,7 +17,7 @@ g.loadImages = function() {
 	self.classes = {
 		loaded:         "image--loaded",
 		parentLoaded:   "figure--loaded",
-    journal:        'journal_article',
+    journal:        'journal_',
     headerToggled:  'article__fixed-header--toggled'
 	}
 
@@ -51,7 +51,7 @@ g.loadImages = function() {
   }
 
   self.wpInit = function wpInit() {
-    if ($('body').hasClass(self.classes.journal)) {
+    if ($('body[class*=" ' + self.selectors.journal + '"').length) {
       var headerToInsert =  '<div class="article__fixed-header" data-js="fixed-header">';
         headerToInsert +=   '<div class="group">',
         headerToInsert +=   '<h1 class="sc"><span>You&rsquo;re reading </span>' + $(self.selectors.currentHeader).text() + '</h1>',
