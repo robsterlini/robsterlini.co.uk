@@ -66,6 +66,11 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   }
 }
 
+// Hero
+.ss-hero-down:before {
+  content:'⬇';
+}
+
 // Images
 .ss-picture:before {
   content: '🌄'; 
