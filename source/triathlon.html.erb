@@ -12,11 +12,11 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
     subtitle: current_page.data.description,
     extra: "<p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
   } %>
-  <main id="main">
-    <article class="group">
   <div class="article__fixed-header" data-js="fixed-header">
   <a class='btn' href='<%= current_page.data.donate_url %>' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a>
   </div>
+  <main id="main" data-js="header-parent">
+    <article class="group" data-anchors>
       <h2 id="a-bit-of-background">A bit of background</h2>
       <p>Late 2014 I decided that a triathlon sounded like a good idea, at the time it was a pipe dream, but after a bit of researching, and an impulse decision later I’d signed up for the London Triathlon in August 2015.</p>
       <p>I’ve never done a triathlon before.</p>
