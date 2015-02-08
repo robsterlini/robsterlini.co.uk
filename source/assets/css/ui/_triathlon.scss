@@ -9,6 +9,12 @@ body.triathlon {
         color: $color-black;
       }
     }
+    .btn {
+      color: $color-white;
+      @include hover {
+        color: $color-white;
+      }
+    }
   }
   .btn {
     background-color: $color-b-macmillan-2;
@@ -27,17 +33,61 @@ body.triathlon {
       color: $color-b-macmillan-1;
     }
   }
-  main {
-    .btn {
-      color: $color-white;
-      @include hover {
-        color: $color-white;
+  .js & {
+   [data-anchors] {
+      h2 {
+        &:before {
+          color: $color-b-macmillan-2;
+        }
       }
     }
   }
-  // .hero__headers {
-  //   .btn--outline {
-  //     margin-left: 0;
-  //   }
-  // }
+  .hero__header--alpha,
+  .hero__header--beta,
+  .btns {
+    position: relative;
+    z-index: 1;
+  }
+  .hero__bg--triathlon {
+    position: absolute;
+    top: rem(-15);
+    left: rem(150);
+    right: 0;
+    height: rem(180);
+    background: url(../images/hero/triathlon-paint.png) center top no-repeat;
+    background-size: 100% 100%;
+    @include respond-to(1024) {
+      left: rem(100);
+      right: rem(-50);
+    }
+    @include respond-to(900) {
+      left: rem(50);
+      right: rem(-100);
+    }
+    @include respond-to(750) {
+      left: rem(-10);
+      right: rem(-100);
+    }
+    @include respond-to(450) {
+      left: rem(-100);
+      right: rem(-100);
+    }
+    @include respond-to(400) {
+      height: rem(220);
+    }
+  }
+  .article__fixed-header {
+    background: none;
+    box-shadow: none;
+    opacity: 0;
+    text-align: right;
+    transform: none;
+    transition:all .25s cubic-bezier(#{$bezier-nice});
+    visibility: hidden;
+  }
+  .article__fixed-header--toggled {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
 }
