@@ -17,14 +17,12 @@
         <h1 data-js="page-header"><%= current_article.title %></h1>
         <p class="article__description"><%= current_article.data.description %></p>
       <% end %>
-        <% if current_article.data.tldr %>
-          <aside class="article__tldr">
-            <p id="tldr"><strong><abbr title="Too long didn’t read">TL;DR</abbr></strong> <em><%= current_article.data.tldr %></em></p>
-          </aside>
-        <% end %>
-        <div class="text fulltext">
-          <%= yield %>
-        </div>
+      <% if current_article.data.tldr %>
+        <aside class="article__tldr">
+          <p id="tldr"><strong><abbr title="Too long didn’t read">TL;DR</abbr></strong> <em><%= current_article.data.tldr %></em></p>
+        </aside>
+      <% end %>
+      <%= yield %>
     </article>
     <h2>Good read?</h2>
     <h3>Sharing is caring!</h3>
