@@ -70,7 +70,7 @@
     margin-top:rem(5);
   }
   .btn {
-    margin: rem(5) em(10) rem(5) 0;
+    margin: rem(5) rem(10) rem(5) 0;
     color:$color-black;
     background-color:$color-link-reverse;
     border-color:$color-link-reverse;
@@ -81,7 +81,7 @@
     }
   }
   .btn--outline {
-    margin: rem(5) 0 rem(5) em(10);
+    margin: rem(5) 0 rem(5) rem(10);
     color:$color-link-reverse;
     border-color:$color-link-reverse;
     @include hover {
