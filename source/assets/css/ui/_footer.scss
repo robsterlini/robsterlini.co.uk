@@ -3,16 +3,14 @@
   font-style: italic;
   color:$color-accent;
   margin-top:rem(-0);
-  padding:rem(100) 0 0 rem(150);
+  padding:rem(50) 0 0 rem(150);
   position: relative;
   width:100%;
   overflow: hidden;
   z-index: 1;
   @include respond-to($bp-small) {
     padding-left:rem(60);
-  }
-  @include respond-to-height(600) {
-    padding-left:rem(60);
+    padding-top: rem(32);
   }
   @include respond-to($bp-tiny) {
     padding-left:0;
