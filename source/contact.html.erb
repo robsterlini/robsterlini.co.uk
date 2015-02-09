@@ -1,6 +1,6 @@
 ---
 title: Say hi!
-nav: process
+nav: contact
 description: So you wanna get in touch, eh? Here’s how&hellip;
 ---
 
@@ -9,12 +9,14 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
     <article class="type group">
       <h1><%= current_page.data.title %></h1>
       <p class="article__description"><%= current_page.data.description %></p>
-      <p>Get to know me in little, bit-size chunks. If you ever want to know which tattoo I’m getting next, which of my Spurs shirts is my favourite, or anything else for that matter, just <a href='/contact' title='Get in touch'>reach out</a>!</p>
+      <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <a href="/youtube" title="Read about why I don’t work on YouTube anymore">in my journal</a>.</p>
       <div class="list--large-icons">
-      <!--<% data.contact.contact.each do |about| %>
-        --><div class="list--large-icons__item ss-about-<%= about.slug %>">
-          <h2><%= about.title %></h2>
-          <p><%= about.desc %></p>
+      <!--<% data.contact.contact.each do |contact| %>
+        --><div class="list--large-icons__item list--large-icons__item--large ss-contact-<%= contact.slug %>">
+          <h2><%= contact.title %></h2>
+          <p><em><%= contact.when %></em></p>
+          <%= contact.desc %>
+          <p class='btns--left'><a class='btn' href='<%= contact.link.href %>' title='<%= contact.link.title %>'><%= contact.link.text %></a></p>
         </div><!--
       <% end %>-->
       </div>
