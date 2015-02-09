@@ -1,10 +1,9 @@
 .footer {
-  @include animation('%fade-in',0.25s);
-  text-align: center;
-  background: $color-background;
-  color:$color-accent-mono;
+  font-family: $font-stack-regular-italic;
+  font-style: italic;
+  color:$color-accent;
   margin-top:rem(-0);
-  padding:rem(100) 0 rem(40) rem(150);
+  padding:rem(100) 0 0 rem(150);
   position: relative;
   width:100%;
   overflow: hidden;
@@ -38,8 +37,5 @@
     position: relative;
     z-index:1;
     @include font-size(16);
-    & + p {
-      margin-bottom:0;
-    }
   }
 }
