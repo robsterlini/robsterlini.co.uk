@@ -54,8 +54,8 @@
 	color:$color-white;
 	text-shadow: none;
 	@include hover {
-		background:$color-black;
-		border-color:$color-black;
+		background:$color-link-primary-hover;
+		border-color:$color-link-primary-hover;
 		color:$color-white;
 	}
 	.btns--read-more & {
@@ -73,7 +73,7 @@
 	// color:darken($color-accent,10%);
 	// border-color:darken($color-accent,5%);
 	@include hover {
-		color:$color-black;
-		border-color:$color-black;
+		color:$color-link-primary-hover;
+		border-color:$color-link-primary-hover;
 	}
 }
