@@ -81,6 +81,14 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   content: '🌄'; 
 }
 
+// Contact
+.ss-contact-email:before {
+  content:'✉';
+}
+.ss-contact-twitter:before {
+  content:'🐦';
+}
+
 // Categories
 .ss-cat-design-and-dev:before {
   content:'🎨';
