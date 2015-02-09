@@ -46,7 +46,7 @@ g.anchorScroll = function() {
 
   self.animateScroll = function(id, hash) {
    $('html,body').animate({
-      scrollTop: $(hash).offset().top
+      scrollTop: $(hash).offset().top + 10
     }, 1000);
   }
 
