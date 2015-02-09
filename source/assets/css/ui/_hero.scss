@@ -12,6 +12,9 @@
     min-height:rem(300);
     padding:rem(25) 0 rem(60);
   }
+  @include respond-to($bp-tiny) {
+    padding-top: rem(60);
+  }
   .body--404 & {
     background:none;
     margin-bottom:rem(-100);
@@ -76,8 +79,8 @@
     border-color:$color-link-reverse;
     @include hover {
       color:$color-black;
-      background:$color-white;
-      border-color:$color-white;
+      background:$color-link-reverse-hover;
+      border-color:$color-link-reverse-hover;
     }
   }
   .btn--outline {
@@ -85,8 +88,8 @@
     color:$color-link-reverse;
     border-color:$color-link-reverse;
     @include hover {
-      color:$color-white;
-      border-color:$color-white;
+      color:$color-link-reverse-hover;
+      border-color:$color-link-reverse-hover;
     }
   }
 }
