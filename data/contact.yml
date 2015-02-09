@@ -1,0 +1,24 @@
+########
+
+contact:
+
+##
+
+    -   title: "Email"
+        when: "For chatting about projects or asking long questions"
+        slug: "email"
+        desc: "<p>If you’ve read about <a href='/process' title='Read about my process before enquiring about a project'>my process</a> and want me on a freelance job; or you’re dying to ask a super-duper long question then email is the way forward.</p><p class='btns--left'><a class='btn' href='mailto:hi@robsterlini.co.uk' title='Email me (opens an email client)'>hi@robsterlini.co.uk</a></p>"
+
+##
+
+    -   title: "Inked in four places"
+        slug: "tattoo"
+        when: "test"
+        desc: "<p>I’ve got 4 tattoos. <a href='http://instagram.com/p/pE6wc1P' title='See the photo of the tattoo on Twitter'>Two ampersands</a> (BE Garamond &amp; Skolar italic), <a href='https://twitter.com/RobSterlini/status/421793229512912896' title='See the photo of the tattoo on Twitter'>an excerpt of <em><abbr title='Hail Mary'>Ave Maria</abbr></em></a> and a <a href='http://instagram.com/p/c-</em>-qwP-0d/' title='See the photo of the tattoo on Instagram'>quote about maturity</a> on the back of my ribs.</p><p>I’ll be adding more for sure, but there’s plenty of time for that so I’m in no rush to fill up just yet.</p>"
+
+##
+
+    -   title: "Life-long Spurs fan"
+        slug: "spurs"
+        when: "test"
+        desc: "<p>I’ve been a Tottenham Hotspur fan since I was old enough to kick a ball, and throughout the years I’ve amassed quite a <a href='http://instagram.com/p/sDmlBAv-02/' title='See the collection on Instagram'>collection of Lilywhite shirts</a>.</p><p>My collection includes kits signed by the likes of David Ginola, Steffen Freund, Paul Robinson, and more!</p>"
