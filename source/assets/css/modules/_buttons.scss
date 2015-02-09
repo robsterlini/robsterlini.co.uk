@@ -23,6 +23,11 @@
 	// 	box-shadow: $color-background 0 0 0 rem(3);
 	// }
 }
+.btns--left {
+	.btn {
+		margin-left: 0;
+	}
+}
 
 /* ==|== Buttons =================
 	Buttons
