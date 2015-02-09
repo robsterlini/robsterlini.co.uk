@@ -135,7 +135,7 @@ p {
 }
 
 blockquote {
-	font-family:$font-stack-regular-italic;
+	font-family: $font-stack-regular-italic;
 	font-weight:normal;
 	font-style:italic;
 	margin:rem(15) auto;
@@ -149,6 +149,11 @@ blockquote {
 		}
 		@include respond-to($bp-tiny) {
 			@include font-size(20);
+		}
+	}
+	&.blockquote--long {
+		p {
+			@extend %paragraph;
 		}
 	}
 	cite {
