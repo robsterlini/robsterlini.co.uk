@@ -66,6 +66,11 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   }
 }
 
+// Menu
+.ss-menu:before {
+  content:'';
+}
+
 // Hero
 .ss-hero-down:before {
   content:'⬇';
