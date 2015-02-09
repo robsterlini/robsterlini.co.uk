@@ -51,18 +51,20 @@ ol {
 
 .list--large-icons {
 	margin-top: rem(16);
-	@include respond-to-min($bp-mid + 1) {
-		&:hover,
-	  &:focus {
-	    .list--large-icons__item {
-	      opacity: 0.5;
-	      &:hover,
-	      &:focus {
-	        opacity: 1;
-	      }
-	    }
-	  }
-	}
+}
+.list--large-icons--hover {
+  @include respond-to-min($bp-mid + 1) {
+    &:hover,
+    &:focus {
+      .list--large-icons__item {
+        opacity: 0.5;
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 .list--large-icons__item {
   display: inline-block;
