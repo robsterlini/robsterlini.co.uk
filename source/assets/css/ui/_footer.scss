@@ -37,5 +37,11 @@
     position: relative;
     z-index:1;
     @include font-size(16);
+    @include respond-to($bp-small) {
+      @include font-size(15);
+    }
+    @include respond-to($bp-tiny) {
+      @include font-size(14);
+    }
   }
 }
