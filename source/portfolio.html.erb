@@ -32,7 +32,12 @@ description: I’ve always been told that “If a job’s worth doing, it’s wo
       <% end %>
 
       <% #OTHER PROJECTS %>
+      <h2 id="other-work">Other work</h2>
       <% data.projects.other.each do |project| %>
+        <h3><%= project.name %></h3>
+        <% project.copy.each do |text| %>
+          <p><%= text %></p>
+        <% end %>
       <% end %>
     </article>
   </main>
