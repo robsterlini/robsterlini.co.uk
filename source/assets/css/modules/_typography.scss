@@ -50,6 +50,9 @@ h1 {
     @include font-size(34);
     // margin-top: rem(48);
   }
+  & + h2 {
+  	padding-top: rem(28);
+  }
 }
 
 h2 {
