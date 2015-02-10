@@ -70,8 +70,6 @@
 }
 .btn--outline {
 	@extend %btn;
-	// color:darken($color-accent,10%);
-	// border-color:darken($color-accent,5%);
 	@include hover {
 		color:$color-link-primary-hover;
 		border-color:$color-link-primary-hover;
