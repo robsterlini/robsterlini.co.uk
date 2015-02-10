@@ -1,5 +1,6 @@
 body.triathlon {
-  main {
+  main,
+  .footer {
     a {
       color: $color-b-macmillan-2;
       @include hover {
@@ -9,6 +10,8 @@ body.triathlon {
         color: $color-black;
       }
     }
+  }
+  main {
     .btn {
       color: $color-white;
       @include hover {
