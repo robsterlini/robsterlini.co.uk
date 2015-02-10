@@ -51,6 +51,7 @@ ol {
 
 .list--large-icons {
 	margin-top: rem(16);
+  padding: 0;
 }
 .list--large-icons--hover {
   @include respond-to-min($bp-mid + 1) {
