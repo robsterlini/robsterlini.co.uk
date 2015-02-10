@@ -4,6 +4,18 @@ featured:
 
 ##
 
+    -   name: "University of Reading"
+        slug: "university-of-reading"
+        date: "2013–14"
+        role: "Design &amp; front-end"
+        description: "I started work in the Digital Development team at the University of Reading in early June 2013, and just over seven months, a lot of hard work, and a few too many coffees later we launched the new, and improved reading.ac.uk"
+        buttons:
+          show: true
+          live: "http://www.reading.ac.uk"
+          case_study: false
+
+##
+
     -   name: "Hotspur Related"
         slug: "hotspur-related"
         image: "hotspur-related.jpg"
@@ -17,8 +29,20 @@ featured:
 
 ##
 
-    -   name: "St George’s JCR 2013–14"
-        slug: "st-georges-jcr-2013-14"
+    -   name: "St George’s JCR 2014"
+        slug: "st-georges-jcr-2014"
+        date: "2014"
+        role: "Design &amp; front-end"
+        description: "As the 2013 team moved on, the 2014 team came in; Joe – a first year when I was president – now president himself came to me about updating the website for the new team."
+        buttons:
+          show: true
+          live: "http://stgeorgesjcr.co.uk"
+          case_study: false
+
+##
+
+    -   name: "St George’s JCR 2013"
+        slug: "st-georges-jcr-2013"
         date: "2013–14"
         role: "Design &amp; front-end"
         description: "Having built the previous two sites for the committee while I was a member, and then a president, the new team got me back in to revamp, and refresh it for the new year"
