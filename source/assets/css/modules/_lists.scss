@@ -88,7 +88,8 @@ ol {
   }
   @include respond-to($bp-mid) {
     display: block;
-  	padding: 0 calc(100% - #{rem(500)}) rem(16) 0;
+  	// padding: 0 calc(100% - #{rem(500)}) rem(16) 0;
+    padding: 0 0 rem(16); 
     margin: 0 auto;
   	width: 100%;
   	&:before {
