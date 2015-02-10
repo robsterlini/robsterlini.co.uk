@@ -25,7 +25,8 @@ g.heroScroll = function() {
     // Check that we're only firing whilst we can actually see the hero
     if (wScrolled <= (pHeight + 100)) {
       // Set the CSS translation based on the plxType defined in the data attributes of the item
-      var translate = 'translate3d(0,'+ self.roundToNum(wScrolled / 10,2) +'%,0)';
+      // var translate = 'translate3d(0,'+ self.roundToNum((wScrolled / 10),2) +'%,0)'; 
+      var translate = 'translate3d(0,'+ self.roundToNum((wScrolled / 5),2) +'px,0)';
       // Apply these styles to the child
       $(self.selectors.mover).css({
         // For older webkit browsers (remove when enough support is available for unprefixed)
