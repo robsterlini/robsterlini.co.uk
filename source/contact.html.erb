@@ -12,11 +12,15 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
       <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <a href="/youtube" title="Read about why I don’t work on YouTube anymore">in my journal</a>.</p>
       <div class="list--large-icons">
       <!--<% data.contact.contact.each do |contact| %>
-        --><div class="list--large-icons__item list--large-icons__item--large ss-contact-<%= contact.slug %>">
-          <h2><%= contact.title %></h2>
-          <p><em><%= contact.when %></em></p>
-          <%= contact.desc %>
-          <p class='btns--left'><a class='btn' href='<%= contact.link.href %>' title='<%= contact.link.title %>'><%= contact.link.text %></a></p>
+        --><div class="list--large-icons__item ss-contact-<%= contact.slug %>">
+          <div class="list--large-icons__top">
+            <h2><%= contact.title %></h2>
+            <p><em><%= contact.when %></em></p>
+            <%= contact.desc %>
+          </div>
+          <div class="list--large-icons__bottom">
+            <p class='btns--left'><a class='btn' href='<%= contact.link.href %>' title='<%= contact.link.title %>'><%= contact.link.text %></a></p>
+          </div>
         </div><!--
       <% end %>-->
       </div>
