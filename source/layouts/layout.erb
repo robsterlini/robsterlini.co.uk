@@ -42,12 +42,16 @@
   </head>
   
   <body class="<%= page_classes %>">
-    <%= partial "partials/masthead" %>
+    <% if !current_page.data.no_masthead %>
+        <%= partial "partials/masthead" %>
+    <% end %>
     <!--[if lt IE 8]>
       <p>Come on man, it’s 2015. Update your browser, or stuff is going to look a bit upside down! Don’t say I didn’t warn you!</p>
     <![endif]-->
     <%= yield %>
-    <%= partial "partials/footer" %>
+    <% if !current_page.data.no_footer %>
+        <%= partial "partials/footer" %>
+    <% end %>
     <%= partial "partials/scripts" %>
   </body>
 </html>
