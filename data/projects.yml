@@ -58,3 +58,21 @@ other:
 ##
 
     -   name: "Oxford Times"
+        copy:
+            - "News can, and is regularly accessed across a wide range of devices. This project focused on how to best display modular, dynamic information across a range of screen sizes, and was my most, and least favourite brief from my entire degree. It kept me up at night, but I poured my heart and soul into it; and ultimately earning an <a href='http://instagram.com/p/asPmJxP-9K' title='An Instagram snap of the printer’s fist which delivered the message'>Examiners’ Award</a> for the project."
+            -   "Although this was only ever a university project, you can still have a play with the <a href='http://resub.robsterlini.co.uk/oxford/' title='See the front-end mockup of my version of The Oxford Times'>semi-functional prototype</a> or look over the <a href='http://i.robsterlini.co.uk/projects/projects_oxford-1.jpg' title='Check out a poster from the faux-launch'>faux-launch poster</a>."
+
+##
+
+    -   name: "LEGO not Legos"
+        copy:
+            - "<a href='http://legonotlegos.com' title='A PSA about how not to pluralise LEGO'>legonotlegos.com</a> was an idea born out of a simple domain sale from (mt) and a personal hatred for the incorrect pluralisation of LEGO. <em>Legos</em> is not a thing, 99% of the time people mean LEGO bricks – “Ouch. I stepped on the LEGO<strike>s</strike> bricks!”."
+            - "This was purely for fun, but now and again I take to Twitter armed with the <a href='https://twitter.com/search?q=%23LEGOnotlegos&amp;src=hash&amp;f=realtime' title='Join in the #LEGOnotLegos crusade'>#LEGOnotLegos</a> hashtag and the everlasting pain of standing on the damn bricks as a kid!"
+
+##
+
+    -   name: "Monica Rossi"
+        copy:
+            - "<a href='http://monicarossi.co.uk' title='Visit Monica’s site'>Monica Rossi</a> – my cousin – came to me about sorting out a few out of date images on her site that she couldn’t change, but the site was visually outdated and I took it as an opportunity to practice a few JS bits and create site’s image lightbox from scratch."
+            - "She’s a fantastic freelance make-up artist so be sure to <a href='http://monicarossi.co.uk/contact' title='Get in touch with Monica'>give her a shout</a> if you’re in need of one!"
+
