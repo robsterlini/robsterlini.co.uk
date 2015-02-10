@@ -109,6 +109,18 @@ ol {
   	}
   }
 }
+.list--large-icons__link {
+  display: block;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: rem(-72);
+    height: rem(72);
+    left: 0;
+    width: 100%;
+  }
+}
 .list--large-icons__item--large {
   width: 50%;
   @include respond-to($bp-mid) {
