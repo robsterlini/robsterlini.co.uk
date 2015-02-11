@@ -81,6 +81,44 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   content: '🌄'; 
 }
 
+// Process
+.ss-process-desire:before {
+  content:'👍';
+}
+.ss-process-interest:before {
+  content:'⋆';
+}
+.ss-process-budget:before {
+  content:'💷';
+}
+.ss-process-basics:before {
+  content:'💻';
+}
+.ss-process-browser:before {
+  content:'🗔';
+}
+.ss-process-extras:before {
+  content:'';
+}
+.ss-process-communication:before {
+  content:'🗪';
+}
+.ss-process-design:before {
+  content:'';
+}
+.ss-process-dev:before {
+  content:'';
+}
+.ss-process-ship:before {
+  content:'🚀';
+}
+.ss-process-analytics:before {
+  content:'📊';
+}
+.ss-process-iterate:before {
+  content:'';
+}
+
 // Contact
 .ss-contact-email:before {
   content:'✉';
