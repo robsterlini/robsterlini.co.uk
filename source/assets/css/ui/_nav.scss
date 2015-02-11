@@ -9,23 +9,23 @@ $pages: (
   triathlon: triathlon
 );
 
-body {
-  @include respond-to($bp-tiny) {
-    &:before {
-      background: rgba($color-dark, 0.99);
-      color: $color-white;
-      content:'Rob Sterlini';
-      height: rem(42);
-      left: 0;
-      line-height: rem(40);
-      padding: rem(2) 3.125% 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-    }
-  }
-}
+// body {
+//   @include respond-to($bp-tiny) {
+//     &:before {
+//       background: rgba($color-dark, 0.99);
+//       color: $color-white;
+//       content:'Rob Sterlini';
+//       height: rem(42);
+//       left: 0;
+//       line-height: rem(40);
+//       padding: rem(2) 3.125% 0;
+//       position: fixed;
+//       top: 0;
+//       width: 100%;
+//       z-index: 10;
+//     }
+//   }
+// }
 .nav {
   width:rem(150);
   height:100%;
@@ -53,7 +53,7 @@ body {
   }
   @include respond-to($bp-tiny) {
     display: block;
-    padding-top: rem(42);
+    // padding-top: rem(42);
     width:100%;
     &:before {
       display: none;
