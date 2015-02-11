@@ -18,5 +18,4 @@ cache:
         text/javascript: access plus 7 days
 
 errors:
-    401: "Unauthorized access"
     404: /404/index.html
