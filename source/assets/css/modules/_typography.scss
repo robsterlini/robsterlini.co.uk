@@ -147,6 +147,10 @@ blockquote {
 	max-width:$layout-max-width-suffix;
 	border-left:lighten($color-accent,15%) solid rem(2);
 	padding-left:rem(23);
+	& + &,
+	.article__description + & {
+		margin-top: rem(30);
+	}
 	p {
 		@include font-size(24);
 		@include respond-to($bp-small) {
