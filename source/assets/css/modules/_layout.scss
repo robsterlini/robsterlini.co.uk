@@ -39,3 +39,14 @@ main {
     padding-bottom:rem(5);
   }
 }
+
+hr {
+  margin: rem(60) auto rem(40);
+  max-width: rem($layout-max-width /2);
+  outline: none;
+  border: 0;
+  border-top: rem(2) lighten($color-accent, 30%) solid;
+  p + & {
+    margin-top: rem(60);
+  }
+}
