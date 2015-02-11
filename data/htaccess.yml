@@ -5,6 +5,7 @@ web:
 redirect:
     /youtube: /journal/youtube
     /tri: /triathlon
+    /testimonials: /process#testimonials
 
 cache:
     deflate: \\.(js|css|html|ico|png)$
