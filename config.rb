@@ -100,6 +100,14 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
+# disable layout
+page ".htaccess.apache", :layout => false
+
+# rename file after build
+after_build do
+  File.rename 'build/.htaccess.apache', 'build/.htaccess'
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
