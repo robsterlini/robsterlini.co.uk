@@ -1,0 +1,22 @@
+web:
+    domain: robsterlini.co.uk
+    url: https://www.robsterlini.co.uk
+
+redirect:
+    /youtube: /journal/youtube
+    /tri: /triathlon
+
+cache:
+    deflate: \\.(js|css|html|ico|png)$
+    expire:
+        image/png: access plus 1 month
+        image/ico: access plus 1 month
+        image/x-icon: access plus 1 month
+        text/html: access plus 1 minute
+        text/css: access plus 7 days
+        application/javascript: access plus 7 days
+        text/javascript: access plus 7 days
+
+errors:
+    401: "Unauthorized access"
+    404: /404/index.html
