@@ -76,18 +76,6 @@ $pages: (
     right:0;
     top:0;
     transition:opacity .25s cubic-bezier(#{$bezier-nice}), transform .25s cubic-bezier(#{$bezier-nice});
-    // &:after {
-    //   content:'';
-    //   width:rem(40);
-    //   height:rem(40);
-    //   position: absolute;
-    //   top:rem(5);
-    //   left:rem(5);
-    //   border-radius:rem(3);
-    //   border:rem(2) solid $color-white;
-    //   background:rgba($color-dark,0.85);
-    //   z-index:3;
-    // }
     &:before {
       width:rem(32);
       height:rem(32);
