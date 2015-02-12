@@ -41,24 +41,24 @@ $font-qualifier-header: ".wf-aishalatinsemibold-n6-active";
 		}
 	}
 	@if $style == bold { 
-		.wf-skolar3pebold-n7-active & {
+		// .wf-skolar3pebold-n7-active & {
 			font-family:$font-stack-regular-bold;
-		}
+		// }
 	}
 	@else {
-		.wf-skolar3peregular-n4-active & {
+		// .wf-skolar3peregular-n4-active & {
 			font-family:$font-stack-regular;
-		}
-		.wf-skolar3peitalic-n4-inactive & {
+		// }
+		// .wf-skolar3peitalic-n4-inactive & {
 			em {
 				font-family:$font-stack-regular-italic;
 			}
-		}
-		.wf-skolar3pebold-n7-active & {
+		// }
+		// .wf-skolar3pebold-n7-active & {
 			strong {
 				font-family:$font-stack-regular-bold;
 			}
-		}
+		// }
 	}	
 }
 
