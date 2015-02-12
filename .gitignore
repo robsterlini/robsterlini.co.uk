@@ -117,3 +117,4 @@ public
 
 /.csscomb.json
 build
+/source/assets/fonts/*
