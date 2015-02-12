@@ -18,10 +18,6 @@ $font-default-line-height: 1.5;
 $font-stack-regular: 	"Skolar3 PE Regular", Georgia, serif;
 $font-stack-regular-bold: "Skolar3 PE Bold", Georgia, serif;
 $font-stack-regular-italic: "Skolar3 PE Italic", Georgia, serif;
-$font-stack-header: 	"Aisha Latin Semibold", "Skolar3 PE Regular", Georgia, serif;;
-
-// Our font-qualifiers
-$font-qualifier-header: ".wf-aishalatinsemibold-n6-active";
 
 @mixin font-family-serif($style: regular) {
 	@if $style == bold {
@@ -61,38 +57,6 @@ $font-qualifier-header: ".wf-aishalatinsemibold-n6-active";
 		// }
 	}	
 }
-
-@mixin font-family-header($value, $base: $font-default-size) {
-	// font-family:$font-stack-regular-bold;
-	// font-weight:bold;
-	// font-style:normal;
-
-	font-family:$font-stack-regular;
-	font-weight:normal;
-	font-style:normal;
-
-	$rem: $value/$base;
-	font-size:$value + px;
-	font-size:$rem + rem;
-
-}
-
-// @mixin font-family-header($value, $base: $font-default-size) {
-// 	font-family:$font-stack-header;
-// 	font-weight:600;
-// 	font-style:normal;
-
-// 	$rem: $value/$base;
-// 	font-size:$value + px;
-// 	font-size:$rem + rem;
-
-// 	#{$font-qualifier-header} & {
-// 	// .test & {
-// 		font-size:($value * 2) + px;
-// 		font-size:($rem * 2) + rem;
-// 		line-height:0.75;
-// 	}	
-// }
 
 /* ==|== Type =================
 	Functions
