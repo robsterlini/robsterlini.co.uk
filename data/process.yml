@@ -3,7 +3,7 @@
 steps:
 
     -   step: "What we need"
-        id: "need"
+        id: "what-we-need"
         desc: "<p>Before we start a project, we need three things. Without all of them, we’ve not got a project worth kicking off.</p>"
         list:
 
