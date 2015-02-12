@@ -8,9 +8,10 @@ redirect:
     /testimonials: /process#testimonials
 
 cache:
-    deflate: \\.(js|css|html|ico|png)$
+    deflate: \\.(js|css|html|ico|png|jpg)$
     expire:
         image/png: access plus 1 month
+        image/jpg: access plus 1 month
         image/ico: access plus 1 month
         image/x-icon: access plus 1 month
         text/html: access plus 1 minute
