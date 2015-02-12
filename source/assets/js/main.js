@@ -8,7 +8,7 @@
 //= require _navToggle
 //= require _heroScroll
 //= require _anchorScroll
-//= require _errorHero
+//= require _loadHero
 
 $(function() {
 	// This is all we need in our main.js file - isn't it neat :)
