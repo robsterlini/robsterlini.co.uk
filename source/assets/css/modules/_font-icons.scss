@@ -2,9 +2,9 @@
   font-family: "SSSymbolicons";
   src: url('../fonts/ss-symbolicons-line.eot');
   src: url('../fonts/ss-symbolicons-line.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ss-symbolicons-line.woff2') format('woff2'),
        url('../fonts/ss-symbolicons-line.woff') format('woff'),
-       url('../fonts/ss-symbolicons-line.ttf')  format('truetype'),
-       url('../fonts/ss-symbolicons-line.svg#SSSymboliconsLine') format('svg');
+       url('../fonts/ss-symbolicons-line.ttf')  format('truetype');
   font-weight: 300;
   font-style: normal;
 }
@@ -29,6 +29,9 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// Current subset string – http://www.fontsquirrel.com/tools/webfont-generator
+// ⌂👶📫⏱🏃⬇🌄👍⋆💷💻🗔🗪🚀📊✉🐦🏀🎨✒⚽🍕🎄🏈🏃🚲✈🎿🐻💬&🚘🐘🌎
 
 // Navigation
 .ss-nav-home:before {
