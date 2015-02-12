@@ -13,5 +13,10 @@ body.contact {
   .list--large-icons__top {
     flex: 1;
   }
-
+  @include respond-to($bp-mid) {
+    .list--large-icons,
+    .list--large-icons__item {
+      display: block;
+    }
+  }
 }
