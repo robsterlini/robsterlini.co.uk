@@ -1,3 +1,4 @@
+//= require _modernizr
 //= require _g
 //= require _plugins
 //= require _browserSniff
