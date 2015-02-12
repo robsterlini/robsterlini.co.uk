@@ -2,13 +2,15 @@
 title: Web designer
 nav: home
 description: I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail.
+hero: main.jpg
 no_footer: true
 no_masthead: true
 ---
 
 <section id="content" class="wrapper" data-page="home">
   <%= partial "partials/hero", locals: {
-    image: "main.jpg",
+    image: "#{current_page.data.hero}",
+    image_small: "main_600.jpg",
     title: "Hi I’m Rob Sterlini",
     subtitle: current_page.data.description,
     extra: "<p>I work for <a href='http://fueled.com' title='Visit the Fueled website'>Fueled</a>, but take on freelance projects that speak to me! Oh, and I’m raising money for Macmillan by competing in a whole bunch of crazy events throughout 2015. <a href='/triathlon' title='Read about my fundraising plans here'>Read and donate?</a> You know you want to!</p>

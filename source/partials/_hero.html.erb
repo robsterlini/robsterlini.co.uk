@@ -1,5 +1,5 @@
 <div class="hero">
-  <div class="hero__bg" data-js="mover"<% if locals.has_key? :image %> style="background-image: url(/assets/images/hero/<%= image %>);"<% end %>>
+  <div class="hero__bg" data-js="mover"<% if locals.has_key? :image %> style="background-image: url(/assets/images/hero/hero-placeholder.gif);"<% end %> data-hero="<%= image %>" data-hero-small="<% if defined? image_small %><%= image_small %><% else %><%= image %><% end %>">
   </div>
   <div class="hero__headers" data-js="header-to-offset">
     <% if locals.has_key? :featured %>
