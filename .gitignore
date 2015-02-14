@@ -116,3 +116,5 @@ public
 /app/assets/build/js/templates.js
 
 /.csscomb.json
+build
+/source/assets/fonts/*
