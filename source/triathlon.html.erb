@@ -1,0 +1,94 @@
+---
+title: 2015 is all about fundraising for Macmillan
+nav: home
+description: I’ve made 2015 about doing endurance events, and pushing my limits… all in the name of raising as much as I can for Macmillan.
+hero: triathlon.jpg
+donate_url: http://uk.virginmoneygiving.com/RobSterlini
+---
+
+<section id="content" class="wrapper" data-page="home">
+  <%= partial "partials/hero", locals: {
+    image: "#{current_page.data.hero}",
+    image_small: "triathlon_600.jpg",
+    title: "<span>Triathlons and more for Macmillan</span>",
+    subtitle: current_page.data.description,
+    extra: "<p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
+  } %>
+  <div class="article__fixed-header" data-js="fixed-header">
+  <a class='btn' href='<%= current_page.data.donate_url %>' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a>
+  </div>
+  <main id="main" data-js="header-parent">
+    <article class="group" data-anchors>
+      <h2>Contents</h2>
+      <ul class="list--inline">
+        <li><a href="#a-bit-of-background" data-anchor>A bit of background</a></li><!--
+        --><li><a href="#why-macmillan" data-anchor>Why Macmillan?</a></li><!--
+        --><li><a href="#how-can-i-help" data-anchor>How can I help?</a></li><!--
+        --><li><a href="#what-am-i-doing" data-anchor>What am I doing?</a></li><!--
+        --><li><a href="#hows-training-going" data-anchor>How’s training going?</a></li><!--
+        --><li><a href="#thanks" data-anchor>Thanks</a></li>
+      </ul>
+      <h2 id="a-bit-of-background">A bit of background</h2>
+      <%= blog_image('/content/2015/02/macmillan-trisuit.jpg', 'Green’s definitely not my colour, and this trisuit is hella tight!', 'A quick Instagram selfie of me in my new trisuit', 'left') %>
+      <p>Late 2014 I decided that a triathlon sounded like a good idea, at the time it was a pipe dream, but after a bit of researching, and an impulse decision later I’d signed up for the London Triathlon in August 2015.</p>
+      <p>I’ve never done a triathlon before.</p>
+      <p>As part of the sign up process you’re asked if you’re fundraising for a specific charity, and it dawned on me that I could turn this journey of intrepidation into something that might (in some small way) affect someone else’s life for the better.</p>
+      <h2 id="why-macmillan" class="heading--clear">Why Macmillan?</h2>
+      <div class="image--right">
+        <%= partial "partials/svg/macmillan.svg" %>
+      </div>
+      <p>It’s estimated that <a href="http://www.macmillan.org.uk/Cancerinformation/Aboutcancer/Whogetscancer.aspx" title="Read about the facts on the Macmillan website">more than 1 in 3</a> people will develop cancer in their lifetime, chances are that you know someone that has battled, or is currently battling it.</p>
+      <p>The help Macmillan provide, and the support network that they’ve developed is second to none; whether it’s explaining proceedures to those with cancer, comforting and reassuring confused loved ones, or helping assess whether someone might need to go and see a doctor.</p>
+      <p>I’ve witnessed first hand the sensational work that Macmillan do every day, so couldn’t dream of a better charity to fundraise for&hellip; even if green isn’t my best look!</p>
+      <h2 id="how-can-i-help">How can I help?</h2>
+      <p>Fundraising is always a bit of an awkward one, but here’s it straight:</p>
+      <p><strong>I’d love it if you could donate anything you can towards my effort.</strong></p>
+      <p>No amount is too small. If you want to pick a specific triathlon and sponsor me by the mile, or by the number of times I cry as I struggle through <a href="#tough-mudder" title="Read about my Tough Mudder event I’ve got to come">Tough Mudder</a>.</p>
+      <p class="btns--center"><a class='btn' href='<%= current_page.data.donate_url %>' title='Help me raise money for the amazing work Macmillan do'>Give anything you can to Macmillan</a></p>
+      <p><strong>But!</strong> I know that sometimes it’s difficult to donate, and if you can’t, then don’t; instead I’d ask that you spread the word about the amazing work that Macmillan do, and have a read through <a href="http://www.macmillan.org.uk/" title="Visit the Macmillan website">their website</a> to see if you’re due a screening.</p>
+      <h2 id="what-am-i-doing">What am I doing?</h2>
+      <p>Currently? <strong>Two triathlons</strong>, <strong>Tough Mudder UK</strong>, and <strong>water-only January</strong>, but I’ve got a few ballots waiting to come through, and a third triathlon in my sights.</p>
+      <h3>The events</h3>
+      <p>This is a bit of a <abbr title="Too long; didn’t read">TL;DR</abbr> for my events throughout this year. For a bit more information on each then keep reading!</p>
+      <ul>
+        <li><strong class="small-caps">January</strong> Jan-water-ary</li>
+        <li><strong class="small-caps">2 May</strong> Tough Mudder UK</li>
+        <li><strong class="small-caps">12 July</strong> Jenson Button Trust Triathlon</li>
+        <li><strong class="small-caps">8 August</strong> The London Triathlon</li>
+      </ul>
+      <h3 id="jan-water-ary">Jan-water-ary</h3>
+      <p><em>1 January–7 February 2015 (with a week off for skiing)</em></p>
+      <p>Still haven’t found a catchier, less-rubbish name for it, but meh&hellip; This January, I decided to go one further than the no-alcohol Dryathlon and <strong>only</strong> drink water.</p>
+      <p>For most this may have been an easy challenge, but I love my diet coke and coffee too much so it proved tough.</p>
+      <blockquote class="blockquote--long">
+        <p>This was easier than I’d thought. Only found myself missing coffee a few times, and everything else was simple to cut out. Counting what I would have drunk proved to be trickier though, so at the end I decided to go for a round £5 per day rather than a Diet Coke here, a Starbucks there.</p>
+        <p>All in all I raised £155!</p>
+      </blockquote>
+      <h3 id="tough-mudder">Tough Mudder UK</h3>
+      <p><em>2 May 2015</em></p>
+      <p>I’ve seen people complete Tough Mudder, and it’s always looked like a twisted form of fun; until this year I’ve not had the bottle to sign up.</p>
+      <p>The hope is that the mental toughness will add an extra level and that it will help me hone my ability to dig deep for the later events where I might need it.</p>
+      <h3 id="jenson-button-tri">Jenson Button Trust Triathlon</h3>
+      <p><em>12 July 2015</em></p>
+      <p>This will likely be the first triathlon for this year, and will be my first real experience of one. The plan is to use this to get used to the way transition works, and how mass water starts work before the big day in August!</p>
+      <h3 id="the-london-triathlon">The London Triathlon</h3>
+      <p><em>8 August 2015</em></p>
+      <p>This is the big one!</p>
+      <p>The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for.</p>
+      <p>To be able to compete in an event this big in the city I grew up in will be great.</p>
+      <h2 id="hows-training-going">How’s training going?</h2>
+      <p>At this point (written on 8 February), it’s going well. I’ve got my trisuit – a dashing onepiece outfit that’ll go under my wetsuit, and is padded for cycling – and have run a few times in it.</p>
+      <p>On 4 January, <a href="http://instagram.com/p/xbnc-DP-9e/?modal=true" title="Check out the run on Instagram">I ran a half marathon distance</a>. It started off as a 15km run, but was so comfortable that I extended it out to the 22km mark; and it felt amazing. To achieve that without distance management training was pretty satisfying, so the hope is that with a bit of forethought and planning I ought to be able to cover similar distances relatively regularly. The only negative was coming in just over two hours, but my music had died towards the end, so the last mile or so was a bit slower than I’d have liked.</p>
+      <p>Physically, I’ve had <a href="http://instagram.com/p/yxm47lP--R/?modal=true" title="See how having my last PT session with Courtney made me feel on Instagram">my final PT session</a> with Courtney, but I’m really happy with my body shape and muscle mass strength-wise. Over the coming months, the plan is to introduce longer, more stamina-improving training methods to lean myself down ready to tackle the triathlons and potentially half marathons (which are ballot dependant). I’m quite excited for this, but going out for two hour plus runs requires an element of planning and foresight, so hopefully that doesn’t prove to tricky to balance out.</p>
+      <p>Mentally, for Tough Mudder at least, I’ve been watching the videos of what to maybe expect; the majority seam to be mind of matter jobs, so I’m hoping that on the day this’ll be relatively straight forward.</p>
+      <p>All in all, I’m feeling pretty damn good, and hoping to push on in the first event when it finally comes round. Excitement still has the edge over nerves; at least for the time being.</p>
+      <h2 id="thanks">Thanks</h2>
+      <p>Firstly, thanks for reading this. If you’ve got this far, then kudos.</p>
+      <p>A massive thank you also to anyone who’s donated, or who’s spread the word about the amazing work that Macmillan do; and a future cheers to anyone who’s planning to do either as well!</p>
+      <p>My family have been massively supportive throughout all of this, and them spurring me on every step of the way makes all the difference.</p>
+      <p>And I honestly don’t think I’d be in a position where I was ready to take on these challenges without the help and tutoring I’ve had from Courtney, it’s just a shame that I’ve moved to South London and can’t carry on our sessions.</p>
+      <p>I’m honoured to be able to fundraise for Macmillan, and I hope that I can raise whatever I can that will go towards helping someone out, and that we can spread their messages as well as we can!</p>
+      <p><strong>Thanks!</strong></p>
+    </article>
+  </main>
+</section>

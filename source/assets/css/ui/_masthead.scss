@@ -1,0 +1,28 @@
+.masthead {
+  @include animation('%fade-in');
+  position: fixed;
+  top:0;
+  left:0;
+  width:auto;
+  z-index:5;
+  height:100%;
+  text-shadow:rgba($color-black,0.2) 0 em(1) em(2);
+  transition:visibility .25s cubic-bezier(#{$bezier-nice}), opacity .25s cubic-bezier(#{$bezier-nice});
+  overflow: auto;
+  background:$color-black;
+  @include respond-to($bp-tiny) {
+    background:rgba($color-black,0.98);
+    background:linear-gradient(rgba($color-black,0.95),$color-black);
+    width:100%;
+    visibility:hidden;
+    opacity:0;
+    transition:visibility .25s cubic-bezier(#{$bezier-nice}), opacity .25s cubic-bezier(#{$bezier-nice});
+  }
+}
+.masthead--toggled {
+  @include respond-to($bp-tiny) {
+    width:100%;
+    visibility:visible;
+    opacity:1;
+  }
+}

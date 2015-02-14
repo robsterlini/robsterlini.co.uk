@@ -1,0 +1,39 @@
+.categories {
+
+}
+.category__item {
+  display: inline-block;
+  vertical-align: top;
+}
+.category__link {
+  display: block;
+  margin: 0 rem(16) 0 0;
+}
+[class*=" ss-cat-"] {
+  @extend %big-cat-icons;
+}
+
+.js [data-anchors] {
+  h2[id] {
+    position: relative;
+    &:before {
+      background: $color-background;
+      color: $color-link-primary;
+      content:'#'attr(id);
+      opacity: 0;
+      position: absolute;
+      text-indent: rem(-14);
+      transition:opacity .25s cubic-bezier(#{$bezier-nice});
+      // transform: translateY(#{rem(-5)});
+      width: 100%;
+      z-index: 1;
+    }
+    &:hover,
+    &:focus {
+      &:before {
+        opacity: 1;
+        // transform: translateY(#{rem(0)});
+      }
+    }
+  }
+}

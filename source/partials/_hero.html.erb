@@ -1,0 +1,19 @@
+<div class="hero">
+  <div class="hero__bg" data-js="mover"<% if locals.has_key? :image %> style="background-image: url(/assets/images/hero/hero-placeholder.gif);"<% end %> data-hero="<%= image %>" data-hero-small="<% if defined? image_small %><%= image_small %><% else %><%= image %><% end %>">
+  </div>
+  <div class="hero__headers" data-js="header-to-offset">
+    <% if locals.has_key? :featured %>
+      <%= featured %>
+    <% end %>
+    <% if locals.has_key? :title %>
+      <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
+    <% end %>
+    <% if locals.has_key? :subtitle %>
+      <h2 class="hero__header--beta"><%= subtitle %></h2>
+    <% end %>
+    <% if locals.has_key? :extra %>
+      <%= extra %>
+    <% end %>
+  </div>
+  <span class="hero__scroll"><a href="#main" class="hero__arrow ss-hero-down" data-anchor><span class="visuallyhidden">Scroll</span></a></span>
+</div>

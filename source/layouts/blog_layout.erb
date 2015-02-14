@@ -1,0 +1,41 @@
+<% wrap_layout :layout do %>
+  <% t_name = ''; t_link = ''; current_article.tags.each do |tag, articles| %>
+    <% t_link = tag_path(tag); t_name = tag %>
+  <% end %>
+  <% localised_date = current_article.date.strftime("%b %e") %>
+  <% if current_article.data.hero %>
+    <%= partial "partials/hero", locals: {
+      image: "#{current_article.data.hero}",
+      image_small: "#{current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero}",
+      title: "#{current_article.title}",
+      subtitle: current_article.data.description,
+      extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
+    } %>
+  <% end %>
+  <main data-js="header-parent" id="main">
+    <article class="group type" id="post-38" data-anchors>
+      <% if !current_article.data.hero %>
+        <h1 data-js="page-header"><%= current_article.title %></h1>
+        <p class="article__description"><%= current_article.data.description %></p>
+      <% end %>
+      <% if current_article.data.tldr %>
+        <aside class="article__tldr">
+          <p id="tldr"><strong><abbr title="Too long didn’t read">TL;DR</abbr></strong> <em><%= current_article.data.tldr %></em></p>
+        </aside>
+      <% end %>
+      <%= yield %>
+      <h2>Good read?</h2>
+      <h3>Sharing is caring!</h3>
+      <p>Feel free to share it – <a href="http://sterli.nl/1vpkhya" class="link" id="article-sharelink" title="Share this post with others">http://sterli.nl/1vpkhya</a>, or chat about it <a href="http://twitter.com/robsterlini" title="Chat to me about this post on Twitter">on Twitter</a>.</p>
+      <h3>Why not read another?</h3>
+      <p class="btns--center btns--read-more">
+        <% prev_article = current_article.previous_article; if prev_article %>
+          <a class="btn" href="<%= prev_article.url %>" rel="prev" title="Previous article: <%= prev_article.title %>"><%= prev_article.title %></a>
+        <% end %>
+        <% next_article = current_article.next_article; if next_article %>
+          <a class="btn" href="<%= next_article.url %>" rel="next" title="Next article: <%= next_article.title %>"><%= next_article.title %></a>
+        <% end %>
+      </p>
+    </article>
+  </main>
+<% end %>

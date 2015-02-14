@@ -1,0 +1,45 @@
+.footer {
+  font-family: $font-stack-regular-italic;
+  font-style: italic;
+  color:$color-accent;
+  margin-top:rem(-0);
+  padding:rem(50) 0 0 rem(150);
+  position: relative;
+  width:100%;
+  overflow: hidden;
+  z-index: 1;
+  @include respond-to($bp-small) {
+    padding-left:rem(60);
+    padding-top: rem(32);
+  }
+  @include respond-to($bp-tiny) {
+    padding-left:0;
+    padding-bottom:rem(5);
+  }
+  .body--404 & {
+    background:none;
+    &:before {
+      content:'';
+      position: absolute;
+      left:0;
+      width:100%;
+      top:rem(100);
+      bottom:0;
+      background:lighten($color-black,2%);
+    }
+  }
+  .group {
+    position: relative;
+  }
+  p {
+    position: relative;
+    z-index:1;
+    @include font-size(16);
+    @include respond-to($bp-small) {
+      @include font-size(15);
+    }
+    @include respond-to($bp-tiny) {
+      @include font-size(14);
+    }
+  }
+}

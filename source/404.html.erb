@@ -1,0 +1,40 @@
+---
+title: Page not found
+description: Can’t find that one; it probably got lost in one of the many redesigns.
+hero: main.jpg
+no_footer: true
+no_masthead: true
+---
+
+<section id="content" class="wrapper" data-page="404">
+  <%= partial "partials/hero", locals: {
+    image: "#{current_page.data.hero}",
+    image_small: "main_600.jpg",
+    title: "Four. Oh. Four.",
+    subtitle: "#{current_page.data.description} If you’re looking for something specific, <a href='/contact' title='Reach out'>get in touch</a>!",
+    extra: "<ul class='list--large-icons'>
+        <li class='list--large-icons__item ss-nav-home'>
+          <a class='list--large-icons__link' href='/'>
+            <h2 class='list--large-icons__title'>Go home</h2>
+            <p>Check out a selection of my previous and on-going projects.</p>
+            <p class='small-caps'>Read more<span class='visuallyhidden'> about my work.</span></p>
+          </a>
+        </li><!--
+        --><li class='list--large-icons__item ss-nav-journal'>
+          <a class='list--large-icons__link' href='/journal'>
+            <h2 class='list--large-icons__title'>Step into my thoughts</h2>
+            <p>Read any of my journal thoughts on anything from life to design and more.</p>
+            <p class='small-caps'>Read more<span class='visuallyhidden'> about what I’ve been writing about.</span></p>
+          </a>
+        </li><!--
+        --><li class='list--large-icons__item ss-nav-contact'>
+          <a class='list--large-icons__link' href='/about'>
+            <h2 class='list--large-icons__title'>Get in touch</h2>
+            <p>Got a project I’m perfect for? Want to ask a question? Go on, say hi!</p>
+            <p class='small-caps'>Read more<span class='visuallyhidden'> about getting in touch with me.</span></p>
+          </a>
+        </li>
+      </ul>"
+    }
+  %>
+</section>

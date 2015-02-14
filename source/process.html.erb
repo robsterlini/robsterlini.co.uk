@@ -1,0 +1,45 @@
+---
+title: How I work
+nav: process
+description: This will cover everything from kick off to after care, and all the steps in between.
+---
+
+<section id="content" class="wrapper" data-page="home">
+  <main>
+    <article class="type group" data-anchors>
+      <h1><%= current_page.data.title %></h1>
+      <p class="article__description"><%= current_page.data.description %></p>
+      <% data.process.steps.each.with_index(1) do |step, i| %>
+        <% if i > 1 %>
+          <hr />
+        <% end %>
+        <h2 id="<%= step.id %>"><%= i %>. <%= step.step %></h2>
+        <%= step.desc %>
+        <div class="list--large-icons">
+        <!--<% step.list.each do |process| %>
+          --><div class="list--large-icons__item ss-process-<%= process.slug %>">
+            <h2><%= process.title %></h2>
+            <p><%= process.desc %></p>
+          </div><!--
+        <% end %>-->
+        </div>
+        <% if step.after %>
+          <%= step.after %>
+        <% end %>
+      <% end %>
+      <hr id="testimonials">
+      <h1>Client testimony</h1>
+      <p class="article__description">I’m sure that you’ll love bringing me on board, but don’t just take my word for it…</p>
+      <% data.process.testimony.each do |quote| %>
+      <blockquote>
+        <% quote.copy.each do |text| %>
+          <p><%= text %></p>
+        <% end %>
+        <p>
+          <cite><%= quote.name %><% if quote.project %>, <strong><%= quote.project %></strong><% end %></cite>
+        </p>
+      </blockquote>
+      <% end %>
+    </article>
+  </main>
+</section>

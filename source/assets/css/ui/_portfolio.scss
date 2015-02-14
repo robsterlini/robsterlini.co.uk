@@ -1,0 +1,77 @@
+
+.portfolio__item {
+  padding:5% 0; 
+  @include respond-to($bp-mid) {
+    padding:rem(20) 0;
+  }
+}
+.portfolio__item--has-image {
+  @extend .portfolio__item;
+  img {
+    border-radius: 0;
+  }
+}
+.portfolio__copy {
+  width:calc(100% - #{rem(400)});
+  vertical-align: middle;
+  display: inline-block;
+  h2 {
+    padding-top:rem(10);
+    padding-left:rem(20);
+  }
+  p {
+    padding-left:rem(20);
+  }
+  .btns {
+    padding-left:rem(10);
+  }
+  @include respond-to($bp-large) {
+    width:calc(100% - #{rem(300)});
+  }
+  @include respond-to($bp-mid) {
+    width:100%;
+    display: block;
+    h2,
+    p,
+    .btns {
+      padding-left:0;
+    }
+  }
+}
+.browser-window {
+  display: inline-block;
+  width: rem(400);
+  vertical-align: middle;
+  border-radius:rem(3);
+  overflow: hidden;
+  border:rem(2) solid lighten($color-accent,25%);
+  @include respond-to($bp-large) {
+    width:rem(300);
+  }
+  @include respond-to($bp-mid) {
+    max-width:rem(250);
+    display: block;
+    margin:0 auto rem(20);
+  }
+  &:before {
+    content:'•••';
+    height:rem(20);
+    background:lighten($color-accent,25%);
+    color:rgba($color-white,0.4);
+    width:100%;
+    display: block;
+    line-height:rem(20);
+    font-size:rem(25);
+    letter-spacing:rem(-5);
+  }
+}
+.browser-window__overflow {
+  overflow: auto;
+  max-height: rem(270);
+  @include respond-to($bp-large) {
+    max-height: rem(225);
+  }
+  @include respond-to($bp-mid) {
+    max-height: rem(180);
+  }
+}

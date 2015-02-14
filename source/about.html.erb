@@ -1,0 +1,33 @@
+---
+title: All about Rob
+nav: about
+description: I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail.
+---
+
+<section id="content" class="wrapper" data-page="home">
+  <main>
+    <article class="type group">
+      <h1><%= current_page.data.title %></h1>
+      <h2>A few quick nuggets</h2>
+      <p>Get to know me in little, bit-size chunks. If you ever want to know which tattoo I’m getting next, which of my Spurs shirts is my favourite, or anything else for that matter, just <a href='/contact' title='Get in touch'>reach out</a>!</p>
+      <div class="list--large-icons">
+      <!--<% data.about_me.facts.each do |about| %>
+        --><div class="list--large-icons__item ss-about-<%= about.slug %>">
+          <h2><%= about.title %></h2>
+          <p><%= about.desc %></p>
+        </div><!--
+      <% end %>-->
+      </div>
+      <h2>Old favourites die hard</h2>
+      <p>Everyone has favourites, whether that be your go-to-song when you’re in the shower (mine’s <em>Fill ‘er up!</em> by <a href="http://eatthelemon.co.uk" title="Check out the Eat the Lemon website">Eat the Lemon</a>); or your preferred console &ndash; Xbox. Obviously. Here are some of mine:</p>
+      <div class="list--large-icons">
+      <!--<% data.about_me.favourites.each do |about| %>
+        --><div class="list--large-icons__item ss-about-<%= about.slug %>">
+          <h2>Favourite <%= about.title %>?</h2>
+          <p><%= about.desc %></p>
+        </div><!--
+      <% end %>-->
+      </div>
+    </article>
+  </main>
+</section>
