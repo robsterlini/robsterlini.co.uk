@@ -9,6 +9,7 @@ g.heroScroll = function() {
 
   self.selectors = {
     mover:          ".no-touch [data-js='mover']",
+    plxParent:       ".no-touch [data-js='plx-parent']",
     body:           "body"
   }
 
@@ -18,21 +19,42 @@ g.heroScroll = function() {
 
   // Update background position
   self.updatePosition = function updatePosition() {
-    // Grab the window height
-    var wScrolled = $(window).scrollTop(),
-      // Grab the height of the hero
-      pHeight = $(self.selectors.mover).height();
-    // Check that we're only firing whilst we can actually see the hero
-    if (wScrolled <= (pHeight + 100)) {
-      // Set the CSS translation based on the plxType defined in the data attributes of the item
-      // var translate = 'translate3d(0,'+ self.roundToNum((wScrolled / 10),2) +'%,0)'; 
-      var translate = 'translate3d(0,'+ self.roundToNum((wScrolled / 5),2) +'px,0)';
-      // Apply these styles to the child
-      $(self.selectors.mover).css({
-        // For older webkit browsers (remove when enough support is available for unprefixed)
-        '-webkit-transform': translate,
-        // Standard syntax
-        'transform': translate
+    // Check if the hero exists
+    if ($(self.selectors.mover).length) {
+      // Grab the window height
+      var wScrolled = $(window).scrollTop(),
+        // Cache the mover selector
+        mover = $(self.selectors.mover),
+        // Grab the height of the hero
+        pHeight = mover.height();
+      // Check that we're only firing whilst we can actually see the hero
+      if (wScrolled <= (pHeight + 100)) {
+        // Set the CSS translation based on the plxType defined in the data attributes of the item
+        // var translate = 'translate3d(0,'+ self.roundToNum((wScrolled / 10),2) +'%,0)'; 
+        var translate = 'translate3d(0,'+ self.roundToNum((wScrolled / 5),2) +'px,0)';
+        // Apply these styles to the child
+        mover.css({
+          // For older webkit browsers (remove when enough support is available for unprefixed)
+          '-webkit-transform': translate,
+          // Standard syntax
+          'transform': translate
+        });
+      }
+    }
+    if ($(self.selectors.plxParent).length) {
+      $(self.selectors.plxParent).each(function() {
+        var that = $(this),
+          wHeight = that.height(),
+          wScrolled = parseInt(this.getBoundingClientRect().top * -1),
+          wCombined = wScrolled - wHeight,
+          translate = 'translate3d(0,'+ self.roundToNum((wCombined / 5),2) +'px,0)';
+        // Apply these styles to the child
+        that.children('.hotspur__supporting__bg').css({
+          // For older webkit browsers (remove when enough support is available for unprefixed)
+          '-webkit-transform': translate,
+          // Standard syntax
+          'transform': translate
+        });
       });
     }
 
@@ -54,7 +76,7 @@ g.heroScroll = function() {
     self.requestTick();
   };
 
-  if ($(self.selectors.mover).length) {
+  if ($(self.selectors.mover).length || $(self.selectors.plxMover).length) {
     window.onscroll = self.doScroll;
   }
 
