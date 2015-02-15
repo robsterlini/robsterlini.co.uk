@@ -81,6 +81,13 @@ set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/images'
 
+# Create pages
+data.projects.featured.each_with_index do |c, i|
+  if c[:case_study] == 'true'
+    proxy "/case-study/#{c[:slug]}.html", "/templates/case-study/case-study.html", :locals => {:project => c, :case_study => c.case_study_vars, :index => i}, :ignore => true
+  end
+end
+
 # Turn on Pretty URLs
 activate :directory_indexes
 
