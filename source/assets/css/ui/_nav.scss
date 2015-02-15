@@ -1,11 +1,11 @@
 $pages: (
-  home: index,
-  projects: portfolio,
+  index: home,
+  portfolio: projects,
   journal: journal,
   process: process,
   about: about,
   contact: contact,
-  bucket: bucket-list,
+  bucket-list: bucket,
   triathlon: triathlon
 );
 
@@ -165,7 +165,7 @@ $pages: (
     color:$color-white;
   }
 }
-@each $selected, $page in $pages {
+@each $page, $selected in $pages {
   .nav__link--#{$selected} {
     body.#{$page} & {
       @extend %nav__link--selected;
