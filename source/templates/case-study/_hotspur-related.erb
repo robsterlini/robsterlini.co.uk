@@ -1,0 +1,77 @@
+<%= partial "partials/hero", locals: {
+  image: "hotspur-related.jpg",
+  image_small: "hotspur-related_600.jpg",
+  title: "<span class='hotspur__title__span'>How I built a website for </span>#{project.name}",
+  subtitle: "#{project.description}",
+} %>
+
+<main id="main">
+    <% # The brief %>
+    <section class="hotspur__section--brief">
+      <div class="group">
+        <h2>The brief</h2>
+        <p class="hotspur__paragraph__pullout">With over 50,000 followers, <a class="hotspur__link" href="https://twitter.com/hotspurrelated" title="Follow @HotspurRelated on Twitter">Hotspur Related</a> is one of the most popular Tottenham accounts on Twitter.</p>
+        <p>Ross came to me about introducing a website into the mix to complement the social media avenues as a way to provide more in depth news.</p>
+      </div>
+    </section>
+
+    <% # Refreshing an identity %>
+    <section class="hotspur__section--refresh hotspur__refresh--new" data-js="refresh-parent">
+      <div class="group">
+        <h2>Refreshing an identity</h2>
+        <div class="hotspur__refresh__col--left hotspur__refresh__col--content">
+          <h3>A face lift</h3>
+          <p>Before kicking off design on the site, I took the opportunity to give the current logo a bit of a face lift.</p>
+          <p data-js="refresh-waypoint">Naturally, it was important to Ross that the logo retain it’s identity. I kept the concept the same, but balanced the weighting and the type, as well as adding a few flourishes.</p>
+          <div class="hotspur__refresh__nav">
+            <a class="hotspur__refresh__nav__link--old" href="#" data-refresh="old"><span class="visuallyhidden">See the </span>old logo</a><!--
+          --><a class="hotspur__refresh__nav__link--new" href="#" data-refresh="new"><span class="visuallyhidden">See the </span>new logo</a>
+          </div>
+        </div><!--
+        --><div class="hotspur__refresh__col--right hotspur__refresh__col--supporting">
+          <div class="hotspur__refresh">
+            <div class="hotspur__refresh__logo">
+              <div class="hotspur__refresh__item--old">
+                <img src="/assets/images/portfolio/hotspur-related/refresh-logo-old.png" class="hotspur__refresh__image" />
+              </div>
+              <div class="hotspur__refresh__item--new">
+                <img src="/assets/images/portfolio/hotspur-related/refresh-logo-new.png" class="hotspur__refresh__image" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="hotspur__refresh__col--right hotspur__refresh__col--content">
+          <h3>Making it scaleable</h3>
+          <p>The logo refresh gave us the opportunity to tweak the brand to be scaleable across a variety of sizes and uses.</p>
+          <p>At smaller sizes, some of the strokes retain their weight to avoid them getting to thin; smaller still we lose the <em>Hotspur Related</em>, but maintain the general ingegrity; and the favicon makes use of just the cockerel’s head and the split arches.</p>
+        </div><!--
+        --><div class="hotspur__refresh__col--left hotspur__refresh__col--supporting">
+          <img src="/assets/images/portfolio/hotspur-related/scaleable-logos.png" class="" />
+        </div>
+      </div>
+    </section>
+
+    <% # Supporting the team %>
+    <section class="hotspur__section--supporting" data-js="plx-parent">
+      <div class="hotspur__supporting__bg" data-js="plx-mover"></div>
+      <div class="group">
+        <h2>Supporting the team</h2>
+        <p class="hotspur__paragraph__pullout">With an account all about Tottenham Hotspur, it was important that we kept it relevant.</p>
+        <p>By using big heroes that are article-specific, it keeps the homepage fresh everytime people revisit the site without it feeling alien.</p>
+        <p>Keeping it on brand in the Hotspur Related blue meant that it could be used as decoration without feeling superflous or obtrusive!</p>
+        <div class="browser-window hotspur__supporting__browser-window">
+          <img src="/assets/images/portfolio/hotspur-related/hero-design-browser.jpg" class="" />
+        </div>
+      </div>
+    </section>
+
+    <% # The brief %>
+    <section class="hotspur__section--brief" style="background-color: white;">
+      <div class="group">
+        <h2>The brief</h2>
+        <p class="hotspur__paragraph__pullout">With over 50,000 followers, <a class="hotspur__link" href="https://twitter.com/hotspurrelated" title="Follow @HotspurRelated on Twitter">Hotspur Related</a> is one of the most popular Tottenham accounts on Twitter.</p>
+        <p>Ross came to me about introducing a website into the mix to complement the social media avenues as a way to provide more in depth news.</p>
+      </div>
+    </section>
+</main>
