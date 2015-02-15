@@ -1,0 +1,301 @@
+/**
+ * Hotspur Related Case Study SCSS File
+**/
+
+
+@import "framework/_case-study";
+
+// Fonts
+$hotspur-font-bold: 700;
+$hotspur-font-stack-header: "ff-tisa-sans-web-pro",sans-serif;
+
+// Colours
+$hotspur-color-white:     #fff;
+$hotspur-color-default:   #07193F;
+$hotspur-color-text:      #1D376C;
+$hotspur-color-light:     #ACBCDD;
+$hotspur-color-dark:      darken($hotspur-color-default, 4%);
+
+// Layout
+body {
+  color: $color-white;
+  background: $hotspur-color-default;
+}
+main {
+  background: none;
+  padding-bottom: 0;
+}
+::selection {
+  background: $hotspur-color-text;
+  color: $color-white;
+}
+::-moz-selection {
+  background: $hotspur-color-text;
+  color: $color-white;
+}
+
+// Headers
+h1,
+h2,
+h3 {
+  font-family: $hotspur-font-stack-header;
+  font-style: normal;
+  font-weight: $hotspur-font-bold;
+  line-height: 1.3;
+}
+h2 {
+  @include font-size(36);
+}
+h3 {
+  @include font-feature-settings(liga kern onum);
+  @include font-size(28);
+  width: 100%;
+}
+.hotspur__title__span {
+  display: block;
+  @include font-size(15);
+  font-weight: $hotspur-font-bold;
+  letter-spacing: rem(1);
+  text-transform: uppercase;
+}
+.hotspur__paragraph__pullout {
+  @include font-size(23);
+}
+
+// Nav
+.masthead {
+  background: $hotspur-color-default;
+}
+.nav {
+  &:before {
+    display: none;
+  }
+}
+[class^="nav__link--"] {
+  color: $hotspur-color-text;
+  &:before {
+    color: $hotspur-color-text;
+  }
+  @include hover {
+    background: none;
+  }
+}
+.nav__link--projects {
+  body.case-study & {
+    color: $hotspur-color-light;
+    &:before {
+      color: $hotspur-color-light;
+    }
+  }
+}
+
+// Links
+.hotspur__link {
+  color: $hotspur-color-light;
+  @include hover {
+    color: $color-white;
+  }
+}
+.btn {
+  @include font-size(16);
+  font-family: $hotspur-font-stack-header;
+  padding:rem(9) rem(15) rem(10);
+}
+
+// Hero
+.hero {
+  background: none;
+  padding-bottom: rem(50);
+}
+.hero__bg {
+  background-position: center bottom;
+  filter: none;
+  opacity: 1;
+  &:before {
+    display: none;
+  }
+}
+.hero__scroll {
+  display: none;
+}
+.hero__header--beta {
+  margin-top: rem(32);
+}
+
+// Sections
+[class^="hotspur__section--"] {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  padding: rem(75) 0;
+  width: 100%;
+  .group {
+    margin: auto;
+  }
+  h2 {
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+}
+
+// Refreshing the brand
+.hotspur__section--refresh {
+  background: $hotspur-color-white;
+  color: $hotspur-color-dark;
+  .group {
+    max-width: rem(950);
+  }
+}
+[class^="hotspur__refresh__col"] {
+  & + .clearfix {
+    &:after {
+      margin-top: rem(100);
+    }
+  }
+}
+.hotspur__refresh__col--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: rem(300);
+  width: calc(100% - #{rem(300)});
+  &.hotspur__refresh__col--left {
+    padding: 0 rem(25) 0 rem(150);
+  }
+  &.hotspur__refresh__col--right {
+    padding: 0 rem(150) 0 rem(25);
+  }
+  h3,
+  p {
+    max-width: none;
+  }
+}
+.hotspur__refresh__col--supporting {
+  width: rem(300);
+}
+.hotspur__refresh__col--left {
+  float: left;
+}
+.hotspur__refresh__col--right {
+  float: right;
+}
+.hotspur__refresh {
+  position: relative;
+}
+.hotspur__refresh__logo {
+  height: rem(300);
+  overflow: hidden;
+  position: relative;
+  @include respond-to($bp-mid) {
+    height: rem(300);
+  }
+}
+[class^="hotspur__refresh__item--"] {
+  left: 0;
+  height: rem(300);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition:all .5s cubic-bezier(#{$bezier-nice});
+  transform-origin: center center;
+}
+.hotspur__refresh__item--old {
+  transform: rotate(180deg);
+  .hotspur__refresh--old & {
+    transform: rotate(0deg);
+  }
+}
+.hotspur__refresh__item--new {
+  opacity: 0;
+  transform: rotate(-180deg);
+  .hotspur__refresh--new & {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+.hotspur__refresh__image {
+  @include respond-to($bp-mid) {
+    height: rem(300);
+  }
+}
+.hotspur__refresh__nav {
+  list-style: none;
+  padding: 0;
+}
+[class^="hotspur__refresh__nav__link--"] {
+  border:rem(2) solid $hotspur-color-text;
+  border-radius: rem(3);
+  color: $hotspur-color-text;
+  display: inline-block;
+  font-family: $hotspur-font-stack-header;
+  @include font-size(16);
+  line-height:1.3;
+  margin:rem(5) rem(20) rem(5) 0;
+  padding:rem(9) rem(15) rem(10);
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition:all .25s cubic-bezier(#{$bezier-nice});
+  width:auto;
+  @include hover {
+    border-color: $hotspur-color-dark;
+    color: $hotspur-color-dark;
+  }
+  @include active {
+    transform:scale(0.95,0.95);
+  }
+}
+.hotspur__refresh--old .hotspur__refresh__nav__link--old,
+.hotspur__refresh--new .hotspur__refresh__nav__link--new {
+  background-color: $hotspur-color-text;
+  color: $color-white;
+  opacity: 1;
+  @include hover {
+    background-color: $hotspur-color-dark;
+    color: $color-white;
+  }
+}
+
+// Supporting the team
+.hotspur__section--supporting {
+  overflow: hidden;
+  padding-bottom: 0;
+  position: relative;
+  min-height: rem(600);
+  &:after {
+    background: $hotspur-color-white;
+    content:'';
+    height: rem(100);
+    position: relative;
+    width: 100%;
+  }
+  .group {
+    position: relative;
+    z-index: 1;
+  }
+}
+.hotspur__supporting__bg {
+  background: url(../../images/portfolio/hotspur-related/hero-design.jpg) center bottom no-repeat;
+  background-size: cover;
+  content: '';
+  left: 0;
+  height: rem(600);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.hotspur__supporting__browser-window {
+  border-color: $hotspur-color-dark;
+  display: block;
+  margin: rem(50) auto rem(-50);
+  max-width: rem(720);
+  width: 100%;
+  &:before {
+    background-color: $hotspur-color-dark;
+    color: $hotspur-color-text;
+  }
+  img {
+    border-radius: 0;
+  }
+}
