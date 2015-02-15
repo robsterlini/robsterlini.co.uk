@@ -25,7 +25,10 @@ featured:
         buttons:
           show: true
           live: "http://hotspurrelated.co.uk"
-          case_study: false
+          case_study: "/case-study/hotspur-related"
+        case_study: "true"
+        case_study_vars:
+          typekit: "zlb2zdx"
 
 ##
 
