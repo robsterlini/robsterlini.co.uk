@@ -23,7 +23,7 @@ description: I’ve always been told that “If a job’s worth doing, it’s wo
             <p><%= project.description %></p>
             <% if project.buttons %>
               <p class="btns">
-                <% if project.buttons.case_study != false %><a class="btn" href="/portfolio/st-georges-jcr-2013-14" title="Read about the process">Read the case study</a><% end %>
+                <% if project.buttons.case_study != false %><a class="btn" href="<%= project.buttons.case_study %>" title="Read about the process">Read the case study</a><% end %>
                 <% if project.buttons.live != false %><a class="btn--outline" href="<%= project.buttons.live %>" title="See this project live">See it live</a><% end %>
               </p>
             <% end %>
