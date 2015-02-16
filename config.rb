@@ -102,10 +102,12 @@ end
 
 # disable layout
 page ".htaccess.apache", :layout => false
+page "redirects/.htaccess.apache", :layout => false
 
 # rename file after build
 after_build do
   File.rename 'build/.htaccess.apache', 'build/.htaccess'
+  File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
 
 # Build-specific configuration
