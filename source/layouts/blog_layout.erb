@@ -26,7 +26,7 @@
       <%= yield %>
       <h2>Good read?</h2>
       <h3>Sharing is caring!</h3>
-      <% short_url = "sterli.co/j#{current_article.url.sub! '/journal', ''}" %>
+      <% short_url = current_page.data.short_url ? "sterlini.co/#{current_page.data.short_url}" : "sterlini.co/j#{current_article.url.sub! '/journal', ''}" %>
       <p>Feel free to share it – <a href="http://<%= short_url %>" class="link" id="article-sharelink" title="Share this post with others"><%= short_url %></a>, or chat about it <a href="http://twitter.com/robsterlini" title="Chat to me about this post on Twitter">on Twitter</a>.</p>
       <h3>Why not read another?</h3>
       <p class="btns--center btns--read-more">
