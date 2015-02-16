@@ -67,11 +67,15 @@
     </section>
 
     <% # The brief %>
-    <section class="hotspur__section--brief" style="background-color: white;">
+    <section class="hotspur__section--heart">
       <div class="group">
-        <h2>The brief</h2>
-        <p class="hotspur__paragraph__pullout">With over 50,000 followers, <a class="hotspur__link" href="https://twitter.com/hotspurrelated" title="Follow @HotspurRelated on Twitter">Hotspur Related</a> is one of the most popular Tottenham accounts on Twitter.</p>
-        <p>Ross came to me about introducing a website into the mix to complement the social media avenues as a way to provide more in depth news.</p>
+        <h2>Close to the heart</h2>
+        <p class="hotspur__paragraph__pullout">Being a Tottenham fan myself made me want to put extra effort in to ensure that it did the club, and its supporters justice.</p>
+        <div class="hotspur__heart__photos"><!--
+        <% 5.times do |i|; %>
+          --><img src="/assets/images/portfolio/hotspur-related/heart-<%= i + 1 %>.jpg" class="hotspur__heart__photo--<%= i + 1 %>" /><!--
+          <% end %>
+        --></div>
       </div>
     </section>
 </main>
