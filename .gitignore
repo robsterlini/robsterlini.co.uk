@@ -117,4 +117,9 @@ public
 
 /.csscomb.json
 build
-/source/assets/fonts/*
+
+# FONTS
+/source/assets/fonts/*.eot
+/source/assets/fonts/*.woff
+/source/assets/fonts/*.woff2
+/source/assets/fonts/*.ttf
