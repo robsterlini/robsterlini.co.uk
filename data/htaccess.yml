@@ -1,6 +1,7 @@
 web:
     domain: robsterlini.co.uk
     url: https://www.robsterlini.co.uk
+    journal: /journal
 
 redirect:
     /youtube: /journal/youtube
@@ -21,3 +22,11 @@ cache:
 
 errors:
     404: /404/index.html
+
+short:
+    web:
+        domain: sterini.co
+        journal: /j
+    redirect:
+        /tri: /triathlon
+        /yt: /journal/youtube
