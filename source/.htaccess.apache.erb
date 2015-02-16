@@ -21,11 +21,13 @@ ErrorDocument <%= code %> <%= document %>
 # GZIP, CACHE
 AddType image/x-icon .ico
 
+# CACHE ERRRYTHANG
 ExpiresActive on
 <% data.htaccess.cache.expire.each do |type, expire| %>
 ExpiresByType <%= type %> "<%= expire %>"
 <% end %>
 
+# DEFLATE
 <FilesMatch "<%= data.htaccess.cache.deflate %>">
     SetOutputFilter DEFLATE
 </FilesMatch>
