@@ -22,6 +22,7 @@ cache:
 
 errors:
     404: /404/index.html
+    403: /403/index.html
 
 short:
     web:

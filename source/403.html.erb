@@ -1,0 +1,17 @@
+---
+title: Forbidden
+description: That’s a page or file that you shouldn’t be looking at.
+hero: 403/403.gif
+no_footer: true
+no_masthead: true
+---
+
+<section id="content" class="wrapper">
+  <%= partial "partials/hero", locals: {
+    image: "#{current_page.data.hero}",
+    image_small: "main_600.jpg",
+    title: "Naughty, naughty&hellip;",
+    subtitle: "That’s a page or file that you shouldn’t be looking at. I’ll let it slide this time, but next time it won’t be so pretty."
+    }
+  %>
+</section>
