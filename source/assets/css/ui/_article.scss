@@ -36,7 +36,7 @@
     @include font-size(19);
     margin:rem(5) auto rem(7);
     span {
-      @include font-family-serif();
+      font-weight: $font-weight-normal;
     }
   }
   h1,

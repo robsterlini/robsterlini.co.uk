@@ -30,7 +30,7 @@ figure {
 }
 
 figcaption {
-  @include font-family-serif(italic);
+  font-style: italic;
   @include font-size(18);
   color:$color-accent;
   width:100%;

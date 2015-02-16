@@ -33,7 +33,7 @@
 	Buttons
 ========================================== */
 %btn {
-	@include font-family-serif(bold);
+	font-weight: $font-weight-bold;
 	display: inline-block;
 	padding:rem(10) rem(15) rem(9);
 	transition:all .25s cubic-bezier(#{$bezier-nice});
