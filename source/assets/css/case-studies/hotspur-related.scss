@@ -147,14 +147,7 @@ h3 {
 .hotspur__section--refresh {
   @extend %hotspur__section--reversed;
   .group {
-    max-width: rem(950);
-  }
-}
-[class^="hotspur__refresh__col"] {
-  & + .clearfix {
-    &:after {
-      margin-top: rem(100);
-    }
+    max-width: $layout-max-width-suffix;
   }
 }
 .hotspur__refresh__col--content {
@@ -162,12 +155,17 @@ h3 {
   flex-direction: column;
   justify-content: center;
   min-height: rem(300);
-  width: calc(100% - #{rem(300)});
+  padding-bottom: rem(50);
+  width: calc(100% - #{rem(150)});
+  @include respond-to(1150) {
+    display: block;
+    width: calc(100% - #{rem(200)});
+  }
   &.hotspur__refresh__col--left {
-    padding: 0 rem(25) 0 rem(150);
+    padding-right: rem(25);
   }
   &.hotspur__refresh__col--right {
-    padding: 0 rem(150) 0 rem(25);
+    padding-left: rem(25);
   }
   h3,
   p {
@@ -176,6 +174,22 @@ h3 {
 }
 .hotspur__refresh__col--supporting {
   width: rem(300);
+  &.hotspur__refresh__col--left {
+    margin-left: rem(-150);
+  }
+  &.hotspur__refresh__col--right {
+    margin-right: rem(-150);
+  }
+  @include respond-to(1150) {
+    margin-top: rem(25);
+    width: rem(200);
+    &.hotspur__refresh__col--left {
+      margin-left: 0; 
+    }
+    &.hotspur__refresh__col--right {
+      margin-right: 0;
+    }
+  }
 }
 .hotspur__refresh__col--left {
   float: left;
@@ -190,8 +204,8 @@ h3 {
   height: rem(300);
   overflow: hidden;
   position: relative;
-  @include respond-to($bp-mid) {
-    height: rem(300);
+  @include respond-to(1150) {
+    height: rem(200);
   }
 }
 [class^="hotspur__refresh__item--"] {
@@ -202,6 +216,9 @@ h3 {
   width: 100%;
   transition:all .5s cubic-bezier(#{$bezier-nice});
   transform-origin: center center;
+  @include respond-to(1150) {
+    height: rem(200);
+  }
 }
 .hotspur__refresh__item--old {
   transform: rotate(180deg);
@@ -218,8 +235,8 @@ h3 {
   }
 }
 .hotspur__refresh__image {
-  @include respond-to($bp-mid) {
-    height: rem(300);
+  @include respond-to(1150) {
+    height: rem(200);
   }
 }
 .hotspur__refresh__nav {
@@ -318,6 +335,9 @@ h3 {
   box-shadow: rgba($color-black, 0.5) rem(-2) rem(2) rem(5);
   display: inline-block;
   width: rem(150);
+  @include respond-to($bp-small) {
+    width: rem(100);
+  }
 }
 .hotspur__heart__photo--1 {
   transform: translate(#{rem(-5)}, #{rem(-5)}) rotate(2deg);
