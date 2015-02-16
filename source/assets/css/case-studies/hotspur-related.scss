@@ -138,11 +138,14 @@ h3 {
     }
   }
 }
+%hotspur__section--reversed {
+  background: $hotspur-color-white;
+  color: $hotspur-color-dark;
+}
 
 // Refreshing the brand
 .hotspur__section--refresh {
-  background: $hotspur-color-white;
-  color: $hotspur-color-dark;
+  @extend %hotspur__section--reversed;
   .group {
     max-width: rem(950);
   }
@@ -302,6 +305,7 @@ h3 {
 
 // A team close to the heart
 .hotspur__section--heart {
+  @extend %hotspur__section--reversed;
   padding-top: rem(25);
 }
 .hotspur__heart__photos {
