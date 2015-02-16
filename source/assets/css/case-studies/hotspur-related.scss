@@ -299,3 +299,34 @@ h3 {
     border-radius: 0;
   }
 }
+
+// A team close to the heart
+.hotspur__section--heart {
+  padding-top: rem(25);
+}
+.hotspur__heart__photos {
+  display: block;
+  margin-top: rem(50);
+  text-align: center;
+}
+[class^="hotspur__heart__photo--"] {
+  // border: 2px solid $color-white;
+  box-shadow: rgba($color-black, 0.5) rem(-2) rem(2) rem(5);
+  display: inline-block;
+  width: rem(150);
+}
+.hotspur__heart__photo--1 {
+  transform: translate(#{rem(-5)}, #{rem(-5)}) rotate(2deg);
+}
+.hotspur__heart__photo--2 {
+  transform: translate(#{rem(-10)}, #{rem(5)}) rotate(-5deg);
+}
+.hotspur__heart__photo--3 {
+  transform: translate(#{rem(-10)}, #{rem(-5)}) rotate(1deg);
+}
+.hotspur__heart__photo--4 {
+  transform: translate(#{rem(-5)}, #{rem(-5)}) rotate(6deg);
+}
+.hotspur__heart__photo--5 {
+  transform: translate(#{rem(-5)}, #{rem(-10)}) rotate(1deg);
+}
