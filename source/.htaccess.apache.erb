@@ -1,3 +1,8 @@
+# REMOVE WWW
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+
 # MOVE PERMANENTLY
 <% data.htaccess.redirect.each do |old, new| %>
 Redirect 301 <%= old %> <%= data.htaccess.web.url %><%= new %>
