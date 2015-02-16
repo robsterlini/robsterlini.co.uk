@@ -119,7 +119,7 @@ configure :build do
   activate :minify_javascript
 
   # Minify HTML
-  activate :minify_html
+  activate :minify_html, remove_http_protocol: false
 
   # Enable cache buster
   # activate :asset_hash
