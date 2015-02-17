@@ -24,3 +24,6 @@ gem 'middleman-minify-html'
 
 # Builder
 gem "builder"
+
+# Sitemap
+gem 'middleman-search_engine_sitemap'

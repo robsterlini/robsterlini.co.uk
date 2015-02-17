@@ -83,6 +83,7 @@ set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 
 set :images_dir, 'assets/images'
+set :url_root, 'https://robsterlini.co.uk'
 
 # Turn on Pretty URLs
 activate :directory_indexes
@@ -91,6 +92,10 @@ activate :directory_indexes
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
+
+
+# Turn on sitemap
+activate :search_engine_sitemap
 
 # Set up MM for blogging
 activate :blog do |blog|
