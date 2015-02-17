@@ -30,7 +30,8 @@
   .group {
     position: relative;
   }
-  p {
+  p,
+  ul {
     position: relative;
     z-index:1;
     @include font-size(16);
@@ -39,6 +40,23 @@
     }
     @include respond-to($bp-tiny) {
       @include font-size(14);
+    }
+  }
+  ul {
+    margin-bottom: 0;
+    // font-style: normal;
+    & + ul {
+      margin-top: rem(4);
+      margin-bottom: rem(16);
+    }
+    a {
+      color: $color-accent;
+      @include hover {
+        color: $color-link-primary;
+      }
+      @include active {
+        color: $color-black;
+      }
     }
   }
 }
