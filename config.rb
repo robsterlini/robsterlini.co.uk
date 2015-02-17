@@ -35,6 +35,9 @@
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
+# Requires
+require 'builder'
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
@@ -103,6 +106,7 @@ end
 # disable layout
 page ".htaccess.apache", :layout => false
 page "redirects/.htaccess.apache", :layout => false
+page "feed.xml", :layout => false
 
 # rename file after build
 after_build do
