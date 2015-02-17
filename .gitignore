@@ -123,3 +123,5 @@ build
 /source/assets/fonts/*.woff
 /source/assets/fonts/*.woff2
 /source/assets/fonts/*.ttf
+source/assets/fonts/ss-symbolicons-line.woff
+source/assets/fonts/ss-symbolicons-line.eot
