@@ -10,9 +10,6 @@ description: This will cover everything from kick off to after care, and all the
       <h1><%= current_page.data.title %></h1>
       <p class="article__description"><%= current_page.data.description %></p>
       <% data.process.steps.each.with_index(1) do |step, i| %>
-        <% if i > 1 %>
-          <hr />
-        <% end %>
         <h2 id="<%= step.id %>"><%= i %>. <%= step.step %></h2>
         <%= step.desc %>
         <div class="list--large-icons">
