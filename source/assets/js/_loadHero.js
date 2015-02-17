@@ -20,7 +20,10 @@ g.loadHero = function() {
 
   self.images = [
     'colbert.gif',
-    'dog-slap.gif'
+    'dog-slap.gif',
+    'mary-poppins.gif',
+    'practical-joker.gif',
+    'warehouse-long-jump.gif'
   ];
 
   $(document).ready(function() {
