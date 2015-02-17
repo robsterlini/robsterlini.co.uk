@@ -12,6 +12,13 @@
 }
 .btns--center {
 	text-align: center;
+	body.contact_index & {
+		max-width: none;
+		padding: 0 rem(16);
+		@include respond-to($bp-mid) {
+			padding: 0;
+		}
+	}
 }
 .btns--fixed {
 	position: fixed;
