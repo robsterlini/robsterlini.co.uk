@@ -127,3 +127,6 @@
 [href*="nikeplus.nike.com"] {
 	@include social-color($color-s-nike-plus, false);
 }
+[href*="github.com"] {
+	@include social-color(lighten($color-s-github, 15%), false);
+}

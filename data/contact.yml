@@ -48,6 +48,13 @@ social:
 
 ##
 
+    -   title: "GitHub"
+        slug: "github"
+        link: https://github.com/robsterlini
+        alt: "To check out my code, follow me on GitHub"
+
+##
+
     -   title: "Spotify"
         slug: "spotify"
         link: http://open.spotify.com/user/11149305932
