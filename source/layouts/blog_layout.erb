@@ -4,6 +4,7 @@
   <% end %>
   <% localised_date = current_article.date.strftime("%b %e") %>
   <% if current_article.data.hero %>
+    <% content_for(:hero, "#{current_article.data.hero}") %>
     <%= partial "partials/hero", locals: {
       image: "#{current_article.data.hero}",
       image_small: "#{current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero}",
