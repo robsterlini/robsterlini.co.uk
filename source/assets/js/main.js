@@ -9,6 +9,7 @@
 //= require _heroScroll
 //= require _anchorScroll
 //= require _loadHero
+//= require _caseStudyHotspur
 
 $(function() {
 	// This is all we need in our main.js file - isn't it neat :)

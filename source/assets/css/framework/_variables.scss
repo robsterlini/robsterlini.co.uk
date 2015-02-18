@@ -1,0 +1,14 @@
+/**
+ * Utility SCSS File
+ */
+
+$bp-miniscule:   250;
+$bp-tiny:        450;
+$bp-small:       750;
+$bp-mid:         950;
+$bp-large:       1100;
+
+$layout-max-width: 650;
+$layout-max-width-suffix: rem($layout-max-width);
+$layout-max-width-wide: 1000;
+$layout-max-width-wide-suffix: rem($layout-max-width-wide);

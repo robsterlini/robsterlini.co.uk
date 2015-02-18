@@ -4,11 +4,6 @@
  * @requires framework/_type.scss
  */
 
-$layout-max-width: 650;
-$layout-max-width-suffix: rem($layout-max-width);
-$layout-max-width-wide: 1000;
-$layout-max-width-wide-suffix: rem($layout-max-width-wide);
-
 .group {
 	margin:0 auto;
 	max-width:$layout-max-width-wide-suffix;

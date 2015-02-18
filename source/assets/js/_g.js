@@ -13,7 +13,8 @@ g.partials = [
   'codeHighlight',
   'heroScroll',
   'anchorScroll',
-  'loadHero'
+  'loadHero',
+  'hotspurRelated'
 ];
 
 // This _init function is the function which kicks everything off when

@@ -1,0 +1,20 @@
+---
+nav: portfolio
+no_footer: true
+---
+
+<% # Page meta %>
+<% content_for(:title, "#{project.name}") %>
+<% content_for(:meta_description, "#{project.description}") %>
+<% content_for :casestudy_css do %>
+  <%= stylesheet_link_tag "case-studies/#{project.slug}" %>
+<% end %>
+
+<% # Typekit %>
+<% if case_study.typekit %>
+  <script src="//use.typekit.net/<%= case_study.typekit %>.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+<% end %>
+
+<% # Custom partial %>
+<%= partial("templates/case-study/_#{project.slug}", :locals => { :project => project }) %>

@@ -1,31 +1,14 @@
 $pages: (
-  home: index,
-  projects: portfolio,
+  index: home,
+  portfolio: projects,
   journal: journal,
   process: process,
   about: about,
   contact: contact,
-  bucket: bucket-list,
+  bucket-list: bucket,
   triathlon: triathlon
 );
 
-// body {
-//   @include respond-to($bp-tiny) {
-//     &:before {
-//       background: rgba($color-dark, 0.99);
-//       color: $color-white;
-//       content:'Rob Sterlini';
-//       height: rem(42);
-//       left: 0;
-//       line-height: rem(40);
-//       padding: rem(2) 3.125% 0;
-//       position: fixed;
-//       top: 0;
-//       width: 100%;
-//       z-index: 10;
-//     }
-//   }
-// }
 .nav {
   width:rem(150);
   height:100%;
@@ -182,7 +165,7 @@ $pages: (
     color:$color-white;
   }
 }
-@each $selected, $page in $pages {
+@each $page, $selected in $pages {
   .nav__link--#{$selected} {
     body.#{$page} & {
       @extend %nav__link--selected;
