@@ -160,10 +160,10 @@ p,
   }
 }
 .hotspur__refresh__col--content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   min-height: rem(300);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
   padding-bottom: rem(50);
   width: calc(100% - #{rem(150)});
   @include respond-to(1150) {
