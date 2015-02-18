@@ -182,6 +182,7 @@ p,
   }
 }
 .hotspur__refresh__col--supporting {
+  padding-top: rem(32);
   width: rem(300);
   &.hotspur__refresh__col--left {
     margin-left: rem(-150);
@@ -208,6 +209,7 @@ p,
 }
 .hotspur__refresh {
   position: relative;
+  margin-top: rem(-40);
 }
 .hotspur__refresh__logo {
   height: rem(300);
