@@ -405,6 +405,11 @@ p,
   background-image: url(../../images/portfolio/hotspur-related/features-team-hero.jpg);
 }
 
+// Working with ads
+.hotspur__section--ads {
+  @extend %hotspur__section--reversed;
+}
+
 // Footer
 
 .hotspur__section--footer {
