@@ -108,9 +108,9 @@ activate :search_engine_sitemap
 activate :blog do |blog|
   # set options on blog
   blog.sources = 'articles/{year}-{month}-{day}-{title}.html'
-  blog.permalink = 'journal/{title}'
+  blog.permalink = 'journal/{title}/index.html'
   blog.tag_template = "tag.html"
-  blog.taglink = "journal/category/{tag}"
+  blog.taglink = "journal/category/{tag}/index.html"
   blog.layout = "layout"
   blog.layout = "blog_layout"
 end
