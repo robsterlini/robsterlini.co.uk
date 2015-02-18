@@ -366,6 +366,45 @@ p,
 }
 .hotspur__heart__photo--5 {
   transform: translate(#{rem(-5)}, #{rem(-10)}) rotate(1deg);
+}
+
+// Features
+.hotspur__section--features {
+  overflow: hidden;
+  position: relative;
+  .group {
+    margin: 0 auto;
+    max-width: $layout-max-width-suffix;
+    padding-right: rem(220);
+    position: relative;
+  }
+  .hotspur__browser-window {
+    margin-top: 0;
+    position: absolute;
+    right: rem(-400);
+    top: 0;
+    width: rem(600);
+    z-index: 1;
+  }
+  @include respond-to($bp-small) {
+    padding-bottom: 0;
+    .group {
+      padding-right: 0;
+    }
+    .hotspur__browser-window {
+      right: 0;
+      position: relative;
+      width: 100%;
+      margin: rem(50) auto rem(-50);
+      max-width: rem(400);
+    }
+  }
+}
+.hotspur__features__bg {
+  @extend .hotspur__supporting__bg;
+  background-image: url(../../images/portfolio/hotspur-related/features-team-hero.jpg);
+}
+
 // Footer
 
 .hotspur__section--footer {
