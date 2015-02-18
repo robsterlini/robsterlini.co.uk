@@ -8,6 +8,9 @@ redirect:
     /youtube: /journal/youtube
     /tri: /triathlon
     /testimonials: /process#testimonials
+    /projects: /portfolio
+    /work: /portfolio
+    /about-me: /about
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg)$

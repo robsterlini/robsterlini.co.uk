@@ -13,6 +13,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# REMOVE index.html
+RewriteCond %{THE_REQUEST} /index\.html? [NC]
+RewriteRule ^(.*/)?index\.html?$ /$1 [R=301,L]
+
 # ERROR DOCUMENTS
 <% data.htaccess.errors.each do |code, document| %>
 ErrorDocument <%= code %> <%= document %>
