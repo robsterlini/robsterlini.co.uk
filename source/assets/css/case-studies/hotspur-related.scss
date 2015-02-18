@@ -297,6 +297,7 @@ p,
   &:after {
     background: $hotspur-color-white;
     content:'';
+    display: block;
     height: rem(100);
     position: relative;
     width: 100%;
