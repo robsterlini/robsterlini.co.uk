@@ -46,11 +46,24 @@ h3 {
 }
 h2 {
   @include font-size(36);
+  @include respond-to($bp-small) {
+    @include font-size(32);
+  }
+  @include respond-to($bp-tiny) {
+    @include font-size(28);
+  }
 }
 h3 {
   @include font-feature-settings(liga kern onum);
   @include font-size(28);
   width: 100%;
+  @include respond-to($bp-small) {
+    @include font-size(26);
+  }
+  @include respond-to($bp-tiny) {
+    @include font-size(24);
+  }
+}
 p,
 .hero__header--beta {
   font-family: $hotspur-font-stack-body;
@@ -62,10 +75,22 @@ p,
   font-weight: $hotspur-font-bold;
   letter-spacing: rem(1);
   text-transform: uppercase;
+  @include respond-to($bp-small) {
+    @include font-size(14);
+  }
+  @include respond-to($bp-tiny) {
+    @include font-size(13);
+  }
 }
 .hotspur__paragraph__pullout {
   @include font-size(23);
   font-style: italic;
+  @include respond-to($bp-small) {
+    @include font-size(21);
+  }
+  @include respond-to($bp-tiny) {
+    @include font-size(19);
+  }
 }
 
 // Nav
@@ -128,7 +153,14 @@ p,
   display: none;
 }
 .hero__header--beta {
+  @include font-size(24);
   margin-top: rem(32);
+  @include respond-to($bp-small) {
+    @include font-size(22);
+  }
+  @include respond-to($bp-tiny) {
+    @include font-size(20);
+  }
 }
 
 // Sections
@@ -146,10 +178,25 @@ p,
       padding-top: 0;
     }
   }
+  @include respond-to($bp-small) {
+    display: block;
+    padding: rem(50) 0;
+    min-height: 0;
+  }
+  @include respond-to($bp-tiny) {
+    padding: rem(33) 0;
+  }
 }
 %hotspur__section--reversed {
   background: $hotspur-color-white;
   color: $hotspur-color-dark;
+}
+
+// Brief
+.hotspur__section--brief {
+  @include respond-to($bp-small) {
+    padding-top: 0;
+  }
 }
 
 // Refreshing the brand
@@ -160,10 +207,10 @@ p,
   }
 }
 .hotspur__refresh__col--content {
-  min-height: rem(300);
   // display: flex;
   // flex-direction: column;
   // justify-content: center;
+  min-height: rem(360);
   padding-bottom: rem(50);
   width: calc(100% - #{rem(150)});
   @include respond-to(1150) {
@@ -207,9 +254,37 @@ p,
 .hotspur__refresh__col--right {
   float: right;
 }
+@include respond-to(600) {
+  .hotspur__refresh__col--left,
+  .hotspur__refresh__col--right {
+    float: none;
+  }
+  .hotspur__refresh__col--content {
+    min-height: 0;
+    padding-bottom: 0;
+    width: 100%;
+    &.hotspur__refresh__col--left {
+      padding-right: 0;
+    }
+    &.hotspur__refresh__col--right {
+      padding-left: 0;
+    }
+  }
+  .hotspur__refresh__col--supporting {
+    max-width: rem(200);
+    width: 100%;
+    &.hotspur__refresh__col--left,
+    &.hotspur__refresh__col--right {
+      margin:0 auto;
+    }
+  }
+}
 .hotspur__refresh {
   position: relative;
   margin-top: rem(-40);
+  @include respond-to(600) {
+    margin-top: rem(-20);
+  }
 }
 .hotspur__refresh__logo {
   height: rem(300);
@@ -336,6 +411,9 @@ p,
 .hotspur__section--heart {
   @extend %hotspur__section--reversed;
   padding-top: rem(25);
+  @include respond-to($bp-small) {
+    padding-top: 0;
+  }
 }
 .hotspur__heart__photos {
   display: block;
@@ -407,6 +485,47 @@ p,
 
 // Working with ads
 .hotspur__section--ads {
+  @extend %hotspur__section--reversed;
+}
+
+// Reaction
+.hotspur__section--reaction {
+  overflow: hidden;
+  // padding-bottom: 0;
+  position: relative;
+  // min-height: rem(600);
+  .group {
+    position: relative;
+  }
+}
+.hotspur__reaction__bg {
+  @extend .hotspur__supporting__bg;
+  background-image: url(../../images/portfolio/hotspur-related/reaction-hero.jpg);
+}
+.hotspur__reaction__quotes {
+  margin: 0 auto;
+  max-width: $layout-max-width-suffix;
+  blockquote {
+    display: inline-block;
+    margin-top: rem(10);
+    vertical-align: top;
+    width: calc(50% - #{rem(10)});
+    &:nth-of-type(2n) {
+      margin-right: rem(20);
+    }
+    &:last-of-type:nth-of-type(odd) {
+      margin-right: 0;
+      width: 100%;
+    }
+    @include respond-to($bp-tiny + 100) {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+}
+
+// Learned
+.hotspur__section--til {
   @extend %hotspur__section--reversed;
 }
 
