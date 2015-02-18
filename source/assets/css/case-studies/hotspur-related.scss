@@ -7,7 +7,8 @@
 
 // Fonts
 $hotspur-font-bold: 700;
-$hotspur-font-stack-header: "ff-tisa-sans-web-pro",sans-serif;
+$hotspur-font-stack-header: "ff-tisa-sans-web-pro", "Tisa Sans Pro", "Tisa Sans", sans-serif;
+$hotspur-font-stack-body: "ff-tisa-web-pro", "Tisa Pro", "Tisa", "SkolarLatin", "Georgia", serif;
 
 // Colours
 $hotspur-color-white:     #fff;
@@ -50,6 +51,10 @@ h3 {
   @include font-feature-settings(liga kern onum);
   @include font-size(28);
   width: 100%;
+p,
+.hero__header--beta {
+  font-family: $hotspur-font-stack-body;
+  line-height: 1.45;
 }
 .hotspur__title__span {
   display: block;
