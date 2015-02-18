@@ -49,7 +49,7 @@ g.heroScroll = function() {
           wCombined = wScrolled - wHeight,
           translate = 'translate3d(0,'+ self.roundToNum((wCombined / 5),2) +'px,0)';
         // Apply these styles to the child
-        that.children('.hotspur__supporting__bg').css({
+        that.children('[data-js="plx-mover"]').css({
           // For older webkit browsers (remove when enough support is available for unprefixed)
           '-webkit-transform': translate,
           // Standard syntax
