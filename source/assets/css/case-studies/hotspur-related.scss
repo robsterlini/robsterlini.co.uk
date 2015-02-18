@@ -76,6 +76,9 @@ p,
     display: none;
   }
 }
+.nav__toggle {
+  background-color: rgba($hotspur-color-default, 0.85);
+}
 [class^="nav__link--"] {
   color: $hotspur-color-text;
   &:before {
