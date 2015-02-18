@@ -65,6 +65,7 @@ p,
 }
 .hotspur__paragraph__pullout {
   @include font-size(23);
+  font-style: italic;
 }
 
 // Nav
