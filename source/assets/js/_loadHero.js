@@ -10,7 +10,7 @@ g.loadHero = function() {
 
   self.selectors = {
     // Hero background
-    mover:      "[data-js='mover']"
+    mover:      "[data-hero]"
   }
 
   self.classes = {
