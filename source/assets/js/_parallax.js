@@ -4,8 +4,8 @@
  * Allows use of .hover, and data types on the browser
  */
 
-g.heroScroll = function() {
-  var self = g.heroScroll;
+g.parallax = function() {
+  var self = g.parallax;
 
   self.selectors = {
     mover:          ".no-touch [data-js='mover']",
