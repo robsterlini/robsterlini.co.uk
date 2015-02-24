@@ -16,5 +16,10 @@ no_footer: true
   <script>try{Typekit.load();}catch(e){}</script>
 <% end %>
 
+<% # Back to projects %>
+<div class="btns--fixed portfolio__back-btn">
+  <a href="/portfolio" title="Go back to my portfolio" class="btn btn--icon ss-nav-projects">Back to Projects</a>
+</div>
+
 <% # Custom partial %>
 <%= partial("templates/case-study/_#{project.slug}", :locals => { :project => project }) %>
