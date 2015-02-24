@@ -131,11 +131,26 @@ p,
   }
 }
 .btn {
+  background-color: $hotspur-color-text;
+  border-color: $hotspur-color-text;
   @include font-size(16);
   font-family: $hotspur-font-stack-header;
-  padding:rem(9) rem(15) rem(10);
+  padding:rem(10) rem(15) rem(12);
+  @include hover {
+    background-color: $hotspur-color-white;
+    border-color: $hotspur-color-white;
+    color: $hotspur-color-default;
+    .btn__label {
+      width: rem(184);
+    }
+  }
 }
-
+.btn__label {
+  color: $hotspur-color-default;
+}
+.btn--icon {
+  padding-left: rem(52);
+}
 
 // Parallax
 [data-plx="child"] {
