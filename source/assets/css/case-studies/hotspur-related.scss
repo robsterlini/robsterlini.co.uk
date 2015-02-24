@@ -147,6 +147,11 @@ p,
 .hero {
   background: none;
   padding-bottom: rem(50 + 75);
+  padding-left: 0;
+  @include respond-to($bp-small) {
+    padding-bottom: rem(50);
+    padding-top: rem(85);
+  }
 }
 .hero__bg {
   filter: none;
