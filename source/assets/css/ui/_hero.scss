@@ -1,6 +1,5 @@
 .hero {
   @include animation('%fade-in',.5s);
-  position: relative;
   width:100%;
   min-height:rem(450);
   padding:12% 0 15% rem(150);

@@ -136,14 +136,21 @@ p,
   padding:rem(9) rem(15) rem(10);
 }
 
+
+// Parallax
+[data-plx="child"] {
+  background-position: center bottom;
+  height: rem(600);
+}
+
 // Hero
 .hero {
   background: none;
-  padding-bottom: rem(50);
+  padding-bottom: rem(50 + 75);
 }
 .hero__bg {
-  background-position: center bottom;
   filter: none;
+  height: 100%;
   opacity: 1;
   &:before {
     display: none;
@@ -194,9 +201,7 @@ p,
 
 // Brief
 .hotspur__section--brief {
-  @include respond-to($bp-small) {
-    padding-top: 0;
-  }
+  padding-top: 0;
 }
 
 // Refreshing the brand
@@ -365,10 +370,7 @@ p,
 
 // Supporting the team
 .hotspur__section--supporting {
-  overflow: hidden;
   padding-bottom: 0;
-  position: relative;
-  min-height: rem(600);
   &:after {
     background: $hotspur-color-white;
     content:'';
@@ -377,20 +379,9 @@ p,
     position: relative;
     width: 100%;
   }
-  .group {
-    position: relative;
-    z-index: 1;
-  }
 }
 .hotspur__supporting__bg {
-  background: url(../../images/portfolio/hotspur-related/hero-design.jpg) center bottom no-repeat;
-  background-size: cover;
-  content: '';
-  left: 0;
-  height: rem(600);
-  position: absolute;
-  top: 0;
-  width: 100%;
+  background-image: url(../../images/portfolio/hotspur-related/hero-design.jpg);
 }
 .hotspur__browser-window {
   border-color: $hotspur-color-dark;
@@ -448,13 +439,10 @@ p,
 
 // Features
 .hotspur__section--features {
-  overflow: hidden;
-  position: relative;
   .group {
     margin: 0 auto;
     max-width: $layout-max-width-suffix;
     padding-right: rem(220);
-    position: relative;
   }
   .hotspur__browser-window {
     margin-top: 0;
@@ -479,7 +467,6 @@ p,
   }
 }
 .hotspur__features__bg {
-  @extend .hotspur__supporting__bg;
   background-image: url(../../images/portfolio/hotspur-related/features-team-hero.jpg);
 }
 
@@ -490,16 +477,8 @@ p,
 
 // Reaction
 .hotspur__section--reaction {
-  overflow: hidden;
-  // padding-bottom: 0;
-  position: relative;
-  // min-height: rem(600);
-  .group {
-    position: relative;
-  }
 }
 .hotspur__reaction__bg {
-  @extend .hotspur__supporting__bg;
   background-image: url(../../images/portfolio/hotspur-related/reaction-hero.jpg);
 }
 .hotspur__reaction__quotes {
