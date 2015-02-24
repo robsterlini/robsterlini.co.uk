@@ -15,48 +15,11 @@ $font-default-size: 20;
 $font-default-line-height: 1.5;
 
 // Our base font stacks.
-$font-stack-regular: 	"Skolar3 PE Regular", Georgia, serif;
-$font-stack-regular-bold: "Skolar3 PE Bold", Georgia, serif;
-$font-stack-regular-italic: "Skolar3 PE Italic", Georgia, serif;
+$font-stack-regular: 	"SkolarLatin", Georgia, serif;
 
-@mixin font-family-serif($style: regular) {
-	@if $style == bold {
-		font-weight:bold;
-		font-style:normal;
-	}
-	@else {
-		font-weight:normal;
-		font-style:normal;
-		em {
-			font-style:italic;
-			font-weight:normal;
-		}
-		strong {
-			font-style:normal;
-			font-weight:bold;
-		}
-	}
-	@if $style == bold { 
-		// .wf-skolar3pebold-n7-active & {
-			font-family:$font-stack-regular-bold;
-		// }
-	}
-	@else {
-		// .wf-skolar3peregular-n4-active & {
-			font-family:$font-stack-regular;
-		// }
-		// .wf-skolar3peitalic-n4-inactive & {
-			em {
-				font-family:$font-stack-regular-italic;
-			}
-		// }
-		// .wf-skolar3pebold-n7-active & {
-			strong {
-				font-family:$font-stack-regular-bold;
-			}
-		// }
-	}	
-}
+// Our base-weights
+$font-weight-normal: normal;
+$font-weight-bold: bold;
 
 /* ==|== Type =================
 	Functions
@@ -147,11 +110,12 @@ $font-stack-regular-italic: "Skolar3 PE Italic", Georgia, serif;
  * if Font-number-2 is an italic weight put italic etc
 **/
 
-@mixin load-fonts($fonts-total,$fonts-to-load,$fonts-to-load-style) {
+@mixin load-fonts($fonts-total,$fonts-to-load,$fonts-to-load-style,$fonts-to-load-weight) {
 
 	@while $fonts-total > 0  {
 		$font-face: nth($fonts-to-load, $fonts-total);
 		$font-style: nth($fonts-to-load-style, $fonts-total);
+		$font-weight: nth($fonts-to-load-weight, $fonts-total);
 		@font-face {
 		  font-family: #{$font-face}; font-style: #{$font-style}; font-weight: normal;
 		  src: url('../fonts/#{$font-face}.eot');

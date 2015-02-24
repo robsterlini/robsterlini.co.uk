@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{HTTP:Origin} !^$|http(s)?://(www\.)?robsterlini\.co.uk$ [NC]
+RewriteRule \.(woff|eot|woff2)$ - [NC,L]
+RewriteCond %{HTTP_REFERER} !.
+RewriteRule \.(woff|eot|woff2)$ - [F,NC,L]
+Options -Indexes

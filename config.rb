@@ -35,6 +35,9 @@
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
+# Requires
+require 'builder'
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
@@ -80,6 +83,7 @@ end
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/images'
+set :url_root, 'https://robsterlini.co.uk'
 
 # Create pages
 data.projects.featured.each_with_index do |c, i|
@@ -96,23 +100,30 @@ activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
 
+
+# Turn on sitemap
+activate :search_engine_sitemap
+
 # Set up MM for blogging
 activate :blog do |blog|
   # set options on blog
   blog.sources = 'articles/{year}-{month}-{day}-{title}.html'
-  blog.permalink = 'journal/{title}'
+  blog.permalink = 'journal/{title}/index.html'
   blog.tag_template = "tag.html"
-  blog.taglink = "journal/category/{tag}"
+  blog.taglink = "journal/category/{tag}/index.html"
   blog.layout = "layout"
   blog.layout = "blog_layout"
 end
 
 # disable layout
 page ".htaccess.apache", :layout => false
+page "redirects/.htaccess.apache", :layout => false
+page "feed.xml", :layout => false
 
 # rename file after build
 after_build do
   File.rename 'build/.htaccess.apache', 'build/.htaccess'
+  File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
 
 # Build-specific configuration
@@ -124,7 +135,7 @@ configure :build do
   activate :minify_javascript
 
   # Minify HTML
-  activate :minify_html
+  activate :minify_html, remove_http_protocol: false
 
   # Enable cache buster
   # activate :asset_hash

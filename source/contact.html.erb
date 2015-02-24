@@ -11,7 +11,7 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
       <p class="article__description"><%= current_page.data.description %></p>
       <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <a href="/youtube" title="Read about why I don’t work on YouTube anymore">in my journal</a>.</p>
       <div class="list--large-icons">
-      <!--<% data.contact.contact.each do |contact| %>
+        <!--<% data.contact.contact.each do |contact| %>
         --><div class="list--large-icons__item ss-contact-<%= contact.slug %>">
           <div class="list--large-icons__top">
             <h2><%= contact.title %></h2>
@@ -24,6 +24,13 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
         </div><!--
       <% end %>-->
       </div>
+      <h3>Other social media</h3>
+      <p>I’m a social fiend. You can find me on here as well:</p>
+      <p class="btns--center"><!--
+        <% data.contact.social.each do |social| %>
+        --><a href="<%= social.link %>" class="btn--icon btn--outline ss-contact-<%= social.slug %>" title="<%= social.alt %>"><%= social.title %></a><!--
+        <% end %>
+      --></p>
     </article>
   </main>
 </section>

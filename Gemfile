@@ -21,3 +21,9 @@ gem 'middleman-autoprefixer'
 
 # Minify HTML – https://github.com/middleman/middleman-minify-html
 gem 'middleman-minify-html'
+
+# Builder
+gem "builder"
+
+# Sitemap
+gem 'middleman-search_engine_sitemap'

@@ -3,8 +3,7 @@
   src: url('../fonts/ss-symbolicons-line.eot');
   src: url('../fonts/ss-symbolicons-line.eot?#iefix') format('embedded-opentype'),
        url('../fonts/ss-symbolicons-line.woff2') format('woff2'),
-       url('../fonts/ss-symbolicons-line.woff') format('woff'),
-       url('../fonts/ss-symbolicons-line.ttf')  format('truetype');
+       url('../fonts/ss-symbolicons-line.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }
@@ -31,7 +30,7 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 }
 
 // Current subset string – http://www.fontsquirrel.com/tools/webfont-generator
-// ⌂👶📫⏱🏃⬇🌄👍⋆💷💻🗔🗪🚀📊✉🐦🏀🎨✒⚽🍕🎄🏈🏃🚲✈🎿🐻💬&🚘🐘🌎
+// ⌂👶📫⏱🏃⬇🌄👍⋆💷💻🗔🗪🚀📊✉🐦🏀🎨✒⚽🍕🎄🏈🏃🚲✈🎿🐻💬&🚘🐘🌎📷
 
 // Navigation
 .ss-nav-home:before {
@@ -66,6 +65,15 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
     font-size:rem(48);
     margin:0 auto;
     // text-align: center;
+  }
+}
+
+figcaption.ss-picture {
+  &:before {
+    font-size: rem(16);
+    position: relative;
+    top: rem(2);
+    padding-right:rem(5);
   }
 }
 
@@ -131,6 +139,21 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 }
 .ss-contact-dribbble:before {
   content:'🏀';
+}
+.ss-contact-instagram:before {
+  content:'📷';
+}
+.ss-contact-spotify:before {
+  content:'';
+}
+.ss-contact-strava:before {
+  @extend .ss-bucket-triathlon:before;
+}
+.ss-contact-nike-plus:before {
+  @extend .ss-bucket-marathon:before;
+}
+.ss-contact-github:before {
+  content:'';
 }
 
 // Categories

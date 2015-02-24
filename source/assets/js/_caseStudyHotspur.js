@@ -16,7 +16,7 @@ g.hotspurRelated = function() {
     refresh:  'hotspur__refresh--'
   }
 
-  self.requestWpSet = function requestWpSet() {
+  self.requestWpSet = function() {
     if ($(self.selectors.refreshWaypoint).length) {
       $(self.selectors.refreshWaypoint).waypoint(function(direction) {
         self.toggleRefresh(direction == 'down' ? 'new' : 'old');
@@ -24,7 +24,7 @@ g.hotspurRelated = function() {
     }
   }
 
-  self.toggleRefresh = function toggleRefresh(oldNew) {
+  self.toggleRefresh = function(oldNew) {
     var opposite = oldNew == 'new' ? 'old' : 'new';
     $(self.selectors.refreshParent).removeClass(self.classes.refresh+opposite).addClass(self.classes.refresh+oldNew);
   }

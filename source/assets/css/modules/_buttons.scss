@@ -12,6 +12,13 @@
 }
 .btns--center {
 	text-align: center;
+	body.contact_index & {
+		max-width: none;
+		padding: 0 rem(16);
+		@include respond-to($bp-mid) {
+			padding: 0;
+		}
+	}
 }
 .btns--fixed {
 	position: fixed;
@@ -24,8 +31,10 @@
 	// }
 }
 .btns--left {
-	.btn {
+	.btn,
+	.btn--outline {
 		margin-left: 0;
+		margin-right: rem(20);
 	}
 }
 
@@ -33,7 +42,7 @@
 	Buttons
 ========================================== */
 %btn {
-	@include font-family-serif(bold);
+	font-weight: $font-weight-bold;
 	display: inline-block;
 	padding:rem(10) rem(15) rem(9);
 	transition:all .25s cubic-bezier(#{$bezier-nice});
@@ -75,27 +84,56 @@
 		border-color:$color-link-primary-hover;
 	}
 }
-@mixin social-color($c, $p: 12%) {
-	&.btn {
-		background-color: $c;
-		border-color: $c;
-		@include hover {
-			background-color: darken($c, $p);
-			border-color: darken($c, $p);
+.btn--icon {
+	padding-left: rem(50);
+	position: relative;
+	&:before {
+		font-size: rem(32);
+		position: absolute;
+		top: calc(50% - #{rem(16)});
+		left: rem(8);
+	}
+}
+@mixin social-color($c, $b: true, $o: true, $p: 12%) {
+	@if $b == true {
+		&.btn {
+			background-color: $c;
+			border-color: $c;
+			@include hover {
+				background-color: darken($c, $p);
+				border-color: darken($c, $p);
+			}
 		}
 	}
-	&.btn--outline {
-		color: $c;
-		border-color: $c;
-		@include hover {
-			color: darken($c, $p);
-			border-color: darken($c, $p);
+	@if $o == true {
+		&.btn--outline {
+			color: $c;
+			border-color: $c;
+			@include hover {
+				color: darken($c, $p);
+				border-color: darken($c, $p);
+			}
 		}
 	}
 }
 [href*="dribbble.com"] {
-	@include social-color($color-s-dribbble, 15%);
+	@include social-color($color-s-dribbble, true, false, 15%);
 }
 [href*="twitter.com"] {
-	@include social-color($color-s-twitter);
+	@include social-color($color-s-twitter, true, false);
+}
+[href*="instagram.com"] {
+	@include social-color($color-s-instagram, false);
+}
+[href*="spotify.com"] {
+	@include social-color($color-s-spotify, false);
+}
+[href*="strava.com"] {
+	@include social-color($color-s-strava, false);
+}
+[href*="nikeplus.nike.com"] {
+	@include social-color($color-s-nike-plus, false);
+}
+[href*="github.com"] {
+	@include social-color(lighten($color-s-github, 15%), false);
 }

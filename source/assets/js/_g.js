@@ -11,7 +11,7 @@ g.partials = [
   'loadImages',
   'navToggle',
   'codeHighlight',
-  'heroScroll',
+  'parallax',
   'anchorScroll',
   'loadHero',
   'hotspurRelated'

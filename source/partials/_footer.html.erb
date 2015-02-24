@@ -1,6 +1,29 @@
 <footer class="footer">
   <div class="group">
-  	<p>Made with <a href="https://middlemanapp.com/" title="Visit the Middleman website" rel="nofollow">Middleman</a> and the <a href="https://github.com/Fueled/fueled-boilerplate" title="Fork the boilerplate on GitHub">Fueled boilerplate</a> in London. The type is all set in the gorgeously delicate <a href="#" title="See Skolar on Rosetta’s website">Skolar</a> and delivered to your internets via the ever-awesome <a href="http://www.mediatemple.net/#a_aid=512a823fed22d" title="See what Mediatemple have to offer">Mediatemple</a>. Drop me a <a href="/contact" title="Get in touch">message</a> if there’s anything else you want to know!</p>
-  	<p>&copy; forever. And ever. Don’t be a dick.</p>
+  	<p>Made with <a href="https://middlemanapp.com/" title="Visit the Middleman website" rel="nofollow">Middleman</a> and the <a href="https://github.com/Fueled/fueled-boilerplate" title="Fork the boilerplate on GitHub">Fueled boilerplate</a> in London; check out the <a href="/colophon" title="Find out more about my site">colophon</a> for more information. &copy; forever. And ever. Don’t be a dick. Oh, and <a href="/colophon#cookies" title="Find out which cookies are in action on this site, and how they make it better">I use cookies</a> to make my site better.</p>
+    <ul class="list--inline">
+      <!--<% data.pages.masthead.each do |nav| %>
+        --><li>
+          <% label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "#{nav.label}" %>
+          <a title="<%= nav.alt %>" href="/<%= nav.slug %>"><%= label %></a>
+        </li><!--
+      <% end %>-->
+    </ul>
+    <ul class="list--inline">
+      <!--<% data.contact.contact.each do |nav| %>
+        <% if nav.link.footer != false %>
+          --><li>
+            <a title="<%= nav.link.title %>" href="<%= nav.link.href %>"><%= nav.title %></a>
+          </li><!--
+        <% end %>
+      <% end %>-->
+      <!--<% data.contact.social.each do |nav| %>
+        <% if nav.footer != false %>
+          --><li>
+            <a title="<%= nav.alt %>" href="<%= nav.href %>"><%= nav.title %></a>
+          </li><!--
+        <% end %>
+      <% end %>-->
+    </ul>
   </div>
 </footer>

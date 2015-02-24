@@ -1,0 +1,19 @@
+[data-plx="parent"] {
+  min-height: rem(600);
+  overflow: hidden;
+  position: relative;
+  .group {
+    position: relative;
+    z-index: 1;
+  }
+}
+[data-plx="child"] {
+  background: center center no-repeat;
+  background-size: cover;
+  content: '';
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

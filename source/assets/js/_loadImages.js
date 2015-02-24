@@ -25,7 +25,7 @@ g.loadImages = function() {
 		source: "data-src"
 	}
 
-	self.wpSet = function wpSet() {
+	self.wpSet = function() {
     if ($(self.selectors.toLoad).length) {
       $(self.selectors.toLoad).waypoint(function(direction) {
         if (!$(this).hasClass(self.classes.loaded)) {
@@ -38,9 +38,8 @@ g.loadImages = function() {
     }
   }
 
-  self.wpHeaderSet = function wpHeaderSet() {
+  self.wpHeaderSet = function() {
     $(self.selectors.headerParent).waypoint(function(direction) {
-      console.log(direction);
       if (direction == 'down') {
         $(self.selectors.fixedHeader).addClass(self.classes.headerToggled);
       }

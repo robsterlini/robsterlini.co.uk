@@ -18,7 +18,6 @@ html {
 	background: $color-background;
 	font-size:percentage($font-default-size / 16);
 	overflow-y: scroll;
-	font-family: Georgia, serif;
 }
 
 body,
@@ -29,7 +28,7 @@ textarea {
 	color:$color-text;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	@include font-family-serif;
+	font-family: $font-stack-regular;
 }
 
 body {

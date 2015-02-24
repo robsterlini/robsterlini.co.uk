@@ -6,7 +6,7 @@
 //= require _codeHighlight
 //= require _loadImages
 //= require _navToggle
-//= require _heroScroll
+//= require _parallax
 //= require _anchorScroll
 //= require _loadHero
 //= require _caseStudyHotspur

@@ -16,11 +16,33 @@
  * if Font-number-2 is an italic weight put italic etc
 **/
 
-// Ensure that $fonts-total is set to 0 if no local fonts are required
-$fonts-total: 0;
-$fonts-to-load: Font-number-1, Font-number-2;
-$fonts-to-load-style: normal, italic;
-@include load-fonts($fonts-total,$fonts-to-load,$fonts-to-load-style);
+@font-face {
+	font-family: 'SkolarLatin';
+	src: url('../fonts/SkolarLatin-Regular.eot');
+	src: url('../fonts/SkolarLatin-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SkolarLatin-Regular.woff') format('woff'),
+		url('../fonts/SkolarLatin-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'SkolarLatin';
+	src: url('../fonts/SkolarLatin-Italic.eot');
+	src: url('../fonts/SkolarLatin-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SkolarLatin-Italic.woff') format('woff'),
+		url('../fonts/SkolarLatin-Italic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'SkolarLatin';
+	src: url('../fonts/SkolarLatin-Bold.eot');
+	src: url('../fonts/SkolarLatin-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SkolarLatin-Bold.woff') format('woff'),
+		url('../fonts/SkolarLatin-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
 
 
 /* ==|== Typography =================
@@ -35,9 +57,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 h1,
 h2,
 h3 {
-	@include font-family-serif(bold);
+	font-weight: $font-weight-bold;
 }
-
 h1 {
 	@include font-size(52);
 	line-height:1.15;
@@ -140,8 +161,7 @@ p {
 }
 
 blockquote {
-	font-family: $font-stack-regular-italic;
-	font-weight:normal;
+	font-weight: $font-weight-normal;
 	font-style:italic;
 	margin:rem(15) auto;
 	max-width:$layout-max-width-suffix;
@@ -166,7 +186,7 @@ blockquote {
 		}
 	}
 	cite {
-		@include font-family-serif;
+		font-style: normal;
 		display: block;
 		@include font-size(18);
 		margin-top: rem(5);
