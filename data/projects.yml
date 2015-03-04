@@ -69,7 +69,7 @@ other:
 
     -   name: "LEGO not Legos"
         copy:
-            - "<a href='http://legonotlegos.com' title='A PSA about how not to pluralise LEGO'>legonotlegos.com</a> was an idea born out of a simple domain sale from (mt) and a personal hatred for the incorrect pluralisation of LEGO. <em>Legos</em> is not a thing, 99% of the time people mean LEGO bricks – “Ouch. I stepped on the LEGO<strike>s</strike> bricks!”."
+            - "<a href='http://legonotlegos.com' title='A PSA about how not to pluralise LEGO'>legonotlegos.com</a> was an idea born out of a simple domain sale from (mt) and a personal hatred for the incorrect pluralisation of LEGO. <em>Legos</em> is not a thing, 99% of the time people mean LEGO bricks – “Ouch. I stepped on the LEGO<span class='strike'>s</span> bricks!”."
             - "This was purely for fun, but now and again I take to Twitter armed with the <a href='https://twitter.com/search?q=%23LEGOnotlegos&amp;src=hash&amp;f=realtime' title='Join in the #LEGOnotLegos crusade'>#LEGOnotLegos</a> hashtag and the everlasting pain of standing on the damn bricks as a kid!"
 
 ##
