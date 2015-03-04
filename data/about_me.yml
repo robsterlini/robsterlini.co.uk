@@ -4,9 +4,9 @@ facts:
 
 ##
 
-    -   title: "A scottish bard"
+    -   title: "Not a scottish bard"
         slug: "poet"
-        desc: "<p>My full name is Robbie (<strong>not</strong> Robert), and I’m named after the famous <a href='http://en.wikipedia.org/wiki/Robert_Burns' title='See what Wikipedia has to say about Robert Burns'>Robbie Burns</a> – the Scottish national treasure that is the poet who wrote <em>Auld Lang Syne</em>.</p>"
+        desc: "<p>My full name is Robbie (<strong>not</strong> Robert), <span class='strike'>and I’m named after the famous <a href='http://en.wikipedia.org/wiki/Robert_Burns' title='See what Wikipedia has to say about Robert Burns'>Robbie Burns</a></span> – the Scottish national treasure that is the poet who wrote <em>Auld Lang Syne</em>.</p><p>I was actually named Robbie because it was a name my parents hoped Italians could say. They can’t.</p>"
 
 ##
 
