@@ -14,7 +14,8 @@ g.partials = [
   'parallax',
   'anchorScroll',
   'loadHero',
-  'hotspurRelated'
+  'hotspurRelated',
+  'strikethrough'
 ];
 
 // This _init function is the function which kicks everything off when

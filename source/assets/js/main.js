@@ -6,6 +6,7 @@
 //= require _codeHighlight
 //= require _loadImages
 //= require _navToggle
+//= require _strikethrough
 //= require _parallax
 //= require _anchorScroll
 //= require _loadHero
