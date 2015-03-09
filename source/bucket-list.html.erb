@@ -16,7 +16,7 @@ description: I’m a web designer with a love for gorgeous typography, delicious
         --><div class="list--large-icons__item<%= bucket.completed ? ' bucket__item--complete ' : ' ' %>ss-bucket-<%= bucket.slug %>" id="<%= bucket.title.to_slug %>">
           <h2><%= bucket.title %></h2>
           <p><%= bucket.desc %></p>
-          <p class="small-caps"><strong>Added</strong> <%= Date.parse(bucket.date).strftime("%e %b %y") %><br /> <strong><%= bucket.completed ? 'Completed</strong> #{Date.parse(bucket.date).strftime("%e %b %y")}' : 'Not yet completed</strong>' %></p>
+          <p class="small-caps"><strong>Added</strong> <%= Date.parse(bucket.date).strftime("%e %b %y") %><br /> <strong><%= bucket.completed ? "Completed</strong> #{Date.parse(bucket.completed).strftime('%e %b %y')}" : "Not yet completed</strong>" %></p>
         </div><!--
       <% end %>-->
       </div>
