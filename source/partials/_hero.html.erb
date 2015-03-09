@@ -1,5 +1,5 @@
 <div class="hero" data-plx="parent">
-  <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<% if defined? image_small %><%= image_small %><% else %><%= image %><% end %>">
+  <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<% if defined? image_small %><%= image_small %><% else %><%= image %><% end %>" data-location="<% if defined? image_loc %><%= image_loc %><% else %>/assets/images/hero<% end %>">
   </div>
   <div class="hero__headers" data-js="header-to-offset">
     <% if locals.has_key? :featured %>

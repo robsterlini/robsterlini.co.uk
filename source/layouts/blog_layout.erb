@@ -8,6 +8,7 @@
     <%= partial "partials/hero", locals: {
       image: "#{current_article.data.hero}",
       image_small: "#{current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero}",
+      image_loc: "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}",
       title: "#{current_article.title}",
       subtitle: current_article.data.description,
       extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"

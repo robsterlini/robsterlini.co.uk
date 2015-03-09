@@ -43,9 +43,12 @@ g.loadHero = function() {
         // Set the hero as the data-hero image, or the data-hero-small if below 500px;
         var hero = m.attr(w > 500 ? 'data-hero' : 'data-hero-small');
       }
+      // Set the location (normally used in the blog assets)
+      var location = m.attr('data-location');
       // Switch out the placeholder hero image for the image
-      m.css('background-image', 'url(/assets/images/hero/'+hero+')');
+      m.css('background-image', 'url(' + location + hero + ')');
     }
+
   });
 
 };
