@@ -83,6 +83,8 @@ end
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/images'
+set :hero_dir, '/assets/images/hero/'
+set :portfolio_dir, '/assets/images/portfolio/'
 set :url_root, 'https://robsterlini.co.uk'
 
 # Create pages
