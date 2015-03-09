@@ -59,7 +59,7 @@ end
 #Create full image markup helper
 helpers do
   def blog_image(image, caption, alt, position)
-    "<div class='figure-wrap'>
+    "<div class='figure-wrap#{position == "half" ? " figure-wrap--half" : ""}'>
       <noscript>
         <figure class='image--#{position}'>  
           <img src='#{image}' alt='#{alt}' title='#{caption}'>
