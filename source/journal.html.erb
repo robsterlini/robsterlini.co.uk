@@ -12,8 +12,9 @@ priority: 0.95
     <% localised_date = "<time>#{article.date.strftime("%e %b %y")}</time>" %>
     <% if i == 0 %>
       <%= partial "partials/hero", locals: {
-        image: "#{article.data.hero}",
-        image_small: "#{article.data.hero_small ? article.data.hero_small : article.data.hero}",
+        image: article.data.hero || "main.jpg",
+        image_small: article.data.hero_small || article.data.hero || "main_600.jpg",
+        image_loc: article.data.hero ? "/assets/journal/#{article.url.sub! "/journal/", "".to_slug}" : hero_dir,
         title: "#{article.title}",
         subtitle: article.data.description,
         extra: "<p class='small-caps'>#{localised_date} • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>",
