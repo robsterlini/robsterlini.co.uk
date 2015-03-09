@@ -36,7 +36,7 @@ g.loadHero = function() {
       // Check if we’re on the 404 page and bigger than 500px wide
       if ($('body').hasClass(self.classes.errorPage) && w > 500) {
         // If we are set the hero to be set as a randomised item from the self.images array
-        var hero = '404/' + self.images[Math.floor(Math.random()*self.images.length)];
+        var hero = self.images[Math.floor(Math.random()*self.images.length)];
       }
       // If it’s not the 404 page, or we’re smaller than 500px:
       else {
