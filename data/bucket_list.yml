@@ -14,7 +14,6 @@ all:
     -   title: "Run a marathon"
         slug: "marathon"
         date: 2015-01-01 00:00 UTC
-        # completed: 2016-02-23 00:00 UTC
         desc: "There have been fewer prouder moments than watching my mum run a marathon, now it&rsquo;s my turn."
 
 ##
@@ -29,6 +28,7 @@ all:
     -   title: "Learn to ski backwards"
         slug: "ski-backwards"
         date: 2015-01-01 00:00 UTC
+        completed: 2015-03-08 00:00 UTC
         desc: "There&rsquo;s something fun about skiing backwards infront of rookies, I want to perfect it."
 
 ##
