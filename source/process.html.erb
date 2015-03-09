@@ -27,16 +27,23 @@ description: This will cover everything from kick off to after care, and all the
       <hr id="testimonials">
       <h1>Client testimony</h1>
       <p class="article__description">I’m sure that you’ll love bringing me on board, but don’t just take my word for it…</p>
-      <% data.process.testimony.each do |quote| %>
-      <blockquote>
-        <% quote.copy.each do |text| %>
-          <p><%= text %></p>
-        <% end %>
-        <p>
-          <cite><%= quote.name %><% if quote.project %>, <strong><%= quote.project %></strong><% end %></cite>
-        </p>
-      </blockquote>
-      <% end %>
+      <div class="testimonials">
+        <div class="testimonials--column">
+          <% data.process.testimony.each do |quote| %>
+            <blockquote class="blockquote--long">
+              <% quote.copy.each do |text| %>
+                <p><%= text %></p>
+              <% end %>
+              <p>
+                <cite><%= quote.name %><% if quote.project %>, <strong><%= quote.project %></strong><% end %></cite>
+              </p>
+            </blockquote>
+            <% if quote.split %>
+              </div><div class="testimonials--column">
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </article>
   </main>
 </section>
