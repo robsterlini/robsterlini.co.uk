@@ -54,7 +54,7 @@ g.agePosts = function() {
   self.getAge = function() {
     var ageItem = $(self.selectors.postAge);
     if (ageItem.length) {
-      var age = ageItem.attr(self.attrs.age),
+      var age = ageItem.attr(self.attrs.age).replace(/-/g, "/"),
         ageDate = new Date(age),
         today = new Date(),
         ageDiff = Date.dateDiff('w', ageDate, today),
