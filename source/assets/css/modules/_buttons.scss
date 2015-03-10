@@ -7,9 +7,11 @@
 /* ==|== Buttons =================
 	Containers
 ========================================== */
+
 .btns {
 
 }
+
 .btns--center {
 	text-align: center;
 	body.contact_index & {
@@ -20,16 +22,18 @@
 		}
 	}
 }
-.btns--fixed {
+
+%btns--fixed {
 	position: fixed;
 	top: rem(16);
 	right: rem(16);
 	z-index: 2;
-	// .btn,
-	// .btn--outline {
-	// 	box-shadow: $color-background 0 0 0 rem(3);
-	// }
 }
+
+.btns--fixed {
+	@extend %btns--fixed;
+}
+
 .btns--left {
 	.btn,
 	.btn--outline {
@@ -38,9 +42,47 @@
 	}
 }
 
+.btns--menu {
+	@extend %btns--fixed;
+	z-index: 10;
+  .btn {
+    margin: 0;
+    padding: rem(8) 0 rem(8);
+    &:before {
+      left: rem(5);
+      top: calc(50% - #{rem(17)});
+      transition:opacity .25s cubic-bezier(#{$bezier-nice});
+      transform: scale(0.9);
+      transform-origin: center center;
+    }
+    @include hover {
+      &:before {
+        opacity: 0;
+      }
+      .btn__label {
+        opacity: 1;
+        transform: translateX(0);
+        width: rem(100);
+      }
+    }
+  }
+  .btn__label {
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 rem(21);
+    text-align: center;
+    transform: translateX(#{rem(-10)});
+    transition: all 300ms;
+    white-space: nowrap;
+    width: 0;
+  }
+}
+
 /* ==|== Buttons =================
 	Buttons
 ========================================== */
+
 %btn {
 	font-weight: $font-weight-bold;
 	display: inline-block;

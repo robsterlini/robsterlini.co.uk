@@ -94,34 +94,11 @@ p,
 }
 
 // Nav
-// .masthead {
-//   background: $hotspur-color-default;
-// }
-// .nav {
-//   &:before {
-//     display: none;
-//   }
-// }
-// .nav__toggle {
-//   background-color: rgba($hotspur-color-default, 0.85);
-// }
-// [class^="nav__link--"] {
-//   color: $hotspur-color-text;
-//   &:before {
-//     color: $hotspur-color-text;
-//   }
-//   @include hover {
-//     background: none;
-//   }
-// }
-// .nav__link--projects {
-//   body.case-study & {
-//     color: $hotspur-color-light;
-//     &:before {
-//       color: $hotspur-color-light;
-//     }
-//   }
-// }
+.btns--menu {
+  .btn {
+    padding: rem(10) 0 rem(12);
+  }
+}
 
 // Links
 .hotspur__link {
