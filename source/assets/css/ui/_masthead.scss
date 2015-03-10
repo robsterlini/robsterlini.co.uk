@@ -10,19 +10,11 @@
   transition:visibility .25s cubic-bezier(#{$bezier-nice}), opacity .25s cubic-bezier(#{$bezier-nice});
   overflow: auto;
   background:$color-black;
-  @include respond-to($bp-tiny) {
-    background:rgba($color-black,0.98);
-    background:linear-gradient(rgba($color-black,0.95),$color-black);
-    width:100%;
-    visibility:hidden;
-    opacity:0;
-    transition:visibility .25s cubic-bezier(#{$bezier-nice}), opacity .25s cubic-bezier(#{$bezier-nice});
-  }
-}
-.masthead--toggled {
-  @include respond-to($bp-tiny) {
-    width:100%;
-    visibility:visible;
-    opacity:1;
+  @include max-width($tp-masthead-hamburger) {
+    transform: translateX(-100%);
+    transition:transform .25s cubic-bezier(#{$bezier-nice});
+    .masthead--toggled & {
+      transform: translateX(0);
+    }
   }
 }

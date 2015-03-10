@@ -40,7 +40,7 @@
     <%= yield_content(:casestudy_css) %>
   </head>
   
-  <body class="<%= page_classes %>">
+  <body class="<%= page_classes %>" data-js="toggled-navigation-parent">
     <% if !current_page.data.no_masthead %>
         <%= partial "partials/masthead" %>
     <% end %>

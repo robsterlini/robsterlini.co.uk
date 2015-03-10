@@ -1,4 +1,5 @@
 .footer {
+  @extend %masthead-toggled-slide;
   font-style: italic;
   color:$color-accent;
   margin-top:rem(-0);
