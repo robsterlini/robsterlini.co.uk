@@ -14,6 +14,7 @@ featured:
           show: true
           live: "http://www.reading.ac.uk"
           case_study: false
+          dribbble: false
 
 ##
 
@@ -29,6 +30,7 @@ featured:
           show: true
           live: "http://hotspurrelated.co.uk"
           case_study: "/case-study/hotspur-related"
+          dribbble: false
         case_study: "true"
         case_study_vars:
           typekit: "zlb2zdx"
@@ -45,6 +47,8 @@ featured:
           show: true
           live: "http://stgeorgesjcr.co.uk"
           case_study: false
+          dribbble: false
+
 ##
 
     -   name: "Fueled Press page"
@@ -71,6 +75,7 @@ featured:
           show: true
           live: "http://stgeorgesjcr.co.uk/archive/2013/"
           case_study: false
+          dribbble: false
 
 ########
 
