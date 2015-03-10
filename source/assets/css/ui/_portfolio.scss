@@ -14,22 +14,20 @@
     border-radius: 0;
   } 
   @include max-width($bp-mid) {
-    padding:rem(20) 0;
+    padding:$measure-unit * 2 0 $measure-unit;
   }
-  // @include min-width($bp-mid) {
-  //   margin-top: $measure-unit * 4;
-  //   & + & {
-  //     margin-top: 0;
-  //   }
-  // }
+}
+%portfolio-featured__bg {
+  background-position: center top;
 }
 .portfolio-featured__bg--light {
   @extend %hero__bg;
-  background-position: center top;
+  @extend %portfolio-featured__bg;
+  
 }
 .portfolio-featured__bg--dark {
   @extend %hero__bg;
-  background-position: center top;
+  @extend %portfolio-featured__bg;
   opacity: 1;
 }
 .portfolio__copy {
@@ -109,6 +107,9 @@
   padding: 0 $measure-unit;
   vertical-align: top;
   width: 33.33%;
+  @include max-width($bp-large) {
+    width: 50%;
+  }
   @include max-width($bp-mid) {
     margin-left: auto;
     margin-right: auto;
