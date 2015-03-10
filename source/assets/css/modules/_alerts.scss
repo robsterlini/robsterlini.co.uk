@@ -1,3 +1,23 @@
+.error {
+  background: $color-alert-1;
+  color: $color-white;
+  padding-left: $masthead-full;
+  p {
+    margin: $measure-unit auto;
+  }
+  a {
+    color: $color-white;
+    text-decoration: underline;
+  }
+  @include max-width($tp-masthead-icon) {
+    padding-left: $masthead-icon;
+  }
+  @include max-width($tp-masthead-hamburger) {
+    padding-left: 0;
+    padding-right: rem($measure * 3 + 10);
+  }
+}
+
 [class^="alert--"] {
   border-left:$color-alert-1 solid rem(2);
   padding-left:rem(23);
