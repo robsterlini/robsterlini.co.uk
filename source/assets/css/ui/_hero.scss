@@ -73,23 +73,9 @@
   }
   .btn {
     margin: rem(5) rem(20) rem(5) 0;
-    color:$color-black;
-    background-color:$color-link-reverse;
-    border-color:$color-link-reverse;
-    @include hover {
-      color:$color-black;
-      background:$color-link-reverse-hover;
-      border-color:$color-link-reverse-hover;
-    }
   }
   .btn--outline {
     margin: rem(5) rem(20) rem(5) 0;
-    color:$color-link-reverse;
-    border-color:$color-link-reverse;
-    @include hover {
-      color:$color-link-reverse-hover;
-      border-color:$color-link-reverse-hover;
-    }
   }
 }
 .hero__header--alpha {
