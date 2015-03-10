@@ -65,6 +65,20 @@ featured:
 
 ##
 
+    -   name: "Lion and Lamb Lodge"
+        slug: "lion-and-lamb-lodge"
+        date: "2014"
+        role: "Branding, design &amp; front-end"
+        tech: "Anchor CMS"
+        description: "I’m always down for taking on projects that fascinate me, and the Lion and Lamb Lodge of Freemasons did just that. I built a simple, type-focused site to help promote their lodge digitally."
+        buttons:
+          show: true
+          live: "http://www.lodge192.com"
+          case_study: false
+          dribbble: "https://dribbble.com/RobSterlini/projects/236445-Lion-and-Lamb-Lodge"
+
+##
+
     -   name: "St George’s JCR 2013"
         slug: "st-georges-jcr-2013"
         date: "2013–14"
