@@ -4,18 +4,24 @@
   color: $color-white;
   min-height: 0;
   padding:15% 0;
+  &:first-of-type {
+    padding-top: 0;
+  }
+  .article__description {
+    margin-bottom: 15%;
+  }
   img {
     border-radius: 0;
   } 
   @include max-width($bp-mid) {
     padding:rem(20) 0;
   }
-  @include min-width($bp-mid) {
-    margin-top: $measure-unit * 4;
-    & + & {
-      margin-top: 0;
-    }
-  }
+  // @include min-width($bp-mid) {
+  //   margin-top: $measure-unit * 4;
+  //   & + & {
+  //     margin-top: 0;
+  //   }
+  // }
 }
 .portfolio-featured__bg--light {
   @extend %hero__bg;
