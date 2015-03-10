@@ -8,6 +8,7 @@ featured:
         slug: "university-of-reading"
         date: "2013–14"
         role: "Design &amp; front-end"
+        tech: "Custom CMS"
         description: "I started work in the Digital Development team at the University of Reading in early June 2013, and just over seven months, a lot of hard work, and a few too many coffees later we launched the new, and improved reading.ac.uk"
         buttons:
           show: true
@@ -22,6 +23,7 @@ featured:
         image: "hotspur-related.jpg"
         date: "2014"
         role: "Design &amp; front-end"
+        tech: "Wordpress"
         description: 'As a life-long Tottenham fan, when Ross approached me about creating a website to accompany his Twitter account – of which I was a avid follower – it was an insta-yes!'
         buttons:
           show: true
