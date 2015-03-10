@@ -182,7 +182,7 @@
 	}
 }
 [href*="dribbble.com"] {
-	@include social-color($color-s-dribbble, true, false, 15%);
+	@include social-color($color-s-dribbble, true, true, 15%);
 }
 [href*="twitter.com"] {
 	@include social-color($color-s-twitter, true, false);
