@@ -56,10 +56,10 @@
   color:$color-white;
   height:100%;
   // padding-left:rem(150);
-  // @include respond-to($bp-small) {
+  // @include max-width($bp-small) {
     // padding-left:rem(60);
   // }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     // padding-left:0;
     &:before {
       content:'';
@@ -101,10 +101,10 @@
   // line-height:1.3;
   margin:rem(12) auto rem(20);
   padding-top:0;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(23);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(20);
   }
 }
@@ -121,10 +121,10 @@
   width: 100%;
   text-align: center;
   padding-left:rem(150);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     padding-left:rem(60);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     padding-left:0;
   }
 }

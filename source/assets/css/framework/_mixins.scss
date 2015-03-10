@@ -22,45 +22,29 @@
 	width:100%;
 }
 
-@mixin not-touch() {
-	@media not all and (orientation:landscape) and (orientation:portrait) {
+@mixin max-height($bp) {
+	$unit: rem($bp, 16);
+	@media only screen and (max-height: $unit) {
 		@content;
 	}
 }
 
-@mixin respond-to($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (max-width:$em + $unit) {
-		@content;
-	}
-}
-@mixin respond-to-min($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (min-width:$em + $unit) {
-		@content;
-	}
-}
-@mixin respond-to-height($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (max-height:$em + $unit) {
+@mixin min-height($bp) {
+	$unit: rem($bp, 16);
+	@media only screen and (min-height: $unit) {
 		@content;
 	}
 }
 
-@mixin respond-to-min-height($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (min-height:$breakpoint + $unit) {
+@mixin max-width($bp) {
+	$unit: rem($bp, 16);
+	@media only screen and (max-width: $unit) {
 		@content;
 	}
 }
-
-
-@mixin orientation($o: 'portrait') {
-	@media (orientation: $o) {
+@mixin min-width($bp) {
+	$unit: rem($bp + 1, 16);
+	@media only screen and (min-width: $unit) {
 		@content;
 	}
 }

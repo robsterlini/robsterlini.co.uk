@@ -46,10 +46,10 @@ h3 {
 }
 h2 {
   @include font-size(36);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(32);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(28);
   }
 }
@@ -57,10 +57,10 @@ h3 {
   @include font-feature-settings(liga kern onum);
   @include font-size(28);
   width: 100%;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(26);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(24);
   }
 }
@@ -75,20 +75,20 @@ p,
   font-weight: $hotspur-font-bold;
   letter-spacing: rem(1);
   text-transform: uppercase;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(14);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(13);
   }
 }
 .hotspur__paragraph__pullout {
   @include font-size(23);
   font-style: italic;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(21);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(19);
   }
 }
@@ -140,7 +140,7 @@ p,
   background: none;
   padding-bottom: rem(50 + 75);
   padding-left: 0;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     padding-bottom: rem(50);
     padding-top: rem(85);
   }
@@ -159,10 +159,10 @@ p,
 .hero__header--beta {
   @include font-size(24);
   margin-top: rem(32);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(22);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(20);
   }
 }
@@ -182,12 +182,12 @@ p,
       padding-top: 0;
     }
   }
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     display: block;
     padding: rem(50) 0;
     min-height: 0;
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     padding: rem(33) 0;
   }
 }
@@ -215,7 +215,7 @@ p,
   min-height: rem(360);
   padding-bottom: rem(50);
   width: calc(100% - #{rem(150)});
-  @include respond-to(1150) {
+  @include max-width(1150) {
     display: block;
     width: calc(100% - #{rem(200)});
   }
@@ -239,7 +239,7 @@ p,
   &.hotspur__refresh__col--right {
     margin-right: rem(-150);
   }
-  @include respond-to(1150) {
+  @include max-width(1150) {
     margin-top: rem(25);
     width: rem(200);
     &.hotspur__refresh__col--left {
@@ -256,7 +256,7 @@ p,
 .hotspur__refresh__col--right {
   float: right;
 }
-@include respond-to(600) {
+@include max-width(600) {
   .hotspur__refresh__col--left,
   .hotspur__refresh__col--right {
     float: none;
@@ -284,7 +284,7 @@ p,
 .hotspur__refresh {
   position: relative;
   margin-top: rem(-40);
-  @include respond-to(600) {
+  @include max-width(600) {
     margin-top: rem(-20);
   }
 }
@@ -292,7 +292,7 @@ p,
   height: rem(300);
   overflow: hidden;
   position: relative;
-  @include respond-to(1150) {
+  @include max-width(1150) {
     height: rem(200);
   }
 }
@@ -304,7 +304,7 @@ p,
   width: 100%;
   transition:all .5s cubic-bezier(#{$bezier-nice});
   transform-origin: center center;
-  @include respond-to(1150) {
+  @include max-width(1150) {
     height: rem(200);
   }
 }
@@ -323,7 +323,7 @@ p,
   }
 }
 .hotspur__refresh__image {
-  @include respond-to(1150) {
+  @include max-width(1150) {
     height: rem(200);
   }
 }
@@ -399,7 +399,7 @@ p,
 .hotspur__section--heart {
   @extend %hotspur__section--reversed;
   padding-top: rem(25);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     padding-top: 0;
   }
 }
@@ -414,7 +414,7 @@ p,
   box-shadow: rgba($color-black, 0.5) rem(-2) rem(2) rem(5);
   display: inline-block;
   width: rem(150);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     width: rem(100);
   }
 }
@@ -449,7 +449,7 @@ p,
     width: rem(600);
     z-index: 1;
   }
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     padding-bottom: 0;
     .group {
       padding-right: 0;
@@ -493,7 +493,7 @@ p,
       margin-right: 0;
       width: 100%;
     }
-    @include respond-to($bp-tiny + 100) {
+    @include max-width($bp-tiny + 100) {
       margin-right: 0;
       width: 100%;
     }
@@ -510,7 +510,7 @@ p,
 .hotspur__section--footer {
   text-align: center;
   padding-bottom: 0;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     text-align: left;
   }
   h2,
@@ -535,7 +535,7 @@ p,
 .hotspur__footer__browser--full {
   max-width: rem(600);
   width:75%;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     width: 95%;
   }
 }
@@ -543,7 +543,7 @@ p,
   width:25%;
   max-width: rem(210);
   margin-left: rem(-20);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     margin-left: -30%;
     width: 33%;
   }

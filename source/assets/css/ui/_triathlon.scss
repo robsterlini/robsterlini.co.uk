@@ -57,7 +57,7 @@ body.triathlon {
       position: absolute;
       right: rem(-50);
       top: rem(-25);
-      @include respond-to($bp-small) {
+      @include max-width($bp-small) {
         bottom: rem(-25);
         top: rem(-20);
       }

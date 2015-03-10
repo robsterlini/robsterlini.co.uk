@@ -7,11 +7,11 @@
   width:100%;
   overflow: hidden;
   z-index: 1;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     padding-left:rem(60);
     padding-top: rem(32);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     padding-left:0;
     padding-bottom:rem(5);
   }
@@ -35,10 +35,10 @@
     position: relative;
     z-index:1;
     @include font-size(16);
-    @include respond-to($bp-small) {
+    @include max-width($bp-small) {
       @include font-size(15);
     }
-    @include respond-to($bp-tiny) {
+    @include max-width($bp-tiny) {
       @include font-size(14);
     }
   }

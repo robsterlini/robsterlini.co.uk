@@ -63,11 +63,11 @@ h1 {
 	@include font-size(52);
 	line-height:1.15;
 	margin:rem(72) auto rem(24);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(42);
     // margin-top: rem(64);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(34);
     // margin-top: rem(48);
   }
@@ -81,10 +81,10 @@ h2 {
 	line-height:1.35;
 	margin:0 auto rem(12);
 	padding-top:rem(48);
-	@include respond-to($bp-small) {
+	@include max-width($bp-small) {
 		@include font-size(28);
 	}
-	@include respond-to($bp-tiny) {
+	@include max-width($bp-tiny) {
 		@include font-size(24);
 	}
 }
@@ -94,10 +94,10 @@ h3 {
 	@include font-size(25);
 	margin:rem(24) auto rem(16);
 	line-height:1.05;
-	@include respond-to($bp-small) {
+	@include max-width($bp-small) {
 		@include font-size(22);
 	}
-	@include respond-to($bp-tiny) {
+	@include max-width($bp-tiny) {
 		@include font-size(19);
 	}
 }
@@ -144,10 +144,10 @@ h6 {
 	@include font-size(18);
 	line-height:1.45;
 	margin:rem(6) auto rem(12);
-	@include respond-to($bp-small) {
+	@include max-width($bp-small) {
 		@include font-size(17);
 	}
-	@include respond-to($bp-tiny) {
+	@include max-width($bp-tiny) {
 		@include font-size(16);
 	}
 }
@@ -173,10 +173,10 @@ blockquote {
 	}
 	p {
 		@include font-size(24);
-		@include respond-to($bp-small) {
+		@include max-width($bp-small) {
 			@include font-size(22);
 		}
-		@include respond-to($bp-tiny) {
+		@include max-width($bp-tiny) {
 			@include font-size(20);
 		}
 	}
@@ -190,10 +190,10 @@ blockquote {
 		display: block;
 		@include font-size(18);
 		margin-top: rem(5);
-		@include respond-to($bp-small) {
+		@include max-width($bp-small) {
 			@include font-size(17);
 		}
-		@include respond-to($bp-tiny) {
+		@include max-width($bp-tiny) {
 			@include font-size(16);
 		}
 		&:before {

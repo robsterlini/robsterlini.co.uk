@@ -4,10 +4,10 @@ code {
   .hero & {
     background:none;
   }
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(16);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(15);
   }
 }

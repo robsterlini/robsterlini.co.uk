@@ -26,10 +26,10 @@
   width:100%;
   pointer-events:none;
   padding:rem(5) 0 rem(4) rem(150);
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     padding-left:rem(60);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     display: none;
   }
   h1 {
