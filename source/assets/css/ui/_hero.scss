@@ -42,9 +42,6 @@
 .hero__bg {
   @extend %hero__bg;
 }
-.hero__bg--404 {
-  @extend %hero__bg;
-}
 
 .hero__headers {
   @extend .group;

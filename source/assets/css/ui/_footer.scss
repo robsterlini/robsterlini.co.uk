@@ -16,18 +16,6 @@
     padding-left:0;
     padding-bottom:rem(5);
   }
-  .body--404 & {
-    background:none;
-    &:before {
-      content:'';
-      position: absolute;
-      left:0;
-      width:100%;
-      top:rem(100);
-      bottom:0;
-      background:lighten($color-black,2%);
-    }
-  }
   .group {
     position: relative;
   }
