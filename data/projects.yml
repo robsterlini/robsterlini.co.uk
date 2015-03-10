@@ -45,6 +45,19 @@ featured:
           show: true
           live: "http://stgeorgesjcr.co.uk"
           case_study: false
+##
+
+    -   name: "Fueled Press page"
+        slug: "fueled-press-page"
+        date: "2015"
+        role: "Front-end"
+        tech: "Middleman build"
+        description: "At Fueled, we get talked about a lot, whether people are reviewing our latest kick-ass app, singing praise about the Fueled Collective, or just waxing lyrical about Rameet’s beard&hellip; having a repository for all of those articles was a must!"
+        buttons:
+          show: true
+          live: "http://fueled.com/press"
+          case_study: false
+          dribbble: "https://dribbble.com/shots/1896471-Read-All-About-It"
 
 ##
 
