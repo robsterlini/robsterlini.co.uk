@@ -25,9 +25,13 @@
 
 %btns--fixed {
 	position: fixed;
-	top: rem(16);
-	right: rem(16);
-	z-index: 2;
+	top: $measure-unit;
+	right: $measure-unit;
+	z-index: 10;
+	@include max-width($bp-tiny) {
+		top: $measure-unit / 2;
+		right: $measure-unit / 2;
+	}
 }
 
 .btns--fixed {
@@ -44,7 +48,6 @@
 
 .btns--menu {
 	@extend %btns--fixed;
-	z-index: 10;
   .btn {
     margin: 0;
     padding: rem(8) 0 rem(8);
