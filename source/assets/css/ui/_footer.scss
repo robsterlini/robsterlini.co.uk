@@ -1,5 +1,4 @@
 .footer {
-  @extend %masthead-toggled-slide;
   font-style: italic;
   color:$color-accent;
   margin-top:rem(-0);
@@ -18,6 +17,7 @@
   }
   .group {
     position: relative;
+    @extend %masthead-toggled-slide;
   }
   p,
   ul {
