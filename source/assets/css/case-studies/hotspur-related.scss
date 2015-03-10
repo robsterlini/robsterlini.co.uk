@@ -96,7 +96,7 @@ p,
 // Nav
 .btns--menu {
   .btn {
-    padding: rem(10) 0 rem(12);
+    padding: rem(11) 0 rem(11);
   }
 }
 
@@ -133,6 +133,7 @@ p,
 [data-plx="child"] {
   background-position: center bottom;
   height: rem(600);
+  top: 0;
 }
 
 // Hero
