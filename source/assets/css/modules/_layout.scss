@@ -34,20 +34,19 @@ main {
   overflow: hidden;
   position: relative;
   z-index:1;
-  padding-bottom:em(50);
-  padding-left:rem(150);
-  // @include animation('%fade-in',.5s);
-  @include respond-to($bp-small) {
-    padding-left:rem(60);
+  padding-bottom: $measure-unit * 3;
+  padding-left: $masthead-full;
+  @include max-width($tp-masthead-icon) {
+    padding-left: $masthead-icon;
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($tp-masthead-hamburger) {
     padding-left:0;
-    padding-bottom:rem(5);
+    padding-bottom: $measure-unit / 2;
   }
 }
 
 hr {
-  margin: rem(60) auto rem(40);
+  margin: $measure-unit * 4 auto $measure-unit * 3;
   max-width: rem($layout-max-width /2);
   outline: none;
   border: 0;
