@@ -10,6 +10,7 @@
 //= require _parallax
 //= require _anchorScroll
 //= require _loadHero
+//= require _agePosts
 //= require _caseStudyHotspur
 
 $(function() {

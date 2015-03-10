@@ -15,7 +15,8 @@ g.partials = [
   'anchorScroll',
   'loadHero',
   'hotspurRelated',
-  'strikethrough'
+  'strikethrough',
+  'agePosts'
 ];
 
 // This _init function is the function which kicks everything off when
