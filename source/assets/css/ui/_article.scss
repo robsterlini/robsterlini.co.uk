@@ -4,7 +4,18 @@
 
 .article__description {
   @extend .hero__header--beta;
-  // margin-bottom:rem(50);
+}
+.article__description--smaller {
+  @include font-size(21);
+  font-weight: $font-weight-normal;
+  margin:#{$measure * 0.75} auto #{$measure-unit * 1.5};
+  padding-top:0;
+  @include max-width($bp-small) {
+    @include font-size(20);
+  }
+  @include max-width($bp-tiny) {
+    @include font-size(18);
+  }
 }
 
 .article__data {
