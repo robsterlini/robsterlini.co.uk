@@ -26,15 +26,15 @@
     color:$color-alert-1;
   }
 }
+.alert--older {
+  border-color:$color-alert-2;
+  & > strong:first-of-type {
+    color:$color-alert-2;
+  }
+}
 .alert--old {
   border-color:$color-alert-3;
   & > strong:first-of-type {
     color:$color-alert-3;
-  }
-}
-.alert--aging {
-  border-color:$color-alert-2;
-  & > strong:first-of-type {
-    color:$color-alert-2;
   }
 }
