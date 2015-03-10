@@ -8,30 +8,32 @@ priority: 0.9
 <section id="content" class="wrapper">
   <main>
     <article class="">
-      <div class="group">
-        <h1><%= current_page.data.title %></h1>
-        <p class="article__description"><%= current_page.data.description %></p>
-      </div>
       <% #FEATURED %>
-      <% data.projects.featured.each do |project| %>
+      <% data.projects.featured.each_with_index do |project, index| %>
         <div class="portfolio-featured__item" data-plx="parent">
           <div class="portfolio-featured__bg--<%= project.hero_bg_colour || "light" %>" data-plx="child" style="background-image:url('/assets/images/portfolio/<%= project.slug %>/<%= project.slug %>.jpg')"></div>
             <div class="group">
-             <div class="browser-window">
-              <div class="browser-window__overflow">
-                <%= image_tag "portfolio/#{project.slug}/portfolio-image.jpg" %>
-              </div>
-            </div><!--
-            --><div class="portfolio__copy">
-              <h2><%= project.name %></h2>
-              <p class="small-caps"><%= project.date %> • <%= project.role %><% if project.tech %> • <%= project.tech %><% end %></p>
-              <p><%= project.description %></p>
-              <% if project.buttons %>
-                <p class="btns">
+              <% if index == 0 %>
+                <h1><%= current_page.data.title %></h1>
+                <p class="article__description"><%= current_page.data.description %></p>
+              <% end %>
+              <div class="browser-window">
+                <div class="browser-window__overflow">
+                  <%= image_tag "portfolio/#{project.slug}/portfolio-image.jpg" %>
+                </div>
+              </div><!--
+              --><div class="portfolio__copy">
+                <h2><%= project.name %></h2>
+                <p class="small-caps"><%= project.date %> • <%= project.role %><% if project.tech %> • <%= project.tech %><% end %></p>
+                <p><%= project.description %></p>
+                <% if project.buttons %>
+                  <p class="btns--left">
                   <% if project.buttons.case_study != false %><a class="btn" href="<%= project.buttons.case_study %>" title="Read about the process">Read the case study</a><% end %>
                   <% if project.buttons.live != false %><a class="btn--outline" href="<%= project.buttons.live %>" title="See this project live">See it live</a><% end %>
-                </p>
-              <% end %>
+                  <% if project.buttons.dribbble != false %><a class="btn--outline" href="<%= project.buttons.dribbble %>" title="See this project on dribbble">See it Dribbble</a><% end %>
+                  </p>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
