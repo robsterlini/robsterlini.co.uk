@@ -157,7 +157,8 @@ p {
 
 .small-caps,
 .sc {
-	@include font-feature-settings(smcp c2sc);
+	@include font-feature-settings(smcp c2sc lnum kern);
+	line-height: 1.1;
 }
 
 blockquote {
