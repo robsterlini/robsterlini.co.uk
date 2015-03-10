@@ -1,15 +1,30 @@
 
-.portfolio__item {
-  padding:5% 0; 
-  @include respond-to($bp-mid) {
-    padding:rem(20) 0;
-  }
-}
-.portfolio__item--has-image {
-  @extend .portfolio__item;
+.portfolio-featured__item {
+  background: $color-black;
+  color: $color-white;
+  min-height: 0;
+  padding:15% 0;
   img {
     border-radius: 0;
+  } 
+  @include max-width($bp-mid) {
+    padding:rem(20) 0;
   }
+  @include min-width($bp-mid) {
+    margin-top: $measure-unit * 4;
+    & + & {
+      margin-top: 0;
+    }
+  }
+}
+.portfolio-featured__bg--light {
+  @extend %hero__bg;
+  background-position: center top;
+}
+.portfolio-featured__bg--dark {
+  @extend %hero__bg;
+  background-position: center top;
+  opacity: 1;
 }
 .portfolio__copy {
   width:calc(100% - #{rem(400)});
@@ -25,10 +40,10 @@
   .btns {
     padding-left:rem(10);
   }
-  @include respond-to($bp-large) {
+  @include max-width($bp-large) {
     width:calc(100% - #{rem(300)});
   }
-  @include respond-to($bp-mid) {
+  @include max-width($bp-mid) {
     width:100%;
     display: block;
     h2,
@@ -44,11 +59,11 @@
   vertical-align: middle;
   border-radius:rem(3);
   overflow: hidden;
-  border:rem(2) solid lighten($color-accent,25%);
-  @include respond-to($bp-large) {
+  border:rem(2) solid $color-dark;
+  @include max-width($bp-large) {
     width:rem(300);
   }
-  @include respond-to($bp-mid) {
+  @include max-width($bp-mid) {
     max-width:rem(250);
     display: block;
     margin:0 auto rem(20);
@@ -56,7 +71,7 @@
   &:before {
     content:'•••';
     height:rem(20);
-    background:lighten($color-accent,25%);
+    background:$color-dark;
     color:rgba($color-white,0.4);
     width:100%;
     display: block;
@@ -68,14 +83,33 @@
 .browser-window__overflow {
   overflow: auto;
   max-height: rem(270);
-  @include respond-to($bp-large) {
+  @include max-width($bp-large) {
     max-height: rem(225);
   }
-  @include respond-to($bp-mid) {
+  @include max-width($bp-mid) {
     max-height: rem(180);
   }
 }
 
+.portfolio-other {
+  @include min-width($bp-mid) {
+    margin-left: $measure-unit * -1;
+    width: calc(100% + #{($measure-unit * 2)});
+  }
+}
+.portfolio-other__item {
+  display: inline-block;
+  margin-bottom: $measure-unit * 2;
+  padding: 0 $measure-unit;
+  vertical-align: top;
+  width: 33.33%;
+  @include max-width($bp-mid) {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 100%;
+  }
+}
 // Return to portfolio
 .btns--portfolio-menu {
   .btn {
