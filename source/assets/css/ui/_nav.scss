@@ -36,16 +36,31 @@ $pages: (
   }
 }
 [data-js="toggle-navigation"] {
-  @include max-width($tp-masthead-hamburger) {
-    background: $color-accent;
-    border-color: $color-accent;
-    @include hover {
-      background: $color-dark;
-      border-color: $color-dark;
+  .btns--menu & {
+    @include max-width($tp-masthead-hamburger) {
+      color: $color-white;
+      background: $color-accent;
+      border-color: $color-accent;
+      @include hover {
+        background: $color-dark;
+        border-color: $color-dark;
+        color: $color-white;
+      }
+      @include active {
+        color: $color-white;
+        &:before {
+          transform: scale(0.9) rotate(90deg);
+        }
+      }
+      .masthead--toggled & {
+        background: $color-dark;
+        border-color: $color-dark;
+        color: $color-white;
+      }
     }
-  }
-  @include min-width($tp-masthead-hamburger + 1) {
-    display: none;
+    @include min-width($tp-masthead-hamburger + 1) {
+      display: none;
+    }
   }
 }
 .nav__list {
