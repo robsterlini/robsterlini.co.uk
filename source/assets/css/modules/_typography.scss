@@ -158,6 +158,8 @@ p {
 .small-caps,
 .sc {
 	@include font-feature-settings(smcp c2sc lnum kern);
+}
+.small-caps {
 	line-height: 1.1;
 }
 
