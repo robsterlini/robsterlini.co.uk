@@ -18,6 +18,7 @@ featured:
 
     -   name: "Hotspur Related"
         slug: "hotspur-related"
+        hero_bg_colour: "dark"
         image: "hotspur-related.jpg"
         date: "2014"
         role: "Design &amp; front-end"
