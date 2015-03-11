@@ -79,13 +79,15 @@ helpers do
 end
 
 # Set directories
-
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/images'
 set :hero_dir, '/assets/images/hero/'
 set :portfolio_dir, '/assets/images/portfolio/'
+
+# Set base URLs
 set :url_root, 'https://robsterlini.co.uk'
+set :url_short, 'http://sterlini.co'
 
 # Create pages
 data.projects.featured.each_with_index do |c, i|
