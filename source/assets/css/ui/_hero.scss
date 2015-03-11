@@ -1,16 +1,16 @@
 .hero {
   width:100%;
   min-height:rem(450);
-  padding:12% 0 15% rem(150);
+  padding:12% 0 15% $masthead-full;
   background:$color-black;
   text-shadow:rgba($color-black,0.2) 0 em(1) em(2);
   display: flex;
   z-index:1;
-  @include max-width($bp-small) {
+  @include max-width($tp-masthead-icon) {
     min-height:rem(300);
-    padding:rem(25) 0 rem(60) rem(60);
+    padding:rem(25) 0 rem(60) $masthead-icon;
   }
-  @include max-width($bp-tiny) {
+  @include max-width($tp-masthead-hamburger) {
     padding: rem(20) 0 rem(60);
   }
 }
