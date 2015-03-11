@@ -7,8 +7,8 @@ var g = g || {};
 // 		on the JS simultaneously.
 g.partials = [
   'browserSniff',
-  'loadAnimation',
   'loadImages',
+  'disqusComments',
   'navToggle',
   'codeHighlight',
   'parallax',
@@ -16,7 +16,8 @@ g.partials = [
   'loadHero',
   'hotspurRelated',
   'strikethrough',
-  'agePosts'
+  'agePosts',
+  'share'
 ];
 
 // This _init function is the function which kicks everything off when
