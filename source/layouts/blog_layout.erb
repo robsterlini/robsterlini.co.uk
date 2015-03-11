@@ -28,6 +28,12 @@
       <% end %>
       <%= yield %>
       <h2>Good read?</h2>
+      <% if current_page.data.comments == true %>
+        <h3>Join in the discussion</h3>
+        <div class="comments" id="disqus_thread"></div>
+        <noscript><p>Please enable javascript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></p></noscript>
+        <p><a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a></p>
+      <% end %>
       <h3>Sharing is caring!</h3>
       <% short_url = current_page.data.short_url ? "sterlini.co/#{current_page.data.short_url}" : "sterlini.co/j#{current_article.url.sub! '/journal', ''}" %>
       <p>Feel free to share it – <a href="http://<%= short_url %>" class="link" id="article-sharelink" title="Share this post with others"><%= short_url %></a>, or chat about it <a href="http://twitter.com/robsterlini" title="Chat to me about this post on Twitter">on Twitter</a>.</p>
