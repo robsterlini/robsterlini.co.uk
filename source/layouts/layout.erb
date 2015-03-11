@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="<%= yield_content(:title) || current_page.data.title || "Web designer" %>">
     <meta name="twitter:description" content="<%= yield_content(:meta_description) || current_page.data.description || "I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail." %>">
     <meta name="twitter:creator" content="@robsterlini">
-    <meta name="twitter:image:src" content="/assets/images/hero/<%= yield_content(:hero) || current_page.data.hero || "main.jpg" %>">
+    <meta name="twitter:image:src" content="<%= yield_content(:hero_loc) || hero_dir %><%= current_page.data.hero || yield_content(:hero) || current_page.data.card_image || "main.jpg" %>">
     <meta name="twitter:domain" content="robsterlini.co.uk">
     
     <%= stylesheet_link_tag "screen" %>

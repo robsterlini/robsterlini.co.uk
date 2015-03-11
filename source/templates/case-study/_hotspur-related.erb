@@ -1,7 +1,11 @@
+<% hero_image = "hotspur-related_600.jpg" %>
+<% hero_loc = "#{portfolio_dir}hotspur-related/" %>
+<% content_for(:hero, hero_image); content_for(:hero_loc, hero_loc) %>
+
 <%= partial "partials/hero", locals: {
-  image: "hotspur-related.jpg",
+  image: hero_image,
   image_small: "hotspur-related_600.jpg",
-  image_loc: "#{portfolio_dir}hotspur-related/",
+  image_loc: hero_loc,
   title: "<span class='hotspur__title__span'>How I built a website for </span>#{project.name}",
   subtitle: "#{project.description}",
 } %>

@@ -4,12 +4,13 @@
   <% end %>
   <% localised_date = current_article.date.strftime("%b %e") %>
   <% if current_article.data.hero %>
-    <% content_for(:hero, "#{current_article.data.hero}") %>
+    <% image_loc = "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}" %>
+    <% content_for(:hero, current_article.data.hero); content_for(:hero_loc, image_loc) %>
     <%= partial "partials/hero", locals: {
-      image: "#{current_article.data.hero}",
-      image_small: "#{current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero}",
-      image_loc: "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}",
-      title: "#{current_article.title}",
+      image: current_article.data.hero,
+      image_small: current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero,
+      image_loc: image_loc,
+      title: current_article.title,
       subtitle: current_article.data.description,
       extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
     } %>
