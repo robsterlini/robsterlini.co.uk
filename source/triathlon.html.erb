@@ -7,13 +7,18 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
 ---
 
 <section id="content" class="wrapper" data-page="home">
+  <% events = ''; data.triathlon.events.each_with_index do |event, index|
+    spacer = index == 0 ? "" : ",";
+    tri_class = event.complete ? "" : "in";
+    events = events.to_s + spacer + " <a data-anchor href='##{event.slug}' class='triathlon__event--#{tri_class}complete'>" + event.title + "</a>"
+  end %>
   <%= partial "partials/hero", locals: {
     image: "#{current_page.data.hero}",
     image_small: "triathlon_600.jpg",
     image_loc: hero_dir,
-    title: "<span>Triathlons and more for Macmillan</span>",
+    title: "<img src='/assets/images/hero/triathlon-title.svg' /><span class='visuallyhidden'>Triathlons and more for Macmillan</span>",
     subtitle: current_page.data.description,
-    extra: "<p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
+    extra: "<p class='hero--triathlon__events'><strong class='sc'>The events</strong> #{events}<p><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
   } %>
   <div class="article__fixed-header" data-js="fixed-header">
   <a class='btn' href='<%= current_page.data.donate_url %>' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a>
@@ -52,31 +57,28 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
       <h3>The events</h3>
       <p>This is a bit of a <abbr title="Too long; didn’t read">TL;DR</abbr> for my events throughout this year. For a bit more information on each then keep reading!</p>
       <ul>
-        <li><strong class="small-caps">January</strong> Jan-water-ary</li>
-        <li><strong class="small-caps">2 May</strong> Tough Mudder UK</li>
-        <li><strong class="small-caps">12 July</strong> Jenson Button Trust Triathlon</li>
-        <li><strong class="small-caps">8 August</strong> The London Triathlon</li>
+        <% data.triathlon.events.each_with_index do |event, index| %>
+          <li class="triathlon__event--<%= event.complete ? "" : "in" %>complete"><strong class="small-caps"><%= event.short_date %></strong> <%= event.title %></li>
+        <% end %>
       </ul>
-      <h3 id="jan-water-ary">Jan-water-ary</h3>
-      <p><em>1 January–7 February 2015 (with a week off for skiing)</em></p>
-      <p>Still haven’t found a catchier, less-rubbish name for it, but meh&hellip; This January, I decided to go one further than the no-alcohol Dryathlon and <strong>only</strong> drink water.</p>
-      <p>For most this may have been an easy challenge, but I love my diet coke and coffee too much so it proved tough.</p>
-      <blockquote class="blockquote--long">
-        <p>This was easier than I’d thought. Only found myself missing coffee a few times, and everything else was simple to cut out. Counting what I would have drunk proved to be trickier though, so at the end I decided to go for a round £5 per day rather than a Diet Coke here, a Starbucks there.</p>
-        <p>All in all I raised £155!</p>
-      </blockquote>
-      <h3 id="tough-mudder">Tough Mudder UK</h3>
-      <p><em>2 May 2015</em></p>
-      <p>I’ve seen people complete Tough Mudder, and it’s always looked like a twisted form of fun; until this year I’ve not had the bottle to sign up.</p>
-      <p>The hope is that the mental toughness will add an extra level and that it will help me hone my ability to dig deep for the later events where I might need it.</p>
-      <h3 id="jenson-button-tri">Jenson Button Trust Triathlon</h3>
-      <p><em>12 July 2015</em></p>
-      <p>This will likely be the first triathlon for this year, and will be my first real experience of one. The plan is to use this to get used to the way transition works, and how mass water starts work before the big day in August!</p>
-      <h3 id="the-london-triathlon">The London Triathlon</h3>
-      <p><em>8 August 2015</em></p>
-      <p>This is the big one!</p>
-      <p>The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for.</p>
-      <p>To be able to compete in an event this big in the city I grew up in will be great.</p>
+      <%# Events %>
+      <% data.triathlon.events.each_with_index do |event, index| %>
+        <h3 id="<%= event.slug %>"><%= event.title %></h3>
+        <p><em><%= event.full_date %></em></p>
+        <% if event.desc %>
+          <% event.desc.each do |text| %>
+            <p><%= text %></p>
+          <% end %>
+        <% end %>
+        <% if event.complete %>
+          <blockquote class="blockquote--long">
+            <% event.complete.each_with_index do |text, index| %>
+              <p><%= "#{ index == 0 ? "<strong class='sc'>Completed</strong> " : "" }#{text}" %></p>
+            <% end %>
+          </blockquote>
+        <% end %>
+      <% end %>
+
       <h2 id="hows-training-going">How’s training going?</h2>
       <p>At this point (written on 8 February), it’s going well. I’ve got my trisuit – a dashing onepiece outfit that’ll go under my wetsuit, and is padded for cycling – and have run a few times in it.</p>
       <p>On 4 January, <a href="http://instagram.com/p/xbnc-DP-9e/?modal=true" title="Check out the run on Instagram">I ran a half marathon distance</a>. It started off as a 15km run, but was so comfortable that I extended it out to the 22km mark; and it felt amazing. To achieve that without distance management training was pretty satisfying, so the hope is that with a bit of forethought and planning I ought to be able to cover similar distances relatively regularly. The only negative was coming in just over two hours, but my music had died towards the end, so the last mile or so was a bit slower than I’d have liked.</p>
