@@ -55,7 +55,7 @@
   // @include max-width($bp-small) {
     // padding-left:rem(60);
   // }
-  @include max-width($bp-tiny) {
+  @include max-width($tp-masthead-hamburger) {
     // padding-left:0;
     &:before {
       content:'';
