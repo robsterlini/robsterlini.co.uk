@@ -11,6 +11,8 @@ redirect:
     /projects: /portfolio
     /work: /portfolio
     /about-me: /about
+    /macmillan: /triathlon
+    /donate: /triathlon
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg|svg)$
