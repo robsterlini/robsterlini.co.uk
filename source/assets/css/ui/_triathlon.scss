@@ -46,25 +46,25 @@ body.triathlon {
     }
   }
   .hero__header--alpha {
-    position: relative;
-    z-index: 1;
-    &:before {
-      background: url(../images/hero/triathlon-paint.png) center top no-repeat;
-      background-size: 100% 100%;
-      bottom: rem(-35);
-      content: '';
-      left: rem(-50);
-      position: absolute;
-      right: rem(-50);
-      top: rem(-25);
+    img {
+      margin-left: rem($measure * -5);
+      max-width: none;
+      width: calc(100% + #{rem($measure * 10)});
+      @include max-width($bp-mid) {
+        margin-left: rem($measure * -3);
+        width: calc(100% + #{rem($measure * 6)});
+      }
       @include max-width($bp-small) {
-        bottom: rem(-25);
-        top: rem(-20);
+        margin-left: rem($measure * -2);
+        width: calc(100% + #{rem($measure * 4)});
+      }
+      @include max-width($bp-tiny) {
+        margin-left: rem($measure * -1);
+        width: calc(100% + #{rem($measure * 2)});
       }
     }
-    span {
-      position: relative;
-      z-index: 1;
+    @include max-width($tp-masthead-hamburger) {
+      margin-top: 0;
     }
   }
   .hero__header--beta,
@@ -85,5 +85,28 @@ body.triathlon {
     opacity: 1;
     transform: none;
     visibility: visible;
+  }
+}
+.hero {
+  a[class^="triathlon__event--"] {
+    color: $color-b-macmillan-2;
+    @include hover {
+      color: $color-b-macmillan-1;
+    }
+  }
+}
+.hero--triathlon__events {
+  margin-bottom: $measure-unit;
+  .sc {
+    display: block;
+  }
+}
+.triathlon__event--complete {
+  opacity: 0.5;
+}
+a.triathlon__event--complete {
+  transition:color .25s cubic-bezier(#{$bezier-nice}), opacity .25s cubic-bezier(#{$bezier-nice});
+  @include hover {
+    opacity: 1;
   }
 }
