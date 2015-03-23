@@ -23,27 +23,27 @@
 }
 
 @mixin max-height($bp) {
-	$unit: rem($bp, 16);
+	$unit: em($bp, 16);
 	@media only screen and (max-height: $unit) {
 		@content;
 	}
 }
 
 @mixin min-height($bp) {
-	$unit: rem($bp, 16);
+	$unit: em($bp, 16);
 	@media only screen and (min-height: $unit) {
 		@content;
 	}
 }
 
 @mixin max-width($bp) {
-	$unit: rem($bp, 16);
+	$unit: em($bp, 16);
 	@media only screen and (max-width: $unit) {
 		@content;
 	}
 }
 @mixin min-width($bp) {
-	$unit: rem($bp + 1, 16);
+	$unit: em($bp + 1, 16);
 	@media only screen and (min-width: $unit) {
 		@content;
 	}
