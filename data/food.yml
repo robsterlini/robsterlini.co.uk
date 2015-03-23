@@ -13,14 +13,17 @@ months:
         ## 23 March
         -   date: 2015-03-23 00:00 UTC
             breakfast:
-                -   food: "BFS"
+                -   food: "BFS; and an Espresso"
                     time: "07:00"
-                -   food: "Espresso"
-                    time: "07:00"
-            #lunch:
+            lunch:
+                -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and a Cappuccino"
+                    time: "13:01"
+
             #dinner:
             snacks:
                 -   food: "Apple"
                     time: "11:37"
                     food: "Coconut, dried pineapple and mango pieces from a <em>Graze box</em>."
                     time: "12:23"
+                    food: "Apple"
+                    time: "13:35"
