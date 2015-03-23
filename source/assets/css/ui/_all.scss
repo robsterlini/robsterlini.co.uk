@@ -6,18 +6,21 @@
  * Including SCSS Partial. Keeps screen.scss neater.
  */
 
+// Layout elements
 @import "_hero";
 @import "_masthead";
 @import "_nav";
 @import "_footer";
 
+// Blog items
 @import "_article";
-
 @import "_comments";
 
+// Specific Pages
+@import "_bucket-list";
+@import "_contact";
+@import "_food-diary";
 @import "_home";
 @import "_portfolio";
-@import "_bucket-list";
-@import "_triathlon";
-@import "_contact";
 @import "_process";
+@import "_triathlon";

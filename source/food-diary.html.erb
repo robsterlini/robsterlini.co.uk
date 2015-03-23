@@ -1,0 +1,47 @@
+---
+title:  Eating clean
+description: As part of my training, my PT has suggested keeping a food diary. This is pretty much entirely for me, but feel free to peruse as you wish.
+---
+
+<section id="content" class="wrapper">
+  <main data-anchors>
+    <article class="type group">
+      <h1><%= current_page.data.title %></h1>
+      <p class="article__description"><%= current_page.data.description %></p>
+      <% data.food.months.each_with_index do |month, index| %>
+        <h2 id="<%= month.month.downcase %>"><%= month.month %></h2>
+        <% month.food.each_with_index do |food, index| %>
+          <h3 id="<%= Date.parse(food.date).strftime("%d-%m-%Y") %>"><time title="<%= Date.parse(food.date).strftime("%d-%m-%Y") %>"><%= Date.parse(food.date).strftime("%A %e %B") %></time></h3>
+          <div class="food__list"><!--
+            <% ["breakfast", "lunch", "dinner", "snacks"].each do |meal| %>
+              <%
+                if meal == "breakfast"
+                  set_meal = food.breakfast
+                elsif meal == "lunch"
+                  set_meal = food.lunch
+                elsif meal == "dinner"
+                  set_meal = food.dinner
+                elsif meal == "snacks"
+                  set_meal = food.snacks
+                end
+              %>
+              --><div class="food__meal--<%= meal %>">
+                <p class="food__label small-caps"><strong><%= meal.capitalize %></strong></p>
+                <% if set_meal %>
+                <ul class="list--no-bullet">
+                  <% set_meal.each do |meal| %>
+                  <% data.food.food.shorthand.each {|replacement| meal.food.gsub!(replacement[0], replacement[1])} %>
+                    <li><%= "<strong>#{meal.time}</strong> #{meal.food}" %></li>
+                  <% end %>
+                </ul>
+                <% else %>
+                  <p>No <%= meal %> today.</p>
+                <% end %>
+              </div><!--
+            <% end %>
+          --></div>
+        <% end %>
+      <% end %>
+    </article>
+  </main>
+</section>

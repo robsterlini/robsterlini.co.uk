@@ -1,0 +1,22 @@
+########
+
+food:
+    shorthand: [
+        ["BFS", "<abbr title='A home-made smoothie with oats, banana, skimmed milk and vanilla extract'>Breakfast smoothie</abbr>"]
+    ]
+
+months:
+
+    -   month: "March"
+        food:
+        -   date: 2015-03-23 00:00 UTC
+            breakfast:
+                -   food: "BFS"
+                    time: "07:00"
+                -   food: "Espresso"
+                    time: "07:00"
+            #lunch:
+            #dinner:
+            snacks:
+                -   food: "Apple"
+                    time: "11:37"
