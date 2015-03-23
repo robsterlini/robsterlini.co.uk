@@ -7,8 +7,10 @@ food:
 
 months:
 
+    ## March
     -   month: "March"
         food:
+        ## 23 March
         -   date: 2015-03-23 00:00 UTC
             breakfast:
                 -   food: "BFS"
@@ -20,3 +22,5 @@ months:
             snacks:
                 -   food: "Apple"
                     time: "11:37"
+                    food: "Coconut, dried pineapple and mango pieces from a <em>Graze box</em>."
+                    time: "12:23"
