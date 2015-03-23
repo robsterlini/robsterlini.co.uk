@@ -48,6 +48,13 @@
 		@content;
 	}
 }
+@mixin min-max-width($bp-min, $bp-max) {
+	$unit-min: em($bp-min + 1, 16);
+	$unit-max: em($bp-max, 16);
+	@media only screen and (min-width: $unit-min) and (max-width: $unit-max) {
+		@content;
+	}
+}
 
 @mixin aspect-ratio($x, $y, $type: "max") {
 	$query: '';
