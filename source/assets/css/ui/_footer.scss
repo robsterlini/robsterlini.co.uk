@@ -1,28 +1,23 @@
 .footer {
-  font-style: italic;
-  color:$color-accent;
-  margin-top:rem(-0);
-  padding:rem(50) 0 0 rem(150);
-  position: relative;
-  width:100%;
+  color: $color-accent;
   overflow: hidden;
+  margin-top: 0;
+  padding:$measure-unit * 4 0 $measure-unit * 2 $masthead-full;
+  position: relative;
+  width: 100%;
   z-index: 1;
-  @include max-width($bp-small) {
-    padding-left:rem(60);
-    padding-top: rem(32);
+  @include max-width($tp-masthead-icon) {
+    padding-left: $masthead-icon;
+    padding-top: $measure-unit * 2;
   }
-  @include max-width($bp-tiny) {
-    padding-left:0;
-    padding-bottom:rem(5);
-  }
-  .group {
-    position: relative;
-    @extend %masthead-toggled-slide;
+  @include max-width($tp-masthead-hamburger) {
+    padding-left: 0;
+    padding-bottom: $measure-unit / 2;
   }
   p,
   ul {
     position: relative;
-    z-index:1;
+    z-index: 1;
     @include font-size(16);
     @include max-width($bp-small) {
       @include font-size(15);
@@ -32,11 +27,26 @@
     }
   }
   ul {
+    list-style: none;
     margin-bottom: 0;
-    // font-style: normal;
+    padding: 0;
     & + ul {
       margin-top: 0;
-      margin-bottom: rem(16);
+      margin-bottom: $measure-unit;
+    }
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(50% - #{$measure-unit / 2});
+      &:nth-of-type(2n - 1) {
+        margin-right: $measure-unit;
+      }
+      @include min-max-width($bp-small, $bp-mid) {
+        width: 100%;
+      }
+      @include max-width($measure * 24) {
+        width: 100%;
+      }
     }
     a {
       color: $color-accent;
@@ -50,5 +60,28 @@
   }
   .nav__label {
     display: inline;
+  }
+}
+[class^="footer__col--"] {
+  display: inline-block;
+  vertical-align: top;
+}
+.footer__col--two {
+  width: calc(50% - #{$measure-unit * 4 / 3});
+}
+.footer__col--one {
+  margin-left: $measure-unit * 2;
+  width: calc(25% - #{$measure-unit * 4 / 3});
+}
+@include max-width($bp-small) {
+  .footer__col--two {
+    width: 100%;
+  }
+  .footer__col--one {
+    margin-left: 0;
+    width: calc(50% - #{$measure-unit});
+    & + & {
+      margin-left: $measure-unit * 2
+    }
   }
 }
