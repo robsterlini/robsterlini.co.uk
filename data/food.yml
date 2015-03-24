@@ -39,3 +39,6 @@ months:
             lunch:
                 -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and an apple."
                     time: "12:45"
+            snacks:
+                -   food: "Apple and some desiccated coconut"
+                    time: "14:20"
