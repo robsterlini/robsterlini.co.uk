@@ -18,8 +18,9 @@ months:
             lunch:
                 -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and a Cappuccino"
                     time: "13:01"
-
-            #dinner:
+            dinner:
+                -   food: "Rare steak with grilled asparagus, corn and mushrooms; and a stick of celery. Followed by an apple."
+                -   time: "19:45"
             snacks:
                 -   food: "Apple"
                     time: "11:37"
@@ -27,3 +28,14 @@ months:
                     time: "12:23"
                     food: "Apple"
                     time: "13:35"
+                    food: "Square of chocolate"
+                    time: "20:00"
+                    naughty: true
+        ## 24 March
+        -   date: 2015-03-24 00:00 UTC
+            breakfast:
+                -   food: "BFS; and an Espresso"
+                    time: "07:00"
+            lunch:
+                -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and an apple."
+                    time: "12:45"
