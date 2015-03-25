@@ -19,11 +19,11 @@ months:
             snacks:
                 -   food: "Apple"
                     time: "11:37"
-                    food: "Coconut, dried pineapple and mango pieces from a <em>Graze box</em>."
+                -   food: "Coconut, dried pineapple and mango pieces from a <em>Graze box</em>."
                     time: "12:23"
-                    food: "Apple"
+                -   food: "Apple"
                     time: "13:35"
-                    food: "Square of chocolate"
+                -   food: "Square of chocolate"
                     time: "20:00"
                     naughty: true
         ## 24 March
