@@ -30,12 +30,17 @@ description: As part of my training, my PT has suggested keeping a food diary. T
                 <% if set_meal %>
                 <ul class="list--no-bullet">
                   <% set_meal.each do |meal| %>
-                  <% data.food.food.shorthand.each {|replacement| meal.food.gsub!(replacement[0], replacement[1])} %>
-                    <li><%= "<strong>#{meal.time}</strong> #{meal.food}" %></li>
+                    <%
+                      BFS = "<abbr title='A home-made smoothie with oats, banana, skimmed milk and vanilla extract'>Breakfast sgjymoothie</abbr>"
+                      BFSe = "#{BFS}; and an espresso"
+                      content = meal.food
+                      modified_content = content % { :BFS => BFS, :BFSe => BFSe }
+                    %>
+                    <li><%= "<strong>#{meal.time}</strong> #{modified_content}" %></li>
                   <% end %>
                 </ul>
                 <% else %>
-                  <p>No <%= meal %> today.</p>
+                  <p>No <%= meal %> recorded yet.</p>
                 <% end %>
               </div><!--
             <% end %>

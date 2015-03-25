@@ -37,6 +37,7 @@
 
 # Requires
 require 'builder'
+require 'yaml'
 
 # Reload the browser automatically whenever files change
 configure :development do
