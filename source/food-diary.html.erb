@@ -2,7 +2,11 @@
 title:  Eating clean
 description: As part of my training, my PT has suggested keeping a food diary. This is pretty much entirely for me, but feel free to peruse as you wish.
 ---
-
+<%
+  # Meal shorthands
+  BFS = "<abbr title='A home-made smoothie with oats, banana, skimmed milk and vanilla extract'>Breakfast smoothie</abbr>"
+  BFSe = "#{BFS}; and an espresso"
+%>
 <section id="content" class="wrapper">
   <main data-anchors>
     <article class="type group">
@@ -31,8 +35,6 @@ description: As part of my training, my PT has suggested keeping a food diary. T
                 <ul class="list--no-bullet">
                   <% set_meal.each do |meal| %>
                     <%
-                      BFS = "<abbr title='A home-made smoothie with oats, banana, skimmed milk and vanilla extract'>Breakfast sgjymoothie</abbr>"
-                      BFSe = "#{BFS}; and an espresso"
                       content = meal.food
                       modified_content = content % { :BFS => BFS, :BFSe => BFSe }
                     %>
