@@ -1,6 +1,12 @@
 .food__list {
 	margin-left: $measure-unit * -1;
 	width: calc(100% + #{$measure-unit * 2});
+	li {
+		@include min-width($bp-small) {
+			padding-left: $measure-unit;
+			text-indent: $measure-unit * -1;
+		}
+	}
 }
 [class^="food__meal--"] {
 	display: inline-block;
