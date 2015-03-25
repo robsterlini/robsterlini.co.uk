@@ -11,7 +11,7 @@ description: As part of my training, my PT has suggested keeping a food diary. T
       <% data.food.months.each_with_index do |month, index| %>
         <h2 id="<%= month.month.downcase %>"><%= month.month %></h2>
         <% month.food.each_with_index do |food, index| %>
-          <h3 id="<%= Date.parse(food.date).strftime("%d-%m-%Y") %>"><time title="<%= Date.parse(food.date).strftime("%d-%m-%Y") %>"><%= Date.parse(food.date).strftime("%A %e %B") %></time></h3>
+          <h3 class="food__date" id="<%= Date.parse(food.date).strftime("%d-%m-%Y") %>"><time title="<%= Date.parse(food.date).strftime("%d-%m-%Y") %>"><%= Date.parse(food.date).strftime("%A %e %B") %></time></h3>
           <div class="food__list"><!--
             <% ["breakfast", "lunch", "dinner", "snacks"].each do |meal| %>
               <%

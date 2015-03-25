@@ -35,3 +35,7 @@
 .food__label {
 	color: $color-accent;
 }
+.food__date {
+	margin-top: $measure-unit * 3;
+	max-width: none;
+}
