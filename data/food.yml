@@ -45,3 +45,13 @@ months:
             breakfast:
                 -   food: "%{BFSe}"
                     time: "08:35"
+            lunch:
+                -   food: "Small-ish Korean Bulgogi beef burrito and a Diet Coke."
+                    time: "13:00"
+                    naughty: true
+            snacks:
+                -   food: "Cappuccino"
+                    time: "14:10"
+                -   food: "<em>Krispy Kreme</em> donut to celebrate Alex leaving."
+                    time: "14:50"
+                    naughty: true
