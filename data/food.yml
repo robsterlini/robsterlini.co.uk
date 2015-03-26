@@ -35,12 +35,12 @@ months:
                 -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and an apple."
                     time: "12:45"
             dinner:
-                -   food: "Chicken breast cooked with mushrooms and broccoli in <em>Nando’s</em> hot sauce, served with an avocado."
+                -   food: "Chicken breast cooked with mushrooms and broccoli in %{Nandos} hot sauce, served with an avocado."
                     time: "20:30"
             snacks:
                 -   food: "Apple and some desiccated coconut"
                     time: "14:20"
-        ## 24 March
+        ## 25 March
         -   date: 2015-03-25 00:00 UTC
             breakfast:
                 -   food: "%{BFSe}"
@@ -49,9 +49,19 @@ months:
                 -   food: "Small-ish Korean Bulgogi beef burrito and a Diet Coke."
                     time: "13:00"
                     naughty: true
+            dinner:
+                -   food: "Breaded chicken breast with %{Nandos} extra hot dipping sauce, and an avocado."
+                    time: "20:30"
             snacks:
                 -   food: "Cappuccino"
                     time: "14:10"
                 -   food: "<em>Krispy Kreme</em> donut to celebrate Alex leaving."
                     time: "14:50"
                     naughty: true
+                -   food: "Banana"
+                    time: "21:30"
+        ## 26 March
+        -   date: 2015-03-26 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}"
+                    time: "07:40"
