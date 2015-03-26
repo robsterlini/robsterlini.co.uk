@@ -6,6 +6,7 @@ web:
 
 redirect:
     /youtube: /journal/youtube
+    /yt: /journal/youtube
     /tri: /triathlon
     /testimonials: /process#testimonials
     /projects: /portfolio
@@ -13,6 +14,10 @@ redirect:
     /about-me: /about
     /macmillan: /triathlon
     /donate: /triathlon
+    /food: /food-diary
+    /cv: /portfolio
+    /curriculum-vitae: /portfolio
+    /blog: /journal
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg|svg)$
@@ -42,3 +47,4 @@ short:
     redirect:
         /tri: /triathlon
         /yt: /journal/youtube
+        /food: /food-diary
