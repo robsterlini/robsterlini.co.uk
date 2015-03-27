@@ -1,0 +1,42 @@
+/**
+ * Middleplate footer SCSS Partial
+ */
+
+.mp-footer {
+  background: linear-gradient(-45deg, rgba($color-mp-accent, 0.2), rgba($color-mp-compliment, 0.2));
+  box-shadow: rgba($color-black, 0.025) 0 rem(1) 0 0 inset;
+  padding: rem(16) 0;
+  p,
+  ul {
+    @include font-size(16);
+    max-width: none;
+    @include max-width($bp-small) {
+      @include font-size(15);
+    }
+    @include max-width($bp-small) {
+      @include font-size(14);
+    }
+  }
+}
+[class^="mp-footer__col--"] {
+  display: inline-block;
+  vertical-align: top;
+}
+.mp-footer__col--wide {
+  width: 66.6%;
+}
+.mp-footer__col--slim {
+  width: 33.3%;
+}
+.mp-footer__list {
+  list-style: none;
+  max-width: $layout-max-width-suffix;
+  padding: 0;
+}
+.mp-footer__link {
+  @include font-size(24);
+  font-family: $mp-font-stack-header;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}

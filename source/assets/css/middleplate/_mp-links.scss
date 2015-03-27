@@ -1,0 +1,39 @@
+/**
+ * Middleplate links SCSS Partial
+ */
+
+$mp-font-stack-header: "jaf-bernino-sans-comp", sans-serif;
+
+body.middleplate {
+  a {
+    background: linear-gradient($color-mp-accent 50%, rgba($color-mp-accent, 0) 51%) repeat-x left 88%;
+    background-size: rem(2) rem(1);
+    color: $color-mp-compliment;
+    text-shadow: rem(1) 0 $color-background, rem(2) 0 $color-background, rem(-1) 0 $color-background, rem(-2) 0 $color-background;
+    @include hover {
+      color: $color-mp-text;
+    }
+    @include active {
+      color: $color-mp-accent;
+      top: rem(2);
+    }
+  }
+  .mp-hero,
+  .mp-masthead {
+    a {
+      color: $color-mp-white;
+      text-shadow: inherit;
+      @include hover {
+        color: $color-mp-accent;
+      }
+      @include active {
+        color: $color-mp-text;
+      }
+    }
+  }
+  .mp-footer {
+    a {
+      text-shadow: inherit;
+    }
+  }
+}

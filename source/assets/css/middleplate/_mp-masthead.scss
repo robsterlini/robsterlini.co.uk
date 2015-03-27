@@ -1,0 +1,25 @@
+/**
+ * Middleplate masthead SCSS Partial
+ */
+
+.mp-masthead {
+  background: rgba($color-black, 0.1);
+  left: 0;
+  position: fixed;
+  text-shadow: rgba($color-black, 0.2) rem(1) rem(1) rem(2);
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  .btn {
+    padding: rem(5) rem(16) rem(3) rem(48);
+    position: relative;
+    svg {
+      display: inline-block;
+      height: rem(32);
+      left: rem(8);
+      position: absolute;
+      top: calc(50% - #{rem(16)});
+      width: rem(32);
+    }
+  }
+}

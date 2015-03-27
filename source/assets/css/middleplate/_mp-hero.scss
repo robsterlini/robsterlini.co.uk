@@ -1,0 +1,28 @@
+/**
+ * Hero SCSS Partial
+ */
+
+.mp-hero {
+  background: linear-gradient(-45deg, $color-mp-accent, $color-mp-compliment);
+  box-shadow: rgba($color-black, 0.1) 0 rem(-1) 0 0 inset;
+  color: $color-mp-white;
+  overflow: hidden;
+  margin: 0 0 rem(32);
+  padding: rem(80) 0 rem(32);
+  text-shadow: rgba($color-black, 0.2) rem(1) rem(1) rem(2);
+  h1 {
+    &:before {
+      box-shadow: rgba($color-black, 0.2) rem(1) rem(1) rem(2);
+    }
+  }
+}
+.mp-hero__strapline {
+  @include font-size(30);
+  margin-top: rem(-24);
+  @include max-width($bp-small) {
+    @include font-size(26);
+  }
+  @include max-width($bp-tiny) {
+    @include font-size(22);
+  }
+}

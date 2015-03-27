@@ -1,0 +1,25 @@
+/**
+ * Middleplate button SCSS Partial
+ */
+
+body.middleplate {
+  .btn {
+    @include font-size(26);
+    background: $color-mp-compliment;
+    border-color: $color-mp-compliment;
+    color: $color-mp-white;
+    font-family: $mp-font-stack-header;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    @include hover {
+      background-color: darken($color-mp-compliment, 5%);
+      border-color: darken($color-mp-compliment, 5%);
+      color: $color-mp-white;
+    }
+  }
+  .btn__subtitle {
+    display: block;
+    @include font-size(20);
+  }
+}

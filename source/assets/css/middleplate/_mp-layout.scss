@@ -1,0 +1,19 @@
+/**
+ * Hero SCSS Partial
+ */
+
+.mp-main {
+  padding: 0 0 rem(64);
+}
+[class^="mp-stack--"] {
+  display: inline-block;
+  margin-top: rem(32);
+  vertical-align: top;
+}
+.mp-stack--left {
+  padding-top: 0;
+  width: rem(200);
+}
+.mp-stack--right {
+  width: calc(100% - #{rem(200)});
+}
