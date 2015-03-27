@@ -131,6 +131,8 @@ after_build do
   File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
 
+set :mp_github, "https://github.com/robsterlini/middleplate"
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
