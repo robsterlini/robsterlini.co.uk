@@ -8,28 +8,28 @@ months:
         ## 23 March
         -   date: 2015-03-23 00:00 UTC
             breakfast:
-                -   food: "%{BFSe}"
+                -   food: "%{BFSe}."
                     time: "07:00"
             lunch:
-                -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and a cappuccino"
+                -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and a cappuccino."
                     time: "13:01"
             dinner:
                 -   food: "Rare steak with grilled asparagus, corn and mushrooms; and a stick of celery. Followed by an apple."
                     time: "19:45"
             snacks:
-                -   food: "Apple"
+                -   food: "Apple."
                     time: "11:37"
                 -   food: "Coconut, dried pineapple and mango pieces from a <em>Graze box</em>."
                     time: "12:23"
-                -   food: "Apple"
+                -   food: "Apple."
                     time: "13:35"
-                -   food: "Square of chocolate"
+                -   food: "Square of chocolate."
                     time: "20:00"
                     naughty: true
         ## 24 March
         -   date: 2015-03-24 00:00 UTC
             breakfast:
-                -   food: "%{BFSe}"
+                -   food: "%{BFSe}."
                     time: "07:00"
             lunch:
                 -   food: "Salad – cucumber, celery, humous, black olives, avocado and spinach; and an apple."
@@ -38,12 +38,12 @@ months:
                 -   food: "Chicken breast cooked with mushrooms and broccoli in %{Nandos} hot sauce, served with an avocado."
                     time: "20:30"
             snacks:
-                -   food: "Apple and some desiccated coconut"
+                -   food: "Apple and some desiccated coconut."
                     time: "14:20"
         ## 25 March
         -   date: 2015-03-25 00:00 UTC
             breakfast:
-                -   food: "%{BFSe}"
+                -   food: "%{BFSe}."
                     time: "08:35"
             lunch:
                 -   food: "Small-ish Korean Bulgogi beef burrito and a Diet Coke."
@@ -53,12 +53,12 @@ months:
                 -   food: "Breaded chicken breast with %{Nandos} extra hot dipping sauce, and an avocado."
                     time: "20:30"
             snacks:
-                -   food: "Cappuccino"
+                -   food: "Cappuccino."
                     time: "14:10"
                 -   food: "<em>Krispy Kreme</em> donut to celebrate Alex leaving."
                     time: "14:50"
                     naughty: true
-                -   food: "Banana"
+                -   food: "Banana."
                     time: "21:30"
         ## 26 March
         -   date: 2015-03-26 00:00 UTC
@@ -66,22 +66,29 @@ months:
                 -   food: "%{BFSe}"
                     time: "07:40"
             lunch:
-                -   food: "Melon and grape medley"
+                -   food: "Melon and grape medley."
                     time: "12:30"
             dinner:
-                -   food: "<em>Pizza Hut</em> pizza for P&amp;P at work; with <em>Pepsi Max</em>"
+                -   food: "<em>Pizza Hut</em> pizza for P&amp;P at work; with <em>Pepsi Max</em>."
                     time: "17:00"
-                -   food: "Punnet of strawberries, and a handful of grapes"
+                -   food: "Punnet of strawberries, and a handful of grapes."
                     time: "20:30"
             snacks:
-                -   food: "Apple"
+                -   food: "Apple."
                     time: "10:50"
-                -   food: "<em>Malteasers</em>"
+                -   food: "<em>Malteasers</em>."
                     time: "12:45"
-                -   food: "Stick of celery"
+                -   food: "Stick of celery."
                     time: "21:00"
         ## 27 March
         -   date: 2015-03-27 00:00 UTC
             breakfast:
-                -   food: "%{BFSe}"
+                -   food: "%{BFSe}."
                     time: "06:20"
+            lunch:
+                -   food: "<em>Motherclucker</em> fried-chicken with a home-made salad of celery, cucumber, olices, humous, rocket, and spinach."
+                    time: "12:30"
+                    naughty: true
+            snacks:
+                -   food: "Two apples and a small portion of grapes."
+                    time: "Through the day"
