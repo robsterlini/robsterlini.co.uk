@@ -65,3 +65,23 @@ months:
             breakfast:
                 -   food: "%{BFSe}"
                     time: "07:40"
+            lunch:
+                -   food: "Melon and grape medley"
+                    time: "12:30"
+            dinner:
+                -   food: "<em>Pizza Hut</em> pizza for P&amp;P at work; with <em>Pepsi Max</em>"
+                    time: "17:00"
+                -   food: "Punnet of strawberries, and a handful of grapes"
+                    time: "20:30"
+            snacks:
+                -   food: "Apple"
+                    time: "10:50"
+                -   food: "<em>Malteasers</em>"
+                    time: "12:45"
+                -   food: "Stick of celery"
+                    time: "21:00"
+        ## 27 March
+        -   date: 2015-03-27 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}"
+                    time: "06:20"
