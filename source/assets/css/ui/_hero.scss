@@ -44,7 +44,6 @@
 
 .hero__headers {
   @extend .group;
-  @include animation('%fade-down',0s);
   text-align: left;
   margin:auto;
   z-index:1;
