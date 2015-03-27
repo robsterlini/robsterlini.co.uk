@@ -131,6 +131,10 @@ after_build do
   File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
 
+# Middleplate
+with_layout :middleplate_layout do
+  page "/middleplate/*"
+end
 set :mp_github, "https://github.com/robsterlini/middleplate"
 
 # Build-specific configuration
