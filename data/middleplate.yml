@@ -1,0 +1,15 @@
+########
+
+pages:
+
+    -   slug: "installation"
+        title: "Installation"
+        alt: "Find out how to install Middleplate"
+
+    -   slug: "development"
+        title: "Development"
+        alt: "Find out how to develop your site using Middleplate"
+
+    -   slug: "deployment"
+        title: "Deployment"
+        alt: "Find out how to deploy your site using Middleplate"
