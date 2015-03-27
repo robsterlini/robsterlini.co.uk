@@ -1,0 +1,14 @@
+<header class="mp-masthead">
+  <nav class="mp-nav group">
+    <div class="mp-nav--left"><!--
+      <% data.middleplate.pages.each_with_index do |nav, index| %>
+        --><li class="mp-nav__item">
+          <%= link_to nav.title, "middleplate/#{nav.slug}", :title => "Test", :class => "mp-nav__link" %>
+        </li><!--
+      <% end %>
+    --></div>
+    <div class="mp-nav--right btns">
+      <%= link_to "#{partial("partials/svg/github-reversed")}<span class='btn__subtitle'>Fork me on </span>GitHub", mp_github, :title => "See the Middleplate repo on GitHub", :class => "btn" %>
+    </div>
+  </nav>
+</header>
