@@ -5,7 +5,7 @@ months:
     ## March
     -   month: "March 2015"
         food:
-        ## 23 March
+        ## Mon 23 March
         -   date: 2015-03-23 00:00 UTC
             breakfast:
                 -   food: "%{BFSe}."
@@ -26,7 +26,7 @@ months:
                 -   food: "Square of chocolate."
                     time: "20:00"
                     naughty: true
-        ## 24 March
+        ## Tue 24 March
         -   date: 2015-03-24 00:00 UTC
             breakfast:
                 -   food: "%{BFSe}."
@@ -40,7 +40,7 @@ months:
             snacks:
                 -   food: "Apple and some desiccated coconut."
                     time: "14:20"
-        ## 25 March
+        ## Wed 25 March
         -   date: 2015-03-25 00:00 UTC
             breakfast:
                 -   food: "%{BFSe}."
@@ -60,7 +60,7 @@ months:
                     naughty: true
                 -   food: "Banana."
                     time: "21:30"
-        ## 26 March
+        ## Thu 26 March
         -   date: 2015-03-26 00:00 UTC
             breakfast:
                 -   food: "%{BFSe}"
@@ -69,7 +69,7 @@ months:
                 -   food: "Melon and grape medley."
                     time: "12:30"
             dinner:
-                -   food: "<em>Pizza Hut</em> pizza for P&amp;P at work; with <em>Pepsi Max</em>."
+                -   food: "<em>Pizza Hut</em> pizza for <span class='sc'>P&amp;P</span> at work; with <em>Pepsi Max</em>."
                     time: "17:00"
                 -   food: "Punnet of strawberries, and a handful of grapes."
                     time: "20:30"
@@ -80,7 +80,7 @@ months:
                     time: "12:45"
                 -   food: "Stick of celery."
                     time: "21:00"
-        ## 27 March
+        ## Fri 27 March
         -   date: 2015-03-27 00:00 UTC
             breakfast:
                 -   food: "%{BFSe}."
@@ -89,6 +89,48 @@ months:
                 -   food: "<em>Motherclucker</em> fried-chicken with a home-made salad of celery, cucumber, olices, humous, rocket, and spinach."
                     time: "12:30"
                     naughty: true
+            dinner:
+                -   food: "Steak with grilled asparagus and corn on the cob, served with celery and humous."
+                    time: "19:30"
             snacks:
                 -   food: "Two apples and a small portion of grapes."
                     time: "Through the day"
+                    food: "Beer after work."
+                    time: "18:30"
+                    naughty: true
+        ## Sat 28 March
+            date: 2015-03-28 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}."
+                    time: "09:30"
+            lunch:
+                -   food: "<em>Tortilla</em> carnitas Burrito at Westfields with a <em>Fanta</em> and some tortilla chips."
+                    time: "14:30"
+            dinner:
+                -   food: "Tinned pineapple slices, and a handful of grapes."
+                    time: "20:30"
+            snacks:
+                -   food: "%{HxB}."
+                    time: "16:00"
+        ## Sun 29 March
+            date: 2015-03-29 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}."
+                    time: "10:30"
+            lunch:
+                -   food: "%{HxB}."
+                    time: "14:00"
+            dinner:
+                -   food: "Home-made pasta bolognese, followed by tinned pineapple slices and a handful of grapes."
+                    time: "17:30"
+            snacks:
+                -   food: "Apple."
+                    time: "13:10"
+                -   food: "Small chocolate biscuit treat."
+                    time: "20:30"
+                    naughty: true
+        ## Mon 30 March
+        -   date: 2015-03-30 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}."
+                    time: "08:30"

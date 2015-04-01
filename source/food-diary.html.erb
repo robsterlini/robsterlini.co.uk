@@ -7,6 +7,7 @@ description: As part of my training, my PT has suggested keeping a food diary. T
   BFS = "<abbr title='A home-made smoothie with oats, banana, skimmed milk and vanilla extract'>Breakfast smoothie</abbr>"
   BFSe = "#{BFS}; and an espresso"
   Nandos = "<em>Nando’s</em>"
+  HxB = "Hot crossed bun with butter"
 %>
 <section id="content" class="wrapper">
   <main data-anchors>
@@ -37,7 +38,7 @@ description: As part of my training, my PT has suggested keeping a food diary. T
                   <% set_meal.each do |meal| %>
                     <%
                       content = meal.food
-                      modified_content = content % { :BFS => BFS, :BFSe => BFSe, :Nandos => Nandos }
+                      modified_content = content % { :BFS => BFS, :BFSe => BFSe, :Nandos => Nandos, :HxB => HxB }
                     %>
                     <li><%= "<strong>#{meal.time}</strong> #{modified_content}" %></li>
                   <% end %>
