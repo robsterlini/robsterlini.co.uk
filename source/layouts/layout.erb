@@ -36,22 +36,19 @@
     <meta name="twitter:creator" content="@robsterlini">
     <meta name="twitter:image:src" content="<%= url_root %><%= yield_content(:hero_loc) || hero_dir %><%= current_page.data.hero || yield_content(:hero) || current_page.data.card_image || "main.jpg" %>">
     <meta name="twitter:domain" content="robsterlini.co.uk">
-    
-    <%= stylesheet_link_tag "screen" %>
-    <%= yield_content(:casestudy_css) %>
+    <!--[if gte IE 9 | !IE ]><!-->
+        <%= stylesheet_link_tag "screen" %>
+        <%= yield_content(:casestudy_css) %>
+    <![endif]-->
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><%= stylesheet_link_tag "ie" %><![endif]-->
   </head>
   
   <body class="<%= page_classes %>" data-js="toggled-navigation-parent">
+    <!--[if IE 9]><div class="error"><div class="group"><p>Come on, it’s 2015. Even IE9 is getting old. <a href="http://browsehappy.com" title="Find out about updating your browser here">Update your browser</a> and find out what you’re missing out on!</p></div></div><![endif]-->
+    <!--[if lte IE 8]><div class="error"><p>Come on, it’s 2015. Old browsers have been out of fashion for a while, so I’ve stopped supporting them. You can have the unstyled content, but to see me in all my beauty you’ll need to <a href="http://browsehappy.com" title="Find out about updating your browser here">update your browser</a>!</p></div><![endif]-->
     <% if !current_page.data.no_masthead %>
         <%= partial "partials/masthead" %>
     <% end %>
-    <!--[if lt IE 8]>
-      <div class="error">
-        <div class="group">
-            <p>Come on, it’s 2015. <a href="http://browsehappy.com" title="Find out about updating your browser here">Update your browser</a>, or stuff is going to look a bit upside down! Don’t say I didn’t warn you!</p>
-        </div>
-      </div>
-    <![endif]-->
     <%= yield %>
     <% if !current_page.data.no_footer %>
         <%= partial "partials/footer" %>

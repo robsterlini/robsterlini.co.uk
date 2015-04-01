@@ -3,7 +3,8 @@
   color: $color-white;
   padding-left: $masthead-full;
   p {
-    margin: $measure-unit auto;
+    margin: 0 auto;
+    padding: $measure-unit / 2 0;
   }
   a {
     color: $color-white;
