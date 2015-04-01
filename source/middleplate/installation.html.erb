@@ -1,0 +1,34 @@
+---
+title: A feature-rich boilerplate for Middleman developed by Rob Sterlini
+nav: home
+description: Middleplate is a feature-rich poilerplate aimed at improving your Middleman arsenal.
+no_footer: true
+no_masthead: true
+priority: 0.8
+---
+
+<section id="content" class="wrapper">
+  <div class="mp-hero">
+    <div class="group">
+      <h1>Installation</h1>
+      <p class="mp-hero__strapline">Lock and load&hellip;</p>
+    </div>
+  </div>
+  <div class="group">
+    <h2 class="mp-stack--left">Installing Middleman</h2><!--
+    --><div class="mp-stack--right">
+      <p>For full Middleman installation instructions head to <%= link_to "their site", "https://middlemanapp.com/basics/install/", :title => "Read about installing Middleman on their site" %>, but here are the basics.</p
+      >
+      <p>Jump into terminal and lob this command at it (you may need to <code>sudo</code> it):</p>
+      <pre><code>$ gem install middleman</code></pre>
+      <p>This gives us use of three main commands: <code>middleman init</code>, <code>middleman server</code> and <code>middleman build</code>; we’ll only need the latter two, but we’ll come back to them.</p>
+    </div>
+    <h2 class="mp-stack--left">Installing Middleplate</h2><!--
+    --><div class="mp-stack--right">
+      <p>There’s probably a command-line way of doing this (if you want to write it up and submit a PR then I’d love to include it).</p>
+      <p>The easiest way (and the way I like doing it) is <%= link_to "downloading the .zip file", mp_github, :title => "Download the Middleman repo from GitGub" %> and unpacking it into your desired directory. We’ll imagine we’re building a food blog. Once you’ve done that, cd into:</p>
+      <pre><code>cd ~/sites/food_blog
+middleman server</code></pre>
+    </div>
+  </div>
+</section>

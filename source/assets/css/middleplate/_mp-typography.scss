@@ -4,47 +4,48 @@
 
 $mp-font-stack-header: "jaf-bernino-sans-comp", sans-serif;
 
-body.middleplate {
-  color: $color-mp-text;
+.middleplate {
+  color: #555;
   ::selection {
     background: rgba($color-mp-accent, 0.8);
   }
   h1,
   h2,
   h3 {
+    color: $color-mp-text;
     font-family: $mp-font-stack-header;
     line-height: 1;
     text-transform: uppercase;
   }
   h1,
   h2 {
-    &:before {
-      background: $color-mp-accent;
-      content: '';
-      display: block;
-      height: rem(3);
-      position: relative;
-      width: rem(50);
-    }
+    // &:before {
+    //   background: $color-mp-accent;
+    //   content: '';
+    //   display: block;
+    //   height: rem(3);
+    //   position: relative;
+    //   width: rem(50);
+    // }
   }
   h1 {
     @include font-size(80);
     font-weight: 300;
     letter-spacing: rem(-1);
-    &:before {
-      height: rem(3);
-      left: rem(2);
-      margin-bottom: rem(2);
-    }
+    // &:before {
+    //   height: rem(3);
+    //   left: rem(2);
+    //   margin-bottom: rem(2);
+    // }
   }
   h2 {
     @include font-size(52);
     font-weight: 400;
     letter-spacing: rem(-0.5);
-    &:before {
-      height: rem(2);
-      margin-bottom: rem(4);
-    }
+    // &:before {
+    //   height: rem(2);
+    //   margin-bottom: rem(4);
+    // }
   }
   h3 {
     @include font-size(34);

@@ -2,14 +2,48 @@
 
 pages:
 
+    -   slug: ""
+        title: "Middleplate"
+        alt: "Middleplate home"
+
+    -   slug: "about"
+        title: "About"
+        alt: "Find out all about Middleplate"
+        quick_link:
+          description: "Find out about the origins of Middleplate, and how this all came about."
+          btn: "Find out more"
+
     -   slug: "installation"
         title: "Installation"
         alt: "Find out how to install Middleplate"
+        quick_link:
+          description: "Follow the steps to get Middleplate installed, and ready to use."
+          btn: "Install <abbr title='Middleplate'>the sucka’</abbr>"
 
     -   slug: "development"
         title: "Development"
         alt: "Find out how to develop your site using Middleplate"
+        quick_link:
+          description: "Read the ins and outs of developing using Middleplate."
+          btn: "Start <abbr title='developing'>devving</abbr>"
 
     -   slug: "deployment"
         title: "Deployment"
         alt: "Find out how to deploy your site using Middleplate"
+        quick_link:
+          description: "Find out the steps you need to go from development to getting that baby live!"
+          btn: "SHIP IT!"
+
+    -   slug: "faqs"
+        title: "FAQs"
+        alt: "Ask any questions about Middleplate"
+        quick_link:
+          description: "Find the answers to all of your Middleplate questions."
+          btn: "Stuck &amp; need help?"
+
+faqs:
+
+    - section: "Middleman"
+      questions:
+        -   q: "Where can I find out more about Middleman?"
+            a: "https://middlemanapp.com/"

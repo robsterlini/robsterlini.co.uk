@@ -1,17 +1,12 @@
 <footer class="mp-footer">
   <div class="group">
-    <div class="mp-footer__col--wide">
-      <p>Middleplate is made with love by <%= link_to "Rob Sterlini", "/", :title => "Check out my full website" %>, and it’s provided under <%= link_to "the MIT license", "https://github.com/robsterlini/middleplate/blob/master/LICENSE", :title => "Read Middleplate’s license on GitHub" %>.</p>
-      <p><%= link_to "Fork Middleplate on GitHub", mp_github, :title => "See the Middleplate repo on GitHub", :class => "" %></p>
-      </div><!--
-      --><div class="mp-footer__col--slim">
-        <ul class="mp-footer__list">
-          <% data.middleplate.pages.each_with_index do |nav, index| %>
-            <li class="mp-footer__item">
-              <%= link_to nav.title, "middleplate/#{nav.slug}", :title => "Test", :class => "mp-footer__link" %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+    <p><%= link_to "Middleplate", mp_github, :title => "See the Middleplate repo on GitHub", :class => "" %> was made with love by <%= link_to "Rob Sterlini", "/", :title => "Check out my full website" %>, and provided under <%= link_to "an MIT license", "https://github.com/robsterlini/middleplate/blob/master/LICENSE", :title => "Read Middleplate’s license on GitHub" %>.</p>
+    <ul class="mp-footer__list">
+      <% data.middleplate.pages.each_with_index do |nav, index| %>
+        <li class="mp-footer__item">
+          <%= link_to nav.title, "/middleplate/#{nav.slug}", :title => "Test", :class => "mp-footer__link" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </footer>
