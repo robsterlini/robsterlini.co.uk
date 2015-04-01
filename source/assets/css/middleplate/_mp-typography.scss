@@ -11,7 +11,8 @@ $mp-font-stack-header: "jaf-bernino-sans-comp", sans-serif;
   }
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     color: $color-mp-text;
     font-family: $mp-font-stack-header;
     line-height: 1;
@@ -49,7 +50,10 @@ $mp-font-stack-header: "jaf-bernino-sans-comp", sans-serif;
   }
   h3 {
     @include font-size(34);
-    @include font-feature-settings(liga kern onum);
+    font-weight: 400;
+  }
+  h4 {
+    @include font-size(26);
     font-weight: 400;
   }
   @include max-width($bp-small) {

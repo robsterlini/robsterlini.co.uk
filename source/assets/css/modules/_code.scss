@@ -1,6 +1,8 @@
 code {
   font-size:0.9em;
   background:#f4f4f4;
+  position: relative;
+  top: -1px;
   .hero & {
     background:none;
   }
@@ -20,8 +22,9 @@ pre {
     @include font-size(14);
     display: block;
     margin:0 auto;
-    padding:rem(15);
+    padding:rem(8) rem(16);
     border-radius:rem(3);
+    top: 0;
   }
 }
 
@@ -35,7 +38,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
   background: #23241f;
 }
 
