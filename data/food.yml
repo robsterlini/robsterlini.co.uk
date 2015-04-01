@@ -134,3 +134,35 @@ months:
             breakfast:
                 -   food: "%{BFSe}."
                     time: "08:30"
+            lunch:
+                -   food: "Salad – cucumber, celery, coconut, avocado, humous, black olives; and two apples."
+                    time: "Midday-ish"
+            dinner:
+                -   food: "Steak with grilled corn on the cob and broccoli, served with celery."
+                    time: "Late evening"
+            snacks:
+                -   food: "Small chocolate biscuit bar."
+                    time: "Evening"
+                    naughty: true
+        ## Tue 31 March
+        -   date: 2015-03-31 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}."
+                    time: "08:30"
+            lunch:
+                -   food: "Salad – cucumber, celery, spinach, rocket, avocado, broccoli, coconut, humous; and an apple."
+                    time: "12:15"
+            dinner:
+                -   food: "Salmon steak with avocado and broccoli, and a fried egg."
+                    time: "Evening"
+            snacks:
+                -   food: "Apple."
+                    time: "Late afternoon"
+    ## April
+    -   month: "April 2015"
+        food:
+        ## Wed 1 April
+        -   date: 2015-04-01 00:00 UTC
+            breakfast:
+                -   food: "%{BFSe}."
+                    time: "08:00"
