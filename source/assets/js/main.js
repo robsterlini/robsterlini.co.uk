@@ -13,6 +13,7 @@
 //= require _agePosts
 //= require _share
 //= require _caseStudyHotspur
+//= require _middleplate
 
 $(function() {
 	// This is all we need in our main.js file - isn't it neat :)

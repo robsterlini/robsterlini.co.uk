@@ -14,12 +14,6 @@ priority: 0.8
     </div>
   </div>
   <div class="group">
-    <h2 class="mp-stack--left">What is Middleplate?</h2><!--
-    --><div class="mp-stack--right">
-      <p><%= link_to "Middleman", "https://middlemanapp.com", :title => "Find out more about Middleman" %> is this bloody brilliant ruby framework that allows you to create lightning fast, super maintainable, static websites.</p>
-      <p>If you’re a ruby expert, or a regular Middleman user then this serves as a springboard for each project – with a basic set of styling partials, and blogging set up so you don’t have to remember how those settings work.</p>
-      <p>Or if you’re a Middleman virgin, then this is a great starting point as it comes with a bit of extra documentation and some examples of specifically how to set some bits up.</p>
-      <p>Why not <%= link_to "give it a download", "installation", :title => "Find out about installing Middleplate" %> and see if it’s something you can weave into your workflow.</p>
-    </div>
+    <%= middleplate_markdown('mp-page-about') %>
   </div>
 </section>

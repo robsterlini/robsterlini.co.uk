@@ -3,14 +3,14 @@
  */
 
 .mp-footer {
-  padding: rem(16) 0 0;
+  padding: rem(16) 0 rem(8);
   .group {
-    &:after {
+    &:before {
       @extend %mp-hero-bg;
       content: '';
       display: block;
-      height: rem(4);
-      margin-top: rem(8);
+      height: rem(2);
+      margin-bottom: rem(16);
     }
   }
   p,

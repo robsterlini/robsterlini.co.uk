@@ -77,6 +77,20 @@ helpers do
       </figure>
     </div>"
   end
+  def middleplate_markdown(md)
+      opening_tag = "<div class='mp-stack--left'>"
+      middle_tag  = "</div><div class='mp-stack--right'>"
+      end_tag     = "</div>"
+      str = partial "partials/middleplate/#{md}.md"
+      replacements = [
+        ["<p>{{section_open}}</p>", opening_tag],
+        ["<p>{{section_mid}}</p>", middle_tag],
+        ["<p>{{section_end}}</p>", end_tag]
+      ]
+      replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
+      str.gsub(/<p>.<\/p>/,"")
+      str
+  end
 end
 
 # Set directories

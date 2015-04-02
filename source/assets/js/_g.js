@@ -17,7 +17,8 @@ g.partials = [
   'hotspurRelated',
   'strikethrough',
   'agePosts',
-  'share'
+  'share',
+  'middleplate'
 ];
 
 // This _init function is the function which kicks everything off when

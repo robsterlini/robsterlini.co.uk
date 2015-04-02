@@ -10,7 +10,7 @@ priority: 0.85
 <section id="content" class="wrapper">
   <div class="mp-hero">
     <div class="group">
-      <h1>Middleplate</h1>
+      <h1 data-js="middleplate-header">Middleplate</h1>
       <p class="mp-hero__strapline">A simple, but powerful, base to kick start your next Middleman build, with blogging ready out of the box.</p>
     </div>
   </div>
@@ -21,7 +21,7 @@ priority: 0.85
           <h3><%= mp.title %></h3>
           <p><%= mp.quick_link.description %></p>
           <p class="btns--left">
-            <%= link_to "#{mp.quick_link.btn}", "/middleplate/#{mp.slug}", :title => "Test", :class => "btn" %>
+            <%= link_to "#{mp.quick_link.btn}", "/middleplate/#{mp.slug}", :title => mp.alt, :class => "btn" %>
           </p>
         </div><!--
       <% end %>
