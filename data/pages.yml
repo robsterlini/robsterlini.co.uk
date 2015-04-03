@@ -60,3 +60,4 @@ masthead:
     -   slug: "middleplate"
         label: "Middleplate"
         alt: "Test"
+        masthead: false
