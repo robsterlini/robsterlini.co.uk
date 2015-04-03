@@ -10,6 +10,6 @@ If you’re a ruby expert, or a regular Middleman user then this serves as a spr
 
 Or if you’re a Middleman virgin, then this is a great starting point as it comes with a bit of extra documentation and some examples of specifically how to set some bits up.
 
-Why not [give it a download](documentation#installation "Find out about installing Middleplate") and see if it’s something you can weave into your workflow.
+Why not [give it a download](/middleplate/documentation#installation "Find out about installing Middleplate") and see if it’s something you can weave into your workflow.
 
 {{section_end}}
