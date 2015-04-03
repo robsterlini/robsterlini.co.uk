@@ -29,7 +29,7 @@ priority: 0.9
                 <% if project.buttons %>
                   <p class="btns--left">
                   <% if project.buttons.case_study != false %><a class="btn" href="<%= project.buttons.case_study %>" title="Read about the process">Read the case study</a><% end %>
-                  <% if project.buttons.live != false %><a class="btn--outline" href="<%= project.buttons.live %>" title="See this project live">See it live</a><% end %>
+                  <% if project.buttons.live != false %><a class="btn--outline" href="<%= project.buttons.live %>" title="See this project live"><%= project.buttons.live_btn || "See it live" %></a><% end %>
                   <% if project.buttons.dribbble != false %><a class="btn--outline" href="<%= project.buttons.dribbble %>" title="See this project on dribbble">See it on Dribbble</a><% end %>
                   </p>
                 <% end %>
