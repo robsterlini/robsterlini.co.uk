@@ -18,6 +18,9 @@ redirect:
     /cv: /portfolio
     /curriculum-vitae: /portfolio
     /blog: /journal
+    /mid: /middleplate
+    /mid-gh: https://github.com/robsterlini/middleplate
+    /middleplate-github: https://github.com/robsterlini/middleplate
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg|svg)$
@@ -48,3 +51,6 @@ short:
         /tri: /triathlon
         /yt: /journal/youtube
         /food: /food-diary
+        /mid: /middleplate
+        /mid-gh: https://github.com/robsterlini/middleplate
+        /middleplate-github: https://github.com/robsterlini/middleplate
