@@ -27,8 +27,25 @@
     text-decoration: none;
     text-transform: uppercase;
     transition:all .25s cubic-bezier(#{$bezier-nice});
+    @include max-width($mp-tp-nav-icon) {
+      padding: 0 rem(8);
+      &[href*="documentation"] {
+        &:after {
+          content: 's';
+        }
+      }
+    }
   }
 }
 .mp-nav--right {
-
+  margin: auto;
+  padding-left: rem(8);
+}
+@include max-width($mp-tp-nav-icon) {
+  .mp-nav--left {
+    padding: rem(8) 0;
+  }
+  .mp-nav--right {
+    padding: rem(5) 0;
+  }
 }

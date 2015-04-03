@@ -9,25 +9,15 @@ priority: 0.8
 <section id="content" class="wrapper">
   <div class="mp-hero">
     <div class="group">
-      <h1>Documentation</h1>
+      <h1>Doc<span class="mp-hide__tiny">umentation</span></h1>
       <p class="mp-hero__strapline">Read up on everything from installation, to getting your Middleplate build out of the door and onto the shelves!</p>
     </div>
   </div>
   <div class="group">
     <%
-      checklist =  "<ul class='mp-checkbox'>";
-      checklist += "<p class='mp-checkbox__completion' data-js='mp-checklist-completion'>"
-      checklist += "<i data-check-list-total='#{data.middleplate.checklist.length}'></i>"
-      checklist += "<span data-js='mp-checklist-current' class=''>0</span> of #{data.middleplate.checklist.length} tasks completed"
-      checklist += "</p>"
+      checklist = "<ul class='mp-checkbox'><p class='sc mp-checkbox__completion' data-js='mp-checklist-completion'><i data-check-list-total='#{data.middleplate.checklist.length}'></i><span class='mp-checkbox__progress'><span data-js='mp-checklist-current' class=''>0</span> of #{data.middleplate.checklist.length} </span>tasks completed</p>"
       data.middleplate.checklist.each_with_index do |check, index|
-        checklist += "<li class='mp-checkbox__item'>"
-        checklist += "<a class='mp-checkbox__link' href='#' data-js='mp-checklist-item'>"
-        checklist += "<span class='mp-checkbox__task'>#{check.title}</span>"
-        checklist += "<code class='mp-checkbox__label'>#{check.file}</code> "
-        checklist += "<span class='sc'>line(s) #{check.lines}</span>"
-        checklist += "</a>"
-        checklist += "</li>"
+        checklist += "<li class='mp-checkbox__item'><a class='mp-checkbox__link' href='#' data-js='mp-checklist-item'><span class='mp-checkbox__task'>#{check.title}</span><code class='mp-checkbox__label'>#{check.file}</code> <span class='sc'>line(s) #{check.lines}</span></a></li>"
       end
       checklist += "</ul>"
     %>

@@ -332,7 +332,7 @@ Bosh!
 
 {{section_mid}}
 
-For any issues, first check the [Middleman docuimentation](https://middlemanapp.com/basics/install/ "Read the Middleman docs"), as it’s likely that there will be an answer in there (especially for installation).
+For any issues, first check the [Middleman documentation](https://middlemanapp.com/basics/install/ "Read the Middleman docs"), as it’s likely that there will be an answer in there (especially for installation).
 
 If you’re still having problems feel free to ping me [on Twitter](https://twitter.com/robsterlini "Get in touch via Twitter") or via [my site](https://robsterlini.co.uk/contact/ "Get in touch via my website").
 

@@ -13,9 +13,20 @@
   margin: 0 0 rem(32);
   padding: rem(96) 0 rem(32);
   text-shadow: rgba($color-mp-accent, 0.3) 0 rem(1) 0;
-  @include min-width($bp-mid - 100) {
-    h1 {
+  h1 {
+    abbr {
+      background: none;
+      text-shadow: inherit;
+    }
+    @include min-width($mp-tp-stack) {
       margin-left: 0;
+    }
+    .middleplate_documentation & {
+      @include max-width($bp-tiny) {
+        &:after {
+          content: 's';
+        }
+      }
     }
   }
 }
@@ -23,7 +34,7 @@
   @include font-size(26);
   line-height: 1.3;
   margin: rem(-24) 0 0;
-  @include max-width($bp-mid - 100) {
+  @include max-width($mp-tp-stack) {
     margin-left: auto;
     margin-right: auto;
   }

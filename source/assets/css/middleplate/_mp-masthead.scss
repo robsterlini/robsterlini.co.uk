@@ -31,7 +31,9 @@
   }
   .btn {
     background: none;
-    padding: rem(5) rem(16) rem(3) rem(48);
+    display: block;
+    margin: 0;
+    padding: rem(7) 0 rem(5) rem(48);
     position: relative;
     svg {
       display: inline-block;
@@ -44,6 +46,13 @@
     }
     path {
       fill: inherit;
+    }
+    @include max-width($mp-tp-nav-icon) {
+      height: rem(48);
+      padding: 0 0 0 rem(48);
+      overflow: hidden;
+      white-space: nowrap;
+      width: rem(48);
     }
   }
 }

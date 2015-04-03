@@ -4,6 +4,7 @@ pages:
 
     -   slug: ""
         title: "Middleplate"
+        short: "M{{i}}ddl{{e}}pl{{a}}t{{e}}"
         alt: "Middleplate home"
 
     -   slug: "about"
@@ -14,25 +15,12 @@ pages:
           btn: "Find out more"
 
     -   slug: "documentation"
-        title: "documentation"
+        title: "Documentation"
+        short: "Doc{{umentation}}"
         alt: "Find out everything from installing, to development, to deploying using Middleplate"
         quick_link:
           description: "Follow the steps to get Middleplate installed, and ready to use."
           btn: "Install <abbr title='Middleplate'>the sucka’</abbr>"
-
-    # -   slug: "development"
-    #     title: "Development"
-    #     alt: "Find out how to develop your site using Middleplate"
-    #     quick_link:
-    #       description: "Read the ins and outs of developing using Middleplate."
-    #       btn: "Start <abbr title='developing'>devving</abbr>"
-
-    # -   slug: "deployment"
-    #     title: "Deployment"
-    #     alt: "Find out how to deploy your site using Middleplate"
-    #     quick_link:
-    #       description: "Find out the steps you need to go from development to getting that baby live!"
-    #       btn: "SHIP IT!"
 
     -   slug: "questions"
         title: "FAQs"
@@ -72,8 +60,35 @@ faqs:
     - section: "Middleman"
       questions:
 
-        -   q: "Where can I find out more about Middleman?"
-            a: "Their website – <a href='https://middlemanapp.com/' title='Visit the Middleman site'>middlemanapp.com</a> – is probably the best place to start."
+        - q: "Where can I find out more about Middleman?"
+          a: "Their website – <a href='https://middlemanapp.com/' title='Visit the Middleman site'>middlemanapp.com</a> – is probably the best place to start."
 
-        -   q: "I’ve got a problem with Middleman"
-            a: "Your best bet is to look on <a href='https://forum.middlemanapp.com/' title='Visit the Middleman forums'>the Middleman forum</a> or on <a href='http://stackoverflow.com/questions/tagged/middleman' title='Check out the Middleman section on StackOverflow'>StackOverflow</a>.</p><p>If you still have an issue feel free to <a href='documentation#troubleshooting' title='Find out how to get in touch about troubleshooting'>get in touch</a>."
+        - q: "I’ve got a problem with Middleman?"
+          a: "Your best bet is to look on <a href='https://forum.middlemanapp.com/' title='Visit the Middleman forums'>the Middleman forum</a> or on <a href='http://stackoverflow.com/questions/tagged/middleman' title='Check out the Middleman section on StackOverflow'>StackOverflow</a>. If you still have an issue feel free to <a href='documentation#troubleshooting' title='Find out how to get in touch about troubleshooting'>get in touch</a>."
+
+    - section: "Middeplate"
+      questions:
+
+        - q: "What’s the difference between Middleman and Middleplate?"
+          a: "One is built on the other, Middleplate harneses the power of Middleman, but comes configured out of the box. If you like Middleman, you’ll love Middleplate."
+
+        - q: "How do I install Middleplate?"
+          a: "Read the <a href='documentation#installation' title='Find out how to install Middleplate'>documentation</a>."
+
+    - section: "Contributing"
+      questions:
+
+        - q: "I’ve spotted a mistake in the documentation."
+          a: "Ah bummer, submit a pull request or <a href='/contact' title='Get in touch'>drop me a message</a> and we’ll get that corrected."
+
+        - q: "I’ve got a feature that Middleplate could use!"
+          a: "Bloody nice one m8! Submit a pull request or <a href='/contact' title='Get in touch'>drop me a message</a> and we’ll test it, and then merge it in."
+
+        - q: "I’ve built a project using Middleplate"
+          a: "You hero. <a href='/contact' title='Get in touch'>Drop me a message</a> and I’ll get it added to <a href='documentation#examples' title='Check out the examples of sites built using Middleman and Middleplate'>the list</a>."
+
+    - section: "Other"
+      questions:
+
+        - q: "I love Middleplate. Can I buy you a beer?"
+          a: "Glad you’re enjoying it, but why not donate that beer money to my <a href='/triathlon' title='DOnate to my fundraising efforts'>triathlon fundraising kitty</a>. They need the help more than I need a pint!"

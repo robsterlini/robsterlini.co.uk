@@ -23,7 +23,7 @@ g.middleplate = function() {
 
   self.titles = [
     'Middleplate',
-    'Mdlplt',
+    'Mddlplt',
     'Middlepl8',
     'M1DDL3PL4T3'
   ];

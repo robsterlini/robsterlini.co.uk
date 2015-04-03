@@ -10,7 +10,7 @@ priority: 0.85
 <section id="content" class="wrapper">
   <div class="mp-hero">
     <div class="group">
-      <h1>Middleplate</h1>
+      <h1><abbr title="Frequently asked questions">FAQs</abbr></h1>
       <p class="mp-hero__strapline">Got a question? Someone’s probably asked it already&hellip;</p>
     </div>
   </div>
@@ -19,7 +19,7 @@ priority: 0.85
       <h2 class="mp-stack--left"><%= faq_section.section %></h2><!--
       --><div class="mp-stack--right">
         <% faq_section.questions.each_with_index do |faq, index| %>
-          <h3><%= faq.q %></h3>
+          <p class="mp-question"><%= faq.q %></h3>
           <p><%= faq.a %></p>
         <% end %>
       </div>
