@@ -91,6 +91,21 @@ featured:
           case_study: false
           dribbble: false
 
+##
+
+    -   name: "Middleplate"
+        slug: "middleplate"
+        date: "2015"
+        role: "Design &amp; front-end"
+        tech: "Middleman &amp; ruby"
+        description: "At Fueled and on my site, Middleman is the workhorse that makes it all possible. Middleplate is a Middleman boilerplate with extra features and blogging ready out of the box."
+        buttons:
+          show: true
+          live: "middleplate"
+          live_btn: "Fork the repo"
+          case_study: false
+          dribbble: false
+
 ########
 
 other:
