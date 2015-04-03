@@ -50,6 +50,15 @@ $color-link-reverse-hover: lighten($color-link-primary,40%);
 $color-link-reverse-active: $color-white;
 
 /* ==|== Colors =================
+  Middleplate
+====================================== */
+
+$color-mp-white:        $color-white;
+$color-mp-accent:       #F5B547;
+$color-mp-compliment:   #178254;
+$color-mp-text:         darken($color-mp-compliment, 15%);
+
+/* ==|== Colors =================
 	Social
 ========================================== */
 

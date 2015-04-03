@@ -1,0 +1,58 @@
+/**
+ * Middleplate masthead SCSS Partial
+ */
+
+.mp-masthead {
+  // background: linear-gradient(rgba($color-black, 0.025), rgba($color-black, 0.2));
+  left: 0;
+  position: absolute;
+  text-shadow: rgba($color-mp-accent, 0.3) 0 rem(1) 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  .group {
+    border-bottom: rem(1) solid rgba(lighten($color-mp-text, 5%), 0.35);
+    box-shadow: rgba($color-mp-accent, 0.1) 0 rem(1) 0;
+  }
+  a,
+  .btn {
+    color: $color-mp-text;
+    fill: $color-mp-text;
+    @include hover {
+      background: none;
+      color: $color-mp-white;
+      fill: $color-mp-white;
+    }
+    @include active {
+      color: $color-mp-white;
+      fill: $color-mp-white;
+      transform:scale(0.95,0.95);
+    }
+  }
+  .btn {
+    background: none;
+    display: block;
+    margin: 0;
+    padding: rem(7) 0 rem(5) rem(48);
+    position: relative;
+    svg {
+      display: inline-block;
+      fill: inherit;
+      height: rem(32);
+      left: rem(8);
+      position: absolute;
+      top: calc(50% - #{rem(16)});
+      width: rem(32);
+    }
+    path {
+      fill: inherit;
+    }
+    @include max-width($mp-tp-nav-icon) {
+      height: rem(48);
+      padding: 0 0 0 rem(48);
+      overflow: hidden;
+      white-space: nowrap;
+      width: rem(48);
+    }
+  }
+}

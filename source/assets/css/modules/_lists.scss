@@ -162,13 +162,6 @@ ol {
 .list--large-icons__item--large {
   width: 50%;
   @include max-width($bp-mid) {
-    // padding: rem(16);
     width: 100%;
   }
-  // @include max-width($bp-mid - 100) {
-  //   padding: 0 0 rem(16);
-  //   width: 100%;
-  // }
-  // @include max-width($bp-tiny) {
-  // }
 }
