@@ -142,13 +142,10 @@ $font-weight-bold: bold;
 	@if $feature-list
 	{
 		$standard: ();
-		$old-moz: ();
 		@each $feature in $feature-list
 		{
 			$standard: append( $standard, '#{$feature}' 1, comma );
-			$old-moz: append( $old-moz, '#{$feature}=1', comma );
 		}
-		-moz-font-feature-settings: $old-moz;
 		-moz-font-feature-settings: $standard;
 		-ms-font-feature-settings: $standard;
 		-o-font-feature-settings: $standard;
