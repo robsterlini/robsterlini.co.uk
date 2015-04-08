@@ -54,3 +54,10 @@ masthead:
     -   slug: "triathlon"
         label: "Tri rookie"
         alt: "Follow me on my road to my first triathlon"
+
+##
+
+    -   slug: "middleplate"
+        label: "Middleplate"
+        alt: "Test"
+        masthead: false

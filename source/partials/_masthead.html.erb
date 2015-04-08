@@ -1,13 +1,17 @@
-<header class="masthead" data-js="toggled-navigation-parent">
+<header class="masthead">
   <nav class="nav">
     <ul class="nav__list">
       <!--<% data.pages.masthead.each do |nav| %>
-        --><li class="nav__item">
-          <% label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>" %>
-          <a title="<%= nav.alt %>" class="nav__link--<%= nav.icon || nav.slug %> ss-nav-<%= nav.icon || nav.slug %>" href="/<%= nav.slug %>"><%= label %></a>
-        </li><!--
+        <% if nav.masthead != false %>
+          --><li class="nav__item">
+            <% label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>" %>
+            <a title="<%= nav.alt %>" class="nav__link--<%= nav.icon || nav.slug %> ss-nav-<%= nav.icon || nav.slug %>" href="/<%= nav.slug %>"><%= label %></a>
+          </li><!--
+        <% end %>
       <% end %>-->
     </ul>
   </nav>
 </header>
-<a href="#menu" class="nav__toggle ss-menu" data-js="toggle-navigation"><span class="visuallyhidden">Toggle menu</span></a>
+<div class="btns--menu" data-ie="hide">
+  <a href="#menu" class="btn btn--icon ss-menu" data-js="toggle-navigation"><span class="btn__label">Menu</span></a>
+</div>

@@ -7,15 +7,18 @@ var g = g || {};
 // 		on the JS simultaneously.
 g.partials = [
   'browserSniff',
-  'loadAnimation',
   'loadImages',
+  'disqusComments',
   'navToggle',
   'codeHighlight',
   'parallax',
   'anchorScroll',
   'loadHero',
   'hotspurRelated',
-  'strikethrough'
+  'strikethrough',
+  'agePosts',
+  'share',
+  'middleplate'
 ];
 
 // This _init function is the function which kicks everything off when

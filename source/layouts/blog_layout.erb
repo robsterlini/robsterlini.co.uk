@@ -4,20 +4,22 @@
   <% end %>
   <% localised_date = current_article.date.strftime("%b %e") %>
   <% if current_article.data.hero %>
-    <% content_for(:hero, "#{current_article.data.hero}") %>
+    <% image_loc = "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}" %>
+    <% content_for(:hero, current_article.data.hero); content_for(:hero_loc, image_loc) %>
     <%= partial "partials/hero", locals: {
-      image: "#{current_article.data.hero}",
-      image_small: "#{current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero}",
-      title: "#{current_article.title}",
+      image: current_article.data.hero,
+      image_small: current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero,
+      image_loc: image_loc,
+      title: current_article.title,
       subtitle: current_article.data.description,
       extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
     } %>
   <% end %>
   <main data-js="header-parent" id="main">
-    <article class="group type" id="post-38" data-anchors>
+    <article class="group" data-age="<%= current_article.date %>" data-anchors <% if current_article.data.hero %> data-js="append-age-warning"<% end %>>
       <% if !current_article.data.hero %>
         <h1 data-js="page-header"><%= current_article.title %></h1>
-        <p class="article__description"><%= current_article.data.description %></p>
+        <p class="article__description" data-js="append-age-warning"><%= current_article.data.description %></p>
       <% end %>
       <% if current_article.data.tldr %>
         <aside class="article__tldr">
@@ -26,9 +28,19 @@
       <% end %>
       <%= yield %>
       <h2>Good read?</h2>
+      <% if current_page.data.comments == true %>
+        <h3>Join in the discussion</h3>
+        <div class="comments" id="disqus_thread"></div>
+        <noscript><p>Please enable javascript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></p></noscript>
+        <p><a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a></p>
+      <% end %>
       <h3>Sharing is caring!</h3>
       <% short_url = current_page.data.short_url ? "sterlini.co/#{current_page.data.short_url}" : "sterlini.co/j#{current_article.url.sub! '/journal', ''}" %>
       <p>Feel free to share it – <a href="http://<%= short_url %>" class="link" id="article-sharelink" title="Share this post with others"><%= short_url %></a>, or chat about it <a href="http://twitter.com/robsterlini" title="Chat to me about this post on Twitter">on Twitter</a>.</p>
+      <p class="btns--center">
+        <% full_url = "#{url_short}/j#{current_article.url.sub '/journal', ''}"; url_encoded = URI.encode(full_url, /\W/) %>
+        <a class="btn twitter-popup love-it" id="twitter-link" href="http://twitter.com/share?text=%E2%80%98<%= URI.encode(current_article.title, /\W/)  %>%E2%80%99%20%40RobSterlini%20%E2%80%93&url=<%= url_encoded %>" title="Loved the article? Share it on Twitter!">Loved it!</a>
+      </p>
       <h3>Why not read another?</h3>
       <p class="btns--center btns--read-more">
         <% prev_article = current_article.previous_article; if prev_article %>

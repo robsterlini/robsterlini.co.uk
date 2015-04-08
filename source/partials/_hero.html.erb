@@ -1,5 +1,5 @@
 <div class="hero" data-plx="parent">
-  <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<% if defined? image_small %><%= image_small %><% else %><%= image %><% end %>">
+  <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<%= image_small || image %>" data-location="<%= image_loc %>">
   </div>
   <div class="hero__headers" data-js="header-to-offset">
     <% if locals.has_key? :featured %>
@@ -15,5 +15,5 @@
       <%= extra %>
     <% end %>
   </div>
-  <span class="hero__scroll"><a href="#main" class="hero__arrow ss-hero-down" data-anchor><span class="visuallyhidden">Scroll</span></a></span>
+  <span class="hero__scroll" data-ie="hide"><a href="#main" class="hero__arrow ss-hero-down" data-anchor><span class="visuallyhidden">Scroll</span></a></span>
 </div>

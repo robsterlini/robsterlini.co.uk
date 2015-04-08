@@ -1,0 +1,21 @@
+<% wrap_layout :layout do %>
+  <% content_for(:title_suffix, "Middleplate") %>
+  <% content_for :casestudy_css do %>
+    <%= stylesheet_link_tag "middleplate" %>
+  <% end %>
+
+  <% # Masthead %>
+  <%= partial "partials/middleplate/mp-masthead" %>
+
+  <% # Typekit %>
+  <script src="//use.typekit.net/ada1ygb.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <main class="mp-main">
+    <%= yield %>
+  </main>
+
+  <% # Footer %>
+  <%= partial "partials/middleplate/mp-footer" %>
+
+<% end %>

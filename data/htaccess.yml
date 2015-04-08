@@ -6,22 +6,35 @@ web:
 
 redirect:
     /youtube: /journal/youtube
+    /yt: /journal/youtube
     /tri: /triathlon
     /testimonials: /process#testimonials
     /projects: /portfolio
     /work: /portfolio
     /about-me: /about
+    /macmillan: /triathlon
+    /donate: /triathlon
+    /food: /food-diary
+    /cv: /portfolio
+    /curriculum-vitae: /portfolio
+    /blog: /journal
+    /mid: /middleplate
+    /middlepl8: /middleplate
 
 cache:
-    deflate: \\.(js|css|html|ico|png|jpg)$
+    deflate: \\.(js|css|html|ico|png|jpg|svg)$
     expire:
         image/png: access plus 1 month
         image/jpg: access plus 1 month
+        image/svg: access plus 1 month
         image/ico: access plus 1 month
         image/x-icon: access plus 1 month
         text/html: access plus 1 minute
         text/css: access plus 7 days
         application/javascript: access plus 7 days
+        application/x-font-woff: access plus 1 month
+        application/x-font-woff2: access plus 1 month
+        application/vnd.ms-fontobject: access plus 1 month
         text/javascript: access plus 7 days
 
 errors:
@@ -36,3 +49,7 @@ short:
     redirect:
         /tri: /triathlon
         /yt: /journal/youtube
+        /food: /food-diary
+        /mid: /middleplate
+        /middleplate: /middleplate
+        /middlepl8: /middleplate

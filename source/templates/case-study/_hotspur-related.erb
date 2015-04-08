@@ -1,6 +1,11 @@
+<% hero_image = "hotspur-related_600.jpg" %>
+<% hero_loc = "#{portfolio_dir}hotspur-related/" %>
+<% content_for(:hero, hero_image); content_for(:hero_loc, hero_loc) %>
+
 <%= partial "partials/hero", locals: {
-  image: "hotspur-related.jpg",
+  image: hero_image,
   image_small: "hotspur-related_600.jpg",
+  image_loc: hero_loc,
   title: "<span class='hotspur__title__span'>How I built a website for </span>#{project.name}",
   subtitle: "#{project.description}",
 } %>
@@ -23,7 +28,7 @@
         <h3>A face lift</h3>
         <p>Before kicking off design on the site, I took the opportunity to give the current logo a bit of a face lift.</p>
         <p data-js="refresh-waypoint">Naturally, it was important to Ross that the logo retain it’s identity. I kept the concept the same, but balanced the weighting and the type, as well as adding a few flourishes.</p>
-        <div class="hotspur__refresh__nav">
+        <div class="hotspur__refresh__nav" data-ie="hide">
           <a class="hotspur__refresh__nav__link--old" href="#" data-refresh="old"><span class="visuallyhidden">See the </span>old logo</a><!--
         --><a class="hotspur__refresh__nav__link--new" href="#" data-refresh="new"><span class="visuallyhidden">See the </span>new logo</a>
         </div>

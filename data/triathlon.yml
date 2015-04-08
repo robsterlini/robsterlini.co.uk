@@ -1,0 +1,60 @@
+########
+
+events:
+
+##
+    -   title: "Jan-water-ary"
+        slug: "jan-water-ary"
+        short_date: "January"
+        full_date: "1 January–7 February 2015 (with a week off for skiing)"
+        desc:
+            -   "Still haven’t found a catchier, less-rubbish name for it, but meh… This January, I decided to go one further than the no-alcohol Dryathlon and only drink water."
+            -   "For most this may have been an easy challenge, but I love my diet coke and coffee too much so it proved tough."
+        complete:
+            -   "This was easier than I’d thought. Only found myself missing coffee a few times, and everything else was simple to cut out. Counting what I would have drunk proved to be trickier though, so at the end I decided to go for a round £5 per day rather than a Diet Coke here, a Starbucks there."
+            -   "All in all I raised &pound;155!"
+
+##
+    -   title: "Tough Mudder UK"
+        slug: "tough-mudder-uk"
+        short_date: "2 May"
+        full_date: "2 May 2015"
+        desc:
+            -   "I’ve seen people complete Tough Mudder, and it’s always looked like a twisted form of fun; until this year I’ve not had the bottle to sign up."
+            -   "The hope is that the mental toughness will add an extra level and that it will help me hone my ability to dig deep for the later events where I might need it."
+
+##
+    -   title: "The Colour Run"
+        slug: "colour-run"
+        short_date: "7 June"
+        full_date: "7 June 2015"
+        desc:
+            -   "Supposedly the most fun 5k I’ll ever do&hellip; This one is more of a fun-run rather than a race, so no training for this one. Just turn up and enjoy getting caked in powder paint with mates. Very much looking forward to this one!"
+
+##
+    -   title: "Jenson Button Trust Triathlon"
+        slug: "jenson-button-tri"
+        short_date: "12 July"
+        full_date: "12 July 2015"
+        desc:
+            -   "This will likely be the first triathlon for this year, and will be my first real experience of one. The plan is to use this to get used to the way transition works, and how mass water starts work before the big day in August!"
+
+##
+    -   title: "The London Triathlon"
+        slug: "the-london-triathlon"
+        short_date: "8 August"
+        full_date: "8 August 2015"
+        desc:
+            -   "This is the big one!"
+            -   "The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for."
+            -   "To be able to compete in an event this big in the city I grew up in will be great."
+
+##
+    -   title: "Royal Parks Foundation Half Marathon"
+        slug: "royal-parks-half"
+        short_date: "11 October"
+        full_date: "11 October 2015"
+        desc:
+            -   "This is a half marathon that I’ve always wanted to run, so I was super gutted when I missed out on this place in the ballot."
+            -   "Thankfully, Macmillan had places and I was very lucky that they’ve given one of them to me."
+            -   "This will likely be my last event of this calendar year, so I’m hoping that I’ve enjoyed the previous series of challenges and that this rounds the whole experience off nicely. Here’s to hoping!"

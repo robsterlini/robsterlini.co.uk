@@ -31,7 +31,7 @@ g.loadImages = function() {
         if (!$(this).hasClass(self.classes.loaded)) {
           $(this).attr('src',$(this).attr(self.data.source)).load(function() {
           	$(this).addClass(self.classes.loaded).parent().addClass(self.classes.parentLoaded);
-            wpSet();
+            self.wpSet();
           });
         }
       }, { offset: '75%' });

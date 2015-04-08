@@ -20,6 +20,21 @@ figure svg,
 .figure-wrap {
   text-align: center;
 }
+.figure-wrap--half {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - #{rem(8)});
+  & + & {
+    margin-left: rem(16);
+  }
+  @include max-width($bp-mid) {
+    width: 100%;
+    & + & {
+      margin-left: 0;
+    }
+  }
+}
+
 
 figure {
   display:inline-block;
@@ -37,10 +52,10 @@ figcaption {
   text-align: left;
   padding-top:rem(5);
   background:$color-white;
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     @include font-size(17);
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     @include font-size(16);
   }
 }
@@ -58,13 +73,13 @@ figcaption {
 }
 .image--left,
 .image--right {
-  @include respond-to($bp-mid) {
+  @include max-width($bp-mid) {
     max-width: rem(250);
   }
 }
 .image--left,
 .image--right {
-  @include respond-to($bp-tiny + 100) {
+  @include max-width($bp-tiny + 100) {
     // max-width:none;
     float:none;
     margin:rem(20) auto;
@@ -104,5 +119,43 @@ figcaption {
   }
   img {
     opacity:1;
+  }
+}
+
+.image-grid {
+  columns: 2;
+  column-gap: rem(16);
+  .figure-wrap--half {
+    figure {
+      min-width: 0;
+    }
+  }
+  @include max-width($bp-small) {
+    columns: 1;
+  }
+  html[data-useragent*='Chrome'] & {
+    columns: 1;
+    margin-left: rem(-8);
+    width: calc(100% + #{rem(16)});
+    .figure-wrap {
+      display: inline-block;
+      margin:0 rem(8);
+      width: calc(50% - #{rem(16)});
+      vertical-align: top;
+    }
+    .figure-wrap--half {
+      width: calc(25% - #{rem(16)});
+      @include max-width($bp-mid) {
+        width: calc(50% - #{rem(16)});
+      }
+    }
+    @include max-width($bp-small) {
+      margin-left: 0;
+      width: 100%;
+      .figure-wrap {
+        width: 100%;
+        margin: 0;
+      }
+    }
   }
 }

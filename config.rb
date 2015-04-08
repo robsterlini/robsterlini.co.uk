@@ -37,6 +37,7 @@
 
 # Requires
 require 'builder'
+require 'yaml'
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -59,7 +60,7 @@ end
 #Create full image markup helper
 helpers do
   def blog_image(image, caption, alt, position)
-    "<div class='figure-wrap'>
+    "<div class='figure-wrap#{position == "half" ? " figure-wrap--half" : ""}'>
       <noscript>
         <figure class='image--#{position}'>  
           <img src='#{image}' alt='#{alt}' title='#{caption}'>
@@ -76,14 +77,32 @@ helpers do
       </figure>
     </div>"
   end
+  def middleplate_markdown(md)
+      opening_tag = "<div class='mp-stack--left'>"
+      middle_tag  = "</div><div class='mp-stack--right'>"
+      end_tag     = "</div>"
+      str = partial "partials/middleplate/#{md}.md"
+      replacements = [
+        ["<p>{{section_open}}</p>", opening_tag],
+        ["<p>{{section_mid}}</p>", middle_tag],
+        ["<p>{{section_end}}</p>", end_tag]
+      ]
+      replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
+      str.gsub(/<p>.<\/p>/,"")
+      str
+  end
 end
 
 # Set directories
-
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/images'
+set :hero_dir, '/assets/images/hero/'
+set :portfolio_dir, '/assets/images/portfolio/'
+
+# Set base URLs
 set :url_root, 'https://robsterlini.co.uk'
+set :url_short, 'http://sterlini.co'
 
 # Create pages
 data.projects.featured.each_with_index do |c, i|
@@ -125,6 +144,12 @@ after_build do
   File.rename 'build/.htaccess.apache', 'build/.htaccess'
   File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
+
+# Middleplate
+with_layout :middleplate_layout do
+  page "/middleplate/*"
+end
+set :mp_github, "https://github.com/robsterlini/middleplate"
 
 # Build-specific configuration
 configure :build do

@@ -1,0 +1,46 @@
+/**
+ * Hero SCSS Partial
+ */
+
+$mp-tp-nav-icon: 550;
+$mp-tp-stack: $bp-mid - 100;
+
+.mp-main {
+  flex: 1;
+  padding: 0 0 rem(64);
+}
+[class^="mp-stack--"] {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+@include min-width($mp-tp-stack) {
+  .mp-stack--left {
+    padding-top: rem(32);
+    width: rem(320);
+    h2 {
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+    h3 {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  .mp-stack--right {
+    padding-top: rem(32);
+    width: calc(100% - #{rem(320)});
+    h3 {
+      &:first-child {
+        margin-top: rem(2);
+      }
+    }
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

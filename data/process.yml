@@ -81,6 +81,7 @@ testimony:
             -   "“We were looking for a responsive website using beautiful fonts with a clean minimalist look.  Rob delivered this and the site has turned out better than we could have hoped for.  Our site looks beautiful whether viewed on a PC, tablet or smartphone."
             -   "“He was an absolute pleasure to work with and delivered the project well ahead of schedule and under the quoted budget."
             -   "“If you need a website then we could not think of anyone better to deliver this than Rob.”"
+        split: true
 
     -   name: "Olajide Olatunji"
         project: "ksiolajidebt.com"

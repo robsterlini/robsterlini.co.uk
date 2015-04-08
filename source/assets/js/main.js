@@ -2,7 +2,7 @@
 //= require _g
 //= require _plugins
 //= require _browserSniff
-//= require _loadAnimation
+//= require _disqusComments
 //= require _codeHighlight
 //= require _loadImages
 //= require _navToggle
@@ -10,7 +10,10 @@
 //= require _parallax
 //= require _anchorScroll
 //= require _loadHero
+//= require _agePosts
+//= require _share
 //= require _caseStudyHotspur
+//= require _middleplate
 
 $(function() {
 	// This is all we need in our main.js file - isn't it neat :)

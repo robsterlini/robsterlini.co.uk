@@ -48,6 +48,15 @@ ol {
 }
 
 /* ==|== Lists =================
+  No bullet
+========================================== */
+
+.list--no-bullet {
+  list-style: none;
+  padding: 0;
+}
+
+/* ==|== Lists =================
 	Large Icons
 ========================================== */
 
@@ -56,13 +65,13 @@ ol {
   margin-left: rem(-16);
   padding: 0;
   width: calc(100% + #{rem(32)});
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     margin-left: 0;
     width: 100%;
   }
 }
 .list--large-icons--hover {
-  @include respond-to-min($bp-mid + 1) {
+  @include min-width($bp-mid) {
     &:hover,
     &:focus {
       .list--large-icons__item {
@@ -95,10 +104,10 @@ ol {
     @include font-size(24);
     padding-top: 0;
   }
-  @include respond-to($bp-mid) {
+  @include max-width($bp-mid) {
     width: 50%;
   }
-  @include respond-to($bp-small) {
+  @include max-width($bp-small) {
     display: block;
     padding: 0 0 rem(16) rem(42); 
     margin: 0 auto;
@@ -114,7 +123,7 @@ ol {
   		@include font-size(22);
   	}
   }
-  @include respond-to($bp-tiny) {
+  @include max-width($bp-tiny) {
     padding-left: 0;
     &:before {
       position: relative;
@@ -136,13 +145,13 @@ ol {
     height: rem(72);
     left: 0;
     width: 100%;
-    @include respond-to($bp-mid) {
+    @include max-width($bp-mid) {
       top: 0;
       left: rem(-42);
       height: 100%;
       width: rem(42);
     }
-    @include respond-to($bp-mid) {
+    @include max-width($bp-mid) {
       top: rem(-45);
       height: rem(45);
       left: 0;
@@ -152,14 +161,7 @@ ol {
 }
 .list--large-icons__item--large {
   width: 50%;
-  @include respond-to($bp-mid) {
-    // padding: rem(16);
+  @include max-width($bp-mid) {
     width: 100%;
   }
-  // @include respond-to($bp-mid - 100) {
-  //   padding: 0 0 rem(16);
-  //   width: 100%;
-  // }
-  // @include respond-to($bp-tiny) {
-  // }
 }
