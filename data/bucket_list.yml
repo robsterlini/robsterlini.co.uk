@@ -36,7 +36,7 @@ all:
     -   title: "Get my pug"
         slug: "pug"
         date: 2015-01-01 00:00 UTC
-        desc: "Pugs are the best, most gorgeous, best dogs ever. Frank Jr will be the best wingman!"
+        desc: "Pugs are the best, most gorgeous, best dogs ever. Frank <abbr title='Junior' class='sc'>Jr</abbr> will be the best wingman!"
 
 ##
 
