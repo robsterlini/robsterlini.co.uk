@@ -14,9 +14,8 @@
   font-family: "SSSymbolicons";
   src: url('ss-symbolicons-line.eot');
   src: url('ss-symbolicons-line.eot?#iefix') format('embedded-opentype'),
-       url('ss-symbolicons-line.woff') format('woff'),
-       url('ss-symbolicons-line.ttf')  format('truetype'),
-       url('ss-symbolicons-line.svg#SSSymboliconsLine') format('svg');
+       url('ss-symbolicons-line.woff2') format('woff2'),
+       url('ss-symbolicons-line.woff')  format('woff');
   font-weight: 300;
   font-style: normal;
 }
