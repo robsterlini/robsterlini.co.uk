@@ -23,35 +23,36 @@
 }
 
 @mixin max-height($bp) {
-	$unit: em($bp, 16);
-	@media only screen and (max-height: $unit) {
+	$unit: $bp / 16;
+	@media only screen and (max-height: $unit + em) {
 		@content;
 	}
 }
 
 @mixin min-height($bp) {
-	$unit: em($bp, 16);
-	@media only screen and (min-height: $unit) {
+	$unit: ($bp + 1) / 16;
+	@media only screen and (min-height: $unit + em) {
 		@content;
 	}
 }
 
 @mixin max-width($bp) {
-	$unit: em($bp, 16);
-	@media only screen and (max-width: $unit) {
+	$unit: $bp / 16;
+	@media only screen and (max-width: $unit + em) {
 		@content;
 	}
 }
 @mixin min-width($bp) {
-	$unit: em($bp + 1, 16);
-	@media only screen and (min-width: $unit) {
+	$unit: ($bp + 1) / 16;
+	@media only screen and (min-width: $unit + em) {
 		@content;
 	}
 }
+
 @mixin min-max-width($bp-min, $bp-max) {
-	$unit-min: em($bp-min + 1, 16);
-	$unit-max: em($bp-max, 16);
-	@media only screen and (min-width: $unit-min) and (max-width: $unit-max) {
+	$unit-min: ($bp-min + 1) / 16;
+	$unit-max: $bp-max / 16;
+	@media only screen and (min-width: $unit-min + em) and (max-width: $unit-max + em) {
 		@content;
 	}
 }
