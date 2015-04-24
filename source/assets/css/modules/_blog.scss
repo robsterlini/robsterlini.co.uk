@@ -37,3 +37,9 @@
     }
   }
 }
+
+.blog-post {
+  p:first-child {
+    margin-top: $measure-unit * 3;
+  }
+}
