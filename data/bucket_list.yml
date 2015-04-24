@@ -92,3 +92,17 @@ all:
         slug: "travel"
         date: 2015-02-01 00:00 UTC
         desc: "I’ve travelled relatively well in Europe, and been lucky enough to get to the States a few times; but Africa, Asia, South America, Antarctica and Australia are still on the list!"
+
+##
+
+    -   title: "Win a game of Monopoly"
+        slug: "monopoly"
+        date: 2015-03-01 00:00 UTC
+        desc: "It’s a game we played a fair bit growing up, but my obsession with getting the brown set has meant I’ve never actually won a game."
+
+##
+
+    -   title: "Learn to make sushi"
+        slug: "sushi"
+        date: 2015-04-01 00:00 UTC
+        desc: "Let’s be real: who doesn’t love sushi? Wouldn’t it be awesome to be able to make it yourself? I reckon it would."
