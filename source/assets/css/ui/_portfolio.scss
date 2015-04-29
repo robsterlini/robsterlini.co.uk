@@ -117,13 +117,3 @@
     width: 100%;
   }
 }
-// Return to portfolio
-.btns--portfolio-menu {
-  .btn {
-    @include hover {
-      .btn__label {
-        width: rem(170);
-      }
-    }
-  }
-}
