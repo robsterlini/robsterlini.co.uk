@@ -15,8 +15,7 @@ redirect:
     /macmillan: /triathlon
     /donate: /triathlon
     /food: /food-diary
-    /cv: /portfolio
-    /curriculum-vitae: /portfolio
+    /cv: /curriculum-vitae
     /blog: /journal
     /mid: /middleplate
     /middlepl8: /middleplate
@@ -53,3 +52,4 @@ short:
         /mid: /middleplate
         /middleplate: /middleplate
         /middlepl8: /middleplate
+        /cv: /curriculum-vitae
