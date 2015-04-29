@@ -43,3 +43,31 @@ hr {
     margin-top: rem(60);
   }
 }
+
+.page--no-masthead {
+  .hero {
+    min-height: 100vh;
+    padding: rem(50) 0;
+  }
+  .hero__scroll {
+    display: none;
+  }
+  .list--large-icons {
+    max-width: none;
+    margin-top: rem(32);
+  }
+  .list--large-icons__link {
+    color: $color-white;
+    @include hover {
+      color: $color-link-reverse;
+    }
+    .small-caps {
+      color: $color-link-reverse;
+    }
+  }
+  main,
+  .error,
+  .footer {
+    padding-left: 0;
+  }
+}
