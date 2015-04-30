@@ -154,9 +154,6 @@ p,
     display: none;
   }
 }
-.hero__scroll {
-  display: none;
-}
 .hero__header--beta {
   @include font-size(24);
   margin-top: rem(32);
