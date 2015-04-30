@@ -15,5 +15,5 @@
       <%= extra %>
     <% end %>
   </div>
-  <span class="hero__scroll" data-ie="hide"><a href="#main" class="hero__arrow ss-hero-down" data-anchor><span class="visuallyhidden">Scroll</span></a></span>
+  <% if !locals.has_key? :arrow_hide %><span class="hero__scroll" data-ie="hide"><a href="#main" class="hero__arrow ss-hero-down" data-anchor><span class="visuallyhidden">Scroll</span></a></span><% end %>
 </div>
