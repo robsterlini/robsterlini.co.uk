@@ -15,26 +15,26 @@ no_footer: true
     <article class="cv__content group" data-anchors>
       <h1><%= current_page.data.title %></h1>
       <p class="article__description">In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled, and in my spare time I’m in triathlon training, watching Spurs or playing with <span class="sc">LEGO</span>.</p>
-      <%# START EMPLOYMENT %>
-      <h2 id="employment">Employment</h2>
-      <% data.cv.employment.each do |item| %>
-        <h3 class="cv__title"><span class="cv__title--org"><%= item.title %></span><% if item.date %> <span class="cv__title--date"><%= item.date %></span><% end %></h3>
-        <p class="small-caps cv__subtitle"><%= item.subtitle %></p>
-        <% if item.copy; item.copy.each do |text| %>
-          <p><%= text %></p>
-        <% end; end %>
-      <% end %>
-      <%# END EMPLOYMENT %>
-      <%# START EDUCATION %>
-      <h2 id="education">Education</h2>
-      <% data.cv.education.each do |item| %>
-        <h3 class="cv__title"><span class="cv__title--org"><%= item.title %></span><% if item.date %> <span class="cv__title--date"><%= item.date %></span><% end %></h3>
-        <p class="small-caps cv__subtitle"><%= item.subtitle %></p>
-        <% if item.copy; item.copy.each do |text| %>
-          <p><%= text %></p>
-        <% end; end %>
-      <% end %>
-      <%# END EDUCATION %>
+      <p>I love my job at Fueled, but you never really know what lies ahead. I’m happy to chat about alternatives, but forgive me if it doesn’t top what I’ve already got!</p>
+      <%
+        def cv_section(cv_title, cv_data)
+          string = "<h2 id='#{cv_title.to_slug}'>#{cv_title}</h2>"
+          cv_data.each do |item|
+            date = item.date ? " <span class='cv__title--date'>#{item.date}</span>" : ""
+            string += "<h3 id='#{item.title.to_slug}' class='cv__title'><span class='cv__title--org'>#{item.title}</span>#{date}</h3>"
+            string += "<p class='small-caps cv__subtitle'>#{item.subtitle}</p>"
+            if item.copy
+              item.copy.each_with_index do |text, index|
+                string += "<p data-cv='#{item.copy.length > 1 ? index >= 1 ? "hide" : "show" : "none"}'>#{text}</p>"
+              end
+            end
+          end
+          return string
+        end
+      %>
+      <%= cv_section("Employment", data.cv.employment) %>
+      <%= cv_section("Education", data.cv.education) %>
+      <%= cv_section("In my own time", data.cv.extras) %>
     </article>
   </main>
 </section>
