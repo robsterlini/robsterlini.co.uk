@@ -19,6 +19,8 @@ redirect:
     /blog: /journal
     /mid: /middleplate
     /middlepl8: /middleplate
+    /tough-mudder: /triathlon
+    /toughmudder: /triathlon
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg|svg)$
@@ -47,6 +49,7 @@ short:
         case_study: /c
     redirect:
         /tri: /triathlon
+        /mudder: /triathlon
         /yt: /journal/youtube
         /food: /food-diary
         /mid: /middleplate
