@@ -2,6 +2,7 @@
 //= require _g
 //= require _plugins
 //= require _browserSniff
+//= require _cv
 //= require _disqusComments
 //= require _codeHighlight
 //= require _loadImages
