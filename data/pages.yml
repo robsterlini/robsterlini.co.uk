@@ -32,15 +32,15 @@ masthead:
 
 ##
 
-    -   slug: "about"
-        label: "About me"
-        alt: "Find out about me"
-
-##
-
     -   slug: "contact"
         label: "Say hi"
         alt: "Get in touch"
+
+##
+
+    -   slug: "about"
+        label: "About me"
+        alt: "Find out about me"
 
 ##
 
