@@ -94,9 +94,14 @@ p,
 }
 
 // Nav
-.btns--menu {
+.btns--portfolio-menu {
   .btn {
     padding: rem(11) 0 rem(11);
+    @include hover {
+      .btn__label {
+        width: rem(170);
+      }
+    }
   }
 }
 

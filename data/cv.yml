@@ -1,0 +1,55 @@
+########
+
+employment:
+
+    -   title: "Fueled"
+        subtitle: "Web designer"
+        date: "July 2014–"
+        copy:
+            -   "My (still on-going) time at Fueled has given me the chance to work with well-known brands like <strong>Vanity Fair</strong>, <strong>Condé Nast</strong>, and <strong>The ONE Group</strong> – each providing a different set of challenges. I’ve also with smaller start-up companies, with a greater amount of creative control."
+
+    -   title: "University of Reading"
+        subtitle: "Digital designer"
+        date: "2013–2014"
+        copy:
+            -   "After completing my degree, I was trilled to stay at the University; joining the Digital Development team I lead the project to rebuild the University’s corporate site as new, responsive pages aimed at increasing admissions, and reducing the path to vital information."
+
+    -   title: "Freelance"
+        subtitle: "Front-end developer and web designer"
+        date: "2010–"
+        copy:
+            -   "Working from everything from YouTube personalities to up-and-coming bands; from sports blogs to private dental surgeries and more, I’ve used freelance gigs as a way to push me both creatively and technically."
+            -   "I’ve the majority of my projects listed in <a href='/projects' title='Check out my portfolio'>my projects</a>, so feel free to head over there and check them out."
+
+########
+
+education:
+
+    -   title: "University of Reading"
+        subtitle: "<span class='sc'>BA</span> Graphic Communication &amp; Typography, First-class honours"
+        date: "2010–13"
+        copy:
+            -   "My time at the University of Reading has helped me hone my design skills both in print, and digitally; and underlined my desire to go into the world of web design and development."
+            -   "Working with real clients on live projects throughout the course provided hands-on experience in delivering projects on time, and within budget."
+            -   "It also gave me the opportunities to explore other disciplines like typeface design that helped broaden my skillset and knowledge base."
+
+    -   title: "Dame Alice Owen’s School"
+        subtitle: "BBB A-level; 11 GCSEs – 6A*, 4A, 1B"
+        date: "2003–10"
+        copy:
+            -   "<abbr title='Dame Alice Owen’s School'>DAOs</abbr> provided the perfect environment to push me academically; I received letters of commendation from two examination boards for achieiving results within the top 1% in both Italian and Art at GCSE."
+            -   "A competetive school like Owen’s offered lots of opportunities to represent them, and I did my best to do that as often as possible; playing football, basketball, and running track among other disciplines."
+
+########
+
+extras:
+
+    -   title: "Training and fundraising"
+        subtitle: ""
+        copy:
+            -   "Depending on when you’re reading this, and how recently I’ve updated this I’m either training for or have competed in Tough Mudder, a series of runs, and several Triathlons; all of which are efforts to fundraise for Macmillan. You can <a href='/triathlon' title='Find out about my fundraising for Macmillan'>check my progress or donate here</a>."
+
+    -   title: "Unwinding"
+        subtitle: ""
+        copy:
+            -   "<span class='sc'>LEGO</span> formed a huge part of my childhood, and I still love switching off and engaging my inner master builder. There’s nothing quite like instructionless creativity."

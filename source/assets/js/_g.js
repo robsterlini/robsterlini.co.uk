@@ -6,18 +6,21 @@ var g = g || {};
 // 		easier version controlling when multiple users are collaborating
 // 		on the JS simultaneously.
 g.partials = [
-  'browserSniff',
-  'loadImages',
-  'disqusComments',
-  'navToggle',
-  'codeHighlight',
-  'parallax',
-  'anchorScroll',
-  'loadHero',
-  'hotspurRelated',
-  'strikethrough',
   'agePosts',
+  'anchorScroll',
+  'browserSniff',
+  'codeHighlight',
+  'cv',
+  'disqusComments',
+  'loadHero',
+  'loadImages',
+  'navToggle',
+  'parallax',
   'share',
+  'strikethrough',
+  // Case studies
+  'hotspurRelated',
+  // Subpages
   'middleplate'
 ];
 

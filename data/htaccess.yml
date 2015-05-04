@@ -15,11 +15,12 @@ redirect:
     /macmillan: /triathlon
     /donate: /triathlon
     /food: /food-diary
-    /cv: /portfolio
-    /curriculum-vitae: /portfolio
+    /cv: /curriculum-vitae
     /blog: /journal
     /mid: /middleplate
     /middlepl8: /middleplate
+    /tough-mudder: /triathlon
+    /toughmudder: /triathlon
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg|svg)$
@@ -48,8 +49,10 @@ short:
         case_study: /c
     redirect:
         /tri: /triathlon
+        /mudder: /triathlon
         /yt: /journal/youtube
         /food: /food-diary
         /mid: /middleplate
         /middleplate: /middleplate
         /middlepl8: /middleplate
+        /cv: /curriculum-vitae
