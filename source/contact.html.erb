@@ -10,6 +10,7 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
       <h1><%= current_page.data.title %></h1>
       <p class="article__description"><%= current_page.data.description %></p>
       <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <a href="/youtube" title="Read about why I don’t work on YouTube anymore">in my journal</a>.</p>
+      <p>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
       <div class="list--large-icons">
         <!--<% data.contact.contact.each do |contact| %>
         --><div class="list--large-icons__item ss-contact-<%= contact.slug %>">
