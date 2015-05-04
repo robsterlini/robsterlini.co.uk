@@ -57,6 +57,13 @@ masthead:
 
 ##
 
+    -   slug: "curriculum-vitae"
+        label: "CV"
+        alt: "Find out about my employment and education history"
+        masthead: false
+
+##
+
     -   slug: "middleplate"
         label: "Middleplate"
         alt: "Test"
