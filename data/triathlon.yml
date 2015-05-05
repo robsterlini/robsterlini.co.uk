@@ -16,12 +16,19 @@ events:
 
 ##
     -   title: "Tough Mudder UK"
+        title_image: "content/2015/05/tough-mudder-logo.svg"
         slug: "tough-mudder-uk"
         short_date: "2 May"
         full_date: "2 May 2015"
         desc:
             -   "I’ve seen people complete Tough Mudder, and it’s always looked like a twisted form of fun; until this year I’ve not had the bottle to sign up."
             -   "The hope is that the mental toughness will add an extra level and that it will help me hone my ability to dig deep for the later events where I might need it."
+        complete:
+            -   "2 May was one of the best days of my life, albeit also one of the hardest. The elation as I came through the final obstacle, combined with the sense of achievement after every hurdle was unbelievable. I’d summoned up every ounce of my strength, and pushed through!"
+            -   "It also came on the morning that I passed £500 in donations to my fundraising effort, which was also pretty damn overwhelming!"
+            -   "Tough Mudder was great fun, hard work, and the first of many more to come."
+            -   "You can check out some of the photos on <a href='https://instagram.com/p/2L_mXMP-32/?taken-by=robsterlini' title='See a photo of my mum and me before the carnage'>my Instagram</a>."
+        complete_image: "content/2015/05/tough-mudder-cry-baby.jpg"
 
 ##
     -   title: "The Colour Run"
