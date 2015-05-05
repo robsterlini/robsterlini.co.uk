@@ -13,7 +13,7 @@ priority: 1.0
   <%
     hero_extra = "<p>I work for <a href='http://fueled.com' title='Visit the Fueled website'>Fueled</a>, but take on freelance projects that speak to me! Oh, and I’m raising money for Macmillan by competing in a whole bunch of crazy events throughout 2015. #{link_to "Read and donate?", "triathlon.html", :title => "Read about my fundraising plans here"} You know you want to!</p><ul class='list--large-icons'>"
     data.pages.masthead.each do |nav|
-      if nav.home && nav.slug != "index.html"
+      if nav.home && nav.slug != "/index.html"
         hero_link =  "<h2 class='list--large-icons__title'>#{nav.home.title}</h2>"
         hero_link += "<p>#{nav.home.text}</p>"
         hero_link += "<p class='small-caps' data-ie='hide'>Read more<span class='visuallyhidden'> about #{nav.home.read_more}.</span></p>"

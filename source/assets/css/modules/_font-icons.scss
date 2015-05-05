@@ -238,3 +238,6 @@ figcaption.ss-picture {
   // @extend %bucket-no-icon;
   content:''
 }
+.ss-bucket-tough-mudder:before {
+  @extend .ss-bucket-marathon:before;
+}

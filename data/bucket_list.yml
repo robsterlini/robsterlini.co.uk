@@ -57,7 +57,7 @@ all:
     -   title: "Go on a pan-american road trip"
         slug: "usa-roadtrip"
         date: 2015-01-01 00:00 UTC
-        desc: "Rooooaaaad trrriiiip etc etc!"
+        desc: "Rooooaaaad trrriiiip <em>etc etc</em>!"
 
 ##
 
@@ -106,3 +106,11 @@ all:
         slug: "sushi"
         date: 2015-04-01 00:00 UTC
         desc: "Let’s be real: who doesn’t love sushi? Wouldn’t it be awesome to be able to make it yourself? I reckon it would."
+
+##
+
+    -   title: "Complete Tough Mudder"
+        slug: "tough-mudder"
+        date: 2015-05-01 00:00 UTC
+        completed: 2015-05-02 00:00 UTC
+        desc: "Not sure why this wasn’t in my first twelve, but Tough Mudder has always looked awesome! Adding it a day before you’re doing it is totally not cheating."
