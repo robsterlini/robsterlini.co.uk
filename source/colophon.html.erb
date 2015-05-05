@@ -19,7 +19,7 @@ description: There’s a lot of magic behind robsterlini.co.uk…
       <p>The majority of photos on this site have been taken (somewhat haphazardly) by myself, with a few exceptions:</p>
       <ul>
         <li><a href="http://instagram.com/p/q_eClwP-xN/?modal=true" title="Check out my headshot on Instagram">My headshot</a> was taken by <a href="https://twitter.com/rameet" title="Follow Rameet on Twitter">Rameet</a> – Fueled’s amazing CEO;</li>
-        <li>All of the gifs on the error pages (<a href="/404" title="Check out the 404 page">404</a> &amp; <a href="/403" title="Check out the 403 page">403</a>) are taken from the glorious world-wide web.</li>
+        <li>All of the gifs on the error pages (<%= link_to "404", "/404.html", :title => "Check out the 404 page" %> &amp; <%= link_to "403", "/403.html", :title => "Check out the 403 page" %>) are taken from the glorious world-wide web.</li>
       </ul>
       <h2>The technologies</h2>
       <h3>The build</h3>
@@ -40,7 +40,7 @@ description: There’s a lot of magic behind robsterlini.co.uk…
       <h2>The small print</h2>
       <h3>Be inspired, but don’t steal</h3>
       <p>I’m all for the open web, and all that, but you have to be respectful about it. If there’s a particular aspect of my site that you like, by all means use it as inspiration and work it into your design, but please don’t just outright burgle huge chunks of it. I can’t stop you, but you don’t learn anything by copying code like for like.</p>
-      <p>That said, if there are any particlar bits that you love and want to know how (or why) I’ve implemented them in that way then <a href="/contact" title="Get in touch">don’t hesitate to ask</a>.</p>
+      <p>That said, if there are any particlar bits that you love and want to know how (or why) I’ve implemented them in that way then <%= link_to "don’t hesitate to ask", "/contact.html", :title => "Get in touch" %>.</p>
       <h3 id="cookies">Cookies</h3>
       <p>I use a select few cookies on my site, the majority of which are to provide analytics so I can improve my site for the people who are actually accessing it. By all means block the cookies, but if you haven’t then thanks for being awesome!</p>
     </article>

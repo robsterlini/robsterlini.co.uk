@@ -9,7 +9,7 @@ description: I’m a web designer with a love for gorgeous typography, delicious
     <article class="type group">
       <h1><%= current_page.data.title %></h1>
       <h2>A few quick nuggets</h2>
-      <p class="article__description--smaller">Get to know me in little, bit-size chunks. If you ever want to know which tattoo I’m getting next, which of my Spurs shirts is my favourite, or anything else for that matter, just <a href='/contact' title='Get in touch'>reach out</a>!</p>
+      <p class="article__description--smaller">Get to know me in little, bit-size chunks. If you ever want to know which tattoo I’m getting next, which of my Spurs shirts is my favourite, or anything else for that matter, just <%= link_to "reach out", "contact.html", :title => "Get in touch" %>!</p>
       <div class="list--large-icons">
       <!--<% data.about_me.facts.each do |about| %>
         --><div class="list--large-icons__item ss-about-<%= about.slug %>">

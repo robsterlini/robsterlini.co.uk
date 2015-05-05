@@ -8,7 +8,7 @@ description: I’m a web designer with a love for gorgeous typography, delicious
   <main>
     <article class="type group">
       <h1><%= current_page.data.title %></h1>
-      <p class="article__description">As 2014 left, and 2015 kicked into full swing I opted to &ndash; <a href="/journal/twenty-fifteen#twenty-fifteen">instead of making resolutions</a> &ndash; create a bucket list.</p>
+      <p class="article__description">As 2014 left, and 2015 kicked into full swing I opted to &ndash; <%= "instead of making resolutions", "/journal/twenty-fifteen/#twenty-fifteen", :title => "Find out about my resoutions for 2015" %>instead of making resolutions</a> &ndash; create a bucket list.</p>
       <p>Here’s the plan. This is a list of things I want to do before I’ve had my lot. For every month that I don’t do one, another goes on the list.</p>
       <p>If by some miracle, I finish them before I’ll add five more everytime that happens. Sound good? Good.</p>
       <div class="list--large-icons list--large-icons--hover">

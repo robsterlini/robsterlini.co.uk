@@ -6,36 +6,34 @@ no_footer: true
 no_masthead: true
 ---
 
-<section id="content" class="wrapper" data-page="404">
+<section id="content" class="wrapper">
+  <%
+    hero_extra = "<ul class='list--large-icons'>"
+    data.pages.masthead.each do |nav|
+      if nav.home && nav.home.four_oh_four
+          hero_link =  "<h2 class='list--large-icons__title'>#{nav.home.title}</h2>"
+          hero_link += "<p>#{nav.home.text}</p>"
+          hero_link += "<p class='small-caps' data-ie='hide'>"
+          if nav.home.read_more
+            hero_link += "Read more<span class='visuallyhidden'> about #{nav.home.read_more}.</span>"
+          else
+            hero_link += "Go home"
+          end
+          hero_link += "</p>"
+          hero_extra += "<li class='list--large-icons__item ss-nav-#{nav.icon || nav.slug}'>"
+          hero_extra += link_to hero_link, nav.slug, :title => nav.alt, :class => "list--large-icons__link"
+          hero_extra += "</li>"
+      end
+    end
+    hero_extra += "</ul>"
+  %>
   <%= partial "partials/hero", locals: {
     image: "#{current_page.data.hero}",
     image_small: "main_600.jpg",
     image_loc: "#{hero_dir}404/",
     title: "Four. Oh. Four.",
     subtitle: "#{current_page.data.description} If you’re looking for something specific, <a href='/contact' title='Reach out'>get in touch</a>!",
-    extra: "<ul class='list--large-icons'>
-        <li class='list--large-icons__item ss-nav-home'>
-          <a class='list--large-icons__link' href='/'>
-            <h2 class='list--large-icons__title'>Go home</h2>
-            <p>Check out a selection of my previous and on-going projects.</p>
-            <p class='small-caps'>Read more<span class='visuallyhidden'> about my work.</span></p>
-          </a>
-        </li><!--
-        --><li class='list--large-icons__item ss-nav-journal'>
-          <a class='list--large-icons__link' href='/journal'>
-            <h2 class='list--large-icons__title'>Step into my thoughts</h2>
-            <p>Read any of my journal thoughts on anything from life to design and more.</p>
-            <p class='small-caps'>Read more<span class='visuallyhidden'> about what I’ve been writing about.</span></p>
-          </a>
-        </li><!--
-        --><li class='list--large-icons__item ss-nav-contact'>
-          <a class='list--large-icons__link' href='/about'>
-            <h2 class='list--large-icons__title'>Get in touch</h2>
-            <p>Got a project I’m perfect for? Want to ask a question? Go on, say hi!</p>
-            <p class='small-caps'>Read more<span class='visuallyhidden'> about getting in touch with me.</span></p>
-          </a>
-        </li>
-      </ul>"
+    extra: hero_extra
     }
   %>
 </section>
