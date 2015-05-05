@@ -110,3 +110,25 @@ a.triathlon__event--complete {
     opacity: 1;
   }
 }
+.triathlon__event--plx {
+  background: $color-black;
+  color: $color-white;
+  display: flex;
+  margin: $measure-unit * 2 0;
+  blockquote {
+    border-color: rgba($color-white, 0.25);
+  }
+}
+.triathlon__event--plx__bg {
+  @extend %hero__bg;
+  height: 120%;
+}
+.triathlon__event--plx__content {
+  margin: auto;
+  max-width: $layout-max-width-suffix;
+  padding: $measure-unit * 2 0 $measure-unit;
+  position: relative;
+}
+.triathlon__event--plx__image-title {
+  margin: 0 0 $measure-unit;
+}
