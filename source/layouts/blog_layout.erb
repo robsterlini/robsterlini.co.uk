@@ -16,10 +16,10 @@
     } %>
   <% end %>
   <main data-js="header-parent" id="main">
-    <article class="blog-post group" data-age="<%= current_article.date %>" data-anchors <% if current_article.data.hero %> data-js="append-age-warning"<% end %>>
+    <article class="blog-post group" data-age="<%= current_article.date %>" data-anchors data-js="append-age-warning">
       <% if !current_article.data.hero %>
         <h1 data-js="page-header"><%= current_article.title %></h1>
-        <p class="article__description" data-js="append-age-warning"><%= current_article.data.description %></p>
+        <p class="article__description"><%= current_article.data.description %></p>
       <% end %>
       <% if current_article.data.tldr %>
         <aside class="article__tldr">

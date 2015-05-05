@@ -25,14 +25,14 @@ g.agePosts = function() {
       alert: 'old'
     },
     older: {
-      age: 33,
+      age: 26,
       greeting: 'Phwoar blimey',
       comparison: '<em>reaaaaally</em> ancient',
       past: 'really',
       alert: 'older'
     },
     oldest: {
-      age: 50,
+      age: 52,
       greeting: 'Holy dinosaurs',
       comparison: 'so damn pre-historic',
       past: 'Fred-Flitstone-style',
@@ -67,14 +67,28 @@ g.agePosts = function() {
         // Set today’s date as a Date()
         today = new Date(),
         // Find the difference between the two in weeks
-        ageDiff = Date.dateDiff('w', ageDate, today),
+        ageDiff = Date.dateDiff('w', ageDate, today);
+      if (ageDiff > self.variables.oldest.age) {
+        var ageAlert = self.variables.oldest,
+          ageDiffNum = Math.floor(ageDiff / 52),
+          ageDiffSet = 'over ' + ageDiffNum + ' year' + (ageDiffNum > 1 ? 's' : '');
+      } 
+      else if (ageDiff > self.variables.older.age) {
+        var ageAlert = self.variables.older,
+          ageDiffNum = Math.floor(ageDiff / 52 * 12),
+          ageDiffSet = 'over ' + ageDiffNum + ' month' + (ageDiffNum > 1 ? 's' : '');
+      }
+      else if (ageDiff > self.variables.old.age) {
+        var ageAlert = self.variables.old,
+          ageDiffSet = ageDiff + ' weeks';
+      }
         // Work out which object we need to grab to set the variables
         // or set it to false if it’s newer than the oldest we care about
-        ageAlert = ageDiff > self.variables.old.age ? ageDiff > self.variables.older.age ? ageDiff > self.variables.oldest.age ? self.variables.oldest : self.variables.older : self.variables.old : false;
+        // ageAlert = ageDiff > self.variables.old.age ? ageDiff > self.variables.older.age ? ageDiff > self.variables.oldest.age ? self.variables.oldest : self.variables.older : self.variables.old : false;
       // If it’s proper old like start doing stuff: 
       if (ageAlert) {
         // Set the message we’re going to add using the age-based variables from the object
-        var ageMessage = '<p class="alert--' + ageAlert.alert + '"><strong>' + ageAlert.greeting + '! </strong>This post is ' + ageDiff + ' weeks old; that’s ' + ageAlert.comparison + '. Some of this might be ' + ageAlert.past + ' out of date. You’ve been warned.</p>';
+        var ageMessage = '<p class="alert--' + ageAlert.alert + '"><strong>' + ageAlert.greeting + '! </strong>This post is ' + ageDiffSet + ' old; that’s ' + ageAlert.comparison + '. Some of this might be ' + ageAlert.past + ' out of date. You’ve been warned.</p>';
         // Then stick it all into where we’re putting it (at the beginning)
         $(self.selectors.warning).prepend(ageMessage);
       }
