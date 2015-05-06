@@ -13,6 +13,7 @@
 //= require _loadHero
 //= require _agePosts
 //= require _share
+//= require _triathlon
 //= require _caseStudyHotspur
 //= require _middleplate
 

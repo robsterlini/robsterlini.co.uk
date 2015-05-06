@@ -10,7 +10,6 @@ g.partials = [
   'anchorScroll',
   'browserSniff',
   'codeHighlight',
-  'cv',
   'disqusComments',
   'loadHero',
   'loadImages',
@@ -18,6 +17,9 @@ g.partials = [
   'parallax',
   'share',
   'strikethrough',
+  // Page specific
+  'cv',
+  'triathlon',
   // Case studies
   'hotspurRelated',
   // Subpages
