@@ -7,11 +7,13 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
 ---
 
 <section id="content" class="wrapper" data-page="home">
-  <% events = ''; data.triathlon.events.each_with_index do |event, index|
-    spacer = index == 0 ? "" : ",";
+  <% events = ''; events_js = ''; data.triathlon.events.each_with_index do |event, index|
+    spacer = index == 0 ? "" : ", ";
     tri_class = event.complete ? "" : "in";
-    events = events.to_s + spacer + " <a data-anchor href='##{event.slug}' class='triathlon__event--#{tri_class}complete'>" + event.title + "</a>"
+    events += "#{spacer}<a data-anchor href='##{event.slug}' class='triathlon__event--#{tri_class}complete'>" + event.title + "</a>"
+    events_js += "#{spacer}{event: '#{event.title}', date: '#{event.date_time}'}";
   end %>
+  <script>var events = [<%= events_js %>]</script>
   <%= partial "partials/hero", locals: {
     image: "#{current_page.data.hero}",
     image_small: "triathlon_600.jpg",
