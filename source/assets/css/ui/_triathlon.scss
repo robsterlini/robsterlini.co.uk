@@ -93,6 +93,9 @@ body.triathlon {
     @include hover {
       color: $color-b-macmillan-1;
     }
+    @include active {
+      color: $color-white;
+    }
   }
 }
 .hero--triathlon__events {
@@ -132,4 +135,58 @@ a.triathlon__event--complete {
 }
 .triathlon__event--plx__image-title {
   margin: 0 0 $measure-unit;
+}
+
+.hero--tri__next {
+  position: relative;
+  margin: 0 0 $measure-unit;
+  @include min-width($bp-small) {
+    padding: 0 rem(250) 0 0;
+  }
+}
+.hero--tri__clock {
+  display: block;
+  @include font-size(30);
+  font-family: monospace, serif;
+  padding: 0 0 $measure-unit;
+  right: 0;
+  top: 0;
+  @include min-width($bp-small) {
+    position: absolute;
+  }
+}
+.hero--tri__clock__num {
+  background: rgba($color-black, 0.5);
+  border-radius: rem(3);
+  padding: 0 $measure-unit / 4 $measure-unit;
+  position: relative;
+  &:after {
+    bottom: rem(2);
+    color: $color-accent;
+    content: attr(data-unit);
+    @include font-size(12);
+    left: rem(($measure / 4) + 2);
+    position: absolute;
+  }
+}
+.hero--tri__clock__sep {
+  animation: pulse 1.5s infinite;
+  color: $color-accent;
+  font-size: 0.75em;
+  position: relative;
+  top: $measure-unit / 4;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }

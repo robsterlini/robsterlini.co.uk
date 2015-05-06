@@ -20,7 +20,7 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
     image_loc: hero_dir,
     title: "<img src='/assets/images/hero/triathlon-title.svg' alt='Traithlons, Half marathons, runs for Macmillan' /><span class='visuallyhidden'>Triathlons and more for Macmillan</span>",
     subtitle: current_page.data.description,
-    extra: "<p class='hero--triathlon__events'><strong class='sc'>The events</strong> #{events}<p><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
+    extra: "<p class='hero--triathlon__events' data-js='add-tri-event-clock'><strong class='sc'>The events</strong> #{events}</p><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
   } %>
   <div class="article__fixed-header" data-js="fixed-header">
   <a class='btn' href='<%= current_page.data.donate_url %>' title='Help me raise money for the amazing work Macmillan do' data-ie="hide">Help Macmillan</a>

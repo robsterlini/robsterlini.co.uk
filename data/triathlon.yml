@@ -16,7 +16,7 @@ events:
             -   "All in all I raised &pound;155!"
 
 ##
-    -   title: "Tough Mudder UK"
+    -   title: "Tough Mudder London West"
         title_image: "content/2015/05/tough-mudder-logo.svg"
         slug: "tough-mudder-uk"
         short_date: "2 May"
@@ -46,7 +46,7 @@ events:
         slug: "jenson-button-tri"
         short_date: "12 July"
         full_date: "12 July 2015"
-        date_time: 2015-06-07 09:00 UTC
+        date_time: 2015-07-12 09:00 UTC
         desc:
             -   "This will likely be the first triathlon for this year, and will be my first real experience of one. The plan is to use this to get used to the way transition works, and how mass water starts work before the big day in August!"
 
@@ -55,7 +55,7 @@ events:
         slug: "the-london-triathlon"
         short_date: "8 August"
         full_date: "8 August 2015"
-        date_time: 2015-06-07 09:00 UTC
+        date_time: 2015-09-08 09:00 UTC
         desc:
             -   "This is the big one!"
             -   "The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for."
@@ -66,7 +66,7 @@ events:
         slug: "royal-parks-half"
         short_date: "11 October"
         full_date: "11 October 2015"
-        date_time: 2015-06-07 09:00 UTC
+        date_time: 2015-10-11 09:00 UTC
         desc:
             -   "This is a half marathon that I’ve always wanted to run, so I was super gutted when I missed out on this place in the ballot."
             -   "Thankfully, Macmillan had places and I was very lucky that they’ve given one of them to me."
