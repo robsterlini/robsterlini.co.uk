@@ -115,6 +115,7 @@ a.triathlon__event--complete {
   color: $color-white;
   display: flex;
   margin: $measure-unit * 2 0;
+  min-height: 60vh;
   blockquote {
     border-color: rgba($color-white, 0.25);
   }
