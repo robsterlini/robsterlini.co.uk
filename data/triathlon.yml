@@ -7,6 +7,7 @@ events:
         slug: "jan-water-ary"
         short_date: "January"
         full_date: "1 January–7 February 2015 (with a week off for skiing)"
+        date_time: 2015-01-01 00:00 UTC
         desc:
             -   "Still haven’t found a catchier, less-rubbish name for it, but meh… This January, I decided to go one further than the no-alcohol Dryathlon and only drink water."
             -   "For most this may have been an easy challenge, but I love my diet coke and coffee too much so it proved tough."
@@ -20,6 +21,7 @@ events:
         slug: "tough-mudder-uk"
         short_date: "2 May"
         full_date: "2 May 2015"
+        date_time: 2015-05-02 13:20 UTC
         desc:
             -   "I’ve seen people complete Tough Mudder, and it’s always looked like a twisted form of fun; until this year I’ve not had the bottle to sign up."
             -   "The hope is that the mental toughness will add an extra level and that it will help me hone my ability to dig deep for the later events where I might need it."
@@ -35,6 +37,7 @@ events:
         slug: "colour-run"
         short_date: "7 June"
         full_date: "7 June 2015"
+        date_time: 2015-06-07 09:00 UTC
         desc:
             -   "Supposedly the most fun 5k I’ll ever do&hellip; This one is more of a fun-run rather than a race, so no training for this one. Just turn up and enjoy getting caked in powder paint with mates. Very much looking forward to this one!"
 
@@ -43,6 +46,7 @@ events:
         slug: "jenson-button-tri"
         short_date: "12 July"
         full_date: "12 July 2015"
+        date_time: 2015-06-07 09:00 UTC
         desc:
             -   "This will likely be the first triathlon for this year, and will be my first real experience of one. The plan is to use this to get used to the way transition works, and how mass water starts work before the big day in August!"
 
@@ -51,6 +55,7 @@ events:
         slug: "the-london-triathlon"
         short_date: "8 August"
         full_date: "8 August 2015"
+        date_time: 2015-06-07 09:00 UTC
         desc:
             -   "This is the big one!"
             -   "The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for."
@@ -61,6 +66,7 @@ events:
         slug: "royal-parks-half"
         short_date: "11 October"
         full_date: "11 October 2015"
+        date_time: 2015-06-07 09:00 UTC
         desc:
             -   "This is a half marathon that I’ve always wanted to run, so I was super gutted when I missed out on this place in the ballot."
             -   "Thankfully, Macmillan had places and I was very lucky that they’ve given one of them to me."
