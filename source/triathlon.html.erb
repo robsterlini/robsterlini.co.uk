@@ -90,6 +90,13 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
             <% end %>
           </blockquote>
         <% end %>
+        <% if event.complete_photos %>
+          <div class="triathlon__event__photos">
+            <% event.complete_photos.each do |photo| %><% if photo.link %><a href="<%= photo.link %>" title="View <%= photo.alt ? "a photo of ‘#{photo.alt}’" : "this image" %> in full" class="ss-contact-instagram <% else %><div class="<% end %>tri__event__photos__item" style="background-image:url('<%= photo.img %>');">
+              <%= image_tag photo.img, :alt => photo.alt || "", :class => "" %>
+            <% if photo.link %></a><% else %></div><% end %><% end %>
+          </div>
+        <% end %>
         <% if event.complete_image %>
             </div>
           </div>

@@ -130,8 +130,13 @@ a.triathlon__event--complete {
 .triathlon__event--plx__content {
   margin: auto;
   max-width: $layout-max-width-suffix;
-  padding: $measure-unit * 2 0 $measure-unit;
+  padding: $measure-unit * 5 0 $measure-unit * 4;
   position: relative;
+  a {
+    @include active {
+      color: $color-white !important;
+    }
+  }
 }
 .triathlon__event--plx__image-title {
   margin: 0 0 $measure-unit;
@@ -146,13 +151,16 @@ a.triathlon__event--complete {
 }
 .hero--tri__clock {
   display: block;
-  @include font-size(30);
+  @include font-size(24);
   font-family: monospace, serif;
+  margin-left: rem(-5);
   padding: 0 0 $measure-unit;
-  right: 0;
-  top: 0;
   @include min-width($bp-small) {
+    @include font-size(30);
+    margin-left: 0;
     position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 .hero--tri__clock__num {
@@ -188,5 +196,80 @@ a.triathlon__event--complete {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.triathlon__event__photos {
+  display: flex;
+  margin: $measure-unit * 2 auto;
+  text-align: center;
+}
+.tri__event__photos__item {
+  background: center no-repeat;
+  background-size: cover;
+  display: inline-block;
+  flex: 1;
+  max-height: $measure-unit * 16;
+  margin-left: $measure-unit;
+  @include max-width($bp-tiny) {
+    margin-left: $measure-unit / 2;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &[href] {
+    color: $color-white !important;
+    position: relative;
+    &:before,
+    &:after {
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: opacity .25s cubic-bezier(#{$bezier-nice}), transform .25s cubic-bezier(#{$bezier-nice});
+      width: 100%;
+    }
+    &:before {
+      @include font-size($measure * 3);
+      left: 0;
+      margin: $measure-unit * -2 0 0;
+      top: 50%;
+      transform-origin: center center;
+      width: 100%;
+      z-index: 1;
+      @include max-width($bp-small) {
+        @include font-size($measure * 2);
+        margin-top: $measure-unit * -1.25;
+      }
+      @include max-width($bp-tiny) {
+        @include font-size($measure * 1.5);
+        margin-top: $measure-unit * -1;
+      }
+    }
+    &:after {
+      background: rgba($color-black, 0.75);
+      content: '';
+      height: 100%;
+      top: 0;
+    }
+    @include hover {
+      &:before {
+        opacity: 1;
+      }
+      &:after {
+        opacity: 0.8;
+      }
+    }
+    @include active {
+      &:before {
+        transform: scale(0.95);
+      }
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  img {
+    opacity: 0;
+    z-index: 2;
   }
 }

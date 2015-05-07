@@ -29,8 +29,21 @@ events:
             -   "2 May was one of the best days of my life, albeit also one of the hardest. The elation as I came through the final obstacle, combined with the sense of achievement after every hurdle was unbelievable. I’d summoned up every ounce of my strength, and pushed through!"
             -   "It also came on the morning that I passed £500 in donations to my fundraising effort, which was also pretty damn overwhelming!"
             -   "Tough Mudder was great fun, hard work, and the first of many more to come."
-            -   "You can check out some of the photos on <a href='https://instagram.com/p/2L_mXMP-32/?taken-by=robsterlini' title='See a photo of my mum and me before the carnage'>my Instagram</a>."
+            -   "You can check out some of the photos on <a href='https://instagram.com/robsterlini' title='See all of my photos on my Instagram'>my Instagram</a>."
         complete_image: "/content/2015/05/tough-mudder-cry-baby.jpg"
+        complete_photos:
+            -   img: "/content/2015/05/tough-mudder-supporter.jpg"
+                alt: "The best supporter around the course, bar none"
+                link: "https://instagram.com/p/2L_mXMP-32/?taken-by=robsterlini"
+            -   img: "/content/2015/05/tough-mudder-everest.jpg"
+                alt: "The penultimate obstacle, Everest 2.0"
+                link: "https://instagram.com/p/2OO0okv-6I/?taken-by=robsterlini"
+            -   img: "/content/2015/05/tough-mudder-run.jpg"
+                alt: "Me proudly wearing my green Macmillan top"
+                link: "https://instagram.com/p/2McfcFP-5b/?taken-by=robsterlini"
+            -   img: "/content/2015/05/tough-mudder-shoes.jpg"
+                alt: "The left-over shoes post-event"
+                link: "https://instagram.com/p/2Mc3sXv-6J/"
 
 ##
     -   title: "The Colour Run"
