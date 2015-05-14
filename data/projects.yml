@@ -29,7 +29,7 @@ featured:
         buttons:
           show: true
           live: "http://hotspurrelated.co.uk"
-          case_study: "/case-study/hotspur-related"
+          case_study: "/case-study/hotspur-related/"
           dribbble: "https://dribbble.com/RobSterlini/projects/251467-Hotspur-Related"
         case_study: "true"
         case_study_vars:
@@ -101,7 +101,7 @@ featured:
         description: "At Fueled and on my site, Middleman is the workhorse that makes it all possible. Middleplate is a Middleman boilerplate with extra features and blogging ready out of the box."
         buttons:
           show: true
-          live: "middleplate"
+          live: "/middleplate/"
           live_btn: "Fork the repo"
           case_study: false
           dribbble: false
