@@ -11,7 +11,7 @@
         <!--<% data.pages.masthead.each do |nav| %>
           --><li>
             <% label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "#{nav.label}" %>
-            <%= link_to label, "/#{nav.slug}", :title => nav.alt %>
+            <%= link_to label, "#{nav.slug}", :title => nav.alt %>
           </li><!--
         <% end %>-->
       </ul>
