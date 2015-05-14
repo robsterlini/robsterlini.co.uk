@@ -139,6 +139,9 @@ page ".htaccess.apache", :layout => false
 page "redirects/.htaccess.apache", :layout => false
 page "feed.xml", :layout => false
 
+#ignore on build
+ignore "/pages/*"
+
 # rename file after build
 after_build do
   File.rename 'build/.htaccess.apache', 'build/.htaccess'
