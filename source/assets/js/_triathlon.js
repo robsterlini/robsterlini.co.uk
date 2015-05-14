@@ -12,6 +12,7 @@ g.triathlon = function() {
 		eventsClock: "[data-js='update-clock-time']"
 	}
 	self.classes = {
+		isTriathlon: "triathlon_index",
 		clockDigit: "hero--tri__clock__num",
 		clockSeparator: "hero--tri__clock__sep"
 	}
@@ -62,7 +63,9 @@ g.triathlon = function() {
 	}
 
 	$(document).ready(function() {
-  	self.updateTimes();
+		if ($('body').hasClass(self.classes.isTriathlon)) {
+	  	self.updateTimes();
+	  }
 	});
 
 	
