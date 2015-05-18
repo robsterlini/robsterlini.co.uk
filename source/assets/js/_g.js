@@ -15,7 +15,7 @@ g.partials = [
   'loadImages',
   'parallax',
   'share',              // Converted
-  'strikethrough',
+  'strikethrough',      // Converted
   // Page specific
   'cv',
   'triathlon',

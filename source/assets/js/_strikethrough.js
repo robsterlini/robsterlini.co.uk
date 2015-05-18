@@ -12,23 +12,29 @@ g.strikethrough = function() {
 		spanToStrike: ".strike"
 	}
 	self.classes = {
-		strikethroughPrefix: "strike__strikethrough--"
+		strikethrough: "js--strike"
 	}
 
-	$(document).ready(function() {
-		$(self.selectors.spanToStrike).each(function() {
-			var that = $(this),
-				text = that.text(),
-				words = text.split(" "),
-				setText = '';
-			that.empty().attr('title', text);
-			$.each(words, function(i, v) {
-				var setClass = v.length < 2 ? 'tiny' : v.length > 3 ? 'long' : 'short',
-					space = i == (words.length - 1) ? '' : ' ';
-		    setText += "<span class='" + self.classes.strikethroughPrefix + setClass + "'>" + v + space + "</span>";
-			});
-			that.append(setText);
-		});
-	})
+	self.ready = function() {
+	  var strikes = document.querySelectorAll(self.selectors.spanToStrike),
+	    strikesLength = strikes.length;
+	  if (strikesLength) {
+	    for (var i = 0, l = strikesLength; i < l; i++) {
+	    	var that = strikes[i],
+	    		text = that.innerText,
+	    		words = text.split(" "),
+	    		wordsLength = words.length,
+	    		setText = '';
+
+	    	for (w = 0; w < wordsLength; w++) {
+	    		var space = i == (wordsLength - 1) ? '' : ' ';
+	    		setText += "<span class='" + self.classes.strikethrough + "'>" + words[w] + space + "</span>"
+	    	};
+
+	    	that.innerHTML = setText;
+	    	that.setAttribute('title', text);
+			}
+		}
+	};
 
 };
