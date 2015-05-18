@@ -4,17 +4,14 @@
  * asyncronously loads the hero image (based on the viewport width)
  */
 
-
 g.loadHero = function() {
   var self = g.loadHero;
 
   self.selectors = {
-    // Hero background
-    mover:      "[data-hero]"
+    hero:      "[data-hero]"
   }
 
   self.classes = {
-    // 404 page identifier
     errorPage:  "x404"
   }
 
@@ -26,29 +23,29 @@ g.loadHero = function() {
     'warehouse-long-jump.gif'
   ];
 
-  $(document).ready(function() {
-    // Cache the mover
-    var m = $(self.selectors.mover),
+  self.ready = function() {
+    // Cache the hero
+    var m = document.querySelectorAll(self.selectors.hero),
       // Grab the window width
-      w = $(window).width();
+      w = window.innerWidth
     // Check that there is a hero on the page
     if (m.length) {
       // Check if we’re on the 404 page and bigger than 500px wide
-      if ($('body').hasClass(self.classes.errorPage) && w > 500) {
+      if (hasClass(document.body, self.classes.errorPage) && w > 500) {
         // If we are set the hero to be set as a randomised item from the self.images array
         var hero = self.images[Math.floor(Math.random()*self.images.length)];
       }
       // If it’s not the 404 page, or we’re smaller than 500px:
       else {
         // Set the hero as the data-hero image, or the data-hero-small if below 500px;
-        var hero = m.attr(w > 500 ? 'data-hero' : 'data-hero-small');
+        var hero = m[0].getAttribute(w > 500 ? 'data-hero' : 'data-hero-small');
       }
       // Set the location (normally used in the blog assets)
-      var location = m.attr('data-location');
+      var location = m[0].getAttribute('data-location');
       // Switch out the placeholder hero image for the image
-      m.css('background-image', 'url(' + location + hero + ')');
+      m[0].style.backgroundImage = 'url(' + location + hero + ')';
     }
 
-  });
+  };
 
 };
