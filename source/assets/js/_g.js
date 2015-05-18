@@ -13,7 +13,6 @@ g.partials = [
   'disqusComments',
   'loadHero',
   'loadImages',
-  'navToggle',
   'parallax',
   'share',
   'strikethrough',
