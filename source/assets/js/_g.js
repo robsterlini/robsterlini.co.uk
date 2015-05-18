@@ -11,10 +11,10 @@ g.partials = [
   'browserSniff',
   'codeHighlight',
   'disqusComments',
-  'loadHero',
+  'loadHero',           // Converted
   'loadImages',
   'parallax',
-  'share',
+  'share',              // Converted
   'strikethrough',
   // Page specific
   'cv',
