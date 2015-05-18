@@ -12,7 +12,7 @@ g.share = function() {
   // Create a nodelist of all of the Twitter buttons
   var twitterButtons = document.querySelectorAll(self.selectors.twitter),
     // Cache the length in case we need to use it later
-    twitterButtonsLength = twitterButtons.length
+    twitterButtonsLength = twitterButtons.length;
   // Check if we have any of those buttons on this page
   if (twitterButtonsLength) {
     // Loop through all of the Twitter buttons we have
