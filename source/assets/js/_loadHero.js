@@ -27,7 +27,7 @@ g.loadHero = function() {
     // Cache the hero
     var m = document.querySelectorAll(self.selectors.hero),
       // Grab the window width
-      w = window.innerWidth
+      w = window.innerWidth;
     // Check that there is a hero on the page
     if (m.length) {
       // Check if we’re on the 404 page and bigger than 500px wide
