@@ -95,21 +95,32 @@ figcaption {
   background:#ddd;
   position: relative;
   &:before {
-    position: absolute;
-    visibility: visible;
-    top: calc(50% - #{rem(55)});
-    z-index: 1;
-    @include font-size(64);
-    text-align: center;
-    width: 100%;
-    color:$color-white;
-    left:0;
-    text-shadow:rgba($color-black,0.05) 0 0 rem(3);
-    transition:opacity .25s cubic-bezier(#{$bezier-nice}), visiblity .25s cubic-bezier(#{$bezier-nice});
+    display: none;
   }
-  img {
+  .js & {
+    &:before {
+      display: block;
+      position: absolute;
+      visibility: visible;
+      top: calc(50% - #{rem(55)});
+      z-index: 1;
+      @include font-size(64);
+      text-align: center;
+      width: 100%;
+      color:$color-white;
+      left:0;
+      text-shadow:rgba($color-black,0.05) 0 0 rem(3);
+      transition:opacity .25s cubic-bezier(#{$bezier-nice}), visiblity .25s cubic-bezier(#{$bezier-nice});
+    }
+  }
+}
+.img--script {
+  .image--to-load & {
     transition:opacity .25s cubic-bezier(#{$bezier-nice});
     opacity:0;
+  }
+  .no-js & {
+    display: none;
   }
 }
 .figure--loaded {

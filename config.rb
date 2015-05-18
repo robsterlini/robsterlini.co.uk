@@ -61,18 +61,15 @@ end
 helpers do
   def blog_image(image, caption, alt, position)
     "<div class='figure-wrap#{position == "half" ? " figure-wrap--half" : ""}'>
-      <noscript>
-        <figure class='image--#{position}'>  
-          <img src='#{image}' alt='#{alt}' title='#{caption}'>
-          <figcaption class='ss-picture'>#{caption}</figcaption>
-        </figure>
-      </noscript>
       <figure class='image--#{position} ss-picture image--to-load'>
-        <img src='/assets/images/helpers/image-placeholder.png'
+        <img class='img--script' src='/assets/images/helpers/image-placeholder.png'
           data-src='#{image}'
           data-js='lazy-load-image'
           alt='#{alt}'
           title='#{caption}'>
+          <noscript>
+            <img class='img--noscript' src='#{image}' alt='#{alt}' title='#{caption}'>
+          </noscript>
         <figcaption class='ss-picture'>#{caption}</figcaption>
       </figure>
     </div>"
