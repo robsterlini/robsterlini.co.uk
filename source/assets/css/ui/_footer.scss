@@ -12,7 +12,7 @@
   }
   @include max-width($tp-masthead-hamburger) {
     padding-left: 0;
-    padding-bottom: $measure-unit / 2;
+    padding-bottom: ($measure-unit / 2) + ($measure-unit * 4);
   }
   p,
   ul {

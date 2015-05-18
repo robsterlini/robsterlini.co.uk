@@ -46,10 +46,6 @@
   }
 }
 
-.btns--fixed {
-	@extend %btns--fixed;
-}
-
 .btns--menu {
 	@extend %btns--fixed;
   .btn {

@@ -1,65 +1,34 @@
-$pages: (
-  index: home,
-  portfolio: projects,
-  journal: journal,
-  process: process,
-  about: about,
-  contact: contact,
-  bucket-list: bucket,
-  triathlon: triathlon
-);
-
 .nav {
-  width: $masthead-full;
-  height:100%;
-  text-align: center;
   display: flex;
+  height: 100%;
   position: relative;
+  text-align: center;
+  width: 100%;
   &:before {
-    content:'';
-    position:fixed;
-    height:100%;
-    max-height:rem(50);
-    bottom:0;
-    left:0;
-    width:rem(150);
-    background:linear-gradient(rgba($color-black,0.0001),$color-black);
+    background: linear-gradient(to right, rgba($color-black,0.0001), $color-black);
+    bottom: 0;
+    content: '';
     display: block;
+    height: $measure-unit * 3.5;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    width: $measure-unit * 2;
     z-index:7;
-    pointer-events:none;
   }
-  @include max-width($tp-masthead-icon) {
+  @include min-width($tp-masthead-hamburger) {
     width: $masthead-icon;
     &:before {
+      background: linear-gradient(rgba($color-black,0.0001), $color-black);
+      left: 0;
+      max-height: $measure-unit * 4;
       width: $masthead-icon;
     }
   }
-}
-[data-js="toggle-navigation"] {
-  .btns--menu & {
-    @include max-width($tp-masthead-hamburger) {
-      color: $color-white;
-      background: $color-accent;
-      border-color: $color-accent;
-      @include hover {
-        background: $color-dark;
-        border-color: $color-dark;
-        color: $color-white;
-      }
-      @include active {
-        color: $color-white;
-        &:before {
-          transform: scale(0.9) rotate(90deg);
-        }
-      }
-      .masthead--toggled & {
-        background: $color-dark;
-        border-color: $color-dark;
-        color: $color-white;
-      }
-    }
-    @include min-width($tp-masthead-hamburger + 1) {
-      display: none;
+  @include min-width($tp-masthead-icon) {
+    width: $masthead-full;
+    &:before {
+      width: $masthead-full;
     }
   }
 }
@@ -69,32 +38,39 @@ $pages: (
   max-width:$layout-max-width-wide-suffix;
   position: relative;
   margin:auto;
+  @include max-width($tp-masthead-hamburger) {
+    white-space: nowrap;
+  }
 }
 .nav__item {
   display: inline-block;
   vertical-align: top;
-  width:100%;
+  @include min-width($tp-masthead-hamburger) {
+    width:100%;
+  }
 }
 [class^="nav__link--"] {
   @include font-size(18);
   display: block;
   color:$color-white;
-  padding:rem(10) rem(10) rem(5) rem(10);
+  padding: $measure-unit / 4;
   text-decoration: none;
   transition:color .25s cubic-bezier(#{$bezier-nice}), background .25s cubic-bezier(#{$bezier-nice});
   overflow: hidden;
-  @include max-width($tp-masthead-icon) {
-    padding-bottom:rem(10);
+  @include min-width($tp-masthead-hamburger) {
+    padding: $measure-unit / 2;
   }
   &:before {
+    color: $color-accent;
     display: block;
-    font-size:32px;
-    height:rem(40);
-    color:$color-accent;
-    transition:inherit;
+    font-size: $measure-unit * 2;
+    height: $measure-unit * 3;
+    line-height: $measure-unit * 3 * 1.125;
     overflow: hidden;
-    opacity:1;
-    @include max-width($bp-tiny) {
+    opacity: 1;
+    transition:inherit;
+    width: $measure-unit * 3;
+    @include max-width($tp-masthead-hamburger) {
       display: inline-block;
       vertical-align: middle;
     }
@@ -116,32 +92,14 @@ $pages: (
     color:$color-white;
   }
 }
-@each $page, $selected in $pages {
-  .nav__link--#{$selected} {
-    body.#{$page} & {
-      @extend %nav__link--selected;
-    }
-  }
-}
 .nav__label {
   border-bottom:0;
   @include max-width($tp-masthead-icon) {
     display: none;
   }
-  @include max-width($bp-tiny) {
-    // display: inline-block;
-    // max-width:calc(100% - #{rem(50)});
-    // vertical-align: middle;
-    // padding-left:rem(20);
-  }
 }
 abbr.nav__label {
-  border-bottom:0;
-  background:none;
+  background: none;
+  border-bottom: 0;
   text-shadow: none;
-}
-.nav__divider {
-  display: inline-block;
-  vertical-align: top;
-  width:em(200);
 }

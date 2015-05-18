@@ -4,14 +4,13 @@
       <!--<% data.pages.masthead.each do |nav| %>
         <% if nav.masthead != false %>
           --><li class="nav__item">
-            <% label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>" %>
-            <%= link_to label, nav.slug == "" ? "/" : nav.slug, :class => "nav__link--#{nav.icon} ss-nav-#{nav.icon}", :title => nav.alt %>
+            <%
+              nav_label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>"
+              concat link_to nav_label, nav.slug == "" ? "/" : nav.slug, :class => "nav__link--#{nav.icon} ss-nav-#{nav.icon}", :title => nav.alt
+            %>
           </li><!--
         <% end %>
       <% end %>-->
     </ul>
   </nav>
 </header>
-<div class="btns--menu" data-ie="hide">
-  <a href="#menu" class="btn btn--icon ss-menu" data-js="toggle-navigation"><span class="btn__label">Menu</span></a>
-</div>
