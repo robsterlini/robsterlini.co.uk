@@ -22,4 +22,4 @@ $(function() {
 	g._init();
 });
 
-ready();
+g._ready();
