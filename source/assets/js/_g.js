@@ -8,7 +8,7 @@ var g = g || {};
 g.partials = [
   'agePosts',           // Converted
   'anchorScroll',       // Converted
-  'browserSniff',
+  'browserSniff',       // Converted
   'codeHighlight',
   'disqusComments',
   'loadHero',           // Converted

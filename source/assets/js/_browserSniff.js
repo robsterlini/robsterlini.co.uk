@@ -11,15 +11,23 @@ g.browserSniff = function() {
 		html: "html"
 	}
 
-	var b = document.documentElement;
-	b.setAttribute('data-useragent',  navigator.userAgent);
-	b.setAttribute('data-platform', navigator.platform);
+	self.classes = {
+		touch: 'touch',
+		hover: 'hover'
+	}
 
-	$(document).ready(function() {
-		if ($(self.selectors.html).hasClass('touch')) {
-			$(self.selectors.html).removeClass('hover');
+	self.ready = function() {
+		// Cache the HTML element
+		var b = document.documentElement;
+		// Set the data-useragent and the data-platform on the HTML
+		b.setAttribute('data-useragent',  navigator.userAgent);
+		b.setAttribute('data-platform', navigator.platform);
+		// If touch is enabled (via modernizr) remove the hover class
+		if (hasClass(b, self.classes.touch)) {
+			removeClass(b, self.classes.hover);
 		}
-	})
+	};
 
+	self.ready();
 
 };

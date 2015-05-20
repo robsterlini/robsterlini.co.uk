@@ -28,6 +28,13 @@ function hasClass(elem, className) {
   return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
 
+function removeClass(ele,cls) {
+    if (hasClass(ele,cls)) {
+        var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+        ele.className=ele.className.replace(reg,' ');
+    }
+}
+
 // https://raw.githubusercontent.com/madebysource/animated-scrollto/master/animatedScrollTo.js
 
 (function (window) {
