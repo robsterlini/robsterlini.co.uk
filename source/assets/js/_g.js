@@ -6,7 +6,7 @@ var g = g || {};
 // 		easier version controlling when multiple users are collaborating
 // 		on the JS simultaneously.
 g.partials = [
-  'agePosts',
+  'agePosts',           // Converted
   'anchorScroll',
   'browserSniff',
   'codeHighlight',
