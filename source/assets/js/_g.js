@@ -7,7 +7,7 @@ var g = g || {};
 // 		on the JS simultaneously.
 g.partials = [
   'agePosts',           // Converted
-  'anchorScroll',
+  'anchorScroll',       // Converted
   'browserSniff',
   'codeHighlight',
   'disqusComments',
