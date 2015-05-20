@@ -28,18 +28,13 @@ g.middleplate = function() {
     'M1DDL3PL4T3'
   ];
 
-  $(document).ready(function() {
-    self.mpChangeTitle();
-    self.mpCheckbox();
-  });
-
   self.mpChangeTitle = function() {
-    var header = $(self.selectors.indexHeader);
+    var header = document.querySelectorAll(self.selectors.indexHeader);
     if (header.length) {
       var text = self.titles[Math.floor(Math.random()*self.titles.length)];
-      $(self.selectors.indexHeader).text(text);
+      header[0].innerText = text;
     }
-  }
+  };
 
   self.mpCheckbox = function() {
     $(self.selectors.checkboxItem).on('click', function(e) {
@@ -51,6 +46,13 @@ g.middleplate = function() {
       $(self.selectors.checkboxCompletion + ' > i').css('width', (currentChecked / totalChecked * 100)+'%');
       $(self.selectors.checkboxCompletion).toggleClass(self.classes.checkboxComplete, currentChecked == totalChecked ? true : false);
     });
-  }
+  };
+
+  self.ready = function() {
+    self.mpChangeTitle();
+    self.mpCheckbox();
+  };
+
+  self.ready();
 
 };
