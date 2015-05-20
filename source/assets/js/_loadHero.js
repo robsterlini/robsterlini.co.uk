@@ -48,4 +48,6 @@ g.loadHero = function() {
 
   };
 
+  self.ready();
+
 };

@@ -47,4 +47,6 @@ g.strikethrough = function() {
 		}
 	};
 
+	self.ready();
+
 };

@@ -15,11 +15,9 @@
 //= require _triathlon
 //= require _caseStudyHotspur
 //= require _middleplate
-//= require _ready
 
 $(function() {
+// domReady(function(event) {
 	// This is all we need in our main.js file - isn't it neat :)
 	g._init();
 });
-
-g._ready();
