@@ -9,7 +9,7 @@ g.partials = [
   'agePosts',           // Converted
   'anchorScroll',       // Converted
   'browserSniff',       // Converted
-  'codeHighlight',
+  'codeHighlight',      // Converted
   'disqusComments',
   'loadHero',           // Converted
   'loadImages',
