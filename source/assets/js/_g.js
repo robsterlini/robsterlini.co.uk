@@ -10,7 +10,7 @@ g.partials = [
   'anchorScroll',       // Converted
   'browserSniff',       // Converted
   'codeHighlight',      // Converted
-  'disqusComments',
+  'disqusComments',     // Converted
   'loadHero',           // Converted
   'loadImages',
   'parallax',
