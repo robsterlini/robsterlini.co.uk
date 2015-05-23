@@ -13,7 +13,7 @@ g.partials = [
   'disqusComments',     // Converted
   'loadHero',           // Converted
   'loadImages',
-  'parallax',
+  // 'parallax',
   'share',              // Converted
   'strikethrough',      // Converted
   // Page specific

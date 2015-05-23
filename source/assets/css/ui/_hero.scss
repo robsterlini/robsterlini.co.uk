@@ -16,9 +16,9 @@
 }
 %hero__bg {
   opacity:0.5;
-  @include cover(absolute);
-  background: top center;
-  background-size:cover;
+  // @include cover(absolute);
+  background-position: top center;
+  // background-size:cover;
   filter: grayscale(50%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
   &:before {
     height:rem(100);

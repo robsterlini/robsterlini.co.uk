@@ -31,9 +31,11 @@ g.parallax = function() {
   // Function to cache selectors
   self.cacheSelectors = function() {
     // Cache the window height for future use
-    self.variables.windowHeight = $(window).height();
+    self.variables.windowHeight = window.innerHeight;
     // Check if we have any selectors to begin with
-    if ($(self.selectors.plxParent).length) {
+    var plxParents = document.querySelectorAll(self.selectors.PlxParent),
+      plxParentsLength = plxParents.length;
+    if (plxParentsLength) {
       // If we do create an empty object
       plxSelectors = {};
       // Loop through them with an index

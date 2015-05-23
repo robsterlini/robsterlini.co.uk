@@ -137,7 +137,7 @@ p,
 // Parallax
 [data-plx="child"] {
   background-position: center bottom;
-  height: rem(600);
+  // height: rem(600);
   top: 0;
 }
 
@@ -200,9 +200,9 @@ p,
 }
 
 // Brief
-.hotspur__section--brief {
-  padding-top: 0;
-}
+// .hotspur__section--brief {
+//   padding-top: 0;
+// }
 
 // Refreshing the brand
 .hotspur__section--refresh {

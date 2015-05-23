@@ -16,13 +16,13 @@ g.hotspurRelated = function() {
     refresh:  'hotspur__refresh--'
   }
 
-  self.requestWpSet = function() {
-    if ($(self.selectors.refreshWaypoint).length) {
-      $(self.selectors.refreshWaypoint).waypoint(function(direction) {
-        self.toggleRefresh(direction == 'down' ? 'new' : 'old');
-      }, { offset: '50%' });
-    }
-  }
+  // self.requestWpSet = function() {
+  //   if ($(self.selectors.refreshWaypoint).length) {
+  //     $(self.selectors.refreshWaypoint).waypoint(function(direction) {
+  //       self.toggleRefresh(direction == 'down' ? 'new' : 'old');
+  //     }, { offset: '50%' });
+  //   }
+  // }
 
   self.toggleRefresh = function(oldNew) {
     var opposite = oldNew == 'new' ? 'old' : 'new';
@@ -35,8 +35,8 @@ g.hotspurRelated = function() {
     self.toggleRefresh(oldNew);
   });
 
-  $(document).ready(function() {
-    self.requestWpSet();
-  });
+  // $(document).ready(function() {
+  //   self.requestWpSet();
+  // });
 
 };
