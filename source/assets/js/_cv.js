@@ -73,6 +73,7 @@ g.cv = function() {
 				    	// Show them
 				    	cvHidersToShow[i].style.display = "block";
 				    };
+				  };
 			    // Remove the read more anchor link from the DOM
 				  this.parentNode.removeChild(this);
 				  // Prevent it going to the # anchor
@@ -84,7 +85,7 @@ g.cv = function() {
 
 	self.ready = function() {
 		self.setHideShowCv();
-	}
+	};
 
 	self.ready();
 
