@@ -26,6 +26,7 @@
     }
   }
   @include min-width($tp-masthead-icon) {
+    padding: $measure-unit * 2 0;
     width: $masthead-full;
     &:before {
       width: $masthead-full;
@@ -66,6 +67,7 @@
     font-size: $measure-unit * 2;
     height: $measure-unit * 3;
     line-height: $measure-unit * 3 * 1.125;
+    margin: 0 auto;
     overflow: hidden;
     opacity: 1;
     transition:inherit;
