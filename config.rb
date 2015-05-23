@@ -90,6 +90,9 @@ helpers do
   end
 end
 
+# Set constants
+Time.zone = "London"
+
 # Set directories
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
