@@ -9,34 +9,40 @@ g.hotspurRelated = function() {
 
   self.selectors = {
     refreshToggle:   '[data-refresh]',
-    refreshParent:   '[data-js="refresh-parent"]',
-    refreshWaypoint: '[data-js="refresh-waypoint"]'
+    refreshParent:   '[data-js="refresh-parent"]'
   }
   self.classes = {
     refresh:  'hotspur__refresh--'
   }
 
-  // self.requestWpSet = function() {
-  //   if ($(self.selectors.refreshWaypoint).length) {
-  //     $(self.selectors.refreshWaypoint).waypoint(function(direction) {
-  //       self.toggleRefresh(direction == 'down' ? 'new' : 'old');
-  //     }, { offset: '50%' });
-  //   }
-  // }
-
   self.toggleRefresh = function(oldNew) {
-    var opposite = oldNew == 'new' ? 'old' : 'new';
-    $(self.selectors.refreshParent).removeClass(self.classes.refresh+opposite).addClass(self.classes.refresh+oldNew);
-  }
-
-  $(document).on('click', self.selectors.refreshToggle, function(e) {
-    e.preventDefault();
-    var oldNew = $(this).attr('data-refresh');
-    self.toggleRefresh(oldNew);
-  });
-
-  // $(document).ready(function() {
-  //   self.requestWpSet();
-  // });
+    // Grab the opposite of the variable passed
+    var opposite = oldNew == 'new' ? 'old' : 'new',
+      // Cache the parent we'll assign the class to
+      parent = document.querySelectorAll(self.selectors.refreshParent)[0];
+    // Remove the opposite one
+    removeClass(parent, self.classes.refresh+opposite);
+    // And add the new one
+    addClass(parent, self.classes.refresh+oldNew);
+  };
+  // Grab the nodeList of all of our refreshToggles
+  var refreshToggles = document.querySelectorAll(self.selectors.refreshToggle),
+    // Cache their length
+    refreshTogglesLength = refreshToggles.length;
+  // If the exist
+  if (refreshTogglesLength) {
+    // Loop through them
+    for (var i = 0, l = refreshTogglesLength; i < l; i++) {
+      // And on click
+      refreshToggles[i].onclick = function() {
+        // Grab the data-refresh attribute
+        var oldNew = this.getAttribute('data-refresh');
+        // And throw the toggleRefresh() function at it
+        self.toggleRefresh(oldNew);
+        // Also stop it from heading up to anchor #
+        return false;
+      };
+    };
+  };
 
 };

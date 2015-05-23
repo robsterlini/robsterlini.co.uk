@@ -13,14 +13,17 @@ g.partials = [
   'disqusComments',     // Converted
   'loadHero',           // Converted
   'loadImages',
-  // 'parallax',
+  // 'parallax',        // Removed
   'share',              // Converted
   'strikethrough',      // Converted
+
   // Page specific
   'cv',                 // Converted
   'triathlon',
+
   // Case studies
-  'hotspurRelated',
+  'hotspurRelated',     // Converted
+  
   // Subpages
   'middleplate'         // Converted
 ];
