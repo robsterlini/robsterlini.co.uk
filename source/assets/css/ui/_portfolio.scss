@@ -20,16 +20,14 @@
 %portfolio-featured__bg {
   background-position: center top;
 }
-.portfolio-featured__bg--light {
+.portfolio-featured__bg {
   @extend %hero__bg;
   @extend %portfolio-featured__bg;
   
 }
-.portfolio-featured__bg--dark {
-  @extend %hero__bg;
-  @extend %portfolio-featured__bg;
-  opacity: 1;
-}
+// .portfolio-featured__bg--dark {
+//   // opacity: 1;
+// }
 .portfolio__copy {
   width:calc(100% - #{rem(400)});
   vertical-align: middle;

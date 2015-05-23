@@ -11,7 +11,7 @@ priority: 0.9
       <% #FEATURED %>
       <% data.projects.featured.each_with_index do |project, index| %>
         <div class="portfolio-featured__item" data-plx="parent">
-          <div class="portfolio-featured__bg--<%= project.hero_bg_colour || "light" %>" data-plx="child" style="background-image:url('/assets/images/portfolio/<%= project.slug %>/<%= project.slug %>.jpg')"></div>
+          <div class="portfolio-featured__bg" data-plx="child" style="background-image:url('/assets/images/portfolio/<%= project.slug %>/<%= project.slug %>.jpg')"></div>
             <div class="group">
               <% if index == 0 %>
                 <h1><%= current_page.data.title %></h1>
