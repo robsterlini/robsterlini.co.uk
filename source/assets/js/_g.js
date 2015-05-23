@@ -22,7 +22,7 @@ g.partials = [
   // Case studies
   'hotspurRelated',
   // Subpages
-  'middleplate'
+  'middleplate'         // Converted
 ];
 
 // This _init function is the function which kicks everything off when
