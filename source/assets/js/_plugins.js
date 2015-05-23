@@ -25,15 +25,21 @@
 // https://github.com/toddmotto/apollo/blob/master/src/apollo.js
 
 function hasClass(elem, className) {
-  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-}
-
-function removeClass(ele,cls) {
-    if (hasClass(ele,cls)) {
-        var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
-        ele.className=ele.className.replace(reg,' ');
+      return new RegExp('(^|\\s)' + className + '(\\s|$)').test(elem.className);
+    };
+function removeClass(elem, className) {
+    if (hasClass(elem, className)) {
+        elem.className = elem.className.replace(new RegExp('(^|\\s)*' + className + '(\\s|$)*', 'g'), '');
     }
-}
+};
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+        elem.className += (elem.className ? ' ' : '') + className;
+    }
+};
+function toggleClass(elem, className) {
+    (hasClass(elem, className) ? removeClass : addClass)(elem, className);
+};
 
 // https://raw.githubusercontent.com/madebysource/animated-scrollto/master/animatedScrollTo.js
 
