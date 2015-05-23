@@ -17,7 +17,7 @@ g.partials = [
   'share',              // Converted
   'strikethrough',      // Converted
   // Page specific
-  'cv',
+  'cv',                 // Converted
   'triathlon',
   // Case studies
   'hotspurRelated',
