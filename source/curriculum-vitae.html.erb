@@ -19,13 +19,15 @@ no_footer: true
       <%
         def cv_section(cv_title, cv_data)
           string = "<h2 id='#{cv_title.to_slug}'>#{cv_title}</h2>"
-          cv_data.each do |item|
+          cv_data.each_with_index do |item, index|
+            cv_slug = item.title.to_slug
+            cv_set = "#{cv_slug}-#{index}"
             date = item.date ? " <span class='cv__title--date'>#{item.date}</span>" : ""
-            string += "<h3 id='#{item.title.to_slug}' class='cv__title'><span class='cv__title--org'>#{item.title}</span>#{date}</h3>"
+            string += "<h3 id='#{cv_slug}' class='cv__title'><span class='cv__title--org'>#{item.title}</span>#{date}</h3>"
             string += "<p class='small-caps cv__subtitle'>#{item.subtitle}</p>"
             if item.copy
               item.copy.each_with_index do |text, index|
-                string += "<p data-cv='#{item.copy.length > 1 ? index >= 1 ? "hide" : "show" : "none"}'>#{text}</p>"
+                string += "<p data-cv-#{item.copy.length > 1 ? index >= 1 ? "hide" : "show" : "none"}='#{cv_set}'>#{text}</p>"
               end
             end
           end
