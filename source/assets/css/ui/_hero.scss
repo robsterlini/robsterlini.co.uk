@@ -15,26 +15,24 @@
   }
 }
 %hero__bg {
-  opacity:0.5;
-  // @include cover(absolute);
+  opacity:0.15;
   background-position: top center;
-  // background-size:cover;
   filter: grayscale(50%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-  &:before {
-    height:rem(100);
-    content:'';
-    @include cover(absolute);
-    background:linear-gradient(rgba($color-black,0.0001),$color-black);
-  }
-  @include max-width($bp-mid) {
-    max-height: $measure-unit * 52;
-  }
-  @include max-width($bp-small) {
-    max-height: $measure-unit * 46;
-  }
-  @include max-width($bp-tiny) {
-    max-height: $measure-unit * 38;
-  }
+  // &:before {
+  //   height:rem(100);
+  //   content:'';
+  //   @include cover(absolute);
+  //   background:linear-gradient(rgba($color-black,0.0001),$color-black);
+  // }
+  // @include max-width($bp-mid) {
+  //   max-height: $measure-unit * 52;
+  // }
+  // @include max-width($bp-small) {
+  //   max-height: $measure-unit * 46;
+  // }
+  // @include max-width($bp-tiny) {
+  //   max-height: $measure-unit * 38;
+  // }
 }
 .hero__bg {
   @extend %hero__bg;

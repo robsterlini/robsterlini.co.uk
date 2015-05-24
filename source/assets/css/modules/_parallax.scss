@@ -8,12 +8,12 @@
   }
 }
 [data-plx="child"] {
-  background: center center no-repeat fixed;
+  background: center center no-repeat;
   background-size: cover;
   content: '';
   left: 0;
-  height: 100%;
+  height: 150%;
   position: absolute;
-  top: 0;
+  top: -25%;
   width: 100%;
 }

@@ -135,11 +135,11 @@ p,
 }
 
 // Parallax
-[data-plx="child"] {
-  background-position: center bottom;
+// [data-plx="child"] {
+  // background-position: center bottom;
   // height: rem(600);
-  top: 0;
-}
+  // top: 0;
+// }
 
 // Hero
 .hero {
@@ -386,8 +386,8 @@ p,
 .hotspur__browser-window {
   border-color: $hotspur-color-dark;
   display: block;
-  margin: rem(50) auto rem(-50);
-  max-width: rem(720);
+  margin: $measure-unit * 3 auto $measure-unit * -3;
+  max-width: $measure-unit * 45;
   width: 100%;
   &:before {
     background-color: $hotspur-color-dark;

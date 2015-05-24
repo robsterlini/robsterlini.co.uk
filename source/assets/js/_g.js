@@ -6,20 +6,22 @@ var g = g || {};
 // 		easier version controlling when multiple users are collaborating
 // 		on the JS simultaneously.
 g.partials = [
+  // DOM changes
+  'onScreenSetup',      // Converted
+  'browserSniff',       // Converted
+
+  // Generic JS
   'agePosts',           // Converted
   'anchorScroll',       // Converted
-  'browserSniff',       // Converted
   'codeHighlight',      // Converted
   'disqusComments',     // Converted
   'loadHero',           // Converted
-  'loadImages',
-  // 'parallax',        // Removed
   'share',              // Converted
   'strikethrough',      // Converted
 
   // Page specific
   'cv',                 // Converted
-  'triathlon',
+  'triathlon',          // Converted
 
   // Case studies
   'hotspurRelated',     // Converted

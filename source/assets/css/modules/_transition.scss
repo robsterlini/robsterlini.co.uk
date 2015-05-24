@@ -1,0 +1,12 @@
+.js--reveal--up {
+  &.js--hidden {
+    opacity: 0;
+    transform: translateY($measure-unit * 2);
+  }
+  &.js--show {
+    opacity: 1;
+    transition: opacity $timing, transform $timing;
+    transition-timing-function: cubic-bezier(#{$bezier-nice});
+    transform: translateY(0);
+  }
+}

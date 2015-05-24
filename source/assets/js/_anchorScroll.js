@@ -49,6 +49,7 @@ g.anchorScroll = function() {
         // Grab the id of the title we're clicking on
         var h = this.getAttribute('id');
         // And then set the window hash to that location
+        window.location.hash = '';
         window.location.hash = h;
       };
     };
