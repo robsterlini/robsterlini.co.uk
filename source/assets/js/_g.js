@@ -6,24 +6,28 @@ var g = g || {};
 // 		easier version controlling when multiple users are collaborating
 // 		on the JS simultaneously.
 g.partials = [
-  'agePosts',
-  'anchorScroll',
-  'browserSniff',
-  'codeHighlight',
-  'disqusComments',
-  'loadHero',
-  'loadImages',
-  'navToggle',
-  'parallax',
-  'share',
-  'strikethrough',
+  // DOM changes
+  'onScreenSetup',      // Converted
+  'browserSniff',       // Converted
+
+  // Generic JS
+  'agePosts',           // Converted
+  'anchorScroll',       // Converted
+  'codeHighlight',      // Converted
+  'disqusComments',     // Converted
+  'loadHero',           // Converted
+  'share',              // Converted
+  'strikethrough',      // Converted
+
   // Page specific
-  'cv',
-  'triathlon',
+  'cv',                 // Converted
+  'triathlon',          // Converted
+
   // Case studies
-  'hotspurRelated',
+  'hotspurRelated',     // Converted
+  
   // Subpages
-  'middleplate'
+  'middleplate'         // Converted
 ];
 
 // This _init function is the function which kicks everything off when

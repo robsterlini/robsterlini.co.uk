@@ -15,7 +15,7 @@
       extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
     } %>
   <% end %>
-  <main data-js="header-parent" id="main">
+  <main class="" data-js="header-parent" id="main">
     <article class="blog-post group" data-age="<%= current_article.date %>" data-anchors data-js="append-age-warning">
       <% if !current_article.data.hero %>
         <h1 data-js="page-header"><%= current_article.title %></h1>

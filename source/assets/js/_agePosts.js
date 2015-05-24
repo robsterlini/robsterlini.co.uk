@@ -56,12 +56,12 @@ g.agePosts = function() {
   // Function that we can call to insert the age into the post
   self.getAge = function() {
     // Cache the age selector
-    var ageItem = $(self.selectors.postAge);
+    var ageItem = document.querySelectorAll(self.selectors.postAge);
     // If one exists then we can do the dance:
     if (ageItem.length) {
       // Set the age as the attribute from the article
       // whilst replacing the hyphens with slashes so Firefox and Safari recognise it
-      var age = ageItem.attr(self.attrs.age).replace(/-/g, "/"),
+      var age = ageItem[0].getAttribute(self.attrs.age).replace(/-/g, "/"),
         // Set that as a Date()
         ageDate = new Date(age),
         // Set today’s date as a Date()
@@ -72,7 +72,7 @@ g.agePosts = function() {
         var ageAlert = self.variables.oldest,
           ageDiffNum = Math.floor(ageDiff / 52),
           ageDiffSet = 'over ' + ageDiffNum + ' year' + (ageDiffNum > 1 ? 's' : '');
-      } 
+      }
       else if (ageDiff > self.variables.older.age) {
         var ageAlert = self.variables.older,
           ageDiffNum = Math.floor(ageDiff / 52 * 12),
@@ -87,16 +87,28 @@ g.agePosts = function() {
         // ageAlert = ageDiff > self.variables.old.age ? ageDiff > self.variables.older.age ? ageDiff > self.variables.oldest.age ? self.variables.oldest : self.variables.older : self.variables.old : false;
       // If it’s proper old like start doing stuff: 
       if (ageAlert) {
-        // Set the message we’re going to add using the age-based variables from the object
-        var ageMessage = '<p class="alert--' + ageAlert.alert + '"><strong>' + ageAlert.greeting + '! </strong>This post is ' + ageDiffSet + ' old; that’s ' + ageAlert.comparison + '. Some of this might be ' + ageAlert.past + ' out of date. You’ve been warned.</p>';
-        // Then stick it all into where we’re putting it (at the beginning)
-        $(self.selectors.warning).prepend(ageMessage);
+        // Create the paragraph node we’re going to be inserting
+        var ageNode = document.createElement('p'),
+          // Grab the parent that we’re going to insert the paragraph into
+          wrapperInsert = document.querySelectorAll(self.selectors.warning)[0],
+          // Set the message we’re going to add using the age-based variables from the object
+          ageMessage =  '<strong>' + ageAlert.greeting + '! </strong>';
+          ageMessage += 'This post is ' + ageDiffSet + ' old; that’s ' + ageAlert.comparison + '.';
+          ageMessage += 'Some of this might be ' + ageAlert.past + ' out of date. You’ve been warned.';
+        // Insert the message into the new paragraph node
+        ageNode.innerHTML = ageMessage;
+        // Give it the correct classname as decided earlier
+        ageNode.className = 'alert--' + ageAlert.alert;
+        // And then insert it into the DOM
+        wrapperInsert.insertBefore(ageNode, wrapperInsert.firstChild);
       }
     }
-  }
+  };
 
-	$(document).ready(function() {
+  self.ready = function() {	
     self.getAge();
-  });
+  };
+
+  self.ready();
 
 };

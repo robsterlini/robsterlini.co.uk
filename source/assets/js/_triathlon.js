@@ -38,36 +38,46 @@ g.triathlon = function() {
 
 	self.updateTimes = function() {
 		var today = new Date(),
-			clockSet = false;
-		$.each(events, function() {
-			var eventDate = new Date(this.date),
-				eventWait = (today - eventDate) * -1;
-			if (eventWait > 0 && !clockSet) {
-				if ($(self.selectors.eventsClock).length) {
-					$(self.selectors.eventsClock).html(eventWait.toString().toHHMMSS());
+			clockSet = false,
+			eventsLength = events.length;
+		if (eventsLength) {
+			for (var i = 0, l = eventsLength; i < l; i++) {
+				var that = events[i],
+					eventDate = new Date(that.date),
+					eventWait = (today - eventDate) * -1;
+				if (eventWait > 0 && !clockSet) {
+					var eventsClock = document.querySelector(self.selectors.eventsClock);
+					if (eventsClock) {
+						eventsClock.innerHTML = eventWait.toString().toHHMMSS();
+					}
+					else {
+						var eventNode = document.createElement('div'),
+          		clockInsert = document.querySelector(self.selectors.eventsHero),
+		          nextEvent =  '<strong class="sc">Next event</strong>';
+							nextEvent += '<span>' + that.event + '</span>';
+							nextEvent += '<span class="hero--tri__clock" data-js="update-clock-time">';
+							nextEvent += eventWait.toString().toHHMMSS();
+							nextEvent += '</span>';
+		        eventNode.innerHTML = nextEvent;
+		        eventNode.className = 'hero--tri__next';
+		        clockInsert.insertBefore(eventNode, clockInsert.firstChild);
+					}
+					clockSet = true;
+					setTimeout(function() {
+						self.updateTimes();
+					}, 1000);
 				}
-				else {
-					var nextEvent = '<div class="hero--tri__next"><strong class="sc">Next event</strong>';
-						nextEvent += '<span>' + this.event + '</span>';
-						nextEvent += '<span class="hero--tri__clock" data-js="update-clock-time">';
-						nextEvent += eventWait.toString().toHHMMSS();
-						nextEvent += '</span></div>';
-					$(self.selectors.eventsHero).prepend(nextEvent);
-				}
-				clockSet = true;
-				setTimeout(function() {
-					self.updateTimes();
-				}, 1000);
-			}
-		});
-	}
+			};
+		};
+	};
 
-	$(document).ready(function() {
-		if ($('body').hasClass(self.classes.isTriathlon)) {
+	self.ready = function() {
+		if (typeof(events) != "undefined") {
 	  	self.updateTimes();
-	  }
-	});
+	  };
+  };
 
+  self.ready();
 	
 
 };
