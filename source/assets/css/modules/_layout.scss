@@ -67,7 +67,8 @@ hr {
   }
   main,
   .error,
-  .footer {
+  .footer,
+  [class^="global-notice--"] {
     padding-left: 0;
   }
 }

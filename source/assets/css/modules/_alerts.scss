@@ -1,5 +1,5 @@
-.error {
-  background: $color-alert-1;
+.error,
+[class^="global-notice--"] {
   color: $color-white;
   padding-left: $masthead-full;
   p {
@@ -17,6 +17,16 @@
     padding-left: 0;
     padding-right: rem($measure * 3 + 10);
   }
+}
+
+.error {
+  background: $color-alert-1;
+}
+[class^="global-notice--"] {
+  background-color: $color-dark;
+}
+.global-notice--triathlon {
+  background-color: $color-b-macmillan-2;
 }
 
 [class^="alert--"] {
