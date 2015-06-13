@@ -1,0 +1,38 @@
+/**
+ * Grailrail form SCSS partial
+ */
+
+.gr-form {
+  margin-bottom: rem(50);
+}
+.gr-form__set {
+}
+.gr-form__label {
+  display: block;
+}
+.gr-form__input,
+.gr-form__textarea {
+  display: block;
+  height: rem(30);
+  width: 100%;
+  &::placeholder {
+    @include font-size(15);
+    line-height: rem(20);
+  }
+}
+.gr-form__textarea {
+  resize: none;
+  min-height: rem(150);
+}
+.gr-form__submit {
+  border: 0;
+  display: block;
+  margin: rem(10) auto;
+  outline: none;
+}
+
+.gr-output {
+  font-family: monospace;
+  width: 100%;
+  min-height: rem(250);
+}

@@ -154,6 +154,11 @@ with_layout :middleplate_layout do
 end
 set :mp_github, "https://github.com/robsterlini/middleplate"
 
+# Grailrail
+with_layout :grailrail_layout do
+  page "/grailrail/*"
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment

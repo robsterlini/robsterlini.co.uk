@@ -1,0 +1,21 @@
+/**
+ * Grailrail layout partial
+ */
+
+.wrapper {
+  max-width: rem(650);
+  margin: 0 auto;
+  margin: auto;
+  width: 93.5%;
+}
+
+[class^="gr-col--"] {
+  @include min-width(600) {
+    display: inline-block;
+    width: calc(50% - #{rem(10)});
+    vertical-align: top;
+    & + & {
+      margin-left: rem(20);
+    }
+  }
+}
