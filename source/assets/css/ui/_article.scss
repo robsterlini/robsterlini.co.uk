@@ -44,15 +44,38 @@
   h1 {
     @include font-size(19);
     margin:rem(5) auto rem(7);
+    overflow: hidden;
+    padding-right: $measure-unit * 5;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
     span {
       font-weight: $font-weight-normal;
     }
   }
-  h1,
-  .btn {
-    pointer-events:auto;
-  }
   .js-screenleave + & {
     transform:translateY(0);
   }
+  .group {
+    max-width: $layout-max-width-suffix;
+    position: relative;
+    pointer-events: auto;
+  }
+}
+.article__fixed-header__links {
+  margin-top: $measure-unit * -1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  > div {
+    color: lighten($color-accent, 15%);
+  }
+}
+.article__fixed-header__link {
+  display: inline-block;
+  height: $measure-unit * 2;
+  line-height: rem(37);
+  text-align: center;
+  vertical-align: top;
+  width: $measure-unit * 2;
 }

@@ -87,6 +87,14 @@ g.onScreenSetup = function() {
     });
   };
 
+  self.createHeaderLink = function(text, opts) {
+    var classSet = "article__fixed-header__link",
+      str = opts ?
+      '<a class="' + classSet + '" href="' + opts.url + '" title="' + opts.title + '">' + text.arrow + '<span class="visuallyhidden"> ' + text.labelText + ' article: ' + opts.title + '</span></a>'
+    : '<div class="' + classSet + '">' + text.arrow + '</div>';
+    return str;
+  }
+
   self.setupBlogHeader = function() {
     var headerInsert = document.querySelector(self.selectors.blogHeader);
     if (headerInsert) {
@@ -95,6 +103,10 @@ g.onScreenSetup = function() {
         blogTitle = document.querySelector(self.selectors.blogTitle),
         blogHeaderHtml =  '<div class="group">';
         blogHeaderHtml +=   '<h1 class="sc"><span>You&rsquo;re reading </span>' + blogTitle.innerText + '</h1>'
+        blogHeaderHtml +=   '<div class="article__fixed-header__links">';
+        blogHeaderHtml +=     self.createHeaderLink({arrow: '&larr;', labelText: 'Previous'}, articles.prev);
+        blogHeaderHtml +=     self.createHeaderLink({arrow: '&rarr;', labelText: 'Next'}, articles.nextUp);
+        blogHeaderHtml +=   '</div>';
         blogHeaderHtml += '</div>';
       blogHeader.className = 'article__fixed-header';
       blogHeader.dataset.js = 'fixed-header';

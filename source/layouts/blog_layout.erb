@@ -52,4 +52,19 @@
       </p>
     </article>
   </main>
+  <script type="text/javascript">
+    var articles = {};
+    <% if prev_article %>
+    articles.prev = {
+      url: "<%= prev_article.url %>",
+      title: "<%= prev_article.title %>"
+    };
+    <% end %>
+    <% if next_article %>
+    articles.nextUp = {
+      url: "<%= next_article.url %>",
+      title: "<%= next_article.title %>"
+    };
+    <% end %>
+  </script>
 <% end %>
