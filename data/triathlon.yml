@@ -53,6 +53,11 @@ events:
         date_time: 2015-06-07 09:00 UTC
         desc:
             -   "Supposedly the most fun 5k I’ll ever do&hellip; This one is more of a fun-run rather than a race, so no training for this one. Just turn up and enjoy getting caked in powder paint with mates. Very much looking forward to this one!"
+        complete:
+            -   "It was billed as the <em>happiest 5km on the planet</em>… and boy were they right!"
+            -   "We had a riot of a time; skipping, jogging, and mostly walking through the four paint sections."
+            -   "It was never going to be my fastest 5km, but it helped me remember that enjoying these events is just as important as destroying my personal bests."
+        complete_image: "/content/2015/06/color-run-finished.jpg"
 
 ##
     -   title: "Jenson Button Trust Triathlon"
