@@ -25,6 +25,7 @@ g.triathlon = function() {
     	seconds   = Math.floor(sec_num - (days * 86400) - (hours * 3600) - (minutes * 60)),
     	separator = '<span class="' + self.classes.clockSeparator + '">:</span>'
 
+    if (days    < 10) { days    = "0" + days; }
     if (hours   < 10) { hours   = "0" + hours; }
     if (minutes < 10) { minutes = "0" + minutes; }
     if (seconds < 10) { seconds = "0" + seconds; }
