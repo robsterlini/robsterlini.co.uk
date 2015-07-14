@@ -12,7 +12,6 @@ priority: 1.0
 <section id="content" class="wrapper" data-page="home">
   <%
     hero_extra = "<p>I work for <a href='http://fueled.com' title='Visit the Fueled website'>Fueled</a>, but take on freelance projects that speak to me! Oh, and I’m raising money for Macmillan by competing in a whole bunch of crazy events throughout 2015. #{link_to "Read and donate?", "triathlon.html", :title => "Read about my fundraising plans here"} You know you want to!</p>"
-    hero_extra += "<p>I’ve dropped my As, Os, and Bs for <a href='http://www.blood.co.uk/news-media/campaigns/national-blood-week/' title='Find out about National Blood Week'>National Blood Week</a>.</p>"
     hero_extra += "<ul class='list--large-icons'>"
     data.pages.masthead.each do |nav|
       if nav.home && nav.slug != "/index.html"
@@ -30,10 +29,8 @@ priority: 1.0
     image: current_page.data.hero,
     image_small: current_page.data.hero_small,
     image_loc: hero_dir,
-    # title: "Hi I’m Rob Sterlini",
-    title: "Hi I’m R<span class='bld-aob'>ob</span> Sterlini",
-    # subtitle: current_page.data.description,
-    subtitle: "I’m <span class='bld-aob'>a</span> we<span class='bld-aob'>b</span> designer with <span class='bld-aob'>a</span> l<span class='bld-aob'>o</span>ve f<span class='bld-aob'>o</span>r g<span class='bld-aob'>o</span>rge<span class='bld-aob'>o</span>us typ<span class='bld-aob'>o</span>gr<span class='bld-aob'>a</span>phy, delici<span class='bld-aob'>o</span>us inter<span class='bld-aob'>a</span>cti<span class='bld-aob'>o</span>n, <span class='bld-aob'>a</span>nd <span class='bld-aob'>a</span>ttenti<span class='bld-aob'>o</span>n t<span class='bld-aob'>o</span> det<span class='bld-aob'>a</span>il.",
+    title: "Hi I’m Rob Sterlini",
+    subtitle: current_page.data.description,
     arrow_hide: true,
     extra: hero_extra
     }
