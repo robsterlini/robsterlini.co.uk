@@ -34,7 +34,7 @@
   position:fixed;
   top: 0;
   width: 100%;
-  z-index:2;
+  z-index: 3;
   @include max-width($tp-masthead-icon) {
     padding-left: $masthead-icon;
   }

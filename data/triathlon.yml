@@ -17,8 +17,8 @@ events:
 
 ##
     -   title: "Tough Mudder London West"
-        title_image: "content/2015/05/tough-mudder-logo.svg"
-        slug: "tough-mudder-uk"
+        # title_image: "content/2015/05/tough-mudder-logo.svg"
+        slug: "tough-mudder-london-west"
         short_date: "2 May"
         full_date: "2 May 2015"
         date_time: 2015-05-02 13:20 UTC
@@ -67,17 +67,31 @@ events:
         date_time: 2015-07-12 09:00 UTC
         desc:
             -   "This will likely be the first triathlon for this year, and will be my first real experience of one. The plan is to use this to get used to the way transition works, and how mass water starts work before the big day in August!"
+        complete:
+            -   "I am a triathlete."
+            -   "A novice triathlete, but a triathlete nonetheless. The JB Trust Tri was a fantastic day which saw me tackle two turbo distance triathlons – 200m swim, 10km bike, 2.5km run."
+            -   "It didn’t come without drama though; I had a pretty tasty fall in the first one, spilling at 42kph on the bike on a rainy corner – that wasn’t enough to stop me though, and it made setting a second PB on the afternoon race even easier!"
+        complete_image: "/assets/journal/triathlete/blog-im-a-triathlete.jpg"
 
 ##
     -   title: "The London Triathlon"
         slug: "the-london-triathlon"
         short_date: "8 August"
         full_date: "8 August 2015"
-        date_time: 2015-09-08 09:00 UTC
+        date_time: 2015-08-08 09:00 UTC
         desc:
             -   "This is the big one!"
             -   "The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for."
             -   "To be able to compete in an event this big in the city I grew up in will be great."
+
+##
+    -   title: "Tough Mudder London South"
+        slug: "tough-mudder-london-south"
+        short_date: "26 September"
+        full_date: "26 September 2015"
+        date_time: 2015-09-26 09:00 UTC
+        desc:
+            -   "One Tough Mudder for the year wasn’t enough, so I’ve decided to take on London South’s muddy offerings. Bring it on!"
 
 ##
     -   title: "Royal Parks Foundation Half Marathon"

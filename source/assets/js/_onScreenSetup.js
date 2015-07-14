@@ -97,7 +97,7 @@ g.onScreenSetup = function() {
 
   self.setupBlogHeader = function() {
     var headerInsert = document.querySelector(self.selectors.blogHeader);
-    if (headerInsert) {
+    if (headerInsert && articles) {
       var blogHeader = document.createElement('div'),
         waypointMarker = document.createElement('span'),
         blogTitle = document.querySelector(self.selectors.blogTitle),

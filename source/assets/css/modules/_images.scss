@@ -62,12 +62,12 @@ figcaption {
 
 
 .image--left {
-  margin:rem(5) rem(10) rem(10) 0;
+  margin: $measure-unit $measure-unit * 2 $measure-unit 0;
   max-width:rem(350);
   float:left;
 }
 .image--right {
-  margin:rem(5) 0 rem(10) rem(10);
+  margin: $measure-unit 0 $measure-unit $measure-unit * 2;
   max-width:rem(350);
   float:right;
 }

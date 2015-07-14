@@ -163,6 +163,9 @@ figcaption.ss-picture {
 .ss-cat-life-and-everything-else:before {
   content:'';
 }
+.ss-cat-training-and-sport:before {
+  content:'⚽';
+}
 
 // About
 .ss-about-poet:before {
@@ -172,7 +175,7 @@ figcaption.ss-picture {
   content:'';
 }
 .ss-about-spurs:before {
-  content:'⚽';
+  @extend .ss-cat-training-and-sport:before;
 }
 .ss-about-food:before {
   content:'🍕';

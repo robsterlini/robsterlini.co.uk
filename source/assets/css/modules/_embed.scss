@@ -1,16 +1,19 @@
 iframe {
   margin:$measure-unit * 2 auto;
+  position: relative;
   display: block;
+  z-index: 2;
   &[id*="twitter-widget"] {
   	margin: $measure-unit * 2 auto !important;
   }
   &[id*="instagram-embed-"] {
-  	margin: $measure-unit * 2 auto !important;
+  	margin: $measure-unit auto !important;
   	max-width: $layout-max-width-suffix / 2 !important;
   }
   @include min-width($bp-small) {
   	&.embed__right,
-  	&.embed__left {
+  	&.embed__left,
+    &.embed__center {
   		display: block !important;
   		max-width: $layout-max-width-wide-suffix / 2 !important;
   		width: 50% !important;
@@ -23,6 +26,9 @@ iframe {
 	  	float: left;
 	  	margin-right: $measure-unit * 2 !important;
 	  }
+    &.embed__center {
+      margin-top: $measure-unit * 2 !important;
+    }
 	}
 	@include min-width(84 * $measure) {
 		&.embed__right {

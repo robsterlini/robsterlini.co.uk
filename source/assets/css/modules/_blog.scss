@@ -1,13 +1,21 @@
 .categories {
-
+  padding: 0;
 }
 .category__item {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  @include min-width($bp-small) {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    width: 33.33%;
+  }
 }
 .category__link {
   display: block;
-  margin: 0 rem(16) 0 0;
+  margin: 0 0 $measure-unit;
+  @include min-width($bp-small) {
+    padding: 0 rem(20);
+  }
 }
 [class*=" ss-cat-"] {
   @extend %big-cat-icons;
