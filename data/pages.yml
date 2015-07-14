@@ -57,8 +57,8 @@ masthead:
         alt: "Get in touch"
         home:
             four_oh_four: true
-            title: "Learn about me"
-            text: "Find out everything from how many tattoos I have, to my favourite food."
+            title: "Get in touch"
+            text: "Got a project I’m perfect for? Want to ask a question? Go on, say hi!"
             read_more: "me"
 
 ##
@@ -68,8 +68,8 @@ masthead:
         label: "About me"
         alt: "Find out about me"
         home:
-            title: "Get in touch"
-            text: "Got a project I’m perfect for? Want to ask a question? Go on, say hi!"
+            title: "Learn about me"
+            text: "Find out everything from how many tattoos I have, to my favourite food."
             read_more: "getting in touch with me"
 
 ##
