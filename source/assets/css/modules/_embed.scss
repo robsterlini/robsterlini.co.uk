@@ -18,6 +18,9 @@ iframe {
   		max-width: $layout-max-width-wide-suffix / 2 !important;
   		width: 50% !important;
   	}
+    &.embed__wide {
+      width: 100% !important;
+    }
   	&.embed__right {
   		float: right;
   		margin-left: $measure-unit * 2 !important;
@@ -39,9 +42,12 @@ iframe {
 	  }
 	}
 }
-.instagram-media {
-	display: none !important;
-	&.instagram-media-rendered {
-		display: block !important;
-	}
+@include min-width(1) {
+  .instagram-media,
+  .instagram-media-registered {
+    display: none !important;
+  }
+  .instagram-media-rendered {
+    display: block !important;
+  }
 }

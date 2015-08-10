@@ -83,6 +83,10 @@ events:
             -   "This is the big one!"
             -   "The London Triathlon is the reason I started this mad journey, and it’s the one I’m probably most excited (and equally terrified) for."
             -   "To be able to compete in an event this big in the city I grew up in will be great."
+        complete:
+            -   "One of the best days of my life."
+            -   "Read about it in my blog!"
+        complete_image: "/assets/journal/the-london-triathlon/blog-the-london-triathlon.jpg"
 
 ##
     -   title: "Tough Mudder London South"

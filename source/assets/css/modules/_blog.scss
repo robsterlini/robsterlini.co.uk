@@ -47,7 +47,10 @@
 }
 
 .blog-post {
-  p:first-child {
+  > p:first-child {
     margin-top: $measure-unit * 3;
+  }
+  blockquote {
+    margin: $measure-unit * 2 auto;
   }
 }

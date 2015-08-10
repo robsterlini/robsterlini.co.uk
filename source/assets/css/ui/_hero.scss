@@ -36,6 +36,18 @@
 }
 .hero__bg {
   @extend %hero__bg;
+  left: 0;
+  right: 0;
+  width: auto;
+  @include min-width($tp-masthead-hamburger) {
+    left: $masthead-icon;
+  }
+  @include min-width($tp-masthead-icon) {
+    left: $masthead-full;
+  }
+  .page--no-masthead & {
+    left: 0;
+  }
 }
 
 .hero__headers {
