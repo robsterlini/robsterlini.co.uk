@@ -82,6 +82,7 @@ events:
             -   "A novice triathlete, but a triathlete nonetheless. The JB Trust Tri was a fantastic day which saw me tackle two turbo distance triathlons – 200m swim, 10km bike, 2.5km run."
             -   "It didn’t come without drama though; I had a pretty tasty fall in the first one, spilling at 42kph on the bike on a rainy corner – that wasn’t enough to stop me though, and it made setting a second PB on the afternoon race even easier!"
         complete_image: "/assets/journal/triathlete/blog-im-a-triathlete.jpg"
+        complete_blog: "/journal/triathlete/"
 
 ##
     -   title: "The London Triathlon"
@@ -97,6 +98,7 @@ events:
             -   "One of the best days of my life."
             -   "Read about it in my blog!"
         complete_image: "/assets/journal/the-london-triathlon/blog-the-london-triathlon.jpg"
+        complete_blog: "/journal/the-london-triathlon"
 
 ##
     -   title: "Tough Mudder London South"
