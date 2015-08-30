@@ -27,7 +27,6 @@ events:
 
 ##
     -   title: "Tough Mudder London West"
-        # title_image: "content/2015/05/tough-mudder-logo.svg"
         slug: "tough-mudder-london-west"
         short_date: "2 May"
         full_date: "2 May 2015"
@@ -41,19 +40,6 @@ events:
             -   "Tough Mudder was great fun, hard work, and the first of many more to come."
             -   "You can check out some of the photos on <a href='https://instagram.com/robsterlini' title='See all of my photos on my Instagram'>my Instagram</a>."
         complete_image: "/content/2015/05/tough-mudder-cry-baby.jpg"
-        complete_photos:
-            -   img: "/content/2015/05/tough-mudder-supporter.jpg"
-                alt: "The best supporter around the course, bar none"
-                link: "https://instagram.com/p/2L_mXMP-32/?taken-by=robsterlini"
-            -   img: "/content/2015/05/tough-mudder-everest.jpg"
-                alt: "The penultimate obstacle, Everest 2.0"
-                link: "https://instagram.com/p/2OO0okv-6I/?taken-by=robsterlini"
-            -   img: "/content/2015/05/tough-mudder-run.jpg"
-                alt: "Me proudly wearing my green Macmillan top"
-                link: "https://instagram.com/p/2McfcFP-5b/?taken-by=robsterlini"
-            -   img: "/content/2015/05/tough-mudder-shoes.jpg"
-                alt: "The left-over shoes post-event"
-                link: "https://instagram.com/p/2Mc3sXv-6J/"
 
 ##
     -   title: "The Colour Run"
