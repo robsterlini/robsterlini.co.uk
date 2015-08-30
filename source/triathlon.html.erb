@@ -2,7 +2,7 @@
 title: 2015 is all about fundraising for Macmillan
 nav: home
 description: I’ve made 2015 about doing endurance events, and pushing my limits… all in the name of raising as much as I can for Macmillan.
-hero: triathlon.jpg
+hero: blog-the-london-triathlon.jpg
 donate_url: http://uk.virginmoneygiving.com/RobSterlini
 no_notice: true
 ---
@@ -17,8 +17,8 @@ no_notice: true
   <script>var events = [<%= events_js %>]</script>
   <%= partial "partials/hero", locals: {
     image: "#{current_page.data.hero}",
-    image_small: "triathlon_600.jpg",
-    image_loc: hero_dir,
+    image_small: "blog-the-london-triathlon_600.jpg",
+    image_loc: "/assets/journal/the-london-triathlon/",
     title: "Triathlons, half-marathons, and more for Macmillan",
     subtitle: current_page.data.description,
     extra: "<p class='hero--triathlon__events' data-js='add-tri-event-clock'><strong class='sc'>The events</strong> #{events}</p><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
