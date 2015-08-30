@@ -2,18 +2,32 @@
   <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<%= image_small || image %>" data-location="<%= image_loc %>">
   </div>
   <div class="hero__headers" data-js="header-to-offset">
-    <% if locals.has_key? :featured %>
-      <%= featured %>
-    <% end %>
-    <% if locals.has_key? :title %>
-      <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
-    <% end %>
-    <% if locals.has_key? :subtitle %>
-      <h2 class="hero__header--beta"><%= subtitle %></h2>
-    <% end %>
-    <% if locals.has_key? :extra %>
-      <%= extra %>
-    <% end %>
+    <div class="group">
+      <% set_layout = true %>
+      <% if locals.has_key? :has_layout %>
+        <% if locals[:has_layout] == false %>
+          <% set_layout = false %>
+        <% end %>
+      <% end %>
+      <% if set_layout %>
+        <div class="hero__headers__title">
+      <% end %>
+        <% if locals.has_key? :title %>
+          <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
+        <% end %>
+      <% if set_layout %>
+        </div><!--
+        --><div class="hero__headers__excerpt">
+      <% end %>
+        <% if locals.has_key? :subtitle %>
+          <h2 class="hero__header--beta"><%= subtitle %></h2>
+        <% end %>
+        <% if locals.has_key? :extra %>
+          <%= extra %>
+        <% end %>
+        <% if set_layout %>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <% if !locals.has_key? :arrow_hide %><span class="hero__scroll" data-ie="hide"><a href="#main" class="hero__arrow ss-hero-down" data-anchor><span class="visuallyhidden">Scroll</span></a></span><% end %>
 </div>

@@ -47,10 +47,10 @@ hr {
 .page--no-masthead {
   .hero {
     min-height: 100vh;
-    padding: rem(50) 0;
+    padding: 0;
   }
-  .hero__scroll {
-    display: none;
+  .hero__headers {
+    padding: $measure-unit * 4 0;
   }
   .list--large-icons {
     max-width: none;

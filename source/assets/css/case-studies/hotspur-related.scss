@@ -159,6 +159,10 @@ p,
     display: none;
   }
 }
+.hero__headers {
+  background: none;
+  margin: auto;
+}
 .hero__header--beta {
   @include font-size(24);
   margin-top: rem(32);

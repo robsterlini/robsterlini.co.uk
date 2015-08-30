@@ -2,14 +2,9 @@
 .portfolio-featured__item {
   background: $color-black;
   color: $color-white;
-  min-height: 0;
-  padding:15% 0;
-  &:first-of-type {
-    padding-top: 0;
-  }
-  .article__description {
-    margin-bottom: 15%;
-  }
+  display: flex;
+  min-height: 66vh;
+  padding: $measure-unit * 4 0 0;
   img {
     border-radius: 0;
   } 
@@ -25,9 +20,13 @@
   @extend %portfolio-featured__bg;
   
 }
-// .portfolio-featured__bg--dark {
-//   // opacity: 1;
-// }
+.portfolio-featured__copy {
+  @extend %hero-headers;
+  margin: auto auto 0;
+  padding: $measure-unit 0;
+  position: relative;
+  width: 100%;
+}
 .portfolio__copy {
   width:calc(100% - #{rem(400)});
   vertical-align: middle;
