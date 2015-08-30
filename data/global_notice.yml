@@ -1,5 +1,5 @@
 notice:
-  show: true
+  # show: true
   classSet: "triathlon"
   copy:
     - "I’ve made 2015 about raising money for Macmillan by doing triathlons and more, and would love for you to <a href='/triathlon/' title='Find out why I’m raising money for Macmillan'>find out why</a>!"
