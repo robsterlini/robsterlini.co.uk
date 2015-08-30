@@ -85,6 +85,16 @@ body.triathlon {
     opacity: 1;
     transform: none;
     visibility: visible;
+
+/* ==|== Triathlon =================
+  Typography
+========================================== */
+
+body.triathlon {
+  h1,
+  main h2 {
+    font-family: "macmillan", $font-stack-regular;
+    font-weight: normal;
   }
 }
 .hero {
