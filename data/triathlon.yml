@@ -1,5 +1,15 @@
 ########
 
+tabbed_sections:
+    -   title: "The story"
+    -   title: "Training"
+        partial: "triathlon/_training"
+    -   title: "The events"
+        partial: "triathlon/_events"
+    # -   title: "2014"
+    # -   title: "2015"
+    # -   title: "photos"
+
 events:
 
 ##
