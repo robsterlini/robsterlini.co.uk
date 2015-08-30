@@ -31,10 +31,20 @@ body.triathlon {
   .btn {
     background-color: $color-b-macmillan-2;
     border-color: $color-b-macmillan-2;
-    // color: $color-white;
     @include hover {
       background-color: $color-b-macmillan-1;
       border-color: $color-b-macmillan-1;
+    }
+  }
+  .triathlon__event--plx__right {
+    .btn {
+      color: $color-black;
+      @include hover {
+        color: $color-black;
+      }
+      @include active {
+        color: $color-black;
+      }
     }
   }
   .btn--outline {
@@ -45,15 +55,15 @@ body.triathlon {
       color: $color-b-macmillan-1;
     }
   }
-  .js & {
-   [data-anchors] {
-      h2 {
-        &:before {
-          color: $color-b-macmillan-2;
-        }
-      }
-    }
-  }
+  // .js & {
+  //  [data-anchors] {
+  //     h2 {
+  //       &:before {
+  //         color: $color-b-macmillan-2;
+  //       }
+  //     }
+  //   }
+  // }
   .tabs__nav__item--active {
     &:after {
       background: $color-b-macmillan-2;
@@ -65,11 +75,19 @@ body.triathlon {
   Typography
 ========================================== */
 
+%has-macmillan-type {
+  font-family: "macmillan", $font-stack-regular;
+  font-weight: normal;
+}
 body.triathlon {
   h1,
   main h2 {
-    font-family: "macmillan", $font-stack-regular;
-    font-weight: normal;
+    @extend %has-macmillan-type;
+  }
+}
+.triathlon__event--plx__left {
+  h3 {
+    @extend %has-macmillan-type;   
   }
 }
 
@@ -94,21 +112,13 @@ body.triathlon {
     display: block;
   }
 }
-.triathlon__event--complete {
-  opacity: 0.5;
-}
-a.triathlon__event--complete {
-  transition:color .25s cubic-bezier(#{$bezier-nice}), opacity .25s cubic-bezier(#{$bezier-nice});
-  @include hover {
-    opacity: 1;
-  }
-} 
 .triathlon__event--plx {
   background: $color-black;
   color: $color-white;
   display: flex;
   margin: $measure-unit * 3 0;
-  min-height: 60vh;
+  padding-top: 33vh;
+  min-height: 66vh;
   blockquote {
     border-color: rgba($color-white, 0.25);
   }
@@ -124,18 +134,22 @@ a.triathlon__event--complete {
   height: 120%;
 }
 .triathlon__event--plx__content {
-  margin: auto;
-  max-width: $layout-max-width-suffix;
-  padding: $measure-unit * 5 0 $measure-unit * 4;
+  @extend %hero-headers;
+  margin: auto auto 0;
+  padding: $measure-unit 0;
   position: relative;
+  width: 100%;
   a {
     @include active {
       color: $color-white !important;
     }
   }
 }
-.triathlon__event--plx__image-title {
-  margin: 0 0 $measure-unit;
+.triathlon__event--plx__left {
+  @extend %hero__headers__left;
+}
+.triathlon__event--plx__right {
+  @extend %hero__headers__right;
 }
 
 .hero--tri__next {
@@ -192,80 +206,5 @@ a.triathlon__event--complete {
   }
   100% {
     opacity: 1;
-  }
-}
-
-.triathlon__event__photos {
-  display: flex;
-  margin: $measure-unit * 2 auto;
-  text-align: center;
-}
-.tri__event__photos__item {
-  background: center no-repeat;
-  background-size: cover;
-  display: inline-block;
-  flex: 1;
-  max-height: $measure-unit * 16;
-  margin-left: $measure-unit;
-  @include max-width($bp-tiny) {
-    margin-left: $measure-unit / 2;
-  }
-  &:first-child {
-    margin-left: 0;
-  }
-  &[href] {
-    color: $color-white !important;
-    position: relative;
-    &:before,
-    &:after {
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      transition: opacity .25s cubic-bezier(#{$bezier-nice}), transform .25s cubic-bezier(#{$bezier-nice});
-      width: 100%;
-    }
-    &:before {
-      @include font-size($measure * 3);
-      left: 0;
-      margin: $measure-unit * -2 0 0;
-      top: 50%;
-      transform-origin: center center;
-      width: 100%;
-      z-index: 1;
-      @include max-width($bp-small) {
-        @include font-size($measure * 2);
-        margin-top: $measure-unit * -1.25;
-      }
-      @include max-width($bp-tiny) {
-        @include font-size($measure * 1.5);
-        margin-top: $measure-unit * -1;
-      }
-    }
-    &:after {
-      background: rgba($color-black, 0.75);
-      content: '';
-      height: 100%;
-      top: 0;
-    }
-    @include hover {
-      &:before {
-        opacity: 1;
-      }
-      &:after {
-        opacity: 0.8;
-      }
-    }
-    @include active {
-      &:before {
-        transform: scale(0.95);
-      }
-      &:after {
-        opacity: 1;
-      }
-    }
-  }
-  img {
-    opacity: 0;
-    z-index: 2;
   }
 }

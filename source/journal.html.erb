@@ -17,8 +17,7 @@ priority: 0.95
         image_loc: article.data.hero ? "/assets/journal/#{article.url.sub! "/journal/", "".to_slug}" : hero_dir,
         title: "#{article.title}",
         subtitle: article.data.description,
-        extra: "<p class='small-caps'>#{localised_date} • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>",
-        featured: "<p class='hero__category'><span class='small-caps'>Featured post</span><br>#{current_page.data.title}</p>"
+        extra: "<p class='small-caps'>#{localised_date} • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>"
       } %>
 
       <main id="main">

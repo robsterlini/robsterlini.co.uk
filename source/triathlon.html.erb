@@ -7,97 +7,22 @@ no_notice: true
 ---
 
 <section id="content" class="wrapper" data-page="home">
-  <% events = ''; events_js = ''; data.triathlon.events.each_with_index do |event, index|
-    spacer = index == 0 ? "" : ", ";
-    tri_class = event.complete ? "" : "in";
-    events += "#{spacer}<a data-anchor href='##{event.slug}' class='triathlon__event--#{tri_class}complete'>" + event.title + "</a>"
-    events_js += "#{spacer}{event: '#{event.title}', date: '#{event.date_time}'}";
-  end %>
+  <%
+    events_js = ''
+    data.triathlon.events.each_with_index do |event, index|
+      events_js += "#{index == 0 ? "" : ", "}{event: '#{event.title}', date: '#{event.date_time}'}";
+    end
+  %>
   <script>var events = [<%= events_js %>]</script>
   <%= partial "partials/hero", locals: {
     image: "#{current_page.data.hero}",
     image_small: "blog-the-london-triathlon_600.jpg",
     image_loc: "/assets/journal/the-london-triathlon/",
-    title: "Triathlons, half-marathons, and more for Macmillan",
+    title: "Triathlons &amp; more for Macmillan",
     subtitle: current_page.data.description,
-    extra: "<p class='hero--triathlon__events' data-js='add-tri-event-clock'><strong class='sc'>The events</strong> #{events}</p><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
+    extra: "<p class='hero--triathlon__events' data-js='add-tri-event-clock'><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
   } %>
   <main id="main">
     <%= partial "partials/tabs", :locals => { :tab_data => data.triathlon.tabbed_sections, :page_slug => "triathlon" } %>
-
-    <div class="group">
-      <h2 id="what-am-i-doing">What am I doing?</h2>
-      <p><span class="strike">Currently? <strong>Two triathlons</strong>, <strong>Tough Mudder UK</strong>, and <strong>water-only January</strong>, but I’ve got a few ballots waiting to come through, and a third triathlon in my sights.</span></p>
-      <p><strong class="sc">Edit:</strong> the list of events has now been updated below with even more to take on!</p>
-      <h3>The events</h3>
-      <p>This is a bit of a <abbr title="Too long; didn’t read">TL;DR</abbr> for my events throughout this year. For a bit more information on each then keep reading!</p>
-      <ul>
-        <% data.triathlon.events.each_with_index do |event, index| %>
-          <li class="triathlon__event--<%= event.complete ? "" : "in" %>complete"><strong class="small-caps"><%= event.short_date %></strong> <%= event.title %></li>
-        <% end %>
-      </ul>
-      <%# Events %>
-      <% previous_event = false %>
-      <% data.triathlon.events.each_with_index do |event, index| %>
-        <% if event.complete_image %>
-          <% if !previous_event %>
-            </div>
-          <% end %>
-          <!-- </div> -->
-          <div class="triathlon__event--plx" data-plx="parent">
-            <div class="triathlon__event--plx__bg" style="background-image: url(<%= event.complete_image %>);" data-plx="child"></div>
-            <div class="triathlon__event--plx__content group">
-        <% end %>
-        <% if event.title_image %>
-          <%= image_tag event.title_image, :width => "400", :height => "39", :class => "triathlon__event--plx__image-title", :alt => event.title, :id => event.slug %>
-        <% else %>
-          <h3 id="<%= event.slug %>"><%= event.title %></h3>
-        <% end %>
-        <p><em><%= event.full_date %></em></p>
-        <% if event.desc %>
-          <% event.desc.each do |text| %>
-            <p><%= text %></p>
-          <% end %>
-        <% end %>
-        <% if event.complete %>
-          <% previous_event = true %>
-          <blockquote class="blockquote--long">
-            <% event.complete.each_with_index do |text, index| %>
-              <p><%= "#{ index == 0 ? "<strong class='sc tri__event__complete'>Completed</strong> " : "" }#{text}" %></p>
-            <% end %>
-          </blockquote>
-        <% end %>
-        <% if event.complete_photos %>
-          <div class="triathlon__event__photos">
-            <% event.complete_photos.each do |photo| %><% if photo.link %><a href="<%= photo.link %>" title="View <%= photo.alt ? "a photo of ‘#{photo.alt}’" : "this image" %> in full" class="ss-contact-instagram <% else %><div class="<% end %>tri__event__photos__item" style="background-image:url('<%= photo.img %>');">
-              <%= image_tag photo.img, :alt => photo.alt || "", :class => "" %>
-            <% if photo.link %></a><% else %></div><% end %><% end %>
-          </div>
-        <% end %>
-        <% if event.complete_image %>
-            </div>
-          </div>
-          <% if !previous_event %>
-            <div class="group">
-          <% end %>
-        <% else %>
-        <% previous_event = false %>
-        <% end %>
-      <% end %>
-
-      <h2 id="hows-training-going">How’s training going?</h2>
-      <p>At this point (written on 8 February), it’s going well. I’ve got my trisuit – a dashing onepiece outfit that’ll go under my wetsuit, and is padded for cycling – and have run a few times in it.</p>
-      <p>On 4 January, <a href="http://instagram.com/p/xbnc-DP-9e/?modal=true" title="Check out the run on Instagram">I ran a half marathon distance</a>. It started off as a 15km run, but was so comfortable that I extended it out to the 22km mark; and it felt amazing. To achieve that without distance management training was pretty satisfying, so the hope is that with a bit of forethought and planning I ought to be able to cover similar distances relatively regularly. The only negative was coming in just over two hours, but my music had died towards the end, so the last mile or so was a bit slower than I’d have liked.</p>
-      <p>Physically, I’ve had <a href="http://instagram.com/p/yxm47lP--R/?modal=true" title="See how having my last PT session with Courtney made me feel on Instagram">my final PT session</a> with Courtney, but I’m really happy with my body shape and muscle mass strength-wise. Over the coming months, the plan is to introduce longer, more stamina-improving training methods to lean myself down ready to tackle the triathlons and potentially half marathons (which are ballot dependant). I’m quite excited for this, but going out for two hour plus runs requires an element of planning and foresight, so hopefully that doesn’t prove to tricky to balance out.</p>
-      <p>Mentally, for Tough Mudder at least, I’ve been watching the videos of what to maybe expect; the majority seam to be mind of matter jobs, so I’m hoping that on the day this’ll be relatively straight forward.</p>
-      <p>All in all, I’m feeling pretty damn good, and hoping to push on in the first event when it finally comes round. Excitement still has the edge over nerves; at least for the time being.</p>
-      <h2 id="thanks">Thanks</h2>
-      <p>Firstly, thanks for reading this. If you’ve got this far, then kudos.</p>
-      <p>A massive thank you also to anyone who’s donated, or who’s spread the word about the amazing work that Macmillan do; and a future cheers to anyone who’s planning to do either as well!</p>
-      <p>My family have been massively supportive throughout all of this, and them spurring me on every step of the way makes all the difference.</p>
-      <p>And I honestly don’t think I’d be in a position where I was ready to take on these challenges without the help and tutoring I’ve had from Courtney, it’s just a shame that I’ve moved to South London and can’t carry on our sessions.</p>
-      <p>I’m honoured to be able to fundraise for Macmillan, and I hope that I can raise whatever I can that will go towards helping someone out, and that we can spread their messages as well as we can!</p>
-      <p><strong>Thanks!</strong></p>
-    </div>
   </main>
 </section>

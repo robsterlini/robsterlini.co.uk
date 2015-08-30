@@ -93,7 +93,7 @@ g.agePosts = function() {
           wrapperInsert = document.querySelectorAll(self.selectors.warning)[0],
           // Set the message we’re going to add using the age-based variables from the object
           ageMessage =  '<strong>' + ageAlert.greeting + '! </strong>';
-          ageMessage += 'This post is ' + ageDiffSet + ' old; that’s ' + ageAlert.comparison + '.';
+          ageMessage += 'This post is ' + ageDiffSet + ' old; that’s ' + ageAlert.comparison + '. ';
           ageMessage += 'Some of this might be ' + ageAlert.past + ' out of date. You’ve been warned.';
         // Insert the message into the new paragraph node
         ageNode.innerHTML = ageMessage;

@@ -7,38 +7,39 @@ priority: 0.9
 
 <section id="content" class="wrapper">
   <main>
-    <article class="">
+      <div class="group visuallyhidden">
+        <h1><%= current_page.data.title %></h1>
+        <p class="article__description"><%= current_page.data.description %></p>
+      </div>
       <% #FEATURED %>
       <% data.projects.featured.each_with_index do |project, index| %>
         <div class="portfolio-featured__item" data-plx="parent">
           <div class="portfolio-featured__bg" data-plx="child" style="background-image:url('/assets/images/portfolio/<%= project.slug %>/<%= project.slug %>.jpg')"></div>
-            <div class="group">
-              <% if index == 0 %>
-                <h1><%= current_page.data.title %></h1>
-                <p class="article__description"><%= current_page.data.description %></p>
-              <% end %>
-              <div class="browser-window">
-                <div class="browser-window__overflow">
-                  <%= image_tag "portfolio/#{project.slug}/portfolio-image.jpg", :alt => "Preview of #{project.name}" %>
+            <div class="portfolio-featured__copy">
+              <div class="group">
+                <div class="browser-window">
+                  <div class="browser-window__overflow">
+                    <%= image_tag "portfolio/#{project.slug}/portfolio-image.jpg", :alt => "Preview of #{project.name}" %>
+                  </div>
+                </div><!--
+                --><div class="portfolio__copy">
+                  <h2><%= project.name %></h2>
+                  <p class="small-caps"><%= project.date %> • <%= project.role %><% if project.tech %> • <%= project.tech %><% end %></p>
+                  <p><%= project.description %></p>
+                  <% if project.buttons %>
+                    <p class="btns--left">
+                    <% if project.buttons.case_study != false %>
+                      <%= link_to "Read the case study", project.buttons.case_study, :title => "Read about the process", :class => "btn" %>
+                    <% end %>
+                    <% if project.buttons.live != false %>
+                      <%= link_to project.buttons.live_btn || "See it live", project.buttons.live, :title => "See this project live", :class => "btn--outline" %>
+                    <% end %>
+                    <% if project.buttons.dribbble != false %>
+                      <%= link_to "See it on Dribbble", project.buttons.dribbble, :title => "See this project on Dribbble", :class => "btn--outline" %>
+                    <% end %>
+                    </p>
+                  <% end %>
                 </div>
-              </div><!--
-              --><div class="portfolio__copy">
-                <h2><%= project.name %></h2>
-                <p class="small-caps"><%= project.date %> • <%= project.role %><% if project.tech %> • <%= project.tech %><% end %></p>
-                <p><%= project.description %></p>
-                <% if project.buttons %>
-                  <p class="btns--left">
-                  <% if project.buttons.case_study != false %>
-                    <%= link_to "Read the case study", project.buttons.case_study, :title => "Read about the process", :class => "btn" %>
-                  <% end %>
-                  <% if project.buttons.live != false %>
-                    <%= link_to project.buttons.live_btn || "See it live", project.buttons.live, :title => "See this project live", :class => "btn--outline" %>
-                  <% end %>
-                  <% if project.buttons.dribbble != false %>
-                    <%= link_to "See it on Dribbble", project.buttons.dribbble, :title => "See this project on Dribbble", :class => "btn--outline" %>
-                  <% end %>
-                  </p>
-                <% end %>
               </div>
             </div>
           </div>
@@ -61,6 +62,5 @@ priority: 0.9
           <% end %>
         --></div>
       </div>
-    </article>
   </main>
 </section>

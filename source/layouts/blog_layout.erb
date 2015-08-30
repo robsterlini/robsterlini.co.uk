@@ -1,8 +1,14 @@
 <% wrap_layout :layout do %>
-  <% t_name = ''; t_link = ''; current_article.tags.each do |tag, articles| %>
-    <% t_link = tag_path(tag); t_name = tag %>
-  <% end %>
-  <% localised_date = current_article.date.strftime("%b %e") %>
+  <%
+  t_name = ''
+  t_link = ''
+  current_article.tags.each do |tag, articles|
+    t_link = tag_path(tag)
+    t_name = tag
+  end
+  localised_date = current_article.date.strftime("%b %e")
+  formatted_date_categories = "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
+  %>
   <% if current_article.data.hero %>
     <% image_loc = "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}" %>
     <% content_for(:hero, current_article.data.hero); content_for(:hero_loc, image_loc) %>
@@ -12,7 +18,7 @@
       image_loc: image_loc,
       title: current_article.title,
       subtitle: current_article.data.description,
-      extra: "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
+      extra: formatted_date_categories
     } %>
   <% end %>
   <main class="" data-js="header-parent" id="main">
@@ -20,6 +26,7 @@
       <% if !current_article.data.hero %>
         <h1 data-js="page-header"><%= current_article.title %></h1>
         <p class="article__description"><%= current_article.data.description %></p>
+        <p class='small-caps'><time><%= formatted_date_categories %></time></p>
       <% end %>
       <% if current_article.data.tldr %>
         <aside class="article__tldr">
