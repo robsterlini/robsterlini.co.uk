@@ -1,0 +1,68 @@
+/**
+ * Tabs SCSS Partial
+ */
+
+
+/* ==|== Tabs =================
+  Navigation
+========================================== */
+
+.tabs__nav {
+  background: rgba($color-white,0.95);
+  box-shadow: rgba($color-black,0.1) 0 0 ($measure-unit / 2);
+  left: 0;
+  padding-left: $masthead-full;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  .js-screenleave + & {
+    position: fixed;
+    .tabs__nav__link {
+      padding: $measure-unit / 2 $measure-unit;
+    }
+  }
+  @include max-width($tp-masthead-icon) {
+    padding-left: $masthead-icon;
+  }
+  @include max-width($tp-masthead-hamburger) {
+    padding-left:0;
+  }
+}
+.tabs__nav__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.tabs__nav__item {
+  position: relative;
+}
+.tabs__nav__item--active {
+  &:after {
+    background: $color-link-primary;
+    bottom: 0;
+    content: '';
+    height: rem(2);
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+.tabs__nav__link {
+  display: block;
+  padding: $measure-unit;
+  transition: $timing cubic-bezier(#{$bezier-nice});
+  transition-property: color, padding;
+} 
+
+
+/* ==|== Tabs =================
+  Section
+========================================== */
+
+.tabs__section {
+  overflow: hidden;
+  padding-top: rem(100);
+}
