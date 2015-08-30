@@ -1,3 +1,12 @@
+/**
+ * Triathlon SCSS Partial
+ */
+
+
+/* ==|== Triathlon =================
+  Colour overrides
+========================================== */
+
 body.triathlon {
   main,
   .footer {
@@ -45,46 +54,12 @@ body.triathlon {
       }
     }
   }
-  .hero__header--alpha {
-    img {
-      margin-left: rem($measure * -5);
-      max-width: none;
-      width: calc(100% + #{rem($measure * 10)});
-      @include max-width($bp-mid) {
-        margin-left: rem($measure * -3);
-        width: calc(100% + #{rem($measure * 6)});
-      }
-      @include max-width($bp-small) {
-        margin-left: rem($measure * -2);
-        width: calc(100% + #{rem($measure * 4)});
-      }
-      @include max-width($bp-tiny) {
-        margin-left: rem($measure * -1);
-        width: calc(100% + #{rem($measure * 2)});
-      }
-    }
-    @include max-width($tp-masthead-hamburger) {
-      margin-top: 0;
+  .tabs__nav__item--active {
+    &:after {
+      background: $color-b-macmillan-2;
     }
   }
-  .hero__header--beta,
-  .btns {
-    position: relative;
-    z-index: 1;
-  }
-  .article__fixed-header {
-    background: none;
-    box-shadow: none;
-    opacity: 0;
-    text-align: right;
-    transform: none;
-    transition:all .25s cubic-bezier(#{$bezier-nice});
-    visibility: hidden;
-  }
-  .article__fixed-header--toggled {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
+}
 
 /* ==|== Triathlon =================
   Typography
@@ -97,6 +72,11 @@ body.triathlon {
     font-weight: normal;
   }
 }
+
+/* ==|== Triathlon =================
+  Hero
+========================================== */
+
 .hero {
   a[class^="triathlon__event--"] {
     color: $color-b-macmillan-2;

@@ -15,7 +15,11 @@ g.onScreenSetup = function() {
     revealImage:      "[data-js='lazy-load-image']",
     blogHeader:       "[data-js='header-parent']",
     blogMarker:       "[data-js='show-header']",
-    blogTitle:        "[data-js='page-header']"
+    blogTitle:        "[data-js='page-header']",
+    tabs: {
+      marker:         "[data-js='fix-tabs-to-top']",
+      navWrapper:     "[data-js='fixed-tabs']"
+    }
   };
 
   self.data = {
@@ -111,25 +115,43 @@ g.onScreenSetup = function() {
       blogHeader.className = 'article__fixed-header';
       blogHeader.dataset.js = 'fixed-header';
       blogHeader.innerHTML = blogHeaderHtml;
-      waypointMarker.className = 'visuallyhidden'
+      waypointMarker.className = 'visuallyhidden js-screenleave'
       waypointMarker.dataset.js = 'show-header'
+      waypointMarker.setAttribute("aria-hidden", "true");
       headerInsert.insertBefore(blogHeader, headerInsert.firstChild);
       headerInsert.insertBefore(waypointMarker, headerInsert.firstChild);
 
       var blogMarker = document.querySelector(self.selectors.blogMarker);
-      onScreen.addItem(blogMarker, {
+      if (blogMarker) {
+        onScreen.addItem(blogMarker, {
+          screen: {
+            top: '-10%'
+          },
+          disableScreenMove: true
+        });
+      }
+    };
+  };
+
+  self.setupTabs = function() {
+    var tabsMarker = document.querySelector(self.selectors.tabs.marker);
+    if (tabsMarker) {
+      addClass(tabsMarker, 'js-screenleave');
+      onScreen.addItem(tabsMarker, {
         screen: {
-          top: '-10%'
+          top: 0
         },
         disableScreenMove: true
       });
-    };
+    }
   };
 
   self.ready = function() {
     self.parallax();
     self.reveal();
     self.setupBlogHeader();
+    self.setupTabs();
+    onScreen.update();
   };
 
   self.ready();

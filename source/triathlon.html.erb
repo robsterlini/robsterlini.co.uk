@@ -1,6 +1,5 @@
 ---
 title: 2015 is all about fundraising for Macmillan
-nav: home
 description: I’ve made 2015 about doing endurance events, and pushing my limits… all in the name of raising as much as I can for Macmillan.
 hero: blog-the-london-triathlon.jpg
 donate_url: http://uk.virginmoneygiving.com/RobSterlini
@@ -23,42 +22,10 @@ no_notice: true
     subtitle: current_page.data.description,
     extra: "<p class='hero--triathlon__events' data-js='add-tri-event-clock'><strong class='sc'>The events</strong> #{events}</p><p class='btns'><a class='btn' href='#{current_page.data.donate_url}' title='Help me raise money for the amazing work Macmillan do'>Help Macmillan</a><a class='btn--outline' data-anchor href='#main' title='See how I’m doing it'>Read about what I’m doing</a></p><div class='hero__bg--triathlon'></div>"
   } %>
-  <%#<div class="article__fixed-header" data-js="fixed-header">
-  <a class='btn' href='<%= current_page.data.donate_url %#>' title='Help me raise money for the amazing work Macmillan do' data-ie="hide">Help Macmillan</a>
-  </div> %>
-  <main id="main"<%# data-js="header-parent"%>>
-    <div class="group" data-anchors>
-      <h2>Contents</h2>
-      <ul class="list--inline">
-        <li><a href="#a-bit-of-background" data-anchor>A bit of background</a></li><!--
-        --><li><a href="#why-macmillan" data-anchor>Why Macmillan?</a></li><!--
-        --><li><a href="#how-can-i-help" data-anchor>How can I help?</a></li><!--
-        --><li><a href="#what-am-i-doing" data-anchor>What am I doing?</a></li><!--
-        --><li><a href="#hows-training-going" data-anchor>How’s training going?</a></li><!--
-        --><li><a href="#thanks" data-anchor>Thanks</a></li>
-      </ul>
-      <h2 id="a-bit-of-background">A bit of background</h2>
-      <%= blog_image('/content/2015/02/macmillan-trisuit.jpg', 'Green’s definitely not my colour, and this trisuit is hella tight!', 'A quick Instagram selfie of me in my new trisuit', 'left') %>
-      <p>Late 2014 I decided that a triathlon sounded like a good idea, at the time it was a pipe dream, but after a bit of researching, and an impulse decision later I’d signed up for the London Triathlon in August 2015.</p>
-      <p>I’ve never done a triathlon before.</p>
-      <p>As part of the sign up process you’re asked if you’re fundraising for a specific charity, and it dawned on me that I could turn this journey of intrepidation into something that might (in some small way) affect someone else’s life for the better.</p>
-      <h2 id="why-macmillan" class="heading--clear">Why Macmillan?</h2>
-      <div class="image--right">
-        <%= partial "partials/svg/macmillan.svg" %>
-      </div>
-      <p>It’s estimated that <a href="http://www.macmillan.org.uk/Cancerinformation/Aboutcancer/Whogetscancer.aspx" title="Read about the facts on the Macmillan website">more than 1 in 3</a> people will develop cancer in their lifetime, chances are that you know someone that has battled, or is currently battling it.</p>
-      <p>The help Macmillan provide, and the support network that they’ve developed is second to none; whether it’s explaining proceedures to those with cancer, comforting and reassuring confused loved ones, or helping assess whether someone might need to go and see a doctor.</p>
-      <p>I’ve witnessed first hand the sensational work that Macmillan do every day, so couldn’t dream of a better charity to fundraise for&hellip; even if green isn’t my best look!</p>
-      <h2 id="how-can-i-help">How can I help?</h2>
-      <p>Fundraising is always a bit of an awkward one, but here’s it straight:</p>
-      <p><strong>I’d love it if you could donate anything you can towards my effort.</strong></p>
-      <p>No amount is too small. If you want to pick a specific triathlon and sponsor me by the mile, or by the number of times I cry as I struggle through <a href="#tough-mudder" title="Read about my Tough Mudder event I’ve got to come">Tough Mudder</a>.</p>
-      <p class="btns--center"><a class='btn' href='<%= current_page.data.donate_url %>' title='Help me raise money for the amazing work Macmillan do'>Give anything you can to Macmillan</a></p>
-      <p><strong>But!</strong> I know that sometimes it’s difficult to donate, and if you can’t, then don’t; instead I’d ask that you spread the word about the amazing work that Macmillan do, and have a read through <a href="http://www.macmillan.org.uk/" title="Visit the Macmillan website">their website</a> to see if you’re due a screening.</p>
-      <h3>Stretch goals</h3>
-      <p>Amazingly, I’ve surpassed the – what I thought unobtainable – goal of £1,000 of donations.</p>
-      <p>A huge thank you to <strong>everyone</strong> who donated, I still can’t quite believe it.</p>
-      <p>I’ve decided to extend the goal to £1,500 to see if I can push it even further than I thought possible. Any <a href="<%= current_page.data.donate_url %>" title="Help me raise money for the amazing work Macmillan do">further donations</a> would be amazing!</p>
+  <main id="main">
+    <%= partial "partials/tabs", :locals => { :tab_data => data.triathlon.tabbed_sections, :page_slug => "triathlon" } %>
+
+    <div class="group">
       <h2 id="what-am-i-doing">What am I doing?</h2>
       <p><span class="strike">Currently? <strong>Two triathlons</strong>, <strong>Tough Mudder UK</strong>, and <strong>water-only January</strong>, but I’ve got a few ballots waiting to come through, and a third triathlon in my sights.</span></p>
       <p><strong class="sc">Edit:</strong> the list of events has now been updated below with even more to take on!</p>
