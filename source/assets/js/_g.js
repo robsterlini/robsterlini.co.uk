@@ -22,6 +22,7 @@ g.partials = [
   // Page specific
   'cv',                 // Converted
   'triathlon',          // Converted
+  'strava',
 
   // Case studies
   'hotspurRelated',     // Converted

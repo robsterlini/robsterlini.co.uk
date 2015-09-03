@@ -16,10 +16,12 @@
   top: 0;
   width: 100%;
   z-index: 4;
-  .js-screenleave + & {
-    position: fixed;
-    .tabs__nav__link {
-      padding: $measure-unit / 2 $measure-unit;
+  @include min-width($bp-small) {
+    .js-screenleave + & {
+      position: fixed;
+      .tabs__nav__link {
+        padding: $measure-unit / 2 $measure-unit;
+      }
     }
   }
   @include max-width($tp-masthead-icon) {

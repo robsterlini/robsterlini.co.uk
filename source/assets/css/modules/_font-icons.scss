@@ -244,3 +244,12 @@ figcaption.ss-picture {
 .ss-bucket-tough-mudder:before {
   @extend .ss-bucket-marathon:before;
 }
+
+// Training
+
+.ss-triathlon-ride:before {
+  @extend .ss-bucket-triathlon:before;
+}
+.ss-triathlon-run:before {
+  @extend .ss-bucket-marathon:before;
+}

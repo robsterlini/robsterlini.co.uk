@@ -36,17 +36,6 @@ body.triathlon {
       border-color: $color-b-macmillan-1;
     }
   }
-  .triathlon__event--plx__right {
-    .btn {
-      color: $color-black;
-      @include hover {
-        color: $color-black;
-      }
-      @include active {
-        color: $color-black;
-      }
-    }
-  }
   .btn--outline {
     border-color: $color-b-macmillan-2;
     color: $color-b-macmillan-2;
@@ -85,6 +74,7 @@ body.triathlon {
     @extend %has-macmillan-type;
   }
 }
+.triathlon-strava__item,
 .triathlon__event--plx__left {
   h3 {
     @extend %has-macmillan-type;   
@@ -142,6 +132,12 @@ body.triathlon {
   a {
     @include active {
       color: $color-white !important;
+    }
+  }
+  .btn {
+    color: $color-black !important;
+    @include active {
+      color: $color-black !important;
     }
   }
 }
@@ -206,5 +202,17 @@ body.triathlon {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.triathlon-strava__item {
+  &:before {
+    font-size: rem(36);
+  }
+  h3 {
+    margin-top: 0;
+  }
+  strong {
+    display: block;
   }
 }

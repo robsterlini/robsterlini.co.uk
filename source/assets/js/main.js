@@ -12,6 +12,7 @@
 //= require _agePosts
 //= require _share
 //= require _triathlon
+//= require _strava
 //= require _caseStudyHotspur
 //= require _middleplate
 

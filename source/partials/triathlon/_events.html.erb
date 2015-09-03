@@ -1,4 +1,6 @@
-<h2>Events</h2>
+<div class="group">
+  <h2>Events</h2>
+</div>
 <% data.triathlon.events.each_with_index do |event, index|
   event_content = "<h3 id=\"#{event.slug}\">#{event.title}</h3>"
   event_content += "<p><em>#{event.full_date}</em></p>"
