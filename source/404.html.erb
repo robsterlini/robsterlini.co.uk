@@ -1,39 +1,18 @@
 ---
 title: Page not found
-description: Can’t find that one; it probably got lost in one of the many redesigns.
+description: Can’t find that one; it may have been misplaced, or it didn’t exist in the first place.
 hero: main.jpg
 no_footer: true
 no_masthead: true
 ---
 
 <section id="content" class="wrapper">
-  <%
-    hero_extra = "<ul class='list--large-icons'>"
-    data.pages.masthead.each do |nav|
-      if nav.home && nav.home.four_oh_four
-          hero_link =  "<h2 class='list--large-icons__title'>#{nav.home.title}</h2>"
-          hero_link += "<p>#{nav.home.text}</p>"
-          hero_link += "<p class='small-caps' data-ie='hide'>"
-          if nav.home.read_more
-            hero_link += "Read more<span class='visuallyhidden'> about #{nav.home.read_more}.</span>"
-          else
-            hero_link += "Go home"
-          end
-          hero_link += "</p>"
-          hero_extra += "<li class='list--large-icons__item ss-nav-#{nav.icon || nav.slug}'>"
-          hero_extra += link_to hero_link, nav.slug, :title => nav.alt, :class => "list--large-icons__link"
-          hero_extra += "</li>"
-      end
-    end
-    hero_extra += "</ul>"
-  %>
   <%= partial "partials/hero", locals: {
     image: "#{current_page.data.hero}",
     image_small: "main_600.jpg",
     image_loc: "#{hero_dir}404/",
-    title: "Four. Oh. Four.",
-    subtitle: "#{current_page.data.description} If you’re looking for something specific, <a href='/contact' title='Reach out'>get in touch</a>!",
-    extra: hero_extra
+    title: "Four, oh four.",
+    subtitle: "#{current_page.data.description} It’s probably best to #{link_to "start at the top", "index.html", :title => "Go back to the homepage"}, or #{link_to "get in touch", "contact.html", :title => "Reach out and get in touch if something is broken"} if something is clearly broken!"
     }
   %>
 </section>

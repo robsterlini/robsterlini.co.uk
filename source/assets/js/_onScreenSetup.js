@@ -13,7 +13,7 @@ g.onScreenSetup = function() {
     revealClass:      ".js--reveal",
     revealData:       "[data-reveal]",
     revealImage:      "[data-js='lazy-load-image']",
-    blogHeader:       "[data-js='header-parent']",
+    blogHeader:       "[data-header='parent']",
     blogMarker:       "[data-js='show-header']",
     blogTitle:        "[data-js='page-header']",
     tabs: {
@@ -31,7 +31,10 @@ g.onScreenSetup = function() {
     revealHide:     "js--hidden",
     revealShow:     "js--show",
     loaded:         "image--loaded",
-    parentLoaded:   "figure--loaded"
+    parentLoaded:   "figure--loaded",
+    tabs: {
+      fixed: 'tabs__nav--fixed'
+    }
   };
 
   self.prefixes = [
@@ -39,6 +42,10 @@ g.onScreenSetup = function() {
     'msTransform',
     'transform'
   ];
+
+  self.vars = {
+    tabFixed: false
+  };
 
   plxSelectors = false;
 
@@ -134,14 +141,31 @@ g.onScreenSetup = function() {
   };
 
   self.setupTabs = function() {
-    var tabsMarker = document.querySelector(self.selectors.tabs.marker);
+    var tabsMarker = document.querySelector(self.selectors.tabs.marker),
+      tabsNav = document.querySelector(self.selectors.tabs.navWrapper);
     if (tabsMarker) {
-      addClass(tabsMarker, 'js-screenleave');
+      // addClass(self.selectors.tabs.navWrapper, self.classes.tabs.fixed);
       onScreen.addItem(tabsMarker, {
         screen: {
           top: 0
         },
-        disableScreenMove: true
+        fireScreenMoveOffScreen: true,
+        onScreenMove: function(detail) {
+          var offset = detail.offset.top;
+          if (offset > 0) {
+            if (self.vars.tabFixed) {
+              self.vars.tabFixed = false;
+              removeClass(tabsNav, self.classes.tabs.fixed);
+              console.log('unfixed', self.classes.tabs.fixed);
+            }
+          } else {
+            if (!self.vars.tabFixed) {
+              self.vars.tabFixed = true;
+              addClass(tabsNav, self.classes.tabs.fixed);
+              console.log('fixed');
+            }
+          }
+        }
       });
     }
   };

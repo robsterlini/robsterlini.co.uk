@@ -9,20 +9,21 @@
       event_content += "<p>#{text}</p>"
     end
   end
-  event_content += "</div>"
   if event.complete
-    event_content += "<div class=\"triathlon__event--plx__right\"><blockquote2 class=\"blockquote--long2\">"
     event.complete.each_with_index do |text, index|
       event_content += "<p>#{index == 0 ? "<strong class='sc tri__event__complete'>Completed</strong> " : "" }#{text}</p>"
     end
-    event_blog = ""
     if event.complete_blog
-      event_blog = "<p class=\"btns--left\">#{link_to "Read about it in my journal", event.complete_blog, :class => "btn"}</p>"
+      event_content += "<p class=\"btns--left\">#{link_to "Read about it in my journal", event.complete_blog, :class => "btn"}</p>"
     end
-    event_content += "</blockquote2>#{event_blog}</div>"
     event_content = "<div class=\"group\"><div class=\"triathlon__event--plx__left\">#{event_content}</div></div>"
     if event.complete_image
-      event_content = "<div class=\"triathlon__event--plx\" data-plx=\"parent\"><div class=\"triathlon__event--plx__bg\" style=\"background-image: url(#{event.complete_image});\" data-plx=\"child\"></div><div class=\"triathlon__event--plx__content\">#{event_content}</div>"
+      event_content = partial("partials/hero", locals: {
+        image: event.complete_image,
+        image_small: event.complete_image,
+        image_loc: "",
+        extra: event_content
+      })
     end
   else
     event_content = "<div class=\"group\">#{event_content}</div>"

@@ -137,7 +137,7 @@ g.strava = function() {
     return +(Math.round(num + "e+"+dec)  + "e-"+dec);
   };
 
-  this.getActivities();
+  // this.getActivities();
 
   //   this.strava = function(opts) {
   //   var showStrava = this.getBooleanAttribute('show_strava');

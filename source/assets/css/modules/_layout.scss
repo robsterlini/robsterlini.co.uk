@@ -11,19 +11,15 @@
 }
 
 .wrapper {
+  background: $color-white;
   overflow: hidden;
-  width:100%;
-  // padding-bottom:rem(110);
   flex:1;
-}
-
-main {
-  background:$color-white;
   overflow: hidden;
   position: relative;
-  z-index:1;
   padding-bottom: $measure-unit * 3;
   padding-left: $masthead-full;
+  width: 100%;
+  z-index: 1;
   @include max-width($tp-masthead-icon) {
     padding-left: $masthead-icon;
   }
@@ -57,18 +53,23 @@ hr {
     margin-top: rem(32);
   }
   .list--large-icons__link {
-    color: $color-white;
+    color: $color-text;
     @include hover {
-      color: $color-link-reverse;
+      color: $color-link-primary;
     }
     .small-caps {
-      color: $color-link-reverse;
+      color: $color-link-primary;
     }
   }
-  main,
+  .wrapper,
   .error,
   .footer,
   [class^="global-notice--"] {
     padding-left: 0;
+  }
+}
+.page--no-footer {
+  .wrapper {
+    padding-bottom: 0;
   }
 }

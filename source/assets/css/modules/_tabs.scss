@@ -7,28 +7,29 @@
   Navigation
 ========================================== */
 
+.tabs__nav-parent {
+  position: relative;
+}
 .tabs__nav {
   background: rgba($color-white,0.95);
   box-shadow: rgba($color-black,0.1) 0 0 ($measure-unit / 2);
   left: 0;
-  padding-left: $masthead-full;
+  padding: 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 4;
-  @include min-width($bp-small) {
-    .js-screenleave + & {
-      position: fixed;
-      .tabs__nav__link {
-        padding: $measure-unit / 2 $measure-unit;
-      }
+}
+@include min-width($bp-small) {
+  .tabs__nav--fixed {
+    position: fixed;
+    padding-left: $masthead-full;
+    @include max-width($tp-masthead-icon) {
+      padding-left: $masthead-icon;
     }
-  }
-  @include max-width($tp-masthead-icon) {
-    padding-left: $masthead-icon;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding-left:0;
+    .tabs__nav__link {
+      padding: $measure-unit / 2 $measure-unit;
+    }
   }
 }
 .tabs__nav__list {
@@ -64,7 +65,7 @@
   Section
 ========================================== */
 
-.tabs__section {
+[class^="tabs__section--"] {
   overflow: hidden;
   padding-top: rem(100);
 }

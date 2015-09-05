@@ -6,7 +6,7 @@ donate_url: http://uk.virginmoneygiving.com/RobSterlini
 no_notice: true
 ---
 
-<section id="content" class="wrapper" data-page="home">
+<main id="content" class="wrapper" data-page="home">
   <%
     events_js = ''
     data.triathlon.events.each_with_index do |event, index|
@@ -22,7 +22,7 @@ no_notice: true
     subtitle: current_page.data.description,
     extra: "<p class='hero--triathlon__events' data-js='add-tri-event-clock'></p>"
   } %>
-  <main id="main">
+  <article class="tabs__nav-parent">
     <%= partial "partials/tabs", :locals => { :tab_data => data.triathlon.tabbed_sections, :page_slug => "triathlon" } %>
-  </main>
-</section>
+  </article>
+</main>

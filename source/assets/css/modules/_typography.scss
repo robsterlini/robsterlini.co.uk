@@ -115,15 +115,15 @@ h4 {
 	margin:em(8, 30) auto em(16, 30);
 }
 
-h5 {
-	@include font-size(24);
-	margin:em(12, 24) auto em(12, 24);
-}
+// h5 {
+// 	@include font-size(24);
+// 	margin:em(12, 24) auto em(12, 24);
+// }
 
-h6 {
-	@include font-size(20);
-	margin:em(10, 20) auto em(10, 20);
-}
+// h6 {
+// 	@include font-size(20);
+// 	margin:em(10, 20) auto em(10, 20);
+// }
 
 .heading--has-anchor {
 	text-indent:rem(-35);
@@ -161,6 +161,11 @@ h6 {
 }
 p {
 	@extend %paragraph;
+	.type & {
+		&:first-child {
+			margin-top: $measure-unit * 3;
+		}
+	}
 }
 
 .small-caps,

@@ -1,67 +1,28 @@
 .hero {
-  width:100%;
-  min-height: $measure-unit * 38;
-  min-height: 75vh;
-  padding:12% 0 0 $masthead-full;
-  background:$color-black;
-  text-shadow:rgba($color-black,0.2) 0 em(1) em(2);
+  background: $color-hero-bg;
   display: flex;
+  flex-direction: column;
+  width: 100%;
   z-index:1;
-  @include max-width($tp-masthead-icon) {
-    min-height: $measure-unit * 32;
-    padding:$measure-unit * 5 0 0 $masthead-icon;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding: $measure-unit * 2 0 0;
-  }
 }
-%hero__bg {
-  // opacity:0.15;
-  background-position: top center;
-  // filter: grayscale(50%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-  // &:before {
-  //   height:rem(100);
-  //   content:'';
-  //   @include cover(absolute);
-  //   background:linear-gradient(rgba($color-black,0.0001),$color-black);
-  // }
-  // @include max-width($bp-mid) {
-  //   max-height: $measure-unit * 52;
-  // }
-  // @include max-width($bp-small) {
-  //   max-height: $measure-unit * 46;
-  // }
-  // @include max-width($bp-tiny) {
-  //   max-height: $measure-unit * 38;
-  // }
+.hero__bg-wrap {
+  flex: 1;
+  min-height: calc(#{rem(200)} + 20vw);
 }
 .hero__bg {
-  @extend %hero__bg;
+  background-position: top center;
   left: 0;
   right: 0;
-  width: auto;
-  @include min-width($tp-masthead-hamburger) {
-    left: $masthead-icon;
-  }
-  @include min-width($tp-masthead-icon) {
-    left: $masthead-full;
-  }
-  .page--no-masthead & {
-    left: 0;
-  }
-}
-%hero-headers {
-  background: rgba($color-dark, 0.85);
-  background: linear-gradient(rgba($color-dark, 0.8), rgba($color-dark, 0.9));
 }
 .hero__headers {
-  @extend %hero-headers;
+  background: $color-hero-bg;
+  background: linear-gradient(lighten($color-hero-bg, 1%), $color-hero-bg);
   text-align: left;
   margin: auto auto 0 auto;
   z-index:1;
-  padding: $measure-unit 0;
+  padding: $measure-unit * 3 0 $measure-unit;
   position: relative;
-  color: $color-white;
+  // color: $color-white;
   height: auto;
   width: 100%;
   .btns {
@@ -85,29 +46,6 @@
   }
   @include max-width($bp-tiny) {
     @include font-size(20);
-  }
-}
-@include min-width($bp-mid) {
-  %hero__headers__section {
-    display: inline-block;
-    vertical-align: top;
-  }
-  %hero__headers__left {
-    @extend %hero__headers__section;
-    margin-right: $measure-unit * 2;
-    width: calc(33.33% - #{$measure-unit});
-    width: calc(#{$layout-max-width-suffix / 2} - #{$measure-unit});
-  }
-  %hero__headers__right {
-    @extend %hero__headers__section;
-    padding-top: rem(18);
-    width: calc(100% - #{$layout-max-width-suffix / 2} - #{$measure-unit});
-  }
-  .hero__headers__title {
-    @extend %hero__headers__left;
-  }
-  .hero__headers__excerpt {
-    @extend %hero__headers__right;
   }
 }
 

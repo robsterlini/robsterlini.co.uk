@@ -1,59 +1,3 @@
-
-.portfolio-featured__item {
-  background: $color-black;
-  color: $color-white;
-  display: flex;
-  min-height: 66vh;
-  padding: $measure-unit * 4 0 0;
-  img {
-    border-radius: 0;
-  } 
-  @include max-width($bp-mid) {
-    padding:$measure-unit * 2 0 $measure-unit;
-  }
-}
-%portfolio-featured__bg {
-  background-position: center top;
-}
-.portfolio-featured__bg {
-  @extend %hero__bg;
-  @extend %portfolio-featured__bg;
-  
-}
-.portfolio-featured__copy {
-  @extend %hero-headers;
-  margin: auto auto 0;
-  padding: $measure-unit 0;
-  position: relative;
-  width: 100%;
-}
-.portfolio__copy {
-  width:calc(100% - #{rem(400)});
-  vertical-align: middle;
-  display: inline-block;
-  h2 {
-    padding-top:rem(10);
-    padding-left:rem(20);
-  }
-  p {
-    padding-left:rem(20);
-  }
-  .btns {
-    padding-left:rem(10);
-  }
-  @include max-width($bp-large) {
-    width:calc(100% - #{rem(300)});
-  }
-  @include max-width($bp-mid) {
-    width:100%;
-    display: block;
-    h2,
-    p,
-    .btns {
-      padding-left:0;
-    }
-  }
-}
 .browser-window {
   display: inline-block;
   width: rem(400);
@@ -80,6 +24,13 @@
     font-size:rem(25);
     letter-spacing:rem(-5);
   }
+  img {
+    border-radius: 0;
+  }
+}
+.browser-window--portfolio {
+  display: block;
+  margin: $measure-unit * -12 auto 0;
 }
 .browser-window__overflow {
   overflow: auto;

@@ -1,33 +1,23 @@
-<div class="hero" data-plx="parent">
-  <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<%= image_small || image %>" data-location="<%= image_loc %>">
-  </div>
+<section class="hero">
+  <% if locals.has_key? :image %>
+    <% if image != false %>
+      <div class="hero__bg-wrap" data-plx="parent">
+        <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<%= image_small || image %>" data-location="<%= image_loc %>">
+        </div>
+      </div>
+    <% end %>
+  <% end %>
   <div class="hero__headers" data-js="header-to-offset">
     <div class="group">
-      <% set_layout = true %>
-      <% if locals.has_key? :has_layout %>
-        <% if locals[:has_layout] == false %>
-          <% set_layout = false %>
-        <% end %>
+      <% if locals.has_key? :title %>
+        <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
       <% end %>
-      <% if set_layout %>
-        <div class="hero__headers__title">
+      <% if locals.has_key? :subtitle %>
+        <h2 class="hero__header--beta"><%= subtitle %></h2>
       <% end %>
-        <% if locals.has_key? :title %>
-          <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
-        <% end %>
-      <% if set_layout %>
-        </div><!--
-        --><div class="hero__headers__excerpt">
-      <% end %>
-        <% if locals.has_key? :subtitle %>
-          <h2 class="hero__header--beta"><%= subtitle %></h2>
-        <% end %>
-        <% if locals.has_key? :extra %>
-          <%= extra %>
-        <% end %>
-        <% if set_layout %>
-      </div>
+      <% if locals.has_key? :extra %>
+        <%= extra %>
       <% end %>
     </div>
   </div>
-</div>
+</section>

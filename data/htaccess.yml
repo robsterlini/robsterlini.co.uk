@@ -8,10 +8,12 @@ redirect:
     /youtube: /journal/youtube
     /yt: /journal/youtube
     /tri: /triathlon
-    /testimonials: /process#testimonials
+    /testimonials: /portfolio
+    /process: /portfolio
     /projects: /portfolio
     /work: /portfolio
-    /about-me: /about
+    /about-me: /
+    /about: /
     /macmillan: /triathlon
     /donate: /triathlon
     /food: /food-diary

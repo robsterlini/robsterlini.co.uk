@@ -11,7 +11,7 @@
 </div>
 <% tab_data.each_with_index do |tab, index| %>
   <% slug = tab.slug || tab.title.to_slug %>
-  <div class="tabs__section" id="<%= slug %>" data-tab="<%= slug %>">
+  <div class="tabs__section--<%= slug %>" id="<%= slug %>" data-tab="<%= slug %>">
     <% if tab.partial %>
       <%= partial "partials/#{tab.partial}" %>
     <% else %>
