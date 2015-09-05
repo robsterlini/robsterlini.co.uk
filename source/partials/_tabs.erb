@@ -3,15 +3,15 @@
   <ul class="tabs__nav__list group sc">
     <% tab_data.each_with_index do |tab, index| %>
       <% slug = tab.slug || tab.title.to_slug %>
-      <li class="tabs__nav__item<% if index == 0 %> tabs__nav__item--active<% end %>">
-        <a href="#<%= slug %>" class="tabs__nav__link"><%= tab.title %></a>
+      <li class="tabs__nav__item">
+        <a href="#<%= slug %>" class="tabs__nav__link<% if index == 0 %> tabs__nav__link--active<% end %>" data-js="toggle-tab"><%= tab.title %></a>
       </li>
     <% end %>
   </ul>
 </div>
 <% tab_data.each_with_index do |tab, index| %>
   <% slug = tab.slug || tab.title.to_slug %>
-  <div class="tabs__section--<%= slug %>" id="<%= slug %>" data-tab="<%= slug %>">
+  <div class="tabs__section tabs__section--<%= slug %>" id="<%= slug %>" data-tab="<%= slug %>">
     <% if tab.partial %>
       <%= partial "partials/#{tab.partial}" %>
     <% else %>

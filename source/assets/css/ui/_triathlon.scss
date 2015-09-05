@@ -37,9 +37,20 @@ body.triathlon {
       color: $color-b-macmillan-1;
     }
   }
-  .tabs__nav__item--active {
+  .tabs__nav__link--active {
     &:after {
       background: $color-b-macmillan-2;
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        background: $color-b-macmillan-1;
+      }
+    }
+    &:active {
+      &:after {
+        background: $color-black;
+      }
     }
   }
 }
@@ -69,17 +80,6 @@ body.triathlon {
   Hero
 ========================================== */
 
-.hero {
-  a[class^="triathlon__event--"] {
-    color: $color-b-macmillan-2;
-    @include hover {
-      color: $color-b-macmillan-1;
-    }
-    @include active {
-      color: $color-white;
-    }
-  }
-}
 .hero--triathlon__events {
   margin-bottom: $measure-unit;
   .sc {

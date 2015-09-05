@@ -156,13 +156,11 @@ g.onScreenSetup = function() {
             if (self.vars.tabFixed) {
               self.vars.tabFixed = false;
               removeClass(tabsNav, self.classes.tabs.fixed);
-              console.log('unfixed', self.classes.tabs.fixed);
             }
           } else {
             if (!self.vars.tabFixed) {
               self.vars.tabFixed = true;
               addClass(tabsNav, self.classes.tabs.fixed);
-              console.log('fixed');
             }
           }
         }

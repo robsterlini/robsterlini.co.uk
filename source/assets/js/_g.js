@@ -18,6 +18,7 @@ g.partials = [
   'loadHero',           // Converted
   'share',              // Converted
   'strikethrough',      // Converted
+  'tabs',
 
   // Page specific
   'cv',                 // Converted

@@ -9,6 +9,7 @@
 
 .tabs__nav-parent {
   position: relative;
+  // min-height: 100vh;
 }
 .tabs__nav {
   background: rgba($color-white,0.95);
@@ -42,22 +43,39 @@
 .tabs__nav__item {
   position: relative;
 }
-.tabs__nav__item--active {
+.tabs__nav__link {
+  display: block;
+  padding: $measure-unit;
+  transition: $timing cubic-bezier(#{$bezier-nice});
+  transition-property: color, padding;
   &:after {
     background: $color-link-primary;
     bottom: 0;
     content: '';
     height: rem(2);
     left: 0;
+    opacity: 0;
     position: absolute;
+    transition: background $timing cubic-bezier(#{$bezier-nice});
+    transition-property: background, opacity;
     width: 100%;
   }
-}
-.tabs__nav__link {
-  display: block;
-  padding: $measure-unit;
-  transition: $timing cubic-bezier(#{$bezier-nice});
-  transition-property: color, padding;
+  &--active {
+    &:after {
+      opacity: 1;
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        background: $color-link-primary-hover;
+      }
+    }
+    &:active {
+      &:after {
+        background: $color-link-primary-active;
+      }
+    }
+  }
 } 
 
 
@@ -65,7 +83,10 @@
   Section
 ========================================== */
 
-[class^="tabs__section--"] {
+[class*="tabs__section--"] {
   overflow: hidden;
   padding-top: rem(100);
+}
+.tabs__section--hidden {
+  display: none;
 }
