@@ -48,31 +48,33 @@
   padding: $measure-unit;
   transition: $timing cubic-bezier(#{$bezier-nice});
   transition-property: color, padding;
-  &:after {
-    background: $color-link-primary;
-    bottom: 0;
-    content: '';
-    height: rem(2);
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    transition: background $timing cubic-bezier(#{$bezier-nice});
-    transition-property: background, opacity;
-    width: 100%;
-  }
-  &--active {
+  @include min-width($bp-small) {
     &:after {
-      opacity: 1;
+      background: $color-link-primary;
+      bottom: 0;
+      content: '';
+      height: rem(2);
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: background $timing cubic-bezier(#{$bezier-nice});
+      transition-property: background, opacity;
+      width: 100%;
     }
-    &:hover,
-    &:focus {
+    &--active {
       &:after {
-        background: $color-link-primary-hover;
+        opacity: 1;
       }
-    }
-    &:active {
-      &:after {
-        background: $color-link-primary-active;
+      &:hover,
+      &:focus {
+        &:after {
+          background: $color-link-primary-hover;
+        }
+      }
+      &:active {
+        &:after {
+          background: $color-link-primary-active;
+        }
       }
     }
   }
@@ -83,14 +85,20 @@
   Section
 ========================================== */
 
+
 [class*="tabs__section--"] {
   overflow: hidden;
-  padding-top: $measure-unit * 5;
+  padding-top: $measure-unit * 2;
   transition: opacity $timing;
+  @include min-width($bp-small) {
+    padding-top: $measure-unit * 5;
+  }
 }
-.tabs__section--hidden {
-  display: none;
-}
-.tabs__section--faded {
-  opacity: 0;
+@include min-width($bp-small) {
+  .tabs__section--hidden {
+    display: none;
+  }
+  .tabs__section--faded {
+    opacity: 0;
+  }
 }

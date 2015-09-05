@@ -26,36 +26,41 @@ g.tabs = function() {
 
   self.addTabClick = function(that) {
     that.onclick = function() {
-      if (!hasClass(that, self.classes.active)) {
-        var currentTab = document.querySelector('.' + self.classes.active),
-          sections = document.querySelectorAll('.' + self.classes.section),
-          sectionsLength = sections.length;
-        removeClass(currentTab, self.classes.active);
-        addClass(that, self.classes.active);
-        if (sectionsLength) {
-          for (var i = 0, l = sectionsLength; i < l; i++) {
-            if (!hasClass(sections[i], self.classes.hidden)) {
-              activeSection = sections[i];
+      if (window.innerWidth < 768) {
+        scrollToAnchor(this.getAttribute('href').replace('#', ''), 600);
+      }
+      else {
+        if (!hasClass(that, self.classes.active)) {
+          var currentTab = document.querySelector('.' + self.classes.active),
+            sections = document.querySelectorAll('.' + self.classes.section),
+            sectionsLength = sections.length;
+          removeClass(currentTab, self.classes.active);
+          addClass(that, self.classes.active);
+          if (sectionsLength) {
+            for (var i = 0, l = sectionsLength; i < l; i++) {
+              if (!hasClass(sections[i], self.classes.hidden)) {
+                activeSection = sections[i];
+              }
             }
-          }
-          
-          var tabId = that.getAttribute('href').replace('#', ''),
-            newTab = document.getElementById(tabId);
-          scrollToAnchor('tabs-nav', 600);
-          addClass(activeSection, self.classes.faded);
-          addClass(newTab, self.classes.faded);
-          setTimeout(function() {
-            addClass(activeSection, self.classes.hidden);
-            removeClass(newTab, self.classes.hidden);
+            
+            var tabId = that.getAttribute('href').replace('#', ''),
+              newTab = document.getElementById(tabId);
+            scrollToAnchor('tabs-nav', 600);
+            addClass(activeSection, self.classes.faded);
+            addClass(newTab, self.classes.faded);
             setTimeout(function() {
-              removeClass(newTab, self.classes.faded);
-            }, 300);
-          }, 600);
-          
+              addClass(activeSection, self.classes.hidden);
+              removeClass(newTab, self.classes.hidden);
+              setTimeout(function() {
+                removeClass(newTab, self.classes.faded);
+              }, 300);
+            }, 600);
+            
+          }
         }
       }
       return false;
-    };
+    }
   };
 
   self.hideTabInit = function(that, active) {
