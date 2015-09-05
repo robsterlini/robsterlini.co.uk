@@ -32,6 +32,9 @@
   .btn--outline {
     margin: rem(5) rem(20) rem(5) 0;
   }
+  .portfolio & {
+    padding-bottom: $measure-unit * 3;
+  }
 }
 .hero__header--alpha {
   margin:rem(12) auto rem(12);

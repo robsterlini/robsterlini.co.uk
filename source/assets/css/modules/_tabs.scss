@@ -9,7 +9,7 @@
 
 .tabs__nav-parent {
   position: relative;
-  // min-height: 100vh;
+  min-height: 100vh;
 }
 .tabs__nav {
   background: rgba($color-white,0.95);
@@ -85,8 +85,12 @@
 
 [class*="tabs__section--"] {
   overflow: hidden;
-  padding-top: rem(100);
+  padding-top: $measure-unit * 5;
+  transition: opacity $timing;
 }
 .tabs__section--hidden {
   display: none;
+}
+.tabs__section--faded {
+  opacity: 0;
 }

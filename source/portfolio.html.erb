@@ -26,10 +26,10 @@ priority: 0.9
         project_buttons += link_to(project.buttons.live_btn || "See it live", project.buttons.live, :title => "See this project live", :class => "btn--outline")
       end
       if project.buttons.dribbble != false
-            project_buttons == link_to("See it on Dribbble", project.buttons.dribbble, :title => "See this project on Dribbble", :class => "btn--outline")
-          end
-          project_buttons += "</p>"
-        end
+        project_buttons += link_to("See it on Dribbble", project.buttons.dribbble, :title => "See this project on Dribbble", :class => "btn--outline")
+      end
+      project_buttons += "</p>"
+    end
         project_copy = "<div class=\"browser-window browser-window--portfolio\"><div class=\"browser-window__overflow\">#{project_image}</div></div>"
         project_copy += "<h2>#{project.name}</h2>"
         project_tech = project.tech ? " • #{project.tech}" : ""

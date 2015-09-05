@@ -17,6 +17,7 @@ g.tabs = function() {
   self.classes = {
     active: 'tabs__nav__link--active',
     hidden: 'tabs__section--hidden',
+    faded:  'tabs__section--faded',
     section: 'tabs__section'
   };
 
@@ -25,22 +26,33 @@ g.tabs = function() {
 
   self.addTabClick = function(that) {
     that.onclick = function() {
-      // var parent = this.parentElement;
       if (!hasClass(that, self.classes.active)) {
-        var currentTab = document.querySelector('.' + self.classes.active);
+        var currentTab = document.querySelector('.' + self.classes.active),
+          sections = document.querySelectorAll('.' + self.classes.section),
+          sectionsLength = sections.length;
         removeClass(currentTab, self.classes.active);
         addClass(that, self.classes.active);
-        var sections = document.querySelectorAll('.' + self.classes.section),
-          sectionsLength = sections.length;
         if (sectionsLength) {
           for (var i = 0, l = sectionsLength; i < l; i++) {
-            addClass(sections[i], self.classes.hidden);
+            if (!hasClass(sections[i], self.classes.hidden)) {
+              activeSection = sections[i];
+            }
           }
+          
+          var tabId = that.getAttribute('href').replace('#', ''),
+            newTab = document.getElementById(tabId);
+          scrollToAnchor('tabs-nav', 600);
+          addClass(activeSection, self.classes.faded);
+          addClass(newTab, self.classes.faded);
+          setTimeout(function() {
+            addClass(activeSection, self.classes.hidden);
+            removeClass(newTab, self.classes.hidden);
+            setTimeout(function() {
+              removeClass(newTab, self.classes.faded);
+            }, 300);
+          }, 600);
+          
         }
-        var tabId = that.getAttribute('href').replace('#', ''),
-          newTab = document.getElementById(tabId);
-        removeClass(newTab, self.classes.hidden);
-        console.log(sectionsLength);
       }
       return false;
     };

@@ -16,6 +16,7 @@ g.strava = function() {
     callback: "populateData",
     data: null
   }
+
   var url = 'https://www.strava.com/api/v3/athlete/activities?per_page=' + self.dataSet.total + '&access_token=' + self.dataSet.token + '&callback=' + self.dataSet.callback
 
   var $jsonp = (function(){
@@ -49,30 +50,59 @@ g.strava = function() {
   })();
 
   this.getActivities = function() {
-    $jsonp.send(url, {
-      callbackName: self.dataSet.callback,
-      onSuccess: function(json){
-        self.dataSet.data = json;
-        self.populateActivities(json);
-      },
-      onTimeout: function(){
-        console.log('timeout!');
-      },
-      timeout: 5
-    });
+    var stravaContainer = document.querySelectorAll(self.selectors.parent);
+    if (stravaContainer.length) {
+      $jsonp.send(url, {
+        callbackName: self.dataSet.callback,
+        onSuccess: function(json){
+          self.dataSet.data = json;
+          self.populateActivities(json);
+        },
+        onTimeout: function(){
+          console.log('timeout!');
+        },
+        timeout: 5
+      });
+    }
   };
 
   self.populateActivities = function(data) {
-    var stravaList = ""
+    var stravaList = "",
+      first = true,
       dataLength = data.length;
     for (var i = 0; i < dataLength; i++) {
-      stravaList += self.createActivity(data[i]);
+      activity = self.createActivity(data[i]);
+      if (i % 6 == 0) {
+        activity = '<div class="strava__section' + (!first ? ' strava__section--hidden' : '') + '">' + activity;
+        if (first) {
+          first = false;
+        } else {
+          activity = '</div>' + activity;
+        }
+      }
+      stravaList += activity;
     }
-    document.getElementById("myDiv").innerHTML = stravaList
+    if (!first) {
+      stravaList += "</div>";
+    }
+    document.querySelector(self.selectors.parent).innerHTML = stravaList;
+    var seeMoreBtn = document.querySelector('[data-js="see-more-strava"]');
+    seeMoreBtn.innerHTML = 'Show 6 more';
+    seeMoreBtn.addEventListener("click", function(e) {
+      var hiddenSections = document.querySelectorAll('.strava__section--hidden');
+      if (hiddenSections.length) {
+        removeClass(hiddenSections[0], 'strava__section--hidden');
+        if (hiddenSections.length <= 1) {
+          this.innerHTML = 'See all activities on Strava';
+        }
+        e.preventDefault();
+      }
+      
+    });
   };
 
   self.createActivity = function(activity) {
-    console.log(activity);
+    // console.log(activity);
     var monthNames = [
       "January",
       "February",
@@ -137,7 +167,7 @@ g.strava = function() {
     return +(Math.round(num + "e+"+dec)  + "e-"+dec);
   };
 
-  // this.getActivities();
+  this.getActivities();
 
   //   this.strava = function(opts) {
   //   var showStrava = this.getBooleanAttribute('show_strava');

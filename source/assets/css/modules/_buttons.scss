@@ -141,16 +141,16 @@
 		max-width:rem(225);
 	}
   // .hero &,
-  .portfolio-featured__item & {
-    color:$color-black;
-    background-color:$color-link-reverse;
-    border-color:$color-link-reverse;
-    @include hover {
-      color:$color-black;
-      background:$color-link-reverse-hover;
-      border-color:$color-link-reverse-hover;
-    }
-  }
+  // .portfolio-featured__item & {
+  //   color:$color-black;
+  //   background-color:$color-link-reverse;
+  //   border-color:$color-link-reverse;
+  //   @include hover {
+  //     color:$color-black;
+  //     background:$color-link-reverse-hover;
+  //     border-color:$color-link-reverse-hover;
+  //   }
+  // }
 }
 .btn--outline {
 	@extend %btn;
@@ -158,15 +158,15 @@
 		color:$color-link-primary-hover;
 		border-color:$color-link-primary-hover;
 	}
-  .hero &,
-  .portfolio-featured__item & {
-    color:$color-link-reverse;
-    border-color:$color-link-reverse;
-    @include hover {
-      color:$color-link-reverse-hover;
-      border-color:$color-link-reverse-hover;
-    }
-  }
+  // .hero &,
+  // .portfolio-featured__item & {
+  //   color:$color-link-reverse;
+  //   border-color:$color-link-reverse;
+  //   @include hover {
+  //     color:$color-link-reverse-hover;
+  //     border-color:$color-link-reverse-hover;
+  //   }
+  // }
 }
 .btn--icon {
 	padding-left: rem(50);
