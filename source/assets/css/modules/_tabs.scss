@@ -8,8 +8,9 @@
 ========================================== */
 
 .tabs__nav-parent {
+  overflow: hidden;
   position: relative;
-  min-height: 100vh;
+  transition: height $timing;
 }
 .tabs__nav {
   background: rgba($color-white,0.95);
@@ -95,10 +96,35 @@
   }
 }
 @include min-width($bp-small) {
-  .tabs__section--hidden {
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+      transform: none;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-5%);
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateX(5%);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  [data-tab-show="hidden"] {
     display: none;
   }
-  .tabs__section--faded {
-    opacity: 0;
+  .tabs__section {
+    &--fade-out {
+      animation: fade-out $timing both;
+    }
+    &--fade-in {
+      animation: fade-in $timing both;
+    }
   }
 }
