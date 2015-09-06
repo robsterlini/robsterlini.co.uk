@@ -88,12 +88,14 @@ g.strava = function() {
     document.querySelector(self.selectors.parent).innerHTML = stravaList;
     var seeMoreBtn = document.querySelector('[data-js="see-more-strava"]');
     seeMoreBtn.innerHTML = 'Show 6 more';
+    removeClass(seeMoreBtn, 'btn--icon ss-contact-strava');
     seeMoreBtn.addEventListener("click", function(e) {
       var hiddenSections = document.querySelectorAll('.strava__section--hidden');
       if (hiddenSections.length) {
         removeClass(hiddenSections[0], 'strava__section--hidden');
         if (hiddenSections.length <= 1) {
           this.innerHTML = 'See all activities on Strava';
+          addClass(this, 'btn--icon ss-contact-strava');
         }
         e.preventDefault();
       }
