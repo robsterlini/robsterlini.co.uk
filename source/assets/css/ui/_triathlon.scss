@@ -62,12 +62,33 @@ body.triathlon {
 %has-macmillan-type {
   font-family: "macmillan", $font-stack-regular;
   font-weight: normal;
+  line-height: 1;
 }
 body.triathlon {
   h1,
-  article h2 {
+  article h2,
+  article h3 {
     color: $color-b-macmillan-1;
     @extend %has-macmillan-type;
+  }
+  article h2 {
+    @include font-size(42);
+    margin: $measure-unit * 4 auto $measure-unit * 2;
+    @include max-width($bp-small) {
+      @include font-size(38);
+    }
+    @include max-width($bp-tiny) {
+      @include font-size(32);
+    }
+  }
+  article h3 {
+    @include font-size(32);
+    @include max-width($bp-small) {
+      @include font-size(28);
+    }
+    @include max-width($bp-tiny) {
+      @include font-size(24);
+    }
   }
 }
 .triathlon-strava__item {
