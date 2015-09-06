@@ -78,6 +78,8 @@ g.tabs = function() {
               // removeClass(newTab, self.classes.hidden);
               addClass(newTab, self.classes.fadeIn);
               newTab.setAttribute('data-tab-show', 'visible');
+
+              parent.style.height = 'auto';
               setTimeout(function() {
                 removeClass(newTab, self.classes.fadeIn);
               }, 250);
