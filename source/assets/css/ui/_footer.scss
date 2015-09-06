@@ -1,6 +1,7 @@
 .footer {
   backface-visibility: hidden;
-  color: $color-accent;
+  background: $color-footer-bg;
+  color: $color-footer-text;
   overflow: hidden;
   margin-top: 0;
   padding:$measure-unit * 4 0 $measure-unit * 2 $masthead-full;

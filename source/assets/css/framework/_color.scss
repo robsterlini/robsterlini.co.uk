@@ -39,7 +39,11 @@ $color-strikethrough: $color-accent;
 $color-background: $color-white;
 $color-text: #333;
 $color-headers: #444;
+
 $color-hero-bg: darken($color-white, 3.5%);
+
+$color-footer-bg: $color-hero-bg;
+$color-footer-text: lighten($color-text, 15%);
 
 /* ==|== Colors =================
    Links
