@@ -1,22 +1,15 @@
 body.contact {
-  .list--large-icons {
-    display: flex;
-  }
-  .list--large-icons__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    &:before {
-      margin-left: 0;
-    }
-  }
-  .list--large-icons__top {
-    flex: 1;
-  }
-  @include max-width($bp-mid) {
-    .list--large-icons,
+  @include min-width($bp-small) {
     .list--large-icons__item {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:before {
+        margin-left: 0;
+      }
+    }
+    .list--large-icons__top {
+      flex: 1;
     }
   }
 }

@@ -1,5 +1,16 @@
 ########
 
+tabbed_sections:
+    -   title: "A few facts"
+        partial: "about/_facts"
+    -   title: "Bucket list"
+        partial: "about/_bucket"
+    # -   title: "The events"
+    #     partial: "triathlon/_events"
+    # -   title: "2014"
+    # -   title: "2015"
+    # -   title: "photos"
+
 facts:
 
 ##

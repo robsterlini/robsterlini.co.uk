@@ -4,7 +4,7 @@ nav: contact
 description: So you wanna get in touch, eh? Here’s how&hellip;
 ---
 
-<main id="content" class="wrapper" data-page="home">
+<main id="content" class="wrapper">
   <%= partial "partials/hero", locals: {
     title: current_page.data.title,
     subtitle: current_page.data.description
@@ -12,7 +12,7 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
   <article class="type group">
     <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <%= link_to "in my journal", "/journal/youtube/", :title => "Read about why I don’t work on YouTube anymore" %>.</p>
     <p>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
-    <div class="list--large-icons">
+    <div class="list--large-icons list--large-icons--third">
       <!--<% data.contact.contact.each do |contact| %>
       --><div class="list--large-icons__item ss-contact-<%= contact.slug %>">
         <div class="list--large-icons__top">

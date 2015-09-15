@@ -73,11 +73,11 @@ g.strava = function() {
     for (var i = 0; i < dataLength; i++) {
       activity = self.createActivity(data[i]);
       if (i % 6 == 0) {
-        activity = '<div class="strava__section' + (!first ? ' strava__section--hidden' : '') + '">' + activity;
+        activity = '<ul class="strava__section list--large-icons list--large-icons--third' + (!first ? ' strava__section--hidden' : '') + '">' + activity;
         if (first) {
           first = false;
         } else {
-          activity = '</div>' + activity;
+          activity = '</ul>' + activity;
         }
       }
       stravaList += activity;
@@ -122,12 +122,14 @@ g.strava = function() {
       date = new Date(activity.start_date_local),
       currentDate = new Date(),
       formattedDate = self.rationaliseDigit(date.getDate()) + ' ' + monthNames[date.getMonth()].substring(0, 3) + (date.getFullYear() < currentDate.getFullYear() ? ' ' + date.getFullYear().toString().substring(2, 4) : '');
-    str =   '<a href="https://strava.com/activities/' + activity.id + '" class="list--large-icons__item triathlon-strava__item ss-triathlon-' + activity['type'].toLowerCase() + '">';
+    str =   '<li class="list--large-icons__item">'
+    str +=  '<a href="https://strava.com/activities/' + activity.id + '" class="list--large-icons__item triathlon-strava__item ss-triathlon-' + activity['type'].toLowerCase() + '">';
     str +=    '<h3>' + activity['name'] + '</h3>';
     str +=    '<p><strong class="sc">' + formattedDate + '</strong> ';
     str +=    self.getDistance(activity.distance);
     str +=    ' in ' + self.getDuration(activity.elapsed_time) + '</p>';
     str +=  '</a>';
+    str +=  '</li>';
     return str;
   } 
 

@@ -163,7 +163,9 @@ p {
 	@extend %paragraph;
 	.type & {
 		&:first-child {
-			margin-top: $measure-unit * 3;
+			&:not(.btns--left) {
+				margin-top: $measure-unit * 3;
+			}
 		}
 	}
 }

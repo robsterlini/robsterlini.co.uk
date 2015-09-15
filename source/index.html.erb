@@ -11,7 +11,8 @@ priority: 1.0
 
 <main id="content" class="wrapper" data-page="home">
   <%
-    hero_extra = "<p>I work for <a href='http://fueled.com' title='Visit the Fueled website'>Fueled</a>, but take on freelance projects that speak to me! Oh, and I’m raising money for Macmillan by competing in a whole bunch of crazy events throughout 2015. #{link_to "Read and donate?", "triathlon.html", :title => "Read about my fundraising plans here"} You know you want to!</p>"
+    # hero_extra = "<p>I work for <a href='http://fueled.com' title='Visit the Fueled website'>Fueled</a>, but take on freelance projects that speak to me! Oh, and I’m raising money for Macmillan by competing in a whole bunch of crazy events throughout 2015. #{link_to "Read and donate?", "triathlon.html", :title => "Read about my fundraising plans here"} You know you want to!</p>"
+    hero_extra = ""
     hero_extra += "<ul class='list--large-icons'>"
     data.pages.masthead.each do |nav|
       if nav.home && nav.slug != "/index.html"
@@ -30,7 +31,8 @@ priority: 1.0
     image_small: current_page.data.hero_small,
     image_loc: hero_dir,
     title: "Hi I’m Rob Sterlini",
-    subtitle: current_page.data.description,
+    subtitle: "I’m a web designer at #{link_to "Fueled", "http://fueled.com", :title => "Visit Fueled’s website"} with a love for gorgeous typography, delicious interaction, and attention to&nbsp;detail.",
+    split: true,
     extra: hero_extra
     }
   %>

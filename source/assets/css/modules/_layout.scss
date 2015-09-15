@@ -41,17 +41,6 @@ hr {
 }
 
 .page--no-masthead {
-  .hero {
-    min-height: 100vh;
-    padding: 0;
-  }
-  .hero__headers {
-    padding: $measure-unit * 4 0;
-  }
-  .list--large-icons {
-    max-width: none;
-    margin-top: rem(32);
-  }
   .list--large-icons__link {
     color: $color-text;
     @include hover {

@@ -1,3 +1,11 @@
+@mixin hero-split($bp: $tp-split-hero) {
+  .hero--split & {
+    @include min-width($bp) {
+      @content;
+    }
+  }
+}
+
 .hero {
   background: $color-hero-bg;
   display: flex;
@@ -5,9 +13,21 @@
   width: 100%;
   z-index:1;
 }
+.hero--split {
+  @include min-width($tp-split-hero) {
+    flex-direction: row;
+  }
+}
 .hero__bg-wrap {
   flex: 1;
   min-height: calc(#{rem(200)} + 20vw);
+  @include hero-split {
+    min-height: 100vh;
+  //   width: 50%;
+  }
+  // @include hero-split($tp-widen-split-hero) {
+  //   width: 33.33%;
+  // }
 }
 .hero__bg {
   background-position: top center;
@@ -35,6 +55,15 @@
   .portfolio & {
     padding-bottom: $measure-unit * 3;
   }
+  @include hero-split {
+    background: none;
+    margin: auto;
+    padding: $measure-unit * 3 $measure-unit $measure-unit;
+    width: 50%;
+  }
+  // @include hero-split($tp-widen-split-hero) {
+  //   width: 50%;
+  // }
 }
 .hero__header--alpha {
   margin:rem(12) auto rem(12);
