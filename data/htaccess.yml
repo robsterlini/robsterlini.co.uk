@@ -12,8 +12,8 @@ redirect:
     /process: /portfolio
     /projects: /portfolio
     /work: /portfolio
-    /about-me: /
-    /about: /
+    /about-me: /about
+    /bucket-list: /about#bucket-list
     /macmillan: /triathlon
     /donate: /triathlon
     /food: /food-diary

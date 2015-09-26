@@ -73,21 +73,8 @@ masthead:
         #     title: "Learn about me"
         #     text: "Find out everything from how many tattoos I have, to my favourite food."
         #     read_more: "getting in touch with me"
-        masthead: false
-        footer: false
-
-##
-
-    -   slug: "/bucket-list.html"
-        icon: "bucket"
-        label: "Bucket list"
-        alt: "Check out my life goals"
-        # home:
-        #     title: "Compare our bucket lists"
-        #     text: "I’ve started a proper bucket list, have you? See what’s on mine."
-        #     read_more: "what I plan on doing in the future."
-        masthead: false
-        footer: false
+        # masthead: false
+        # footer: false
 
 ##
 
