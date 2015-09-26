@@ -7,6 +7,10 @@
   Navigation
 ========================================== */
 
+[data-js="fix-tabs-to-top"] {
+  top: 1px;
+}
+
 .tabs__nav-parent {
   overflow: hidden;
   position: relative;
