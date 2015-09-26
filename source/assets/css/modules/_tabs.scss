@@ -98,10 +98,13 @@
 
 [class*="tabs__section--"] {
   overflow: hidden;
-  padding-top: $measure-unit * 2;
+  padding-top: $measure-unit;
   transition: opacity $timing;
   @include min-width($bp-small) {
     padding-top: $measure-unit * 5;
+    .triathlon & {
+      padding-top: $measure-unit * 2;
+    }
   }
 }
 @include min-width($bp-small) {
