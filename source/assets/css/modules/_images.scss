@@ -133,39 +133,119 @@ figcaption {
   }
 }
 
+// .image-grid {
+//   columns: 2;
+//   column-gap: rem(16);
+//   .figure-wrap--half {
+//     figure {
+//       min-width: 0;
+//     }
+//   }
+//   @include max-width($bp-small) {
+//     columns: 1;
+//   }
+//   html[data-useragent*='Chrome'] & {
+//     columns: 1;
+//     margin-left: rem(-8);
+//     width: calc(100% + #{rem(16)});
+//     .figure-wrap {
+//       display: inline-block;
+//       margin:0 rem(8);
+//       width: calc(50% - #{rem(16)});
+//       vertical-align: top;
+//     }
+//     .figure-wrap--half {
+//       width: calc(25% - #{rem(16)});
+//       @include max-width($bp-mid) {
+//         width: calc(50% - #{rem(16)});
+//       }
+//     }
+//     @include max-width($bp-small) {
+//       margin-left: 0;
+//       width: 100%;
+//       .figure-wrap {
+//         width: 100%;
+//         margin: 0;
+//       }
+//     }
+//   }
+// }
+
 .image-grid {
-  columns: 2;
-  column-gap: rem(16);
-  .figure-wrap--half {
-    figure {
-      min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: $measure-unit * 2 auto;
+  padding: 0 $measure-unit / 4;
+
+  [class^="figure--"] {
+    background: $color-hero-bg;
+    flex: 1;
+    margin: 0;
+    min-width: 100%;
+    padding-top: (100% / 1.5);
+    position: relative;
+    width: 100%;
+    img {
+      border: $color-background solid $measure-unit / 4;
+      border-radius: 0;
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
-  }
-  @include max-width($bp-small) {
-    columns: 1;
-  }
-  html[data-useragent*='Chrome'] & {
-    columns: 1;
-    margin-left: rem(-8);
-    width: calc(100% + #{rem(16)});
-    .figure-wrap {
-      display: inline-block;
-      margin:0 rem(8);
-      width: calc(50% - #{rem(16)});
-      vertical-align: top;
-    }
-    .figure-wrap--half {
-      width: calc(25% - #{rem(16)});
-      @include max-width($bp-mid) {
-        width: calc(50% - #{rem(16)});
+    &:hover,
+    &:focus {
+      img {
+        animation: fade-image $timing * 2;
+        object-fit: contain;
       }
     }
-    @include max-width($bp-small) {
-      margin-left: 0;
-      width: 100%;
-      .figure-wrap {
-        width: 100%;
-        margin: 0;
+  }
+  .figure {
+    // &--alpha {
+    //   min-width: 100%;
+    //   // width: 100%;
+    // }
+    &--beta {
+      @include min-width($bp-tiny) {
+        min-width: 66.66%;
+        padding-top: 66.66%;
+        width: 66.66%;
+      }
+      @include min-width($bp-small) {
+        min-width: 50%;
+        padding-top: 50%;
+        width: 50%;
+      }
+    }
+    &--gamma {
+      @include min-width($bp-tiny) {
+        min-width: 50%;
+        padding-top: 50%;
+        width: 50%;
+      }
+      @include min-width($bp-small) {
+        min-width: 33.33%;
+        padding-top: 33.33%;
+        width: 33.33%;
+      }
+    }
+    &--delta {
+      min-width: 50%;
+      padding-top: 50%;
+      width: 50%;
+      @include min-width($bp-tiny) {
+        padding-top: 33.33%;
+        min-width: 33.33%;
+        width: 33.33%;
+      }
+      @include min-width($bp-tiny) {
+        padding-top: 25%;
+        min-width: 25%;
+        width: 25%;
       }
     }
   }
