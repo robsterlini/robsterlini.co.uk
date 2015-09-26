@@ -43,21 +43,21 @@ ol {
     max-width: none;
     width: 100%;
   }
-  &--hover {
-    @include min-width($bp-mid) {
-      transition:opacity .25s cubic-bezier(#{$bezier-nice});
-      &:hover,
-      &:focus {
-        .list--large-icons__item {
-          opacity: 0.5;
-          &:hover,
-          &:focus {
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
+  // &--hover {
+  //   @include min-width($bp-mid) {
+  //     transition:opacity .25s cubic-bezier(#{$bezier-nice});
+  //     &:hover,
+  //     &:focus {
+  //       .list--large-icons__item {
+  //         opacity: 0.5;
+  //         &:hover,
+  //         &:focus {
+  //           opacity: 1;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 .list--large-icons__item {
   padding: $measure-unit 0;
