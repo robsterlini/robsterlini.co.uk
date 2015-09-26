@@ -36,6 +36,11 @@
     .tabs__nav__link {
       padding: $measure-unit / 2 $measure-unit;
     }
+    &:hover {
+      .tabs__nav__link {
+        padding: $measure-unit;
+      }
+    }
   }
 }
 .tabs__nav__list {
