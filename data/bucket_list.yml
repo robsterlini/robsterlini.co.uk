@@ -8,6 +8,7 @@ all:
         slug: "triathlon"
         date: 2015-01-01 00:00 UTC
         desc: "I like swimming, cycling and running&hellip; Not sure there&rsquo;s a better suited event for me!"
+        completed: 2015-07-12 09:00 UTC
 
 ##
 
