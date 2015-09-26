@@ -1,0 +1,6 @@
+<div class="image-grid"><!--
+  <% data.triathlon.photos.each_with_index do |image, index| %>
+    --><%= grid_image(image.url, image.caption || "", image.alt || "", image.sizing || "delta") %><!--
+  <% end %>
+--></div>
+<p class="btns--center"><%= link_to "See more on Instagram", "https://instagram.com/robsterlini", :class => "btn--outline btn--icon ss-contact-instagram", :title => "Check out more of my photos on Instagram" %></p>
