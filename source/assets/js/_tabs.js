@@ -40,12 +40,6 @@ g.tabs = function() {
           removeClass(currentTab, self.classes.active);
           addClass(that, self.classes.active);
           if (sectionsLength) {
-            // for (var i = 0, l = sectionsLength; i < l; i++) {
-            //   if (!hasClass(sections[i], self.classes.hidden)) {
-            //     activeSection = sections[i];
-            //   }
-            // }
-
             activeSection = document.querySelector('[data-tab-show="visible"]')
             
             var tabId = that.getAttribute('href').replace('#', ''),
@@ -82,6 +76,7 @@ g.tabs = function() {
               parent.style.height = 'auto';
               setTimeout(function() {
                 removeClass(newTab, self.classes.fadeIn);
+                window.location.hash = tabId;
               }, 250);
             }, 600);
             
@@ -93,23 +88,27 @@ g.tabs = function() {
   };
 
   self.hideTabInit = function(that, active) {
-    if (!active) {
-      var tabId = that.getAttribute('href').replace('#', ''),
-        tabSection = document.querySelector('[data-tab="' + tabId + '"]');
-      // addClass(tabSection, self.classes.hidden);
-      tabSection.setAttribute('data-tab-show', 'hidden');
-    }
+    var tabId = that.getAttribute('href').replace('#', ''),
+      tabSection = document.querySelector('[data-tab="' + tabId + '"]');
+    tabSection.setAttribute('data-tab-show', active ? 'visible' : 'hidden');
   };
 
   self.loopThroughTabs = function() {
-    var tabs = document.querySelectorAll(self.selectors.tabLink),
+    var hash = window.location.hash.substr(1),
+      tabs = document.querySelectorAll(self.selectors.tabLink),
       tabsLength = tabs.length;
     if (tabsLength) {
       for (var i = 0, l = tabsLength; i < l; i++) {
         // Add an onClick event
         var thisTab = tabs[i],
-          active = hasClass(thisTab, self.classes.active);
-        self.addTabClick(thisTab, active);
+          tabId = tabs[i].href.split("#")[1];
+
+        self.addTabClick(thisTab);
+        active = hash ? (hash == tabId) : (i === 0);
+
+        if (active) {
+          addClass(thisTab, self.classes.active);
+        }
         self.hideTabInit(thisTab, active);
       };
     };
