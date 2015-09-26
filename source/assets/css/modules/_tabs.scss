@@ -107,6 +107,7 @@
     }
   }
 }
+
 @include min-width($bp-small) {
   @keyframes fade-out {
     0% {
