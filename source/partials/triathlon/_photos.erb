@@ -1,5 +1,5 @@
 <div class="image-grid"><!--
-  <% data.triathlon.photos.each_with_index do |image, index| %>
+  <% data.triathlon.photos.sort_by { rand }.each_with_index do |image, index| %>
     --><%= grid_image(image.url, image.caption || "", image.alt || "", image.sizing || "delta") %><!--
   <% end %>
 --></div>
