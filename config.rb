@@ -66,7 +66,7 @@ helpers do
           data-src='#{image}'
           data-js='lazy-load-image'
           alt='#{alt}'
-          title='#{caption}'>
+          title='#{caption}' />
           <noscript>
             <img class='img--noscript' src='#{image}' alt='#{alt}' title='#{caption}'>
           </noscript>
