@@ -1,14 +1,42 @@
 .masthead {
-  background: $color-black;
   bottom: 0;
   left: 0;
   position: fixed;
-  overflow: auto;
+  overflow: hidden;
   z-index: 5;
   width: 100%;
   @include min-width($tp-masthead-hamburger) {
+    left: auto;
     height: 100%;
+    right: 0;
     top: 0;
-    width:auto;
+    width: 33.3%;
+  }
+  &__hero {
+    background: center no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    &:before,
+    &:after {
+      background: inherit;
+      background-clip: content-box;
+      background-size: cover;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &:before {
+      filter: blur(10px);
+    }
+    &:after {
+      padding-right: $masthead-full;
+    }
   }
 }

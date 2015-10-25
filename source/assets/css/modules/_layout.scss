@@ -20,12 +20,9 @@
   padding-left: $masthead-full;
   width: 100%;
   z-index: 1;
-  @include max-width($tp-masthead-icon) {
-    padding-left: $masthead-icon;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding-left:0;
-    padding-bottom: $measure-unit / 2;
+  @include min-width(tp(hero-split)) {
+    padding-left: 0;
+    padding-right: w(hero-percent);
   }
 }
 

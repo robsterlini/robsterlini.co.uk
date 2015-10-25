@@ -1,88 +1,99 @@
-@mixin hero-split($bp: $tp-split-hero) {
-  .hero--split & {
-    @include min-width($bp) {
-      @content;
-    }
-  }
-}
+// .hero {
+//   @include min-width(tp(hero-split)) {
+//     // background: pink;
+//     left: 0;
+//     height: 100%;
+//     position: fixed;
+//     top: 0;
+//     width: w(hero-percent);
+//   }
+// }
 
-.hero {
-  background: $color-hero-bg;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  z-index:1;
-}
-.hero--split {
-  @include min-width($tp-split-hero) {
-    flex-direction: row;
-  }
-}
-.hero__bg-wrap {
-  flex: 1;
-  min-height: calc(#{rem(200)} + 20vw);
-  @include hero-split {
-    min-height: 100vh;
-  //   width: 50%;
-  }
-  // @include hero-split($tp-widen-split-hero) {
-  //   width: 33.33%;
-  // }
-}
-.hero__bg {
-  background-position: top center;
-  left: 0;
-  right: 0;
-}
-.hero__headers {
-  background: $color-hero-bg;
-  background: linear-gradient(lighten($color-hero-bg, 1%), $color-hero-bg);
-  text-align: left;
-  margin: auto auto 0 auto;
-  z-index:1;
-  padding: $measure-unit * 3 0 $measure-unit;
-  position: relative;
-  // color: $color-white;
-  height: auto;
-  width: 100%;
-  .btns {
-    margin-top:rem(5);
-  }
-  .btn,
-  .btn--outline {
-    margin: rem(5) rem(20) rem(5) 0;
-  }
-  .portfolio & {
-    padding-bottom: $measure-unit * 3;
-  }
-  @include hero-split {
-    background: none;
-    margin: auto;
-    padding: $measure-unit * 3 $measure-unit $measure-unit;
-    width: 50%;
-  }
-  // @include hero-split($tp-widen-split-hero) {
-  //   width: 50%;
-  // }
-}
-.hero__header--alpha {
-  margin:rem(12) auto rem(12);
-}
-.hero__header--beta {
-  @include font-size(26);
-  font-weight: $font-weight-normal;
-  margin:rem(12) auto rem(20);
-  padding-top:0;
-  @include max-width($bp-small) {
-    @include font-size(23);
-  }
-  @include max-width($bp-tiny) {
-    @include font-size(20);
-  }
-}
+// @mixin hero-split($bp: $tp-split-hero) {
+//   .hero--split & {
+//     @include min-width($bp) {
+//       @content;
+//     }
+//   }
+// }
 
-.hero__category {
-  border-left:rem(2) solid $color-white;
-  padding-left:rem(25);
-  margin-bottom:rem(30);
-}
+// .hero {
+//   background: $color-hero-bg;
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   z-index:1;
+// }
+// .hero--split {
+//   @include min-width($tp-split-hero) {
+//     flex-direction: row;
+//   }
+// }
+// .hero__bg-wrap {
+//   flex: 1;
+//   min-height: calc(#{rem(200)} + 20vw);
+//   @include hero-split {
+//     min-height: 100vh;
+//   //   width: 50%;
+//   }
+//   // @include hero-split($tp-widen-split-hero) {
+//   //   width: 33.33%;
+//   // }
+// }
+// .hero__bg {
+//   background-position: top center;
+//   left: 0;
+//   right: 0;
+// }
+// .hero__headers {
+//   background: $color-hero-bg;
+//   background: linear-gradient(lighten($color-hero-bg, 1%), $color-hero-bg);
+//   text-align: left;
+//   margin: auto auto 0 auto;
+//   z-index:1;
+//   padding: $measure-unit * 3 0 $measure-unit;
+//   position: relative;
+//   // color: $color-white;
+//   height: auto;
+//   width: 100%;
+//   .btns {
+//     margin-top:rem(5);
+//   }
+//   .btn,
+//   .btn--outline {
+//     margin: rem(5) rem(20) rem(5) 0;
+//   }
+//   .portfolio & {
+//     padding-bottom: $measure-unit * 3;
+//   }
+//   @include hero-split {
+//     background: none;
+//     margin: auto;
+//     padding: $measure-unit * 3 $measure-unit $measure-unit;
+//     width: 50%;
+//   }
+//   // @include hero-split($tp-widen-split-hero) {
+//   //   width: 50%;
+//   // }
+// }
+// .hero__header--alpha {
+//   margin:rem(12) auto rem(12);
+// }
+// .hero__header--beta {
+//   @include font-size(26);
+//   font-weight: $font-weight-normal;
+//   margin:rem(12) auto rem(20);
+//   padding-top:0;
+//   @include max-width($bp-small) {
+//     @include font-size(23);
+//   }
+//   @include max-width($bp-tiny) {
+//     @include font-size(20);
+//   }
+// }
+
+// .hero__category {
+//   border-left:rem(2) solid $color-white;
+//   padding-left:rem(25);
+//   margin-bottom:rem(30);
+// }

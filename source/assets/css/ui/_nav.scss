@@ -4,33 +4,10 @@
   position: relative;
   text-align: center;
   width: 100%;
-  &:before {
-    background: linear-gradient(to right, rgba($color-black,0.0001), $color-black);
-    bottom: 0;
-    content: '';
-    display: block;
-    height: $measure-unit * 3.5;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    width: $measure-unit * 2;
-    z-index:7;
-  }
   @include min-width($tp-masthead-hamburger) {
-    width: $masthead-icon;
-    &:before {
-      background: linear-gradient(rgba($color-black,0.0001), $color-black);
-      left: 0;
-      max-height: $measure-unit * 4;
-      width: $masthead-icon;
-    }
-  }
-  @include min-width($tp-masthead-icon) {
+    margin-left: auto;
     padding: $measure-unit * 2 0;
     width: $masthead-full;
-    &:before {
-      width: $masthead-full;
-    }
   }
 }
 .nav__list {
@@ -39,30 +16,20 @@
   max-width:$layout-max-width-wide-suffix;
   position: relative;
   margin:auto;
-  @include max-width($tp-masthead-hamburger) {
-    white-space: nowrap;
-  }
-}
-.nav__item {
-  display: inline-block;
-  vertical-align: top;
-  @include min-width($tp-masthead-hamburger) {
-    width:100%;
-  }
 }
 [class^="nav__link--"] {
-  @include font-size(18);
+  font-family: $font-stack-alt;
+  @include font-size(12);
   display: block;
-  color:$color-white;
+  color: $color-white;
+  letter-spacing: 0.04em;
   padding: $measure-unit / 4;
   text-decoration: none;
+  text-transform: uppercase;
   transition:color .25s cubic-bezier(#{$bezier-nice}), background .25s cubic-bezier(#{$bezier-nice});
   overflow: hidden;
-  @include min-width($tp-masthead-hamburger) {
-    padding: $measure-unit / 2;
-  }
   &:before {
-    color: $color-accent;
+    color: $color-white;
     display: block;
     font-size: $measure-unit * 2;
     height: $measure-unit * 3;
@@ -72,33 +39,13 @@
     opacity: 1;
     transition:inherit;
     width: $measure-unit * 3;
-    @include max-width($tp-masthead-hamburger) {
-      display: inline-block;
-      vertical-align: middle;
-    }
   }
   @include hover {
-    color:$color-white;
-    background:rgba($color-accent,0.05);
-    &:before {
-      color:$color-white;
-    }
-  }
-  @include active {
-
-  }
-}
-%nav__link--selected {
-  background:rgba($color-accent,0.1);
-  &:before {
     color:$color-white;
   }
 }
 .nav__label {
   border-bottom:0;
-  @include max-width($tp-masthead-icon) {
-    display: none;
-  }
 }
 abbr.nav__label {
   background: none;

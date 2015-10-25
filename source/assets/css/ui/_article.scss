@@ -3,7 +3,7 @@
 }
 
 .article__description {
-  @extend .hero__header--beta;
+  // @extend .hero__header--beta;
 }
 .article__description--smaller {
   @include font-size(21);

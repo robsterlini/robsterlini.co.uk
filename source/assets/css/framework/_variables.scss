@@ -2,6 +2,10 @@
  * Utility SCSS File
  */
 
+@function    bp($v) { @return map-get($breakpoints, $v); }
+@function    tp($v) { @return map-get($tweakpoints, $v); }
+@function     w($v) { @return map-get($widths,      $v); }
+
 // Measure
 $measure:       16;
 $measure-unit:  rem($measure);
@@ -15,6 +19,15 @@ $bp-small:       $measure * 48;
 $bp-mid:         $measure * 64;
 $bp-large:       $measure * 72;
 
+$breakpoints: (
+  xs: 450
+);
+
+$tweakpoints: (
+  hero-split: 500
+);
+
+
 // Tweakpoints
 $tp-masthead-icon:        $measure * 60;
 $tp-masthead-hamburger:   $measure * 30;
@@ -27,6 +40,10 @@ $layout-max-width-wide:         $measure * 64;
 $layout-max-width-suffix:       rem($layout-max-width);
 $layout-max-width-wide-suffix:  rem($layout-max-width-wide);
 
+$widths: (
+  hero-percent: 33%
+);
+
 // Masthead widths
-$masthead-full:       $measure-unit * 10;
+$masthead-full:       $measure-unit * 8;
 $masthead-icon:       $measure-unit * 4;
