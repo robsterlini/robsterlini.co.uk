@@ -1,0 +1,32 @@
+<%
+  pos = ""
+  l = ""
+  c = alt
+  if locals.has_key? :position
+    pos = "--#{position}"
+  end
+  if locals.has_key? :link
+    text = link
+    if locals.has_key? :link_text
+      text = link_text
+    end
+    l = " – <a href=\"#{link}\" title=\"See the full photo\">#{text}</a>"
+  end
+  if locals.has_key? :caption
+    c = caption
+  end
+%>
+<figure class='figure figure<%= pos %> image--to-load'>
+  <noscript>
+    <img class='img--noscript' src='<%= image %>' alt='<%= alt %>' title='<%= c || alt %>'>
+  </noscript>
+  <img class='img--script'
+    data-src='<%= image %>'
+    src='<% image.sub! '_full', '_blur' %><%= image.sub! '.gif', '.jpg' %>'
+    data-js='lazy-load-image'
+    alt='<%= alt %>'
+    title='<%= c || alt %>' />
+    <% if locals.has_key? :caption %>
+      <figcaption class='figure__caption ss-picture'><%= caption %><%= l %></figcaption>
+    <% end %>
+</figure>

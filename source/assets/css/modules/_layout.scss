@@ -5,16 +5,16 @@
  */
 
 .group {
-	margin:0 auto;
-	max-width:$layout-max-width-wide-suffix;
-	width:93.75%;
+	margin: 0 0 0 auto;
+	max-width: $layout-max-width-wide-suffix;
+  padding: 0 unit(2);
+	width: 100%;
 }
 
 .wrapper {
   background: $color-white;
   overflow: hidden;
   flex:1;
-  overflow: hidden;
   position: relative;
   padding-bottom: $measure-unit * 3;
   padding-left: $masthead-full;

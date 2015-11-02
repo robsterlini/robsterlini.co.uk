@@ -1,13 +1,10 @@
 ---
 title: I’m a triathlete
 date: 2015-07-14 00:00 UTC
+edited: 2015-11-01 09:00 UTC 
 description: 12 July saw me tackle two turbo triathlons in a bid to experience a new sport, and I fell bike over cleat in love with it!
-hero: blog-im-a-triathlete.jpg
-hero_small: blog-im-a-triathlete_600.jpg
-has_instagram: true
-has_twitter: true
+hero: true
 tags: Training and sport
-comments: true
 ---
 
 ## Why triathlon?
@@ -22,7 +19,14 @@ I’m still not entirely sure. I was asked by my PT at the time if I had a goal 
 
 Triathlon was perfect.
 
-<blockquote class="instagram-media embed__right" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/3lTk5Gv-4L/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">First time out in the open water and my God it’s a challenge. The @huubdesign Archimedes performed brilliantly as well! Thanks for having me @swimdemcrew! #triathlontraining #tri #huub #swimdemcrew #rundemcrew #crewlove #sunsout</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by Rob Sterlini (@robsterlini) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-06-06T09:36:40+00:00">Jun 6, 2015 at 2:36am PDT</time></p></div></blockquote>
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/reservoir_full.jpg",
+  caption: "Swimming in a reservoir is made easier by the Huub Archimedes wetsuit!",
+  alt: "A snap of me on on a sunny day at the reservoir",
+  position: "left",
+  link: "https://instagram.com/p/3lTk5Gv-4L/",
+  link_text: "instagram.com"
+} %>
 
 ### How do you prepare for a triathlon?
 
@@ -34,7 +38,7 @@ The plan was never to use a specific training regime; but instead to just push e
 
 Having trained as much as the time would allow, it was time to do a [final gear check](https://instagram.com/p/4-K7NFv-78/?taken-by=robsterlini "Check out my final gear check on Instagram"), pack it all up and head out to Derby.
 
-I’d signed up for the [Jenson Button Trust Triathlon](http://www.jensonbuttontri.com/ "Check out the official Jenson Button Trust Triathlon website") as a warmup for London, but knew very little about it. It was an event sponsored by [HUUB](http://huubdesign.com "Check out the HUUB website") – the makers of my wetsuit, so that seemed a good enough reason to give it a shot.
+I’d signed up for the [Jenson Button Trust Triathlon](http://www.jensonbuttontri.com/ "Check out the official Jenson Button Trust Triathlon website") as a warmup for London, but kne,w very little about it. It was an event sponsored by [HUUB](http://huubdesign.com "Check out the HUUB website") – the makers of my wetsuit, so that seemed a good enough reason to give it a shot.
 
 The day’s structure is unusual in that it was made up of two turbo distance triathlons – one in the morning, and a follow-up (dependant on your time from the morning) that afternoon.
 
@@ -44,7 +48,12 @@ Here it is.
 
 My first triathlon.
 
-<%= blog_image('/content/2015/07/bike-racked.jpg', 'Chrissy just hanging out before the big event.', 'A photo of my bike, hanging on the rack', 'left') %>
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/bike-racked_full.jpg",
+  caption: "Chrissy just hanging out before the big event.",
+  alt: "A photo of my bike, hanging on the rack",
+  position: "left"
+} %>
 
 ### Racking the bike
 
@@ -72,11 +81,18 @@ Here’s where it got interesting.
 
 We’d not anticipated the amount of rain that had come down already, and it was still peppering the road with water.
 
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/scraped-side_full.jpg",
+  caption: "No race is complete without war wounds, right?",
+  alt: "A photo of my scraped side after the fall",
+  position: "left",
+  link: "https://instagram.com/p/5CD89iv-03/",
+  link_text: "instagram.com"
+} %>
+
 I probably should have been riding a bit slower, given the conditions, but try telling that to the adrenalin-fuelled, not-quite-thinking Rob who was powering through trying to make up time for the poor swim.
 
 You can guess what happened next, right…?
-
-<blockquote class="instagram-media embed__center" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/5CD89iv-03/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">First triathlon done, but not without a bit of extra drama! Coming off at 42kph is not a fun experience. Time to rest up, fuel up, and beat that corner in the second race. #dustyourselfoff #fall #triathlon #uktrichat #tri #jbtrusttri</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by Rob Sterlini (@robsterlini) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-07-12T10:09:30+00:00">Jul 12, 2015 at 3:09am PDT</time></p></div></blockquote>
 
 Yep, at a particularly tight corner I leaned too far and came off – pretty spectacularly, I might add – my bike, pulling the chain off, denting my bottle cage, and shearing skin off several parts of my scantily-clad self.
 
@@ -86,7 +102,14 @@ I dusted myself off, reattached the necessary parts, and got back on the bike wi
 
 I’d be lying if I said there weren’t any tears.
 
-<blockquote class="instagram-media embed__left" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/5CkZiTv-1s/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Leg day, all day! Snap of me on my way out of T2 in this morning’s triathlon. I&#39;ve fallen bike over cleats (quite literally) in love with this sport. #jbtrusttri #triathlon #uktrichat #legday #digdeep #teammacmillan #stillcantquitebeleiveit</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by Rob Sterlini (@robsterlini) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-07-12T14:53:02+00:00">Jul 12, 2015 at 7:53am PDT</time></p></div></blockquote>
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/the-run_full.jpg",
+  caption: "Leg day, all day!",
+  alt: "A photo of me exiting T2 and into the run",
+  position: "left",
+  link: "https://instagram.com/p/5CkZiTv-1s/",
+  link_text: "instagram.com"
+} %>
 
 ### The run
 
@@ -110,13 +133,18 @@ All in all, it felt amazing to have pushed through and bettered each of the disc
 
 The tears of pain from the first time round came back again, but as those ‘can’t stop myself welling up, I’m so happy’ kind of tears.
 
-<%= blog_image('/assets/journal/triathlete/blog-im-a-triathlete.jpg', 'Pushing myself over the line in the morning’s final leg', 'A photo of me at the finish line', 'center') %>
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/finish-line_full.jpg",
+  caption: "Pushing myself over the line in the morning’s final leg",
+  alt: "A photo of me at the finish line",
+  position: "full"
+} %>
 
 ## The experience
 
 So how was it overall?
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Excuse my language, but fuck me that was fun! What an experience! <a href="https://twitter.com/hashtag/triathlonvirginity?src=hash">#triathlonvirginity</a> <a href="https://twitter.com/hashtag/uktrichat?src=hash">#uktrichat</a> <a href="https://twitter.com/JBTrustTri">@JBTrustTri</a></p>&mdash; Rob Sterlini (@robsterlini) <a href="https://twitter.com/robsterlini/status/620171205178433536">July 12, 2015</a></blockquote>
+> Excuse my language, but f**k me that was fun! What an experience! [#triathlonvirginity](https://twitter.com/hashtag/triathlonvirginity?src=hash) [@JBTrustTri](https://twitter.com/JBTrustTri). <cite>[Twitter](https://twitter.com/robsterlini/status/620171205178433536)</cite>
 
 __Unbelievable!__
 
@@ -128,9 +156,14 @@ The Jenson Button Trust Triathlon itself was amazing, well run (minus a few blip
 
 Overall, it was just sensational.
 
-## Thanks
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/super-mum_full.jpg",
+  caption: "Couldn’t have done it without her, and the unwavering support from the rest of the famiglia Sterlini!",
+  alt: "A quick selfie with my mum before the triathlons got under way",
+  position: "gutter"
+} %>
 
-<%= blog_image('/content/2015/07/super-mum.jpg', 'Couldn’t have done it without her, and the unwavering support from the rest of the famiglia Sterlini!', 'A quick selfie with my mum before the triathlons got under way', 'right') %>
+## Thanks
 
 I’ll just take this opportunity to thank __everyone__ who has got behind me: either through [donating](uk.virginmoneygiving.com/robsterlini "Donate towards my fundraising goal") (you can definitely still do that if you want to); on cheering me on, on one of my training runs – strangers in London aren’t all horrible people; or putting up with me in my overly-tight lycra bits. I’m eternally grateful.
 
@@ -140,4 +173,11 @@ Thanks everyone.
 
 Onto the next one!
 
-<%= blog_image('/content/2015/07/champion.jpg', 'An obligatory bike-above-head, medal photo before heading home with all the <abbr title="delayed onset muscle soreness">DOMs</abbr>', 'A photo of me with my bike above my head, and my medal in my hand!', 'center') %>
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/07/champion_full.jpg",
+  caption: "An obligatory bike-above-head, medal photo before heading home with all the DOMs!",
+  alt: "A photo of me with my bike above my head, and my medal in my hand!",
+  position: "full",
+  link: "https://instagram.com/p/5Cofm6v--t/",
+  link_text: "instagram.com"
+} %>

@@ -1,3 +1,29 @@
+.intro {
+  position: relative;
+  h1 {
+    margin-bottom: unit();
+  }
+  &__p {
+    color: module-color(p-alpha);
+    font-family: $font-stack-alt;
+    margin: unit() 0 unit() auto;
+    @include font-size(20);
+    @include min-width($bp-tiny) {
+      @include font-size(22);
+    } 
+    @include min-width($bp-small) {
+      @include font-size(24);
+    }
+  }
+  &__date {
+    left: 0;
+    position: absolute;
+    text-align: right;
+    top: rem(7);
+    width: calc(66vw - #{$layout-max-width-suffix} - #{unit(5)});
+  }
+}
+
 .categories {
   padding: 0;
 }
@@ -50,7 +76,7 @@
   > p:first-child {
     margin-top: $measure-unit * 3;
   }
-  blockquote {
-    margin: $measure-unit * 2 auto;
-  }
+  // blockquote {
+  //   margin: $measure-unit * 2 auto;
+  // }
 }

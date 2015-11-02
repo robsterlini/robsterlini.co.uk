@@ -1,0 +1,10 @@
+<%
+  t_name = ''
+  t_link = ''
+  a.tags.each do |tag, articles|
+    t_link = tag_path(tag)
+    t_name = tag
+  end
+%>
+
+<%= link_to t_name, t_link, :title => "See other posts about #{t_name}" %>

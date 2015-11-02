@@ -1,34 +1,19 @@
 <% wrap_layout :layout do
-  t_name = ''
-  t_link = ''
-  current_article.tags.each do |tag, articles|
-    t_link = tag_path(tag)
-    t_name = tag
-  end
-  localised_date = current_article.date.strftime("%b %e")
-  formatted_date_categories = "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
-  set_image = false
-  set_image_small = false
-  set_image_loc = false
+  
   if current_article.data.hero
-    image_loc = "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}"
-    content_for(:hero, current_article.data.hero); content_for(:hero_loc, image_loc)
-    set_image = current_article.data.hero
-    set_image_small = current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero
-    set_image_loc = image_loc
-    
+    content_for(:hero, "blog/#{current_article.slug}");
   end %>
   <main class="wrapper" id="main">
-    <%= partial "partials/hero", locals: {
-      image: set_image,
-      image_small: set_image_small,
-      image_loc: set_image_loc,
-      title: current_article.title,
-      subtitle: current_article.data.description,
-      extra: formatted_date_categories
-    } %>
-    <div data-header="parent"></div>
+
+    <!-- <div data-header="parent"></div> -->
     <article class="type blog-post group" data-age="<%= current_article.date %>" data-anchors data-js="append-age-warning" >
+      <header class="intro">
+        <h1><%= current_article.title %></h1>
+        <p class="intro__p"><%= current_article.data.description %></p>
+        <p class='intro__date small-caps'>
+          <%= partial "partials/journal/posted", :locals => { :a => current_article } %> <br /><%= partial "partials/journal/category", :locals => { :a => current_article } %>
+        </p>
+      </header>
       <% if current_article.data.tldr %>
         <aside class="article__tldr">
           <p id="tldr"><strong><abbr title="Too long didn’t read">TL;DR</abbr></strong> <em><%= current_article.data.tldr %></em></p>

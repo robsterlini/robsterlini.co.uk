@@ -4,30 +4,31 @@ nav: journal
 priority: 0.95
 ---
 
-<section id="content" class="wrapper">
+<main class="wrapper" id="main">
   <% page_articles.take(5).each_with_index do |article, i| %>
     <% t_name = ''; t_link = ''; article.tags.each do |tag, articles| %>
       <% t_link = tag_path(tag); t_name = tag %>
     <% end %>
     <% localised_date = "<time>#{article.date.strftime("%e %b %y")}</time>" %>
     <% if i == 0 %>
-      <%= partial "partials/hero", locals: {
-        image: article.data.hero || false,
-        image_small: article.data.hero_small || article.data.hero || false,
-        image_loc: article.data.hero ? "/assets/journal/#{article.url.sub! "/journal/", "".to_slug}" : false,
-        title: "#{article.title}",
-        subtitle: article.data.description,
-        extra: "<p class='small-caps'>#{localised_date} • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>"
-      } %>
 
-      <main id="main">
+    <article class="group">
+      <header class="intro">
+        <h1><%= article.title %></h1>
+        <p class="intro__p"><%= article.data.description %></p>
+        <p class='intro__date small-caps'>
+          <%= partial "partials/journal/posted", :locals => { :a => article } %> <br /><%= partial "partials/journal/category", :locals => { :a => article } %>
+        </p>
+      </header>
+    </article>
+
         <article class="type group">
         <h2>Recent journal posts</h2>
       <% else %>
     <% end %>
     <h3><%= link_to article.title, article %></h3>
     <p><%= article.data.description %></p>
-    <p class="small-caps"><%= localised_date %> • <a href='<%= t_link %>' title='See other posts about <%= t_name %>'><%= t_name %></a></p>
+    <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> • <%= partial "partials/journal/category", :locals => { :a => article } %></p>
   <% end %>
 
     <p class="btns--center"><a href="/archive" class="btn" title="See the rest of my blog entries">There are more in the archive</a></p>
@@ -40,5 +41,4 @@ priority: 0.95
     --></ul>
 
     </article>
-  </main>
-</section>
+</main>

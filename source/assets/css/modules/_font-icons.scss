@@ -70,10 +70,10 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 
 figcaption.ss-picture {
   &:before {
-    font-size: rem(16);
+    font-size: unit();
     position: relative;
-    top: rem(2);
-    padding-right:rem(5);
+    top: rem(3);
+    padding-right:unit(0.5);
   }
 }
 

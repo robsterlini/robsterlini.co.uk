@@ -1,5 +1,8 @@
 <header class="masthead" id="menu">
-  <div class="masthead__hero" style="background-image: url(https://robsterlini.co.uk/assets/journal/the-london-triathlon/blog-the-london-triathlon.jpg);" aria-hidden="true"></div>
+  <% image = yield_content(:hero) || current_page.data.hero %>
+  <div class="masthead__hero" aria-hidden="true" style="background-image: url(/assets/images/hero/<%= image %>_full_blur.jpg);">
+    <div class="masthead__hero__full" style="background-image: url(/assets/images/hero/<%= image %>_full.jpg);"></div>
+  </div>
   <nav class="nav">
     <ul class="nav__list">
       <!--<% data.pages.masthead.each do |nav| %>

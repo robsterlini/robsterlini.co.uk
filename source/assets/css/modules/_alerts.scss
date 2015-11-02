@@ -48,8 +48,9 @@
 
 [class^="alert--"] {
   border-left:$color-alert-1 solid rem(2);
-  padding-left:rem(23);
-  margin:rem(40) auto;
+  padding-left: unit(2);
+  margin:rem(40) 0 unit(2) auto;
+  max-width:rem($layout-max-width + ($measure * 2));
   & > strong:first-of-type {
     color:$color-alert-1;
   }

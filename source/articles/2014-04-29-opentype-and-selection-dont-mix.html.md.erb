@@ -32,9 +32,17 @@ Here’s the <span class="sc">CSS</span> that will recreate the problem
 
 Which gives you this:
 
-![The OpenType features looking beautiful](http://i.robsterlini.co.uk/posts_opentype-bug/ot-1.jpg?b=yes "The OpenType features looking beautiful")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-1_full.jpg",
+  alt: "The OpenType features looking beautiful",
+  position: "full"
+} %>
 
-![::selection looking not-so-beautiful](http://i.robsterlini.co.uk/posts_opentype-bug/ot-2.jpg?b=yes "::selection looking not-so-beautiful")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-2_full.jpg",
+  alt: "::selection looking not-so-beautiful",
+  position: "full"
+} %>
 
 ## The solutions
 
@@ -44,9 +52,17 @@ As with all of these things there are a few solutions
 
 The easiest solution is to not use a custom `::selection` or to not use the OpenType features, but they’re both things that I want to include.
 
-![No OT features…](http://i.robsterlini.co.uk/posts_opentype-bug/ot-3.jpg?b=yes "No OT features…")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-3_full.jpg",
+  alt: "No OT features…",
+  position: "full"
+} %>
 
-![…but no ::selection problems](http://i.robsterlini.co.uk/posts_opentype-bug/ot-4.jpg?b=yes "…but no ::selection problems")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-4_full.jpg",
+  alt: "…but no ::selection problems",
+  position: "full"
+} %>
 
 ### 2. Get some, but not all of it
 

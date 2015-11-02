@@ -106,13 +106,6 @@ $font-uor-body: "Lucida Sans", verdana, Helvetica, ", sans-serifsans serif", san
       max-width:rem(650);
       margin-left:rem(50);
     }
-    .type {
-      & > h2 {
-        &:first-child {
-          margin-top:0;
-        }
-      }
-    }
     .heading--anchor {
       color:$color-uor-red;
       &:hover,

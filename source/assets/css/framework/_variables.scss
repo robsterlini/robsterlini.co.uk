@@ -2,9 +2,12 @@
  * Utility SCSS File
  */
 
-@function    bp($v) { @return map-get($breakpoints, $v); }
-@function    tp($v) { @return map-get($tweakpoints, $v); }
-@function     w($v) { @return map-get($widths,      $v); }
+@function          bp($v)          { @return map-get($breakpoints,  $v); }
+@function          tp($v)          { @return map-get($tweakpoints,  $v); }
+@function           w($v)          { @return map-get($widths,       $v); }
+@function line-height($v: regular) { @return map-get($line-heights, $v); }
+
+@function unit($n: 1) { @return rem($n * 16); }
 
 // Measure
 $measure:       16;
@@ -27,6 +30,12 @@ $tweakpoints: (
   hero-split: 500
 );
 
+$line-heights: (
+  regular: 1.45,
+  heading: 1.15,
+  caption: 1.25
+);
+
 
 // Tweakpoints
 $tp-masthead-icon:        $measure * 60;
@@ -35,7 +44,7 @@ $tp-split-hero:           $bp-small;
 $tp-widen-split-hero:     $bp-mid;
 
 // Max widths
-$layout-max-width:              $measure * 40;
+$layout-max-width:              $measure * 36;
 $layout-max-width-wide:         $measure * 64;
 $layout-max-width-suffix:       rem($layout-max-width);
 $layout-max-width-wide-suffix:  rem($layout-max-width-wide);

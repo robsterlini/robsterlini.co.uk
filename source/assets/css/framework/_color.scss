@@ -13,6 +13,19 @@
  *
  */
 
+@function color($v) { @return map-get($colors, $v); }
+@function module-color($v) { @return map-get($module-colors, $v); }
+
+$colors: (
+  darkest: #1b1b1b,
+  dark: lighten(#222627, 20%),
+  lightest: #f9f9f9
+);
+
+$module-colors: (
+  p-alpha: color(dark)
+);
+
  /* ==|== Colors =================
  	Base
  ========================================== */
@@ -41,9 +54,6 @@ $color-text: #333;
 $color-headers: #444;
 
 $color-hero-bg: darken($color-white, 3.5%);
-
-$color-footer-bg: $color-hero-bg;
-$color-footer-text: lighten($color-text, 15%);
 
 /* ==|== Colors =================
    Links

@@ -1,4 +1,6 @@
 .nav {
+  background: rgba($color-black, 0.2);
+  mix-blend-mode: overlay;
   display: flex;
   height: 100%;
   position: relative;
@@ -36,12 +38,14 @@
     line-height: $measure-unit * 3 * 1.125;
     margin: 0 auto;
     overflow: hidden;
-    opacity: 1;
     transition:inherit;
     width: $measure-unit * 3;
   }
   @include hover {
     color:$color-white;
+    &:before {
+      color: black;
+    }
   }
 }
 .nav__label {
