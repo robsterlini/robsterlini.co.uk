@@ -11,6 +11,8 @@
         </div>
       </div>
     <% end %>
+  <% else %>
+    <% content_for(:no_hero, " masthead--no-hero") %>
   <% end %>
   <div class="hero__header" data-js="header-to-offset">
     <div class="group<% if locals.has_key? :typeset %> typeset<% end %>">

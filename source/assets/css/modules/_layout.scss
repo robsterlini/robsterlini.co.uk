@@ -25,4 +25,7 @@
   .page--no-footer & {
     padding-bottom: 0;
   }
+  .masthead--no-hero + & {
+    margin-top: rem(58);
+  }
 }

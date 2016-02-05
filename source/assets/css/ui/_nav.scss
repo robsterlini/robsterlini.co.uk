@@ -1,14 +1,36 @@
 .masthead {
-  background: linear-gradient(module-color(masthead-bg), 33%, rgba(module-color(masthead-bg), 0));
+  background: linear-gradient(module-color(masthead-bg), 66%, rgba(module-color(masthead-bg), 0));
   // background: $color-black;
   // bottom: 0;
   left: 0;
   overflow: auto;
-  padding: unit(1) 0 unit(0.5);
+  padding: unit(1.5) 0 unit(0.5);
   position: fixed;
   top: 0;
+  transition: transform timing() cubic-bezier(#{$bezier-nice});
   width: 100%;
   z-index: 5;
+  &:before {
+    content: '';
+    background: module-color(masthead-bg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: timing() cubic-bezier(#{$bezier-nice});
+    transition-property: opacity, transform;
+  }
+  &--no-hero,
+  &.js--header-active {
+    transform: translate3d(0, #{unit(-1)}, 0);
+    &:before {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 }
 
 .nav {

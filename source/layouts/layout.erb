@@ -64,7 +64,7 @@
     <!--[if lte IE 8]><div class="error"><p>Come on, it’s 2015. Old browsers have been out of fashion for a while, so I’ve stopped supporting them. You can have the unstyled content, but to see me in all my beauty you’ll need to <a href="http://browsehappy.com" title="Find out about updating your browser here">update your browser</a>!</p></div><![endif]-->
 
     <% if !current_page.data.no_masthead %>
-      <%= partial "partials/masthead" %>
+      <%= partial "partials/masthead", :locals => { :hero => hero } %>
     <% end %>
 
     <%= yield %>

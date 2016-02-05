@@ -60,6 +60,36 @@ g.onScreenSetup = function() {
     });
   };
 
+  self.header = function() {
+    var blogMarker = document.querySelector('[data-js="header-to-offset"]'), // Change me
+      header = document.querySelector('#menu'); // Change me
+      if (blogMarker && header) {
+        onScreen.addItem(blogMarker, {
+          screen: {
+            top: '50%',
+            bottom: '50%',
+          },
+          // target: {
+            // top: '50%',
+            // bottom: '50%'
+          // },
+          onScreenLeave: function(detail) {
+            console.log('leave', detail);
+            if (detail.side == 'bottom') {
+              removeClass(header, 'js--header-active');
+            }
+            return false;
+          },
+          onScreenEnter: function(detail) {
+            console.log('enter', detail);
+            addClass(header, 'js--header-active');
+            return false;
+          },
+          disableScreenMove: true
+        });
+      }
+  }
+
   self.reveal = function() {
     var revealers = self.selectors.revealImage
       revealers +=  ', ' + self.selectors.revealData,
@@ -163,6 +193,7 @@ g.onScreenSetup = function() {
     self.reveal();
     // self.setupBlogHeader();
     // self.setupTabs();
+    self.header();
     onScreen.update();
   };
 
