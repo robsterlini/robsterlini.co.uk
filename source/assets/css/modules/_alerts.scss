@@ -7,8 +7,8 @@
   Base set
 ========================================== */
 
-.error,
-[class^="global-notice--"] {
+.error {
+  background: $color-alert-1;
   color: $color-white;
   padding-left: $masthead-full;
   p {
@@ -19,27 +19,6 @@
     color: $color-white;
     text-decoration: underline;
   }
-  @include max-width($tp-masthead-icon) {
-    padding-left: $masthead-icon;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding-left: 0;
-    padding-right: rem($measure * 3 + 10);
-  }
-}
-
-/* ==|== Triathlon =================
-  Colour overrides
-========================================== */
-
-.error {
-  background: $color-alert-1;
-}
-[class^="global-notice--"] {
-  background-color: $color-dark;
-}
-.global-notice--triathlon {
-  background-color: $color-b-macmillan-2;
 }
 
 /* ==|== Triathlon =================
@@ -48,10 +27,17 @@
 
 [class^="alert--"] {
   border-left:$color-alert-1 solid rem(2);
-  padding-left:rem(23);
-  margin:rem(40) auto;
+  left: unit(-2);
+  padding-left: rem(($measure * 2) - 2);
+  position: relative;
+  margin: unit(2) auto;
+  max-width:rem($layout-max-width + ($measure * 2));
+  width: calc(100% + #{unit(2)});
   & > strong:first-of-type {
     color:$color-alert-1;
+  }
+  .typeset & {
+    margin-right: unit(-2);
   }
 }
 .alert--older {

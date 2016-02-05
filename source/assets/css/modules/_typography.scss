@@ -43,12 +43,30 @@
 	font-weight: bold;
 	font-style: normal;
 }
-@font-face{
-	font-family: 'macmillan';
-	src: url("../fonts/macmillan.eot");
-	src: url("../fonts/macmillan.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/macmillan.woff") format("woff");
+// @font-face{
+// 	font-family: 'macmillan';
+// 	src: url("../fonts/macmillan.eot");
+// 	src: url("../fonts/macmillan.eot?#iefix") format("embedded-opentype"),
+// 		url("../fonts/macmillan.woff") format("woff");
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+@font-face {
+	font-family: 'SkolarSans';
+	src: url('../fonts/SkolarSans-Regular.eot');
+	src: url('../fonts/SkolarSans-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SkolarSans-Regular.woff2') format('woff2'),
+		url('../fonts/SkolarSans-Regular.woff') format('woff');
 	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'SkolarSans';
+	src: url('../fonts/SkolarSans-Semibold.eot');
+	src: url('../fonts/SkolarSans-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SkolarSans-Semibold.woff2') format('woff2'),
+		url('../fonts/SkolarSans-Semibold.woff') format('woff');
+	font-weight: 500;
 	font-style: normal;
 }
 
@@ -57,38 +75,34 @@
 	1. Headings
 ========================================== */
 
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1, h2, h3, p, ul, ol {
 	@include font-feature-settings(liga kern onum);
-	max-width:$layout-max-width-suffix;
+	max-width: rem(w(text));
 }
 
-h1,
-h2,
-h3 {
-	font-weight: $font-weight-bold;
-}
 h1 {
-	@include font-size(52);
-	line-height:1.15;
-	margin:rem(72) auto rem(24);
+	@include font-size(48);
+	font-weight: $font-weight-bold;
+	line-height: line-height();
+	margin: unit(3) auto unit(1.5);
   @include max-width($bp-small) {
     @include font-size(42);
-    // margin-top: rem(64);
   }
   @include max-width($bp-tiny) {
     @include font-size(34);
-    // margin-top: rem(48);
   }
   & + h2 {
   	padding-top: rem(28);
   }
 }
 
-h2 {
-	@include font-size(32);
-	line-height:1.35;
-	margin:0 auto rem(12);
-	padding-top:rem(48);
+%h2 {
+	@include font-size(28);
+	font-weight: $font-weight-bold;
+	line-height: line-height(heading);
+	margin: 0 auto unit();
+	padding-top: unit(3);
+
 	@include max-width($bp-small) {
 		@include font-size(28);
 	}
@@ -97,52 +111,40 @@ h2 {
 	}
 }
 
+h2 {
+	@extend %h2;
+}
+
 h3 {
-	@include font-feature-settings(smcp c2sc);
-	@include font-size(25);
-	margin:rem(24) auto rem(16);
-	line-height:1.05;
+	color: module-color(p-alpha);
+	font-family: $font-stack-alt;
+	@include font-size(20);
+	font-weight: weight(alt-bold);
+	margin: unit(2) auto unit();
+	line-height: 1.05;
+	text-transform: uppercase;
 	@include max-width($bp-small) {
-		@include font-size(22);
+		@include font-size(18);
 	}
 	@include max-width($bp-tiny) {
-		@include font-size(19);
+		@include font-size(16);
 	}
 }
 
-h4 {
-	@include font-size(30);
-	margin:em(8, 30) auto em(16, 30);
-}
-
-// h5 {
-// 	@include font-size(24);
-// 	margin:em(12, 24) auto em(12, 24);
-// }
-
-// h6 {
-// 	@include font-size(20);
-// 	margin:em(10, 20) auto em(10, 20);
-// }
-
-.heading--has-anchor {
-	text-indent:rem(-35);
-	@include max-width($bp-mid) {
-		text-indent:0;
+.heading--gutter {
+	@include min-width(tp(has-gutter)) {
+		float: left;
+		width: rem(w(gutter));
+		+ h3,
+		+ p {
+			margin-top: 0;
+			padding-top: rem(56);
+		}
+		+ .blog__categories {
+			margin-top: 0;
+			padding-top: rem(57);
+		}
 	}
-}
-.heading--anchor {
-	width:rem(35);
-	padding-right:rem(5);
-	text-indent:0;
-	text-align: right;
-	display: inline-block;
-	@include max-width($bp-mid) {
-		width:auto;
-	}
-}
-.heading--clear {
-	clear: both;
 }
 
 /* ==|== Typography =================
@@ -151,7 +153,7 @@ h4 {
 %paragraph {
 	@include font-size(18);
 	line-height:1.45;
-	margin:rem(6) auto rem(12);
+	margin:rem(6) auto rem(12) auto;
 	@include max-width($bp-small) {
 		@include font-size(17);
 	}
@@ -161,11 +163,6 @@ h4 {
 }
 p {
 	@extend %paragraph;
-	.type & {
-		&:first-child {
-			margin-top: $measure-unit * 3;
-		}
-	}
 }
 
 .small-caps,
@@ -177,16 +174,15 @@ p {
 }
 
 blockquote {
+	border-left:lighten($color-accent,15%) solid rem(2);
 	font-weight: $font-weight-normal;
 	font-style:italic;
-	margin:rem(15) auto;
-	max-width:$layout-max-width-suffix;
-	border-left:lighten($color-accent,15%) solid rem(2);
-	padding-left:rem(23);
-	& + &,
-	.article__description + & {
-		margin-top: rem(30);
-	}
+  left: unit(-2);
+  padding-left: rem(($measure * 2) - 2);
+  position: relative;
+  margin: unit(2) unit(-2) unit(2) auto;
+  max-width:rem($layout-max-width + ($measure * 2));
+
 	p {
 		@include font-size(24);
 		@include max-width($bp-small) {
@@ -196,12 +192,10 @@ blockquote {
 			@include font-size(20);
 		}
 	}
-	&.blockquote--long {
-		p {
-			@extend %paragraph;
-		}
-	}
 	cite {
+		font-family: $font-stack-alt;
+    line-height: line-height(caption);
+		color:$color-accent;
 		font-style: normal;
 		display: block;
 		@include font-size(18);
@@ -220,42 +214,18 @@ blockquote {
 
 abbr[title] {
 	border:0;
-	// background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQgMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNCAyIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cmVjdCBmaWxsPSIjMzMzMzMzIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+PC9zdmc+) repeat-x left 88%;
 	background: linear-gradient(to left, $color-dark 33%, rgba($color-dark, 0) 34%) repeat-x left 88%;
 	background-size:rem(3) rem(1);
-	text-shadow: rem(1) 0 $color-background, rem(2) 0 $color-background, rem(-1) 0 $color-background, rem(-2) 0 $color-background;
 }
 
-.strike {
-	.no-js & {
-		text-decoration: line-through;
-	}
-}
-.js--strike {
-	color: rgba($color-text, 0.75);
-	cursor: help;
-	text-decoration: none;
-	position: relative;
-	transition:all .25s cubic-bezier(#{$bezier-nice});
-	&:before {
-		background: linear-gradient($color-background 33%, $color-strikethrough 34%, $color-strikethrough 66%, $color-background 67%) repeat-x 50% 50%;
-		background-size:rem(1) rem(3);
-		content: '';
-		left: 0;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		transition: inherit;
-		width: 100%;
-	}
-}
-p {
-	@include hover {
-		.js--strike {
-			color: $color-alert-1;
-			&:before {
-				opacity: 0;
-			}
+// Typeset
+.typeset {
+	h1,
+	h2,
+	h3,
+	%paragraph {
+		@include min-width(tp(has-gutter)) {
+			margin-right: 0;
 		}
 	}
 }

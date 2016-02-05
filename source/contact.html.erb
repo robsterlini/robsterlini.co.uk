@@ -9,7 +9,7 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
     title: current_page.data.title,
     subtitle: current_page.data.description
   } %>
-  <article class="type group">
+  <article class="group">
     <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <%= link_to "in my journal", "/journal/youtube/", :title => "Read about why I don’t work on YouTube anymore" %>.</p>
     <p>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
     <div class="list--large-icons">
@@ -26,12 +26,5 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
       </div><!--
     <% end %>-->
     </div>
-    <h3>Other social media</h3>
-    <p>I’m a social fiend. You can find me on here as well:</p>
-    <p class="btns--center"><!--
-      <% data.contact.social.each do |social| %>
-      --><a href="<%= social.link %>" class="btn--icon btn--outline ss-contact-<%= social.slug %>" title="<%= social.alt %>"><%= social.title %></a><!--
-      <% end %>
-    --></p>
   </article>
 </main>

@@ -8,20 +8,39 @@ g.loadHero = function() {
   var self = g.loadHero;
 
   self.selectors = {
-    hero:      "[data-hero]"
+    hero: "[data-hero]",
+    heroBg: "[data-hero-bg]"
   }
 
   self.classes = {
-    errorPage:  "x404"
+    errorPage:  "x404",
+    homePage: "page--home",
+    heroHidden: "js--hero-bg-hidden"
   }
 
-  self.images = [
-    'colbert.gif',
-    'dog-slap.gif',
-    'mary-poppins.gif',
-    'practical-joker.gif',
-    'warehouse-long-jump.gif'
-  ];
+  self.base = {
+    heroUrl: '/assets/images/hero/'
+  };
+
+  self.images = {
+    home: [
+      'hybrid',
+      'shades',
+      'titanic',
+      'triathlon'
+    ],
+    error: [
+      'colbert.gif',
+      'dog-slap.gif',
+      'mary-poppins.gif',
+      'practical-joker.gif',
+      'warehouse-long-jump.gif'
+    ]
+  };
+
+  self.randomHero = function(location, array) {
+    return self.base.heroUrl + location + '/' + array[Math.floor(Math.random()*array.length)] + '_full.jpg';
+  }
 
   self.ready = function() {
     // Cache the hero
@@ -37,17 +56,18 @@ g.loadHero = function() {
         // Check if we’re on the 404 page and bigger than 500px wide
         if (hasClass(document.body, self.classes.errorPage) && w > 500) {
           // If we are set the hero to be set as a randomised item from the self.images array
-          var hero = self.images[Math.floor(Math.random()*self.images.length)];
+          var hero = self.images.error[Math.floor(Math.random()*self.images.error.length)];
+        } else if (hasClass(document.body, self.classes.homePage) && w > 500) {
+          var hero = self.randomHero('home', self.images.home);
         }
         // If it’s not the 404 page, or we’re smaller than 500px:
         else {
           // Set the hero as the data-hero image, or the data-hero-small if below 500px;
-          var hero = m[i].getAttribute(w > 500 ? 'data-hero' : 'data-hero-small');
+          var hero = m[i].getAttribute('data-hero');
         }
-        // Set the location (normally used in the blog assets)
-        var location = m[i].getAttribute('data-location');
         // Switch out the placeholder hero image for the image
-        m[i].style.backgroundImage = 'url(' + location + hero + ')';
+        m[i].style.backgroundImage = 'url(' + hero + ')';
+        // m.querySelector(self.selectors.heroBg).removeClass(self.classes.heroHidden);
       };
     };
 

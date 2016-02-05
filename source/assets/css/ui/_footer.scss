@@ -1,21 +1,11 @@
 .footer {
   backface-visibility: hidden;
-  background: $color-footer-bg;
-  color: $color-footer-text;
   overflow: hidden;
   margin-top: 0;
-  padding:$measure-unit * 4 0 $measure-unit * 2 $masthead-full;
+  padding: unit(4) 0 unit(2);
   position: relative;
   width: 100%;
   z-index: 1;
-  @include max-width($tp-masthead-icon) {
-    padding-left: $masthead-icon;
-    padding-top: $measure-unit * 2;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding-left: 0;
-    padding-bottom: ($measure-unit / 2) + ($measure-unit * 4);
-  }
   p,
   ul {
     position: relative;
@@ -26,64 +16,6 @@
     }
     @include max-width($bp-tiny) {
       @include font-size(14);
-    }
-  }
-  ul {
-    list-style: none;
-    margin-bottom: 0;
-    padding: 0;
-    & + ul {
-      margin-top: 0;
-      margin-bottom: $measure-unit;
-    }
-    li {
-      display: inline-block;
-      vertical-align: top;
-      width: calc(50% - #{$measure-unit / 2});
-      &:nth-of-type(2n - 1) {
-        margin-right: $measure-unit;
-      }
-      @include min-max-width($bp-small, $bp-mid) {
-        width: 100%;
-      }
-      @include max-width($measure * 24) {
-        width: 100%;
-      }
-    }
-    a {
-      color: $color-accent;
-      @include hover {
-        color: $color-link-primary;
-      }
-      @include active {
-        color: $color-black;
-      }
-    }
-  }
-  .nav__label {
-    display: inline;
-  }
-}
-[class^="footer__col--"] {
-  display: inline-block;
-  vertical-align: top;
-}
-.footer__col--two {
-  width: calc(50% - #{$measure-unit * 4 / 3});
-}
-.footer__col--one {
-  margin-left: $measure-unit * 2;
-  width: calc(25% - #{$measure-unit * 4 / 3});
-}
-@include max-width($bp-small) {
-  .footer__col--two {
-    width: 100%;
-  }
-  .footer__col--one {
-    margin-left: 0;
-    width: calc(50% - #{$measure-unit});
-    & + & {
-      margin-left: $measure-unit * 2
     }
   }
 }

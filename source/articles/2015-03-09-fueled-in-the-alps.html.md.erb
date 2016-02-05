@@ -2,8 +2,7 @@
 title: Fueled in the Alps
 date: 2015-03-09 17:49 UTC
 description: In March 2015, Fueled’s UK team hit the slopes of La Plagne in a weekend of snow, sun, and lots of cheese!
-hero: blog-fueled-in-the-alps.jpg
-hero_small: blog-fueled-in-the-alps_600.jpg
+hero: true
 tags: Design and dev
 ---
 
@@ -33,6 +32,13 @@ I did manage to tick a bucket list item off in [skiing backwards](/bucket-list#l
 
 We lucked out hard with the weather – a huge dump of snow a day before we got there, but then beaming sunshine throughout the weekend (some great panda eye tan lines were sported across the team). The sunshine meant the beginners didn’t have to battle the elements, and those who chose not to ski as much could soak up the rays and explore.
 
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/03/fondue_full.jpg",
+  caption: "A shot of the mouth-watering fondue that Deruette and I shared",
+  alt: "A three cheese fondue, with everything ready to be dipped into it",
+  position: "gutter"
+} %>
+
 ### The food
 
 The food in the Alps is always good, and raclette-gate (which wasn’t actually a bad thing) excluded, this trip was no different. Deruette introduced me to the best way to finish off a fondue – which I’m happy to show anyone who’ll make me fondue.
@@ -55,18 +61,9 @@ Want in? Why not [see if you’re the right fit](http://fueled.com/jobs/ "Check 
 
 Here are just a few snapshots and clips from a trip that 1,000 photos wouldn’t get close to. There are probably even more on [my Instagram](https://instagram.com/robsterlini "Check out my photos an videos on Instagram").
 
-Enjoy!
-
-### Pictures
-
-<div class="image-grid">
-  <%= blog_image('/content/2015/03/ski-tribute-1.jpg', 'An Oxygene ski instructor – Adri – lost his life in an avalanche the week before we arrived. This was the start of the moving tribute to him…', 'A huge number of torch-lit skiers take to the slopes in tribute to Adrien', 'half') %><!--
-  --><%= blog_image('/content/2015/03/ski-tribute-2.jpg', '…and this was the heart they formed when they got the bottom of the slope', 'Torch-lit skiers form a heart to commemorate a fallen ski instructor', 'half') %><!--
-  --><%= blog_image('/content/2015/03/fondue.jpg', 'A shot of the mouth-watering fondue that Deruette and I shared', 'A three cheese fondue, with everything ready to be dipped into it', 'full') %><!--
-  --><%= blog_image('/content/2015/03/sunset.jpg', 'Alex Lockey snapped a great shot of the sun going down over Belle Plagne', 'A candid photo of me in front of the La Plagne sunset', 'full') %><!--
-  --><%= blog_image('/content/2015/03/mercure.jpg', 'Our hotel by night', 'The Hotel Mercure taken at night', 'full') %>
-</div>
-
-<%#
-### Videos
-%>
+<%= partial "partials/figure", locals: {
+  image: "/content/2015/03/sunset_full.jpg",
+  caption: "Alex Lockey snapped a great shot of the sun going down over Belle Plagne",
+  alt: "A candid photo of me in front of the La Plagne sunset",
+  position: "width"
+} %>

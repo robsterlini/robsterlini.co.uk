@@ -19,8 +19,8 @@ redirect:
     /food: /food-diary
     /cv: /curriculum-vitae
     /blog: /journal
-    /mid: /middleplate
-    /middlepl8: /middleplate
+    # /mid: /middleplate
+    # /middlepl8: /middleplate
     /tough-mudder: /triathlon
     /toughmudder: /triathlon
 

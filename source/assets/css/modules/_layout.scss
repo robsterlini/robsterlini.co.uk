@@ -5,71 +5,24 @@
  */
 
 .group {
-	margin:0 auto;
-	max-width:$layout-max-width-wide-suffix;
-	width:93.75%;
+	margin: 0 auto;
+	max-width: $layout-max-width-wide-suffix;
+  padding: 0 unit(2);
+  position: relative;
+	width: 100%;
 }
 
 .wrapper {
   background: $color-white;
-  overflow: hidden;
-  flex:1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
   padding-bottom: $measure-unit * 3;
-  padding-left: $masthead-full;
   width: 100%;
   z-index: 1;
-  @include max-width($tp-masthead-icon) {
-    padding-left: $masthead-icon;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding-left:0;
-    padding-bottom: $measure-unit / 2;
-  }
-}
-
-hr {
-  margin: $measure-unit * 4 auto $measure-unit * 3;
-  max-width: rem($layout-max-width /2);
-  outline: none;
-  border: 0;
-  border-top: rem(2) lighten($color-accent, 30%) solid;
-  p + & {
-    margin-top: rem(60);
-  }
-}
-
-.page--no-masthead {
-  .hero {
-    min-height: 100vh;
-    padding: 0;
-  }
-  .hero__headers {
-    padding: $measure-unit * 4 0;
-  }
-  .list--large-icons {
-    max-width: none;
-    margin-top: rem(32);
-  }
-  .list--large-icons__link {
-    color: $color-text;
-    @include hover {
-      color: $color-link-primary;
-    }
-    .small-caps {
-      color: $color-link-primary;
-    }
-  }
-  .wrapper,
-  .error,
-  .footer,
-  [class^="global-notice--"] {
-    padding-left: 0;
-  }
-}
-.page--no-footer {
-  .wrapper {
+  .page--no-footer & {
     padding-bottom: 0;
   }
 }

@@ -1,14 +1,19 @@
 <section class="hero">
   <% if locals.has_key? :image %>
     <% if image != false %>
-      <div class="hero__bg-wrap" data-plx="parent">
-        <div class="hero__bg" data-plx="child" data-hero="<%= image %>" data-hero-small="<%= image_small || image %>" data-location="<%= image_loc %>">
+      <div class="hero__bg" data-plx="parent">
+        <img src="/assets/images/hero/<%= image %>_blur.jpg" />
+        <div class="hero__bg--blur" data-plx="child" style="background-image:url(/assets/images/hero/<%= image %>_blur.jpg);">
+          <div class="hero__bg--full" data-hero="/assets/images/hero/<%= image %>_full.jpg"></div>
+          <noscript>
+            <div class="hero__bg--full" style="background-image:url(/assets/images/hero/<%= image %>_full.jpg);"></div>
+          </noscript>
         </div>
       </div>
     <% end %>
   <% end %>
-  <div class="hero__headers" data-js="header-to-offset">
-    <div class="group">
+  <div class="hero__header" data-js="header-to-offset">
+    <div class="group<% if locals.has_key? :typeset %> typeset<% end %>">
       <% if locals.has_key? :title %>
         <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
       <% end %>

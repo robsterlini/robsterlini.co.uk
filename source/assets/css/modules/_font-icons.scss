@@ -58,22 +58,12 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   content:'🏃';
 }
 
-%big-cat-icons {
-  &:before {
-    color: $color-accent;
-    display: block;
-    font-size:rem(48);
-    margin:0 auto;
-    // text-align: center;
-  }
-}
-
 figcaption.ss-picture {
   &:before {
-    font-size: rem(16);
+    font-size: unit();
     position: relative;
-    top: rem(2);
-    padding-right:rem(5);
+    top: rem(3);
+    padding-right:unit(0.5);
   }
 }
 
@@ -140,21 +130,21 @@ figcaption.ss-picture {
 .ss-contact-dribbble:before {
   content:'🏀';
 }
-.ss-contact-instagram:before {
-  content:'📷';
-}
-.ss-contact-spotify:before {
-  content:'';
-}
-.ss-contact-strava:before {
-  @extend .ss-bucket-triathlon:before;
-}
-.ss-contact-nike-plus:before {
-  @extend .ss-bucket-marathon:before;
-}
-.ss-contact-github:before {
-  content:'';
-}
+// .ss-contact-instagram:before {
+//   content:'📷';
+// }
+// .ss-contact-spotify:before {
+//   content:'';
+// }
+// .ss-contact-strava:before {
+//   @extend .ss-bucket-triathlon:before;
+// }
+// .ss-contact-nike-plus:before {
+//   @extend .ss-bucket-marathon:before;
+// }
+// .ss-contact-github:before {
+//   content:'';
+// }
 
 // Categories
 .ss-cat-design-and-dev:before {
@@ -168,88 +158,88 @@ figcaption.ss-picture {
 }
 
 // About
-.ss-about-poet:before {
-  content:'✒';
-}
-.ss-about-tattoo:before {
-  content:'';
-}
-.ss-about-spurs:before {
-  @extend .ss-cat-training-and-sport:before;
-}
-.ss-about-food:before {
-  content:'🍕';
-}
-.ss-about-christmas:before {
-  content:'🎄';
-}
-.ss-about-nfl:before {
-  content:'🏈';
-}
+// .ss-about-poet:before {
+//   content:'✒';
+// }
+// .ss-about-tattoo:before {
+//   content:'';
+// }
+// .ss-about-spurs:before {
+//   @extend .ss-cat-training-and-sport:before;
+// }
+// .ss-about-food:before {
+//   content:'🍕';
+// }
+// .ss-about-christmas:before {
+//   content:'🎄';
+// }
+// .ss-about-nfl:before {
+//   content:'🏈';
+// }
 
 // Bucket List
-%bucket-no-icon {
-  &:before {
-    font-family: $font-stack-regular;
-    font-weight: $font-weight-bold;
-  }
-}
-.ss-bucket-marathon:before {
-  content:'🏃';
-}
-.ss-bucket-triathlon:before {
-  content:'🚲';
-}
-.ss-bucket-skydive:before {
-  content:'✈';
-}
-.ss-bucket-ski-backwards:before {
-  content:'🎿';
-}
-.ss-bucket-pug:before {
-  content:'🐻';
-}
-.ss-bucket-conference:before {
-  content:'💬';
-}
-.ss-bucket-typeface:before {
-  content:'&';
-}
-.ss-bucket-usa-roadtrip:before {
-  content:'🚘';
-}
-.ss-bucket-vegetarian:before {
-  content:'';
-}
-.ss-bucket-mountain-climb:before {
-  content:'';
-}
-.ss-bucket-safari:before {
-  content:'🐘';
-}
-.ss-bucket-iron-man:before {
-  content:'';
-}
-.ss-bucket-travel:before {
-  content:'🌎';
-}
-.ss-bucket-monopoly:before {
-  // @extend %bucket-no-icon;
-  content:'⌂';
-}
-.ss-bucket-sushi:before {
-  // @extend %bucket-no-icon;
-  content:''
-}
-.ss-bucket-tough-mudder:before {
-  @extend .ss-bucket-marathon:before;
-}
+// %bucket-no-icon {
+//   &:before {
+//     font-family: $font-stack-regular;
+//     font-weight: $font-weight-bold;
+//   }
+// }
+// .ss-bucket-marathon:before {
+//   content:'🏃';
+// }
+// .ss-bucket-triathlon:before {
+//   content:'🚲';
+// }
+// .ss-bucket-skydive:before {
+//   content:'✈';
+// }
+// .ss-bucket-ski-backwards:before {
+//   content:'🎿';
+// }
+// .ss-bucket-pug:before {
+//   content:'🐻';
+// }
+// .ss-bucket-conference:before {
+//   content:'💬';
+// }
+// .ss-bucket-typeface:before {
+//   content:'&';
+// }
+// .ss-bucket-usa-roadtrip:before {
+//   content:'🚘';
+// }
+// .ss-bucket-vegetarian:before {
+//   content:'';
+// }
+// .ss-bucket-mountain-climb:before {
+//   content:'';
+// }
+// .ss-bucket-safari:before {
+//   content:'🐘';
+// }
+// .ss-bucket-iron-man:before {
+//   content:'';
+// }
+// .ss-bucket-travel:before {
+//   content:'🌎';
+// }
+// .ss-bucket-monopoly:before {
+//   // @extend %bucket-no-icon;
+//   content:'⌂';
+// }
+// .ss-bucket-sushi:before {
+//   // @extend %bucket-no-icon;
+//   content:''
+// }
+// .ss-bucket-tough-mudder:before {
+//   @extend .ss-bucket-marathon:before;
+// }
 
-// Training
+// // Training
 
-.ss-triathlon-ride:before {
-  @extend .ss-bucket-triathlon:before;
-}
-.ss-triathlon-run:before {
-  @extend .ss-bucket-marathon:before;
-}
+// .ss-triathlon-ride:before {
+//   @extend .ss-bucket-triathlon:before;
+// }
+// .ss-triathlon-run:before {
+//   @extend .ss-bucket-marathon:before;
+// }

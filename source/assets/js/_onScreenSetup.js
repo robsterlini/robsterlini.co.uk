@@ -12,14 +12,7 @@ g.onScreenSetup = function() {
     plxParent:        ".no-touch [data-plx='parent']",
     revealClass:      ".js--reveal",
     revealData:       "[data-reveal]",
-    revealImage:      "[data-js='lazy-load-image']",
-    blogHeader:       "[data-header='parent']",
-    blogMarker:       "[data-js='show-header']",
-    blogTitle:        "[data-js='page-header']",
-    tabs: {
-      marker:         "[data-js='fix-tabs-to-top']",
-      navWrapper:     "[data-js='fixed-tabs']"
-    }
+    revealImage:      "[data-js='lazy-load-image']"
   };
 
   self.data = {
@@ -31,10 +24,7 @@ g.onScreenSetup = function() {
     revealHide:     "js--hidden",
     revealShow:     "js--show",
     loaded:         "image--loaded",
-    parentLoaded:   "figure--loaded",
-    tabs: {
-      fixed: 'tabs__nav--fixed'
-    }
+    parentLoaded:   "figure--loaded"
   };
 
   self.prefixes = [
@@ -106,73 +96,73 @@ g.onScreenSetup = function() {
     return str;
   }
 
-  self.setupBlogHeader = function() {
-    var headerInsert = document.querySelector(self.selectors.blogHeader);
-    if (headerInsert && articles) {
-      var blogHeader = document.createElement('div'),
-        waypointMarker = document.createElement('span'),
-        blogTitle = document.querySelector(self.selectors.blogTitle),
-        blogHeaderHtml =  '<div class="group">';
-        blogHeaderHtml +=   '<h1 class="sc"><span>You&rsquo;re reading </span>' + blogTitle.innerText + '</h1>'
-        blogHeaderHtml +=   '<div class="article__fixed-header__links">';
-        blogHeaderHtml +=     self.createHeaderLink({arrow: '&larr;', labelText: 'Previous'}, articles.prev);
-        blogHeaderHtml +=     self.createHeaderLink({arrow: '&rarr;', labelText: 'Next'}, articles.nextUp);
-        blogHeaderHtml +=   '</div>';
-        blogHeaderHtml += '</div>';
-      blogHeader.className = 'article__fixed-header';
-      blogHeader.dataset.js = 'fixed-header';
-      blogHeader.innerHTML = blogHeaderHtml;
-      waypointMarker.className = 'visuallyhidden js-screenleave'
-      waypointMarker.dataset.js = 'show-header'
-      waypointMarker.setAttribute("aria-hidden", "true");
-      headerInsert.insertBefore(blogHeader, headerInsert.firstChild);
-      headerInsert.insertBefore(waypointMarker, headerInsert.firstChild);
+  // self.setupBlogHeader = function() {
+  //   var headerInsert = document.querySelector(self.selectors.blogHeader);
+  //   if (headerInsert && articles) {
+  //     var blogHeader = document.createElement('div'),
+  //       waypointMarker = document.createElement('span'),
+  //       blogTitle = document.querySelector(self.selectors.blogTitle),
+  //       blogHeaderHtml =  '<div class="group">';
+  //       blogHeaderHtml +=   '<h1 class="sc"><span>You&rsquo;re reading </span>' + blogTitle.innerText + '</h1>'
+  //       blogHeaderHtml +=   '<div class="article__fixed-header__links">';
+  //       blogHeaderHtml +=     self.createHeaderLink({arrow: '&larr;', labelText: 'Previous'}, articles.prev);
+  //       blogHeaderHtml +=     self.createHeaderLink({arrow: '&rarr;', labelText: 'Next'}, articles.nextUp);
+  //       blogHeaderHtml +=   '</div>';
+  //       blogHeaderHtml += '</div>';
+  //     blogHeader.className = 'article__fixed-header';
+  //     blogHeader.dataset.js = 'fixed-header';
+  //     blogHeader.innerHTML = blogHeaderHtml;
+  //     waypointMarker.className = 'visuallyhidden js-screenleave'
+  //     waypointMarker.dataset.js = 'show-header'
+  //     waypointMarker.setAttribute("aria-hidden", "true");
+  //     headerInsert.insertBefore(blogHeader, headerInsert.firstChild);
+  //     headerInsert.insertBefore(waypointMarker, headerInsert.firstChild);
 
-      var blogMarker = document.querySelector(self.selectors.blogMarker);
-      if (blogMarker) {
-        onScreen.addItem(blogMarker, {
-          screen: {
-            top: '-10%'
-          },
-          disableScreenMove: true
-        });
-      }
-    };
-  };
+  //     var blogMarker = document.querySelector(self.selectors.blogMarker);
+  //     if (blogMarker) {
+  //       onScreen.addItem(blogMarker, {
+  //         screen: {
+  //           top: '-10%'
+  //         },
+  //         disableScreenMove: true
+  //       });
+  //     }
+  //   };
+  // };
 
-  self.setupTabs = function() {
-    var tabsMarker = document.querySelector(self.selectors.tabs.marker),
-      tabsNav = document.querySelector(self.selectors.tabs.navWrapper);
-    if (tabsMarker) {
-      // addClass(self.selectors.tabs.navWrapper, self.classes.tabs.fixed);
-      onScreen.addItem(tabsMarker, {
-        screen: {
-          top: 0
-        },
-        fireScreenMoveOffScreen: true,
-        onScreenMove: function(detail) {
-          var offset = detail.offset.top;
-          if (offset > 0) {
-            if (self.vars.tabFixed) {
-              self.vars.tabFixed = false;
-              removeClass(tabsNav, self.classes.tabs.fixed);
-            }
-          } else {
-            if (!self.vars.tabFixed) {
-              self.vars.tabFixed = true;
-              addClass(tabsNav, self.classes.tabs.fixed);
-            }
-          }
-        }
-      });
-    }
-  };
+  // self.setupTabs = function() {
+  //   var tabsMarker = document.querySelector(self.selectors.tabs.marker),
+  //     tabsNav = document.querySelector(self.selectors.tabs.navWrapper);
+  //   if (tabsMarker) {
+  //     // addClass(self.selectors.tabs.navWrapper, self.classes.tabs.fixed);
+  //     onScreen.addItem(tabsMarker, {
+  //       screen: {
+  //         top: 0
+  //       },
+  //       fireScreenMoveOffScreen: true,
+  //       onScreenMove: function(detail) {
+  //         var offset = detail.offset.top;
+  //         if (offset > 0) {
+  //           if (self.vars.tabFixed) {
+  //             self.vars.tabFixed = false;
+  //             removeClass(tabsNav, self.classes.tabs.fixed);
+  //           }
+  //         } else {
+  //           if (!self.vars.tabFixed) {
+  //             self.vars.tabFixed = true;
+  //             addClass(tabsNav, self.classes.tabs.fixed);
+  //           }
+  //         }
+  //       }
+  //     });
+  //   }
+  // };
 
   self.ready = function() {
     self.parallax();
     self.reveal();
-    self.setupBlogHeader();
-    self.setupTabs();
+    // self.setupBlogHeader();
+    // self.setupTabs();
     onScreen.update();
   };
 

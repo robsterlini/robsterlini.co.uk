@@ -4,28 +4,20 @@ description: Here’s a repository of all of my ramblings from over the years. S
 nav: journal
 ---
 
-<section id="content" class="wrapper">
-  <main>
-    <div class="group">
-      <h1>Archive</h1>
-      <p class="article__description">Here’s a repository of all of my ramblings from over the years. Some of them are pretty old though, so 2014 me doesn’t necessarily agree with 2012 me!</p>
-        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <h2 id="<%= year %>"><%= year %></h2>
-          <% articles.each_with_index do |article, i| %>
-            <% t_name = ''; t_link = ''; article.tags.each do |tag, articles| %>
-              <% t_link = tag_path(tag); t_name = tag %>
-            <% end %>
-            <% localised_date = "<time>#{article.date.strftime("%e %b %y")}</time>" %>
+<main id="content" class="wrapper">
+  <%= partial "partials/hero", locals: {
+    title: current_page.data.title,
+    subtitle: current_page.data.description
+  } %>
+  <article class="group typeset">
+    <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+      <h2 class="heading--gutter" id="<%= year %>"><%= year %></h2>
+      <% articles.each_with_index do |article, i| %>
             <h3><%= link_to article.title, article %></h3>
-            <p class="small-caps"><%= localised_date %> • <%= link_to t_name, t_link, :title => "See other posts about #{t_name}" %></p>
-          <% end %>
-        <% end %>
-        <h2>Categories</h2>
-        <ul class="categories"><!--
-          <% blog.tags.each do |tag, articles| %>
-            --><li class="category__item"><%= link_to "#{tag}", tag_path(tag), :class => "category__link ss-cat-#{tag.to_slug}", :title => "Read the #{articles.size} posts on #{tag}" %></li><!--
-          <% end %>
-        --></ul>
-    </div>
-  </main>
-</section>
+            <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %><br /><%= partial "partials/journal/category", :locals => { :a => article } %></p>
+      <% end %>
+    <% end %>
+
+    <%= partial "partials/journal/categories" %>
+  </article>
+</main>

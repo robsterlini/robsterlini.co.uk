@@ -1,81 +1,61 @@
+.masthead {
+  background: linear-gradient(module-color(masthead-bg), 33%, rgba(module-color(masthead-bg), 0));
+  // background: $color-black;
+  // bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: unit(1) 0 unit(0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
 .nav {
   display: flex;
   height: 100%;
   position: relative;
   text-align: center;
   width: 100%;
-  &:before {
-    background: linear-gradient(to right, rgba($color-black,0.0001), $color-black);
-    bottom: 0;
-    content: '';
-    display: block;
-    height: $measure-unit * 3.5;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    width: $measure-unit * 2;
-    z-index:7;
-  }
-  @include min-width($tp-masthead-hamburger) {
-    width: $masthead-icon;
-    &:before {
-      background: linear-gradient(rgba($color-black,0.0001), $color-black);
-      left: 0;
-      max-height: $measure-unit * 4;
-      width: $masthead-icon;
-    }
-  }
-  @include min-width($tp-masthead-icon) {
-    padding: $measure-unit * 2 0;
-    width: $masthead-full;
-    &:before {
-      width: $masthead-full;
-    }
-  }
-}
-.nav__list {
-  padding:0;
-  width:100%;
-  max-width:$layout-max-width-wide-suffix;
-  position: relative;
-  margin:auto;
-  @include max-width($tp-masthead-hamburger) {
-    white-space: nowrap;
+  // &__list {
+  //   left: 0;
+  //   margin: auto;
+  //   padding: 0;
+  //   position: relative;
+  //   width: auto;
+  // }
+  .list--inline {
+    margin: 0 auto;
   }
 }
 .nav__item {
   display: inline-block;
   vertical-align: top;
-  @include min-width($tp-masthead-hamburger) {
-    width:100%;
-  }
 }
-[class^="nav__link--"] {
-  @include font-size(18);
+.nav__link {
+  font-family: $font-stack-alt;
+  @include font-size(14);
+  font-weight: 500;
   display: block;
   color:$color-white;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  min-width: unit(5);
   padding: $measure-unit / 4;
   text-decoration: none;
+  text-transform: uppercase;
   transition:color .25s cubic-bezier(#{$bezier-nice}), background .25s cubic-bezier(#{$bezier-nice});
-  overflow: hidden;
-  @include min-width($tp-masthead-hamburger) {
-    padding: $measure-unit / 2;
-  }
   &:before {
-    color: $color-accent;
-    display: block;
-    font-size: $measure-unit * 2;
-    height: $measure-unit * 3;
-    line-height: $measure-unit * 3 * 1.125;
-    margin: 0 auto;
-    overflow: hidden;
-    opacity: 1;
-    transition:inherit;
-    width: $measure-unit * 3;
-    @include max-width($tp-masthead-hamburger) {
-      display: inline-block;
-      vertical-align: middle;
-    }
+    // color: $color-accent;
+    // display: block;
+    // font-size: $measure-unit * 2;
+    // height: $measure-unit * 3;
+    // line-height: $measure-unit * 3 * 1.125;
+    // margin: 0 auto;
+    // overflow: hidden;
+    // opacity: 1;
+    // transition:inherit;
+    // width: $measure-unit * 3;
   }
   @include hover {
     color:$color-white;
@@ -88,20 +68,10 @@
 
   }
 }
-%nav__link--selected {
-  background:rgba($color-accent,0.1);
-  &:before {
-    color:$color-white;
-  }
-}
 .nav__label {
   border-bottom:0;
-  @include max-width($tp-masthead-icon) {
-    display: none;
-  }
 }
 abbr.nav__label {
   background: none;
   border-bottom: 0;
-  text-shadow: none;
 }

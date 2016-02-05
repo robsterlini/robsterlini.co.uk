@@ -1,0 +1,4 @@
+<span class="visuallyhidden">Written on </span><time><%= a.date.strftime("%e %b %y") %></time><!--
+--><% if a.data.edited %>,
+  edited <%= Date.parse(a.data.edited).strftime("%e %b %y") %>
+<% end %>

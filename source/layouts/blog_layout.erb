@@ -1,34 +1,20 @@
 <% wrap_layout :layout do
-  t_name = ''
-  t_link = ''
-  current_article.tags.each do |tag, articles|
-    t_link = tag_path(tag)
-    t_name = tag
-  end
-  localised_date = current_article.date.strftime("%b %e")
-  formatted_date_categories = "<p class='small-caps'><time>#{localised_date}</time> • <a href='#{t_link}' title='See other posts about #{t_name}' class=' post-list__post--category'>#{t_name}</a></p>"
+
   set_image = false
-  set_image_small = false
-  set_image_loc = false
   if current_article.data.hero
-    image_loc = "/assets/journal/#{current_article.url.sub! '/journal/', ''.to_slug}"
-    content_for(:hero, current_article.data.hero); content_for(:hero_loc, image_loc)
-    set_image = current_article.data.hero
-    set_image_small = current_article.data.hero_small ? current_article.data.hero_small : current_article.data.hero
-    set_image_loc = image_loc
-    
+    content_for(:hero, "blog/#{current_article.slug}")
+    set_image = "blog/#{current_article.slug}"
   end %>
+
   <main class="wrapper" id="main">
     <%= partial "partials/hero", locals: {
       image: set_image,
-      image_small: set_image_small,
-      image_loc: set_image_loc,
       title: current_article.title,
       subtitle: current_article.data.description,
-      extra: formatted_date_categories
+      extra: "<p class=\"hero__header__extra small-caps\">#{partial "partials/journal/posted", :locals => { :a => current_article }}<br/>#{ partial "partials/journal/category", :locals => { :a => current_article }}</p>",
+      typeset: true
     } %>
-    <div data-header="parent"></div>
-    <article class="type blog-post group" data-age="<%= current_article.date %>" data-anchors data-js="append-age-warning" >
+    <article class="typeset blog-post group" data-age="<%= current_article.date %>" data-anchors data-js="append-age-warning" >
       <% if current_article.data.tldr %>
         <aside class="article__tldr">
           <p id="tldr"><strong><abbr title="Too long didn’t read">TL;DR</abbr></strong> <em><%= current_article.data.tldr %></em></p>
@@ -36,12 +22,6 @@
       <% end %>
       <%= yield %>
       <h2>Good read?</h2>
-      <% if current_page.data.comments == true %>
-        <h3>Join in the discussion</h3>
-        <div class="comments" id="disqus_thread"></div>
-        <noscript><p>Please enable javascript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></p></noscript>
-        <p><a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a></p>
-      <% end %>
       <h3>Sharing is caring!</h3>
       <% short_url = current_page.data.short_url ? "sterlini.co/#{current_page.data.short_url}" : "sterlini.co/j#{current_article.url.sub! '/journal', ''}" %>
       <p>Feel free to share it – <a href="http://<%= short_url %>" class="link" id="article-sharelink" title="Share this post with others"><%= short_url %></a>, or chat about it <a href="http://twitter.com/robsterlini" title="Chat to me about this post on Twitter">on Twitter</a>.</p>

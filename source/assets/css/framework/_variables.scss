@@ -2,6 +2,16 @@
  * Utility SCSS File
  */
 
+@function          bp($v)          { @return              map-get($breakpoints,  $v);  }
+@function      bezier($v: nice)    { @return cubic-bezier(map-get($beziers,      $v)); }
+@function line-height($v: regular) { @return              map-get($line-heights, $v);  }
+@function      timing($v: full)    { @return              map-get($timings,      $v);  }
+@function          tp($v)          { @return              map-get($tweakpoints,  $v);  }
+@function           w($v)          { @return              map-get($widths,       $v);  }
+@function      weight($v: regular) { @return              map-get($weights,      $v);  }
+
+@function unit($n: 1) { @return rem($n * 16); }
+
 // Measure
 $measure:       16;
 $measure-unit:  rem($measure);
@@ -15,16 +25,63 @@ $bp-small:       $measure * 48;
 $bp-mid:         $measure * 64;
 $bp-large:       $measure * 72;
 
+$breakpoints: (
+  xs: 450
+);
+
+$tweakpoints: (
+  gutter-widen: 1350,
+  has-gutter:   900,
+  parallax: 750
+);
+
+// Type
+$line-heights: (
+  regular: 1.45,
+  heading: 1.15,
+  caption: 1.25
+);
+$weights: (
+  alt-bold: 500,
+  alt-regular: 400,
+  bold: 600,
+  regular: 400
+);
+
+// Timings
+$timings: (
+  full: 250ms
+);
+
+
 // Tweakpoints
-$tp-masthead-icon:        $measure * 60;
-$tp-masthead-hamburger:   $measure * 30;
+$tp-split-hero:           $bp-small;
+$tp-widen-split-hero:     $bp-mid;
 
 // Max widths
-$layout-max-width:              $measure * 40;
-$layout-max-width-wide:         $measure * 64;
+$layout-max-width:              $measure * 34;
+$layout-max-width-wide:         $measure * 54;
 $layout-max-width-suffix:       rem($layout-max-width);
 $layout-max-width-wide-suffix:  rem($layout-max-width-wide);
 
+$widths: (
+  gutter: $measure * (54 - 34 - 6),
+  text: $measure * 34,
+  wrapper: 1200
+);
+
 // Masthead widths
-$masthead-full:       $measure-unit * 10;
+$masthead-full:       $measure-unit * 8;
 $masthead-icon:       $measure-unit * 4;
+
+// Beziers
+$beziers: (
+  bounce:   0.750#{","} -0.170#{","} 0.230#{","} 1.190,
+  bouncein: 0.715#{","}  0.170#{","} 0.145#{","} 1.245,
+  ease:     0.875#{","}  0.105#{","} 0.190#{","} 0.920,
+  expo:     1.000#{","}  0.000#{","} 0.000#{","} 1.000,
+  nice:     0.625#{","}  0.125#{","} 0.305#{","} 0.875,
+  nicein:   0.145#{","}  0.310#{","} 0.300#{","} 0.870,
+  sine:     0.445#{","}  0.050#{","} 0.550#{","} 0.950,
+  out:      0.660#{","}  0.120#{","} 0.985#{","} 0.545
+);

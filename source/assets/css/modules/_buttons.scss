@@ -4,24 +4,84 @@
  * @requires framework/_type.scss, framework/_color.scss
  */
 
+
+/**
+ * Button SCSS Partial
+ *
+ * @requires framework/_type.scss, framework/_color.scss
+ */
+
+/* ==|== Buttons =================
+  Buttons
+========================================== */
+
+%btn {
+  border:rem(2) solid module-color(btn-bg);
+  border-radius: rem(3);
+  display: inline-block;
+  font-family: $font-stack-alt;
+  font-weight: $font-weight-normal;
+  line-height: 1.3;
+  margin: rem(5) unit() rem(5) 0;
+  padding: rem(10) rem(15) rem(9);
+  text-decoration: none;
+  transition: all .25s cubic-bezier(#{$bezier-nice});
+  width:auto;
+  @include active {
+    transform:scale(0.95,0.95);
+  }
+}
+.btn {
+  @extend %btn;
+  background: module-color(btn-bg);
+  color: module-color(btn-color);
+  @include hover {
+    background:$color-link-primary-hover;
+    border-color:$color-link-primary-hover;
+    color: module-color(btn-color-hover);
+  }
+  .btns--read-more & {
+    width:100%;
+    overflow: hidden;
+    padding-left:rem(30);
+    text-indent:rem(-15);
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    max-width:rem(225);
+  }
+}
+.btn--outline {
+  @extend %btn;
+  @include hover {
+    color:$color-link-primary-hover;
+    border-color:$color-link-primary-hover;
+  }
+}
+.btn--icon {
+  padding-left: unit(2.5);
+  position: relative;
+  &:before {
+    font-size: unit(1.5);
+    position: absolute;
+    top: calc(50% - #{unit(1.5 / 2)});
+    left: unit(0.5);
+  }
+}
+
 /* ==|== Buttons =================
 	Containers
 ========================================== */
 
-[class^="btns--"] {
-  @extend %paragraph;
-}
-
-.btns--center {
-	text-align: center;
-	body.contact_index & {
-		max-width: none;
-		padding: 0 rem(16);
-		@include max-width($bp-mid) {
-			padding: 0;
-		}
-	}
-}
+// .btns--center {
+// 	text-align: center;
+// 	body.contact_index & {
+// 		max-width: none;
+// 		padding: 0 rem(16);
+// 		@include max-width($bp-mid) {
+// 			padding: 0;
+// 		}
+// 	}
+// }
 
 .btns--left {
   .btn,
@@ -32,192 +92,121 @@
 }
 
 /* ==|== Buttons =================
-  Fixed Buttons
-========================================== */
-
-%btns--fixed {
-  position: fixed;
-  top: $measure-unit;
-  right: $measure-unit;
-  z-index: 10;
-  @include max-width($bp-tiny) {
-    top: $measure-unit / 2;
-    right: $measure-unit / 2;
-  }
-}
-
-.btns--menu {
-	@extend %btns--fixed;
-  .btn {
-    margin: 0;
-    padding: rem(10) 0 rem(9);
-    &:before {
-      left: rem(5);
-      top: calc(50% - #{rem(17)});
-      transition:opacity .25s cubic-bezier(#{$bezier-nice});
-      transform: scale(0.9);
-      transform-origin: center center;
-    }
-    @include hover {
-      &:before {
-        opacity: 0;
-      }
-      .btn__label {
-        opacity: 1;
-        transform: translateX(0);
-        width: rem(100);
-      }
-    }
-  }
-  .btn__label {
-    display: block;
-    opacity: 0;
-    overflow: hidden;
-    padding: 0 rem(21);
-    text-align: center;
-    transform: translateX(#{rem(-10)});
-    transition: all 300ms;
-    white-space: nowrap;
-    width: 0;
-  }
-}
-
-.btns--portfolio-menu {
-  .btn {
-    @include hover {
-      .btn__label {
-        width: rem(190);
-      }
-    }
-  }
-}
-
-.btns--about-menu {
-  .btn {
-    @include hover {
-      .btn__label {
-        width: rem(180);
-      }
-    }
-  }
-}
-
-/* ==|== Buttons =================
 	Buttons
 ========================================== */
 
-%btn {
-  border:rem(2) solid $color-link-primary;
-  border-radius: rem(3);
-  display: inline-block;
-	font-weight: $font-weight-bold;
-	line-height: 1.3;
-  margin: rem(5) rem(10) rem(5);
-  padding: rem(10) rem(15) rem(9);
-	text-decoration: none;
-  transition: all .25s cubic-bezier(#{$bezier-nice});
-  width:auto;
-	@include active {
-		transform:scale(0.95,0.95);
-	}
-}
-.btn {
-	@extend %btn;
-	background:$color-link-primary;
-	color:$color-white;
-	text-shadow: none;
-	@include hover {
-		background:$color-link-primary-hover;
-		border-color:$color-link-primary-hover;
-		color:$color-white;
-	}
-	.btns--read-more & {
-		width:100%;
-		overflow: hidden;
-		padding-left:rem(30);
-		text-indent:rem(-15);
-		white-space:nowrap;
-		text-overflow: ellipsis;
-		max-width:rem(225);
-	}
-  // .hero &,
-  // .portfolio-featured__item & {
-  //   color:$color-black;
-  //   background-color:$color-link-reverse;
-  //   border-color:$color-link-reverse;
-  //   @include hover {
-  //     color:$color-black;
-  //     background:$color-link-reverse-hover;
-  //     border-color:$color-link-reverse-hover;
-  //   }
-  // }
-}
-.btn--outline {
-	@extend %btn;
-	@include hover {
-		color:$color-link-primary-hover;
-		border-color:$color-link-primary-hover;
-	}
-  // .hero &,
-  // .portfolio-featured__item & {
-  //   color:$color-link-reverse;
-  //   border-color:$color-link-reverse;
-  //   @include hover {
-  //     color:$color-link-reverse-hover;
-  //     border-color:$color-link-reverse-hover;
-  //   }
-  // }
-}
-.btn--icon {
-	padding-left: rem(50);
-	position: relative;
-	&:before {
-		font-size: rem(32);
-		position: absolute;
-		top: calc(50% - #{rem(16)});
-		left: rem(8);
-	}
-}
+// // %btn {
+// //   border:rem(2) solid $color-link-primary;
+// //   border-radius: rem(3);
+// //   display: inline-block;
+// // 	font-weight: $font-weight-bold;
+// // 	line-height: 1.3;
+// //   margin: rem(5) rem(10) rem(5);
+// //   padding: rem(10) rem(15) rem(9);
+// // 	text-decoration: none;
+// //   transition: all .25s cubic-bezier(#{$bezier-nice});
+// //   width:auto;
+// // 	@include active {
+// // 		transform:scale(0.95,0.95);
+// // 	}
+// // }
+// .btn {
+// 	@extend %btn;
+// 	background:$color-link-primary;
+// 	color:$color-white;
+// 	text-shadow: none;
+// 	@include hover {
+// 		background:$color-link-primary-hover;
+// 		border-color:$color-link-primary-hover;
+// 		color:$color-white;
+// 	}
+// 	.btns--read-more & {
+// 		width:100%;
+// 		overflow: hidden;
+// 		padding-left:rem(30);
+// 		text-indent:rem(-15);
+// 		white-space:nowrap;
+// 		text-overflow: ellipsis;
+// 		max-width:rem(225);
+// 	}
+//   // .hero &,
+//   // .portfolio-featured__item & {
+//   //   color:$color-black;
+//   //   background-color:$color-link-reverse;
+//   //   border-color:$color-link-reverse;
+//   //   @include hover {
+//   //     color:$color-black;
+//   //     background:$color-link-reverse-hover;
+//   //     border-color:$color-link-reverse-hover;
+//   //   }
+//   // }
+// }
+// .btn--outline {
+// 	@extend %btn;
+// 	@include hover {
+// 		color:$color-link-primary-hover;
+// 		border-color:$color-link-primary-hover;
+// 	}
+//   // .hero &,
+//   // .portfolio-featured__item & {
+//   //   color:$color-link-reverse;
+//   //   border-color:$color-link-reverse;
+//   //   @include hover {
+//   //     color:$color-link-reverse-hover;
+//   //     border-color:$color-link-reverse-hover;
+//   //   }
+//   // }
+// }
+// .btn--icon {
+// 	padding-left: rem(50);
+// 	position: relative;
+// 	&:before {
+// 		font-size: rem(32);
+// 		position: absolute;
+// 		top: calc(50% - #{rem(16)});
+// 		left: rem(8);
+// 	}
+// }
 @mixin social-color($c, $b: true, $o: true, $p: 12%) {
 	@if $b == true {
 		&.btn {
-			background-color: $c;
-			border-color: $c;
+			background-color: social-color($c);
+			border-color: social-color($c);
 			@include hover {
-				background-color: darken($c, $p);
-				border-color: darken($c, $p);
+				background-color: darken(social-color($c), $p);
+				border-color: darken(social-color($c), $p);
 			}
 		}
 	}
 	@if $o == true {
 		&.btn--outline {
-			color: $c;
-			border-color: $c;
+			color: social-color($c);
+			border-color: social-color($c);
 			@include hover {
-				color: darken($c, $p);
-				border-color: darken($c, $p);
+				color: darken(social-color($c), $p);
+				border-color: darken(social-color($c), $p);
 			}
 		}
 	}
 }
 [href*="dribbble.com"] {
-	@include social-color($color-s-dribbble, true, true, 15%);
+	@include social-color(dribbble, true, true, 15%);
 }
 [href*="twitter.com"] {
-	@include social-color($color-s-twitter, true, false);
+	@include social-color(twitter, true, false);
 }
-[href*="instagram.com"] {
-	@include social-color($color-s-instagram, false);
-}
-[href*="spotify.com"] {
-	@include social-color($color-s-spotify, false);
-}
-[href*="strava.com"] {
-	@include social-color($color-s-strava, false);
-}
-[href*="nikeplus.nike.com"] {
-	@include social-color($color-s-nike-plus, false);
-}
-[href*="github.com"] {
-	@include social-color(lighten($color-s-github, 15%), false);
-}
+// [href*="instagram.com"] {
+// 	@include social-color($color-s-instagram, false);
+// }
+// [href*="spotify.com"] {
+// 	@include social-color($color-s-spotify, false);
+// }
+// [href*="strava.com"] {
+// 	@include social-color($color-s-strava, false);
+// }
+// [href*="nikeplus.nike.com"] {
+// 	@include social-color($color-s-nike-plus, false);
+// }
+// [href*="github.com"] {
+// 	@include social-color(lighten($color-s-github, 15%), false);
+// }

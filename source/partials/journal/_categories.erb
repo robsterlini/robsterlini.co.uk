@@ -1,0 +1,2 @@
+<h2 class="heading--gutter">Categories</h2>
+<ul class="list--inline list--inline--icons"><% blog.tags.each do |tag, articles| %><li class="sc"><%= link_to "#{tag}", tag_path(tag), :class => "ss-cat-#{tag.to_slug}", :title => "Read the #{articles.size} posts on #{tag}" %></li><% end %></ul>

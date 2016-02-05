@@ -1,15 +1,15 @@
 .cv__content {
-	margin-bottom: $measure-unit * 2;
+	// margin-bottom: $measure-unit * 2;
 }
 .cv__title {
 	margin-bottom: 0;
 }
 .cv__title--subtitle {
-	margin-bottom: $measure-unit;
+	margin-bottom: unit();
 }
 .cv__title--org {
-	margin-right: $measure-unit / 4;
+	margin-right: unit(0.5);
 }
 .cv__title--date {
-	font-weight: $font-weight-normal;
+	font-weight: weight(alt-regular);
 }

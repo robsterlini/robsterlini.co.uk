@@ -1,12 +1,12 @@
 <header class="masthead" id="menu">
   <nav class="nav">
-    <ul class="nav__list">
+    <ul class="list--inline list--inline--icons">
       <!--<% data.pages.masthead.each do |nav| %>
         <% if nav.masthead != false %>
           --><li class="nav__item">
             <%
               nav_label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>"
-              concat link_to nav_label, nav.slug == "" ? "/" : nav.slug, :class => "nav__link--#{nav.icon} ss-nav-#{nav.icon}", :title => nav.alt
+              concat link_to nav_label, nav.slug == "" ? "/" : nav.slug, :class => "ss-nav-#{nav.icon} nav__link", :title => nav.alt
             %>
           </li><!--
         <% end %>

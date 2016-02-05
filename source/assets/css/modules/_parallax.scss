@@ -10,10 +10,15 @@
 [data-plx="child"] {
   background: center center no-repeat;
   background-size: cover;
-  content: '';
   left: 0;
-  height: 125%;
+  height: 100%;
   position: absolute;
-  top: -25%;
+  top: 0;
   width: 100%;
+  @include min-width(tp(parallax)) {
+    .js & {
+      height: 125%;
+      top: -25%;
+    }
+  }
 }
