@@ -7,13 +7,12 @@ no_footer: true
 <main id="content" class="wrapper">
   <%= partial "partials/hero", locals: {
     title: current_page.data.title,
-    subtitle: "#{current_page.data.description} I’m happily employed at Fueled, but happy to chat about any opportunity – freelance or otherwise."
+    subtitle: "In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled and as a freelance front end developer, and in my spare time I’m in triathlon training, watching Spurs, or playing with <span class=\"sc\">LEGO</span>."
   } %>
-    <article class="group" data-anchors>
-      <p>In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled, and in my spare time I’m in triathlon training, watching Spurs or playing with <span class="sc">LEGO</span>.</p>
+    <article class="typeset group" data-anchors>
       <%
         def cv_section(cv_title, cv_data)
-          string = "<h2 id='#{cv_title.to_slug}'>#{cv_title}</h2>"
+          string = "<h2 class=\"heading--gutter\" id='#{cv_title.to_slug}'>#{cv_title}</h2>"
           cv_data.each_with_index do |item, index|
             cv_slug = item.title.to_slug
             cv_set = "#{cv_slug}-#{index}"

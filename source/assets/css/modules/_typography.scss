@@ -80,6 +80,12 @@ h1, h2, h3, p, ul, ol {
 	max-width: rem(w(text));
 }
 
+h1,
+h2,
+h3 {
+	color: module-color(type-header);
+}
+
 h1 {
 	@include font-size(48);
 	font-weight: $font-weight-bold;

@@ -15,7 +15,7 @@ html,body {
 }
 
 html {
-	background: $color-background;
+	background: module-color(base-bg);
 	font-size:percentage($font-default-size / 16);
 	overflow-y: scroll;
 }
@@ -25,7 +25,7 @@ button,
 input,
 select,
 textarea {
-	color:$color-text;
+	color: module-color(type-text);
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	font-family: $font-stack-regular;

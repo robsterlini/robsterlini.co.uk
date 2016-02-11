@@ -19,8 +19,9 @@
 $colors: (
   accent: darken(#999, 10%),
   darkest: #1b1b1b,
-  darker: lighten(#1b1b1b, 5%),
+  darker: #222,
   dark: lighten(#1b1b1b, 10%),
+  mid: #bbb,
   light: darken(#f9f9f9, 10%),
   lighter: darken(#f9f9f9, 5%),
   lightest: #f9f9f9,
@@ -28,12 +29,15 @@ $colors: (
 );
 
 $module-colors: (
+  base-bg: color(darker),
   btn-bg: color(link),
-  btn-color: color(lightest),
+  btn-color: color(darkest),
   btn-color-hover: color(lightest),
-  hero-bg: color(lighter),
+  hero-bg: color(darkest),
   hero-subtitle: color(accent),
-  masthead-bg: rgba(color(darkest), 0.66)
+  masthead-bg: rgba(color(darkest), 0.66),
+  type-text: color(mid),
+  type-header: color(lighter)
 );
 
 $social-colors: (
@@ -77,8 +81,10 @@ $color-strikethrough: $color-accent;
   Elements
 ========================================== */
 
-$color-background: $color-white;
-$color-text: color(darker);
+// $color-background: $color-white;
+// $color-text: color(darker);
+$color-background: #222;
+$color-text: #ccc;
 $color-headers: #444;
 
 $color-hero-bg: darken($color-white, 3.5%);

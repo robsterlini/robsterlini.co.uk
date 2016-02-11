@@ -2,7 +2,7 @@
   background: $color-hero-bg;
   display: flex;
   flex-direction: column;
-  text-shadow: color(lightest) 0 rem(1) 0;
+  // text-shadow: color(lightest) 0 rem(1) 0;
   width: 100%;
   z-index: 1;
   img {
@@ -24,8 +24,8 @@
     }
   }
   &__header {
-    background: module-colors(hero-bg);
-    background: linear-gradient(lighten($color-hero-bg, 1%), $color-hero-bg);
+    background: module-color(hero-bg);
+    // background: linear-gradient(lighten($color-hero-bg, 1%), $color-hero-bg);
     text-align: left;
     margin: auto auto 0 auto;
     padding: unit(3) 0 unit(2);

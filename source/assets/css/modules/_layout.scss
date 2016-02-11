@@ -13,17 +13,17 @@
 }
 
 .wrapper {
-  background: $color-white;
+  background: module-color(base-bg);
   display: flex;
   flex: 1;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-bottom: $measure-unit * 3;
+  padding: unit() unit() $measure-unit * 3;
   width: 100%;
   z-index: 1;
   .page--no-footer & {
-    padding-bottom: 0;
+    padding-bottom: unit();
   }
   .masthead--no-hero + & {
     margin-top: rem(58);
