@@ -12,13 +12,13 @@
   background-size: cover;
   left: 0;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   @include min-width(tp(parallax)) {
     .js & {
-      height: 125%;
-      top: -25%;
+      height: 120%;
+      top: 10%;
     }
   }
 }

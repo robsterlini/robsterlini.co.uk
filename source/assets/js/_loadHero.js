@@ -15,7 +15,7 @@ g.loadHero = function() {
   self.classes = {
     errorPage:  "x404",
     homePage: "page--home",
-    heroHidden: "js--hero-bg-hidden"
+    loaded: 'js--hero-loaded'
   }
 
   self.base = {
@@ -67,7 +67,8 @@ g.loadHero = function() {
         }
         // Switch out the placeholder hero image for the image
         m[i].style.backgroundImage = 'url(' + hero + ')';
-        // m.querySelector(self.selectors.heroBg).removeClass(self.classes.heroHidden);
+        // Add the loaded class to reveal it
+        addClass(m[i], self.classes.loaded);
       };
     };
 

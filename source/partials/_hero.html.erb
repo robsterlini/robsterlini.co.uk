@@ -1,19 +1,25 @@
-<section class="hero">
-  <% if locals.has_key? :image %>
-    <% if image != false %>
-      <div class="hero__bg" data-plx="parent">
-        <img src="/assets/images/hero/<%= image %>_blur.jpg" />
-        <div class="hero__bg--blur" data-plx="child" style="background-image:url(/assets/images/hero/<%= image %>_blur.jpg);">
-          <div class="hero__bg--full" data-hero="/assets/images/hero/<%= image %>_full.jpg"></div>
-          <noscript>
-            <div class="hero__bg--full" style="background-image:url(/assets/images/hero/<%= image %>_full.jpg);"></div>
-          </noscript>
-        </div>
+<%
+  has_image = false
+  if locals.has_key? :image
+    if image != false
+      has_image = true
+    end
+  end
+%>
+<section class="hero" <% if has_image %>data-plx="parent"<% end %>>
+  <div class="hero__bg">
+    <% if has_image %>
+      <div class="hero__bg-wrap" data-plx="child"<% if locals.has_key? :color %> style="background-color: <%= color %>"<% end %>>
+        <div class="hero__bg--full" data-hero="/assets/images/hero/<%= image %>_full.jpg"></div>
+        <div class="hero__bg--blur" style="background-image:url(/assets/images/hero/<%= image %>_blur.jpg);"></div>
+        <noscript>
+          <div class="hero__bg--full" style="background-image:url(/assets/images/hero/<%= image %>_full.jpg);"></div>
+        </noscript>
       </div>
+    <% else %>
+      <% content_for(:no_hero, " masthead--no-hero") %>
     <% end %>
-  <% else %>
-    <% content_for(:no_hero, " masthead--no-hero") %>
-  <% end %>
+  </div>
   <div class="hero__header" data-js="header-to-offset">
     <div class="group<% if locals.has_key? :typeset %> typeset<% end %>">
       <% if locals.has_key? :title %>

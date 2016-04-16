@@ -29,7 +29,7 @@ g.onScreenSetup = function() {
 
   self.prefixes = [
     'webkitTransform',
-    'msTransform',
+    // 'msTransform',
     'transform'
   ];
 
@@ -50,7 +50,7 @@ g.onScreenSetup = function() {
           onScreenMove: function(detail) {
             var offset = detail.offset.outside.bottom,
               position = linear(offset, 0, 1, 1),
-              translate = roundToNum(position * 25, 3);
+              translate = roundToNum(position * -25, 3);
             self.prefixes.forEach(function(property) {
               background.style[property] = 'translate3d(0,' + translate + '%, 0)';
             });

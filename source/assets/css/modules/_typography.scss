@@ -87,8 +87,9 @@ h3 {
 }
 
 h1 {
-	@include font-size(48);
-	font-weight: $font-weight-bold;
+	@include font-size(60);
+	font-weight: weight();
+	// font-weight: $font-weight-bold;
 	line-height: line-height();
 	margin: unit(3) auto unit(1.5);
   @include max-width($bp-small) {
@@ -180,7 +181,8 @@ p {
 }
 
 blockquote {
-	border-left:lighten($color-accent,15%) solid rem(2);
+	color: $color-accent;
+	border-left: color(accent) solid rem(2);
 	font-weight: $font-weight-normal;
 	font-style:italic;
   left: unit(-2);

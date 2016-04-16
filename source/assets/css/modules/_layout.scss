@@ -19,13 +19,14 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding: unit() unit() $measure-unit * 3;
+  padding: unit();
+  padding: 0;
   width: 100%;
   z-index: 1;
-  .page--no-footer & {
-    padding-bottom: unit();
-  }
-  .masthead--no-hero + & {
-    margin-top: rem(58);
-  }
+  // .page--no-footer & {
+  //   padding-bottom: unit();
+  // }
+  // .masthead--no-hero + & {
+  //   margin-top: rem(58);
+  // }
 }
