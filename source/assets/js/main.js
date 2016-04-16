@@ -8,6 +8,7 @@
 //= require _strikethrough
 //= require _onScreenSetup
 //= require _anchorScroll
+//= require _navigation
 //= require _loadHero
 //= require _agePosts
 //= require _share

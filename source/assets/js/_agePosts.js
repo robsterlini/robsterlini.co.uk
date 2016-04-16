@@ -71,7 +71,7 @@ g.agePosts = function() {
       if (ageDiff > self.variables.oldest.age) {
         var ageAlert = self.variables.oldest,
           ageDiffNum = Math.floor(ageDiff / 52),
-          ageDiffSet = 'over ' + ageDiffNum + ' year' + (ageDiffNum > 1 ? 's' : '');
+          ageDiffSet = 'over ' + (ageDiffNum > 1 ? ageDiffNum : 'a') + ' year' + (ageDiffNum > 1 ? 's' : '');
       }
       else if (ageDiff > self.variables.older.age) {
         var ageAlert = self.variables.older,

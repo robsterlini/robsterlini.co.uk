@@ -23,10 +23,10 @@
   <div class="hero__header" data-js="header-to-offset">
     <div class="group<% if locals.has_key? :typeset %> typeset<% end %>">
       <% if locals.has_key? :title %>
-        <h1 class="hero__header--alpha" data-js="page-header"><%= title %></h1>
+        <h1 class="h--alpha" data-js="page-header"><span><%= title %></span></h1>
       <% end %>
       <% if locals.has_key? :subtitle %>
-        <h2 class="hero__header--beta"><%= subtitle %></h2>
+        <h2 class="h--beta"><span><%= subtitle %></span></h2>
       <% end %>
       <% if locals.has_key? :extra %>
         <%= extra %>

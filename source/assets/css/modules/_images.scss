@@ -50,8 +50,8 @@
   &__caption {
     font-family: $font-stack-alt;
     line-height: line-height(caption);
-    padding-left: unit(2);
-    text-indent: unit(-1.5);
+    // padding-left: unit(2);
+    // text-indent: unit(-1.5);
     @include font-size(12);
     color:$color-accent;
     width:100%;

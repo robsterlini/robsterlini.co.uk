@@ -19,6 +19,7 @@ g.partials = [
   'share',              // Converted
   'strikethrough',      // Converted
   'tabs',
+  'navigation',
 
   // Page specific
   'cv',                 // Converted

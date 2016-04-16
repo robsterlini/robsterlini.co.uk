@@ -1,18 +1,8 @@
-[class^="ss-cat"] {
-  &:before {
-    font-size: unit(1);
-    margin-right: unit(0.25);
-    position: relative;
-    top: rem(2);
-    vertical-align: middle;
-  }
-}
-
 .js [data-anchors] {
   h2[id] {
     position: relative;
     &:before {
-      background: $color-background;
+      background: module-color(base-bg);
       color: $color-link-primary;
       content:'#'attr(id);
       opacity: 0;

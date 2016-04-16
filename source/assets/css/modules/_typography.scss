@@ -86,24 +86,24 @@ h3 {
 	color: module-color(type-header);
 }
 
-h1 {
-	@include font-size(60);
+%heading-alpha {
+	@include font-size(64);
 	font-weight: weight();
-	// font-weight: $font-weight-bold;
 	line-height: line-height();
-	margin: unit(3) auto unit(1.5);
+	margin: 2em auto 1em;
   @include max-width($bp-small) {
     @include font-size(42);
   }
   @include max-width($bp-tiny) {
     @include font-size(34);
   }
-  & + h2 {
-  	padding-top: rem(28);
-  }
 }
 
-%h2 {
+.h--alpha {
+	@extend %heading-alpha;
+}
+
+%heading-beta {
 	@include font-size(28);
 	font-weight: $font-weight-bold;
 	line-height: line-height(heading);
@@ -118,8 +118,8 @@ h1 {
 	}
 }
 
-h2 {
-	@extend %h2;
+.h--beta {
+	@extend %heading-beta;
 }
 
 h3 {
@@ -228,6 +228,15 @@ abbr[title] {
 
 // Typeset
 .typeset {
+	h1 {
+		@extend %heading-alpha;
+	  & + h2 {
+	  	padding-top: rem(28);
+	  }
+	}
+	h2 {
+		@extend %heading-beta;
+	}
 	h1,
 	h2,
 	h3,
@@ -235,5 +244,9 @@ abbr[title] {
 		@include min-width(tp(has-gutter)) {
 			margin-right: 0;
 		}
+	}
+	ul,
+	ol {
+		left: 0;
 	}
 }

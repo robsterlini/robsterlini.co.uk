@@ -21,9 +21,9 @@
       filter: saturate(0) brightness(0.5) contrast(1.5);
     }
     &-wrap {
-      background-color: #999;
-      // background-color: #51D7FF;
+      background-color: #1b1b1b;
       background-color: #331649;
+      background-color: color(darkest);
     }
     &--blur {
       .js--hero-loaded + & {
@@ -54,14 +54,16 @@
     margin-top: auto;
     padding: unit(2) 0;
     width: 100%;
+    text-shadow: rgba(color(darkest), 0.3) 0 rem(1) rem(2);
     [class^="hero__header--"] {
       // max-width: none;
     }
-    &--alpha {
+    .h--alpha {
       color: #FF5C92;
+      margin-bottom: 0.25em;
       max-width: none;
     }
-    &--beta {
+    .h--beta {
       &:before {
         content: '';
         background-color: #FF5C92;
@@ -70,7 +72,7 @@
         right: 100%;
         height: 2px;
         width: 50000px;
-        margin-right: unit();
+        margin-right: unit(2);
       }
       padding-top: 0;
       position: relative;
@@ -79,6 +81,9 @@
       margin-left: auto;
       margin-right: 0;
     }
+  }
+  p {
+    margin-right: 0;
   }
 }
 

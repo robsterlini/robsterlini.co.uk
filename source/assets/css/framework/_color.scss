@@ -18,8 +18,8 @@
 
 $colors: (
   accent: #FF5C92,
-  darkest: #1A0C24,
-  darker: #220F30,
+  darkest: darken(#1F1634, 5%),
+  darker: lighten(#1F1634, 5%),
   dark: lighten(#1b1b1b, 10%),
   mid: #EDD9DF,
   light: darken(#f9f9f9, 10%),
@@ -29,13 +29,13 @@ $colors: (
 );
 
 $module-colors: (
-  base-bg: color(darker),
+  base-bg: color(darkest),
   btn-bg: color(link),
   btn-color: color(darkest),
   btn-color-hover: color(lightest),
   hero-bg: color(darkest),
   hero-subtitle: color(accent),
-  masthead-bg: rgba(color(darkest), 0.66),
+  masthead-bg: color(darker),
   type-text: color(mid),
   type-header: color(lighter)
 );
