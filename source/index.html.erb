@@ -9,7 +9,7 @@ hero: true
 <main id="content" class="wrapper" data-page="home">
   <%
     hero_extra = "<p>When I’m not doing that, I’m probably – one of – telling people how much I’ve fallen in love triathlon, taking a banging selfie for Instagram, or talking myself in or out of adding to my LEGO collection.</p>"
-    # hero_extra += "<p class=\"btns\">#{link_to "Want to chat? Say hi!", "contact.html", :class => "btn"}#{link_to "Read my journal", "journal.html", :class => "btn--outline"}</p>"
+    hero_extra += "<p class=\"btns\">#{link_to "Want to chat? Say hi!", "contact.html", :class => "btn"}#{link_to "Read my journal", "journal.html", :class => "btn--outline"}</p>"
   %>
   <%= partial "partials/hero", locals: {
     image: "home/home",
@@ -19,7 +19,7 @@ hero: true
     color2: "#51D7FF"
     }
   %>
-  <%= partial "partials/hero", locals: {
+  <!--<%= partial "partials/hero", locals: {
     image: "home/home",
     title: "Rob Sterlini",
     subtitle: "#{current_page.data.description} By day I build websites for #{link_to "Fueled", "https://fueled.com/sterlini"}, supplimenting that with smaller freelance projects.",
@@ -33,5 +33,5 @@ hero: true
     subtitle: "#{current_page.data.description} By day I build websites for #{link_to "Fueled", "https://fueled.com/sterlini"}, supplimenting that with smaller freelance projects.",
     extra: hero_extra
     }
-  %>
+  %>-->
 </main>

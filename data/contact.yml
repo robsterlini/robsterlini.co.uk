@@ -7,7 +7,7 @@ contact:
     -   title: "Email"
         when: "For chatting about projects or asking long questions."
         slug: "email"
-        desc: "<p>If you’ve read about <a href='/process/' title='Read about my process before enquiring about a project'>my process</a> and want me on a freelance job; or you’re dying to ask a super-duper long question then email is the way forward.</p>"
+        desc: "<p>If you want me on a freelance job; or you’re dying to ask a super-duper long question then email is the way forward.</p>"
         link:
             href: "mailto:hi@robsterlini.co.uk"
             title: "Email me (opens an email client)"

@@ -17,22 +17,23 @@
 @function social-color($v) { @return map-get($social-colors, $v); }
 
 $colors: (
-  accent: #FF5C92,
-  darkest: darken(#1F1634, 5%),
-  darker: lighten(#1F1634, 5%),
+  // accent: #FF5C92,
+  accent: #FFB647,
+  darkest: #000326,
+  darker: lighten(#001f3f, 5%),
   dark: lighten(#1b1b1b, 10%),
-  mid: #EDD9DF,
+  mid: rgba(#f9f9f9, 0.7),
   light: darken(#f9f9f9, 10%),
   lighter: darken(#f9f9f9, 5%),
   lightest: #f9f9f9,
-  link: #FF5C92
+  link: #FFB647
 );
 
 $module-colors: (
   base-bg: color(darkest),
   btn-bg: color(link),
   btn-color: color(darkest),
-  btn-color-hover: color(lightest),
+  btn-color-hover: color(darkest),
   hero-bg: color(darkest),
   hero-subtitle: color(accent),
   masthead-bg: color(darker),
@@ -94,8 +95,8 @@ $color-hero-bg: darken($color-white, 3.5%);
    Links
 ====================================== */
 
-$color-link-primary: #FF5C92;
-$color-link-primary-hover: lighten($color-link-primary, 20%);
+$color-link-primary: color(accent);
+$color-link-primary-hover: color(lightest);
 $color-link-primary-active: $color-white;
 
 $color-link-reverse: lighten($color-link-primary,23%);

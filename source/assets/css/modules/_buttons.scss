@@ -25,6 +25,7 @@
   margin: rem(5) unit() rem(5) 0;
   padding: rem(10) rem(15) rem(9);
   text-decoration: none;
+  text-shadow: none;
   transition: all .25s cubic-bezier(#{$bezier-nice});
   width:auto;
   @include active {
@@ -57,16 +58,16 @@
     border-color:$color-link-primary-hover;
   }
 }
-.btn--icon {
-  padding-left: unit(2.5);
-  position: relative;
-  &:before {
-    font-size: unit(1.5);
-    position: absolute;
-    top: calc(50% - #{unit(1.5 / 2)});
-    left: unit(0.5);
-  }
-}
+// .btn--icon {
+//   padding-left: unit(2.5);
+//   position: relative;
+//   &:before {
+//     font-size: unit(1.5);
+//     position: absolute;
+//     top: calc(50% - #{unit(1.5 / 2)});
+//     left: unit(0.5);
+//   }
+// }
 
 /* ==|== Buttons =================
 	Containers

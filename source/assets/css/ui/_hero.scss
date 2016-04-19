@@ -1,6 +1,7 @@
 .hero {
   // min-height: 0;
   display: flex;
+  flex: 1;
   &__bg {
     clip: rect(auto, auto, auto, auto);
     height: 100%;
@@ -18,11 +19,9 @@
       height: 100%;
       transition: opacity $timing;
       mix-blend-mode: screen;
-      filter: saturate(0) brightness(0.5) contrast(1.5);
+      filter: saturate(0) brightness(0.33);
     }
     &-wrap {
-      background-color: #1b1b1b;
-      background-color: #331649;
       background-color: color(darkest);
     }
     &--blur {
@@ -59,14 +58,16 @@
       // max-width: none;
     }
     .h--alpha {
-      color: #FF5C92;
+      color: color(accent);
       margin-bottom: 0.25em;
-      max-width: none;
+      @include min-width(tp(has-gutter)) {
+        max-width: none;
+      }
     }
     .h--beta {
       &:before {
         content: '';
-        background-color: #FF5C92;
+        background-color: color(accent);
         position: absolute;
         top: 21px; // TODO: Change me
         right: 100%;
@@ -79,7 +80,10 @@
       font-weight: normal;
       font-family: $font-stack-alt;
       margin-left: auto;
-      margin-right: 0;
+      margin-right: auto;
+      @include min-width(tp(has-gutter)) {
+        margin-right: 0;
+      }
     }
   }
   p {

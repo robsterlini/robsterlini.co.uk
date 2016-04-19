@@ -89,7 +89,7 @@ h3 {
 %heading-alpha {
 	@include font-size(64);
 	font-weight: weight();
-	line-height: line-height();
+	line-height: line-height(heading);
 	margin: 2em auto 1em;
   @include max-width($bp-small) {
     @include font-size(42);
@@ -106,7 +106,7 @@ h3 {
 %heading-beta {
 	@include font-size(28);
 	font-weight: $font-weight-bold;
-	line-height: line-height(heading);
+	line-height: line-height(subheading);
 	margin: 0 auto unit();
 	padding-top: unit(3);
 
@@ -128,7 +128,7 @@ h3 {
 	@include font-size(20);
 	font-weight: weight(alt-bold);
 	margin: unit(2) auto unit();
-	line-height: 1.05;
+	line-height: line-height(heading);
 	text-transform: uppercase;
 	@include max-width($bp-small) {
 		@include font-size(18);

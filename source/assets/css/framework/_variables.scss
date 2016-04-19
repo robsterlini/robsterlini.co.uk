@@ -26,7 +26,8 @@ $bp-mid:         $measure * 64;
 $bp-large:       $measure * 72;
 
 $breakpoints: (
-  xs: 450
+  xs: 450,
+  s: $measure * 48
 );
 
 $tweakpoints: (
@@ -38,6 +39,7 @@ $tweakpoints: (
 // Type
 $line-heights: (
   regular: 1.45,
+  subheading: 1.35,
   heading: 1.15,
   caption: 1.25
 );

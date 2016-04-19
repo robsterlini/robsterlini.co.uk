@@ -4,6 +4,7 @@ $js-masthead-toggled: '.js--masthead-toggled';
   overflow: hidden;
   height: 100%;
   position: fixed;
+  display: flex;
   top: 0;
   width: 100%;
   left: 0;
@@ -35,6 +36,48 @@ $js-masthead-toggled: '.js--masthead-toggled';
       margin-top: rem(-1);
       height: rem(2);
       background: color(accent); // TODO: Isolate colour
+      transition: timing() cubic-bezier(#{$bezier-nice});
+      &:nth-of-type(1) {
+        transform: translateY(-8px);
+        transition-delay: timing();
+        #{$js-masthead-toggled} & {
+          transform: none;
+          opacity: 0; 
+          transition-delay: 0;
+        }
+      }
+      &:nth-of-type(2) {
+        // transform: translateY(8px);
+        transition-delay: timing();
+        #{$js-masthead-toggled} & {
+          // transform: none;
+          opacity: 0;
+          transition-delay: 0;
+        }
+      }
+      &:nth-of-type(3) {
+        transform: translateY(8px);
+        transition-delay: timing();
+        #{$js-masthead-toggled} & {
+          transform: none;
+          opacity: 0;
+          transition-delay: 0;
+        }
+      }
+      &:nth-of-type(4) {
+        transition-delay: 0;
+        #{$js-masthead-toggled} & {
+          transform: rotate(40deg);
+          transition-delay: timing() * 2;
+        }
+      }
+      &:nth-of-type(5) {
+        transition-delay: 0;
+        #{$js-masthead-toggled} & {
+          transform: rotate(-40deg);
+          transition-delay: timing() * 2;
+        }
+      }
     }
   }
   &__bar {
@@ -43,33 +86,51 @@ $js-masthead-toggled: '.js--masthead-toggled';
         background: module-color(masthead-bg);
         left: 0;
         position: fixed;
+        transition: timing() cubic-bezier(#{$bezier-nice});
         z-index: 99; // TODO: Variablise
+        .masthead__toggle:hover + .masthead__bar & {
+          transform: none;
+        }
       }
     }
     &--left,
     &--right {
       height: 100%;
       top: 0;
-      width: unit(0.5);
-    }
-    &--left {
+      width: unit(0.75);
+      transform: translateX(-4px);
+      @include max-width(bp(s)) {
+        display: none;
+      }
     }
     &--right {
       left: auto;
       right: 0;
+      transform: translateX(4px);
     }
     &--top,
     &--bottom {
-      height: unit(0.5);
+      height: unit(0.75);
       bottom: 0;
       width: 100%;
+      transform: translateY(4px);
     }
     &--top {
       top: 0;
       bottom: auto;
+      transform: translateY(-4px);
     }
   }
 }
 #{$js-masthead-toggled} {
   // overflow: hidden;
+}
+.nav {
+  margin: auto;
+  &__item {
+    padding: unit(0.5) 0;
+  }
+  abbr {
+    background: none;
+  }
 }
