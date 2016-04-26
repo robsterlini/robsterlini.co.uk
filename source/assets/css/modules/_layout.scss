@@ -6,7 +6,7 @@
 
 .group {
 	margin: 0 auto;
-	max-width: $layout-max-width-wide-suffix;
+	max-width: rem(w(wrapper));
   padding: 0 unit(2);
   position: relative;
 	width: 100%;

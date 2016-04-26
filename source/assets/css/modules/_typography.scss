@@ -43,51 +43,28 @@
 	font-weight: bold;
 	font-style: normal;
 }
-// @font-face{
-// 	font-family: 'macmillan';
-// 	src: url("../fonts/macmillan.eot");
-// 	src: url("../fonts/macmillan.eot?#iefix") format("embedded-opentype"),
-// 		url("../fonts/macmillan.woff") format("woff");
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
-@font-face {
-	font-family: 'SkolarSans';
-	src: url('../fonts/SkolarSans-Regular.eot');
-	src: url('../fonts/SkolarSans-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/SkolarSans-Regular.woff2') format('woff2'),
-		url('../fonts/SkolarSans-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'SkolarSans';
-	src: url('../fonts/SkolarSans-Semibold.eot');
-	src: url('../fonts/SkolarSans-Semibold.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/SkolarSans-Semibold.woff2') format('woff2'),
-		url('../fonts/SkolarSans-Semibold.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-}
-
 
 /* ==|== Typography =================
 	1. Headings
 ========================================== */
 
-h1, h2, h3, p, ul, ol {
-	@include font-feature-settings(liga kern onum);
-	max-width: rem(w(text));
+%heading-gradient {
+	background: -webkit-linear-gradient(bottom left, color(accent-dark), color(accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-h1,
-h2,
-h3 {
-	color: module-color(type-header);
+h1, h2, h3, p, ul, ol {
+	display: block;
+	@include font-feature-settings(liga kern onum);
+	max-width: rem(w(text));
+	width: 100%;
 }
 
 %heading-alpha {
+	@extend %heading-gradient;
 	@include font-size(64);
+	color: module-color(type-header);
 	font-weight: weight();
 	line-height: line-height(heading);
 	margin: 2em auto 1em;
@@ -101,6 +78,7 @@ h3 {
 
 .h--alpha {
 	@extend %heading-alpha;
+	max-width: rem(w(wrapper));
 }
 
 %heading-beta {
@@ -135,6 +113,54 @@ h3 {
 	}
 	@include max-width($bp-tiny) {
 		@include font-size(16);
+	}
+}
+
+.heading {
+	max-width: none;
+	.h--alpha {
+		margin: 0;
+		display: block;
+	}
+	&__break {
+		display: block;
+		width: 100%;
+	}
+	&__pre {
+		@at-root {
+			[class^="heading__pre--"] {
+				color: module-color(type-text);
+				display: inline-block;
+				font-family: $font-stack-alt; // TODO: Make into a variable
+				@include font-size(16);
+				font-weight: bold; // TODO: Change me
+				margin-bottom: unit(2);
+				position: relative;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				&:before {
+					background: linear-gradient(color(accent-light), color(accent-dark));
+					content: '';
+					position: absolute;
+					opacity: 0.33;
+					height: rem(2);
+					width: 100vw;
+					bottom: rem(3);
+				}
+			}
+		}
+		&--left {
+			&:before {
+				right: 100%;
+				margin-right: unit(); // TODO: Convert to gutter
+			}
+		}
+		&--right {
+			&:before {
+				left: 100%;
+				margin-left: unit(); // TODO: Convert to gutter
+			}
+		}
 	}
 }
 
@@ -181,43 +207,44 @@ p {
 }
 
 blockquote {
-	color: $color-accent;
-	border-left: color(accent) solid rem(2);
-	font-weight: $font-weight-normal;
-	font-style:italic;
-  left: unit(-2);
-  padding-left: rem(($measure * 2) - 2);
-  position: relative;
-  margin: unit(2) unit(-2) unit(2) auto;
-  max-width:rem($layout-max-width + ($measure * 2));
+	margin: 0;
+	// color: $color-accent;
+	// border-left: color(accent) solid rem(2);
+	// font-weight: $font-weight-normal;
+	// font-style:italic;
+ //  left: unit(-2);
+ //  padding-left: rem(($measure * 2) - 2);
+ //  position: relative;
+ //  margin: unit(2) unit(-2) unit(2) auto;
+ //  max-width:rem($layout-max-width + ($measure * 2));
 
-	p {
-		@include font-size(24);
-		@include max-width($bp-small) {
-			@include font-size(22);
-		}
-		@include max-width($bp-tiny) {
-			@include font-size(20);
-		}
-	}
-	cite {
-		font-family: $font-stack-alt;
-    line-height: line-height(caption);
-		color:$color-accent;
-		font-style: normal;
-		display: block;
-		@include font-size(18);
-		margin-top: rem(5);
-		@include max-width($bp-small) {
-			@include font-size(17);
-		}
-		@include max-width($bp-tiny) {
-			@include font-size(16);
-		}
-		&:before {
-			content:'— ';
-		}
-	}
+	// p {
+	// 	@include font-size(24);
+	// 	@include max-width($bp-small) {
+	// 		@include font-size(22);
+	// 	}
+	// 	@include max-width($bp-tiny) {
+	// 		@include font-size(20);
+	// 	}
+	// }
+	// cite {
+	// 	font-family: $font-stack-alt;
+ //    line-height: line-height(caption);
+	// 	color:$color-accent;
+	// 	font-style: normal;
+	// 	display: block;
+	// 	@include font-size(18);
+	// 	margin-top: rem(5);
+	// 	@include max-width($bp-small) {
+	// 		@include font-size(17);
+	// 	}
+	// 	@include max-width($bp-tiny) {
+	// 		@include font-size(16);
+	// 	}
+	// 	&:before {
+	// 		content:'— ';
+	// 	}
+	// }
 }
 
 abbr[title] {

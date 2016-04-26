@@ -1,0 +1,29 @@
+<section>
+  <h1 class="heading">
+    <span class="g--<%= pre[:width] || "7" %> gi--<%= pre[:indent] || "0" %>"><span class="heading__pre--<%= pre[:position] || "right" %>"><%= pre[:copy] %> </span></span>
+    <b class="heading__break" aria-hidden="true"></b>
+    <span class="g--12 gi--<%= title[:indent] || "0" %>"><span class="h--alpha"><%= title[:copy] %></span></span>
+  </h1>
+
+  <% if locals.has_key? :text %>
+    <% text[:copy].each_with_index do |copy, index| %>
+      <div class="g--<%= text[:width] || "4" %><% if index == 0 %> gi--<%= text[:indent] || "0" %><% end %>">
+        <%
+          is_blockquote = text[:blockquote] || false
+          if is_blockquote
+        %>
+          <blockquote>
+        <% end %>
+        <% copy.each do |p| %>
+            <p><%= p %></p>
+        <% end %>
+        <% if is_blockquote %>
+          </blockquote>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  <% if locals.has_key? :extras %>
+    <%= extras[:end] %>
+  <% end %>
+</section>
