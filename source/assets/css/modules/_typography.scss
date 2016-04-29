@@ -120,7 +120,8 @@ h3 {
 	max-width: none;
 	.h--alpha {
 		margin: 0;
-		display: block;
+		display: inline-block;
+		vertical-align: top;
 	}
 	&__break {
 		display: block;
@@ -159,6 +160,47 @@ h3 {
 			&:before {
 				left: 100%;
 				margin-left: unit(); // TODO: Convert to gutter
+			}
+		}
+	}
+	&__images {
+		@at-root {
+			[class^="heading__images--"] {
+				[class*="g--"] {
+					// overflow: visible;
+				}
+			}
+		}
+		&--absolute {
+			position: absolute;
+			pointer-events: none;
+			top: 50%;
+			left: 0;
+			width: 100%;
+	    transform: translateY(-50%);
+		}
+	}
+	&__image {
+		&__kite {
+			$size: 71.25%;
+			border-radius: unit(0.5);
+			transform: rotate(45deg);
+			position: relative;
+			overflow: hidden;
+			height: 0;
+	    width: $size;
+	    padding-top: $size;
+	    margin: (100% - $size) / 2;
+			> b {
+				background: center no-repeat;
+		    background-size: cover;
+				display: block;
+				transform: rotate(-45deg);
+				position: absolute;
+				top: -25%;
+				left: -25%;
+				width: 150%;
+				height: 150%;
 			}
 		}
 	}

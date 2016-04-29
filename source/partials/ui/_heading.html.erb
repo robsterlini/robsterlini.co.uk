@@ -1,13 +1,14 @@
-<section>
-  <h1 class="heading">
+<section class="group">
+  <% tag = title[:tag] || "h2" %>
+  <<%= tag %> class="heading">
     <span class="g--<%= pre[:width] || "7" %> gi--<%= pre[:indent] || "0" %>"><span class="heading__pre--<%= pre[:position] || "right" %>"><%= pre[:copy] %> </span></span>
     <b class="heading__break" aria-hidden="true"></b>
-    <span class="g--12 gi--<%= title[:indent] || "0" %>"><span class="h--alpha"><%= title[:copy] %></span></span>
-  </h1>
+    <span class="g--<%= title[:width] || "12" %> gi--<%= title[:indent] || "0" %>"><span class="h--alpha"><%= title[:copy] %></span></span>
+  </<%= tag %>>
 
-  <% if locals.has_key? :text %>
+  <% if locals.has_key? :text %><!--
     <% text[:copy].each_with_index do |copy, index| %>
-      <div class="g--<%= text[:width] || "4" %><% if index == 0 %> gi--<%= text[:indent] || "0" %><% end %>">
+      --><div class="g--<%= text[:width] || "4" %><% if index == 0 %> gi--<%= text[:indent] || "0" %><% end %>">
         <%
           is_blockquote = text[:blockquote] || false
           if is_blockquote
@@ -20,10 +21,27 @@
         <% if is_blockquote %>
           </blockquote>
         <% end %>
-      </div>
-    <% end %>
+      </div><!--
+    <% end %>-->
   <% end %>
   <% if locals.has_key? :extras %>
     <%= extras[:end] %>
+  <% end %>
+  <% if locals.has_key? :images %>
+    <% if images[:absolute] %>
+        <% images[:absolute].each do |image| %>
+      <div class="heading__images--absolute"<% if image[:top] %> style="top:<%= image[:top] %>;"<% end %>>
+          <% if image[:kite] %>
+          <div class="g--<%= image[:width] || "4" %> gi--<%= image[:indent] %>">
+            <div class="heading__image__kite">
+              <b style="background-image: url(<%= image[:src] %>);">
+                <!-- <%= image %> -->
+              </b>
+            </div>
+          </div>
+          <% end %>
+      </div>
+        <% end %>
+    <% end %>
   <% end %>
 </section>

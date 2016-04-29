@@ -1,0 +1,47 @@
+<%
+logos = [
+        {
+          name: 'Kickpush',
+          awards: [
+            {
+              slug: 'csswinner',
+              title: 'kickpush.co',
+              subtitle: 'SOTD 24 April 2016'
+            }
+          ]
+        },
+        'Bigpoint',
+        'Vanity Fair',
+        'University of Reading'
+      ]
+
+  logos_str = ""
+  logos_str += "<div class=\"home__brands\">"
+  logos.each_with_index do |logo, index|
+    logos_str += "<div class=\"g--2 gi--1 home__brand\">"
+    logo_name = ""
+    logo_awards = ""
+    if logo.is_a? String
+      logo_name = logo
+    else
+      logo_name = logo[:name]
+      if logo[:awards]
+        logo_awards += "<ul class=\"home__brand__awards\">"
+        logo[:awards].each do |award|
+          logo_awards += "<li>"
+          logo_awards += sprockets.find_asset("brands/#{award[:slug]}.svg").to_s
+          logo_awards += "<strong class=\"home__brand__award__title\">#{award[:title]}</strong>"
+          logo_awards += "<span class=\"home__brand__award__subtitle\">#{award[:subtitle]}</span>"
+          logo_awards += "</li>"
+        end
+        logo_awards += "</ul>"
+      end
+    end
+    logos_str += "<span class=\"visuallyhidden\">#{logo_name}</span>"
+    logos_str += sprockets.find_asset("brands/#{logo_name.to_slug}.svg").to_s
+    logos_str += logo_awards
+    logos_str += "</div>"
+  end
+  logos_str += "</div>"
+%>
+<%= logos_str %>

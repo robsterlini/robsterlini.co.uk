@@ -6,12 +6,20 @@ priority: 1.0
 hero: true
 ---
 
+<div class="test-grid">
+  <div class="group"><!--
+    <% for i in 1..12 %>
+      --><div class="g--1"><%= i %></div><!--
+    <% end %>
+  --></div>
+</div>
 <main id="content" class="wrapper" data-page="home">
-  <div class="group">
     <%= partial "partials/ui/heading", locals: {
       title: {
         indent: '1',
-        copy: 'Rob Sterlini'
+        width: '11',
+        copy: 'Rob Sterlini',
+        tag: 'h1'
       },
       pre: {
         copy: 'Welcome aboard, I’m'
@@ -24,58 +32,30 @@ hero: true
             "Find out about what I’ve worked on, what I’m writing about, or how to get in touch."
           ]
         ]
+      },
+      images: {
+        absolute: [
+          {
+            src: 'http://placecage.com/1600/1600',
+            width: '6',
+            indent: '6',
+            kite: true
+          }, {
+            src: 'http://placecage.com/400/400',
+            width: '3',
+            indent: '6',
+            kite: true,
+            modifier_class: 'test',
+            top: '90%'
+          }
+        ]
       }
     } %>
-
-    <%
-      logos = [
-        {
-          name: 'Kickpush',
-          awards: [
-            {
-              slug: 'csswinner',
-              title: 'kickpush.co',
-              subtitle: 'SOTD 24 April 2016'
-            }
-          ]
-        },
-        'Bigpoint',
-        'Vanity Fair',
-        'University of Reading'
-      ]
-      logos_str = ""
-      logos_str += "<div class=\"home__brands\">"
-      logos.each_with_index do |logo, index|
-        logos_str += "<div class=\"g--2 gi--1 home__brand\">"
-        logo_name = ""
-        logo_awards = ""
-        if logo.is_a? String
-          logo_name = logo
-        else
-          logo_name = logo[:name]
-          if logo[:awards]
-            logo_awards += "<ul class=\"home__brand__awards\">"
-            logo[:awards].each do |award|
-              logo_awards += "<li>"
-              logo_awards += sprockets.find_asset("brands/#{award[:slug]}.svg").to_s
-              logo_awards += "<strong class=\"home__brand__award__title\">#{award[:title]}</strong>"
-              logo_awards += "<span class=\"home__brand__award__subtitle\">#{award[:subtitle]}</span>"
-              logo_awards += "</li>"
-            end
-            logo_awards += "</ul>"
-          end
-        end
-        logos_str += "<span class=\"visuallyhidden\">#{logo_name}</span>"
-        logos_str += sprockets.find_asset("brands/#{logo_name.to_slug}.svg").to_s
-        logos_str += logo_awards
-        logos_str += "</div>"
-      end
-      logos_str += "</div>"
-    %>
 
     <%= partial "partials/ui/heading", locals: {
       title: {
         indent: '3',
+        width: '9',
         copy: 'speak for themselves'
       },
       pre: {
@@ -94,13 +74,14 @@ hero: true
         ]
       },
       extras: {
-        end: logos_str
+        end: partial("partials/home/logos")
       }
     } %>
 
     <%= partial "partials/ui/heading", locals: {
       title: {
         indent: '1',
+        width: '11',
         copy: '‘Rob is lorem ipsum…’'
       },
       pre: {
@@ -118,44 +99,20 @@ hero: true
             "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           ]
         ]
+      },
+      images: {
+        absolute: [
+          {
+            src: 'http://placecage.com/1600/1600',
+            width: '5',
+            indent: '7',
+            kite: true,
+            top: '60%'
+          }
+        ]
       }
     } %>
-
-    <!-- <h1 class="heading">
-      <span class="g--7"><span class="heading__pre--right">Welcome aboard, I’m </span></span>
-      <b class="heading__break" aria-hidden="true"></b>
-      <span class="g__i--1"><span class="h--alpha">Rob Sterlini</span></span>
-    </h1>
-    <div class="g--4 g__i--1">
-      <p><span>By day</span> I’m a front end developer at <%= link_to "Fueled", "https://fueled.com/sterlini" %>; by night a designer, a runner, a triathlete, and more.</p>
-      <p>Find out about what I’ve worked on, what I’m writing about, or how to get in touch.</p>
-    </div> -->
-  </div>
-  <%#
-    hero_extra = "<p>When I’m not doing that, I’m probably – one of – telling people how much I’ve fallen in love triathlon, taking a banging selfie for Instagram, or talking myself in or out of adding to my LEGO collection.</p>"
-    hero_extra += "<p class=\"btns\">#{link_to "Want to chat? Say hi!", "contact.html", :class => "btn"}#{link_to "Read my journal", "journal.html", :class => "btn--outline"}</p>"
-  %>
-  <%#= partial "partials/hero", locals: {
-    image: "home/home",
-    title: "Rob Sterlini",
-    subtitle: "#{current_page.data.description} By day I build websites for #{link_to "Fueled", "https://fueled.com/sterlini"}, supplimenting that with smaller freelance projects.",
-    extra: hero_extra,
-    color2: "#51D7FF"
-    }
-  %>
-  <!--<%#= partial "partials/hero", locals: {
-    image: "home/home",
-    title: "Rob Sterlini",
-    subtitle: "#{current_page.data.description} By day I build websites for #{link_to "Fueled", "https://fueled.com/sterlini"}, supplimenting that with smaller freelance projects.",
-    extra: hero_extra,
-    color2: ""
-    }
-  %>
-  <%#= partial "partials/hero", locals: {
-    image: "home/home",
-    title: "Rob Sterlini",
-    subtitle: "#{current_page.data.description} By day I build websites for #{link_to "Fueled", "https://fueled.com/sterlini"}, supplimenting that with smaller freelance projects.",
-    extra: hero_extra
-    }
-  %>-->
+    <% page_articles.take(5).each_with_index do |article, i| %>
+      <%= article %>
+    <% end %>
 </main>
