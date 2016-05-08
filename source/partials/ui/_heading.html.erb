@@ -1,25 +1,37 @@
 <section class="group">
   <% tag = title[:tag] || "h2" %>
   <<%= tag %> class="heading">
-    <span class="g--<%= pre[:width] || "7" %> gi--<%= pre[:indent] || "0" %>"><span class="heading__pre--<%= pre[:position] || "right" %>"><%= pre[:copy] %> </span></span>
+    <% pre_position = pre[:position] || "right" %>
+    <span class=" g--<%= pre[:width] || "7" %> gi--<%= pre[:indent] || "0" %><% if pre_position == "right" %> g--oh<% end %>"><span class="heading__pre--<%= pre_position %>"><%= pre[:copy] %> </span></span>
     <b class="heading__break" aria-hidden="true"></b>
-    <span class="g--<%= title[:width] || "12" %> gi--<%= title[:indent] || "0" %>"><span class="h--alpha"><%= title[:copy] %></span></span>
+    <span class=" g--<%= title[:width] || "12" %> gi--<%= title[:indent] || "0" %>"><span class="h--<% if tag == "h1" %>alpha<% else %>beta<% end %>"><%= title[:copy] %></span></span>
   </<%= tag %>>
 
   <% if locals.has_key? :text %><!--
     <% text[:copy].each_with_index do |copy, index| %>
-      --><div class="g--<%= text[:width] || "4" %><% if index == 0 %> gi--<%= text[:indent] || "0" %><% end %>">
+      --><div class=" g--<%= text[:width] || "4" %><% if index == 0 %> gi--<%= text[:indent] || "0" %><% end %>" data-js="append-age-warning">
         <%
           is_blockquote = text[:blockquote] || false
           if is_blockquote
         %>
           <blockquote>
         <% end %>
-        <% copy.each do |p| %>
+        <% if copy.is_a? String %>
+          <p><%= copy %></p>
+        <% else %>
+          <% copy.each do |p| %>
             <p><%= p %></p>
+          <% end %>
         <% end %>
         <% if is_blockquote %>
           </blockquote>
+        <% end %>
+        <% if text[:cta] %>
+          <p class="btns--left">
+            <% text[:cta].each_with_index do |cta, i| %>
+              <%= link_to cta[:text], cta[:link], :class => "btn--primary" %>
+            <% end %>
+          </p>
         <% end %>
       </div><!--
     <% end %>-->
@@ -35,7 +47,6 @@
           <div class="g--<%= image[:width] || "4" %> gi--<%= image[:indent] %>">
             <div class="heading__image__kite">
               <b style="background-image: url(<%= image[:src] %>);">
-                <!-- <%= image %> -->
               </b>
             </div>
           </div>

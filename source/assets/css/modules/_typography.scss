@@ -59,6 +59,9 @@ h1, h2, h3, p, ul, ol {
 	@include font-feature-settings(liga kern onum);
 	max-width: rem(w(text));
 	width: 100%;
+	.typeset & {
+		max-width: calc(#{grid-unit(7, 12, false)});
+	}
 }
 
 %heading-alpha {
@@ -82,10 +85,10 @@ h1, h2, h3, p, ul, ol {
 }
 
 %heading-beta {
-	@include font-size(28);
-	font-weight: $font-weight-bold;
-	line-height: line-height(subheading);
-	margin: 0 auto unit();
+	@include font-size(32);
+	font-weight: weight(bold);
+	line-height: line-height(heading);
+	margin: 0 auto 0.5em;
 	padding-top: unit(3);
 
 	@include max-width($bp-small) {
@@ -118,10 +121,18 @@ h3 {
 
 .heading {
 	max-width: none;
-	.h--alpha {
+	.h--alpha,
+	.h--beta {
+		padding: 0 unit() 0 0;
 		margin: 0;
 		display: inline-block;
 		vertical-align: top;
+	}
+	.h--beta {
+		@extend %heading-gradient;
+		color: module-color(type-header);
+		@include font-size(52);
+		font-weight: weight();
 	}
 	&__break {
 		display: block;
@@ -133,7 +144,7 @@ h3 {
 				color: module-color(type-text);
 				display: inline-block;
 				font-family: $font-stack-alt; // TODO: Make into a variable
-				@include font-size(16);
+				@include font-size(14);
 				font-weight: bold; // TODO: Change me
 				margin-bottom: unit(2);
 				position: relative;

@@ -10,7 +10,7 @@
 @function           w($v)          { @return              map-get($widths,       $v);  }
 @function      weight($v: regular) { @return              map-get($weights,      $v);  }
 
-@function unit($n: 1) { @return rem($n * 16); }
+@function unit($n: 1, $e: 0) { @return rem(($n * 16) + $e); }
 
 // Measure
 $measure:       16;

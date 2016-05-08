@@ -1,7 +1,21 @@
 $js-masthead-toggled: '.js--masthead-toggled';
 
+.masthead {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  &__logo {
+    height: unit();
+    background: purple;
+    color: transparent;
+  }
+}
 .nav {
-  display: none;
+  &__list {
+    display: none;
+  }
 }
 // .masthead {
 //   overflow: hidden;

@@ -20,24 +20,32 @@ $colors: (
   accent: #7947C2,
   accent-light: #C86DD7,
   accent-dark: #3023AE,
+  secondary: #5533C1,
   darkest: #000326,
   darker: lighten(#001f3f, 5%),
   dark: lighten(#1b1b1b, 10%),
   mid: #7B788D,
   light: darken(#f9f9f9, 10%),
   lighter: darken(#f9f9f9, 5%),
-  lightest: #f9f9f9,
-  link: #FFB647
+  lightest: #f9f9f9
 );
 
 $module-colors: (
   base-bg: color(lightest),
-  btn-bg: color(link),
-  btn-color: color(darkest),
+
+  btn-bg: color(accent),
+  btn-color: color(lightest),
   btn-color-hover: color(darkest),
+
   hero-bg: color(darkest),
   hero-subtitle: color(accent),
+
+  link-primary: color(secondary),
+  link-primary-hover: color(accent),
+  link-primary-active: color(mid),
+
   masthead-bg: color(darker),
+
   type-text: color(mid),
   type-header: color(accent)
 );

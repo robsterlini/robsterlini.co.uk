@@ -1,10 +1,12 @@
 iframe {
-  margin:$measure-unit * 2 auto;
+  margin: unit(2) auto;
   position: relative;
   display: block;
   z-index: 2;
   &[id*="twitter-widget"] {
-  	margin: $measure-unit * 2 auto !important;
+  	margin: unit(2) 0 unit(2) auto !important;
+    max-width: calc(#{grid-unit(7, 12, false)}) !important;
+    width: 100% !important;
   }
   &[id*="instagram-embed-"] {
   	margin: $measure-unit auto !important;

@@ -100,7 +100,7 @@ g.agePosts = function() {
         // Give it the correct classname as decided earlier
         ageNode.className = 'alert--' + ageAlert.alert;
         // And then insert it into the DOM
-        wrapperInsert.insertBefore(ageNode, wrapperInsert.firstChild);
+        wrapperInsert.insertBefore(ageNode, wrapperInsert.lastChild);
       }
     }
   };

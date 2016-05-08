@@ -55,8 +55,12 @@
 $grid-gutter: 16;
 $grid-columns: 12;
 
-@function grid-unit($n, $t) {
-    @return #{(100% / $t * $n)} - #{rem(($grid-gutter * ($t + 1) / $t * $n) - (16 * ($n - 1)))};
+@function grid-unit($n, $t, $i: true) {
+    $tt: $t + 1;
+    @if ($i == false) {
+        $tt: $t - 1;
+    }
+    @return #{(100% / $t * $n)} - #{rem(($grid-gutter * ($tt) / $t * $n) - (16 * ($n - 1)))};
 }
 @mixin grid-column($n, $t: $grid-columns) {
     width: calc(#{grid-unit($n, $t)});
@@ -66,10 +70,10 @@ $grid-columns: 12;
 }
 .g {
     @at-root {
-        [class*="g--"] {
+        [class*=" g--"] {
             display: inline-block;
             vertical-align: top;
-            overflow: hidden;
+            // overflow: hidden;
             margin-left: rem($grid-gutter);
         }
     }
@@ -80,7 +84,7 @@ $grid-columns: 12;
     }
     &i {
         @at-root {
-            [class*="g__i--"] {
+            [class*=" g__i--"] {
                 display: block;
             }
         }
@@ -90,10 +94,13 @@ $grid-columns: 12;
             }
         }
     }
+    &--oh {
+        overflow: hidden;
+    }
 }
 
 .test-grid {
-    // display: none; // TODO: Make this toggleable
+    display: none; // TODO: Make this toggleable
     pointer-events: none;
     position: fixed;
     top: 0;

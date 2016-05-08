@@ -1,10 +1,6 @@
 code {
-  font-size:0.9em;
-  // background:#f4f4f4;
+  font-size: 0.9em;
   position: relative;
-  .hero & {
-    background:none;
-  }
   @include max-width($bp-small) {
     @include font-size(16);
   }
@@ -13,16 +9,17 @@ code {
   }
 }
 pre {
-  margin:rem(20) auto;
-  max-width:rem($layout-max-width + (25 * 2));
+  margin: unit(2) auto;
+  // max-width:rem($layout-max-width + (25 * 2));
   @include font-size(14);
   code {
-    max-width:$layout-max-width-suffix;
+    // max-width:$layout-max-width-suffix;
+    max-width: calc(#{grid-unit(10, 12, false)});
     @include font-size(14);
     display: block;
-    margin:0 auto;
-    padding:rem(8) rem(16);
-    border-radius:rem(3);
+    margin: 0 0 0 auto;
+    padding: unit(0.5) unit() unit(0.5) calc(#{grid-unit(2, 8, false)} + #{unit()});
+    border-radius: unit(0.25);
     top: 0;
   }
 }

@@ -1,0 +1,73 @@
+sections:
+  # HERO
+  hero:
+    test: 'test'
+    title:
+      indent: 1
+      width: 11
+      copy: 'Rob Sterlini'
+      tag: 'h1'
+    pre:
+      copy: 'Welcome aboard, I’m'
+    text:
+      indent: 1
+      copy:
+        -
+          - "By day I’m a front end developer at <a href=\"https://fueled.com/sterlini\" target=\"_blank\">Fueled</a>; by night a designer, a runner, a triathlete, and&nbsp;more."
+          - "Find out about what I’ve worked on, what I’m writing about, or how to get in&nbsp;touch."
+    images:
+      absolute:
+        - src: 'http://placecage.com/1600/1600'
+          width: 6
+          indent: 6
+          kite: true
+        - src: 'http://placecage.com/400/400'
+          width: 3
+          indent: 6
+          kite: true
+          modifier_class: 'test'
+          top: '90%'
+
+  # WORK
+  work:
+    title:
+      indent: 3
+      width: 9
+      copy: 'speak for themselves'
+    pre:
+      position: 'left'
+      indent: 2
+      copy: 'Crafting online experiences that'
+    text:
+      indent: 3
+      copy:
+        -
+          - "At Fueled I’ve created sites for multi-billion pound companies, tech startups, established brands, and the like. It has also afforded me the opportunity to push the boundaries of the web, with imaginative case studies, and boundless capabilities."
+        -
+          - "As a freelance developer and in past jobs, I’ve had the great pleasure of working with friends to create stunning pieces like kickpush.co. Reimagining the University of Reading site was pretty special given my fond love for my time there!"
+
+  # TESTIMONIAL
+  testimonial:
+    title:
+      indent: 1
+      width: 11
+      copy: '‘Rob is lorem ipsum…’'
+    pre:
+      width: 9,
+      copy: 'Sam Applebee, Co-founder at Kickpush once said:'
+    text:
+      indent: 1
+      width: 6
+      blockquote: true
+      copy:
+        -
+          - "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          - "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+          - "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    images:
+      absolute:
+        - src: 'http://placecage.com/1600/1600'
+          width: 5
+          indent: 7
+          kite: true
+          top: '60%'

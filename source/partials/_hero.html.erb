@@ -1,11 +1,43 @@
 <%
   has_image = false
+  images = {}
   if locals.has_key? :image
     if image != false
       has_image = true
+      images = {
+        absolute: [
+          {
+            src: "/assets/images/hero/#{image}_full.jpg",
+            width: 7,
+            indent: 7,
+            kite: true
+          }
+        ]
+      }
     end
   end
 %>
+<%= partial "partials/ui/heading", locals: {
+  title: {
+    indent: has_image ? 1 : 3,
+    width: has_image ? 6 : 8,
+    copy: title,
+    tag: 'h1'
+  },
+  pre: {
+    width: 6,
+    copy: "Recently I wrote about"
+  },
+  text: {
+    indent: has_image ? 1 : 3,
+    width: has_image ? 5 : 7,
+    copy: [
+      subtitle
+    ]
+  },
+  images: images
+} %>
+<div style="display: none !important;">
 <section class="hero" <% if has_image %>data-plx="parent"<% end %>>
   <div class="hero__bg">
     <% if has_image %>
@@ -34,3 +66,4 @@
     </div>
   </div>
 </section>
+</div>

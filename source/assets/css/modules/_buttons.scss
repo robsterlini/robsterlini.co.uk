@@ -16,63 +16,66 @@
 ========================================== */
 
 %btn {
-  border:rem(2) solid module-color(btn-bg);
-  border-radius: rem(3);
+  border: rem(2) solid module-color(btn-bg);
+  border-radius: unit(0.25);
   display: inline-block;
   font-family: $font-stack-alt;
-  font-weight: $font-weight-normal;
+  font-weight: bold;
+  letter-spacing: 0.1em;
   line-height: 1.3;
   margin: rem(5) unit() rem(5) 0;
-  padding: rem(10) rem(15) rem(9);
+  padding: unit(0.5) unit();
   text-decoration: none;
-  text-shadow: none;
+  text-transform: uppercase;
   transition: all .25s cubic-bezier(#{$bezier-nice});
-  width:auto;
+  vertical-align: top;
+  width: auto;
   @include active {
     transform:scale(0.95,0.95);
   }
 }
 .btn {
-  @extend %btn;
-  background: module-color(btn-bg);
-  color: module-color(btn-color);
-  @include hover {
-    background:$color-link-primary-hover;
-    border-color:$color-link-primary-hover;
-    color: module-color(btn-color-hover);
+  @at-root {
+    [class^="btn--"] {
+      @extend %btn;
+    }
   }
-  .btns--read-more & {
-    width:100%;
-    overflow: hidden;
-    padding-left:rem(30);
-    text-indent:rem(-15);
-    white-space:nowrap;
-    text-overflow: ellipsis;
-    max-width:rem(225);
+  &--primary {
+    background: module-color(btn-bg);
+    color: module-color(btn-color);
+    @include hover {
+      background:$color-link-primary-hover;
+      border-color:$color-link-primary-hover;
+      color: module-color(btn-color-hover);
+    }
   }
-}
-.btn--outline {
-  @extend %btn;
-  @include hover {
-    color:$color-link-primary-hover;
-    border-color:$color-link-primary-hover;
+  &--reversed {
+
   }
 }
-// .btn--icon {
-//   padding-left: unit(2.5);
-//   position: relative;
-//   &:before {
-//     font-size: unit(1.5);
-//     position: absolute;
-//     top: calc(50% - #{unit(1.5 / 2)});
-//     left: unit(0.5);
-//   }
-// }
 
 /* ==|== Buttons =================
 	Containers
 ========================================== */
 
+.btns {
+  @at-root {
+    [class^="btns--"] {
+      @include font-size(14);
+    }
+  }
+  &--readmore {
+    [class^="btn--"] {
+      width:100%;
+      overflow: hidden;
+      padding-left:rem(30);
+      text-indent:rem(-15);
+      white-space:nowrap;
+      text-overflow: ellipsis;
+      max-width:rem(225);
+    }
+  }
+}
 // .btns--center {
 // 	text-align: center;
 // 	body.contact_index & {
@@ -169,22 +172,22 @@
 // 	}
 // }
 @mixin social-color($c, $b: true, $o: true, $p: 12%) {
+  @if $o == true {
+    &[class^="btn--"] {
+      color: social-color($c);
+      border-color: social-color($c);
+      @include hover {
+        color: darken(social-color($c), $p);
+        border-color: darken(social-color($c), $p);
+      }
+    }
+  }
 	@if $b == true {
-		&.btn {
+		&.btn--primary {
 			background-color: social-color($c);
 			border-color: social-color($c);
 			@include hover {
 				background-color: darken(social-color($c), $p);
-				border-color: darken(social-color($c), $p);
-			}
-		}
-	}
-	@if $o == true {
-		&.btn--outline {
-			color: social-color($c);
-			border-color: social-color($c);
-			@include hover {
-				color: darken(social-color($c), $p);
 				border-color: darken(social-color($c), $p);
 			}
 		}

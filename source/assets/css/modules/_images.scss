@@ -9,12 +9,13 @@
   margin-bottom: unit();
   &--full {
     margin-right: 0;
-    margin-left: unit(-2);
     width: 100%;
-    width: calc(100% + #{unit(2)});
     .figure__caption {
       margin-left: auto;
       max-width: rem($layout-max-width + unit(2));
+    }
+    img {
+      width: 100%;
     }
   }
   &--width {
@@ -29,7 +30,7 @@
   &--gutter {
     float: left;
     margin-right: unit(2);
-    margin-left: unit(-2);
+    // margin-left: unit(-2);
     width: 50%;
   }
   &--left {
