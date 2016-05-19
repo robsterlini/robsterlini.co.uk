@@ -29,9 +29,8 @@
   &--left,
   &--gutter {
     float: left;
-    margin-right: unit(2);
-    // margin-left: unit(-2);
-    width: 50%;
+    margin-right: unit();
+    width: calc(50% - #{unit(0.5)});
   }
   &--left {
     .figure__caption {
@@ -44,9 +43,11 @@
     }
   }
   &--gutter {
-    @include min-width(tp(has-gutter)) {
-      width: calc(#{rem(w(gutter))} + #{unit(2)});
-    }
+    max-width: calc(#{grid-unit(4, 12, false)});
+    margin-left: calc(#{grid-indent(2, 12, false)}); // n-1
+    // @include min-width(tp(has-gutter)) {
+    //   width: calc(#{rem(w(gutter))} + #{unit(2)});
+    // }
   }
   &__caption {
     font-family: $font-stack-alt;

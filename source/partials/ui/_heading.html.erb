@@ -2,14 +2,15 @@
   <% tag = title[:tag] || "h2" %>
   <<%= tag %> class="heading">
     <% pre_position = pre[:position] || "right" %>
-    <span class=" g--<%= pre[:width] || "7" %> gi--<%= pre[:indent] || "0" %><% if pre_position == "right" %> g--oh<% end %>"><span class="heading__pre--<%= pre_position %>"><%= pre[:copy] %> </span></span>
+    <span class="<%= g(pre) %><% if pre_position == "right" %> g-oh<% end %>"><span class="heading__pre--<%= pre_position %>"><%= pre[:copy] %> </span></span>
     <b class="heading__break" aria-hidden="true"></b>
-    <span class=" g--<%= title[:width] || "12" %> gi--<%= title[:indent] || "0" %>"><span class="h--<% if tag == "h1" %>alpha<% else %>beta<% end %>"><%= title[:copy] %></span></span>
+    <br />
+    <span class="<%= g(title) %>"><span class="h--<% if tag == "h1" %>alpha<% else %>beta<% end %>"><%= title[:copy] %></span></span>
   </<%= tag %>>
 
   <% if locals.has_key? :text %><!--
     <% text[:copy].each_with_index do |copy, index| %>
-      --><div class=" g--<%= text[:width] || "4" %><% if index == 0 %> gi--<%= text[:indent] || "0" %><% end %>" data-js="append-age-warning">
+      --><div class="heading__text<%= g(text) %>" data-js="append-age-warning">
         <%
           is_blockquote = text[:blockquote] || false
           if is_blockquote
@@ -42,11 +43,13 @@
   <% if locals.has_key? :images %>
     <% if images[:absolute] %>
         <% images[:absolute].each do |image| %>
-      <div class="heading__images--absolute"<% if image[:top] %> style="top:<%= image[:top] %>;"<% end %>>
+      <div class="heading__images--absolute"<% if image[:top] %> style="top:<%= image[:top] %>;"<% end %><% if !image[:src] %> aria-hidden="true"<% end %>>
           <% if image[:kite] %>
-          <div class="g--<%= image[:width] || "4" %> gi--<%= image[:indent] %>">
-            <div class="heading__image__kite">
-              <b style="background-image: url(<%= image[:src] %>);">
+          <div class="gc <%= g(image) %>">
+            <div class="heading__image__kite--<% if image[:outline] %><% if image[:src] %>border<% else %>outline<% end %><% else %>default<% end %>">
+              <% if image[:src] %>
+                <b style="background-image: url(<%= image[:src] %>);">
+              <% end %>
               </b>
             </div>
           </div>

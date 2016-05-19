@@ -62,45 +62,59 @@ $grid-columns: 12;
     }
     @return #{(100% / $t * $n)} - #{rem(($grid-gutter * ($tt) / $t * $n) - (16 * ($n - 1)))};
 }
+@function grid-indent($n, $t, $i: true) {
+    @if ($i == false) {
+        @return #{grid-unit($n, $t, false)} + #{rem(16 * ($n - 1))};
+    }
+    @else {
+        @return #{rem(($grid-gutter * ($n + 1)) - ($grid-gutter * ($t + 1) / $t * $n))} + #{(100% / $t * $n)} ;
+    }
+}
 @mixin grid-column($n, $t: $grid-columns) {
     width: calc(#{grid-unit($n, $t)});
 }
 @mixin grid-indent($n, $t: $grid-columns) {
-    margin-left: calc((16px * #{$n + 1}) + (#{(100% / $t)} - #{$grid-gutter * ($t + 1) / $t}px) * #{$n});
+    margin-left: calc(#{grid-indent($n, $t)});
 }
 .g {
     @at-root {
-        [class*=" g--"] {
+        [class*= " g_"] {
             display: inline-block;
             vertical-align: top;
-            // overflow: hidden;
             margin-left: rem($grid-gutter);
         }
     }
-    @for $i from 1 through $grid-columns {
-        &--#{$i} {
-            @include grid-column($i);
+    @include min-max-width(1, 600) {
+        @for $i from 1 through 4 {
+            &_#{$i} { @include grid-column($i, 4); }
+        }
+        @for $i from 1 through (4 - 1) {
+            &i_#{$i} { @include grid-indent($i, 4); }
         }
     }
-    &i {
-        @at-root {
-            [class*=" g__i--"] {
-                display: block;
-            }
+    @include min-max-width(600, 960) {
+        @for $i from 1 through 6 {
+            &_#{$i}-m { @include grid-column($i, 8); }
+        }
+        @for $i from 1 through (6 - 1) {
+            &i_#{$i}-m { @include grid-indent($i, 8); }
+        }
+    }
+    @include min-width(960) {
+        @for $i from 1 through $grid-columns {
+            &_#{$i}-l { @include grid-column($i); }
         }
         @for $i from 1 through ($grid-columns - 1) {
-            &--#{$i} {
-                @include grid-indent($i);
-            }
+            &i_#{$i}-l { @include grid-indent($i); }
         }
     }
-    &--oh {
+    &-oh {
         overflow: hidden;
     }
 }
 
 .test-grid {
-    display: none; // TODO: Make this toggleable
+    // display: none; // TODO: Make this toggleable
     pointer-events: none;
     position: fixed;
     top: 0;
@@ -113,7 +127,7 @@ $grid-columns: 12;
         background-clip: content-box;
         white-space: nowrap;
     }
-    [class*="g--"] {
+    [class*= " g_"] {
         background: rgba(red, 0.1);
         border: 1px solid red;
         border-width: 0 1px;

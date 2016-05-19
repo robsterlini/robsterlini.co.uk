@@ -88,6 +88,22 @@ helpers do
       str.gsub(/<p>.<\/p>/,"")
       str
   end
+  def _g(obj, pre)
+    obj = obj || Hash.new
+    str = " g#{pre}_#{obj["d"] || "4"} "
+    if obj["m"]
+      str += " g#{pre}_#{obj["m"]}-m "
+    end
+    if obj["l"]
+      str += " g#{pre}_#{obj["l"]}-l "
+    end
+    str
+  end
+  def g(obj)
+    str = _g(obj[:width], "")
+    str += _g(obj[:indent], "i")
+    str
+  end
 end
 
 # Set constants

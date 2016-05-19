@@ -30,7 +30,7 @@ hero: true
 
     <%# TESTIMONIAL %>
     <% testimonial = data.home.sections.testimonial %>
-    <%= partial "partials/ui/heading", locals: {
+    <%#= partial "partials/ui/heading", locals: {
       title: testimonial.title,
       pre: testimonial.pre,
       text: testimonial.text,
@@ -40,7 +40,7 @@ hero: true
     <%# JOURNAL %>
 
     <% blog.articles.take(1).each_with_index do |article, i| %>
-      <%= partial "partials/ui/heading", locals: {
+      <%#= partial "partials/ui/heading", locals: {
         title: {
           indent: 1,
           width: 5,

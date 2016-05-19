@@ -120,7 +120,9 @@ h3 {
 }
 
 .heading {
+	position: relative;
 	max-width: none;
+	z-index: 1;
 	.h--alpha,
 	.h--beta {
 		padding: 0 unit() 0 0;
@@ -191,28 +193,60 @@ h3 {
 	    transform: translateY(-50%);
 		}
 	}
+	&__text {
+		position: relative;
+		z-index: 1;
+	}
 	&__image {
 		&__kite {
-			$size: 71.25%;
-			border-radius: unit(0.5);
-			transform: rotate(45deg);
-			position: relative;
-			overflow: hidden;
-			height: 0;
-	    width: $size;
-	    padding-top: $size;
-	    margin: (100% - $size) / 2;
-			> b {
-				background: center no-repeat;
-		    background-size: cover;
-				display: block;
-				transform: rotate(-45deg);
-				position: absolute;
-				top: -25%;
-				left: -25%;
-				width: 150%;
-				height: 150%;
+			@at-root {
+				[class^="heading__image__kite--"] {
+					$size: 71.25%;
+					border-radius: unit(0.5);
+					transform: rotate(45deg);
+					position: relative;
+					overflow: hidden;
+					height: 0;
+			    width: $size;
+			    padding-top: $size;
+			    margin: (100% - $size) / 2;
+    			> b {
+						background: center no-repeat;
+				    background-size: cover;
+						display: block;
+						transform: rotate(-45deg);
+						position: absolute;
+						top: -25%;
+						left: -25%;
+						width: 150%;
+						height: 150%;
+					}
+				}
 			}
+	    // &--outline {
+	    &--border {
+	    	// box-sizing: 
+	    	background: none;
+	    	&:after {
+	    		content: '';
+		    	border: unit(0.5) solid module-color(heading-kite);
+	    		position: absolute;
+	    		top: 0;
+	    		left: 0;
+	    		width: 100%;
+	    		height: 100%;
+	    	}
+	    }
+	    &--border {
+	    	backface-visibility: hidden;
+	    	&:after {
+	    		border-width: unit(0.375);
+	    		border-color: module-color(base-bg);
+	    	}
+	    	> b {
+	    		backface-visibility: hidden;
+	    	}
+	    }
 		}
 	}
 }
@@ -321,9 +355,9 @@ abbr[title] {
 	h2,
 	h3,
 	%paragraph {
-		@include min-width(tp(has-gutter)) {
-			margin-right: 0;
-		}
+		margin-right: 0;
+		// @include min-width(tp(has-gutter)) {
+		// }
 	}
 	ul,
 	ol {

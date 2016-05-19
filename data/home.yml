@@ -3,14 +3,23 @@ sections:
   hero:
     test: 'test'
     title:
-      indent: 1
-      width: 11
+      indent:
+        m: 2
+        l: 1
+      width:
+        # m: 
+        l: 11
       copy: 'Rob Sterlini'
       tag: 'h1'
     pre:
       copy: 'Welcome aboard, I’m'
+      width:
+        l: 7
     text:
-      indent: 1
+      indent:
+        l: 1
+      width:
+        l: 4
       copy:
         -
           - "By day I’m a front end developer at <a href=\"https://fueled.com/sterlini\" target=\"_blank\">Fueled</a>; by night a designer, a runner, a triathlete, and&nbsp;more."
@@ -18,28 +27,37 @@ sections:
     images:
       absolute:
         - src: 'http://placecage.com/1600/1600'
-          width: 6
-          indent: 6
+          width:
+            l: 6
+          indent:
+            l: 6
           kite: true
         - src: 'http://placecage.com/400/400'
-          width: 3
-          indent: 6
+          width:
+            l: 3
+          indent:
+            l: 6
           kite: true
+          outline: true
           modifier_class: 'test'
           top: '90%'
 
   # WORK
   work:
     title:
-      indent: 3
-      width: 9
+      indent:
+        l: 3
+      width:
+        l: 9
       copy: 'speak for themselves'
     pre:
       position: 'left'
-      indent: 2
+      indent:
+        l: 2
       copy: 'Crafting online experiences that'
     text:
-      indent: 3
+      indent:
+        l: 3
       copy:
         -
           - "At Fueled I’ve created sites for multi-billion pound companies, tech startups, established brands, and the like. It has also afforded me the opportunity to push the boundaries of the web, with imaginative case studies, and boundless capabilities."
@@ -49,14 +67,14 @@ sections:
   # TESTIMONIAL
   testimonial:
     title:
-      indent: 1
-      width: 11
+      indent: 5
+      width: 7
       copy: '‘Rob is lorem ipsum…’'
     pre:
       width: 9,
       copy: 'Sam Applebee, Co-founder at Kickpush once said:'
     text:
-      indent: 1
+      indent: 5
       width: 6
       blockquote: true
       copy:
@@ -66,8 +84,8 @@ sections:
           - "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     images:
       absolute:
-        - src: 'http://placecage.com/1600/1600'
+        - src: '/assets/images/home/kickpush.jpg'
           width: 5
-          indent: 7
+          indent: 0
           kite: true
           top: '60%'
