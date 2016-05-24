@@ -32,8 +32,10 @@
   // }
 }
 
-section.group {
-  margin: unit(4) auto;
-  padding: 2.5vw 0;
-  position: relative;
+section {
+  .group {
+    margin: unit(4) auto;
+    padding: 2.5vw 0;
+    position: relative;
+  }
 }

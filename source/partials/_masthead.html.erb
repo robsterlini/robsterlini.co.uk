@@ -1,6 +1,6 @@
 <header class="masthead<% if locals.has_key? :hero %><% if !hero %> masthead--no-hero<% end %><% end %>" id="menu">
   <nav class="nav group">
-    <a href="/" class="masthead__logo g--2">Hi!</a>
+    <a href="/" class="masthead__logo <%= g(data.pages.nav.logo) %>">Hi!</a>
     <ul class="nav__list">
       <!--<% data.pages.masthead.each do |nav| %>
         <% if nav.masthead != false %>

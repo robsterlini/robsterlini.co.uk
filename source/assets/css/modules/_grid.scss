@@ -55,6 +55,13 @@
 $grid-gutter: 16;
 $grid-columns: 12;
 
+$grid-col-s: 6;
+$grid-col-m: 10;
+$grid-col-l: 12;
+
+$grid-bp-m: 600;
+$grid-bp-l: 960;
+
 @function grid-unit($n, $t, $i: true) {
     $tt: $t + 1;
     @if ($i == false) {
@@ -70,10 +77,10 @@ $grid-columns: 12;
         @return #{rem(($grid-gutter * ($n + 1)) - ($grid-gutter * ($t + 1) / $t * $n))} + #{(100% / $t * $n)} ;
     }
 }
-@mixin grid-column($n, $t: $grid-columns) {
+@mixin grid-column($n, $t: $grid-col-l) {
     width: calc(#{grid-unit($n, $t)});
 }
-@mixin grid-indent($n, $t: $grid-columns) {
+@mixin grid-indent($n, $t: $grid-col-l) {
     margin-left: calc(#{grid-indent($n, $t)});
 }
 .g {
@@ -84,27 +91,27 @@ $grid-columns: 12;
             margin-left: rem($grid-gutter);
         }
     }
-    @include min-max-width(1, 600) {
-        @for $i from 1 through 4 {
-            &_#{$i} { @include grid-column($i, 4); }
+    @include min-max-width(1, $grid-bp-m) {
+        @for $i from 1 through $grid-col-s {
+            &_#{$i} { @include grid-column($i, $grid-col-s); }
         }
-        @for $i from 1 through (4 - 1) {
-            &i_#{$i} { @include grid-indent($i, 4); }
-        }
-    }
-    @include min-max-width(600, 960) {
-        @for $i from 1 through 6 {
-            &_#{$i}-m { @include grid-column($i, 8); }
-        }
-        @for $i from 1 through (6 - 1) {
-            &i_#{$i}-m { @include grid-indent($i, 8); }
+        @for $i from 1 through ($grid-col-s - 1) {
+            &i_#{$i} { @include grid-indent($i, $grid-col-s); }
         }
     }
-    @include min-width(960) {
-        @for $i from 1 through $grid-columns {
+    @include min-max-width($grid-bp-m, $grid-bp-l) {
+        @for $i from 1 through $grid-col-m {
+            &_#{$i}-m { @include grid-column($i, $grid-col-m); }
+        }
+        @for $i from 1 through ($grid-col-m - 1) {
+            &i_#{$i}-m { @include grid-indent($i, $grid-col-m); }
+        }
+    }
+    @include min-width($grid-bp-l) {
+        @for $i from 1 through $grid-col-l {
             &_#{$i}-l { @include grid-column($i); }
         }
-        @for $i from 1 through ($grid-columns - 1) {
+        @for $i from 1 through ($grid-col-l - 1) {
             &i_#{$i}-l { @include grid-indent($i); }
         }
     }
@@ -114,7 +121,7 @@ $grid-columns: 12;
 }
 
 .test-grid {
-    // display: none; // TODO: Make this toggleable
+    display: none; // TODO: Make this toggleable
     pointer-events: none;
     position: fixed;
     top: 0;

@@ -90,13 +90,26 @@ helpers do
   end
   def _g(obj, pre)
     obj = obj || Hash.new
-    str = " g#{pre}_#{obj["d"] || "4"} "
-    if obj["m"]
+    str = ""
+
+    if obj["d"] and obj["d"] > 0
+      str += " g#{pre}_#{obj["d"]} "
+    elsif pre != "i"
+      str += " g_6 "
+    end
+
+    if obj["m"] and obj["m"] > 0
       str += " g#{pre}_#{obj["m"]}-m "
+    elsif pre != "i"
+      str += " g_10-m "
     end
-    if obj["l"]
+
+    if obj["l"] and obj["l"] > 0
       str += " g#{pre}_#{obj["l"]}-l "
+    elsif pre != "i"
+      str += " g_12-l "
     end
+    
     str
   end
   def g(obj)

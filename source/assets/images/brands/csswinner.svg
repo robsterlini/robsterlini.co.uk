@@ -1,16 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="80px" height="10px" viewBox="0 0 80 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
-    <title>CSS Winner</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="0%" y1="0%" x2="101.999998%" y2="100.999999%" id="linearGradient-1">
-            <stop stop-color="#3023AE" offset="0%"></stop>
-            <stop stop-color="#C96DD8" offset="100%"></stop>
-        </linearGradient>
-    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD" transform="translate(-275.000000, -1205.000000)" fill="url(#linearGradient-1)">
+        <g id="Desktop-HD" transform="translate(-275.000000, -1205.000000)" fill="url(#brand-gradient)">
             <g id="My-work" transform="translate(185.000000, 785.000000)">
                 <g id="Intro" transform="translate(90.000000, 153.000000)">
                     <g id="CSS-Winner" transform="translate(0.000000, 265.000000)">

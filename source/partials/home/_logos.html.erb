@@ -6,7 +6,7 @@ logos = [
             {
               slug: 'csswinner',
               title: 'kickpush.co',
-              subtitle: 'SOTD 24 April 2016'
+              subtitle: '<span class="sc">SOTD</span> 24 Apr &apos;16'
             }
           ]
         },
@@ -18,7 +18,8 @@ logos = [
   logos_str = ""
   logos_str += "<div class=\"home__brands\">"
   logos.each_with_index do |logo, index|
-    logos_str += "<div class=\" g_2 gi_1 home__brand\">"
+    logos_str += "<div class=\" #{g(data.home.sections.work.clients)} home__brand\">"
+    logos_str += 
     logo_name = ""
     logo_awards = ""
     if logo.is_a? String
@@ -45,3 +46,11 @@ logos = [
   logos_str += "</div>"
 %>
 <%= logos_str %>
+<svg class="visuallyhidden">
+  <defs>
+      <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="brand-gradient">
+          <stop stop-color="#0079BF" offset="0%"></stop>
+          <stop stop-color="#1BFFBC" offset="100%"></stop>
+      </linearGradient>
+  </defs>
+</svg>

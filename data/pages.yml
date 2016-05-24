@@ -1,5 +1,31 @@
 ########
 
+nav:
+    logo:
+        width:
+            l: 2
+            m: 2
+
+heading:
+    pre:
+        indent:
+            l: 1
+    pre_underline:
+        width:
+            l: 1
+            m: 1
+            d: 1
+    pre:
+        indent:
+            l: 0
+        width:
+            l: 6
+    heading:
+        indent:
+            l: 1
+        width:
+            l: 11
+
 masthead:
 
 ##

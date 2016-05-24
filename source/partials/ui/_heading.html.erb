@@ -1,10 +1,32 @@
-<section class="group">
-  <% tag = title[:tag] || "h2" %>
+<%
+  default_pre = data.pages.heading.pre
+
+  set_pre_underline = data.pages.heading.pre_underline
+  set_pre = Hash.new
+  
+  if pre[:width] and pre[:indent]
+    set_pre = pre
+  elsif pre[:width]
+    set_pre[:width] = pre[:width]
+    set_pre[:indent] = default_pre[:indent]
+  elsif pre[:indent]
+    set_pre[:width] = default_pre[:width]
+    set_pre[:indent] = pre[:indent]
+  else 
+    set_pre = default_pre
+  end
+%>
+
+<br>
+<% tag = title[:tag] || "h2" %>
+
+<section>
+  <div class="group">
   <<%= tag %> class="heading">
-    <% pre_position = pre[:position] || "right" %>
-    <span class="<%= g(pre) %><% if pre_position == "right" %> g-oh<% end %>"><span class="heading__pre--<%= pre_position %>"><%= pre[:copy] %> </span></span>
+    <b class="heading__pre__underline <%= _g(set_pre_underline[:width], "") %><%= _g(set_pre[:indent], "i") %>" aria-hidden="true"></b>
+    <span class="heading__pre <%= g(set_pre) %>"><%= pre[:copy] %> </span>
+
     <b class="heading__break" aria-hidden="true"></b>
-    <br />
     <span class="<%= g(title) %>"><span class="h--<% if tag == "h1" %>alpha<% else %>beta<% end %>"><%= title[:copy] %></span></span>
   </<%= tag %>>
 
@@ -58,4 +80,5 @@
         <% end %>
     <% end %>
   <% end %>
+  </div>
 </section>

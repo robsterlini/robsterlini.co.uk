@@ -141,39 +141,21 @@ h3 {
 		width: 100%;
 	}
 	&__pre {
-		@at-root {
-			[class^="heading__pre--"] {
-				color: module-color(type-text);
-				display: inline-block;
-				font-family: $font-stack-alt; // TODO: Make into a variable
-				@include font-size(14);
-				font-weight: bold; // TODO: Change me
-				margin-bottom: unit(2);
-				position: relative;
-				letter-spacing: 0.2em;
-				text-transform: uppercase;
-				&:before {
-					background: linear-gradient(color(accent-light), color(accent-dark));
-					content: '';
-					position: absolute;
-					opacity: 0.33;
-					height: rem(2);
-					width: 100vw;
-					bottom: rem(3);
-				}
-			}
-		}
-		&--left {
-			&:before {
-				right: 100%;
-				margin-right: unit(); // TODO: Convert to gutter
-			}
-		}
-		&--right {
-			&:before {
-				left: 100%;
-				margin-left: unit(); // TODO: Convert to gutter
-			}
+		color: module-color(type-text);
+		display: inline-block;
+		font-family: $font-stack-alt; // TODO: Make into a variable
+		@include font-size(14);
+		font-weight: bold; // TODO: Change me
+		margin-bottom: unit(2);
+		position: relative;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		&__underline {
+			background: linear-gradient(to left, color(accent-light), color(accent-dark));
+			display: block;
+			height: unit(0.25);
+			opacity: 0.125;
+			margin-bottom: unit(0.5);
 		}
 	}
 	&__images {
@@ -202,6 +184,7 @@ h3 {
 			@at-root {
 				[class^="heading__image__kite--"] {
 					$size: 71.25%;
+					background: linear-gradient(to left, mix(color(accent-light), black, 85%), mix(color(accent-dark), black, 85%));
 					border-radius: unit(0.5);
 					transform: rotate(45deg);
 					position: relative;
@@ -211,6 +194,8 @@ h3 {
 			    padding-top: $size;
 			    margin: (100% - $size) / 2;
     			> b {
+				    mix-blend-mode: screen;
+				    -webkit-filter: saturate(0);
 						background: center no-repeat;
 				    background-size: cover;
 						display: block;
