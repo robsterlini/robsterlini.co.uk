@@ -9,50 +9,34 @@ hero: true
 <main id="content" class="wrapper" data-page="home">
 
     <%# HERO %>
-    <% hero = data.home.sections.hero %>
     <%= partial "partials/ui/heading", locals: {
-      title: hero.title,
-      pre: hero.pre,
-      text: hero.text,
-      images: hero.images
+      set: data.home.sections.hero,
     } %>
 
     <%# MY WORK %>
-    <% work = data.home.sections.work %>
     <%= partial "partials/ui/heading", locals: {
-      title: work.title,
-      pre: work.pre,
-      text: work.text,
+      set: data.home.sections.work,
       extras: {
         end: partial("partials/home/logos")
       }
     } %>
 
     <%# TESTIMONIAL %>
-    <% testimonial = data.home.sections.testimonial %>
     <%= partial "partials/ui/heading", locals: {
-      title: testimonial.title,
-      pre: testimonial.pre,
-      text: testimonial.text,
-      images: testimonial.images
+      set: data.home.sections.testimonial
     } %>
 
     <%# JOURNAL %>
 
     <% blog.articles.take(1).each_with_index do |article, i| %>
-      <%#= partial "partials/ui/heading", locals: {
+      <%= partial "partials/ui/heading", locals: {
         title: {
-          indent: 1,
-          width: 5,
-          copy: article.title
+          copy: article.title,
+          classes: " g_6"
         },
-        pre: {
-          width: 7,
-          copy: "Recently I wrote about #{ partial("partials/journal/category", :locals => { :a => article })}"
-        },
+        pre: "Recently I wrote about #{ partial("partials/journal/category", :locals => { :a => article })}",
         text: {
-          indent: 1,
-          width: 5,
+          classes: " g_6",
           copy: [
             article.data.description
           ],
@@ -67,9 +51,7 @@ hero: true
           absolute: [
             {
               src: "/assets/images/hero/blog/#{article.slug}_full.jpg",
-              width: 6,
-              indent: 6,
-              kite: true
+              classes: " g_6 gi_6"
             }
           ]
         }

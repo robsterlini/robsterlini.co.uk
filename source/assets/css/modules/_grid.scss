@@ -55,6 +55,7 @@
 $grid-gutter: 16;
 $grid-columns: 12;
 
+$grid-col: 12;
 $grid-col-s: 6;
 $grid-col-m: 10;
 $grid-col-l: 12;
@@ -77,10 +78,10 @@ $grid-bp-l: 960;
         @return #{rem(($grid-gutter * ($n + 1)) - ($grid-gutter * ($t + 1) / $t * $n))} + #{(100% / $t * $n)} ;
     }
 }
-@mixin grid-column($n, $t: $grid-col-l) {
+@mixin grid-column($n, $t: $grid-col) {
     width: calc(#{grid-unit($n, $t)});
 }
-@mixin grid-indent($n, $t: $grid-col-l) {
+@mixin grid-indent($n, $t: $grid-col) {
     margin-left: calc(#{grid-indent($n, $t)});
 }
 .g {
@@ -91,27 +92,25 @@ $grid-bp-l: 960;
             margin-left: rem($grid-gutter);
         }
     }
-    @include min-max-width(1, $grid-bp-m) {
-        @for $i from 1 through $grid-col-s {
-            &_#{$i} { @include grid-column($i, $grid-col-s); }
-        }
-        @for $i from 1 through ($grid-col-s - 1) {
-            &i_#{$i} { @include grid-indent($i, $grid-col-s); }
-        }
+    @for $i from 1 through $grid-col {
+        &_#{$i} { @include grid-column($i); }
     }
-    @include min-max-width($grid-bp-m, $grid-bp-l) {
-        @for $i from 1 through $grid-col-m {
-            &_#{$i}-m { @include grid-column($i, $grid-col-m); }
+    @for $i from 1 through ($grid-col - 1) {
+        &i_#{$i} { @include grid-indent($i); }
+    }
+    @include min-width($grid-bp-m) {
+        @for $i from 1 through $grid-col {
+            &_#{$i}-m { @include grid-column($i); }
         }
-        @for $i from 1 through ($grid-col-m - 1) {
-            &i_#{$i}-m { @include grid-indent($i, $grid-col-m); }
+        @for $i from 1 through ($grid-col - 1) {
+            &i_#{$i}-m { @include grid-indent($i); }
         }
     }
     @include min-width($grid-bp-l) {
-        @for $i from 1 through $grid-col-l {
+        @for $i from 1 through $grid-col {
             &_#{$i}-l { @include grid-column($i); }
         }
-        @for $i from 1 through ($grid-col-l - 1) {
+        @for $i from 1 through ($grid-col - 1) {
             &i_#{$i}-l { @include grid-indent($i); }
         }
     }

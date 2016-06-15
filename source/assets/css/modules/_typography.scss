@@ -53,6 +53,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+%heading-no-gradient {
+	-webkit-text-fill-color: white; // TODO: Variablise
+	background: -webkit-linear-gradient(bottom left, transparent, transparent);
+}
 
 h1, h2, h3, p, ul, ol {
 	display: block;
@@ -82,6 +86,9 @@ h1, h2, h3, p, ul, ol {
 .h--alpha {
 	@extend %heading-alpha;
 	max-width: rem(w(wrapper));
+	.heading--hero & {
+  	@extend %heading-no-gradient;
+  }
 }
 
 %heading-beta {
@@ -101,6 +108,9 @@ h1, h2, h3, p, ul, ol {
 
 .h--beta {
 	@extend %heading-beta;
+	.heading--hero & {
+  	@extend %heading-no-gradient;
+  }
 }
 
 h3 {
@@ -123,6 +133,12 @@ h3 {
 	position: relative;
 	max-width: none;
 	z-index: 1;
+	&--hero {
+		margin-top: -3.2rem; // TODO: Change me
+		.h--alpha {
+			min-height: 2.3em;
+		}
+	}
 	.h--alpha,
 	.h--beta {
 		padding: 0 unit() 0 0;
@@ -161,8 +177,7 @@ h3 {
 	&__images {
 		@at-root {
 			[class^="heading__images--"] {
-				[class*="g--"] {
-					// overflow: visible;
+				[class*="g_"] {
 				}
 			}
 		}
@@ -173,6 +188,9 @@ h3 {
 			left: 0;
 			width: 100%;
 	    transform: translateY(-50%);
+	    .heading--hero & {
+	    	top: 25%;
+	    }
 		}
 	}
 	&__text {
@@ -184,7 +202,6 @@ h3 {
 			@at-root {
 				[class^="heading__image__kite--"] {
 					$size: 71.25%;
-					background: linear-gradient(to left, mix(color(accent-light), black, 85%), mix(color(accent-dark), black, 85%));
 					border-radius: unit(0.5);
 					transform: rotate(45deg);
 					position: relative;
@@ -193,11 +210,8 @@ h3 {
 			    width: $size;
 			    padding-top: $size;
 			    margin: (100% - $size) / 2;
-    			> b {
-				    mix-blend-mode: screen;
-				    -webkit-filter: saturate(0);
-						background: center no-repeat;
-				    background-size: cover;
+    			> b,
+    			> i {
 						display: block;
 						transform: rotate(-45deg);
 						position: absolute;
@@ -205,6 +219,21 @@ h3 {
 						left: -25%;
 						width: 150%;
 						height: 150%;
+					}
+					> b {
+						background: center no-repeat;
+				    background-size: cover;
+						-webkit-filter: saturate(0);
+						.heading--hero & {
+							// background-position: 50% 25%;
+							// background-size: 150% auto;
+							transform: rotate(-45deg) translateY(10%);
+							opacity: 0.85;
+						}
+					}
+					> i {
+						background: linear-gradient(to left, mix(color(accent-light), black, 85%), mix(color(accent-dark), black, 85%));
+						mix-blend-mode: screen;
 					}
 				}
 			}
@@ -276,6 +305,22 @@ p {
 }
 .small-caps {
 	line-height: 1.1;
+}
+
+%paragraph--alpha {
+	@include font-size(24);
+	// line-height:1.45;
+	// margin:rem(6) auto rem(12) auto;
+	@include max-width($bp-small) {
+		@include font-size(20);
+	}
+	@include max-width($bp-tiny) {
+		@include font-size(18);
+	}
+}
+
+.p--alpha {
+	@extend %paragraph--alpha;
 }
 
 blockquote {

@@ -63,7 +63,7 @@ $layout-max-width-wide-suffix:  rem($layout-max-width-wide);
 
 $widths: (
   gutter: $measure * (54 - 34 - 6),
-  text: $measure * 34,
+  text: $measure * 36,
   wrapper: ($measure * 12 * 4) + ($measure * 13)
 );
 
