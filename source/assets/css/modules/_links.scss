@@ -13,10 +13,15 @@ a {
 	color: module-color(link-primary);
 	transition:color .25s cubic-bezier(#{$bezier-nice});
 	text-decoration: none;
-	@include hover {
+	&:hover {
 		color: module-color(link-primary-hover);
 	}
-	@include active {
+	&:active {
 		color: module-color(link-primary-active);
+	}
+	&:visited {
+		background: linear-gradient(transparent 50%, rgba(module-color(link-primary-visited), 1) 50%);
+		// background-size: 1px 100%;
+		color: module-color(link-primary-visited);
 	}
 }

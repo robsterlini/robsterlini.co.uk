@@ -5,18 +5,18 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
 ---
 
 <main id="content" class="wrapper" data-page="home">
-  <%= partial "partials/hero", locals: {
-    title: current_page.data.title,
-    subtitle: current_page.data.description
-  } %>
-  <article class="group typeset">
-    <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <%= link_to "in my journal", "/journal/youtube/", :title => "Read about why I don’t work on YouTube anymore" %>.</p>
-    <p>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
+  <section class="group group--centered cols">
+    <div class="col">
+      <p>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <%= link_to "in my journal", "/journal/youtube/", :title => "Read about why I don’t work on YouTube anymore" %>.</p>
+      <p>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
+    </div>
     <% data.contact.contact.each do |contact| %>
-        <h2 class="heading--gutter"><%= contact.title %></h2>
-        <p><em><%= contact.when %></em></p>
+      <div class="col">
+        <h2><%= contact.title %></h2>
+        <p><%= contact.when %></p>
         <%= contact.desc %>
         <p class='btns--left'><a class='btn' href='<%= contact.link.href %>' title='<%= contact.link.title %>'><%= contact.link.text %></a></p>
+      </div>
     <% end %>
   </article>
 </main>

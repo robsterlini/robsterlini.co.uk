@@ -25,7 +25,7 @@ button,
 input,
 select,
 textarea {
-	color: module-color(type-text);
+	color: module-color(base-color);
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	font-family: $font-stack-regular;
@@ -33,28 +33,11 @@ textarea {
 
 body {
 	font-size:1em;
-	line-height:$font-default-line-height;
+	line-height: $font-default-line-height;
 	display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-.body--404 {
-	background:lighten($color-black,2%);
-	color:$color-white;
-	text-shadow:none;
-}
-
-.body--no-scroll {
-	overflow: hidden;
-}
-
 ::selection {
-	background:$color-black;
 	text-shadow:none;
-	color:$color-white;
-}
-::-moz-selection {
-	background:$color-black;
-	text-shadow:none;
-	color:$color-white;
 }

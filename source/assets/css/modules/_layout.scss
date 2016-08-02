@@ -4,38 +4,39 @@
  * @requires framework/_type.scss
  */
 
-.group {
-	margin: 0 auto;
-	max-width: rem(w(wrapper));
-  // padding: 0 unit(2);
-  padding: 0;
-  position: relative;
-	width: 100%;
+body {
+  padding: unit();
 }
 
 .wrapper {
   background: module-color(base-bg);
+  border: module-color(body-border) solid 1px;
   display: flex;
   flex: 1;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding: unit();
-  padding: 0;
   width: 100%;
   z-index: 1;
-  // .page--no-footer & {
-  //   padding-bottom: unit();
-  // }
-  // .masthead--no-hero + & {
-  //   margin-top: rem(58);
-  // }
 }
 
-section {
-  .group {
-    margin: unit(4) auto;
-    padding: 2.5vw 0;
-    position: relative;
+.group {
+	margin: 0 auto;
+	max-width: rem(w(wrapper));
+  padding: 0;
+  position: relative;
+	width: 100%;
+  &--centered {
+    margin: auto;
+  }
+}
+
+.cols {
+  display: flex;
+}
+.col {
+  width: 33.3%;
+  :first-child {
+    margin-top: 0;
   }
 }

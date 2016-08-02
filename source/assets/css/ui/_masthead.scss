@@ -1,6 +1,6 @@
 /**
- * FOOTER
- * Styles the main page footer
+ * MASTHEAD
+ * Styles the main page masthead
  *
  * @requires 
 **/
@@ -9,12 +9,12 @@
   Base
 ========================================== */
 
-.footer {
+.masthead {
   $_: &;
   left: 0;
   padding: 0 unit();
   position: fixed;
-  bottom: 0;
+  top: 0;
   width: 100%;
   z-index: 999; // TODO: Var
 }

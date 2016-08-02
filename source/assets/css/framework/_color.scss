@@ -17,38 +17,24 @@
 @function social-color($v) { @return map-get($social-colors, $v); }
 
 $colors: (
-  accent: #7947C2,
-  accent-light: #0079BF,
-  accent-dark: #1BFFBC,
-  secondary: #5533C1,
-  darkest: #000326,
-  darker: lighten(#001f3f, 5%),
-  dark: lighten(#1b1b1b, 10%),
-  mid: #7B788D,
-  light: darken(#f9f9f9, 10%),
-  lighter: darken(#f9f9f9, 5%),
-  lightest: #f9f9f9,
-  white: white
+  accent-light: #AFF1F1,
+  accent-mid: #177D7D,
+
+  dark: #181A1D,
+  mid: #81CACA,
+  light: #D7F9F9,
+  lightest: #EFFFFF,
 );
 
 $module-colors: (
-  base-bg: color(lightest),
+  base-bg: color(dark),
+  base-color: color(mid),
 
-  btn-bg: color(accent),
-  btn-color: color(lightest),
-  btn-color-hover: color(darkest),
+  body-border: color(accent-mid),
 
-  hero-bg: color(darkest),
-  hero-subtitle: color(accent),
+  link-primary-visited: #A87ADE,
 
-  link-primary: color(secondary),
-  link-primary-hover: color(accent),
-  link-primary-active: color(mid),
-
-  masthead-bg: color(darker),
-
-  type-text: color(mid),
-  type-header: color(accent)
+  nav-color: color(accent-light),
 );
 
 $social-colors: (
@@ -68,50 +54,3 @@ $social-colors: (
   nike-plus: #E95814,
   github: #171515
 );
-
- /* ==|== Colors =================
-  Base
- ========================================== */
-
-$color-white: #f9f9f9;
-$color-black: #1b1b1b;
-
-$color-dark:  #222;
-
-$color-accent: #EDD9DF;
-$color-accent: #FFF;
-
-$color-alert-1: #d31b1b;
-$color-alert-2: #d3541b;
-$color-alert-3: #d3761b;
-
-$color-success: #178d14;
-
-$color-strikethrough: $color-accent;
-
-/* ==|== Colors =================
-  Elements
-========================================== */
-
-// $color-background: $color-white;
-// $color-text: color(darker);
-$color-background: #222;
-$color-text: #ccc;
-$color-headers: #444;
-
-$color-hero-bg: darken($color-white, 3.5%);
-
-/* ==|== Colors =================
-   Links
-====================================== */
-
-$color-link-primary: color(accent);
-$color-link-primary-hover: color(lightest);
-$color-link-primary-active: $color-white;
-
-$color-link-reverse: lighten($color-link-primary,23%);
-$color-link-reverse-hover: lighten($color-link-primary,40%);
-$color-link-reverse-active: $color-white;
-
-$color-b-macmillan-1: #8CC63F;
-$color-b-macmillan-2: #00A246;

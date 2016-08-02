@@ -1,12 +1,6 @@
 code {
   font-size: 0.9em;
   position: relative;
-  @include max-width($bp-small) {
-    @include font-size(16);
-  }
-  @include max-width($bp-tiny) {
-    @include font-size(15);
-  }
 }
 pre {
   margin: unit(2) auto;

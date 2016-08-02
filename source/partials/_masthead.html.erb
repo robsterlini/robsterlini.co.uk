@@ -1,30 +1,3 @@
 <header class="masthead<% if locals.has_key? :hero %><% if !hero %> masthead--no-hero<% end %><% end %>" id="menu">
-  <nav class="nav group">
-    <!-- <a href="/" class="masthead__logo g_3 g_2-m">Hi!</a> -->
-    <ul class="nav__list">
-      <!--<% data.pages.masthead.each do |nav| %>
-        <% if nav.masthead != false %>
-          --><li class="nav__item">
-            <%
-              nav_label = nav.abbr ? "<abbr class='nav__label' title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : "<span class='nav__label'>#{nav.label}</span>"
-              concat link_to nav_label, nav.slug == "" ? "/" : nav.slug, :class => "nav__link h--alpha", :title => nav.alt
-            %>
-          </li><!--
-        <% end %>
-      <% end %>-->
-    </ul>
-  </nav>
+  <%= partial "partials/nav" %>
 </header>
-<!-- <button class="masthead__toggle" data-toggle="navigation">
-  <b></b>
-  <b></b>
-  <b></b>
-  <b></b>
-  <b></b>
-</button> -->
-<%#<div class="masthead__bar">
-  <b class="masthead__bar--top"></b>
-  <b class="masthead__bar--left"></b>
-  <b class="masthead__bar--right"></b>
-  <b class="masthead__bar--bottom"></b>
-</div>%>

@@ -3,7 +3,6 @@
     position: relative;
     &:before {
       background: module-color(base-bg);
-      color: $color-link-primary;
       content:'#'attr(id);
       opacity: 0;
       position: absolute;

@@ -75,12 +75,6 @@ h1, h2, h3, p, ul, ol {
 	font-weight: weight();
 	line-height: line-height(heading);
 	margin: 2em auto 1em;
-  @include max-width($bp-small) {
-    @include font-size(42);
-  }
-  @include max-width($bp-tiny) {
-    @include font-size(34);
-  }
 }
 
 .h--alpha {
@@ -97,13 +91,6 @@ h1, h2, h3, p, ul, ol {
 	line-height: line-height(heading);
 	margin: 0 auto 0.5em;
 	padding-top: unit(3);
-
-	@include max-width($bp-small) {
-		@include font-size(28);
-	}
-	@include max-width($bp-tiny) {
-		@include font-size(24);
-	}
 }
 
 .h--beta {
@@ -114,194 +101,30 @@ h1, h2, h3, p, ul, ol {
 }
 
 h3 {
-	color: module-color(p-alpha);
-	font-family: $font-stack-alt;
 	@include font-size(20);
-	font-weight: weight(alt-bold);
 	margin: unit(2) auto unit();
 	line-height: line-height(heading);
-	text-transform: uppercase;
-	@include max-width($bp-small) {
-		@include font-size(18);
-	}
-	@include max-width($bp-tiny) {
-		@include font-size(16);
-	}
-}
-
-.heading {
-	position: relative;
-	max-width: none;
-	z-index: 1;
-	&--hero {
-		margin-top: -3.2rem; // TODO: Change me
-		.h--alpha {
-			min-height: 2.3em;
-		}
-	}
-	.h--alpha,
-	.h--beta {
-		padding: 0 unit() 0 0;
-		margin: 0;
-		display: inline-block;
-		vertical-align: top;
-	}
-	.h--beta {
-		@extend %heading-gradient;
-		color: module-color(type-header);
-		@include font-size(52);
-		font-weight: weight();
-	}
-	&__break {
-		display: block;
-		width: 100%;
-	}
-	&__pre {
-		color: module-color(type-text);
-		display: inline-block;
-		font-family: $font-stack-alt; // TODO: Make into a variable
-		@include font-size(14);
-		font-weight: bold; // TODO: Change me
-		margin-bottom: unit(2);
-		position: relative;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		&__underline {
-			background: linear-gradient(to left, color(accent-light), color(accent-dark));
-			display: block;
-			height: unit(0.25);
-			opacity: 0.125;
-			margin-bottom: unit(0.5);
-		}
-	}
-	&__images {
-		@at-root {
-			[class^="heading__images--"] {
-				[class*="g_"] {
-				}
-			}
-		}
-		&--absolute {
-			position: absolute;
-			pointer-events: none;
-			top: 50%;
-			left: 0;
-			width: 100%;
-	    transform: translateY(-50%);
-	    .heading--hero & {
-	    	top: 25%;
-	    }
-		}
-	}
-	&__text {
-		position: relative;
-		z-index: 1;
-	}
-	&__image {
-		&__kite {
-			@at-root {
-				[class^="heading__image__kite--"] {
-					$size: 71.25%;
-					border-radius: unit(0.5);
-					transform: rotate(45deg);
-					position: relative;
-					overflow: hidden;
-					height: 0;
-			    width: $size;
-			    padding-top: $size;
-			    margin: (100% - $size) / 2;
-    			> b,
-    			> i {
-						display: block;
-						transform: rotate(-45deg);
-						position: absolute;
-						top: -25%;
-						left: -25%;
-						width: 150%;
-						height: 150%;
-					}
-					> b {
-						background: center no-repeat;
-				    background-size: cover;
-						-webkit-filter: saturate(0);
-						.heading--hero & {
-							// background-position: 50% 25%;
-							// background-size: 150% auto;
-							transform: rotate(-45deg) translateY(10%);
-							opacity: 0.85;
-						}
-					}
-					> i {
-						background: linear-gradient(to left, mix(color(accent-light), black, 85%), mix(color(accent-dark), black, 85%));
-						mix-blend-mode: screen;
-					}
-				}
-			}
-	    // &--outline {
-	    &--border {
-	    	// box-sizing: 
-	    	background: none;
-	    	&:after {
-	    		content: '';
-		    	border: unit(0.5) solid module-color(heading-kite);
-	    		position: absolute;
-	    		top: 0;
-	    		left: 0;
-	    		width: 100%;
-	    		height: 100%;
-	    	}
-	    }
-	    &--border {
-	    	backface-visibility: hidden;
-	    	&:after {
-	    		border-width: unit(0.375);
-	    		border-color: module-color(base-bg);
-	    	}
-	    	> b {
-	    		backface-visibility: hidden;
-	    	}
-	    }
-		}
-	}
-}
-
-.heading--gutter {
-	@include min-width(tp(has-gutter)) {
-		float: left;
-		width: rem(w(gutter));
-		+ h3,
-		+ p {
-			margin-top: 0;
-			padding-top: rem(56);
-		}
-		+ .blog__categories {
-			margin-top: 0;
-			padding-top: rem(57);
-		}
-	}
 }
 
 /* ==|== Typography =================
 	Paragraphs
 ========================================== */
+
 %paragraph {
 	@include font-size(18);
 	line-height:1.45;
 	margin:rem(6) auto rem(12) auto;
-	@include max-width($bp-small) {
-		@include font-size(17);
-	}
-	@include max-width($bp-tiny) {
-		@include font-size(16);
-	}
 }
 p {
 	@extend %paragraph;
 }
 
-.small-caps,
-.sc {
+@mixin sc {
 	@include font-feature-settings(smcp c2sc lnum kern);
+}
+.sc,
+.small-caps {
+	@include sc;
 }
 .small-caps {
 	line-height: 1.1;
@@ -309,14 +132,6 @@ p {
 
 %paragraph--alpha {
 	@include font-size(24);
-	// line-height:1.45;
-	// margin:rem(6) auto rem(12) auto;
-	@include max-width($bp-small) {
-		@include font-size(20);
-	}
-	@include max-width($bp-tiny) {
-		@include font-size(18);
-	}
 }
 
 .p--alpha {
@@ -325,48 +140,11 @@ p {
 
 blockquote {
 	margin: 0;
-	// color: $color-accent;
-	// border-left: color(accent) solid rem(2);
-	// font-weight: $font-weight-normal;
-	// font-style:italic;
- //  left: unit(-2);
- //  padding-left: rem(($measure * 2) - 2);
- //  position: relative;
- //  margin: unit(2) unit(-2) unit(2) auto;
- //  max-width:rem($layout-max-width + ($measure * 2));
-
-	// p {
-	// 	@include font-size(24);
-	// 	@include max-width($bp-small) {
-	// 		@include font-size(22);
-	// 	}
-	// 	@include max-width($bp-tiny) {
-	// 		@include font-size(20);
-	// 	}
-	// }
-	// cite {
-	// 	font-family: $font-stack-alt;
- //    line-height: line-height(caption);
-	// 	color:$color-accent;
-	// 	font-style: normal;
-	// 	display: block;
-	// 	@include font-size(18);
-	// 	margin-top: rem(5);
-	// 	@include max-width($bp-small) {
-	// 		@include font-size(17);
-	// 	}
-	// 	@include max-width($bp-tiny) {
-	// 		@include font-size(16);
-	// 	}
-	// 	&:before {
-	// 		content:'— ';
-	// 	}
-	// }
 }
 
 abbr[title] {
 	border:0;
-	background: linear-gradient(to left, $color-dark 33%, rgba($color-dark, 0) 34%) repeat-x left 88%;
+	background: linear-gradient(to left, black 33%, rgba(black, 0) 34%) repeat-x left 88%; // TODO: Var
 	background-size:rem(3) rem(1);
 }
 
@@ -380,17 +158,5 @@ abbr[title] {
 	}
 	h2 {
 		@extend %heading-beta;
-	}
-	h1,
-	h2,
-	h3,
-	%paragraph {
-		margin-right: 0;
-		// @include min-width(tp(has-gutter)) {
-		// }
-	}
-	ul,
-	ol {
-		left: 0;
 	}
 }

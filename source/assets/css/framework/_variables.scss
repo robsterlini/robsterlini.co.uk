@@ -2,13 +2,13 @@
  * Utility SCSS File
  */
 
-@function          bp($v)          { @return              map-get($breakpoints,  $v);  }
-@function      bezier($v: nice)    { @return cubic-bezier(map-get($beziers,      $v)); }
-@function line-height($v: regular) { @return              map-get($line-heights, $v);  }
-@function      timing($v: full)    { @return              map-get($timings,      $v);  }
-@function          tp($v)          { @return              map-get($tweakpoints,  $v);  }
-@function           w($v)          { @return              map-get($widths,       $v);  }
-@function      weight($v: regular) { @return              map-get($weights,      $v);  }
+@function          bp($v)          { @return map-get($breakpoints,  $v); }
+@function      easing($v: default) { @return map-get($easings,      $v); }
+@function line-height($v: regular) { @return map-get($line-heights, $v); }
+@function      timing($v: full)    { @return map-get($timings,      $v); }
+@function          tp($v)          { @return map-get($tweakpoints,  $v); }
+@function           w($v)          { @return map-get($widths,       $v); }
+@function      weight($v: regular) { @return map-get($weights,      $v); }
 
 @function unit($n: 1, $e: 0) { @return rem(($n * 16) + $e); }
 
@@ -16,24 +16,22 @@
 $measure:       16;
 $measure-unit:  rem($measure);
 
-$timing:  .25s;
-
-// Breakpoints
-$bp-miniscule:   $measure * 16;
-$bp-tiny:        $measure * 32;
-$bp-small:       $measure * 48;
-$bp-mid:         $measure * 64;
-$bp-large:       $measure * 72;
-
+// Media queries
 $breakpoints: (
   xs: 450,
   s: $measure * 48
 );
-
 $tweakpoints: (
   gutter-widen: 1350,
   has-gutter:   900,
   parallax: 750
+);
+
+// Sizes
+$widths: (
+  gutter: $measure * (54 - 34 - 6),
+  text: $measure * 36,
+  wrapper: ($measure * 12 * 4) + ($measure * 13)
 );
 
 // Type
@@ -50,9 +48,12 @@ $weights: (
   regular: 400
 );
 
-// Timings
+// Timings and easings
 $timings: (
   full: 250ms
+);
+$easings: (
+  default: ease-in-out,
 );
 
 // Max widths
@@ -61,24 +62,4 @@ $layout-max-width-wide:         $measure * 54;
 $layout-max-width-suffix:       rem($layout-max-width);
 $layout-max-width-wide-suffix:  rem($layout-max-width-wide);
 
-$widths: (
-  gutter: $measure * (54 - 34 - 6),
-  text: $measure * 36,
-  wrapper: ($measure * 12 * 4) + ($measure * 13)
-);
 
-// Masthead widths
-$masthead-full:       $measure-unit * 8;
-$masthead-icon:       $measure-unit * 4;
-
-// Beziers
-$beziers: (
-  bounce:   0.750#{","} -0.170#{","} 0.230#{","} 1.190,
-  bouncein: 0.715#{","}  0.170#{","} 0.145#{","} 1.245,
-  ease:     0.875#{","}  0.105#{","} 0.190#{","} 0.920,
-  expo:     1.000#{","}  0.000#{","} 0.000#{","} 1.000,
-  nice:     0.625#{","}  0.125#{","} 0.305#{","} 0.875,
-  nicein:   0.145#{","}  0.310#{","} 0.300#{","} 0.870,
-  sine:     0.445#{","}  0.050#{","} 0.550#{","} 0.950,
-  out:      0.660#{","}  0.120#{","} 0.985#{","} 0.545
-);

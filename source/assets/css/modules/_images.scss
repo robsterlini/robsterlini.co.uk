@@ -42,29 +42,12 @@
       }
     }
   }
-  &--gutter {
-    max-width: calc(#{grid-unit(4, 12, false)});
-    margin-left: calc(#{grid-indent(2, 12, false)}); // n-1
-    // @include min-width(tp(has-gutter)) {
-    //   width: calc(#{rem(w(gutter))} + #{unit(2)});
-    // }
-  }
   &__caption {
-    font-family: $font-stack-alt;
     line-height: line-height(caption);
-    // padding-left: unit(2);
-    // text-indent: unit(-1.5);
     @include font-size(12);
-    color:$color-accent;
     width:100%;
     text-align: left;
     padding-top:rem(5);
-    @include min-width($bp-tiny) {
-      @include font-size(14);
-    }
-    @include min-width($bp-small) {
-      @include font-size(16);
-    }
   }
   img,
   svg {

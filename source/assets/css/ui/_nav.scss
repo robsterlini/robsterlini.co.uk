@@ -1,153 +1,42 @@
-$js-masthead-toggled: '.js--masthead-toggled';
+/**
+ * NAVIGATION
+ * Styles the main page navigation
+ *
+ * @requires 
+**/
 
-.masthead {
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  &__logo {
-    height: unit();
-    background: purple;
-    color: transparent;
-  }
-}
+/* ==|== Navigation ======================
+  Base
+========================================== */
+
 .nav {
+  $_: &;
+  display: flex;
   &__list {
-    display: none;
+    background: module-color(base-bg);
+    display: flex;
+    margin: 0 auto;
+    padding: 0 unit(0.5);
+    width: auto;
+    .masthead & {
+      margin-right: 0;
+    }
+  }
+  &__item {
+  }
+  &__link {
+    @include sc;
+    color: module-color(nav-color);
+    display: block;
+    letter-spacing: em(0.5);
+    line-height: unit();
+    padding: unit(0.5);
+    position: relative;
+    .masthead & {
+      top: em(1);
+    }
+    .footer & {
+      top: em(-1);
+    }
   }
 }
-// .masthead {
-//   overflow: hidden;
-//   height: 100%;
-//   position: fixed;
-//   display: flex;
-//   top: 0;
-//   width: 100%;
-//   left: 0;
-//   z-index: 99; // TODO: Variablise
-//   background: module-color(masthead-bg);
-//   transform: translateY(-100%);
-//   transition: timing() cubic-bezier(#{$bezier-nice});
-//   #{$js-masthead-toggled} & {
-//     transform: none;
-//     // transform: translateY(-100%);
-//   }
-//   &__toggle {
-//     $toggle-size: unit(4);
-//     $toggle-bar-size: unit(2);
-//     background: module-color(masthead-bg);
-//     border: 0;
-//     outline: 0;
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     width: $toggle-size;
-//     height: $toggle-size;
-//     z-index: 99 + 1; // TODO: Variablise
-//     b {
-//       left: ($toggle-size - $toggle-bar-size) / 2;
-//       position: absolute;
-//       width: $toggle-bar-size;
-//       top: 50%;
-//       margin-top: rem(-1);
-//       height: rem(2);
-//       background: color(accent); // TODO: Isolate colour
-//       transition: timing() cubic-bezier(#{$bezier-nice});
-//       &:nth-of-type(1) {
-//         transform: translateY(-8px);
-//         transition-delay: timing();
-//         #{$js-masthead-toggled} & {
-//           transform: none;
-//           opacity: 0; 
-//           transition-delay: 0;
-//         }
-//       }
-//       &:nth-of-type(2) {
-//         // transform: translateY(8px);
-//         transition-delay: timing();
-//         #{$js-masthead-toggled} & {
-//           // transform: none;
-//           opacity: 0;
-//           transition-delay: 0;
-//         }
-//       }
-//       &:nth-of-type(3) {
-//         transform: translateY(8px);
-//         transition-delay: timing();
-//         #{$js-masthead-toggled} & {
-//           transform: none;
-//           opacity: 0;
-//           transition-delay: 0;
-//         }
-//       }
-//       &:nth-of-type(4) {
-//         transition-delay: 0;
-//         #{$js-masthead-toggled} & {
-//           transform: rotate(40deg);
-//           transition-delay: timing() * 2;
-//         }
-//       }
-//       &:nth-of-type(5) {
-//         transition-delay: 0;
-//         #{$js-masthead-toggled} & {
-//           transform: rotate(-40deg);
-//           transition-delay: timing() * 2;
-//         }
-//       }
-//     }
-//   }
-//   &__bar {
-//     @at-root {
-//       [class^="masthead__bar--"] {
-//         background: module-color(masthead-bg);
-//         left: 0;
-//         position: fixed;
-//         transition: timing() cubic-bezier(#{$bezier-nice});
-//         z-index: 99; // TODO: Variablise
-//         .masthead__toggle:hover + .masthead__bar & {
-//           transform: none;
-//         }
-//       }
-//     }
-//     &--left,
-//     &--right {
-//       height: 100%;
-//       top: 0;
-//       width: unit(0.75);
-//       transform: translateX(-4px);
-//       @include max-width(bp(s)) {
-//         display: none;
-//       }
-//     }
-//     &--right {
-//       left: auto;
-//       right: 0;
-//       transform: translateX(4px);
-//     }
-//     &--top,
-//     &--bottom {
-//       height: unit(0.75);
-//       bottom: 0;
-//       width: 100%;
-//       transform: translateY(4px);
-//     }
-//     &--top {
-//       top: 0;
-//       bottom: auto;
-//       transform: translateY(-4px);
-//     }
-//   }
-// }
-// #{$js-masthead-toggled} {
-//   // overflow: hidden;
-// }
-// .nav {
-//   margin: auto;
-//   &__item {
-//     padding: unit(0.5) 0;
-//   }
-//   abbr {
-//     background: none;
-//   }
-// }
