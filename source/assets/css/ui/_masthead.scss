@@ -18,9 +18,11 @@
   width: 100%;
   z-index: 999; // TODO: Var
   &__logo {
+    @extend %paragraph;
     @include sc;
     background: module-color(base-bg);
     color: module-color(nav-color);
+    margin: 0;
     padding: 0 unit();
   }
 }

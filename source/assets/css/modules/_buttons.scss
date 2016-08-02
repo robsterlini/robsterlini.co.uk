@@ -27,42 +27,6 @@
   }
 }
 
-// %btn {
-//   border: rem(2) solid module-color(btn-bg);
-//   border-radius: unit(0.25);
-//   display: inline-block;
-//   font-weight: bold;
-//   letter-spacing: 0.1em;
-//   line-height: 1.3;
-//   margin: rem(5) unit() rem(5) 0;
-//   padding: unit(0.5) unit();
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   transition: all .25s cubic-bezier(#{$bezier-nice});
-//   vertical-align: top;
-//   width: auto;
-//   &:active {
-//     transform:scale(0.95,0.95);
-//   }
-// }
-// .btn {
-//   @at-root {
-//     [class^="btn--"] {
-//       @extend %btn;
-//     }
-//   }
-//   &--primary {
-//     background: module-color(btn-bg);
-//     color: module-color(btn-color);
-//     &:hover {
-//       color: module-color(btn-color-hover);
-//     }
-//   }
-//   &--reversed {
-
-//   }
-// }
-
 /* ==|== Buttons =================
 	Containers
 ========================================== */

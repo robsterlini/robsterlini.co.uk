@@ -34,12 +34,6 @@
   }
   &--left {
     .figure__caption {
-      @include min-width(tp(has-gutter)) {
-        left: 0;
-        position: absolute;
-        top: 100%;
-        width: calc(#{rem(w(gutter))} + #{unit(2)});
-      }
     }
   }
   &__caption {

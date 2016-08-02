@@ -5,11 +5,11 @@ no_footer: true
 ---
 
 <article class="typeset group cols" data-anchors>
-  <div class="col">
+  <div class="col col--33">
     <h1 class="h--alpha"><%= current_page.data.title %></h1>
-    <p><em>In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled and as a freelance front end developer, and in my spare time I’m in triathlon training, watching Spurs, or playing with <span class=\"sc\">LEGO</span>.</em></p>
+    <p class="p--alpha">In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled and as a freelance front end developer, and in my spare time I’m in triathlon training, watching Spurs, or playing with <span class=\"sc\">LEGO</span>.</p>
   </div>
-  <div>
+  <div class="col col--66">
     <%
       def cv_section(cv_title, cv_data)
         string = "<h2 class=\"heading--gutter\" id='#{cv_title.to_slug}'>#{cv_title}</h2>"

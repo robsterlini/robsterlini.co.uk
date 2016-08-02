@@ -33,28 +33,24 @@ body {
   display: flex;
 }
 .col {
+  padding: unit(4) 0 0;
   margin-right: unit();
-  // width: 33.3%;
   width: 100%;
-  // flex: 1;
-  > :first-child {
-    margin-top: unit(4);
-  }
   &:last-child {
     margin-right: 0;
   }
   p:first-child {
-    &:first-letter {
-      color: color(accent-mid);
-      font-size: 3em;
-      float: left;
-      position: relative;
-      top: -2px;
-      margin-top: 3px;
-      margin-bottom: -10px;
-      line-height: 1;
-      margin-right: 5px;
-    }
+    // &:first-letter {
+    //   color: color(accent-mid);
+    //   font-size: 3em;
+    //   float: left;
+    //   position: relative;
+    //   top: -2px;
+    //   margin-top: 3px;
+    //   margin-bottom: -10px;
+    //   line-height: 1;
+    //   margin-right: 5px;
+    // }
   }
   &--33 {
     width: 33.3%;
@@ -67,7 +63,7 @@ body {
       display: block;
       content: '';
       width: 50%;
-      margin: unit(2) 0 unit(-2) - rem(1);
+      margin: unit(2.5) 0 unit(1.5) - rem(1);
       max-width: unit(4); // TODO: Var
       background: module-color(column-break-bg);
       height: 1px; // TODO: Var

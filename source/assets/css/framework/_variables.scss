@@ -29,17 +29,14 @@ $tweakpoints: (
 
 // Sizes
 $widths: (
-  gutter: $measure * (54 - 34 - 6),
   text: $measure * 36,
   wrapper: ($measure * 12 * 4) + ($measure * 13)
 );
 
 // Type
+$font-stack-regular:  "SkolarLatin", Georgia, serif;
 $line-heights: (
-  regular: 1.45,
-  subheading: 1.35,
-  heading: 1.15,
-  caption: 1.25
+  regular: 1.5,
 );
 $weights: (
   alt-bold: 500,

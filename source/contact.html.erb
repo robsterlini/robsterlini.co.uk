@@ -7,8 +7,9 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
 <section class="group group--centered cols">
   <div class="col">
     <h1 class="h--alpha">Hi!</h1>
-    <p><em>Get in touch about anything, and everything. Anything <strong>except</strong> for YouTube work. I don’t do it anymore, but you can read about that <%= link_to "in my journal", "/journal/youtube/", :title => "Read about why I don’t work on YouTube anymore" %>.</em></p>
-    <p><em>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</em></p>
+    <p class="p--alpha">Get in touch about anything, and everything.</p>
+    <p>I don’t do YouTube work anymore, but you can read about that <%= link_to "in my journal", "/journal/youtube/", :title => "Read about why I don’t work on YouTube anymore" %>.</p>
+    <p>If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
   </div>
   <% data.contact.contact.each do |contact| %>
     <div class="col col--break col--break--<%= contact.title.to_slug %>">

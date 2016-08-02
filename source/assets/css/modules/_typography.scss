@@ -53,18 +53,15 @@ h1, h2, h3, p, ul, ol {
 	@include font-feature-settings(liga kern onum);
 	max-width: rem(w(text));
 	width: 100%;
-	.typeset & {
-		max-width: calc(#{grid-unit(7, 12, false)});
-	}
 }
 
 %heading-alpha {
-	@include font-size(64);
-	// color: module-color(type-heading);
+	// @include font-size(64);
 	color: color(accent-mid); // TODO: Var
+	font-size: 3.375em;
 	font-weight: weight();
-	line-height: line-height(heading);
-	margin: 2em auto 0.5em;
+	line-height: unit(4);
+	margin: rem(-29) + rem(24) auto unit(1) + rem(29) - rem(24);
 }
 
 .h--alpha {
@@ -73,12 +70,16 @@ h1, h2, h3, p, ul, ol {
 }
 
 %heading-beta {
-	@include font-size(32);
+	// @include font-size(27);
+	font-size: 2em;
 	color: module-color(type-heading);
 	font-weight: weight(bold);
-	line-height: line-height(heading);
-	margin: 0 auto 0.5em;
-	padding-top: 2em;
+	line-height: unit(3);
+	margin: rem(24) auto unit(0.5) + rem(16);
+	// padding-top: 2em;
+	&:first-child {
+		margin-top: rem(-16) + rem(24);
+	}
 }
 
 .h--beta {
@@ -86,13 +87,19 @@ h1, h2, h3, p, ul, ol {
 }
 
 %heading-gamma {
-	@include font-size(20);
-	margin: unit(2) auto unit();
-	line-height: line-height(heading);
+	// @include font-size(18);
 	color: module-color(type-heading);
+	font-size: 1.5em;
+	line-height: unit(2);
+	margin: rem(-6) + rem(24 * 2) auto unit(0.5) + rem(6);
+	&:first-child {
+		margin-top: rem(-6) + rem(24 * 1);
+	}
 }
 .h--gamma {
 	@extend %heading-gamma;
+	position: relative;
+	// top: rem(-6);
 }
 
 /* ==|== Typography =================
@@ -100,16 +107,17 @@ h1, h2, h3, p, ul, ol {
 ========================================== */
 
 %paragraph {
-	@include font-size(18);
-	line-height:1.45;
-	margin: 1em auto 0.5em;
+	// @include font-size(16);
+	font-size: 1em;
+	line-height: unit(1.5);
+	margin: 0 auto unit(0.5);
 }
 p {
 	@extend %paragraph;
 }
 
 @mixin sc {
-	@include font-feature-settings(smcp c2sc lnum kern);
+	font-feature-settings: "smcp" 1, "c2sc" 1, "lnum" 1, "kern" 1;
 }
 .sc,
 .small-caps {
@@ -120,7 +128,10 @@ p {
 }
 
 %paragraph--alpha {
-	@include font-size(24);
+	font-size: 1.5em;
+	line-height: unit(2);
+	margin: rem(-6) auto unit(0.5) + rem(6);
+	font-style: italic;
 }
 
 .p--alpha {
