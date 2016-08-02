@@ -1,39 +1,58 @@
 ---
 title: The Journal
-description: A written insight into the world of Rob Sterlini
+description: A written insight into the world of Rob Sterlini.
 nav: journal
 priority: 0.95
 ---
 
-<main id="content" class="wrapper">
-  <% page_articles.take(5).each_with_index do |article, i| %>
-    <% if i == 0
+<section class="group cols">
+  <div class="col">
+    <h1 class="h--alpha"><%= current_page.data.title %></h1>
+    <p><em><%= current_page.data.description %></em></p>
+  </div>
+  <div class="col col--break typeset">
+    <% page_articles.take(4).each_with_index do |article, i| %>
+      <% if i == 0
 
-    set_image = false
-    if article.data.hero
-      content_for(:hero, "blog/#{article.slug}")
-      set_image = "blog/#{article.slug}"
-    end %>
-      <%= partial "partials/hero", locals: {
-        image: set_image,
-        title: "#{article.title}",
-        subtitle: article.data.description,
-        extra: "<p class=\"hero__header__extra small-caps\">#{partial "partials/journal/posted", :locals => { :a => article }}<br/>#{ partial "partials/journal/category", :locals => { :a => article }}</p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>",
-        typeset: true
-      } %>
+      set_image = false
+      if article.data.hero
+        content_for(:hero, "blog/#{article.slug}")
+        set_image = "blog/#{article.slug}"
+      end %>
 
-      <article class="typeset group">
-        <h2 class="heading--gutter">Other recent posts</h2>
-      <% else %>
+        <h2 class="h--beta"><%= link_to article.title, article %></h2>
+        <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+        <p><em><%= article.data.description %></em></p>
+        <p>
+          <a href="<%= article.url %>" class="btn">Read the post</a>
+        </p>
+        <%#= partial "partials/hero", locals: {
+          image: set_image,
+          title: "#{article.title}",
+          subtitle: article.data.description,
+          extra: "<p class=\"hero__header__extra small-caps\">#{partial "partials/journal/posted", :locals => { :a => article }}<br/>#{ partial "partials/journal/category", :locals => { :a => article }}</p><p class='btns'><a class='btn' href='#{article.url}' title='#{article.title}'>Read it in full</a></p>",
+          typeset: true
+        } %>
+
+        </div>
+        <div class="col col--break typeset">
+          <h2>Other recent posts</h2>
+        <% else %>
+      <% end %>
+      <h3><%= link_to article.title, article %></h3>
+      <!-- <p><%= article.data.description %></p> -->
+
+      <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+
     <% end %>
-    <h3><%= link_to article.title, article %></h3>
-    <p><%= article.data.description %></p>
-    <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %><br /><%= partial "partials/journal/category", :locals => { :a => article } %></p>
-  <% end %>
-
+    <p>
+      <a href="/archive" class="btn" title="See the rest of my blog entries">There are more in the archive</a>
+    </p>
+  <!-- </div>
+  <div class="col col--break typeset"> -->
     <%= partial "partials/journal/categories" %>
-    
-    <p class="btns--left"><a href="/archive" class="btn" title="See the rest of my blog entries">There are more in the archive</a></p>
+  </div>
 
-    </article>
-</main>
+    
+
+</section>

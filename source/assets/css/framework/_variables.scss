@@ -50,10 +50,12 @@ $weights: (
 
 // Timings and easings
 $timings: (
-  full: 250ms
+  full: 250ms,
+  link: 125ms,
 );
 $easings: (
   default: ease-in-out,
+  link: ease-out,
 );
 
 // Max widths

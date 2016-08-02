@@ -6,10 +6,9 @@ masthead:
 
     -   slug: "/index.html"
         icon: "home"
-        abbr:
-            label: "A casa mia"
-            title: "Home"
+        label: "Home"
         alt: "Go home"
+        masthead: false
         footer: false
 
 ##

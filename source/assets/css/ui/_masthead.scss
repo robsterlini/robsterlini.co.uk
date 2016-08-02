@@ -13,8 +13,14 @@
   $_: &;
   left: 0;
   padding: 0 unit();
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 999; // TODO: Var
+  &__logo {
+    @include sc;
+    background: module-color(base-bg);
+    color: module-color(nav-color);
+    padding: 0 unit();
+  }
 }

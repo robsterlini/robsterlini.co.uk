@@ -4,32 +4,32 @@ description: A brief look at my employment, education and extra curriculars.
 no_footer: true
 ---
 
-<main id="content" class="wrapper">
-  <%= partial "partials/hero", locals: {
-    title: current_page.data.title,
-    subtitle: "In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled and as a freelance front end developer, and in my spare time I’m in triathlon training, watching Spurs, or playing with <span class=\"sc\">LEGO</span>."
-  } %>
-    <article class="typeset group" data-anchors>
-      <%
-        def cv_section(cv_title, cv_data)
-          string = "<h2 class=\"heading--gutter\" id='#{cv_title.to_slug}'>#{cv_title}</h2>"
-          cv_data.each_with_index do |item, index|
-            cv_slug = item.title.to_slug
-            cv_set = "#{cv_slug}-#{index}"
-            date = item.date ? " <span class='cv__title--date'>#{item.date}</span>" : ""
-            string += "<h3 id='#{cv_slug}' class='cv__title'><span class='cv__title--org'>#{item.title}</span>#{date}</h3>"
-            string += "<p class='small-caps cv__subtitle'>#{item.subtitle}</p>"
-            if item.copy
-              item.copy.each_with_index do |text, index|
-                string += "<p data-cv-#{item.copy.length > 1 ? index >= 1 ? "hide" : "show" : "none"}='#{cv_set}'>#{text}</p>"
-              end
+<article class="typeset group cols" data-anchors>
+  <div class="col">
+    <h1 class="h--alpha"><%= current_page.data.title %></h1>
+    <p><em>In short I graduated from the University of Reading with a first-class degree in Typography, I work at Fueled and as a freelance front end developer, and in my spare time I’m in triathlon training, watching Spurs, or playing with <span class=\"sc\">LEGO</span>.</em></p>
+  </div>
+  <div>
+    <%
+      def cv_section(cv_title, cv_data)
+        string = "<h2 class=\"heading--gutter\" id='#{cv_title.to_slug}'>#{cv_title}</h2>"
+        cv_data.each_with_index do |item, index|
+          cv_slug = item.title.to_slug
+          cv_set = "#{cv_slug}-#{index}"
+          date = item.date ? " <span class='cv__title--date'>#{item.date}</span>" : ""
+          string += "<h3 id='#{cv_slug}' class='cv__title'><span class='cv__title--org'>#{item.title}</span>#{date}</h3>"
+          string += "<p class='small-caps cv__subtitle'>#{item.subtitle}</p>"
+          if item.copy
+            item.copy.each_with_index do |text, index|
+              string += "<p data-cv-#{item.copy.length > 1 ? index >= 1 ? "hide" : "show" : "none"}='#{cv_set}'>#{text}</p>"
             end
           end
-          return string
         end
-      %>
-      <%= cv_section("Employment", data.cv.employment) %>
-      <%= cv_section("Education", data.cv.education) %>
-      <%= cv_section("In my own time", data.cv.extras) %>
-    </article>
-</section>
+        return string
+      end
+    %>
+    <%= cv_section("Employment", data.cv.employment) %>
+    <%= cv_section("Education", data.cv.education) %>
+    <%= cv_section("In my own time", data.cv.extras) %>
+  </div>
+</article>

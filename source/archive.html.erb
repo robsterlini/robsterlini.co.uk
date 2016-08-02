@@ -4,20 +4,22 @@ description: Here’s a repository of all of my ramblings from over the years. S
 nav: journal
 ---
 
-<main id="content" class="wrapper">
-  <%= partial "partials/hero", locals: {
-    title: current_page.data.title,
-    subtitle: current_page.data.description
-  } %>
-  <article class="group typeset">
+<section class="group typeset cols">
+  <div class="col col--33">
+    <h1><%= current_page.data.title %></h1>
+    <p><em><%= current_page.data.description %></em></p>
+  </div>
+  <div class="col col--66">
     <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
       <h2 class="heading--gutter" id="<%= year %>"><%= year %></h2>
       <% articles.each_with_index do |article, i| %>
+        <article style="display: flex;">
             <h3><%= link_to article.title, article %></h3>
             <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %><br /><%= partial "partials/journal/category", :locals => { :a => article } %></p>
+        </article>
       <% end %>
     <% end %>
 
     <%= partial "partials/journal/categories" %>
-  </article>
-</main>
+  </div>
+</section>

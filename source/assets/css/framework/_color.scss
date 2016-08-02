@@ -18,10 +18,11 @@
 
 $colors: (
   accent-light: #AFF1F1,
-  accent-mid: #177D7D,
+  accent-mid: lighten(#177D7D, 5%),
 
   dark: #181A1D,
-  mid: #81CACA,
+  // mid: #81CACA,
+  mid: #91B1B1,
   light: #D7F9F9,
   lightest: #EFFFFF,
 );
@@ -32,9 +33,15 @@ $module-colors: (
 
   body-border: color(accent-mid),
 
+  link-primary: color(accent-light),
+  link-primary-hover: color(lightest),
   link-primary-visited: #A87ADE,
 
   nav-color: color(accent-light),
+
+  type-heading: color(light),
+
+  column-break-bg: color(accent-mid),
 );
 
 $social-colors: (

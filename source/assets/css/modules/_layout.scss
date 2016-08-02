@@ -1,42 +1,86 @@
 /**
  * Layout SCSS Partial
  *
- * @requires framework/_type.scss
+ * @requires framework/_type.scss 
  */
 
 body {
   padding: unit();
+  position: relative;
 }
 
 .wrapper {
-  background: module-color(base-bg);
   border: module-color(body-border) solid 1px;
   display: flex;
   flex: 1;
   flex-direction: column;
   overflow: hidden;
+  padding: unit() 0 unit(4);
   position: relative;
   width: 100%;
   z-index: 1;
 }
 
 .group {
-	margin: 0 auto;
-	max-width: rem(w(wrapper));
-  padding: 0;
+  margin: auto;
+  max-width: rem(w(wrapper));
+  padding: 0 unit();
   position: relative;
-	width: 100%;
-  &--centered {
-    margin: auto;
-  }
+  width: 100%;
 }
 
 .cols {
   display: flex;
 }
 .col {
-  width: 33.3%;
-  :first-child {
-    margin-top: 0;
+  margin-right: unit();
+  // width: 33.3%;
+  width: 100%;
+  // flex: 1;
+  > :first-child {
+    margin-top: unit(4);
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  p:first-child {
+    &:first-letter {
+      color: color(accent-mid);
+      font-size: 3em;
+      float: left;
+      position: relative;
+      top: -2px;
+      margin-top: 3px;
+      margin-bottom: -10px;
+      line-height: 1;
+      margin-right: 5px;
+    }
+  }
+  &--33 {
+    width: 33.3%;
+  }
+  &--66 {
+    width: 66.6%;
+  }
+  &--break {
+    &:before {
+      display: block;
+      content: '';
+      width: 50%;
+      margin: unit(2) 0 unit(-2) - rem(1);
+      max-width: unit(4); // TODO: Var
+      background: module-color(column-break-bg);
+      height: 1px; // TODO: Var
+    }
+    &--twitter {
+      &:before {
+        background: social-color(twitter);
+      }
+    }
+    &--dribbble {
+      &:before {
+        background: social-color(dribbble);
+      }
+    }
   }
 }

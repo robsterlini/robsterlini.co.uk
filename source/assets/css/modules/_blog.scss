@@ -1,27 +1,21 @@
 .js [data-anchors] {
   h2[id] {
     position: relative;
+    transition: color timing() easing();
     &:before {
-      background: module-color(base-bg);
+      color: transparent;
       content:'#'attr(id);
-      opacity: 0;
       position: absolute;
       text-indent: rem(-14);
-      transition:opacity .25s cubic-bezier(#{$bezier-nice});
+      transition: inherit;
       width: 100%;
       z-index: 1;
     }
-    &:hover,
-    &:focus {
+    &:hover {
+      color: transparent;
       &:before {
-        opacity: 1;
+        color: module-color(type-heading);
       }
     }
-  }
-}
-
-.blog-post {
-  > p:first-child {
-    margin-top: $measure-unit * 3;
   }
 }

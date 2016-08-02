@@ -26,12 +26,16 @@
   }
   &__link {
     @include sc;
+    background: none;
     color: module-color(nav-color);
     display: block;
     letter-spacing: em(0.5);
     line-height: unit();
     padding: unit(0.5);
     position: relative;
+    abbr {
+      background: none;
+    }
     .masthead & {
       top: em(1);
     }

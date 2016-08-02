@@ -48,16 +48,6 @@
 	1. Headings
 ========================================== */
 
-%heading-gradient {
-	background: -webkit-linear-gradient(bottom left, color(accent-dark), color(accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-%heading-no-gradient {
-	-webkit-text-fill-color: white; // TODO: Variablise
-	background: -webkit-linear-gradient(bottom left, transparent, transparent);
-}
-
 h1, h2, h3, p, ul, ol {
 	display: block;
 	@include font-feature-settings(liga kern onum);
@@ -69,41 +59,40 @@ h1, h2, h3, p, ul, ol {
 }
 
 %heading-alpha {
-	@extend %heading-gradient;
 	@include font-size(64);
-	color: module-color(type-header);
+	// color: module-color(type-heading);
+	color: color(accent-mid); // TODO: Var
 	font-weight: weight();
 	line-height: line-height(heading);
-	margin: 2em auto 1em;
+	margin: 2em auto 0.5em;
 }
 
 .h--alpha {
 	@extend %heading-alpha;
 	max-width: rem(w(wrapper));
-	.heading--hero & {
-  	@extend %heading-no-gradient;
-  }
 }
 
 %heading-beta {
 	@include font-size(32);
+	color: module-color(type-heading);
 	font-weight: weight(bold);
 	line-height: line-height(heading);
 	margin: 0 auto 0.5em;
-	padding-top: unit(3);
+	padding-top: 2em;
 }
 
 .h--beta {
 	@extend %heading-beta;
-	.heading--hero & {
-  	@extend %heading-no-gradient;
-  }
 }
 
-h3 {
+%heading-gamma {
 	@include font-size(20);
 	margin: unit(2) auto unit();
 	line-height: line-height(heading);
+	color: module-color(type-heading);
+}
+.h--gamma {
+	@extend %heading-gamma;
 }
 
 /* ==|== Typography =================
@@ -113,7 +102,7 @@ h3 {
 %paragraph {
 	@include font-size(18);
 	line-height:1.45;
-	margin:rem(6) auto rem(12) auto;
+	margin: 1em auto 0.5em;
 }
 p {
 	@extend %paragraph;
@@ -152,11 +141,11 @@ abbr[title] {
 .typeset {
 	h1 {
 		@extend %heading-alpha;
-	  & + h2 {
-	  	padding-top: rem(28);
-	  }
 	}
 	h2 {
 		@extend %heading-beta;
+	}
+	h3 {
+		@extend %heading-gamma;
 	}
 }

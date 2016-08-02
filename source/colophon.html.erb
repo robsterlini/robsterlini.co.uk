@@ -4,12 +4,12 @@ nav: about
 description: There’s a lot of magic behind robsterlini.co.uk…
 ---
 
-<section id="content" class="wrapper" data-page="home">
-  <main>
-    <article class="type group">
-      <h1><%= current_page.data.title %></h1>
-      <p class="article__description"><%= current_page.data.description %></p>
-      <%= partial "pages/colophon" %>
-    </article>
-  </main>
-</section>
+<article class="typeset group cols">
+  <div class="col col--33">
+    <h1><%= current_page.data.title %></h1>
+    <p><em><%= current_page.data.description %></em></p>
+  </div>
+  <div class="col col--66">
+    <%= partial "pages/colophon" %>
+  </div>
+</article>

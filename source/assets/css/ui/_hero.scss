@@ -1,0 +1,46 @@
+/**
+ * HERO
+ * Styles the hero – image behind the main content
+ *
+ * @requires 
+**/
+
+/* ==|== Hero ============================
+  Base
+========================================== */
+
+.hero {
+  $_: &;
+  bottom: unit();
+  left: unit();
+  position: absolute;
+  right: unit();
+  max-height: 66vh;
+  top: unit();
+  .page--full-hero & {
+    max-height: 98vh;
+    max-height: calc(100vh - #{unit(2)});
+  }
+  &__bg,
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__bg {
+    background: center no-repeat;
+    background-size: cover;
+    -webkit-filter: grayscale(1);
+    opacity: 0.25;
+    @supports(mix-blend-mode: overlay) {
+      mix-blend-mode: overlay;
+      opacity: 0.5;
+    }
+  }
+  &__overlay {
+    // background: radial-gradient(transparent 50%, module-color(base-bg) 70%);
+    background: linear-gradient(module-color(base-bg) 5%, transparent 30%, transparent 50%, module-color(base-bg));
+  }
+}

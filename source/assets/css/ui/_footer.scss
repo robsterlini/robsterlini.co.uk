@@ -13,7 +13,7 @@
   $_: &;
   left: 0;
   padding: 0 unit();
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 999; // TODO: Var

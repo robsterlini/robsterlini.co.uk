@@ -66,7 +66,15 @@
       <%= partial "partials/masthead", :locals => { :hero => hero } %>
     <% end %>
 
-    <%= yield %>
+    <% if hero %>
+      <div class="hero" aria-hidden="true">
+        <b class="hero__bg" style="background-image: url(/assets/images/hero/<%= hero_image %>);"></b>
+        <b class="hero__overlay"></b>
+      </div>
+    <% end %>
+    <main class="wrapper">
+      <%= yield %>
+    </main>
 
     <% if !current_page.data.no_footer %>
       <%= partial "partials/footer" %>

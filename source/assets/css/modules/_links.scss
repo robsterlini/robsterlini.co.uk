@@ -10,18 +10,27 @@
 ========================================== */
 
 a {
-	color: module-color(link-primary);
-	transition:color .25s cubic-bezier(#{$bezier-nice});
+	color: inherit;
+	background: linear-gradient(transparent 50%, rgba(color(accent-mid), 1) 50%) no-repeat 0 84%;
+  background-size: 100% 2px;
+	transition: color timing(link) easing(link);
 	text-decoration: none;
+	text-shadow:
+		module-color(base-bg)  0    1px 0,
+		module-color(base-bg)  1px  1px 0,
+		module-color(base-bg)  1px  0   0,
+		module-color(base-bg)  1px -1px 0,
+		module-color(base-bg)  0px -1px 0,
+		module-color(base-bg) -1px -1px 0,
+		module-color(base-bg) -1px  0px 0,
+		module-color(base-bg) -1px  1px 0;
+	&[href^="http"] {
+		color: module-color(link-primary);
+	}
 	&:hover {
 		color: module-color(link-primary-hover);
 	}
 	&:active {
 		color: module-color(link-primary-active);
-	}
-	&:visited {
-		background: linear-gradient(transparent 50%, rgba(module-color(link-primary-visited), 1) 50%);
-		// background-size: 1px 100%;
-		color: module-color(link-primary-visited);
 	}
 }
