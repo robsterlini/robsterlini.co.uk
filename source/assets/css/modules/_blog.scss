@@ -2,7 +2,7 @@
   &__post {
     padding-top: lh-unit(4);
     &--has-hero {
-      padding-top: lh-unit(8);
+      padding-top: lh-unit(6);
     }
   }
   &__title {
@@ -13,7 +13,7 @@
     @include sc;
     font-style: normal;
     text-align: center;
-    padding-bottom: lh-unit(1);
+    padding-bottom: lh-unit(2);
     a {
       background: none;
     }

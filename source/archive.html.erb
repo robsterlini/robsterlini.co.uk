@@ -1,22 +1,22 @@
 ---
-title: Posts from the archive
+title: The Archive
 description: Here’s a repository of all of my ramblings from over the years. Some of them are pretty old though, so 2014 me doesn’t necessarily agree with 2012 me!
 nav: journal
 ---
 
-<section class="group cols">
+<section class="group cols ts">
   <div class="col col--33">
     <h1 class="h--alpha"><%= current_page.data.title %></h1>
     <p class="p--alpha"><%= current_page.data.description %></p>
   </div>
-  <div class="col col--66">
+  <div class="col col--66 col--break">
     <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
       <h2 class="h--beta" id="<%= year %>"><%= year %></h2>
       <% articles.each_with_index do |article, i| %>
-        <article style="display: flex;">
+        <!-- <article style="display: flex;"> -->
             <h3><%= link_to article.title, article %></h3>
-            <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %><br /><%= partial "partials/journal/category", :locals => { :a => article } %></p>
-        </article>
+            <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+        <!-- </article> -->
       <% end %>
     <% end %>
 
