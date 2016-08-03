@@ -18,11 +18,12 @@
   width: 100%;
   z-index: 999; // TODO: Var
   &__logo {
-    @extend %paragraph;
     @include sc;
+    font-size: 1em;
     background: module-color(base-bg);
     color: module-color(nav-color);
     margin: 0;
-    padding: 0 unit();
+    line-height: unit();
+    padding: unit(0.5) unit();
   }
 }

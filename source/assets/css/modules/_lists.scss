@@ -8,7 +8,6 @@
 
 ul,
 ol {
-  @extend %paragraph;
   list-style: circle outside none;
   & > li {
     & > ul {

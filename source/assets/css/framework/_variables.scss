@@ -10,11 +10,14 @@
 @function           w($v)          { @return map-get($widths,       $v); }
 @function      weight($v: regular) { @return map-get($weights,      $v); }
 
-@function unit($n: 1, $e: 0) { @return rem(($n * 16) + $e); }
-
 // Measure
 $measure:       16;
-$measure-unit:  rem($measure);
+$measure-m:     18;
+$measure-l:     20;
+
+@function    unit($n: 1, $e: 0) { @return rem(($n * $measure) + $e); }
+@function lh-unit($n: 1, $e: 0) { @return rem(($n * $measure * line-height()) + $e); }
+
 
 // Media queries
 $breakpoints: (
@@ -22,6 +25,13 @@ $breakpoints: (
   s: $measure * 48
 );
 $tweakpoints: (
+  // Fonts
+  font-m: 1024,
+  font-l: 1400,
+
+  // Columns
+  col-multiple: 768,
+
   gutter-widen: 1350,
   has-gutter:   900,
   parallax: 750

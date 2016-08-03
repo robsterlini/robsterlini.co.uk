@@ -5,9 +5,10 @@ nav: journal
 priority: 0.95
 ---
 
-<section class="group cols">
+<section class="group cols ts">
+  <div class="_baseline-grid"><% for i in 1..80 %><b></b><% end %></div>
   <div class="col">
-    <h1 class="h--alpha"><%= current_page.data.title %></h1>
+    <h1><%= current_page.data.title %></h1>
     <p class="p--alpha"><%= current_page.data.description %></p>
   </div>
   <div class="col col--break">
@@ -20,7 +21,7 @@ priority: 0.95
         set_image = "blog/#{article.slug}"
       end %>
 
-        <h2 class="h--gamma"><%= link_to article.title, article %></h2>
+        <h2><%= link_to article.title, article %></h2>
         <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
         <p><em><%= article.data.description %></em></p>
         <p>
@@ -34,18 +35,13 @@ priority: 0.95
         <% else %>
       <% end %>
       <!-- <h3><%= link_to article.title, article %></h3> -->
-
-      <p class="small-caps" style="display: none;"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
-
     <% end %>
-    <p>
-      
-    </p>
-  <!-- </div>
-  <div class="col col--break typeset"> -->
     <%= partial "partials/journal/categories" %>
   </div>
 
     
 
 </section>
+
+
+      <%# <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %#> in <%#= partial "partials/journal/category", :locals => { :a => article } #></p>%>

@@ -4,17 +4,9 @@
  * @requires framework/_type.scss
  */
 
-/* ==|== Typography =================
-	Load Typefaces from type.scss
+/* ==|== Typography ======================
+	Load Skolar webfonts
 ========================================== */
-
-/**
- * Loads in the CSS font-face declarations based on a Sass list of fonts and their styles
- * Set the number of fonts that you want to load in in $fonts-total
- * Set the fonts themselves and make sure they're in the assets/fonts folder
- * Set the styles for the fonts, if Font-number-1 is a regular weight put normal,
- * if Font-number-2 is an italic weight put italic etc
-**/
 
 @font-face {
 	font-family: 'SkolarLatin';
@@ -44,11 +36,53 @@
 	font-style: normal;
 }
 
-/* ==|== Typography =================
-	1. Headings
+/* ==|== Typography ======================
+	Baseline Grid
 ========================================== */
 
-h1, h2, h3, p, ul, ol {
+._baseline-grid {
+	// opacity: 0;
+	overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  b {
+    width: 100%;
+    height: 1px;
+    background: pink;
+    display: block;
+    margin-top: calc(#{lh-unit(0.5)} - 1px);
+    opacity: 0.2;
+    position: relative;
+
+		// TODO: Decide
+    // width: 50vw;
+    // margin-left: -50vw;
+    // position: relative;
+    // left: calc(50% + 2rem);
+    // background: linear-gradient(to right, pink, transparent);
+    //
+    // @for $i from 0 through 80 {
+    // 	&:nth-of-type(#{$i}) {
+    // 		opacity: 0.2 - ($i * 0.0025);
+    // 	}
+    // }
+  }
+}
+
+/* ==|== Typography ======================
+	Headings and Paragraphs
+========================================== */
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
 	display: block;
 	@include font-feature-settings(liga kern onum);
 	max-width: rem(w(text));
@@ -56,65 +90,155 @@ h1, h2, h3, p, ul, ol {
 }
 
 %heading-alpha {
-	// @include font-size(64);
 	color: color(accent-mid); // TODO: Var
 	font-size: 3.375em;
 	font-weight: weight();
-	line-height: unit(4);
-	margin: rem(-29) + rem(24) auto unit(1) + rem(29) - rem(24);
-}
-
-.h--alpha {
-	@extend %heading-alpha;
-	max-width: rem(w(wrapper));
+	line-height: lh-unit(3);
+	margin: lh-unit(3) auto 0;
+	&:first-child {
+		margin-top: rem(10);
+	}
+	+ %heading-beta {
+		margin-top: lh-unit(2) + rem(5);
+	}
+	+ %heading-gamma {
+		margin-top: lh-unit(1) - rem(3);
+	}
+	+ %paragraph {
+		margin-top: lh-unit(0.5) - rem(2);
+	}
 }
 
 %heading-beta {
-	// @include font-size(27);
-	font-size: 2em;
+	font-size: 1.85em;
 	color: module-color(type-heading);
 	font-weight: weight(bold);
-	line-height: unit(3);
-	margin: rem(24) auto unit(0.5) + rem(16);
-	// padding-top: 2em;
+	line-height: lh-unit(2);
+	margin: lh-unit(2) auto 0;
 	&:first-child {
-		margin-top: rem(-16) + rem(24);
+		margin-top: rem(-8);
 	}
-}
-
-.h--beta {
-	@extend %heading-beta;
+	+ %heading-alpha {
+		margin-top: lh-unit(3) - rem(5);
+	}
+	+ %heading-gamma {
+		margin-top: lh-unit(1) - rem(9);
+	}
+	+ %paragraph {
+		margin-top: lh-unit(0.5) - rem(9);
+	}
 }
 
 %heading-gamma {
-	// @include font-size(18);
 	color: module-color(type-heading);
-	font-size: 1.5em;
-	line-height: unit(2);
-	margin: rem(-6) + rem(24 * 2) auto unit(0.5) + rem(6);
+	font-size: 1.25em;
+	line-height: lh-unit(1);
+	margin: lh-unit(1) auto 0;
 	&:first-child {
-		margin-top: rem(-6) + rem(24 * 1);
+		margin-top: rem(7);
+	}
+	+ %heading-alpha {
+		margin-top: lh-unit(3) + rem(3);
+	}
+	+ %heading-beta {
+		margin-top: lh-unit(2) - rem(3);
+	}
+	+ %paragraph {
+		margin-top: lh-unit(0.5) + rem(1);
 	}
 }
-.h--gamma {
-	@extend %heading-gamma;
-	position: relative;
-	// top: rem(-6);
-}
-
-/* ==|== Typography =================
-	Paragraphs
-========================================== */
 
 %paragraph {
-	// @include font-size(16);
 	font-size: 1em;
-	line-height: unit(1.5);
-	margin: 0 auto unit(0.5);
+	line-height: lh-unit(1);
+	margin: lh-unit(0.5) auto 0;
+	&:first-child {
+		margin-top: rem(8);
+	}
+	&:last-child {
+		margin-bottom: rem(4);
+	}
+	+ %heading-alpha {
+		margin-top: lh-unit(3) + rem(2);
+	}
+	+ %heading-beta {
+		margin-top: lh-unit(2) - rem(3);
+	}
+	+ %heading-gamma {
+		margin-top: lh-unit(1) - rem(2);
+	}
 }
-p {
-	@extend %paragraph;
+
+
+.ts {
+	h1 {
+		@extend %heading-alpha;
+	}
+	h2 {
+		@extend %heading-beta;
+	}
+	h3 {
+		@extend %heading-gamma;
+	}
+	p,
+	ul,
+	ol {
+		@extend %paragraph;
+	}
+	.p--alpha {
+		@extend %heading-gamma;
+	}
 }
+
+// .h--alpha {
+// 	@extend %heading-alpha;
+// }
+// .h--beta {
+// 	@extend %heading-beta;
+// }
+// .h--gamma {
+// 	@extend %heading-gamma;
+// 	color: module-color(type-heading);	
+// }
+// p {
+// 	@extend %paragraph;
+// }
+
+/* ==|== Typography ======================
+	Blockquotes
+========================================== */
+
+blockquote {
+	font-style: italic;
+	margin: lh-unit(1.5) auto lh-unit();
+	padding: 0 unit();
+	position: relative;
+	text-align: center;
+	&:before {
+		background-color: color(accent-mid); // TODO: Var
+		content: '';
+		position: absolute;
+		left: 50%;
+		margin-left: rem(-25); // TODO: Var
+		width: rem(50); // TODO: Var
+		height: rem(1);
+		top: rem(3) - lh-unit(0.5);
+	}
+	p {
+		color: color(light); // TODO: Var
+	}
+	cite {
+		font-style: normal;
+		display: block;
+		&:before {
+			content: "—";
+		}
+	}
+}
+
+/* ==|== Typography ======================
+	Variants
+========================================== */
 
 @mixin sc {
 	font-feature-settings: "smcp" 1, "c2sc" 1, "lnum" 1, "kern" 1;
@@ -128,9 +252,7 @@ p {
 }
 
 %paragraph--alpha {
-	font-size: 1.5em;
-	line-height: unit(2);
-	margin: rem(-6) auto unit(0.5) + rem(6);
+	@extend %heading-gamma;
 	font-style: italic;
 }
 
@@ -138,25 +260,8 @@ p {
 	@extend %paragraph--alpha;
 }
 
-blockquote {
-	margin: 0;
-}
-
 abbr[title] {
 	border:0;
 	background: linear-gradient(to left, black 33%, rgba(black, 0) 34%) repeat-x left 88%; // TODO: Var
 	background-size:rem(3) rem(1);
-}
-
-// Typeset
-.typeset {
-	h1 {
-		@extend %heading-alpha;
-	}
-	h2 {
-		@extend %heading-beta;
-	}
-	h3 {
-		@extend %heading-gamma;
-	}
 }

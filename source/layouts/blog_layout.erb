@@ -1,16 +1,15 @@
 <% wrap_layout :layout do
 
-  set_image = false
   if current_article.data.hero
     content_for(:hero, "blog/#{current_article.slug}")
-    set_image = "blog/#{current_article.slug}"
   end %>
 
-  <div data-js="append-age-warning"></div>
-  <article class="group typeset blog-post" data-age="<%= current_article.date %>" data-anchors>
-    <h1><%= current_article.title %></h1>
+  <div class="group ts" data-js="append-age-warning"></div>
+  <article class="group ts blog__post<% if current_article.data.hero%> blog__post--has-hero<% end %>" data-age="<%= current_article.date %>" data-anchors>
+    <h1 class="blog__title"><%= current_article.title %></h1>
+    <p class="blog__subtitle p--alpha"><%= partial "partials/journal/posted", :locals => { :a => current_article } %> in <%= partial "partials/journal/category", :locals => { :a => current_article } %></p>
     <% if current_article.data.tldr %>
-      <aside class="article__tldr">
+      <aside class="blog__tldr">
         <p id="tldr"><strong><abbr title="Too long didn’t read">TL;DR</abbr></strong> <em><%= current_article.data.tldr %></em></p>
       </aside>
     <% end %>
@@ -49,4 +48,5 @@
     };
     <% end %>
   </script>
+  <div class="_baseline-grid"><% for i in 1..1000 %><b></b><% end %></div>
 <% end %>

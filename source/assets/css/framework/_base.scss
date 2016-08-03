@@ -18,6 +18,12 @@ html {
 	background: module-color(base-bg);
 	font-size: percentage($measure / 16);
 	overflow-y: scroll;
+	@include min-width(tp(font-m)) {
+		font-size: percentage($measure-m / 16);
+	}
+	@include min-width(tp(font-l)) {
+		font-size: percentage($measure-l / 16);
+	}
 }
 
 body,

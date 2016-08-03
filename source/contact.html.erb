@@ -4,7 +4,8 @@ nav: contact
 description: So you wanna get in touch, eh? Here’s how&hellip;
 ---
 
-<section class="group group--centered cols">
+<section class="group cols ts">
+  <div class="_baseline-grid"><% for i in 1..80 %><b></b><% end %></div>
   <div class="col">
     <h1 class="h--alpha">Hi!</h1>
     <p class="p--alpha">Get in touch about anything, and everything.</p>
@@ -13,7 +14,7 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
   </div>
   <% data.contact.contact.each do |contact| %>
     <div class="col col--break col--break--<%= contact.title.to_slug %>">
-      <h2 class="h--beta"><%= contact.title %></h2>
+      <h2><%= contact.title %></h2>
       <p><em><%= contact.when %></em></p>
       <%= contact.desc %>
       <p>

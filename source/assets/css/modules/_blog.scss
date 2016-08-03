@@ -1,3 +1,28 @@
+.blog {
+  &__post {
+    padding-top: lh-unit(4);
+    &--has-hero {
+      padding-top: lh-unit(8);
+    }
+  }
+  &__title {
+    max-width: none;
+    text-align: center;
+  }
+  &__subtitle {
+    @include sc;
+    font-style: normal;
+    text-align: center;
+    padding-bottom: lh-unit(1);
+    a {
+      background: none;
+    }
+  }
+  &__tldr {
+    @extend %paragraph;
+  }
+}
+
 .js [data-anchors] {
   h2[id] {
     position: relative;

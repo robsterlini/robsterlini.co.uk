@@ -12,6 +12,7 @@
 .nav {
   $_: &;
   display: flex;
+  padding: 0 unit();
   &__list {
     background: module-color(base-bg);
     display: flex;
