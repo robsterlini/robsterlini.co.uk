@@ -1,7 +1,7 @@
 <% parent = parent || "masthead" %>
 <nav class="nav group">
   <% if parent == "masthead" %>
-    <%= link_to "<span aria-hidden=\"true\">&amp;</span><span class=\"visuallyhidden\"Rob Sterlini</span>", "index.html", :class => "masthead__logo" %>
+    <%= link_to "<span aria-hidden=\"true\">&amp;</span><span class=\"visuallyhidden\"Rob Sterlini</span>", "/index.html", :class => "masthead__logo" %>
   <% end %>
   <ul class="nav__list">
     <% data.pages.masthead.each do |nav| %>

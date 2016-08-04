@@ -47,7 +47,8 @@
     @include sc;
     line-height: lh-unit(0.5);
     font-size: 0.875em;
-    margin: rem(8) auto rem(4);
+    margin: 0 auto rem(4);
+    padding-top: rem(8);
     max-width: rem(w(text));
     text-align: center;
     @include max-width(bp(s)) {

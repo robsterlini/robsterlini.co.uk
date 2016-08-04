@@ -334,12 +334,13 @@ blockquote {
 	&:before {
 		background-color: color(accent-mid); // TODO: Var
 		content: '';
-		position: absolute;
-		left: 50%;
-		margin-left: rem(-25); // TODO: Var
+		display: block;
+		margin: 0 auto;
+		position: relative;
 		width: rem(50); // TODO: Var
 		height: rem(1);
 		top: rem(3) - lh-unit(0.5);
+		margin-bottom: rem(-1);
 	}
 	p {
 		color: color(light); // TODO: Var
