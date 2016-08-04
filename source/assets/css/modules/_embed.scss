@@ -1,3 +1,38 @@
+/**
+ * Embed SCSS Partial
+ *
+ * @requires …
+ */
+
+/* ==|== Embed ===========================
+  Base
+========================================== */
+
+.embed {
+  &--left {
+    float: left;
+    width: calc(50% - #{unit(0.5)}) !important;
+    margin: lh-unit() - rem(8) unit() lh-unit() auto !important;
+  }
+}
+
+/* ==|== Embed ===========================
+  Instagram
+========================================== */
+
+.embed {
+  &.instagram-media {
+    display: none !important;
+    a {
+      color: white;
+      text-shadow: none !important;
+    }
+  }
+  &.instagram-media-rendered {
+    display: block !important;
+  }
+}
+
 // iframe {
 //   margin: unit(2) auto;
 //   position: relative;

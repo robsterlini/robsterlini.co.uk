@@ -15,7 +15,7 @@ masthead:
 
     -   slug: "/journal.html"
         icon: "journal"
-        label: "The journal"
+        label: "My journal"
         alt: "Read what’s on my mind"
         footer: false
 

@@ -12,17 +12,22 @@
 .hero {
   $_: &;
   bottom: unit();
-  left: unit();
-  position: absolute;
-  right: unit();
+  left: unit(0.5);
   max-height: 66vh;
+  position: absolute;
+  right: unit(0.5);
   top: unit();
   .page--full-hero & {
     max-height: 98vh;
     max-height: calc(100vh - #{unit(2)});
+    @include min-width(bp(s)) {
+      left: unit();
+      right: unit();
+    }
   }
   &__bg,
-  &__overlay {
+  &__overlay,
+  &__cover {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +35,7 @@
     height: 100%;
   }
   &__bg {
-    background: center no-repeat;
+    background: module-color(base-bg) center no-repeat;
     background-size: cover;
     -webkit-filter: grayscale(1);
     opacity: 0.25;
@@ -40,7 +45,14 @@
     }
   }
   &__overlay {
-    // background: radial-gradient(transparent 50%, module-color(base-bg) 70%);
     background: linear-gradient(module-color(base-bg) 5%, transparent 30%, transparent 50%, module-color(base-bg));
+  }
+  &__cover {
+    background-color: module-color(base-bg);
+    opacity: 1;
+    transition: timing(hero) easing();
+    .js--hero-loaded & {
+      opacity: 0;
+    }
   }
 }

@@ -4,22 +4,22 @@ description: Here’s a repository of all of my ramblings from over the years. S
 nav: journal
 ---
 
-<section class="group cols ts">
+<section class="group cols">
   <div class="col col--33">
-    <h1 class="h--alpha"><%= current_page.data.title %></h1>
-    <p class="p--alpha"><%= current_page.data.description %></p>
+    <h1 class="_h1"><%= current_page.data.title %></h1>
+    <p class="_p1"><%= current_page.data.description %></p>
   </div>
   <div class="col col--66 col--break">
     <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-      <h2 class="h--beta" id="<%= year %>"><%= year %></h2>
+      <h2 class="_h2" id="<%= year %>"><%= year %></h2>
       <% articles.each_with_index do |article, i| %>
-        <!-- <article style="display: flex;"> -->
-            <h3><%= link_to article.title, article %></h3>
-            <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
-        <!-- </article> -->
+        <h3 class="_h3"><%= link_to article.title, article %></h3>
+        <p class="_h4"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+        <p class="_p"><em><%= article.data.description %></em></p>
       <% end %>
     <% end %>
 
     <%= partial "partials/journal/categories" %>
   </div>
+  <%= partial "partials/baseline-grid" %>
 </section>

@@ -41,7 +41,6 @@
 ========================================== */
 
 ._baseline-grid {
-	// opacity: 0;
 	overflow: hidden;
   position: absolute;
   top: 0;
@@ -51,12 +50,23 @@
   pointer-events: none;
   b {
     width: 100%;
-    height: 1px;
-    background: pink;
+    height: rem(1);
     display: block;
-    margin-top: calc(#{lh-unit(0.5)} - 1px);
+    margin-top: lh-unit(0.5) - rem(1);
     opacity: 0.2;
+    // opacity: 0;
     position: relative;
+    &:before {
+    	content: '';
+    	position: absolute;
+    	top: 0;
+    	// top: 50%;
+    	// transform: translateY(-50%);
+    	left: 0;
+    	width: 100%;
+    	height: 1px;
+	    background: pink;
+    }
 
 		// TODO: Decide
     // width: 50vw;
@@ -74,19 +84,132 @@
 }
 
 /* ==|== Typography ======================
-	Headings and Paragraphs
+	Base typographic styling
 ========================================== */
 
 h1,
 h2,
 h3,
+h4,
 p,
 ul,
 ol {
 	display: block;
 	@include font-feature-settings(liga kern onum);
 	max-width: rem(w(text));
+	margin: 0 auto;
 	width: 100%;
+}
+
+/* ==|== Typography ======================
+	Headings and Paragraphs
+========================================== */
+
+@mixin heading-margins($h) {
+	$hl: 4;
+
+	$ts: '.ts';
+	$pp: p, ol, ul;
+
+	// 	 :1  h1  h2  h3  h4   p
+	$e1: 10,  0,  7, -3, -2, -2;
+	$e2: -7, -7,  0,  1,  2,  3;
+	$e3:  7,  3, -3,  0,  1,  0;
+	$e4:  0,  0,  0,  2,  0,  0;
+	$ep:  0,  2, -2, -1,  0,  0;
+
+	$t: (
+		1: 'h1',
+		2: 'h2',
+		3: 'h3',
+		4: 'h4',
+		p: $pp,
+	);
+	$a: (
+		1: '._h1',
+		2: '._h2',
+		3: '._h3',
+		4: '._h4',
+		p: '._p',
+	);
+	$x: (
+		1: 3,
+		2: 2,
+		3: 1,
+		4: 0,
+		p: 0.5,
+	);
+	$e: (
+		1: $e1,
+		2: $e2,
+		3: $e3,
+		4: $e4,
+		p: $ep,
+	);
+
+	@for $i from 1 through $hl {
+		// Set our unprefixed, prefixed, and class variables
+		$ti: map-get($t, $i);
+		$tsi: #{$ts} #{$ti};
+		$ai: map-get($a, $i);
+		$ei: map-get($e, $i);
+
+		$tss: "#{$tsi}, #{$ai}";
+		@if ($i == 3) {
+			$tss: "#{$tss}, ._p1";
+		}
+		#{$tss} {
+			content: $ai;
+			margin-top: #{rem(nth($ei, 1))};
+		}
+
+		@for $j from 1 through $hl {
+			$tj: map-get($t, $j);
+			$aj: map-get($a, $j);
+			$xj: lh-unit(map-get($x, $j));
+			$ej: rem(nth($ei, $j + 1));
+
+			$tssj: "#{$tsi} + #{$tj}, #{$ai} + #{$aj}";
+			@if ($j == 3) {
+				$tssj: "#{$tssj}, #{$ai} + ._p1";
+			}
+			#{$tssj} {
+				margin-top: $xj + $ej;
+			}
+
+		}
+
+		$ap: map-get($a, p);
+		$xp: lh-unit(map-get($x, p));
+		$ep: rem(nth($ei, $hl + 1));
+		$xhp: lh-unit(map-get($x, $i));
+		$ehp: rem(nth(map-get($e, p), $i + 1));
+
+		$ss: '#{$ai} + #{$ap}';
+		$ssp: '#{$ap} + #{$ai}';
+		@each $tp in map-get($t, p) {
+			$ss: "#{$ss}, #{$tsi} + #{$tp}";
+			$ssp: "#{$ssp}, #{$ts} #{$tp} + #{$ti}, .figure + #{$ti}";
+		}
+
+		#{$ss} {
+			margin-top: $xp + $ep;
+		}
+
+		#{$ssp} {
+			content: $xhp;
+			content: $ehp;
+			margin-top: $xhp + $ehp;
+		}
+
+	}
+
+}
+
+%heading {
+	a {
+		background: none;
+	}
 }
 
 %heading-alpha {
@@ -94,18 +217,8 @@ ol {
 	font-size: 3.375em;
 	font-weight: weight();
 	line-height: lh-unit(3);
-	margin: lh-unit(3) auto 0;
-	&:first-child {
-		margin-top: rem(10);
-	}
-	+ %heading-beta {
-		margin-top: lh-unit(2) + rem(5);
-	}
-	+ %heading-gamma {
-		margin-top: lh-unit(1) - rem(3);
-	}
-	+ %paragraph {
-		margin-top: lh-unit(0.5) - rem(2);
+	&:last-child {
+		margin-bottom: rem(2);
 	}
 }
 
@@ -114,18 +227,11 @@ ol {
 	color: module-color(type-heading);
 	font-weight: weight(bold);
 	line-height: lh-unit(2);
-	margin: lh-unit(2) auto 0;
-	&:first-child {
-		margin-top: rem(-8);
+	&:last-child {
+		margin-bottom: rem(7);
 	}
-	+ %heading-alpha {
-		margin-top: lh-unit(3) - rem(5);
-	}
-	+ %heading-gamma {
-		margin-top: lh-unit(1) - rem(9);
-	}
-	+ %paragraph {
-		margin-top: lh-unit(0.5) - rem(9);
+	.figure + & {
+		margin-top: lh-unit(2) - rem(2);
 	}
 }
 
@@ -134,38 +240,27 @@ ol {
 	font-size: 1.25em;
 	line-height: lh-unit(1);
 	margin: lh-unit(1) auto 0;
-	&:first-child {
-		margin-top: rem(7);
+	&:last-child {
+		margin-bottom: rem(5);
 	}
-	+ %heading-alpha {
-		margin-top: lh-unit(3) + rem(3);
+	.figure + & {
+		margin-top: lh-unit(1) + rem(1);
 	}
-	+ %heading-beta {
-		margin-top: lh-unit(2) - rem(3);
-	}
-	+ %paragraph {
-		margin-top: lh-unit(0.5) + rem(1);
-	}
+}
+
+%heading-delta {
+	@include sc;
 }
 
 %paragraph {
 	font-size: 1em;
 	line-height: lh-unit(1);
-	margin: lh-unit(0.5) auto 0;
+	margin-top: lh-unit(0.5);
 	&:first-child {
 		margin-top: rem(8);
 	}
 	&:last-child {
-		margin-bottom: rem(4);
-	}
-	+ %heading-alpha {
-		margin-top: lh-unit(3) + rem(2);
-	}
-	+ %heading-beta {
-		margin-top: lh-unit(2) - rem(3);
-	}
-	+ %heading-gamma {
-		margin-top: lh-unit(1) - rem(1);
+		margin-bottom: rem(5);
 	}
 }
 
@@ -173,36 +268,56 @@ ol {
 .ts {
 	h1 {
 		@extend %heading-alpha;
+		@extend %heading;
 	}
 	h2 {
 		@extend %heading-beta;
+		@extend %heading;
 	}
 	h3 {
 		@extend %heading-gamma;
+		@extend %heading;
+	}
+	h4 {
+		@extend %paragraph;
+		@extend %heading-delta;
 	}
 	p,
 	ul,
 	ol {
 		@extend %paragraph;
 	}
-	.p--alpha {
+	blockquote p {
 		@extend %heading-gamma;
 	}
 }
 
-// .h--alpha {
-// 	@extend %heading-alpha;
-// }
-// .h--beta {
-// 	@extend %heading-beta;
-// }
-// .h--gamma {
-// 	@extend %heading-gamma;
-// 	color: module-color(type-heading);	
-// }
-// p {
-// 	@extend %paragraph;
-// }
+._h1 {
+	@extend %heading-alpha;
+	@extend %heading;
+}
+._h2 {
+	@extend %heading-beta;
+	@extend %heading;
+}
+._h3 {
+	@extend %heading-gamma;
+	@extend %heading;
+ color: module-color(type-heading);	
+}
+._h4 {
+	@extend %paragraph;
+	@extend %heading-delta;
+}
+._p {
+	@extend %paragraph;
+}
+._p1 {
+	@extend %heading-gamma;
+	font-style: italic;
+}
+
+@include heading-margins(alpha);
 
 /* ==|== Typography ======================
 	Blockquotes
@@ -210,10 +325,12 @@ ol {
 
 blockquote {
 	font-style: italic;
-	margin: lh-unit(1.5) auto lh-unit();
-	padding: 0 unit();
+	margin: lh-unit(1.5) - rem(1) auto lh-unit() + rem(1);
 	position: relative;
 	text-align: center;
+	@include min-width(bp(s)) {
+		padding: 0 unit();
+	}
 	&:before {
 		background-color: color(accent-mid); // TODO: Var
 		content: '';
@@ -237,27 +354,44 @@ blockquote {
 }
 
 /* ==|== Typography ======================
+	Drop cap
+========================================== */
+
+._p--dropcap {
+  &:first-letter {
+    color: color(accent-mid); // TODO: Var
+    font-size: 3.375em;
+    float: left;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: -10px;
+    line-height: 1;
+    margin-right: 5px;
+  }
+}
+
+
+/* ==|== Typography ======================
+	Rule
+========================================== */
+
+hr {
+	border: 0;
+	background: rgba(color(mid), 0.2);
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin: lh-unit(2) + rem(3) auto calc(#{lh-unit(2) + rem(-3)} - 2px);
+	max-width: rem(w(text));
+	position: relative;
+}
+
+/* ==|== Typography ======================
 	Variants
 ========================================== */
 
-@mixin sc {
-	font-feature-settings: "smcp" 1, "c2sc" 1, "lnum" 1, "kern" 1;
-}
-.sc,
-.small-caps {
+.sc {
 	@include sc;
-}
-.small-caps {
-	line-height: 1.1;
-}
-
-%paragraph--alpha {
-	@extend %heading-gamma;
-	font-style: italic;
-}
-
-.p--alpha {
-	@extend %paragraph--alpha;
 }
 
 abbr[title] {

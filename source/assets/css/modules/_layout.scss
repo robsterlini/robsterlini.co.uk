@@ -5,8 +5,11 @@
  */
 
 body {
-  padding: unit();
+  padding: unit() unit(0.5);
   position: relative;
+  @include min-width(bp(s)) {
+    padding: unit();
+  }
 }
 
 .wrapper {
@@ -14,7 +17,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: lh-unit(1) 0 unit(4);
+  padding: lh-unit(2) 0 unit(4);
   position: relative;
   width: 100%;
   z-index: 1;
@@ -23,9 +26,12 @@ body {
 .group {
   margin: auto;
   max-width: rem(w(wrapper));
-  padding: 0 unit(2);
+  padding: 0 unit();
   position: relative;
   width: 100%;
+  @include min-width(bp(s)) {
+    padding: 0 unit(2);
+  }
 }
 
 .cols {
@@ -46,21 +52,6 @@ body {
   @include max-width(tp(col-multiple)) {
     margin: 0 auto;
     max-width: rem(w(text));
-    &:first-child {
-      padding-top: unit(4);
-    }
-  }
-  p:first-child {
-    &:first-letter {
-      color: color(accent-mid);
-      font-size: 3em;
-      float: left;
-      position: relative;
-      margin-top: rem(4);
-      margin-bottom: -10px;
-      line-height: 1;
-      margin-right: 5px;
-    }
   }
   &--33 {
     width: 33.3%;
@@ -78,7 +69,7 @@ body {
       background: module-color(column-break-bg);
       height: 1px; // TODO: Var
       position: absolute;
-      top: lh-unit(2.5);
+      top: lh-unit(2.5) - rem(1);
       margin: 0;
     }
     &--twitter {

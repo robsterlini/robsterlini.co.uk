@@ -1,16 +1,16 @@
 ---
 ---
 <% content_for(:title, "#{tagname}") %>
-  <article class="ts group">
+<div class="col">
+  <h1 class="_h1 blog__title"><%= "#{tagname.dup.sub! ' and ', ' <span class="sc">&</span> '}" %></h1>
+  <h2 class="_h2">Posts</h2>
+  
+  <% page_articles.each_with_index do |article, i| %>
+    <% localised_date = "<time>#{article.date.strftime("%a %e %b")}</time>" %>
+    <h3 class="_h3"><%= link_to article.title, article %></h3>
+    <p class="_h4"><%= partial "partials/journal/posted", :locals => { :a => article } %></p>
+    <p class="_p"><em><%= article.data.description %></em></p>
+  <% end %>
 
-    <h1><%= tagname %></h1>
-    
-    <% page_articles.each_with_index do |article, i| %>
-      <% localised_date = "<time>#{article.date.strftime("%a %e %b")}</time>" %>
-      <h3><%= link_to article.title, article %></h3>
-      <p><%= article.data.description %></p>
-      <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %></p>
-    <% end %>
-
-    <%= partial "partials/journal/categories" %>
-  </article>
+  <%= partial "partials/journal/categories" %>
+</div>

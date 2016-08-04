@@ -7,4 +7,4 @@
   end
 %>
 
-<%= link_to t_name, t_link, :title => "See other posts about #{t_name}", :class => "" %>
+<%= link_to "#{t_name.dup.sub! ' and ', ' & '}", t_link, :title => "See other posts about #{t_name}", :class => "" %>

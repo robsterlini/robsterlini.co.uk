@@ -2,8 +2,8 @@
  * List SCSS Partial
  */
 
-/* ==|== Lists =================
-  1. Default
+/* ==|== Lists ===========================
+  Default
 ========================================== */
 
 ul,
@@ -22,4 +22,15 @@ ol {
 }
 ol {
   list-style: decimal outside none;
+}
+
+/* ==|== Lists ===========================
+  Styled
+========================================== */
+
+.list {
+  &--plain {
+    list-style: none;
+    padding: 0;
+  }
 }

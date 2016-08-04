@@ -133,13 +133,6 @@ set :portfolio_dir, '/assets/images/portfolio/'
 set :url_root, 'https://robsterlini.co.uk'
 set :url_short, 'http://sterlini.co'
 
-# Create pages
-data.projects.featured.each_with_index do |c, i|
-  if c[:case_study] == 'true'
-    proxy "/case-study/#{c[:slug]}.html", "/templates/case-study/case-study.html", :locals => {:project => c, :case_study => c.case_study_vars, :index => i}, :ignore => true
-  end
-end
-
 # Turn on Pretty URLs
 activate :directory_indexes
 
@@ -176,12 +169,6 @@ after_build do
   File.rename 'build/.htaccess.apache', 'build/.htaccess'
   File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
-
-# Middleplate
-with_layout :middleplate_layout do
-  page "/middleplate/*"
-end
-set :mp_github, "https://github.com/robsterlini/middleplate"
 
 # Grailrail
 with_layout :grailrail_layout do

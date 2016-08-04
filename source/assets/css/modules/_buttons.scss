@@ -23,7 +23,24 @@
   &:after {
     content: ' \02192';
     position: relative;
-    top: em(3);
+    top: em(2);
+  }
+  &--back,
+  &--next {
+    display: table;
+  }
+  &--back {
+    &:before {
+      content: '\02190\000A0';
+      position: relative;
+      top: em(3);
+    }
+    &:after {
+      display: none;
+    }
+  }
+  &--next {
+    margin-left: auto;
   }
 }
 
@@ -32,6 +49,8 @@
 ========================================== */
 
 .btns {
+  &--nav {
+  }
 }
 
 /* ==|== Buttons =================

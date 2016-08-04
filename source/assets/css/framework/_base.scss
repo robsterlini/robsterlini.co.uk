@@ -45,5 +45,7 @@ body {
   flex-direction: column;
 }
 ::selection {
+	background: module-color(selection-bg);
+	color: module-color(selection-color);
 	text-shadow:none;
 }

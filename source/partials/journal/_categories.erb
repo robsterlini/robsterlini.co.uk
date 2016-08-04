@@ -1,2 +1,8 @@
-<h2 class="h--gamma">Categories</h2>
-<ul class="list--inline"><% blog.tags.each do |tag, articles| %><li class="sc"><%= link_to "#{tag}", tag_path(tag), :class => "", :title => "Read the #{articles.size} posts on #{tag}" %></li><% end %></ul>
+<h2 class="_h2">Categories</h2>
+<ul class="_p list--plain">
+  <% blog.tags.each do |tag, articles| %>
+    <li class="sc">
+      <%= link_to "#{tag.dup.sub! ' and ', ' & '}", tag_path(tag), :class => "", :title => "Read the #{articles.size} posts on #{tag}" %>
+    </li>
+  <% end %>
+</ul>

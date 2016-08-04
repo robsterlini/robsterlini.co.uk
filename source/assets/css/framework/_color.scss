@@ -20,8 +20,9 @@ $colors: (
   accent-light: #AFF1F1,
   accent-mid: lighten(#177D7D, 5%),
 
+  alert: #ffd079,
+
   dark: #181A1D,
-  // mid: #81CACA,
   mid: #91B1B1,
   light: #D7F9F9,
   lightest: #EFFFFF,
@@ -30,6 +31,9 @@ $colors: (
 $module-colors: (
   base-bg: color(dark),
   base-color: color(mid),
+
+  selection-bg: color(accent-mid),
+  selection-color: color(light),
 
   body-border: color(accent-mid),
 
@@ -40,6 +44,7 @@ $module-colors: (
   nav-color: color(accent-light),
 
   type-heading: color(light),
+  type-code: color(light),
 
   column-break-bg: color(accent-mid),
 );

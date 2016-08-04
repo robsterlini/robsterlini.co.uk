@@ -2,31 +2,28 @@
 description: I’m a London-based front-end developer with a passion for design.
 page_classes: page--home page--full-hero
 priority: 1.0
-hero: home/shades
+hero: home/home
 ---
 
-<section class="group cols ts">
-  <div class="col">
-    <h1>Rob Sterlini</h1>
-    <p class="p--alpha">By day I’m a front-end developer at <a href="https://fueled.com/sterlini" target="_blank">Fueled</a>; by night a designer, a runner, a triathlete, and&nbsp;more.</p>
-  </div>
-  <div class="col col--break">
-    <p>At Fueled I’ve created sites for global business, tech startups, established brands, and the like. It has also afforded me the opportunity to push the boundaries of the web, with imaginative case studies, and boundless&nbsp;capabilities.</p>
-    <p>As a freelance creative developer and in past jobs, I’ve had the great pleasure of working with friends to create stunning pieces like kickpush.co. Reimagining the University of Reading site was pretty special given my fond love for my time&nbsp;there!</p>
-    <p class="btns">
-      <%= link_to "Say hi", "/contact.html", :class => "btn" %>
+<div class="col">
+  <h1 class="_h1">Hi!</h1>
+  <p class="_p1">I’m Rob Sterlini. By day I’m a front-end developer at <a href="https://fueled.com/sterlini" target="_blank">Fueled</a>; by night a designer, a runner, a triathlete, and&nbsp;more.</p>
+</div>
+<div class="col col--break">
+  <p class="_p _p--dropcap">At Fueled I’ve created sites for global business, tech startups, established brands, and the like. It has also afforded me the opportunity to push the boundaries of the web, with imaginative case studies, and boundless&nbsp;capabilities.</p>
+  <p class="_p">As a freelance creative developer and in past jobs, I’ve had the great pleasure of working with friends to create stunning pieces like kickpush.co. Reimagining the University of Reading site was pretty special given my fond love for my time&nbsp;there!</p>
+  <p class="_p btns">
+    <%= link_to "Say hi", "/contact.html", :class => "btn" %>
+  </p>
+</div>
+<div class="col col--break">
+  <% blog.articles.take(1).each_with_index do |article, i| %>
+    <h2 class="_h3"><%= article.title %></h2>
+    <p class="_h4"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+    <p class="_p"><em><%= article.data.description %></em></p>
+    <p class="_p btns">
+      <a href="<%= article.url %>" class="btn">Read the post</a>
+      <%= link_to "Browse the archive", "/archive.html", :class => "btn" %>
     </p>
-  </div>
-  <div class="col col--break">
-    <% blog.articles.take(1).each_with_index do |article, i| %>
-      <h3 class="h--gamma"><%= article.title %> 43t34t34t34</h3>
-      <p><em>Recently I wrote about <%= partial("partials/journal/category", :locals => { :a => article }) %></em></p>
-      <p><%= article.data.description %></p>
-      <p class="btns">
-        <a href="<%= article.url %>" class="btn">Read the post</a>
-        <%= link_to "Browse the archive", "/archive.html", :class => "btn" %>
-      </p>
-    <% end %>
-  </div>
-  <div class="_baseline-grid"><% for i in 1..80 %><b></b><% end %></div>
-</section>
+  <% end %>
+</div>

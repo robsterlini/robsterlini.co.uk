@@ -1,8 +1,25 @@
+/**
+ * Blog SCSS Partial
+ *
+ * @requires …
+ */
+
+/* ==|== Blog ============================
+  Base
+========================================== */
+
 .blog {
   &__post {
-    padding-top: lh-unit(4);
+    padding-top: lh-unit(2);
+    width: 100%;
+    @include min-width(bp(s)) {
+      padding-top: lh-unit(4);
+    }
     &--has-hero {
-      padding-top: lh-unit(6);
+      padding-top: lh-unit(3);
+      @include min-width(bp(s)) {
+        padding-top: lh-unit(6);
+      }
     }
   }
   &__title {
@@ -19,9 +36,19 @@
     }
   }
   &__tldr {
-    @extend %paragraph;
+  }
+  &__more {
+    margin: 0 auto;
+    max-width: rem(w(text));
+    .col {
+      margin-top: rem(4);
+    }
   }
 }
+
+/* ==|== Blog ============================
+  Anchors
+========================================== */
 
 .js [data-anchors] {
   h2[id] {

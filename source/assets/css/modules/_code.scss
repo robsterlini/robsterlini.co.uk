@@ -1,18 +1,15 @@
 code {
+  color: module-color(type-code);
   font-size: 0.9em;
   position: relative;
 }
 pre {
-  margin: unit(2) auto;
-  // max-width:rem($layout-max-width + (25 * 2));
-  @include font-size(14);
+  margin: lh-unit(1) auto;
+  line-height: lh-unit();
   code {
-    // max-width:$layout-max-width-suffix;
-    max-width: calc(#{grid-unit(10, 12, false)});
-    @include font-size(14);
     display: block;
-    margin: 0 0 0 auto;
-    padding: unit(0.5) unit() unit(0.5) calc(#{grid-unit(2, 8, false)} + #{unit()});
+    margin: 0 auto;
+    padding: 0;
     border-radius: unit(0.25);
     top: 0;
   }

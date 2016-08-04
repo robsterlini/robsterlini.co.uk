@@ -1,58 +1,143 @@
 /**
- * Image SCSS Partial
+ * Figure SCSS Partial
+ *
+ * @requires …
  */
 
+/* ==|== Figure ==========================
+  Base
+========================================== */
+
 .figure {
-  clear: both;
+  $_: &;
+  margin: lh-unit() - rem(9) auto lh-unit();
+  overflow: hidden;
+  width: 100vw;
+  left: 50%;
   position: relative;
-  margin-top: unit();
-  margin-bottom: unit();
+  transform: translateX(-50%);
+  pre + &,
+  + .figure {
+    margin-top: lh-unit() + rem(4);
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+  }
   &--full {
-    margin-right: 0;
-    width: 100%;
-    .figure__caption {
-      margin-left: auto;
-      max-width: rem($layout-max-width + unit(2));
+    img {
+    }
+  }
+  &--inset {
+    @include min-width(bp(s)) {
+      float: right;
+      margin-left: unit();
+      width: 50%;
+      left: auto;
+      transform: none;
     }
     img {
-      width: 100%;
-    }
-  }
-  &--width {
-    left: unit(-2);
-    margin-left: auto;
-    margin-right: unit(-2);
-    max-width: rem($layout-max-width + unit(2));
-    position: relative;
-    width: calc(100% + #{unit(2)});
-  }
-  &--left,
-  &--gutter {
-    float: left;
-    margin-right: unit();
-    width: calc(50% - #{unit(0.5)});
-  }
-  &--left {
-    .figure__caption {
+
     }
   }
   &__caption {
-    line-height: line-height(caption);
-    @include font-size(12);
-    width:100%;
-    text-align: left;
-    padding-top:rem(5);
-  }
-  img,
-  svg {
-    height:auto;
-    max-width:100%;
-    margin:0 auto;
-    display: block;
-  }
-}
-.img--script {
-  .no-js & {
-    display: none;
+    @include sc;
+    line-height: lh-unit(0.5);
+    font-size: 0.875em;
+    margin: rem(8) auto rem(4);
+    max-width: rem(w(text));
+    text-align: center;
+    @include max-width(bp(s)) {
+      padding: 0 unit(1.5);
+    }
+    .figure--inset & {
+      @include min-width(bp(s)) {
+        text-align: left;
+      }
+    }
   }
 }
+
+/* ==|== Figure ==========================
+  Loader
+========================================== */
+
+// .img--script {
+//   .no-js & {
+//     display: none;
+//   }
+// }
+
+/* ==|== Figure ==========================
+  Instagram
+========================================== */
+
+.figure {
+  &.instagram-media {
+    display: none !important;
+    a {
+      color: white;
+      text-shadow: none !important;
+    }
+  }
+  &.instagram-media-rendered {
+    display: block !important;
+  }
+}
+
+// /**
+//  * Image SCSS Partial
+//  */
+
+// .figure {
+//   clear: both;
+//   position: relative;
+//   margin-top: lh-unit();
+//   margin-bottom: lh-unit();
+//   &--full {
+//     margin-right: 0;
+//     width: 100%;
+//     .figure__caption {
+//       margin-left: auto;
+//       max-width: rem($layout-max-width + unit(2));
+//     }
+//     img {
+//       width: 100%;
+//     }
+//   }
+//   &--width {
+//     left: unit(-2);
+//     margin-left: auto;
+//     margin-right: unit(-2);
+//     max-width: rem($layout-max-width + unit(2));
+//     position: relative;
+//     width: calc(100% + #{unit(2)});
+//   }
+//   &--left,
+//   &--gutter {
+//     float: left;
+//     margin-right: unit();
+//     width: calc(50% - #{unit(0.5)});
+//   }
+//   &--left {
+//     .figure__caption {
+//     }
+//   }
+//   &__caption {
+//     line-height: line-height(caption);
+//     @include font-size(12);
+//     width:100%;
+//     text-align: left;
+//     padding-top:rem(5);
+//   }
+//   img,
+//   svg {
+//     height:auto;
+//     max-width:100%;
+//     margin:0 auto;
+//     display: block;
+//   }
+// }
