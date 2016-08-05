@@ -2,129 +2,35 @@
  * List SCSS Partial
  */
 
-/* ==|== Lists =================
-	1. Default
+/* ==|== Lists ===========================
+  Default
 ========================================== */
 
 ul,
 ol {
-	@extend %paragraph;
-	max-width:rem($layout-max-width + ($measure * 2));
-	list-style: circle outside none;
-	padding:0 unit(2);
-	& > li {
-		max-width:$layout-max-width-suffix;
-		& > ul {
-			list-style:disc outside none;
-			margin:0;
-		}
-		& > ol {
-			list-style: lower-roman outside none;
-			margin:0;
-		}
-	}
+  list-style: circle outside none;
+  & > li {
+    & > ul {
+      list-style:disc outside none;
+      margin:0;
+    }
+    & > ol {
+      list-style: lower-roman outside none;
+      margin:0;
+    }
+  }
 }
 ol {
-	list-style: decimal outside none;
+  list-style: decimal outside none;
 }
 
-/* ==|== Lists =================
-	Large Icons
+/* ==|== Lists ===========================
+  Styled
 ========================================== */
 
-.list--large-icons {
-  list-style: none;
-  padding: 0;
-  &--half,
-  &--third {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: none;
-    width: 100%;
-  }
-  // &--hover {
-  //   @include min-width($bp-mid) {
-  //     transition:opacity .25s cubic-bezier(#{$bezier-nice});
-  //     &:hover,
-  //     &:focus {
-  //       .list--large-icons__item {
-  //         opacity: 0.5;
-  //         &:hover,
-  //         &:focus {
-  //           opacity: 1;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-}
-.list--large-icons__item {
-  padding: $measure-unit 0;
-  position: relative;
-  margin: 0 auto;
-  &:before {
-    color: $color-accent;
-    display: block;
-    font-size: $measure-unit * 2;
-    margin:0 auto;
-  }
-  h2,
-  .list--large-icons__title {
-    @include font-size(20);
-    padding-top: 0;
-    @include max-width($bp-tiny) {
-      @include font-size(22);
-    }
-  }
-  @include min-width($bp-small) {
-    &:before {
-      font-size: $measure-unit * 3;
-    }
-    .list--large-icons--half &,
-    .list--large-icons--third & {
-      margin: 0;
-      width: calc(50% - #{$measure-unit });
-    }
-    h2,
-    .list--large-icons__title {
-      @include font-size(24);
-    }
-  }
-  @include min-width($bp-mid) {
-    .list--large-icons--third & {
-      width: calc(33.3% - #{$measure-unit * 4 / 3});
-    }
-  }
-}
-
-.list--large-icons__link {
-  display: block;
-  position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    top: rem(-72);
-    height: rem(72);
-    left: 0;
-    width: 100%;
-    @include max-width($bp-mid) {
-      top: 0;
-      left: rem(-42);
-      height: 100%;
-      width: rem(42);
-    }
-    @include max-width($bp-mid) {
-      top: rem(-45);
-      height: rem(45);
-      left: 0;
-      width: 100%;
-    }
-  }
-}
-.list--large-icons__item--large {
-  width: 50%;
-  @include max-width($bp-mid) {
-    width: 100%;
+.list {
+  &--plain {
+    list-style: none;
+    padding: 0;
   }
 }

@@ -1,24 +1,20 @@
+/**
+ * FOOTER
+ * Styles the main page footer
+ *
+ * @requires 
+**/
+
+/* ==|== Masthead ========================
+  Base
+========================================== */
+
 .footer {
-  backface-visibility: hidden;
-  overflow: hidden;
-  margin-top: 0;
-  padding: unit(4) 0 unit(2);
-  position: relative;
+  $_: &;
+  left: 0;
+  padding: 0 unit();
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  z-index: 1;
-  @include min-width(tp(hero-split)) {
-    padding-left: 0;
-    padding-right: w(hero-percent);
-  }
-  p,
-  ul {
-    position: relative;
-    @include font-size(16);
-    @include max-width($bp-small) {
-      @include font-size(15);
-    }
-    @include max-width($bp-tiny) {
-      @include font-size(14);
-    }
-  }
+  z-index: 999; // TODO: Var
 }

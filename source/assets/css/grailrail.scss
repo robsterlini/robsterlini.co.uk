@@ -1,9 +1,14 @@
+$color-background: white;
+$color-text: black;
+$color-black: black;
+$color-white: white;
+
 @import "framework/normalize";
 @import "framework/mixins";
 @import "framework/bezier";
 @import "framework/color";
-@import "framework/type";
 @import "framework/variables";
+@import "framework/base";
 @import "framework/helpers";
 
 @import "grailrail/_all";

@@ -3,10 +3,11 @@
 employment:
 
     -   title: "Fueled"
-        subtitle: "Web designer"
+        subtitle: "Web designer, Front End Developer"
         date: "July 2014–"
         copy:
             -   "My (still on-going) time at Fueled has given me the chance to work with well-known brands like <strong>Vanity Fair</strong>, <strong>Condé Nast</strong>, and <strong>The ONE Group</strong> – each providing a different set of challenges. I’ve also with smaller start-up companies, with a greater amount of creative control."
+            -   "The tail end of 2015 saw me focusing a lot more on front end development, which came with a job title change, and a shift in responsibilities as we looked to grow the front end team."
 
     -   title: "University of Reading"
         subtitle: "Digital designer"

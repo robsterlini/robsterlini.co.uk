@@ -1,82 +1,73 @@
-.intro {
-  position: relative;
-  h1 {
-    margin-bottom: unit();
-  }
-  &__p {
-    color: module-color(p-alpha);
-    font-family: $font-stack-alt;
-    margin: unit() 0 unit() auto;
-    @include font-size(20);
-    @include min-width($bp-tiny) {
-      @include font-size(22);
-    } 
-    @include min-width($bp-small) {
-      @include font-size(24);
+/**
+ * Blog SCSS Partial
+ *
+ * @requires …
+ */
+
+/* ==|== Blog ============================
+  Base
+========================================== */
+
+.blog {
+  &__post {
+    padding-top: lh-unit(2);
+    width: 100%;
+    @include min-width(bp(s)) {
+      padding-top: lh-unit(4);
+    }
+    &--has-hero {
+      padding-top: lh-unit(3);
+      @include min-width(bp(s)) {
+        padding-top: lh-unit(6);
+      }
     }
   }
-  &__date {
-    left: 0;
-    position: absolute;
-    text-align: right;
-    top: rem(7);
-    width: calc(66vw - #{$layout-max-width-suffix} - #{unit(5)});
+  &__title {
+    max-width: none;
+    text-align: center;
+  }
+  &__subtitle {
+    @include sc;
+    font-style: normal;
+    text-align: center;
+    padding-bottom: lh-unit(2);
+    a {
+      background: none;
+    }
+  }
+  &__tldr {
+  }
+  &__more {
+    margin: 0 auto;
+    max-width: rem(w(text));
+    .col {
+      margin-top: rem(4);
+    }
   }
 }
 
-.categories {
-  padding: 0;
-}
-.category__item {
-  display: block;
-  @include min-width($bp-small) {
-    display: inline-block;
-    margin: 0;
-    vertical-align: top;
-    width: 33.33%;
-  }
-}
-.category__link {
-  display: block;
-  margin: 0 0 $measure-unit;
-  @include min-width($bp-small) {
-    padding: 0 rem(20);
-  }
-}
-[class*=" ss-cat-"] {
-  @extend %big-cat-icons;
-}
+/* ==|== Blog ============================
+  Anchors
+========================================== */
 
 .js [data-anchors] {
   h2[id] {
     position: relative;
+    transition: color timing() easing();
     &:before {
-      background: $color-background;
-      color: $color-link-primary;
+      color: transparent;
       content:'#'attr(id);
-      opacity: 0;
       position: absolute;
       text-indent: rem(-14);
-      transition:opacity .25s cubic-bezier(#{$bezier-nice});
-      // transform: translateY(#{rem(-5)});
+      transition: inherit;
       width: 100%;
       z-index: 1;
     }
-    &:hover,
-    &:focus {
+    &:hover {
+      color: transparent;
       &:before {
-        opacity: 1;
-        // transform: translateY(#{rem(0)});
+        color: module-color(type-heading);
       }
     }
   }
-}
-
-.blog-post {
-  > p:first-child {
-    margin-top: $measure-unit * 3;
-  }
-  // blockquote {
-  //   margin: $measure-unit * 2 auto;
-  // }
 }

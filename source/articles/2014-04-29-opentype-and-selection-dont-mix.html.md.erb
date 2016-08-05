@@ -2,8 +2,6 @@
 title: Opentype and ::selection don’t mix
 date: 2014-04-29 00:00 UTC
 description: "Fixing the dubious way that Chrome on <span class='sc'>OSX</span> borks OpenType features when used with a custom ::selection"
-hero: blog-opentype-and-selection-dont-mix.jpg
-hero_small: blog-opentype-and-selection-dont-mix_600.jpg
 tags: Design and dev
 ---
 
@@ -34,12 +32,14 @@ Which gives you this:
 
 <%= partial "partials/figure", locals: {
   image: "/content/2014/04/ot-1_full.jpg",
+  caption: "The OpenType features looking beautiful",
   alt: "The OpenType features looking beautiful",
   position: "full"
 } %>
 
 <%= partial "partials/figure", locals: {
   image: "/content/2014/04/ot-2_full.jpg",
+  caption: "::selection looking not-so-beautiful",
   alt: "::selection looking not-so-beautiful",
   position: "full"
 } %>
@@ -54,12 +54,14 @@ The easiest solution is to not use a custom `::selection` or to not use the Open
 
 <%= partial "partials/figure", locals: {
   image: "/content/2014/04/ot-3_full.jpg",
+  caption: "No OT features…",
   alt: "No OT features…",
   position: "full"
 } %>
 
 <%= partial "partials/figure", locals: {
   image: "/content/2014/04/ot-4_full.jpg",
+  caption: "…but no ::selection problems",
   alt: "…but no ::selection problems",
   position: "full"
 } %>
@@ -88,11 +90,21 @@ It would also mean sacrificing the tasty features on all the other browsers, but
       text-rendering: optimizeLegibility;
     }
 
-![Problem solved?](http://i.robsterlini.co.uk/posts_opentype-bug/ot-5.jpg?b=yes "Problem solved?")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-5_full.jpg",
+  caption: "Problem solved?",
+  alt: "Problem solved?",
+  position: "full"
+} %>
 
 But even this has a problem with the `::selection`…
 
-![Nearly, but not quite](http://i.robsterlini.co.uk/posts_opentype-bug/ot-6.jpg?b=yes "Nearly, but not quite")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-6_full.jpg",
+  caption: "Nearly, but not quite",
+  alt: "Nearly, but not quite",
+  position: "full"
+} %>
 
 And even then it still doesn’t deliver what I want
 
@@ -110,9 +122,19 @@ I worked out that it was the `colour` and `text-shadow`, but not the `background
 
 The only caveat is that you need to use a contrasting colour to the text – in this case a light grey against the dark text. Not too-big-a sacrifice to keep both of it!
 
-![Problem solved?](http://i.robsterlini.co.uk/posts_opentype-bug/ot-7.jpg?b=yes "Problem solved?")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-7_full.jpg",
+  caption: "Problem solved?",
+  alt: "Problem solved?",
+  position: "full"
+} %>
 
-![You betcha!](http://i.robsterlini.co.uk/posts_opentype-bug/ot-8.jpg?b=yes "You betcha!")
+<%= partial "partials/figure", locals: {
+  image: "/content/2014/04/ot-7_full.jpg",
+  caption: "You betcha!",
+  alt: "You betcha!",
+  position: "full"
+} %>
 
 ## Problem solved
 

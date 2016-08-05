@@ -6,36 +6,8 @@ masthead:
 
     -   slug: "/index.html"
         icon: "home"
-        abbr:
-            label: "A casa mia"
-            title: "Home"
+        label: "Home"
         alt: "Go home"
-        home:
-            four_oh_four: true
-            title: "Head home"
-            text: "Proceed to <em>home</em> and collect £200 as you pass <strong class='sc'>Go!</strong>"
-
-##
-
-    -   slug: "/portfolio.html"
-        icon: "projects"
-        label: "My work"
-        alt: "See my life’s work"
-        home:
-            title: "Explore my work"
-            text: "Check out a selection of my previous and on-going projects."
-            read_more: "my work"
-
-##
-
-    -   slug: "/process.html"
-        icon: "process"
-        label: "My process"
-        alt: "Find out how I do it"
-        # home:
-        #     title: "Find out how I do it"
-        #     text: "Read up on my process, from taking on an idea through to post-launch."
-        #     read_more: "how I work"
         masthead: false
         footer: false
 
@@ -43,13 +15,9 @@ masthead:
 
     -   slug: "/journal.html"
         icon: "journal"
-        label: "The journal"
+        label: "My journal"
         alt: "Read what’s on my mind"
-        home:
-            four_oh_four: true
-            title: "Read my journal"
-            text: "Read any of my journal thoughts on anything from life to design and more."
-            read_more: "what I’ve been writing about"
+        footer: false
 
 ##
 
@@ -57,31 +25,7 @@ masthead:
         icon: "contact"
         label: "Say hi"
         alt: "Get in touch"
-        home:
-            four_oh_four: true
-            title: "Get in touch"
-            text: "Got a project I’m perfect for? Want to ask a question? Go on, say hi!"
-            read_more: "me"
-
-##
-
-    -   slug: "/about.html"
-        icon: "about"
-        label: "About me"
-        alt: "Find out about me"
-        # home:
-        #     title: "Learn about me"
-        #     text: "Find out everything from how many tattoos I have, to my favourite food."
-        #     read_more: "getting in touch with me"
-        # masthead: false
-        # footer: false
-
-##
-
-    -   slug: "/triathlon.html"
-        icon: "triathlon"
-        label: "Tri rookie"
-        alt: "Follow me on my road to my first triathlon"
+        footer: false
 
 ##
 
@@ -92,7 +36,7 @@ masthead:
 
 ##
 
-    -   slug: "/middleplate/index.html"
-        label: "Middleplate"
-        alt: "Test"
+    -   slug: "/colophon.html"
+        label: "Colophon"
+        alt: "See how it’s built"
         masthead: false

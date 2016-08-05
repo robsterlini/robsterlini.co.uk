@@ -15,9 +15,15 @@ html,body {
 }
 
 html {
-	background: $color-background;
-	font-size:percentage($font-default-size / 16);
+	background: module-color(base-bg);
+	font-size: percentage($measure / 16);
 	overflow-y: scroll;
+	@include min-width(tp(font-m)) {
+		font-size: percentage($measure-m / 16);
+	}
+	@include min-width(tp(font-l)) {
+		font-size: percentage($measure-l / 16);
+	}
 }
 
 body,
@@ -25,36 +31,21 @@ button,
 input,
 select,
 textarea {
-	color:$color-text;
+	color: module-color(base-color);
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	font-family: $font-stack-regular;
 }
 
 body {
-	font-size:1em;
-	line-height:$font-default-line-height;
+	font-size: 1em;
+	line-height: line-height();
 	display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-.body--404 {
-	background:lighten($color-black,2%);
-	color:$color-white;
-	text-shadow:none;
-}
-
-.body--no-scroll {
-	overflow: hidden;
-}
-
 ::selection {
-	background:$color-black;
+	background: module-color(selection-bg);
+	color: module-color(selection-color);
 	text-shadow:none;
-	color:$color-white;
-}
-::-moz-selection {
-	background:$color-black;
-	text-shadow:none;
-	color:$color-white;
 }

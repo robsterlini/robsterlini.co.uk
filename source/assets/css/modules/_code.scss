@@ -1,25 +1,16 @@
 code {
-  font-size:0.9em;
+  color: module-color(type-code);
+  font-size: 0.9em;
   position: relative;
-  @include max-width($bp-small) {
-    @include font-size(16);
-  }
-  @include max-width($bp-tiny) {
-    @include font-size(15);
-  }
 }
 pre {
-  margin: unit(2) 0 unit(2) auto;
-  max-width:rem($layout-max-width + ($measure * 2));
-  width: 100%;
-  @include font-size(14);
+  margin: lh-unit(1) auto;
+  line-height: lh-unit();
   code {
-    // max-width:$layout-max-width-suffix;
-    @include font-size(14);
     display: block;
-    margin:0 0 0 auto;
-    padding: unit() unit(2);
-    border-radius:rem(3);
+    margin: 0 auto;
+    padding: 0;
+    border-radius: unit(0.25);
     top: 0;
   }
 }
@@ -34,7 +25,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #23241f;
+  // background: #23241f;
 }
 
 .hljs,

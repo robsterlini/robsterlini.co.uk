@@ -1,44 +1,30 @@
 ---
-title: A written insight into the world of Rob Sterlini
+title: My journal
+description: The occassional thought on things (probably not) worth writing about.
+page_classes: page--journal page--full-hero
 nav: journal
 priority: 0.95
 ---
 
-<main class="wrapper" id="main">
-  <% page_articles.take(5).each_with_index do |article, i| %>
-    <% t_name = ''; t_link = ''; article.tags.each do |tag, articles| %>
-      <% t_link = tag_path(tag); t_name = tag %>
-    <% end %>
-    <% localised_date = "<time>#{article.date.strftime("%e %b %y")}</time>" %>
-    <% if i == 0 %>
-
-    <article class="group">
-      <header class="intro">
-        <h1><%= article.title %></h1>
-        <p class="intro__p"><%= article.data.description %></p>
-        <p class='intro__date small-caps'>
-          <%= partial "partials/journal/posted", :locals => { :a => article } %> <br /><%= partial "partials/journal/category", :locals => { :a => article } %>
-        </p>
-      </header>
-    </article>
-
-        <article class="type group">
-        <h2>Recent journal posts</h2>
-      <% else %>
-    <% end %>
-    <h3><%= link_to article.title, article %></h3>
-    <p><%= article.data.description %></p>
-    <p class="small-caps"><%= partial "partials/journal/posted", :locals => { :a => article } %> • <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+<div class="col">
+  <h1 class="_h1"><%= current_page.data.title %></h1>
+  <p class="_p1"><%= current_page.data.description %></p>
+</div>
+<div class="col col--break">
+  <% page_articles.take(1).each_with_index do |article, i| %>
+    <%
+      if article.data.hero
+        content_for(:hero, "blog/#{article.slug}")
+      end %>
+      <h2 class="_h2"><%= link_to article.title, article %></h2>
+      <p class="_h4"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+      <p class="_p"><em><%= article.data.description %></em></p>
+      <p class="_p">
+        <a href="<%= article.url %>" class="btn">Read the post</a>
+        <a href="/archive" class="btn" title="See the rest of my blog entries">There are more in the archive</a>
+      </p>
   <% end %>
-
-    <p class="btns--center"><a href="/archive" class="btn" title="See the rest of my blog entries">There are more in the archive</a></p>
-
-    <h2>Categories</h2>
-    <ul class="categories"><!--
-      <% blog.tags.each do |tag, articles| %>
-        --><li class="category__item"><%= link_to "#{tag}", tag_path(tag), :class => "category__link ss-cat-#{tag.to_slug}", :title => "Read the #{articles.size} posts on #{tag}" %></li><!--
-      <% end %>
-    --></ul>
-
-    </article>
-</main>
+</div>
+<div class="col col--break">
+  <%= partial "partials/journal/categories" %>
+</div>
