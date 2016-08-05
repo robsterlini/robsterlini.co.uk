@@ -4,30 +4,52 @@
  * @requires framework/_type.scss, framework/_color.scss
  */
 
+
+/**
+ * Button SCSS Partial
+ *
+ * @requires framework/_type.scss, framework/_color.scss
+ */
+
+/* ==|== Buttons =================
+  Buttons
+========================================== */
+
+.btn {
+  background: none;
+  color: module-color(link-primary);
+  display: block;
+  font-weight: weight(bold);
+  &:after {
+    content: ' \02192';
+    position: relative;
+    top: em(2);
+  }
+  &--back,
+  &--next {
+    display: table;
+  }
+  &--back {
+    &:before {
+      content: '\02190\000A0';
+      position: relative;
+      top: em(3);
+    }
+    &:after {
+      display: none;
+    }
+  }
+  &--next {
+    margin-left: auto;
+  }
+}
+
 /* ==|== Buttons =================
 	Containers
 ========================================== */
 
-[class^="btns--"] {
-  @extend %paragraph;
-}
-
-.btns--center {
-	text-align: center;
-	body.contact_index & {
-		max-width: none;
-		padding: 0 rem(16);
-		@include max-width($bp-mid) {
-			padding: 0;
-		}
-	}
-}
-
-.btns--left {
-  .btn,
-  .btn--outline {
-    margin-left: 0;
-    margin-right: rem(20);
+.btns {
+  &--nav {
   }
 }
 
@@ -35,119 +57,32 @@
 	Buttons
 ========================================== */
 
-%btn {
-  border:rem(2) solid $color-link-primary;
-  border-radius: rem(3);
-  display: inline-block;
-  font-family: $font-stack-alt;
-	font-weight: $font-weight-normal;
-	line-height: 1.3;
-  margin: rem(5) rem(10) rem(5);
-  padding: rem(10) rem(15) rem(9);
-	text-decoration: none;
-  transition: all .25s cubic-bezier(#{$bezier-nice});
-  width:auto;
-	@include active {
-		transform:scale(0.95,0.95);
-	}
-}
-.btn {
-	@extend %btn;
-	background:$color-link-primary;
-	color:$color-white;
-	text-shadow: none;
-	@include hover {
-		background:$color-link-primary-hover;
-		border-color:$color-link-primary-hover;
-		color:$color-white;
-	}
-	.btns--read-more & {
-		width:100%;
-		overflow: hidden;
-		padding-left:rem(30);
-		text-indent:rem(-15);
-		white-space:nowrap;
-		text-overflow: ellipsis;
-		max-width:rem(225);
-	}
-  // .hero &,
-  // .portfolio-featured__item & {
-  //   color:$color-black;
-  //   background-color:$color-link-reverse;
-  //   border-color:$color-link-reverse;
-  //   @include hover {
-  //     color:$color-black;
-  //     background:$color-link-reverse-hover;
-  //     border-color:$color-link-reverse-hover;
-  //   }
-  // }
-}
-.btn--outline {
-	@extend %btn;
-	@include hover {
-		color:$color-link-primary-hover;
-		border-color:$color-link-primary-hover;
-	}
-  // .hero &,
-  // .portfolio-featured__item & {
-  //   color:$color-link-reverse;
-  //   border-color:$color-link-reverse;
-  //   @include hover {
-  //     color:$color-link-reverse-hover;
-  //     border-color:$color-link-reverse-hover;
-  //   }
-  // }
-}
-.btn--icon {
-	padding-left: rem(50);
-	position: relative;
-	&:before {
-		font-size: rem(32);
-		position: absolute;
-		top: calc(50% - #{rem(16)});
-		left: rem(8);
-	}
-}
+
 @mixin social-color($c, $b: true, $o: true, $p: 12%) {
+  @if $o == true {
+    &[class^="btn--"] {
+      color: social-color($c);
+      border-color: social-color($c);
+      &:hover {
+        color: darken(social-color($c), $p);
+        border-color: darken(social-color($c), $p);
+      }
+    }
+  }
 	@if $b == true {
-		&.btn {
-			background-color: $c;
-			border-color: $c;
-			@include hover {
-				background-color: darken($c, $p);
-				border-color: darken($c, $p);
-			}
-		}
-	}
-	@if $o == true {
-		&.btn--outline {
-			color: $c;
-			border-color: $c;
-			@include hover {
-				color: darken($c, $p);
-				border-color: darken($c, $p);
+		&.btn--primary {
+			background-color: social-color($c);
+			border-color: social-color($c);
+			&:hover {
+				background-color: darken(social-color($c), $p);
+				border-color: darken(social-color($c), $p);
 			}
 		}
 	}
 }
-[href*="dribbble.com"] {
-	@include social-color($color-s-dribbble, true, true, 15%);
-}
-[href*="twitter.com"] {
-	@include social-color($color-s-twitter, true, false);
-}
-[href*="instagram.com"] {
-	@include social-color($color-s-instagram, false);
-}
-[href*="spotify.com"] {
-	@include social-color($color-s-spotify, false);
-}
-[href*="strava.com"] {
-	@include social-color($color-s-strava, false);
-}
-[href*="nikeplus.nike.com"] {
-	@include social-color($color-s-nike-plus, false);
-}
-[href*="github.com"] {
-	@include social-color(lighten($color-s-github, 15%), false);
-}
+// [href*="dribbble.com"] {
+// 	@include social-color(dribbble, true, true, 15%);
+// }
+// [href*="twitter.com"] {
+// 	@include social-color(twitter, true, false);
+// }

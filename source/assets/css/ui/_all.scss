@@ -7,20 +7,12 @@
  */
 
 // Layout elements
-@import "_hero";
 @import "_masthead";
 @import "_nav";
 @import "_footer";
-
-// Blog items
-@import "_article";
-@import "_comments";
+@import "_hero";
 
 // Specific Pages
-@import "_bucket-list";
+@import "_home";
 @import "_contact";
 @import "_cv";
-@import "_food-diary";
-@import "_portfolio";
-@import "_process";
-@import "_triathlon";

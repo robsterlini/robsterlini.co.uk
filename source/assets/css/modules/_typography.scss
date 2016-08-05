@@ -4,17 +4,9 @@
  * @requires framework/_type.scss
  */
 
-/* ==|== Typography =================
-	Load Typefaces from type.scss
+/* ==|== Typography ======================
+	Load Skolar webfonts
 ========================================== */
-
-/**
- * Loads in the CSS font-face declarations based on a Sass list of fonts and their styles
- * Set the number of fonts that you want to load in in $fonts-total
- * Set the fonts themselves and make sure they're in the assets/fonts folder
- * Set the styles for the fonts, if Font-number-1 is a regular weight put normal,
- * if Font-number-2 is an italic weight put italic etc
-**/
 
 @font-face {
 	font-family: 'SkolarLatin';
@@ -43,218 +35,368 @@
 	font-weight: bold;
 	font-style: normal;
 }
-@font-face{
-	font-family: 'macmillan';
-	src: url("../fonts/macmillan.eot");
-	src: url("../fonts/macmillan.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/macmillan.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'SkolarSans';
-	src: url('../fonts/SkolarSans-Regular.eot');
-	src: url('../fonts/SkolarSans-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/SkolarSans-Regular.woff2') format('woff2'),
-		url('../fonts/SkolarSans-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
 
-
-/* ==|== Typography =================
-	1. Headings
+/* ==|== Typography ======================
+	Baseline Grid
 ========================================== */
 
-h1, h2, h3, h4, p, ul, ol {
+._baseline-grid {
+	overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  b {
+    width: 100%;
+    height: rem(1);
+    display: block;
+    margin-top: lh-unit(0.5) - rem(1);
+    opacity: 0.2;
+    // opacity: 0;
+    position: relative;
+    &:before {
+    	content: '';
+    	position: absolute;
+    	top: 0;
+    	// top: 50%;
+    	// transform: translateY(-50%);
+    	left: 0;
+    	width: 100%;
+    	height: 1px;
+	    background: pink;
+    }
+
+		// TODO: Decide
+    // width: 50vw;
+    // margin-left: -50vw;
+    // position: relative;
+    // left: calc(50% + 2rem);
+    // background: linear-gradient(to right, pink, transparent);
+    //
+    // @for $i from 0 through 80 {
+    // 	&:nth-of-type(#{$i}) {
+    // 		opacity: 0.2 - ($i * 0.0025);
+    // 	}
+    // }
+  }
+}
+
+/* ==|== Typography ======================
+	Base typographic styling
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+	display: block;
 	@include font-feature-settings(liga kern onum);
-	max-width:$layout-max-width-suffix;
+	max-width: rem(w(text));
+	margin: 0 auto;
+	width: 100%;
 }
 
-h1 {
-	@include font-size(48);
-	font-weight: $font-weight-bold;
-	line-height: line-height();
-	margin: rem(72) 0 rem(24) auto;
-  @include max-width($bp-small) {
-    @include font-size(42);
-  }
-  @include max-width($bp-tiny) {
-    @include font-size(34);
-  }
-  & + h2 {
-  	padding-top: rem(28);
-  }
-}
-
-h2 {
-	@include font-size(28);
-	font-weight: $font-weight-bold;
-	line-height: line-height(heading);
-	margin: 0 0 rem(12) auto;
-	padding-top: rem(48);
-	@include max-width($bp-small) {
-		@include font-size(28);
-	}
-	@include max-width($bp-tiny) {
-		@include font-size(24);
-	}
-}
-
-// h3 {
-// 	@include font-feature-settings(smcp c2sc);
-// 	@include font-size(25);
-// 	font-weight: $font-weight-bold;
-// 	margin: rem(24) 0 rem(16) auto;
-// 	line-height: 1.05;
-// 	@include max-width($bp-small) {
-// 		@include font-size(22);
-// 	}
-// 	@include max-width($bp-tiny) {
-// 		@include font-size(19);
-// 	}
-// }
-
-h3 {
-	color: $color-accent;
-	font-family: $font-stack-alt;
-	// @include font-feature-settings(smcp c2sc);
-	@include font-size(20);
-	// font-weight: $font-weight-bold;
-	font-weight: normal;
-	margin: unit(2) 0 unit() auto;
-	line-height: 1.05;
-	text-transform: uppercase;
-	@include max-width($bp-small) {
-		@include font-size(18);
-	}
-	@include max-width($bp-tiny) {
-		@include font-size(16);
-	}
-}
-
-h4 {
-	@include font-size(30);
-	margin: rem($measure / 2) 0 rem($measure) auto;
-}
-
-.heading--has-anchor {
-	text-indent: rem(0);
-	@include min-width($bp-mid) {
-		text-indent: rem(-35);
-	}
-}
-
-.heading--anchor {
-	width:rem(35);
-	padding-right:rem(5);
-	text-indent:0;
-	text-align: right;
-	display: inline-block;
-	@include max-width($bp-mid) {
-		width:auto;
-	}
-}
-.heading--clear {
-	clear: both;
-}
-
-/* ==|== Typography =================
-	Paragraphs
+/* ==|== Typography ======================
+	Headings and Paragraphs
 ========================================== */
-%paragraph {
-	@include font-size(18);
-	line-height:1.45;
-	margin:rem(6) 0 rem(12) auto;
-	@include max-width($bp-small) {
-		@include font-size(17);
+
+@mixin heading-margins($h) {
+	$hl: 4;
+
+	$ts: '.ts';
+	$pp: p, ol, ul;
+
+	// 	 :1  h1  h2  h3  h4   p
+	$e1: 10,  0,  7, -3, -2, -2;
+	$e2: -7, -7,  0,  1,  2,  3;
+	$e3:  7,  3, -3,  0,  1,  0;
+	$e4:  0,  0,  0,  2,  0,  0;
+	$ep:  0,  2, -2, -1,  0,  0;
+
+	$t: (
+		1: 'h1',
+		2: 'h2',
+		3: 'h3',
+		4: 'h4',
+		p: $pp,
+	);
+	$a: (
+		1: '._h1',
+		2: '._h2',
+		3: '._h3',
+		4: '._h4',
+		p: '._p',
+	);
+	$x: (
+		1: 3,
+		2: 2,
+		3: 1,
+		4: 0,
+		p: 0.5,
+	);
+	$e: (
+		1: $e1,
+		2: $e2,
+		3: $e3,
+		4: $e4,
+		p: $ep,
+	);
+
+	@for $i from 1 through $hl {
+		// Set our unprefixed, prefixed, and class variables
+		$ti: map-get($t, $i);
+		$tsi: #{$ts} #{$ti};
+		$ai: map-get($a, $i);
+		$ei: map-get($e, $i);
+
+		$tss: "#{$tsi}, #{$ai}";
+		@if ($i == 3) {
+			$tss: "#{$tss}, ._p1";
+		}
+		#{$tss} {
+			content: $ai;
+			margin-top: #{rem(nth($ei, 1))};
+		}
+
+		@for $j from 1 through $hl {
+			$tj: map-get($t, $j);
+			$aj: map-get($a, $j);
+			$xj: lh-unit(map-get($x, $j));
+			$ej: rem(nth($ei, $j + 1));
+
+			$tssj: "#{$tsi} + #{$tj}, #{$ai} + #{$aj}";
+			@if ($j == 3) {
+				$tssj: "#{$tssj}, #{$ai} + ._p1";
+			}
+			#{$tssj} {
+				margin-top: $xj + $ej;
+			}
+
+		}
+
+		$ap: map-get($a, p);
+		$xp: lh-unit(map-get($x, p));
+		$ep: rem(nth($ei, $hl + 1));
+		$xhp: lh-unit(map-get($x, $i));
+		$ehp: rem(nth(map-get($e, p), $i + 1));
+
+		$ss: '#{$ai} + #{$ap}';
+		$ssp: '#{$ap} + #{$ai}';
+		@each $tp in map-get($t, p) {
+			$ss: "#{$ss}, #{$tsi} + #{$tp}";
+			$ssp: "#{$ssp}, #{$ts} #{$tp} + #{$ti}, .figure + #{$ti}";
+		}
+
+		#{$ss} {
+			margin-top: $xp + $ep;
+		}
+
+		#{$ssp} {
+			content: $xhp;
+			content: $ehp;
+			margin-top: $xhp + $ehp;
+		}
+
 	}
-	@include max-width($bp-tiny) {
-		@include font-size(16);
+
+}
+
+%heading {
+	a {
+		background: none;
 	}
 }
-p {
+
+%heading-alpha {
+	color: color(accent-mid); // TODO: Var
+	font-size: 3.375em;
+	font-weight: weight();
+	line-height: lh-unit(3);
+	&:last-child {
+		margin-bottom: rem(2);
+	}
+}
+
+%heading-beta {
+	font-size: 1.85em;
+	color: module-color(type-heading);
+	font-weight: weight(bold);
+	line-height: lh-unit(2);
+	&:last-child {
+		margin-bottom: rem(7);
+	}
+	.figure + & {
+		margin-top: lh-unit(2) - rem(2);
+	}
+}
+
+%heading-gamma {
+	color: module-color(type-heading);
+	font-size: 1.25em;
+	line-height: lh-unit(1);
+	margin: lh-unit(1) auto 0;
+	&:last-child {
+		margin-bottom: rem(5);
+	}
+	.figure + & {
+		margin-top: lh-unit(1) + rem(1);
+	}
+}
+
+%heading-delta {
+	@include sc;
+}
+
+%paragraph {
+	font-size: 1em;
+	line-height: lh-unit(1);
+	margin-top: lh-unit(0.5);
+	&:first-child {
+		margin-top: rem(8);
+	}
+	&:last-child {
+		margin-bottom: rem(5);
+	}
+}
+
+
+.ts {
+	h1 {
+		@extend %heading-alpha;
+		@extend %heading;
+	}
+	h2 {
+		@extend %heading-beta;
+		@extend %heading;
+	}
+	h3 {
+		@extend %heading-gamma;
+		@extend %heading;
+	}
+	h4 {
+		@extend %paragraph;
+		@extend %heading-delta;
+	}
+	p,
+	ul,
+	ol {
+		@extend %paragraph;
+	}
+	blockquote p {
+		@extend %heading-gamma;
+	}
+}
+
+._h1 {
+	@extend %heading-alpha;
+	@extend %heading;
+}
+._h2 {
+	@extend %heading-beta;
+	@extend %heading;
+}
+._h3 {
+	@extend %heading-gamma;
+	@extend %heading;
+ color: module-color(type-heading);	
+}
+._h4 {
+	@extend %paragraph;
+	@extend %heading-delta;
+}
+._p {
 	@extend %paragraph;
 }
+._p1 {
+	@extend %heading-gamma;
+	font-style: italic;
+}
 
-.small-caps,
-.sc {
-	@include font-feature-settings(smcp c2sc lnum kern);
-}
-.small-caps {
-	line-height: 1.1;
-}
+@include heading-margins(alpha);
+
+/* ==|== Typography ======================
+	Blockquotes
+========================================== */
 
 blockquote {
-	font-weight: $font-weight-normal;
-	font-style:italic;
-	margin: unit(2) 0 unit(2) auto;
-	max-width: rem($layout-max-width + ($measure * 2));
-	border-left:lighten($color-accent,15%) solid rem(2);
-	padding-left:rem(23);
+	font-style: italic;
+	margin: lh-unit(1.5) - rem(1) auto lh-unit() + rem(1);
+	position: relative;
+	text-align: center;
+	@include min-width(bp(s)) {
+		padding: 0 unit();
+	}
+	&:before {
+		background-color: color(accent-mid); // TODO: Var
+		content: '';
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		width: rem(50); // TODO: Var
+		height: rem(1);
+		top: rem(3) - lh-unit(0.5);
+		margin-bottom: rem(-1);
+	}
 	p {
-		@include font-size(24);
-		@include max-width($bp-small) {
-			@include font-size(22);
-		}
-		@include max-width($bp-tiny) {
-			@include font-size(20);
-		}
+		color: color(light); // TODO: Var
 	}
 	cite {
 		font-style: normal;
 		display: block;
-		@include font-size(18);
-		margin-top: rem(5);
-		@include max-width($bp-small) {
-			@include font-size(17);
-		}
-		@include max-width($bp-tiny) {
-			@include font-size(16);
-		}
 		&:before {
-			content:'— ';
+			content: "—";
 		}
 	}
+}
+
+/* ==|== Typography ======================
+	Drop cap
+========================================== */
+
+._p--dropcap {
+  &:first-letter {
+    color: color(accent-mid); // TODO: Var
+    font-size: 3.375em;
+    float: left;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: -10px;
+    line-height: 1;
+    margin-right: 5px;
+  }
+}
+
+
+/* ==|== Typography ======================
+	Rule
+========================================== */
+
+hr {
+	border: 0;
+	background: rgba(color(mid), 0.2);
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin: lh-unit(2) + rem(3) auto calc(#{lh-unit(2) + rem(-3)} - 2px);
+	max-width: rem(w(text));
+	position: relative;
+}
+
+/* ==|== Typography ======================
+	Variants
+========================================== */
+
+.sc {
+	@include sc;
 }
 
 abbr[title] {
 	border:0;
-	background: linear-gradient(to left, $color-dark 33%, rgba($color-dark, 0) 34%) repeat-x left 88%;
+	background: linear-gradient(to left, black 33%, rgba(black, 0) 34%) repeat-x left 88%; // TODO: Var
 	background-size:rem(3) rem(1);
-	text-shadow: rem(1) 0 $color-background, rem(2) 0 $color-background, rem(-1) 0 $color-background, rem(-2) 0 $color-background;
-}
-
-.strike {
-	.no-js & {
-		text-decoration: line-through;
-	}
-}
-.js--strike {
-	color: rgba($color-text, 0.75);
-	cursor: help;
-	text-decoration: none;
-	position: relative;
-	transition:all .25s cubic-bezier(#{$bezier-nice});
-	&:before {
-		background: linear-gradient($color-background 33%, $color-strikethrough 34%, $color-strikethrough 66%, $color-background 67%) repeat-x 50% 50%;
-		background-size:rem(1) rem(3);
-		content: '';
-		left: 0;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		transition: inherit;
-		width: 100%;
-	}
-}
-p {
-	@include hover {
-		.js--strike {
-			color: $color-alert-1;
-			&:before {
-				opacity: 0;
-			}
-		}
-	}
 }

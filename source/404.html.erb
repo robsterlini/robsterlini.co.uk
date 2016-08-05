@@ -1,18 +1,11 @@
 ---
 title: Page not found
 description: Can’t find that one; it may have been misplaced, or it didn’t exist in the first place.
-hero: main.jpg
-no_footer: true
-no_masthead: true
+page_classes: page--404 page--full-hero
+hero: true
 ---
 
-<section id="content" class="wrapper">
-  <%= partial "partials/hero", locals: {
-    image: "#{current_page.data.hero}",
-    image_small: "main_600.jpg",
-    image_loc: "#{hero_dir}404/",
-    title: "Four, oh four.",
-    subtitle: "#{current_page.data.description} It’s probably best to #{link_to "start at the top", "index.html", :title => "Go back to the homepage"}, or #{link_to "get in touch", "contact.html", :title => "Reach out and get in touch if something is broken"} if something is clearly broken!"
-    }
-  %>
-</section>
+<div class="col">
+  <h1 class="_h1">Four, oh four.</h1>
+  <p class="_p1"><%= current_page.data.description %> It’s probably best to <%= link_to "start at the top", "index.html", :title => "Go back to the homepage" %>, or <%= link_to "get in touch", "contact.html", :title => "Reach out and get in touch if something is broken" %> if something is clearly broken!</p>
+</div>

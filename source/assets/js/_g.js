@@ -7,29 +7,18 @@ var g = g || {};
 // 		on the JS simultaneously.
 g.partials = [
   // DOM changes
-  'onScreenSetup',      // Converted
-  'browserSniff',       // Converted
+  'reveal',
+  'browserSniff',
 
   // Generic JS
-  'agePosts',           // Converted
-  'anchorScroll',       // Converted
-  'codeHighlight',      // Converted
-  'disqusComments',     // Converted
-  'loadHero',           // Converted
-  'share',              // Converted
-  'strikethrough',      // Converted
-  'tabs',
+  'agePosts',
+  'codeHighlight',
+  'loadHero',
+  'share',
+  'navigation',
 
   // Page specific
-  'cv',                 // Converted
-  'triathlon',          // Converted
-  'strava',
-
-  // Case studies
-  'hotspurRelated',     // Converted
-  
-  // Subpages
-  'middleplate'         // Converted
+  'cv'
 ];
 
 // This _init function is the function which kicks everything off when

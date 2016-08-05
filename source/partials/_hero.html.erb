@@ -1,24 +1,28 @@
-<%
-  hero_classes = ""
-  if locals.has_key? :classes
-    hero_classes = " #{classes}"
-  end
-  if locals.has_key? :split
-    if split
-      hero_classes = "#{hero_classes} hero--split"
-    end
-  end
-%>
-<header class="header">
-  <div class="group">
-    <% if locals.has_key? :title %>
-      <h1 class="header--alpha" data-js="page-header"><%= title %></h1>
-    <% end %>
-    <% if locals.has_key? :subtitle %>
-      <h2 class="header--subtitle"><%= subtitle %></h2>
-    <% end %>
-    <% if locals.has_key? :extra %>
-      <%= extra %>
-    <% end %>
-  </div>
-</header>
+<%= partial "partials/ui/heading", locals: {
+  title: {
+    classes: " g_6 gi_2",
+    copy: title,
+    tag: title.length <= 30 ? 'h1' : 'h1-b',
+    break: false
+  },
+  pre: {
+    classes: " g_3",
+    copy: "Recently I wrote about"
+  },
+  text: {
+    alpha: true,
+    classes: " g_4",
+    copy: [
+      subtitle
+    ]
+  },
+  images: {
+    absolute: [
+      {
+        src: image ? "/assets/images/hero/#{image}_full.jpg" : "",
+        classes: " g_10 gi_3"
+      }
+    ]
+  },
+  slug: 'hero'
+} %>

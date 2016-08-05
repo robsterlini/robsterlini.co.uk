@@ -1,0 +1,7 @@
+<a class="blog__more__link" href="<%= a.url %>">
+  <h4><%= a.title %></h4>
+  <p><%= a.data.description %></p>
+  <p class="small-caps">
+    <%= partial "partials/journal/posted", :locals => { :a => a } %>
+  </p>
+</a>

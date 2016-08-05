@@ -100,6 +100,35 @@ helpers do
       str.gsub(/<p>.<\/p>/,"")
       str
   end
+  def _g(obj, pre)
+    obj = obj || Hash.new
+    str = ""
+
+    if obj["d"] and obj["d"] > 0
+      str += " g#{pre}_#{obj["d"]} "
+    elsif pre != "i"
+      str += " g_6 "
+    end
+
+    if obj["m"] and obj["m"] > 0
+      str += " g#{pre}_#{obj["m"]}-m "
+    elsif pre != "i"
+      str += " g_10-m "
+    end
+
+    if obj["l"] and obj["l"] > 0
+      str += " g#{pre}_#{obj["l"]}-l "
+    elsif pre != "i"
+      str += " g_12-l "
+    end
+    
+    str
+  end
+  def g(obj)
+    str = _g(obj[:width], "")
+    str += _g(obj[:indent], "i")
+    str
+  end
 end
 
 # Set constants
@@ -115,13 +144,6 @@ set :portfolio_dir, '/assets/images/portfolio/'
 # Set base URLs
 set :url_root, 'https://robsterlini.co.uk'
 set :url_short, 'http://sterlini.co'
-
-# Create pages
-data.projects.featured.each_with_index do |c, i|
-  if c[:case_study] == 'true'
-    proxy "/case-study/#{c[:slug]}.html", "/templates/case-study/case-study.html", :locals => {:project => c, :case_study => c.case_study_vars, :index => i}, :ignore => true
-  end
-end
 
 # Turn on Pretty URLs
 activate :directory_indexes
@@ -159,12 +181,6 @@ after_build do
   File.rename 'build/.htaccess.apache', 'build/.htaccess'
   File.rename 'build/redirects/.htaccess.apache', 'build/redirects/.htaccess'
 end
-
-# Middleplate
-with_layout :middleplate_layout do
-  page "/middleplate/*"
-end
-set :mp_github, "https://github.com/robsterlini/middleplate"
 
 # Grailrail
 with_layout :grailrail_layout do

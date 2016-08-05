@@ -10,24 +10,27 @@
 ========================================== */
 
 a {
-	color:$color-link-primary;
-	transition:color .25s cubic-bezier(#{$bezier-nice});
+	color: inherit;
+	background: linear-gradient(transparent 50%, rgba(color(accent-mid), 1) 50%) no-repeat 0 84%;
+  background-size: 100% 2px;
+	transition: color timing(link) easing(link);
 	text-decoration: none;
-	&:hover,
-	&:focus {
-		color:$color-link-primary-hover;
+	text-shadow:
+		module-color(base-bg)  0    1px 0,
+		module-color(base-bg)  1px  1px 0,
+		module-color(base-bg)  1px  0   0,
+		module-color(base-bg)  1px -1px 0,
+		module-color(base-bg)  0px -1px 0,
+		module-color(base-bg) -1px -1px 0,
+		module-color(base-bg) -1px  0px 0,
+		module-color(base-bg) -1px  1px 0;
+	&[href^="http"] {
+		color: module-color(link-primary);
+	}
+	&:hover {
+		color: module-color(link-primary-hover);
 	}
 	&:active {
-		color:$color-link-primary-active;
-	}
-	// .hero &,
-	.portfolio-featured__item & {
-		color: $color-link-reverse;
-		@include hover {
-			color:$color-link-reverse-hover;
-		}
-		@include active {
-			color:$color-link-reverse-active;
-		}
+		color: module-color(link-primary-active);
 	}
 }

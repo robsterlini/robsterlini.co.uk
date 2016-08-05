@@ -1,37 +1,29 @@
 ---
-title: Web designer
-nav: home
-description: I’m a web designer with a love for gorgeous typography, delicious interaction, and attention to detail.
-hero: main.jpg
-hero_small: main_600.jpg
-no_footer: true
+description: I’m a London-based front-end developer with a passion for design.
+page_classes: page--home page--full-hero
 priority: 1.0
+hero: home/home
 ---
 
-<main id="content" class="wrapper" data-page="home">
-  <%
-    hero_extra = ""
-    hero_extra += "<ul class='list--large-icons'>"
-    data.pages.masthead.each do |nav|
-      if nav.home && nav.slug != "/index.html"
-        hero_link =  "<h2 class='list--large-icons__title'>#{nav.home.title}</h2>"
-        hero_link += "<p>#{nav.home.text}</p>"
-        hero_link += "<p class='small-caps' data-ie='hide'>Read more<span class='visuallyhidden'> about #{nav.home.read_more}.</span></p>"
-        hero_extra += "<li class='list--large-icons__item ss-nav-#{nav.icon || nav.slug}'>"
-        hero_extra += link_to hero_link, nav.slug, :title => nav.alt, :class => "list--large-icons__link"
-        hero_extra += "</li>"
-      end
-    end
-    hero_extra += "</ul>"
-  %>
-  <%= partial "partials/hero", locals: {
-    image: current_page.data.hero,
-    image_small: current_page.data.hero_small,
-    image_loc: hero_dir,
-    title: "Hi I’m Rob Sterlini",
-    subtitle: "I’m a web designer at #{link_to "Fueled", "http://fueled.com", :title => "Visit Fueled’s website"} with a love for gorgeous typography, delicious interaction, and attention to&nbsp;detail.",
-    split: true,
-    extra: hero_extra
-    }
-  %>
-</main>
+<div class="col">
+  <h1 class="_h1">Hi!</h1>
+  <p class="_p1">I’m Rob Sterlini. By day I’m a front-end developer at <a href="https://fueled.com/sterlini" target="_blank">Fueled</a>; by night a designer, a runner, a triathlete, and&nbsp;more.</p>
+</div>
+<div class="col col--break">
+  <p class="_p _p--dropcap">At Fueled I’ve created sites for global business, tech startups, established brands, and the like. It has also afforded me the opportunity to push the boundaries of the web, with imaginative case studies, and boundless&nbsp;capabilities.</p>
+  <p class="_p">As a freelance creative developer and in past jobs, I’ve had the great pleasure of working with friends to create stunning pieces like kickpush.co. Reimagining the University of Reading site was pretty special given my fond love for my time&nbsp;there!</p>
+  <p class="_p btns">
+    <%= link_to "Say hi", "/contact.html", :class => "btn" %>
+  </p>
+</div>
+<div class="col col--break">
+  <% blog.articles.take(1).each_with_index do |article, i| %>
+    <h2 class="_h3"><%= article.title %></h2>
+    <p class="_h4"><%= partial "partials/journal/posted", :locals => { :a => article } %> in <%= partial "partials/journal/category", :locals => { :a => article } %></p>
+    <p class="_p"><em><%= article.data.description %></em></p>
+    <p class="_p btns">
+      <a href="<%= article.url %>" class="btn">Read the post</a>
+      <%= link_to "Browse the archive", "/archive.html", :class => "btn" %>
+    </p>
+  <% end %>
+</div>

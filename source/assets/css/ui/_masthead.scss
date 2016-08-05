@@ -1,34 +1,31 @@
-.masthead {
-  background: $color-black;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  overflow: hidden;
-  z-index: 5;
-  width: 100%;
-  @include min-width($tp-masthead-hamburger) {
-    left: auto;
-    height: 100%;
-    right: 0;
-    top: 0;
-    width: 33.3%;
-  }
-  &__hero {
-    &,
-    &__full {
-      backface-visibility: hidden;
-      background: center no-repeat;
-      background-size: cover;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-    &__full {
-      background-clip: content-box;
-      padding-right: $masthead-full;
-    }
+/**
+ * MASTHEAD
+ * Styles the main page masthead
+ *
+ * @requires 
+**/
 
+/* ==|== Masthead ========================
+  Base
+========================================== */
+
+.masthead {
+  $_: &;
+  left: 0;
+  padding: 0 unit();
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999; // TODO: Var
+  &__logo {
+    font-size: 1.5em;
+    font-style: italic;
+    background: module-color(base-bg);
+    color: module-color(nav-color);
+    margin: 0;
+    line-height: unit(2);
+    padding: 0 unit();
+    position: relative;
+    top: rem(1);
   }
 }

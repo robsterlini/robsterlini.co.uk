@@ -1,58 +1,47 @@
+/**
+ * NAVIGATION
+ * Styles the main page navigation
+ *
+ * @requires 
+**/
+
+/* ==|== Navigation ======================
+  Base
+========================================== */
+
 .nav {
-  background: rgba($color-black, 0.2);
-  mix-blend-mode: overlay;
+  $_: &;
   display: flex;
-  height: 100%;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  @include min-width($tp-masthead-hamburger) {
-    margin-left: auto;
-    padding: $measure-unit * 2 0;
-    width: $masthead-full;
-  }
-}
-.nav__list {
-  padding:0;
-  width:100%;
-  max-width:$layout-max-width-wide-suffix;
-  position: relative;
-  margin:auto;
-}
-[class^="nav__link--"] {
-  font-family: $font-stack-alt;
-  @include font-size(12);
-  display: block;
-  color: $color-white;
-  letter-spacing: 0.04em;
-  padding: $measure-unit / 4;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition:color .25s cubic-bezier(#{$bezier-nice}), background .25s cubic-bezier(#{$bezier-nice});
-  overflow: hidden;
-  &:before {
-    color: $color-white;
-    display: block;
-    font-size: $measure-unit * 2;
-    height: $measure-unit * 3;
-    line-height: $measure-unit * 3 * 1.125;
+  padding: 0 unit();
+  &__list {
+    background: module-color(base-bg);
+    display: flex;
     margin: 0 auto;
-    overflow: hidden;
-    transition:inherit;
-    width: $measure-unit * 3;
-  }
-  @include hover {
-    color:$color-white;
-    &:before {
-      color: black;
+    padding: 0 unit(0.5);
+    width: auto;
+    .masthead & {
+      margin-right: 0;
     }
   }
-}
-.nav__label {
-  border-bottom:0;
-}
-abbr.nav__label {
-  background: none;
-  border-bottom: 0;
-  text-shadow: none;
+  &__item {
+  }
+  &__link {
+    @include sc;
+    background: none;
+    color: module-color(nav-color);
+    display: block;
+    letter-spacing: em(0.5);
+    line-height: unit();
+    padding: unit(0.5);
+    position: relative;
+    abbr {
+      background: none;
+    }
+    .masthead & {
+      top: em(1);
+    }
+    .footer & {
+      top: em(-1);
+    }
+  }
 }

@@ -16,7 +16,7 @@ html,body {
 
 html {
   background: $color-background;
-  font-size:percentage($font-default-size / 16);
+  font-size:percentage($measure / 16);
   overflow-y: scroll;
 }
 
@@ -33,7 +33,7 @@ textarea {
 
 body {
   font-size:1em;
-  line-height:$font-default-line-height;
+  line-height:line-height();
   display: flex;
   min-height: 100vh;
   flex-direction: column;

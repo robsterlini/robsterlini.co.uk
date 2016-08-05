@@ -1,0 +1,20 @@
+<% parent = parent || "masthead" %>
+<nav class="nav group">
+  <% if parent == "masthead" %>
+    <%= link_to "<span aria-hidden=\"true\">&amp;</span><span class=\"visuallyhidden\"Rob Sterlini</span>", "/index.html", :class => "masthead__logo" %>
+  <% end %>
+  <ul class="nav__list">
+    <% data.pages.masthead.each do |nav| %>
+      <% if (parent == "masthead" && nav.masthead != false) || (parent == "footer" && nav.footer != false) %>
+        <li class="nav__item">
+          <%
+            nav_label = nav.abbr ? "<abbr title='#{nav.abbr.title}'>#{nav.abbr.label}</abbr>" : nav.label
+            concat link_to nav_label, nav.slug == "" ? "/" : nav.slug, :class => "nav__link", :title => nav.alt
+          %>
+        </li>
+      <% end %>
+    <% end %>
+    <% if parent == "footer" %>
+    <% end %>
+  </ul>
+</nav>

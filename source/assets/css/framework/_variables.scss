@@ -3,56 +3,73 @@
  */
 
 @function          bp($v)          { @return map-get($breakpoints,  $v); }
+@function      easing($v: default) { @return map-get($easings,      $v); }
+@function line-height($v: regular) { @return map-get($line-heights, $v); }
+@function      timing($v: full)    { @return map-get($timings,      $v); }
 @function          tp($v)          { @return map-get($tweakpoints,  $v); }
 @function           w($v)          { @return map-get($widths,       $v); }
-@function line-height($v: regular) { @return map-get($line-heights, $v); }
-
-@function unit($n: 1) { @return rem($n * 16); }
+@function      weight($v: regular) { @return map-get($weights,      $v); }
 
 // Measure
 $measure:       16;
-$measure-unit:  rem($measure);
+$measure-m:     18;
+$measure-l:     20;
 
-$timing:  .25s;
+@function    unit($n: 1, $e: 0) { @return rem(($n * $measure) + $e); }
+@function lh-unit($n: 1, $e: 0) { @return rem(($n * $measure * line-height()) + $e); }
 
-// Breakpoints
-$bp-miniscule:   $measure * 16;
-$bp-tiny:        $measure * 32;
-$bp-small:       $measure * 48;
-$bp-mid:         $measure * 64;
-$bp-large:       $measure * 72;
 
+// Media queries
 $breakpoints: (
-  xs: 450
+  xs: 450,
+  s: $measure * 48
 );
-
 $tweakpoints: (
-  hero-split: 500
+  // Fonts
+  font-m: 1024,
+  font-l: 1400,
+
+  // Columns
+  col-multiple: 768,
+
+  gutter-widen: 1350,
+  has-gutter:   900,
+  parallax: 750
 );
 
+// Sizes
+$widths: (
+  text: $measure * 36,
+  wrapper: ($measure * 12 * 4) + ($measure * 13)
+);
+
+// Type
+$font-stack-regular:  "SkolarLatin", Georgia, serif;
 $line-heights: (
-  regular: 1.45,
-  heading: 1.15,
-  caption: 1.25
+  regular: 1.5,
+);
+$weights: (
+  alt-bold: 500,
+  alt-regular: 400,
+  bold: 600,
+  regular: 400
 );
 
-
-// Tweakpoints
-$tp-masthead-icon:        $measure * 60;
-$tp-masthead-hamburger:   $measure * 30;
-$tp-split-hero:           $bp-small;
-$tp-widen-split-hero:     $bp-mid;
+// Timings and easings
+$timings: (
+  full: 250ms,
+  link: 125ms,
+  hero: 1000ms,
+);
+$easings: (
+  default: ease-in-out,
+  link: ease-out,
+);
 
 // Max widths
-$layout-max-width:              $measure * 36;
-$layout-max-width-wide:         $measure * 64;
+$layout-max-width:              $measure * 34;
+$layout-max-width-wide:         $measure * 54;
 $layout-max-width-suffix:       rem($layout-max-width);
 $layout-max-width-wide-suffix:  rem($layout-max-width-wide);
 
-$widths: (
-  hero-percent: 33%
-);
 
-// Masthead widths
-$masthead-full:       $measure-unit * 8;
-$masthead-icon:       $measure-unit * 4;

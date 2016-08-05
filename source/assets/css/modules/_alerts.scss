@@ -3,67 +3,59 @@
  */
 
 
-/* ==|== Triathlon =================
+/* ==|== Alerts =================
   Base set
 ========================================== */
 
-.error,
-[class^="global-notice--"] {
-  color: $color-white;
-  padding-left: $masthead-full;
-  p {
-    margin: 0 auto;
-    padding: $measure-unit / 2 0;
-  }
-  a {
-    color: $color-white;
-    text-decoration: underline;
-  }
-  @include max-width($tp-masthead-icon) {
-    padding-left: $masthead-icon;
-  }
-  @include max-width($tp-masthead-hamburger) {
-    padding-left: 0;
-    padding-right: rem($measure * 3 + 10);
-  }
-}
+// .error {
+//   background: $color-alert-1;
+//   color: $color-white;
+//   p {
+//     margin: 0 auto;
+//     padding: $measure-unit / 2 0;
+//   }
+//   a {
+//     color: $color-white;
+//     text-decoration: underline;
+//   }
+// }
 
-/* ==|== Triathlon =================
-  Colour overrides
-========================================== */
-
-.error {
-  background: $color-alert-1;
-}
-[class^="global-notice--"] {
-  background-color: $color-dark;
-}
-.global-notice--triathlon {
-  background-color: $color-b-macmillan-2;
-}
-
-/* ==|== Triathlon =================
+/* ==|== Alerts =================
   Blog alerts
 ========================================== */
 
 [class^="alert--"] {
-  border-left:$color-alert-1 solid rem(2);
-  padding-left: unit(2);
-  margin:rem(40) 0 unit(2) auto;
-  max-width:rem($layout-max-width + ($measure * 2));
+  font-style: italic;
+  padding-bottom: lh-unit();
   & > strong:first-of-type {
-    color:$color-alert-1;
+    color: color(alert);
+    font-style: normal;
   }
 }
-.alert--older {
-  border-color:$color-alert-2;
-  & > strong:first-of-type {
-    color:$color-alert-2;
-  }
-}
-.alert--old {
-  border-color:$color-alert-3;
-  & > strong:first-of-type {
-    color:$color-alert-3;
-  }
-}
+//   border-left:$color-alert-1 solid rem(2);
+//   left: unit(-1, -2);
+//   padding-left: unit();
+//   position: relative;
+//   margin: unit(2) auto;
+//   max-width:rem($layout-max-width + ($measure));
+//   width: calc(100% + #{unit(1, 2)});
+//   // width: 100%;
+//   & > strong:first-of-type {
+//     color:$color-alert-1;
+//   }
+//   .ts & {
+//     margin-right: unit(-2);
+//   }
+// }
+// .alert--older {
+//   border-color:$color-alert-2;
+//   & > strong:first-of-type {
+//     color:$color-alert-2;
+//   }
+// }
+// .alert--old {
+//   border-color:$color-alert-3;
+//   & > strong:first-of-type {
+//     color:$color-alert-3;
+//   }
+// }

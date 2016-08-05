@@ -33,33 +33,60 @@
     <meta name="application-name" content="Rob Sterlini"/>
 
     <!-- TWITTER CARDS -->
-    <meta name="twitter:card" content="summary_large_image">
+    <%
+      hero = yield_content(:hero) || current_page.data.hero || false
+      if hero
+        hero_image = "#{hero}_full.jpg"
+      end
+    %>
+    <meta name="twitter:card" content="<%= hero ? "summary_large_image" : "summary" %>">
     <meta name="twitter:site" content="@robsterlini">
     <meta name="twitter:title" content="<%= yield_content(:title) || current_page.data.title || "Web designer" %>">
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="@robsterlini">
-    <meta name="twitter:image:src" content="<%= url_root %><%= yield_content(:hero_loc) || hero_dir %><%= current_page.data.hero || yield_content(:hero) || current_page.data.card_image || "main.jpg" %>">
+    <meta name="twitter:image:src" content="<%= "#{url_root}#{hero_dir}#{hero_image || "main.jpg"}" %>">
     <meta name="twitter:domain" content="robsterlini.co.uk">
     <!--[if gte IE 9 | !IE ]><!-->
-        <%= stylesheet_link_tag "screen" %>
-        <%= yield_content(:casestudy_css) %>
+      <%= stylesheet_link_tag "screen" %>
+      <%= yield_content(:casestudy_css) %>
     <![endif]-->
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><%= stylesheet_link_tag "ie" %><![endif]-->
   </head>
+  <%
+    this_page_classes = "#{page_classes} "
+    this_page_classes += current_page.data.page_classes || ""
+    this_page_classes += current_page.data.no_masthead ? " page--no-masthead" : ""
+    this_page_classes += current_page.data.no_footer ? " page--no-footer" : ""
+  %>
   
-  <body class="<%= page_classes %><% if current_page.data.no_masthead %> page--no-masthead<% end %><% if current_page.data.no_footer %> page--no-footer<% end %>" data-js="toggled-navigation-parent">
-    <!--[if IE 9]><div class="error"><div class="group"><p>Come on, it’s 2015. Even IE9 is getting old. <a href="http://browsehappy.com" title="Find out about updating your browser here">Update your browser</a> and find out what you’re missing out on!</p></div></div><![endif]-->
-    <!--[if lte IE 8]><div class="error"><p>Come on, it’s 2015. Old browsers have been out of fashion for a while, so I’ve stopped supporting them. You can have the unstyled content, but to see me in all my beauty you’ll need to <a href="http://browsehappy.com" title="Find out about updating your browser here">update your browser</a>!</p></div><![endif]-->
-    <% if !current_page.data.no_notice %>
-        <%= partial "partials/global_notice" %>
-    <% end %>
+  <body class="<%= this_page_classes %>" data-js="toggled-navigation-parent">
+
     <% if !current_page.data.no_masthead %>
-        <%= partial "partials/masthead" %>
+      <%= partial "partials/masthead", :locals => { :hero => hero } %>
     <% end %>
-    <%= yield %>
+
+    <% if hero %>
+      <div class="hero" aria-hidden="true">
+        <b class="hero__bg" data-hero="<%= hero_image %>"></b>
+        <b class="hero__cover"></b>
+        <noscript>
+          <b class="hero__bg" style="background-image: url(/assets/images/hero/<%= hero %>_full.jpg);"></b>
+        </noscript>
+        <b class="hero__overlay"></b>
+      </div>
+    <% end %>
+    
+    <main class="wrapper">
+      <section class="group cols" data-anchors>
+        <%= yield %>
+        <%#= partial "partials/baseline-grid" %>
+      </section>
+    </main>
+
     <% if !current_page.data.no_footer %>
-        <%= partial "partials/footer" %>
+      <%= partial "partials/footer" %>
     <% end %>
+    
     <%= partial "partials/scripts" %>
   </body>
 </html>
