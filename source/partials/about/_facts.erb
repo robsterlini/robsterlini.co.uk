@@ -1,0 +1,13 @@
+<div class="group">
+  <h2>A few quick nuggets</h2>
+  <p class="article__description--smaller">Get to know me in little, bit-size chunks. If you ever want to know which tattoo I’m getting next, which of my Spurs shirts is my favourite, or anything else for that matter, just <%= link_to "reach out", "contact.html", :title => "Get in touch" %>!</p>
+  <%#<p class="article__description--smaller">Everyone has favourites, whether that be your go-to-song when you’re in the shower (mine’s <em>Fill ‘er up!</em> by <a href="http://eatthelemon.co.uk" title="Check out the Eat the Lemon website">Eat the Lemon</a>); or your preferred console &ndash; Xbox One; obviously. Here are some of mine:</p> %>
+  <div class="list--large-icons list--large-icons--third">
+    <!--<% data.about_me.facts.each do |about| %>
+      --><div class="list--large-icons__item ss-about-<%= about.slug %>">
+        <h2><%= about.title %></h2>
+        <p><%= about.desc %></p>
+      </div><!--
+    <% end %>-->
+  </div>
+</div>

@@ -66,13 +66,25 @@ helpers do
           data-src='#{image}'
           data-js='lazy-load-image'
           alt='#{alt}'
-          title='#{caption}'>
+          title='#{caption}' />
           <noscript>
             <img class='img--noscript' src='#{image}' alt='#{alt}' title='#{caption}'>
           </noscript>
         <figcaption class='ss-picture'>#{caption}</figcaption>
       </figure>
     </div>"
+  end
+  def grid_image(image, caption, alt, size)
+    "<figure#{size ? " class='figure--#{size}'" : ""}>
+      <img class='img--script' src='/assets/images/helpers/image-placeholder.png'
+        data-src='#{image}'
+        data-js='lazy-load-image'
+        alt='#{alt}'
+        title='#{caption}' />
+        <noscript>
+          <img class='img--noscript' src='#{image}' alt='#{alt}' title='#{caption}'>
+        </noscript>
+    </figure>"
   end
   def middleplate_markdown(md)
       opening_tag = "<div class='mp-stack--left'>"

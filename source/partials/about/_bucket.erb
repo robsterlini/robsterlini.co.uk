@@ -1,0 +1,15 @@
+<div class="group">
+  <h2>A list for a life time</h2>
+  <p class="article__description tabs--section-padding">As 2014 left, and 2015 kicked into full swing I opted to &ndash; <%= link_to "instead of making resolutions", "/journal/twenty-fifteen/#twenty-fifteen", :title => "Find out about my resoutions for 2015" %> instead of making resolutions</a> &ndash; create a bucket list.</p>
+  <p>Here’s the plan. This is a list of things I want to do before I’ve had my lot. For every month that I don’t do one, another goes on the list.</p>
+  <p>If by some miracle, I finish them before I’ll add five more everytime that happens. Sound good? Good.</p>
+  <div class="list--large-icons list--large-icons--third">
+    <!--<% data.bucket_list.all.each do |bucket| %>
+      --><div class="list--large-icons__item<%= bucket.completed ? ' bucket__item--complete ' : ' ' %>ss-bucket-<%= bucket.slug %>" id="<%= bucket.title.to_slug %>">
+        <h2><%= bucket.title %></h2>
+        <p><%= bucket.desc %></p>
+        <p class="sc"><strong>Added</strong> <%= Date.parse(bucket.date).strftime("%e %b %y") %><br /> <strong><%= bucket.completed ? "Completed</strong> #{Date.parse(bucket.completed).strftime('%e %b %y')}" : "Not yet completed</strong>" %></p>
+      </div><!--
+    <% end %>-->
+  </div>
+</div>

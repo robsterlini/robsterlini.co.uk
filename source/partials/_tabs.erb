@@ -4,7 +4,7 @@
     <% tab_data.each_with_index do |tab, index| %>
       <% slug = tab.slug || tab.title.to_slug %>
       <li class="tabs__nav__item">
-        <a href="#<%= slug %>" class="tabs__nav__link<% if index == 0 %> tabs__nav__link--active<% end %>" data-js="toggle-tab"><%= tab.title %></a>
+        <a href="#<%= slug %>" class="tabs__nav__link" data-js="toggle-tab"><%= tab.title %></a>
       </li>
     <% end %>
   </ul>
@@ -16,7 +16,7 @@
       <%= partial "partials/#{tab.partial}" %>
     <% else %>
       <div class="group">
-        <%= partial "pages/#{page_slug}/tab_the-story" %>
+        <%= partial "pages/#{page_slug}/tab_#{slug}" %>
       </div>
     <% end %>
   </div>
