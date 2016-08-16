@@ -1,18 +1,20 @@
-/* =============================================================================
-   UI Partials
-========================================================================== */
-
 /**
- * Including SCSS Partial. Keeps screen.scss neater.
- */
+ * UI PARTIALS
+ *
+ * Controls specific UI elements that are only used single times.
+**/
 
-// Layout elements
+/* ==|== UI ==============================
+  Single per-page-use layout
+========================================== */
+
 @import "_masthead";
 @import "_nav";
 @import "_footer";
 @import "_hero";
 
-// Specific Pages
-@import "_home";
-@import "_contact";
-@import "_cv";
+/* ==|== UI ==============================
+  Page-specific partials
+========================================== */
+
+@import "_journal";

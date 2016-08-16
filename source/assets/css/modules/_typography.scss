@@ -1,8 +1,8 @@
 /**
- * Typography SCSS Partial
+ * TYPOGRAPHY
  *
- * @requires framework/_type.scss
- */
+ * Controls typography across the site
+**/
 
 /* ==|== Typography ======================
 	Load Skolar webfonts
@@ -41,31 +41,28 @@
 ========================================== */
 
 ._baseline-grid {
+  height: 100%;
+  left: 0;
 	overflow: hidden;
+  pointer-events: none;
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  left: 0;
-  pointer-events: none;
   b {
-    width: 100%;
-    height: rem(1);
     display: block;
+    height: rem(1);
     margin-top: lh-unit(0.5) - rem(1);
     opacity: 0.2;
-    // opacity: 0;
     position: relative;
+    width: 100%;
     &:before {
+	    background: pink;
     	content: '';
+    	left: 0;
+    	height: 1px;
     	position: absolute;
     	top: 0;
-    	// top: 50%;
-    	// transform: translateY(-50%);
-    	left: 0;
     	width: 100%;
-    	height: 1px;
-	    background: pink;
     }
 
 		// TODO: Decide
@@ -94,10 +91,11 @@ h4,
 p,
 ul,
 ol {
-	display: block;
 	@include font-feature-settings(liga kern onum);
-	max-width: rem(w(text));
+
+	display: block;
 	margin: 0 auto;
+	max-width: rem(w(text));
 	width: 100%;
 }
 
@@ -217,19 +215,22 @@ ol {
 	font-size: 3.375em;
 	font-weight: weight();
 	line-height: lh-unit(3);
+
 	&:last-child {
 		margin-bottom: rem(2);
 	}
 }
 
 %heading-beta {
-	font-size: 1.85em;
 	color: module-color(type-heading);
+	font-size: 1.85em;
 	font-weight: weight(bold);
 	line-height: lh-unit(2);
+
 	&:last-child {
 		margin-bottom: rem(7);
 	}
+
 	.figure + & {
 		margin-top: lh-unit(2) - rem(2);
 	}
@@ -240,9 +241,11 @@ ol {
 	font-size: 1.25em;
 	line-height: lh-unit(1);
 	margin: lh-unit(1) auto 0;
+
 	&:last-child {
 		margin-bottom: rem(5);
 	}
+
 	.figure + & {
 		margin-top: lh-unit(1) + rem(1);
 	}
@@ -256,9 +259,11 @@ ol {
 	font-size: 1em;
 	line-height: lh-unit(1);
 	margin-top: lh-unit(0.5);
+
 	&:first-child {
 		margin-top: rem(8);
 	}
+
 	&:last-child {
 		margin-bottom: rem(5);
 	}
@@ -266,27 +271,33 @@ ol {
 
 
 .ts {
+
 	h1 {
 		@extend %heading-alpha;
 		@extend %heading;
 	}
+
 	h2 {
 		@extend %heading-beta;
 		@extend %heading;
 	}
+
 	h3 {
 		@extend %heading-gamma;
 		@extend %heading;
 	}
+
 	h4 {
 		@extend %paragraph;
 		@extend %heading-delta;
 	}
+
 	p,
 	ul,
 	ol {
 		@extend %paragraph;
 	}
+
 	blockquote p {
 		@extend %heading-gamma;
 	}
@@ -296,22 +307,28 @@ ol {
 	@extend %heading-alpha;
 	@extend %heading;
 }
+
 ._h2 {
 	@extend %heading-beta;
 	@extend %heading;
 }
+
 ._h3 {
 	@extend %heading-gamma;
 	@extend %heading;
- color: module-color(type-heading);	
+
+	color: module-color(type-heading);	
 }
+
 ._h4 {
 	@extend %paragraph;
 	@extend %heading-delta;
 }
+
 ._p {
 	@extend %paragraph;
 }
+
 ._p1 {
 	@extend %heading-gamma;
 	font-style: italic;
@@ -328,26 +345,30 @@ blockquote {
 	margin: lh-unit(1.5) - rem(1) auto lh-unit() + rem(1);
 	position: relative;
 	text-align: center;
+
 	@include min-width(bp(s)) {
 		padding: 0 unit();
 	}
+
 	&:before {
 		background-color: color(accent-mid); // TODO: Var
 		content: '';
 		display: block;
-		margin: 0 auto;
-		position: relative;
-		width: rem(50); // TODO: Var
 		height: rem(1);
+		margin: 0 auto rem(-1);
+		position: relative;
 		top: rem(3) - lh-unit(0.5);
-		margin-bottom: rem(-1);
+		width: rem(50); // TODO: Var
 	}
+
 	p {
 		color: color(light); // TODO: Var
 	}
+
 	cite {
 		font-style: normal;
 		display: block;
+
 		&:before {
 			content: "—";
 		}
@@ -359,15 +380,14 @@ blockquote {
 ========================================== */
 
 ._p--dropcap {
+
   &:first-letter {
     color: color(accent-mid); // TODO: Var
-    font-size: 3.375em;
+    font-size: 3.375em; // TODO: Var
     float: left;
-    position: relative;
-    margin-top: 0;
-    margin-bottom: -10px;
     line-height: 1;
-    margin-right: 5px;
+    margin: 0 rem(5) rem(-10) 0;
+    position: relative;
   }
 }
 
@@ -380,11 +400,11 @@ hr {
 	border: 0;
 	background: rgba(color(mid), 0.2);
 	display: block;
-	width: 100%;
 	height: 1px;
 	margin: lh-unit(2) + rem(3) auto calc(#{lh-unit(2) + rem(-3)} - 2px);
 	max-width: rem(w(text));
 	position: relative;
+	width: 100%;
 }
 
 /* ==|== Typography ======================
@@ -396,7 +416,13 @@ hr {
 }
 
 abbr[title] {
-	border:0;
 	background: linear-gradient(to left, black 33%, rgba(black, 0) 34%) repeat-x left 88%; // TODO: Var
 	background-size:rem(3) rem(1);
+	border:0;
+}
+
+::selection {
+	background: module-color(selection-bg);
+	color: module-color(selection-color);
+	text-shadow: none;
 }

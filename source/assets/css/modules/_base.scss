@@ -1,0 +1,61 @@
+/**
+ * BASE
+ *
+ * Controls reusable modules that are page-agnostic.
+**/
+
+/* ==|== UI ==============================
+  Base and layouts
+========================================== */
+
+* {
+	box-sizing: border-box;
+}
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: module-color(base-color);
+	font-family: $font-stack-regular;
+
+	 -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ==|== UI ==============================
+  html and body
+========================================== */
+
+html {
+	background: module-color(base-bg);
+	font-size: percentage($measure / 16);
+	min-height:100%;
+	overflow-y: scroll;
+
+	@include min-width(tp(font-m)) {
+		font-size: percentage($measure-m / 16);
+	}
+	@include min-width(tp(font-l)) {
+		font-size: percentage($measure-l / 16);
+	}
+}
+
+body {
+	font-size: 1em;
+	display: flex;
+	line-height: line-height();
+  min-height: 100vh;
+  flex-direction: column;
+  padding: unit() unit(0.5);
+  position: relative;
+
+  @include min-width(bp(s)) {
+    padding: unit();
+  }
+}

@@ -1,0 +1,96 @@
+/**
+ * FIGURES
+ *
+ * Controls the styling of figures
+**/
+
+/* ==|== Figures =========================
+  Twitter
+========================================== */
+
+.figure {
+  $_: &;
+  left: 50%;
+  margin: lh-unit() - rem(9) auto lh-unit();
+  position: relative;
+  overflow: hidden;
+  transform: translateX(-50%);
+  width: 100vw;
+
+  pre + &,
+  + #{$_} {
+    margin-top: lh-unit() + rem(4);
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+  }
+
+  &--full {
+
+    img {
+
+    }
+  }
+
+  &--inset {
+
+    @include min-width(bp(s)) {
+      float: right;
+      left: auto;
+      margin-left: unit();
+      transform: none;
+      width: 50%;
+    }
+
+    img {
+
+    }
+  }
+
+  &__caption {
+    @include sc;
+
+    line-height: lh-unit(0.5);
+    font-size: 0.875em;
+    margin: 0 auto rem(4);
+    max-width: rem(w(text));
+    padding-top: rem(8);
+    text-align: center;
+
+    @include max-width(bp(s)) {
+      padding: 0 unit(1.5);
+    }
+
+    .figure--inset & {
+
+      @include min-width(bp(s)) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+/* ==|== Figure ==========================
+  Instagram
+========================================== */
+
+.figure {
+
+  &.instagram-media {
+    display: none !important;
+
+    a {
+      color: white;
+      text-shadow: none !important;
+    }
+  }
+  
+  &.instagram-media-rendered {
+    display: block !important;
+  }
+}

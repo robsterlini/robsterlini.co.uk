@@ -1,8 +1,7 @@
 /**
  * NAVIGATION
- * Styles the main page navigation
  *
- * @requires 
+ * Controls the navigation
 **/
 
 /* ==|== Navigation ======================
@@ -10,23 +9,28 @@
 ========================================== */
 
 .nav {
-  $_: &;
   display: flex;
   padding: 0 unit();
+
   &__list {
     background: module-color(base-bg);
     display: flex;
     margin: 0 auto;
     padding: 0 unit(0.5);
     width: auto;
+
     .masthead & {
       margin-right: 0;
     }
   }
+
   &__item {
+
   }
+
   &__link {
     @include sc;
+
     background: none;
     color: module-color(nav-color);
     display: block;
@@ -34,6 +38,7 @@
     line-height: unit();
     padding: unit(0.5);
     position: relative;
+
     abbr {
       background: none;
     }

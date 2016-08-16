@@ -1,16 +1,14 @@
 /**
  * FOOTER
- * Styles the main page footer
  *
- * @requires 
+ * Handles the styling of the footer
 **/
 
-/* ==|== Masthead ========================
+/* ==|== Footer ==========================
   Base
 ========================================== */
 
 .footer {
-  $_: &;
   left: 0;
   padding: 0 unit();
   position: absolute;
