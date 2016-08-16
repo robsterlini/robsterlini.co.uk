@@ -29,7 +29,9 @@
 ### Ordering and syntax
 
 Sass should be ordered by `@extend`, `@include`, and then alphabetically by
-selector. This ensures fewer instances of over-ruling styles.
+selector. Any (manually) prefixed keys should be included last, and reguarly
+checked to see if they’re valid This ensures fewer instances of over-ruling
+styles.
 
 ```
 .selector {
@@ -39,7 +41,11 @@ selector. This ensures fewer instances of over-ruling styles.
 
   akey: value;
   zkey: value;
+
+  -webkit-key: value;
+     -moz-key: value;
 }
+```
 
 - Prefer `%`, `rem`, and `em` units over `px`;
 - Values should be shortened where possible: `margin: 0 auto;` should be used
@@ -81,7 +87,7 @@ which might otherwise not be obvious.
 
 ```
 .selector {
-  // Two values because X reason
+  // Hack: Two values because X reason
   key: value1;
   key: value2;
 }

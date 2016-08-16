@@ -1,16 +1,12 @@
 /**
- * Layout SCSS Partial
+ * LAYOUT
  *
- * @requires framework/_type.scss 
- */
+ * Controls wrappers, and columns to style the layout
+**/
 
-body {
-  padding: unit() unit(0.5);
-  position: relative;
-  @include min-width(bp(s)) {
-    padding: unit();
-  }
-}
+/* ==|== Layout ==========================
+  Wrapper
+========================================== */
 
 .wrapper {
   border: module-color(body-border) solid 1px;
@@ -29,54 +25,69 @@ body {
   padding: 0 unit();
   position: relative;
   width: 100%;
+
   @include min-width(bp(s)) {
     padding: 0 unit(2);
   }
 }
 
+/* ==|== Layout ==========================
+  Columns
+========================================== */
+
 .cols {
   display: flex;
+
   @include max-width(tp(col-multiple)) {
     flex-wrap: wrap;
   }
 }
+
 .col {
   margin-right: unit();
   position: relative;
   width: 100%;
+
   @include min-width(tp(col-multiple)) {
     &:last-child {
       margin-right: 0;
     }
   }
+
   @include max-width(tp(col-multiple)) {
     margin: 0 auto;
     max-width: rem(w(text));
   }
+
   &--33 {
     width: 33.3%;
   }
+
   &--66 {
     width: 66.6%;
   }
+
   &--break {
     padding-top: lh-unit(4);
+
     &:before {
-      display: block;
-      content: '';
-      width: 50%;
-      max-width: unit(4); // TODO: Var
       background: module-color(column-break-bg);
+      content: '';
+      display: block;
       height: 1px; // TODO: Var
-      position: absolute;
-      top: lh-unit(2.5) - rem(1);
       margin: 0;
+      max-width: unit(4); // TODO: Var
+      position: absolute;
+      top: calc(#{lh-unit(2.5)} - 1px);
+      width: 50%;
     }
+
     &--twitter {
       &:before {
         background: social-color(twitter);
       }
     }
+
     &--dribbble {
       &:before {
         background: social-color(dribbble);

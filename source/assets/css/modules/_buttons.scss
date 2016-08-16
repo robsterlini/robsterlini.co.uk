@@ -1,18 +1,11 @@
 /**
- * Button SCSS Partial
+ * BUTTONS
  *
- * @requires framework/_type.scss, framework/_color.scss
- */
+ * Controls the styling of the buttons
+**/
 
-
-/**
- * Button SCSS Partial
- *
- * @requires framework/_type.scss, framework/_color.scss
- */
-
-/* ==|== Buttons =================
-  Buttons
+/* ==|== Buttons =========================
+  Button
 ========================================== */
 
 .btn {
@@ -20,69 +13,32 @@
   color: module-color(link-primary);
   display: block;
   font-weight: weight(bold);
+  
   &:after {
     content: ' \02192';
     position: relative;
     top: em(2);
   }
+
   &--back,
   &--next {
     display: table;
   }
+
   &--back {
+
     &:before {
       content: '\02190\000A0';
       position: relative;
       top: em(3);
     }
+
     &:after {
       display: none;
     }
   }
+
   &--next {
     margin-left: auto;
   }
 }
-
-/* ==|== Buttons =================
-	Containers
-========================================== */
-
-.btns {
-  &--nav {
-  }
-}
-
-/* ==|== Buttons =================
-	Buttons
-========================================== */
-
-
-@mixin social-color($c, $b: true, $o: true, $p: 12%) {
-  @if $o == true {
-    &[class^="btn--"] {
-      color: social-color($c);
-      border-color: social-color($c);
-      &:hover {
-        color: darken(social-color($c), $p);
-        border-color: darken(social-color($c), $p);
-      }
-    }
-  }
-	@if $b == true {
-		&.btn--primary {
-			background-color: social-color($c);
-			border-color: social-color($c);
-			&:hover {
-				background-color: darken(social-color($c), $p);
-				border-color: darken(social-color($c), $p);
-			}
-		}
-	}
-}
-// [href*="dribbble.com"] {
-// 	@include social-color(dribbble, true, true, 15%);
-// }
-// [href*="twitter.com"] {
-// 	@include social-color(twitter, true, false);
-// }

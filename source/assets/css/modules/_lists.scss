@@ -1,25 +1,31 @@
 /**
- * List SCSS Partial
- */
+ * LISTS
+ *
+ * Controls basic lists
+**/
 
-/* ==|== Lists ===========================
-  Default
+/* ==|== Listss ===========================
+  Base
 ========================================== */
 
 ul,
 ol {
   list-style: circle outside none;
+
   & > li {
+
     & > ul {
-      list-style:disc outside none;
-      margin:0;
+      list-style: disc outside none;
+      margin: 0;
     }
+
     & > ol {
       list-style: lower-roman outside none;
-      margin:0;
+      margin: 0;
     }
   }
 }
+
 ol {
   list-style: decimal outside none;
 }
@@ -29,6 +35,7 @@ ol {
 ========================================== */
 
 .list {
+
   &--plain {
     list-style: none;
     padding: 0;

@@ -1,16 +1,39 @@
+/**
+ * MODULE PARTIALS
+ *
+ * Controls reusable modules that are page-agnostic.
+**/
+
+/* ==|== UI ==============================
+  Base and layouts
+========================================== */
+
+@import "_base";
 @import "_layout";
+
+/* ==|== UI ==============================
+  Links
+========================================== */
 
 @import "_links";
 @import "_buttons";
 
+/* ==|== UI ==============================
+  Typographic elements
+========================================== */
+
 @import "_typography";
-
 @import "_lists";
-
-@import "_images";
-
-@import "_alerts";
-
 @import "_code";
 
-@import "_blog";
+/* ==|== UI ==============================
+  Assets
+========================================== */
+
+@import "_figures";
+
+/* ==|== UI ==============================
+  Extras
+========================================== */
+
+@import "_alerts";

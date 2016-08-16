@@ -9,7 +9,6 @@
 ========================================== */
 
 .masthead {
-  $_: &;
   left: 0;
   padding: 0 unit();
   position: absolute;
@@ -28,5 +27,4 @@
     position: relative;
     top: rem(1);
   }
-  
 }

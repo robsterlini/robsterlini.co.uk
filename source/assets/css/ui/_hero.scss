@@ -9,7 +9,6 @@
 ========================================== */
 
 .hero {
-  $_: &;
   bottom: unit();
   left: unit(0.5);
   max-height: 66vh;
@@ -18,6 +17,7 @@
   top: unit();
 
   .page--full-hero & {
+    // Hack: Double value to fix the iOS issues with 100vh
     max-height: 98vh;
     max-height: calc(100vh - #{unit(2)});
 
@@ -30,11 +30,11 @@
   &__bg,
   &__overlay,
   &__cover {
+    left: 0;
+    height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
   }
 
   &__bg {
