@@ -59,76 +59,6 @@ end
 
 #Create full image markup helper
 helpers do
-  def blog_image(image, caption, alt, position)
-    "<div class='figure-wrap#{position == "half" ? " figure-wrap--half" : ""}'>
-      <figure class='image--#{position} ss-picture image--to-load'>
-        <img class='img--script' src='/assets/images/helpers/image-placeholder.png'
-          data-src='#{image}'
-          data-js='lazy-load-image'
-          alt='#{alt}'
-          title='#{caption}' />
-          <noscript>
-            <img class='img--noscript' src='#{image}' alt='#{alt}' title='#{caption}'>
-          </noscript>
-        <figcaption class='ss-picture'>#{caption}</figcaption>
-      </figure>
-    </div>"
-  end
-  def grid_image(image, caption, alt, size)
-    "<figure#{size ? " class='figure--#{size}'" : ""}>
-      <img class='img--script' src='/assets/images/helpers/image-placeholder.png'
-        data-src='#{image}'
-        data-js='lazy-load-image'
-        alt='#{alt}'
-        title='#{caption}' />
-        <noscript>
-          <img class='img--noscript' src='#{image}' alt='#{alt}' title='#{caption}'>
-        </noscript>
-    </figure>"
-  end
-  def middleplate_markdown(md)
-      opening_tag = "<div class='mp-stack--left'>"
-      middle_tag  = "</div><div class='mp-stack--right'>"
-      end_tag     = "</div>"
-      str = partial "partials/middleplate/#{md}.md"
-      replacements = [
-        ["<p>{{section_open}}</p>", opening_tag],
-        ["<p>{{section_mid}}</p>", middle_tag],
-        ["<p>{{section_end}}</p>", end_tag]
-      ]
-      replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
-      str.gsub(/<p>.<\/p>/,"")
-      str
-  end
-  def _g(obj, pre)
-    obj = obj || Hash.new
-    str = ""
-
-    if obj["d"] and obj["d"] > 0
-      str += " g#{pre}_#{obj["d"]} "
-    elsif pre != "i"
-      str += " g_6 "
-    end
-
-    if obj["m"] and obj["m"] > 0
-      str += " g#{pre}_#{obj["m"]}-m "
-    elsif pre != "i"
-      str += " g_10-m "
-    end
-
-    if obj["l"] and obj["l"] > 0
-      str += " g#{pre}_#{obj["l"]}-l "
-    elsif pre != "i"
-      str += " g_12-l "
-    end
-    
-    str
-  end
-  def g(obj)
-    str = _g(obj[:width], "")
-    str += _g(obj[:indent], "i")
-    str
-  end
 end
 
 # Set constants
@@ -153,7 +83,6 @@ activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
 end
 
-
 # Turn on sitemap
 activate :search_engine_sitemap
 
@@ -166,6 +95,12 @@ activate :blog do |blog|
   blog.taglink = "journal/category/{tag}/index.html"
   blog.layout = "layout"
   blog.layout = "blog_layout"
+end
+
+# memories
+set :memories, data.memories["_all"]
+memories.each do |m|
+  proxy "/memories/#{m}.html", "/memory.html", :locals => { :m => m }, :ignore => true
 end
 
 # disable layout

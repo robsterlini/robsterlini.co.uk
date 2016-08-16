@@ -1,0 +1,17 @@
+---
+title: Memories
+description: A few select moments in my life commemorated with photos
+---
+
+<div class="col col--33">
+  <h1 class="_h1"><%= current_page.data.title %></h1>
+  <p class="_p1"><%= current_page.data.description %></p>
+</div>
+<div class="col col--66 col--break">
+  
+  <% data.memories["_all"].each do |m| %>
+    <% memory = data.memories[m] %>
+    <h2 class="_h2"><a href="/memories/<%= m %>/"><%= memory["title"] %></a></h2>
+  <% end %>
+
+</div>
