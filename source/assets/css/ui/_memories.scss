@@ -1,0 +1,30 @@
+/**
+ * MEMORIES
+ *
+ * Controls the styling of memories
+ */
+
+/* ==|== Memories ========================
+  Memory
+========================================== */
+
+.memory {
+
+  ._h2,
+  ._h4,
+  ._p {
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh;
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

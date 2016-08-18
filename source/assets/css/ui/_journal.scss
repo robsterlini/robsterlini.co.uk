@@ -71,6 +71,7 @@
     &:before {
       color: transparent;
       content:'#'attr(id);
+      left: 0;
       position: absolute;
       text-indent: rem(-14);
       transition: inherit;

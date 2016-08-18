@@ -6,6 +6,7 @@ page_classes: page--moment page--full-hero
   moment = data.moments[m]
   title = moment.title || ""
   description = moment.description || ""
+  sections = moment.sections || Hash.new
 
   content_for(:title, title)
   content_for(:meta_description, description)
@@ -19,8 +20,45 @@ page_classes: page--moment page--full-hero
   end
 %>
 
-<div class="col">
-  <h1 class="_h1 blog__title"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
-  <p class="blog__subtitle"><%= moment.date %></p>
-  <p class="_p1"><%= description %></p>
+<div class="col memory" data-anchors>
+  <div class="memory__header">
+    <h1 class="_h1 blog__title"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
+    <p class="blog__subtitle"><%= moment.date %></p>
+    <p class="_p1"><%= description %></p>
+  </div>
+  <% sections.each_with_index do |section, index| %>
+    <h2 class="_h2" id="<%= section["title"].to_slug %>"><%= section["title"] %></h2>
+    <% if section["subtitle"] %>
+      <p class="_h4"><%= section["subtitle"] %></p>
+    <% end %>
+    <% if section["description"] %>
+      <p class="_p"><%= section["description"] %></p>
+    <% end %>
+    <% section_images = section["images"] || Hash.new %>
+    <div class="memory__images">
+      <% section_images.each_with_index do |image, index| %>
+        <%
+          locals = Hash.new
+          if image["src"]
+            locals["image"] = image["src"]
+          end
+          if image["caption"]
+            locals["caption"] = image["caption"]
+          end
+          if image["alt"]
+            locals["alt"] = image["alt"]
+          end
+          locals["position"] = "grid-#{image["size"] || "full"}"
+          if image["link"]
+            locals["link"] = image["link"]
+            if image["link_text"]
+              locals["link_text"] = image["link_text"]
+            end
+          end
+        %>
+
+        <%= partial "partials/figure", locals: locals %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

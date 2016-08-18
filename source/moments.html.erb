@@ -11,7 +11,7 @@ description: A few select moments in my life commemorated with photos
   
   <% data.moments["_all"].each do |m| %>
     <% moment = data.moments[m] %>
-    <h2 class="_h2"><a href="/moments/<%= m %>/"><%= moments["title"] %></a></h2>
+    <h2 class="_h2"><a href="/moments/<%= m %>/"><%= moment["title"] %></a></h2>
   <% end %>
 
 </div>

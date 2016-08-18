@@ -26,6 +26,10 @@
       right: unit();
     }
   }
+  
+  .page--moment & {
+    max-height: 75vh;
+  }
 
   &__bg,
   &__overlay,
