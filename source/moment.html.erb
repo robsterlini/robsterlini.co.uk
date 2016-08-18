@@ -1,0 +1,26 @@
+---
+page_classes: page--moment page--full-hero
+---
+
+<%
+  moment = data.moments[m]
+  title = moment.title || ""
+  description = moment.description || ""
+
+  content_for(:title, title)
+  content_for(:meta_description, description)
+
+  if moment.hero
+    if moment.hero === true
+      content_for(:hero, "moments/#{m}")
+    else
+      content_for(:hero, moment.hero)
+    end
+  end
+%>
+
+<div class="col">
+  <h1 class="_h1 blog__title"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
+  <p class="blog__subtitle"><%= moment.date %></p>
+  <p class="_p1"><%= description %></p>
+</div>

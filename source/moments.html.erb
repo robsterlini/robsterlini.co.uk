@@ -1,5 +1,5 @@
 ---
-title: Memories
+title: Moments
 description: A few select moments in my life commemorated with photos
 ---
 
@@ -9,9 +9,9 @@ description: A few select moments in my life commemorated with photos
 </div>
 <div class="col col--66 col--break">
   
-  <% data.memories["_all"].each do |m| %>
-    <% memory = data.memories[m] %>
-    <h2 class="_h2"><a href="/memories/<%= m %>/"><%= memory["title"] %></a></h2>
+  <% data.moments["_all"].each do |m| %>
+    <% moment = data.moments[m] %>
+    <h2 class="_h2"><a href="/moments/<%= m %>/"><%= moments["title"] %></a></h2>
   <% end %>
 
 </div>

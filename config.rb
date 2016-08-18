@@ -97,10 +97,10 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
-# memories
-set :memories, data.memories["_all"]
-memories.each do |m|
-  proxy "/memories/#{m}.html", "/memory.html", :locals => { :m => m }, :ignore => true
+# Moments
+set :moments, data.moments["_all"]
+moments.each do |m|
+  proxy "/moments/#{m}.html", "/moment.html", :locals => { :m => m }, :ignore => true
 end
 
 # disable layout

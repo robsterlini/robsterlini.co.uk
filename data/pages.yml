@@ -26,10 +26,10 @@ masthead:
 
 ##
 
-    -   slug: "/memories.html"
-        label: "Memories"
-        alt: "Relive some memories with me"
-        footer: false
+    -   slug: "/moments.html"
+        label: "Moments"
+        alt: "Relive some of my life’s moments"
+        masthead: false
 
 ##
 
