@@ -1,14 +1,14 @@
 title: 'The London Triathlon'
-hero: blog/the-london-triathlon
-date: 2015 & 2016
+hero: 'blog/the-london-triathlon'
+date: '8 August 2015 &amp; 7 August 2016'
 description: 'I undertook my first triathlon in 2015, and have since completed 6 culminating in a 2:32:48 Olympic distance triathlon in London in Augst 2016. Here are just a few photos from along the way…'
 sections:
   - title: '2015'
     subtitle: 'Test 123'
     description: 'Here are just a few snaps from my 2015 race in London, but you can read about the whole day <a href="/journal/the-london-triathlon/">in my journal</a>.'
     images:
-      - size: "half"
-        src: "/content/2015/08/the-run_full.jpg"
-      - size: "half"
-        src: "/content/2015/08/support-team_full.jpg"
-      - src: "/content/2015/08/team-macmillan_full.jpg"
+      - size: 'half'
+        src: '/content/2015/08/the-run_full.jpg'
+      - size: 'half'
+        src: '/content/2015/08/support-team_full.jpg'
+      - src: '/content/2015/08/team-macmillan_full.jpg'

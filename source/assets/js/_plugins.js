@@ -506,7 +506,11 @@ var hljs=new function(){function j(v){return v.replace(/&/gm,"&amp;").replace(/<
        * adjacent element down far enough to get back onto the baseline.
        */
 
-      element.style.marginBottom = (_base - (height % _base)) / 16 + 'rem';
+      var top = (_base - (height % _base)) / 16,
+        half = Math.floor(top / 2),
+        bottom = top - half;
+      element.style.marginBottom = top + 'rem';
+      element.style.marginTop = half + 'rem';
     }
 
     /**

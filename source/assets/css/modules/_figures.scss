@@ -10,6 +10,7 @@
 
 .figure {
   $_: &;
+  background: module-color(figure-bg);
   left: 50%;
   margin: lh-unit() - rem(9) auto lh-unit();
   position: relative;
@@ -23,6 +24,7 @@
   }
 
   img {
+    box-shadow: module-color(figure-bg) 50vw 0, module-color(figure-bg) -50vw 0;
     display: block;
     margin: 0 auto;
     max-width: 100%;

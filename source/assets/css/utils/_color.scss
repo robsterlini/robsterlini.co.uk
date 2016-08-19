@@ -47,6 +47,8 @@ $module-colors: (
   type-code: color(light),
 
   column-break-bg: color(accent-mid),
+
+  figure-bg: darken(color(dark), 5%),
 );
 
 $social-colors: (

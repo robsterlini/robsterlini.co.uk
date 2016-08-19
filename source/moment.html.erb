@@ -20,8 +20,8 @@ page_classes: page--moment page--full-hero
   end
 %>
 
-<div class="col memory" data-anchors>
-  <div class="memory__header">
+<div class="col moment" data-anchors>
+  <div class="moment__header">
     <h1 class="_h1 blog__title"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
     <p class="blog__subtitle"><%= moment.date %></p>
     <p class="_p1"><%= description %></p>
@@ -35,7 +35,7 @@ page_classes: page--moment page--full-hero
       <p class="_p"><%= section["description"] %></p>
     <% end %>
     <% section_images = section["images"] || Hash.new %>
-    <div class="memory__images">
+    <div class="moment__images">
       <% section_images.each_with_index do |image, index| %>
         <%
           locals = Hash.new
