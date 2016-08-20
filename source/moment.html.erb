@@ -22,9 +22,9 @@ page_classes: page--moment page--full-hero
 
 <div class="col moment" data-anchors>
   <div class="moment__header">
-    <h1 class="_h1 blog__title"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
-    <p class="blog__subtitle"><%= moment.date %></p>
-    <p class="_p1"><%= description %></p>
+    <h1 class="_h1 _h1--c"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
+    <p class="_h4 _h4--c"><%= moment.date %></p>
+    <p class="_p1 _p--c"><%= description %></p>
   </div>
   <% sections.each_with_index do |section, index| %>
     <h2 class="_h2" id="<%= section["title"].to_slug %>"><%= section["title"] %></h2>

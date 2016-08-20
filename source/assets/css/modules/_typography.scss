@@ -211,10 +211,14 @@ ol {
 }
 
 %heading-alpha {
-	color: color(accent-mid); // TODO: Var
+	color: module-color(type-h1);
 	font-size: 3.375em;
 	font-weight: weight();
 	line-height: lh-unit(3);
+
+	.page--colours & {
+		color: var(--type-h1);
+	}
 
 	&:last-child {
 		margin-bottom: rem(2);
@@ -306,6 +310,11 @@ ol {
 ._h1 {
 	@extend %heading-alpha;
 	@extend %heading;
+
+	&--c {
+		max-width: none;
+		text-align: center;
+	}
 }
 
 ._h2 {
@@ -323,10 +332,18 @@ ol {
 ._h4 {
 	@extend %paragraph;
 	@extend %heading-delta;
+
+	&--c {
+		text-align: center;
+	}
 }
 
 ._p {
 	@extend %paragraph;
+
+	&--c {
+		text-align: center;
+	}
 }
 
 ._p1 {

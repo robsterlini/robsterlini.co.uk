@@ -4,7 +4,7 @@
 
 <% content_for(:title, "#{tagname}") %>
 <div class="col">
-  <h1 class="_h1 blog__title"><%= "#{tagname.dup.gsub ' and ', ' <span class="sc">&</span> '}" %></h1>
+  <h1 class="_h1 _h1--c"><%= "#{tagname.dup.gsub ' and ', ' <span class="sc">&</span> '}" %></h1>
   <h2 class="_h2">Posts</h2>
   
   <% page_articles.each_with_index do |article, i| %>

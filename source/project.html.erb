@@ -1,0 +1,52 @@
+---
+page_classes: page--project page--full-hero page--colours
+---
+
+<%
+  project = data.projects[p]
+
+  title = project.title || ""
+  description = project.description || ""
+  colours = project.colours || Hash.new
+  sections = project.sections || Hash.new
+
+  content_for(:title, title)
+  content_for(:meta_description, description)
+  # content_for(:page_classes, "")
+
+  if project.hero
+    if project.hero === true
+      content_for(:hero, "projects/#{p}")
+    else
+      content_for(:hero, project.hero)
+    end
+  end
+%>
+
+<div class="col project" data-anchors>
+  <div class="moment__header">
+    <h1 class="_h1 _h1--c"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
+    <p class="_h4 _h4--c">
+      <%= project.subtitle %> 
+      <% if project.link %>
+        <% if project.link.url && project.link.text %>
+          • <a href="<%= project.link.url %>"><%= project.link.text %></a>
+        <% end %>
+      <% end %>
+    </p>
+    <p class="_p1 _p--c"><%= description %></p>
+  </div>
+</div>
+
+<style type="text/css">
+  :root {
+    --type-h1:                <%= colours['accent-mid'] %>;
+    --body-border:            <%= colours['accent-mid'] %>;
+    --nav-color:              <%= colours['accent-light'] %>;
+    --link-primary-underline: <%= colours['accent-mid'] %>;
+    --link-primary:           <%= colours['accent-light'] %>;
+    <% (colours.overrides || Hash.new).each do |c| %>
+      --<%= c[0] %>: <%= colours[c[1]] %>
+    <% end %>
+  }
+</style>

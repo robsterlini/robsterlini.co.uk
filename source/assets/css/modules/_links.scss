@@ -10,7 +10,7 @@
 
 a {
 	color: inherit;
-	background: linear-gradient(transparent 50%, rgba(color(accent-mid), 1) 50%) no-repeat 0 84%;
+	background: linear-gradient(transparent 50%, module-color(link-primary-underline) 50%) no-repeat 0 84%;
   background-size: 100% 2px;
 	text-decoration: none;
 	text-shadow:
@@ -35,4 +35,16 @@ a {
 	&:active {
 		color: module-color(link-primary-active);
 	}
+
+	.page--colours & {
+			background-image: linear-gradient(transparent 50%, var(--link-primary-underline) 50%);
+
+			&[href^="http"] {
+	      color: var(--link-primary);
+	    }
+
+      &:hover {
+        color: module-color(link-primary-hover);
+      }
+    }
 }

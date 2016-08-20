@@ -39,6 +39,15 @@
     padding: unit(0.5);
     position: relative;
 
+    .page--colours & {
+      background: none;
+      color: var(--nav-color);
+      
+      &:hover {
+        color: module-color(link-primary-hover);
+      }
+    }
+
     abbr {
       background: none;
     }

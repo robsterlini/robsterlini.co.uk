@@ -1,0 +1,12 @@
+title: 'Kickpush'
+# hero: 'blog/the-london-triathlon'
+subtitle: 'Front end development'
+link:
+  url: 'https://kickpush.co'
+  text: 'kickpush.co'
+description: 'Alex &amp; Sam came to me about building the frontend of their design for their new agency site.'
+colours:
+  accent-mid: '#772828'
+  accent-light: '#EE5050'
+  overrides:
+    type-h1: 'accent-light'

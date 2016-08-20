@@ -26,6 +26,13 @@ masthead:
 
 ##
 
+    -   slug: '/projects.html'
+        label: 'Projects'
+        alt: 'See my work'
+        footer: false
+
+##
+
     -   slug: "/moments.html"
         label: "Moments"
         alt: "Relive some of my life’s moments"

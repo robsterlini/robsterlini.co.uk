@@ -10,18 +10,18 @@
 
 .moment {
 
-  ._h2,
-  ._h4,
-  ._p,
-  ._p1 {
-    text-align: center;
-  }
+  // ._h2,
+  // ._h4,
+  // ._p,
+  // ._p1 {
+  //   text-align: center;
+  // }
 
   &__header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 50vh;
+    min-height: lh-unit(18);
   }
 
   &__images {

@@ -54,6 +54,7 @@
   <%
     this_page_classes = "#{page_classes} "
     this_page_classes += current_page.data.page_classes || ""
+    this_page_classes += yield_content(:page_classes) ? " #{yield_content(:page_classes)}" : ""
     this_page_classes += current_page.data.no_masthead ? " page--no-masthead" : ""
     this_page_classes += current_page.data.no_footer ? " page--no-footer" : ""
   %>
