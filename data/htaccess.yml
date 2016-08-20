@@ -3,26 +3,28 @@ web:
     url: https://robsterlini.co.uk
     journal: /journal
     case_study: /case-study
+    projects: /projects
+    moments: /moments
 
 redirect:
     /youtube: /journal/youtube
     /yt: /journal/youtube
-    /tri: /triathlon
-    /testimonials: /portfolio
-    /process: /portfolio
-    /projects: /portfolio
-    /work: /portfolio
-    /about-me: /about
-    /bucket-list: /about#bucket-list
-    /macmillan: /triathlon
-    /donate: /triathlon
-    /food: /food-diary
+    /tri: /moments/the-london-triathlon
+    /testimonials: /projects
+    /process: /projects
+    /projects: /projects
+    /work: /projects
+    /about-me: /
+    /bucket-list: /
+    /macmillan: /moments/the-london-triathlon
+    /donate: /moments/the-london-triathlon
+    /food: /journal
     /cv: /curriculum-vitae
     /blog: /journal
-    # /mid: /middleplate
-    # /middlepl8: /middleplate
-    /tough-mudder: /triathlon
-    /toughmudder: /triathlon
+    /mid: /projects
+    /middlepl8: /projects
+    /tough-mudder: /moments/the-london-triathlon
+    /toughmudder: /moments/the-london-triathlon
 
 cache:
     deflate: \\.(js|css|html|ico|png|jpg|jpeg|gif|svg)$
@@ -51,12 +53,14 @@ short:
         domain: sterini.co
         journal: /j
         case_study: /c
+        project: /p
+        moment: /m
     redirect:
-        /tri: /triathlon
-        /mudder: /triathlon
+        /tri: /moments/the-london-triathlon
+        /mudder: /moments/the-london-triathlon
         /yt: /journal/youtube
-        /food: /food-diary
-        /mid: /middleplate
-        /middleplate: /middleplate
-        /middlepl8: /middleplate
+        /food: /journal
+        /mid: /projects
+        /middleplate: /projects
+        /middlepl8: /projects
         /cv: /curriculum-vitae
