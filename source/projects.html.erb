@@ -1,17 +1,26 @@
 ---
 title: Projects
-description: Lorem ipsum
+description: A few select pieces of work from my time as a front end developer, designer, and more.
 ---
 
-<div class="col col--33">
+<div class="col _t--center">
   <h1 class="_h1"><%= current_page.data.title %></h1>
   <p class="_p1"><%= current_page.data.description %></p>
-</div>
-<div class="col col--66 col--break">
   
-  <% data.projects["_all"].each do |p| %>
+  <% data.projects["_all"].each_with_index do |p, index| %>
     <% project = data.projects[p] %>
-    <h2 class="_h2"><a href="/projects/<%= p %>/"><%= project["title"] %></a></h2>
+    <h2 class="_h2" data-hero-dynamic="<%= index %>"><a href="/projects/<%= p %>/"><%= project["title"] %></a></h2>
+    <p class="_h4" data-hero-dynamic="<%= index %>"><%= project.subtitle %> </p>
+
+    <% if project.hero
+      project_hero = project.hero
+      if project.hero === true
+        project_hero = "projects/#{p}"
+      end
+    %>
+      <%= partial "partials/hero", :locals => { :hero => project_hero, :dynamic => index } %>
+    <% end %>
+
   <% end %>
 
 </div>

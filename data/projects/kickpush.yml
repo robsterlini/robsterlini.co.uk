@@ -1,5 +1,5 @@
 title: 'Kickpush'
-# hero: 'blog/the-london-triathlon'
+hero: true
 subtitle: 'Front end development'
 link:
   url: 'https://kickpush.co'
@@ -10,3 +10,18 @@ colours:
   accent-light: '#EE5050'
   overrides:
     type-h1: 'accent-light'
+sections:
+  brief:
+    title: 'The brief'
+    copy:
+      - 'The Kickpush <span class="sc">V1</span> site had served its purpose and it needed a shake-up so Alex got to work designing a striking web presence. When he’d perfected the visuals, it was handed over to me to make it into reality.'
+  features:
+    title: 'Features'
+    copy:
+      - 'The Kickpush guys wanted the site to be smooth, quick, and stylish to match the strong brand identity that it was carrying.'
+      - 'I built silky, subtle scroll-based movement into the devices on the home page to help make the experience feel deeper without being overpowering.'
+  the_result:
+    title: 'The result'
+    copy:
+      - 'The final built was something that I will always be proud of!'
+      - 'The Kickpush team loved it, and it got some fantastic feedback by users (whose numbers soared after the launch).'

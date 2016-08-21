@@ -66,14 +66,7 @@
     <% end %>
 
     <% if hero %>
-      <div class="hero" aria-hidden="true">
-        <b class="hero__bg" data-hero="<%= hero_image %>"></b>
-        <b class="hero__cover"></b>
-        <noscript>
-          <b class="hero__bg" style="background-image: url(/assets/images/hero/<%= hero %>_full.jpg);"></b>
-        </noscript>
-        <b class="hero__overlay"></b>
-      </div>
+      <%= partial "partials/hero", :locals => { :hero => hero, :hero_image => hero_image } %>
     <% end %>
     
     <main class="wrapper">

@@ -50,7 +50,8 @@ $module-colors: (
 
   column-break-bg: color(accent-mid),
 
-  figure-bg: darken(color(dark), 5%),
+  // figure-bg: darken(color(dark), 5%),
+  // figure-bg: rgba(red, 0.25),
 );
 
 $social-colors: (

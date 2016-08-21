@@ -24,9 +24,8 @@ page_classes: page--project page--full-hero page--colours
 %>
 
 <div class="col project" data-anchors>
-  <div class="moment__header">
-    <h1 class="_h1 _h1--c"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
-    <p class="_h4 _h4--c">
+    <h1 class="_h1 _h1--first _t--center"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
+    <p class="_h4 _t--center">
       <%= project.subtitle %> 
       <% if project.link %>
         <% if project.link.url && project.link.text %>
@@ -34,8 +33,16 @@ page_classes: page--project page--full-hero page--colours
         <% end %>
       <% end %>
     </p>
-    <p class="_p1 _p--c"><%= description %></p>
-  </div>
+    <p class="_p1 _t--center"><%= description %></p>
+
+    <% sections.each do |s| %>
+      <% section = sections[s[0]] %>
+      <h2 class="_h2"><%= section["title"] %></h2>
+      <% section_copy = section["copy"] || Hash.new %>
+      <% section_copy.each do |copy| %>
+        <p class="_p"><%= copy %></p>
+      <% end %>
+    <% end %>
 </div>
 
 <style type="text/css">

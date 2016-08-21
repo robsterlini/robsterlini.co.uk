@@ -63,12 +63,14 @@
     max-width: rem(w(text));
   }
 
-  &--33 {
-    width: 33.3%;
-  }
+  @include min-width(tp(col-multiple)) {
+    &--33 {
+      width: 33.3%;
+    }
 
-  &--66 {
-    width: 66.6%;
+    &--66 {
+      width: 66.6%;
+    }
   }
 
   &--break {

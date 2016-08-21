@@ -103,18 +103,18 @@ ol {
 	Headings and Paragraphs
 ========================================== */
 
-@mixin heading-margins($h) {
+@mixin heading-margins {
 	$hl: 4;
 
 	$ts: '.ts';
 	$pp: p, ol, ul;
 
 	// 	 :1  h1  h2  h3  h4   p
-	$e1: 10,  0,  7, -3, -2, -2;
-	$e2: -7, -7,  0,  1,  2,  3;
-	$e3:  7,  3, -3,  0,  1,  0;
-	$e4:  0,  0,  0,  2,  0,  0;
-	$ep:  0,  2, -2, -1,  0,  0;
+	$e1: 10,  0,  7, -3, -2.5, -2;
+	$e2: -7, -7,  0,  2,  2,  3;
+	$e3:  7,  3, -3,  0,  0,  0;
+	$e4:  0,  0,  0,  0,  0,  0;
+	$ep:  0,  2, -2, 	0,  0,  0;
 
 	$t: (
 		1: 'h1',
@@ -153,9 +153,6 @@ ol {
 		$ei: map-get($e, $i);
 
 		$tss: "#{$tsi}, #{$ai}";
-		@if ($i == 3) {
-			$tss: "#{$tss}, ._p1";
-		}
 		#{$tss} {
 			content: $ai;
 			margin-top: #{rem(nth($ei, 1))};
@@ -168,9 +165,6 @@ ol {
 			$ej: rem(nth($ei, $j + 1));
 
 			$tssj: "#{$tsi} + #{$tj}, #{$ai} + #{$aj}";
-			@if ($j == 3) {
-				$tssj: "#{$tssj}, #{$ai} + ._p1";
-			}
 			#{$tssj} {
 				margin-top: $xj + $ej;
 			}
@@ -212,7 +206,7 @@ ol {
 
 %heading-alpha {
 	color: module-color(type-h1);
-	font-size: 3.375em;
+	font-size: 3.375rem;
 	font-weight: weight();
 	line-height: lh-unit(3);
 
@@ -227,7 +221,7 @@ ol {
 
 %heading-beta {
 	color: module-color(type-heading);
-	font-size: 1.85em;
+	font-size: 1.85rem;
 	font-weight: weight(bold);
 	line-height: lh-unit(2);
 
@@ -242,7 +236,7 @@ ol {
 
 %heading-gamma {
 	color: module-color(type-heading);
-	font-size: 1.25em;
+	font-size: 1.25rem;
 	line-height: lh-unit(1);
 	margin: lh-unit(1) auto 0;
 
@@ -260,7 +254,7 @@ ol {
 }
 
 %paragraph {
-	font-size: 1em;
+	font-size: 1rem;
 	line-height: lh-unit(1);
 	margin-top: lh-unit(0.5);
 
@@ -286,7 +280,8 @@ ol {
 		@extend %heading;
 	}
 
-	h3 {
+	h3,
+	blockquote {
 		@extend %heading-gamma;
 		@extend %heading;
 	}
@@ -302,8 +297,8 @@ ol {
 		@extend %paragraph;
 	}
 
-	blockquote p {
-		@extend %heading-gamma;
+	blockquote {
+		// @extend ts .h3;
 	}
 }
 
@@ -311,9 +306,18 @@ ol {
 	@extend %heading-alpha;
 	@extend %heading;
 
-	&--c {
-		max-width: none;
-		text-align: center;
+	max-width: none;
+
+	&--first {
+		padding-top: lh-unit(2);
+
+		@include min-width(bp(s)) {
+			padding-top: lh-unit(3);
+		}
+
+		@include min-width(bp(m)) {
+			padding-top: lh-unit(4);
+		}
 	}
 }
 
@@ -332,26 +336,19 @@ ol {
 ._h4 {
 	@extend %paragraph;
 	@extend %heading-delta;
-
-	&--c {
-		text-align: center;
-	}
 }
 
 ._p {
 	@extend %paragraph;
-
-	&--c {
-		text-align: center;
-	}
 }
 
 ._p1 {
-	@extend %heading-gamma;
+	@extend ._h3;
+
 	font-style: italic;
 }
 
-@include heading-margins(alpha);
+@include heading-margins;
 
 /* ==|== Typography ======================
 	Blockquotes
@@ -359,12 +356,13 @@ ol {
 
 blockquote {
 	font-style: italic;
-	margin: lh-unit(1.5) - rem(1) auto lh-unit() + rem(1);
+	// margin: lh-unit(1.5) - rem(1) auto lh-unit() + rem(1);
 	position: relative;
 	text-align: center;
+	padding: lh-unit(0.5) 0;
 
 	@include min-width(bp(s)) {
-		padding: 0 unit();
+		padding: lh-unit(0.5) unit();
 	}
 
 	&:before {
@@ -372,18 +370,31 @@ blockquote {
 		content: '';
 		display: block;
 		height: rem(1);
-		margin: 0 auto rem(-1);
-		position: relative;
+		margin-left: rem(-25); // TODO: Var
+		position: absolute;
+		left: 50%;
 		top: rem(3) - lh-unit(0.5);
 		width: rem(50); // TODO: Var
 	}
 
 	p {
 		color: color(light); // TODO: Var
+		font-size: inherit !important; // TODO: Refactor
+		margin: 0 auto;
+
+		&:first-child {
+			margin-top: 0 !important; // TODO: Refactor
+		}
+
+		&:last-child {
+			margin-bottom: 0 !important; // TODO: Refactor
+		}
 	}
 
 	cite {
 		font-style: normal;
+		font-size: 1rem;
+		margin-top: lh-unit(0.5);
 		display: block;
 
 		&:before {
@@ -393,19 +404,26 @@ blockquote {
 }
 
 /* ==|== Typography ======================
-	Drop cap
+	Modifiers
 ========================================== */
 
-._p--dropcap {
+._t {
 
-  &:first-letter {
-    color: color(accent-mid); // TODO: Var
-    font-size: 3.375em; // TODO: Var
-    float: left;
-    line-height: 1;
-    margin: 0 rem(5) rem(-10) 0;
-    position: relative;
-  }
+	&--center {
+		text-align: center;
+	}
+
+	&--dropcap {
+
+	  &:first-letter {
+	    color: color(accent-mid); // TODO: Var
+	    font-size: 3.375em; // TODO: Var
+	    float: left;
+	    line-height: 1;
+	    margin: 0 rem(5) rem(-10) 0;
+	    position: relative;
+	  }
+	}
 }
 
 
@@ -434,8 +452,8 @@ hr {
 
 abbr[title] {
 	background: linear-gradient(to left, black 33%, rgba(black, 0) 34%) repeat-x left 88%; // TODO: Var
-	background-size:rem(3) rem(1);
-	border:0;
+	background-size: rem(3) rem(1);
+	border: 0;
 }
 
 ::selection {

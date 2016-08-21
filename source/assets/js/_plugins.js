@@ -509,8 +509,9 @@ var hljs=new function(){function j(v){return v.replace(/&/gm,"&amp;").replace(/<
       var totalMargin = (_base - (height % _base)) / 16,
         halfMargin = totalMargin / 2;
 
-      element.style.marginBottom = halfMargin + 'rem';
-      element.style.marginTop    = halfMargin + 'rem';
+      // element.style.marginBottom = halfMargin + 'rem';
+      // element.style.marginTop    = halfMargin + 'rem';
+      element.style.marginBottom = totalMargin + 'rem';
     }
 
     /**

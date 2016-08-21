@@ -21,11 +21,10 @@ page_classes: page--moment page--full-hero
 %>
 
 <div class="col moment" data-anchors>
-  <div class="moment__header">
-    <h1 class="_h1 _h1--c"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
-    <p class="_h4 _h4--c"><%= moment.date %></p>
-    <p class="_p1 _p--c"><%= description %></p>
-  </div>
+  <h1 class="_h1 _h1--first _t--center"><%= "#{title.dup.gsub ' and ', ' <span class=\"sc\">&</span> '}" %></h1>
+  <p class="_h4 _t--center"><%= moment.date %></p>
+  <p class="_p1 _t--center"><%= description %></p>
+  
   <% sections.each_with_index do |section, index| %>
     <h2 class="_h2" id="<%= section["title"].to_slug %>"><%= section["title"] %></h2>
     <% if section["subtitle"] %>
@@ -35,30 +34,28 @@ page_classes: page--moment page--full-hero
       <p class="_p"><%= section["description"] %></p>
     <% end %>
     <% section_images = section["images"] || Hash.new %>
-    <div class="moment__images">
-      <% section_images.each_with_index do |image, index| %>
-        <%
-          locals = Hash.new
-          if image["src"]
-            locals["image"] = image["src"]
+    <% section_images.each_with_index do |image, index| %>
+      <%
+        locals = Hash.new
+        if image["src"]
+          locals["image"] = image["src"]
+        end
+        if image["caption"]
+          locals["caption"] = image["caption"]
+        end
+        if image["alt"]
+          locals["alt"] = image["alt"]
+        end
+        locals["position"] = "grid-#{image["size"] || "full"}"
+        if image["link"]
+          locals["link"] = image["link"]
+          if image["link_text"]
+            locals["link_text"] = image["link_text"]
           end
-          if image["caption"]
-            locals["caption"] = image["caption"]
-          end
-          if image["alt"]
-            locals["alt"] = image["alt"]
-          end
-          locals["position"] = "grid-#{image["size"] || "full"}"
-          if image["link"]
-            locals["link"] = image["link"]
-            if image["link_text"]
-              locals["link_text"] = image["link_text"]
-            end
-          end
-        %>
+        end
+      %>
 
-        <%= partial "partials/figure", locals: locals %>
-      <% end %>
-    </div>
+      <%= partial "partials/figure", locals: locals %>
+    <% end %>
   <% end %>
 </div>

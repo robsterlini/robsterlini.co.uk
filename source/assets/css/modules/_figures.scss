@@ -24,8 +24,6 @@
   }
 
   img {
-    border: solid module-color(figure-bg);
-    border-width: rem(2) rem(4);
     display: block;
     margin: 0 auto;
     max-width: 100%;
@@ -90,7 +88,7 @@
     font-size: 0.875em;
     margin: 0 auto rem(4);
     max-width: rem(w(text));
-    padding-top: rem(8);
+    padding-top: rem(4);
     text-align: center;
 
     @include max-width(bp(s)) {

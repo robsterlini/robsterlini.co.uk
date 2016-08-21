@@ -22,8 +22,10 @@ $measure-l:     20;
 // Media queries
 $breakpoints: (
   xs: 450,
-  s: $measure * 48
+  s: $measure * 48,
+  m: $measure * 64
 );
+
 $tweakpoints: (
   // Fonts
   font-m: 1024,
@@ -59,12 +61,22 @@ $weights: (
 $timings: (
   full: 250ms,
   link: 125ms,
+
   hero: 1000ms,
+  hero-dynamic: 500ms,
 );
 $easings: (
   default: ease-in-out,
   link: ease-out,
 );
+
+// Projects
+$projects:
+  kickpush
+;
+
+// Hero
+$hero-max-dynamic: 2;
 
 // Max widths
 $layout-max-width:              $measure * 34;
