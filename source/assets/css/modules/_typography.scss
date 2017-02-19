@@ -17,6 +17,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: 'SkolarLatin';
 	src: url('../fonts/SkolarLatin-Italic.eot');
@@ -26,6 +27,7 @@
 	font-weight: normal;
 	font-style: italic;
 }
+
 @font-face {
 	font-family: 'SkolarLatin';
 	src: url('../fonts/SkolarLatin-Bold.eot');
@@ -48,6 +50,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+
   b {
     display: block;
     height: rem(1);
@@ -55,6 +58,7 @@
     opacity: 0.2;
     position: relative;
     width: 100%;
+
     &:before {
 	    background: pink;
     	content: '';
@@ -64,19 +68,6 @@
     	top: 0;
     	width: 100%;
     }
-
-		// TODO: Decide
-    // width: 50vw;
-    // margin-left: -50vw;
-    // position: relative;
-    // left: calc(50% + 2rem);
-    // background: linear-gradient(to right, pink, transparent);
-    //
-    // @for $i from 0 through 80 {
-    // 	&:nth-of-type(#{$i}) {
-    // 		opacity: 0.2 - ($i * 0.0025);
-    // 	}
-    // }
   }
 }
 
@@ -103,104 +94,13 @@ ol {
 	Headings and Paragraphs
 ========================================== */
 
-@mixin heading-margins {
-	$hl: 4;
-
-	$ts: '.ts';
-	$pp: p, ol, ul;
-
-	// 	 :1  h1  h2  h3  h4   p
-	$e1: 10,  0,  7, -3, -2.5, -2;
-	$e2: -7, -7,  0,  2,  2,  3;
-	$e3:  7,  3, -3,  0,  0,  0;
-	$e4:  0,  0,  0,  0,  0,  0;
-	$ep:  0,  2, -2, 	0,  0,  0;
-
-	$t: (
-		1: 'h1',
-		2: 'h2',
-		3: 'h3',
-		4: 'h4',
-		p: $pp,
-	);
-	$a: (
-		1: '._h1',
-		2: '._h2',
-		3: '._h3',
-		4: '._h4',
-		p: '._p',
-	);
-	$x: (
-		1: 3,
-		2: 2,
-		3: 1,
-		4: 0,
-		p: 0.5,
-	);
-	$e: (
-		1: $e1,
-		2: $e2,
-		3: $e3,
-		4: $e4,
-		p: $ep,
-	);
-
-	@for $i from 1 through $hl {
-		// Set our unprefixed, prefixed, and class variables
-		$ti: map-get($t, $i);
-		$tsi: #{$ts} #{$ti};
-		$ai: map-get($a, $i);
-		$ei: map-get($e, $i);
-
-		$tss: "#{$tsi}, #{$ai}";
-		#{$tss} {
-			content: $ai;
-			margin-top: #{rem(nth($ei, 1))};
-		}
-
-		@for $j from 1 through $hl {
-			$tj: map-get($t, $j);
-			$aj: map-get($a, $j);
-			$xj: lh-unit(map-get($x, $j));
-			$ej: rem(nth($ei, $j + 1));
-
-			$tssj: "#{$tsi} + #{$tj}, #{$ai} + #{$aj}";
-			#{$tssj} {
-				margin-top: $xj + $ej;
-			}
-
-		}
-
-		$ap: map-get($a, p);
-		$xp: lh-unit(map-get($x, p));
-		$ep: rem(nth($ei, $hl + 1));
-		$xhp: lh-unit(map-get($x, $i));
-		$ehp: rem(nth(map-get($e, p), $i + 1));
-
-		$ss: '#{$ai} + #{$ap}';
-		$ssp: '#{$ap} + #{$ai}';
-		@each $tp in map-get($t, p) {
-			$ss: "#{$ss}, #{$tsi} + #{$tp}";
-			$ssp: "#{$ssp}, #{$ts} #{$tp} + #{$ti}, .figure + #{$ti}";
-		}
-
-		#{$ss} {
-			margin-top: $xp + $ep;
-		}
-
-		#{$ssp} {
-			content: $xhp;
-			content: $ehp;
-			margin-top: $xhp + $ehp;
-		}
-
-	}
-
-}
-
 %heading {
 	a {
 		background: none;
+	}
+
+	&:first-child {
+		margin-top: 0;	
 	}
 }
 
@@ -209,44 +109,27 @@ ol {
 	font-size: 3.375rem;
 	font-weight: weight();
 	line-height: lh-unit(3);
-
-	.page--colours & {
-		color: var(--type-h1);
-	}
-
-	&:last-child {
-		margin-bottom: rem(2);
-	}
+	padding-top: rem(11);
+	padding-bottom: rem(0);
 }
 
 %heading-beta {
 	color: module-color(type-heading);
 	font-size: 1.85rem;
 	font-weight: weight(bold);
-	line-height: lh-unit(2);
-
-	&:last-child {
-		margin-bottom: rem(7);
-	}
-
-	.figure + & {
-		margin-top: lh-unit(2) - rem(2);
-	}
+	line-height: lh-unit(1.5);
+	margin-top: lh-unit(2);
+	padding-top: rem(11);
+	padding-bottom: rem(0);
 }
 
 %heading-gamma {
 	color: module-color(type-heading);
 	font-size: 1.25rem;
 	line-height: lh-unit(1);
-	margin: lh-unit(1) auto 0;
-
-	&:last-child {
-		margin-bottom: rem(5);
-	}
-
-	.figure + & {
-		margin-top: lh-unit(1) + rem(1);
-	}
+	margin-top: lh-unit(1);
+	padding-top: rem(8);
+	padding-bottom: rem(4);
 }
 
 %heading-delta {
@@ -256,15 +139,8 @@ ol {
 %paragraph {
 	font-size: 1rem;
 	line-height: lh-unit(1);
-	margin-top: lh-unit(0.5);
-
-	&:first-child {
-		margin-top: rem(8);
-	}
-
-	&:last-child {
-		margin-bottom: rem(5);
-	}
+	padding-top: rem(9);
+	padding-bottom: rem(3);
 }
 
 
@@ -346,9 +222,11 @@ ol {
 	@extend ._h3;
 
 	font-style: italic;
-}
 
-@include heading-margins;
+	._h1 + & {
+		margin-top: 0;
+	}
+}
 
 /* ==|== Typography ======================
 	Blockquotes
@@ -356,7 +234,6 @@ ol {
 
 blockquote {
 	font-style: italic;
-	// margin: lh-unit(1.5) - rem(1) auto lh-unit() + rem(1);
 	position: relative;
 	text-align: center;
 	padding: lh-unit(0.5) 0;
@@ -442,6 +319,7 @@ hr {
 	width: 100%;
 }
 
+
 /* ==|== Typography ======================
 	Variants
 ========================================== */
@@ -451,7 +329,7 @@ hr {
 }
 
 abbr[title] {
-	background: linear-gradient(to left, black 33%, rgba(black, 0) 34%) repeat-x left 88%; // TODO: Var
+	background: linear-gradient(to left, currentColor 33%, rgba(white, 0.01) 34%) repeat-x left 84%;
 	background-size: rem(3) rem(1);
 	border: 0;
 }

@@ -5,16 +5,15 @@ link:
   url: 'https://kickpush.co'
   text: 'kickpush.co'
 description: 'Alex &amp; Sam came to me about building the frontend of their design for their new agency site.'
+colour: '#EE5050'
 colours:
-  accent-mid: '#772828'
   accent-light: '#EE5050'
-  overrides:
-    type-h1: 'accent-light'
+  accent-mid: '#772828'
 sections:
   brief:
     title: 'The brief'
     copy:
-      - 'The Kickpush <span class="sc">V1</span> site had served its purpose and it needed a shake-up so Alex got to work designing a striking web presence. When he’d perfected the visuals, it was handed over to me to make it into reality.'
+      - 'The Kickpush <abbr class="sc" title="version 1">V1</abbr> site had served its purpose and it needed a shake-up so Alex got to work designing a striking web presence. When he’d perfected the visuals, it was handed over to me to make it into reality.'
   features:
     title: 'Features'
     copy:
@@ -25,3 +24,4 @@ sections:
     copy:
       - 'The final built was something that I will always be proud of!'
       - 'The Kickpush team loved it, and it got some fantastic feedback by users (whose numbers soared after the launch).'
+    link: true

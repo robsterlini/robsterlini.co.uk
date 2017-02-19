@@ -3,24 +3,56 @@ title: Projects
 description: A few select pieces of work from my time as a front end developer, designer, and more.
 ---
 
-<div class="col _t--center">
+<div class="col _t--center">  
   <h1 class="_h1"><%= current_page.data.title %></h1>
   <p class="_p1"><%= current_page.data.description %></p>
-  
-  <% data.projects["_all"].each_with_index do |p, index| %>
-    <% project = data.projects[p] %>
-    <h2 class="_h2" data-hero-dynamic="<%= index %>"><a href="/projects/<%= p %>/"><%= project["title"] %></a></h2>
-    <p class="_h4" data-hero-dynamic="<%= index %>"><%= project.subtitle %> </p>
-
-    <% if project.hero
-      project_hero = project.hero
-      if project.hero === true
-        project_hero = "projects/#{p}"
-      end
-    %>
-      <%= partial "partials/hero", :locals => { :hero => project_hero, :dynamic => index } %>
-    <% end %>
-
-  <% end %>
-
+  <%= partial "partials/baseline-grid" %>
 </div>
+</section>
+  
+<% projects_styles = "" %>
+<% data.projects["_all"].each_with_index do |p, index| %>
+  <% project = data.projects[p] %>
+  <% if project.colour %>
+    <%
+      projects_styles += ".project--#{p} .col--break:before { background-color: #{project.colour}; }"
+      projects_styles += ".project--#{p} ._h2, .project--#{p} .btn:not(:hover) { color: #{project.colour}; }"
+    %>
+  <% end %>
+  <% if index > 0 %>
+    </section>
+    <hr>
+  <% end %>
+    <section class="group cols project--<%= p %>">
+
+  <div class="col col--33">
+    <h2 class="_h2" data-hero-dynamic="<%= index %>">
+        <%= project["title"] %>
+    </h2>
+    <p class="_h4" data-hero-dynamic="<%= index %>"><%= project.subtitle %><%= project.company ? ", #{project.company}" : "" %></p>
+  </div>
+
+  <div class="col col--66 col--break col--break-h2">
+    <p class="_p"><%= project.description %></p>
+    <% if project.link %>
+      <p class="_p">
+        <%= link_to project.link.text, project.link.url, :class => "btn" %>
+      </p>
+    <% end %>
+  </div>
+
+  <% if project.hero
+    project_hero = project.hero
+    if project.hero === true
+      project_hero = "projects/#{p}"
+    end
+  %>
+    <%= partial "partials/hero", :locals => { :hero => project_hero, :dynamic => index } %>
+  <% end %>
+  <%= partial "partials/baseline-grid" %>
+<% end %>
+<% if projects_styles %>
+<style type="text/css">
+<%= projects_styles %>
+</style>
+<% end %>

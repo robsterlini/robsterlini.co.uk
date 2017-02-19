@@ -1,0 +1,11 @@
+title: 'University of Reading'
+subtitle: 'Design & Front end development'
+company: 'Digital Development (<abbr title="University of Reading">UoR</abbr>)'
+link:
+  url: 'http://www.reading.ac.uk/'
+  text: 'reading.ac.uk'
+description: 'After graduating, I joined the Digital Development department at the University as the sole Digital Designer. During my year working there, I redesigned and built a new core-style which – although parts have been lost to a university-wide rebrand – can still be seen on <a href="http://www.reading.ac.uk/literature-and-languages/sll-home.aspx">some school pages</a>, <a href="http://www.reading.ac.uk/news-and-events/">the news pages</a>, and the <a href="http://www.reading.ac.uk/library/">library page</a>.'
+colour: '#D11620'
+colours:
+  accent-light: '#D11620'
+  accent-mid: '#B6080C'

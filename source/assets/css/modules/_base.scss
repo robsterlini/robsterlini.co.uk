@@ -38,12 +38,12 @@ html {
 	min-height:100%;
 	overflow-y: scroll;
 
-	@include min-width(tp(font-m)) {
-		font-size: percentage($measure-m / 16);
-	}
-	@include min-width(tp(font-l)) {
-		font-size: percentage($measure-l / 16);
-	}
+	// @include min-width(tp(font-m)) {
+	// 	font-size: percentage($measure-m / 16);
+	// }
+	// @include min-width(tp(font-l)) {
+	// 	font-size: percentage($measure-l / 16);
+	// }
 }
 
 body {

@@ -13,6 +13,14 @@
   color: module-color(link-primary);
   display: block;
   font-weight: weight(bold);
+
+  #{class(page-colours)} & {
+    color: var(--button);
+
+    &:hover {
+      color: module-color(link-primary-hover);
+    }
+  }
   
   &:after {
     content: ' \02192';

@@ -29,7 +29,7 @@ page_classes: page--project page--full-hero page--colours
       <%= project.subtitle %> 
       <% if project.link %>
         <% if project.link.url && project.link.text %>
-          • <a href="<%= project.link.url %>"><%= project.link.text %></a>
+          • <a class="link--plain" href="<%= project.link.url %>"><%= project.link.text %></a>
         <% end %>
       <% end %>
     </p>
@@ -42,18 +42,38 @@ page_classes: page--project page--full-hero page--colours
       <% section_copy.each do |copy| %>
         <p class="_p"><%= copy %></p>
       <% end %>
+      <% if section['link'] %>
+        <%
+          section_link_url = ""
+          section_link_text = "View project"
+          if project.link
+            if project.link.url
+              section_link_url = project.link.url
+            end
+          end
+          if section['link'].is_a?(Hash)
+            if section['link']['url']
+              section_link_url = section['link']['url']
+            end
+            if section['link']['text']
+              section_link_text = section['link']['text']
+            end
+          end
+          if section_link_url && section_link_text
+        %>
+          <p class="_p">
+            <a class="btn" href="<%= section_link_url %>"><%= section_link_text %></a>
+          </p>
+        <% end %>
+      <% end %>
     <% end %>
 </div>
 
 <style type="text/css">
   :root {
-    --type-h1:                <%= colours['accent-mid'] %>;
-    --body-border:            <%= colours['accent-mid'] %>;
-    --nav-color:              <%= colours['accent-light'] %>;
-    --link-primary-underline: <%= colours['accent-mid'] %>;
-    --link-primary:           <%= colours['accent-light'] %>;
-    <% (colours.overrides || Hash.new).each do |c| %>
-      --<%= c[0] %>: <%= colours[c[1]] %>
-    <% end %>
+    --type-h1:     <%= colours['accent-light'] %>;
+    --button:      <%= colours['accent-light'] %>;
+    --body-border: <%= colours['accent-mid'] %>;
+    --selection:   <%= colours['accent-mid'] %>;
   }
 </style>

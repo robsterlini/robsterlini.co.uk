@@ -9,42 +9,41 @@
 ========================================== */
 
 a {
-	color: inherit;
-	background: linear-gradient(transparent 50%, module-color(link-primary-underline) 50%) no-repeat 0 84%;
+  color: inherit;
+  background: linear-gradient(transparent 50%, module-color(link-primary-underline) 50%) no-repeat 0 84%;
   background-size: 100% 2px;
-	text-decoration: none;
-	text-shadow:
-		module-color(base-bg)  0    1px 0,
-		module-color(base-bg)  1px  1px 0,
-		module-color(base-bg)  1px  0   0,
-		module-color(base-bg)  1px -1px 0,
-		module-color(base-bg)  0px -1px 0,
-		module-color(base-bg) -1px -1px 0,
-		module-color(base-bg) -1px  0px 0,
-		module-color(base-bg) -1px  1px 0;
-	transition: color timing(link) easing(link);
+  text-decoration: none;
+  text-shadow:
+    module-color(base-bg)  0    1px 0,
+    module-color(base-bg)  1px  1px 0,
+    module-color(base-bg)  1px  0   0,
+    module-color(base-bg)  1px -1px 0,
+    module-color(base-bg)  0px -1px 0,
+    module-color(base-bg) -1px -1px 0,
+    module-color(base-bg) -1px  0px 0,
+    module-color(base-bg) -1px  1px 0;
+  transition: color timing(link) easing(link);
 
-	&[href^="http"] {
-		color: module-color(link-primary);
-	}
+  &[href^="http"] {
+    color: module-color(link-primary);
+  }
 
-	&:hover {
-		color: module-color(link-primary-hover);
-	}
-	
-	&:active {
-		color: module-color(link-primary-active);
-	}
+  &:hover {
+    color: module-color(link-primary-hover);
+  }
+  
+  &:active {
+    color: module-color(link-primary-active);
+  }
+}
 
-	.page--colours & {
-			background-image: linear-gradient(transparent 50%, var(--link-primary-underline) 50%);
+/* ==|== Links ===========================
+  Variants
+========================================== */
 
-			&[href^="http"] {
-	      color: var(--link-primary);
-	    }
+.link {
 
-      &:hover {
-        color: module-color(link-primary-hover);
-      }
-    }
+  &--plain {
+    background: none;
+  }
 }

@@ -35,6 +35,7 @@
   }
 }
 
+
 /* ==|== Layout ==========================
   Columns
 ========================================== */
@@ -45,6 +46,10 @@
   @include max-width(tp(col-multiple)) {
     flex-wrap: wrap;
   }
+
+  & + & {
+    margin-top: unit(3);
+  }
 }
 
 .col {
@@ -53,7 +58,8 @@
   width: 100%;
 
   @include min-width(tp(col-multiple)) {
-    &:last-child {
+
+    &:last-of-type {
       margin-right: 0;
     }
   }
@@ -69,12 +75,18 @@
     }
 
     &--66 {
+      max-width: rem(w(text));
       width: 66.6%;
     }
   }
 
   &--break {
-    padding-top: lh-unit(4);
+    padding-top: lh-unit(3.5);
+    margin-top: rem(-1);
+
+    &-h2 {
+      margin-top: rem(-1) - lh-unit(1);
+    }
 
     &:before {
       background: module-color(column-break-bg);
@@ -84,7 +96,7 @@
       margin: 0;
       max-width: unit(4); // TODO: Var
       position: absolute;
-      top: calc(#{lh-unit(2.5)} - 1px);
+      top: lh-unit(2.5);
       width: 50%;
     }
 

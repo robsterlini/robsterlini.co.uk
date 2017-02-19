@@ -80,7 +80,7 @@ activate :directory_indexes
 
 # Autoprefix this badboy
 activate :autoprefixer do |config|
-  config.browsers = ['last 2 versions', 'Explorer >= 9']
+  config.browsers = ['last 2 versions', 'Explorer 11', '> 5%', 'not Explorer <= 10']
 end
 
 # Turn on sitemap
