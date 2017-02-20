@@ -33,10 +33,10 @@ masthead:
 
 ##
 
-    -   slug: "/moments.html"
-        label: "Moments"
-        alt: "Relive some of my life’s moments"
-        masthead: false
+    # -   slug: "/moments.html"
+    #     label: "Moments"
+    #     alt: "Relive some of my life’s moments"
+    #     masthead: false
 
 ##
 
