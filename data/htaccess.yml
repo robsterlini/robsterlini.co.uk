@@ -12,7 +12,7 @@ redirect:
     /tri: /moments/the-london-triathlon
     /testimonials: /projects
     /process: /projects
-    /projects: /projects
+    /projects/*: /projects
     /work: /projects
     /about-me: /
     /bucket-list: /

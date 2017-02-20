@@ -18,8 +18,7 @@
   top: unit() + rem(1); // TODO: Var
   z-index: -1;
 
-  .page--full-hero &,
-  &[data-hero-dynamic] {
+  .page--full-hero & {
     // Hack: Double value to fix the iOS issues with 100vh
     max-height: 98vh;
     max-height: calc(100vh - #{unit(2)});
@@ -28,10 +27,6 @@
       left: unit() + rem(1); // TODO: Var
       right: unit() + rem(1); // TODO: Var
     }
-  }
-
-  &[data-hero-dynamic] {
-    position: fixed;
   }
   
   .page--moment & {
@@ -71,19 +66,6 @@
 
     .js--hero-loaded & {
       opacity: 0;
-    }
-
-    [data-hero-dynamic] & {
-      opacity: 1;
-      transition-duration: timing(hero-dynamic);
-    }
-
-    @at-root {
-      @for $hero_dynamic from 0 through $hero-max-dynamic - 1 {
-        [data-hero-dynamic="#{$hero_dynamic}"]:hover ~ [data-hero-dynamic="#{$hero_dynamic}"] .hero__cover {
-          opacity: 0;
-        }
-      }
     }
   }
 }

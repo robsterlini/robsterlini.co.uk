@@ -82,6 +82,14 @@
   &--break {
     padding-top: lh-unit(3.5);
 
+    ._h2 {
+
+      &:first-child {
+        margin-top: calc(-#{lh-unit(0.5)} - 1px);
+      }
+    }
+
+    &.ts h2,
     &-h2 {
       padding-top: lh-unit(3);
       margin-top: rem(-1) - lh-unit(1);

@@ -16,6 +16,10 @@
   width: 100%;
   z-index: 999; // TODO: Var
 
+  @include max-width(tp(col-multiple)) {
+    padding: 0;
+  }
+
   &__logo {
     background: module-color(base-bg);
     color: module-color(nav-color);
@@ -27,13 +31,8 @@
     position: relative;
     top: rem(1);
 
-    #{class(page-colours)} & {
-      background: module-color(base-bg);
-      // color: var(--nav-color);
-
-      // &:hover {
-        // color: module-color(link-primary-hover);
-      // }
+    @include max-width(tp(col-multiple)) {
+      padding: 0 unit(0.5);
     }
   }
 }

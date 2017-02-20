@@ -26,10 +26,10 @@ description: A few select pieces of work from my time as a frontend developer, d
     <section class="group cols project--<%= p %>" id="<%= p %>">
 
   <div class="col col--33">
-    <h2 class="_h2" data-hero-dynamic="<%= index %>">
+    <h2 class="_h2">
         <%= project["title"] %>
     </h2>
-    <p class="_h4" data-hero-dynamic="<%= index %>"><%= project.subtitle %><%= project.company ? ", #{project.company}" : "" %></p>
+    <p class="_h4"><%= project.subtitle %><%= project.company ? ", #{project.company}" : "" %></p>
   </div>
 
   <div class="col col--66 col--break col--break-h2">
@@ -49,7 +49,7 @@ description: A few select pieces of work from my time as a frontend developer, d
       project_hero = "projects/#{p}"
     end
   %>
-    <%= partial "partials/hero", :locals => { :hero => project_hero, :dynamic => index } %>
+    <%#= partial "partials/hero", :locals => { :hero => project_hero, :dynamic => index } %>
   <% end %>
   <%= partial "partials/baseline-grid" %>
 <% end %>

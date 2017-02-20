@@ -80,6 +80,10 @@
 	Base typographic styling
 ========================================== */
 
+%typography-first-child {	
+	margin-top: -1px;
+}
+
 h1,
 h2,
 h3,
@@ -93,21 +97,18 @@ ol {
 	margin: 0 auto;
 	max-width: rem(w(text));
 	width: 100%;
-}
-
-%typography-first-child {
 
 	&:first-child {
-		margin-top: -1px;
+		@extend %typography-first-child;
 	}
 }
+
 
 /* ==|== Typography ======================
 	Headings and Paragraphs
 ========================================== */
 
 %heading {
-	@extend %typography-first-child;
 
 	a {
 		background: none;
@@ -147,17 +148,22 @@ ol {
 	@include sc;
 }
 
-%paragraph {
-	@extend %typography-first-child;
-	
+%paragraph {	
 	font-size: 1rem;
 	line-height: lh-unit(1);
 	padding-top: rem(9);
 	padding-bottom: rem(3);
+
+	&:first-child {
+		@extend %typography-first-child;
+	}
 }
 
-
 .ts {
+
+	> :first-child {
+		@extend %typography-first-child;
+	}
 
 	h1 {
 		@extend %heading-alpha;
@@ -304,6 +310,7 @@ blockquote {
 	}
 
 	&--dropcap {
+		overflow: hidden;
 
 	  &:first-letter {
 	    color: color(accent-mid); // TODO: Var
