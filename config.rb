@@ -103,12 +103,6 @@ moments.each do |m|
   proxy "/moments/#{m}.html", "/moment.html", :locals => { :m => m }, :ignore => true
 end
 
-# Projects
-set :projects, data.projects["_all"]
-projects.each do |p|
-  proxy "/projects/#{p}.html", "/project.html", :locals => { :p => p }, :ignore => true
-end
-
 # disable layout
 page ".htaccess.apache", :layout => false
 page "redirects/.htaccess.apache", :layout => false

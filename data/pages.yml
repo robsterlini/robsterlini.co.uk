@@ -19,16 +19,16 @@ masthead:
 
 ##
 
-    -   slug: "/contact.html"
-        label: "Say hi"
-        alt: "Get in touch"
+    -   slug: '/projects.html'
+        label: 'Projects'
+        alt: 'See my work'
         footer: false
 
 ##
 
-    -   slug: '/projects.html'
-        label: 'Projects'
-        alt: 'See my work'
+    -   slug: "/contact.html"
+        label: "Say hi"
+        alt: "Get in touch"
         footer: false
 
 ##

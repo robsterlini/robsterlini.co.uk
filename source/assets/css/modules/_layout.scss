@@ -53,14 +53,13 @@
 }
 
 .col {
-  margin-right: unit();
   position: relative;
   width: 100%;
 
   @include min-width(tp(col-multiple)) {
 
-    &:last-of-type {
-      margin-right: 0;
+    & + & {
+      margin-left: unit(2);
     }
   }
 
@@ -82,9 +81,9 @@
 
   &--break {
     padding-top: lh-unit(3.5);
-    margin-top: rem(-1);
 
     &-h2 {
+      padding-top: lh-unit(3);
       margin-top: rem(-1) - lh-unit(1);
     }
 
@@ -112,4 +111,13 @@
       }
     }
   }
+}
+
+
+/* ==|== Layout ==========================
+  Header
+========================================== */
+
+.header {
+  padding-top: lh-unit(2);
 }

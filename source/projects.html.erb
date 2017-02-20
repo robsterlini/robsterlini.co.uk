@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: A few select pieces of work from my time as a front end developer, designer, and more.
+description: A few select pieces of work from my time as a frontend developer, designer, and more.
 ---
 
 <div class="col _t--center">  
@@ -8,7 +8,7 @@ description: A few select pieces of work from my time as a front end developer, 
   <p class="_p1"><%= current_page.data.description %></p>
   <%= partial "partials/baseline-grid" %>
 </div>
-</section>
+</section><%# END .group .cols %>
   
 <% projects_styles = "" %>
 <% data.projects["_all"].each_with_index do |p, index| %>
@@ -23,7 +23,7 @@ description: A few select pieces of work from my time as a front end developer, 
     </section>
     <hr>
   <% end %>
-    <section class="group cols project--<%= p %>">
+    <section class="group cols project--<%= p %>" id="<%= p %>">
 
   <div class="col col--33">
     <h2 class="_h2" data-hero-dynamic="<%= index %>">
@@ -33,7 +33,9 @@ description: A few select pieces of work from my time as a front end developer, 
   </div>
 
   <div class="col col--66 col--break col--break-h2">
-    <p class="_p"><%= project.description %></p>
+    <% project.description.each do |text| %>
+      <p class="_p"><%= text %></p>
+    <% end %>
     <% if project.link %>
       <p class="_p">
         <%= link_to project.link.text, project.link.url, :class => "btn" %>

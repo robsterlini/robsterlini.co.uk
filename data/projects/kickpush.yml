@@ -1,27 +1,9 @@
 title: 'Kickpush'
 hero: true
-subtitle: 'Front end development'
+subtitle: 'Frontend development'
 link:
   url: 'https://kickpush.co'
   text: 'kickpush.co'
-description: 'Alex &amp; Sam came to me about building the frontend of their design for their new agency site.'
+description:
+  - 'Alex &amp; Sam came to me about building the frontend of for the second version of their agency’s site. We worked together closely to deliver a polished experience that perfectly embodied their work ethic and abilities.'
 colour: '#EE5050'
-colours:
-  accent-light: '#EE5050'
-  accent-mid: '#772828'
-sections:
-  brief:
-    title: 'The brief'
-    copy:
-      - 'The Kickpush <abbr class="sc" title="version 1">V1</abbr> site had served its purpose and it needed a shake-up so Alex got to work designing a striking web presence. When he’d perfected the visuals, it was handed over to me to make it into reality.'
-  features:
-    title: 'Features'
-    copy:
-      - 'The Kickpush guys wanted the site to be smooth, quick, and stylish to match the strong brand identity that it was carrying.'
-      - 'I built silky, subtle scroll-based movement into the devices on the home page to help make the experience feel deeper without being overpowering.'
-  the_result:
-    title: 'The result'
-    copy:
-      - 'The final built was something that I will always be proud of!'
-      - 'The Kickpush team loved it, and it got some fantastic feedback by users (whose numbers soared after the launch).'
-    link: true

@@ -49,18 +49,23 @@
   pointer-events: none;
   position: absolute;
   top: 0;
+  opacity: 0;
   width: 100%;
+
+  .js--show-grid & {
+  	opacity: 0.05;
+  }
 
   b {
     display: block;
     height: rem(1);
-    margin-top: lh-unit(0.5) - rem(1);
-    opacity: 0.2;
+    margin: lh-unit(0.5) - rem(1) auto 0;
     position: relative;
+    max-width: rem(w(wrapper) - ($measure * 4));
     width: 100%;
 
     &:before {
-	    background: pink;
+	    background: white;
     	content: '';
     	left: 0;
     	height: 1px;
@@ -90,17 +95,22 @@ ol {
 	width: 100%;
 }
 
+%typography-first-child {
+
+	&:first-child {
+		margin-top: -1px;
+	}
+}
+
 /* ==|== Typography ======================
 	Headings and Paragraphs
 ========================================== */
 
 %heading {
+	@extend %typography-first-child;
+
 	a {
 		background: none;
-	}
-
-	&:first-child {
-		margin-top: 0;	
 	}
 }
 
@@ -109,6 +119,7 @@ ol {
 	font-size: 3.375rem;
 	font-weight: weight();
 	line-height: lh-unit(3);
+	margin-top: lh-unit(3);
 	padding-top: rem(11);
 	padding-bottom: rem(0);
 }
@@ -120,7 +131,7 @@ ol {
 	line-height: lh-unit(1.5);
 	margin-top: lh-unit(2);
 	padding-top: rem(11);
-	padding-bottom: rem(0);
+	padding-bottom: rem(1);
 }
 
 %heading-gamma {
@@ -137,6 +148,8 @@ ol {
 }
 
 %paragraph {
+	@extend %typography-first-child;
+	
 	font-size: 1rem;
 	line-height: lh-unit(1);
 	padding-top: rem(9);

@@ -10,11 +10,13 @@ description: So you wanna get in touch, eh? Here’s how&hellip;
   <p class="_p">If you’re looking for my employment and education history, you can read all about that in <%= link_to "my CV", "/curriculum-vitae", :title => "Read my curriculum vitae" %>.</p>
 </div>
 <% data.contact.contact.each do |contact| %>
-  <div class="col col--break col--break--<%= contact.title.to_slug %> ts">
-    <h2><%= contact.title %></h2>
-    <p><em><%= contact.when %></em></p>
-    <%= contact.desc %>
-    <p>
+  <div class="col col--break col--break--<%= contact.title.to_slug %>">
+    <h2 class="_h3"><%= contact.title %></h2>
+    <p class="_p"><em><%= contact.when %></em></p>
+    <% contact.desc.each do |text| %>
+      <p class="_p"><%= text %></p>
+    <% end %>
+    <p class="_p ">
       <%= link_to contact.link.text, contact.link.href, :title => contact.link.title, :class => "btn" %>
     </p>
   </div>
