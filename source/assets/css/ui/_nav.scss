@@ -12,12 +12,20 @@
   display: flex;
   padding: 0 unit();
 
+  @include max-width(tp(col-multiple)) {
+    max-width: rem(w(text)) + unit(4);
+  }
+
   &__list {
     background: module-color(base-bg);
     display: flex;
     margin: 0 auto;
     padding: 0 unit(0.5);
     width: auto;
+
+    @include max-width(tp(col-multiple)) {
+      padding: 0 unit(0.25);     
+    }
 
     .masthead & {
       margin-right: 0;
@@ -39,12 +47,18 @@
     padding: unit(0.5);
     position: relative;
 
+    @include max-width(tp(col-multiple)) {
+      padding: unit(0.5) unit(0.25);     
+    }
+
     abbr {
       background: none;
     }
+
     .masthead & {
       top: em(1);
     }
+
     .footer & {
       top: em(-1);
     }

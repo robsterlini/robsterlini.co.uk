@@ -506,7 +506,12 @@ var hljs=new function(){function j(v){return v.replace(/&/gm,"&amp;").replace(/<
        * adjacent element down far enough to get back onto the baseline.
        */
 
-      element.style.marginBottom = (_base - (height % _base)) / 16 + 'rem';
+      var totalMargin = (_base - (height % _base)) / 16,
+        halfMargin = totalMargin / 2;
+
+      // element.style.marginBottom = halfMargin + 'rem';
+      // element.style.marginTop    = halfMargin + 'rem';
+      element.style.marginBottom = totalMargin + 'rem';
     }
 
     /**

@@ -1,0 +1,14 @@
+title: 'The London Triathlon'
+hero: 'blog/the-london-triathlon'
+date: 'August 2015 &amp; August 2016 • London'
+description: 'I’ve competed in the London Triathlon twice now; the sprint in 2015 and the olympic in 2016. Here are those moments.'
+sections:
+  - title: '2015 Sprint Distance'
+    subtitle: '8 August 2015'
+    description: 'Here are just a few snaps from my 2015 race in London, but you can read about the whole day <a href="/journal/the-london-triathlon/">in my journal</a>.'
+    images:
+      - size: 'half'
+        src: '/content/2015/08/the-run_full.jpg'
+      - size: 'half'
+        src: '/content/2015/08/support-team_full.jpg'
+      - src: '/content/2015/08/team-macmillan_full.jpg'

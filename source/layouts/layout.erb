@@ -1,3 +1,4 @@
+<% baseline = false %>
 <!doctype html>
 <html class="no-js hover" lang="en-gb">
   <head>
@@ -53,7 +54,9 @@
   </head>
   <%
     this_page_classes = "#{page_classes} "
+    this_page_classes += baseline ? " js--show-grid " : ""
     this_page_classes += current_page.data.page_classes || ""
+    this_page_classes += yield_content(:page_classes) ? " #{yield_content(:page_classes)}" : ""
     this_page_classes += current_page.data.no_masthead ? " page--no-masthead" : ""
     this_page_classes += current_page.data.no_footer ? " page--no-footer" : ""
   %>
@@ -65,20 +68,13 @@
     <% end %>
 
     <% if hero %>
-      <div class="hero" aria-hidden="true">
-        <b class="hero__bg" data-hero="<%= hero_image %>"></b>
-        <b class="hero__cover"></b>
-        <noscript>
-          <b class="hero__bg" style="background-image: url(/assets/images/hero/<%= hero %>_full.jpg);"></b>
-        </noscript>
-        <b class="hero__overlay"></b>
-      </div>
+      <%= partial "partials/hero", :locals => { :hero => hero, :hero_image => hero_image } %>
     <% end %>
     
     <main class="wrapper">
       <section class="group cols" data-anchors>
         <%= yield %>
-        <%#= partial "partials/baseline-grid" %>
+        <%= partial "partials/baseline-grid" %>
       </section>
     </main>
 

@@ -10,6 +10,7 @@
 
 .figure {
   $_: &;
+  background: module-color(figure-bg);
   left: 50%;
   margin: lh-unit() - rem(9) auto lh-unit();
   position: relative;
@@ -51,6 +52,35 @@
     }
   }
 
+  &--grid {
+
+    @at-root {
+
+      [class*=" figure--grid-"] {
+        margin-bottom: lh-unit(0.5);
+      }
+    }
+
+    &-half {
+      margin-left: 0;
+      left: 0;
+      transform: none;
+      width: calc(50% - #{rem(11)});
+
+      & + & {
+        margin-top: lh-unit() - rem(9);
+        margin-left: rem(22);
+      }
+    }
+
+    &-full {
+
+      #{$_}--grid-half + & {
+        margin-top: lh-unit() - lh-unit() + rem(4);
+      }
+    }
+  }
+
   &__caption {
     @include sc;
 
@@ -58,7 +88,7 @@
     font-size: 0.875em;
     margin: 0 auto rem(4);
     max-width: rem(w(text));
-    padding-top: rem(8);
+    padding-top: rem(4);
     text-align: center;
 
     @include max-width(bp(s)) {

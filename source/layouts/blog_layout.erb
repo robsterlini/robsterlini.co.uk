@@ -6,7 +6,9 @@
 
   <article class="ts blog__post<% if current_article.data.hero%> blog__post--has-hero<% end %>" data-age="<%= current_article.date %>">
 
-    <h1 class="blog__title"><%= current_article.title %></h1>
+    <header class="header">
+      <h1 class="_h1--first _t--center"><%= current_article.title %></h1>
+    </header>
     <p class="blog__subtitle _p1"><%= partial "partials/journal/posted", :locals => { :a => current_article } %> in <%= partial "partials/journal/category", :locals => { :a => current_article } %></p>
     
     <div class="_p" data-js="append-age-warning"></div>

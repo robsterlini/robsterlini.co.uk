@@ -9,12 +9,14 @@
 ========================================== */
 
 .hero {
-  bottom: unit();
-  left: unit(0.5);
+  background: module-color(base-bg);
+  bottom: unit() + rem(1); // TODO: Var
+  left: unit(0.5) + rem(1); // TODO: Var
   max-height: 66vh;
   position: absolute;
-  right: unit(0.5);
-  top: unit();
+  right: unit(0.5) + rem(1); // TODO: Var
+  top: unit() + rem(1); // TODO: Var
+  z-index: -1;
 
   .page--full-hero & {
     // Hack: Double value to fix the iOS issues with 100vh
@@ -22,9 +24,13 @@
     max-height: calc(100vh - #{unit(2)});
 
     @include min-width(bp(s)) {
-      left: unit();
-      right: unit();
+      left: unit() + rem(1); // TODO: Var
+      right: unit() + rem(1); // TODO: Var
     }
+  }
+  
+  .page--moment & {
+    max-height: 75vh;
   }
 
   &__bg,
@@ -45,7 +51,7 @@
 
     @supports(mix-blend-mode: overlay) {
       mix-blend-mode: overlay;
-      opacity: 0.5;
+      opacity: 0.7;
     }
   }
 
@@ -56,7 +62,7 @@
   &__cover {
     background-color: module-color(base-bg);
     opacity: 1;
-    transition: timing(hero) easing();
+    transition: opacity timing(hero) easing();
 
     .js--hero-loaded & {
       opacity: 0;

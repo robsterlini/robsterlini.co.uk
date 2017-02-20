@@ -5,7 +5,6 @@ masthead:
 ##
 
     -   slug: "/index.html"
-        icon: "home"
         label: "Home"
         alt: "Go home"
         masthead: false
@@ -14,18 +13,30 @@ masthead:
 ##
 
     -   slug: "/journal.html"
-        icon: "journal"
         label: "My journal"
         alt: "Read what’s on my mind"
         footer: false
 
 ##
 
+    -   slug: '/projects.html'
+        label: 'Projects'
+        alt: 'See my work'
+        footer: false
+
+##
+
     -   slug: "/contact.html"
-        icon: "contact"
         label: "Say hi"
         alt: "Get in touch"
         footer: false
+
+##
+
+    # -   slug: "/moments.html"
+    #     label: "Moments"
+    #     alt: "Relive some of my life’s moments"
+    #     masthead: false
 
 ##
 

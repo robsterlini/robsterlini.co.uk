@@ -7,7 +7,8 @@ contact:
     -   title: "Email"
         when: "Got a project or want to asking long questions?"
         slug: "email"
-        desc: "<p>If you want me on a freelance job; or you’re dying to ask a super-duper long question then email is the way forward.</p>"
+        desc:
+            -   "If you want me on a freelance job; you’re dying to ask a super-duper long question; or you just want to grab a coffee then ping me an email and we’ll go from there!"
         link:
             href: "mailto:hi@robsterlini.co.uk"
             title: "Email me (opens an email client)"
@@ -20,11 +21,12 @@ contact:
     -   title: "Twitter"
         slug: "twitter"
         when: "Want to asking short questions or just have a&nbsp;chat?"
-        desc: "<p>If you can squeeze it into 140 of your juiciest characters then Twitter is the place to do it! Be warned though, my twitter has no profanity filter.</p>"
+        desc: 
+            -   "If you can squeeze it into 140 of your juiciest characters then Twitter is the place to do it! Be warned though, my twitter has no profanity filter."
         link:
             href: "https://twitter.com/robsterlini"
             title: "Get in touch via Twitter"
-            text: "Tweet me"
+            text: "@robsterlini"
 
 ##
 

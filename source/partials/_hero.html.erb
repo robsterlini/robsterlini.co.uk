@@ -1,28 +1,16 @@
-<%= partial "partials/ui/heading", locals: {
-  title: {
-    classes: " g_6 gi_2",
-    copy: title,
-    tag: title.length <= 30 ? 'h1' : 'h1-b',
-    break: false
-  },
-  pre: {
-    classes: " g_3",
-    copy: "Recently I wrote about"
-  },
-  text: {
-    alpha: true,
-    classes: " g_4",
-    copy: [
-      subtitle
-    ]
-  },
-  images: {
-    absolute: [
-      {
-        src: image ? "/assets/images/hero/#{image}_full.jpg" : "",
-        classes: " g_10 gi_3"
-      }
-    ]
-  },
-  slug: 'hero'
-} %>
+<%
+  hero_image = hero_image || "#{hero}_full.jpg"
+  hero_dynamic = false
+  if locals.has_key? :dynamic
+    hero_dynamic = dynamic
+  end
+%>
+
+<div class="hero" aria-hidden="true"<% if hero_dynamic %> data-hero-dynamic="<%= hero_dynamic %>"<% end %>>
+  <b class="hero__bg" data-hero="<%= hero_image %>"></b>
+  <b class="hero__cover"></b>
+  <noscript>
+    <b class="hero__bg" style="background-image: url(/assets/images/hero/<%= hero %>_full.jpg);"></b>
+  </noscript>
+  <b class="hero__overlay"></b>
+</div>

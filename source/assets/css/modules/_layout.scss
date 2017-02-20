@@ -17,6 +17,10 @@
   position: relative;
   width: 100%;
   z-index: 1;
+
+  .page--colours & {
+    border-color: var(--body-border);
+  }
 }
 
 .group {
@@ -31,6 +35,7 @@
   }
 }
 
+
 /* ==|== Layout ==========================
   Columns
 ========================================== */
@@ -41,16 +46,20 @@
   @include max-width(tp(col-multiple)) {
     flex-wrap: wrap;
   }
+
+  & + & {
+    margin-top: unit(3);
+  }
 }
 
 .col {
-  margin-right: unit();
   position: relative;
   width: 100%;
 
   @include min-width(tp(col-multiple)) {
-    &:last-child {
-      margin-right: 0;
+
+    & + & {
+      margin-left: unit(2);
     }
   }
 
@@ -59,16 +68,32 @@
     max-width: rem(w(text));
   }
 
-  &--33 {
-    width: 33.3%;
-  }
+  @include min-width(tp(col-multiple)) {
+    &--33 {
+      width: 33.3%;
+    }
 
-  &--66 {
-    width: 66.6%;
+    &--66 {
+      max-width: rem(w(text));
+      width: 66.6%;
+    }
   }
 
   &--break {
-    padding-top: lh-unit(4);
+    padding-top: lh-unit(3.5);
+
+    ._h2 {
+
+      &:first-child {
+        margin-top: calc(-#{lh-unit(0.5)} - 1px);
+      }
+    }
+
+    &.ts h2,
+    &-h2 {
+      padding-top: lh-unit(3);
+      margin-top: rem(-1) - lh-unit(1);
+    }
 
     &:before {
       background: module-color(column-break-bg);
@@ -78,7 +103,7 @@
       margin: 0;
       max-width: unit(4); // TODO: Var
       position: absolute;
-      top: calc(#{lh-unit(2.5)} - 1px);
+      top: lh-unit(2.5);
       width: 50%;
     }
 
@@ -94,4 +119,13 @@
       }
     }
   }
+}
+
+
+/* ==|== Layout ==========================
+  Header
+========================================== */
+
+.header {
+  padding-top: lh-unit(2);
 }

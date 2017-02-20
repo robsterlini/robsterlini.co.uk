@@ -1,13 +1,28 @@
 ########
 
+skillset:
+
+    -   title: "Abilities"
+        copy:
+            -   "I am an experience focused frontend developer, with a first-class degree in design – this combination means people are able to rely on me to execute their designs as fully-fledged websites."
+
+    -   title: "Languages"
+        copy:
+            -   "I write clean, accessible and semantic code as standard, with an excellent working knowledge of HTML, Scss-flavoured CSS, and Javascript. I suppliment this with standard frontent processes like Gulp and Bower. At Fueled I regularly work with Ruby on Rails, Angular, and Django which gives me a wide knowledge of front and backend languages across multiple stacks. I am a fast learner, and push myself to improve my skillset wherever possible, so chances are I’ve already added more to this list by the time you’re reading it!"
+
+    -   title: "Communication"
+        copy:
+            -   "I pride myself on my ability to communicate effectively within teams and directly to clients. Presenting ideas clearly and fluently is as important as the idea itself, and being confident in doing so is something I do very well."
+
 employment:
 
     -   title: "Fueled"
-        subtitle: "Web designer, Front End Developer"
+        subtitle: "Senior Frontend Developer, Frontend Developer, Web designer"
         date: "July 2014–"
         copy:
             -   "My (still on-going) time at Fueled has given me the chance to work with well-known brands like <strong>Vanity Fair</strong>, <strong>Condé Nast</strong>, and <strong>The ONE Group</strong> – each providing a different set of challenges. I’ve also with smaller start-up companies, with a greater amount of creative control."
             -   "The tail end of 2015 saw me focusing a lot more on front end development, which came with a job title change, and a shift in responsibilities as we looked to grow the front end team."
+            -   "In January 2017 I was promoted to Senior Frontend Developer – taking on further responsibilities within my team, and leading the drive in further-improving our standards and ethos."
 
     -   title: "University of Reading"
         subtitle: "Digital designer"
@@ -16,7 +31,7 @@ employment:
             -   "After completing my degree, I was trilled to stay at the University; joining the Digital Development team I lead the project to rebuild the University’s corporate site as new, responsive pages aimed at increasing admissions, and reducing the path to vital information."
 
     -   title: "Freelance"
-        subtitle: "Front-end developer and web designer"
+        subtitle: "Frontend developer and web designer"
         date: "2010–"
         copy:
             -   "Working from everything from YouTube personalities to up-and-coming bands; from sports blogs to private dental surgeries and more, I’ve used freelance gigs as a way to push me both creatively and technically."
