@@ -43,6 +43,7 @@ html {
 	}
 	@include min-width(tp(font-l)) {
 		font-size: percentage($measure-l / 16);
+		font-size: calc(0.825rem + 0.5vw);
 	}
 }
 
