@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  Color
+========================================================================== */
+
+
+/* ==|== Color ===========================
+  Map get functions
+========================================== */
+
+@function color($v) {
+  @return map-get($base-colors, $v);
+}
+
+@function module-color($v) {
+  @return map-get($module-colors, $v);
+}
+
+@function social-color($v) {
+  @return map-get($social-colors, $v);
+}
+
+@function client-color($v, $c) {
+	$client-color-map: map-get($client-colors, $c);
+  @return map-get($client-color-map, $v);
+}

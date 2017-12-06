@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  Hero
+========================================================================== */
+
+
+/* ==|== Hero ============================
+  Base
+========================================== */
+
+.hero {
+	background: module-color(hero-bg);
+	background: linear-gradient(to bottom left, #064e5f, #002946 50%);
+	color: module-color(hero-color);
+	display: flex;
+	padding: $grid-gutter * 4 0 $grid-gutter * 2;
+	min-height: 100vh;
+
+	.group {
+		transition:
+			transform $timing-hero $easing;
+		transform: translate3d(2%, 0, 0);
+
+		.page--is-loaded & {
+			color: module-color(hero-color);
+			transform: none;
+	    }
+	}
+
+	&__title {
+		color: rgba(module-color(hero-title-color), 0);
+		margin-top: 0;
+		padding: 0 $grid-gutter;
+		transition:
+			color $timing-hero / 2 $easing;
+
+		@include min-width(1024) {
+			width: 66.66%;
+		}
+
+		.page--is-loaded & {
+			color: module-color(hero-title-color);
+	    }
+
+	    > span {
+		    background: linear-gradient(to right, module-color(hero-bg) 100%, rgba(module-color(hero-bg), 0));
+		    background-size: 0% 100%;
+		    background-repeat: no-repeat;
+		    transition:
+		    	background $timing-hero $easing;
+
+		    .page--is-loaded & {
+		    	background-size: 100% 100%;
+		    }
+		}
+	}
+
+	&__subtitle {
+		opacity: 0;
+		margin-bottom: 0;
+		padding: 0 $grid-gutter;
+		transition:
+			opacity $timing-hero / 2 $timing-hero / 2 $easing;
+
+		@include min-width(1024) {
+			width: 50%;
+		}
+
+		.huge {
+			margin-bottom: 1em;
+		}
+
+		.large {
+			margin-top: 0.25em;
+		}
+
+		.page--is-loaded & {
+			opacity: 1;
+		}
+	}
+
+	&__cta {
+		margin-top: 5em;
+		opacity: 0;
+		padding: 0 $grid-gutter;
+
+		transition:
+			opacity $timing-hero / 2 $timing-hero $easing;
+
+		.page--is-loaded & {
+			opacity: 1;
+		}
+	}
+}
+
+.hero-bg {
+	@include cover;
+
+	opacity: 0;
+	top: $grid-gutter * 2;
+
+	&,
+	&__image {
+
+		transition:
+			opacity $timing-hero $easing,
+			transform $timing-hero $easing;
+
+		.page--is-loaded & {
+			opacity: 1;
+			transform: translate3d(0,0,0);
+		}
+	}
+
+	& {
+		bottom: auto;
+		height: 50vh;
+		left: auto;
+		overflow: hidden;
+		right: 0;
+		width: calc(100% - #{$grid-gutter * 2});
+		transform: translate3d(20%, 0, 0);
+
+		@include min-width(1024) { // TODO: Var
+			bottom: 0;
+			height: auto;
+			right: $grid-gutter;
+			width: calc(66.66% - #{$grid-gutter * 2});
+		} 
+
+		@supports(mix-blend-mode: overlay) {
+			mix-blend-mode: overlay;
+		}
+	}
+
+	&__image {
+		filter: grayscale(1);
+		position: absolute;
+		transform: translate3d(-10%, 0, 0);
+		width: 120%;
+		left: -10%;
+		height: 100%;
+		top: 0;
+	}
+
+	&__random,
+	&__slide {
+		@include cover;
+
+		animation: image-pulse 50s;
+		@keyframes image-pulse {
+			0%,
+			100% {
+				transform: none;
+			}
+			50% {
+				transform: scale(1.1);
+			}
+		}
+		background: center no-repeat;
+		background-size: cover;
+	}
+
+	&__slide {
+		opacity: 0;
+		transition:
+			opacity $timing $easing;
+
+		&.is--active {
+			opacity: 1;
+		}
+	}
+}

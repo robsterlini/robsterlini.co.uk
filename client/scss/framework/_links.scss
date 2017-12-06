@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  Links
+========================================================================== */
+
+
+/* ==|== Links ===========================
+  Base
+========================================== */
+
+a/*,
+.link*/ {
+	appearance: none;
+	background: none;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	color: inherit;
+	fill: currentColor;
+	text-decoration-color: rgba(color(accent), 0.5);
+	text-decoration-skip: ink;
+	transition:
+		opacity $timing-link $easing-link;
+}
+
+/* ==|== Links ===========================
+  Extends
+========================================== */
+
+// %link {
+
+// 	&:hover {
+// 		opacity: 0.75; // TODO: Var
+// 	}
+
+// 	&:active {
+// 		opacity: 0.5; // TODO: Var
+// 	}
+// }
+
+// %link-accent {
+// 	color: module-color(link-accent);
+// 	fill: module-color(link-accent);
+// }
+
+// %link-reversed {
+// 	opacity: 0.5;
+
+// 	&:hover {
+// 		opacity: 0.75;
+// 	}
+
+// 	&:active {
+// 		opacity: 1;
+// 	}
+// }
+
+
+/* ==|== Links ===========================
+  Classes
+========================================== */
+
+// .link,
+// .links a {
+// 	@extend %link;
+// }
+
+// .link--accent,
+// .links--accent a {
+// 	@extend %link-accent;
+// }
+
+// .link--reversed,
+// .links--reversed a {
+// 	@extend %link-reversed;
+// }
+
+// .link--no-underline,
+// .links--no-underline a {
+// 	text-decoration: none;
+// }
+
+// .link--inherit {
+
+// 	&:link {
+// 		opacity: 1;
+// 		text-decoration: none;
+// 	}
+// }

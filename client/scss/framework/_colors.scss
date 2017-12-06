@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  Colors
+========================================================================== */
+
+
+/* ==|== Colors ==========================
+  Base
+========================================== */
+
+$base-colors: (
+  // Base
+  white: #FFFFFF,
+  black: #000000,
+
+  // Greyscale
+  light: #cde4e6,
+  mid-light: mix(#161616, #F5F5F1, 25%),
+  mid: #37486b,
+  dark: #161616,
+
+  // Brand
+  accent: #65dcea,
+  accent-light: #d2daec,
+  accent-dark: #002946,
+);
+
+
+/* ==|== Colors ==========================
+  Modules
+========================================== */
+
+$module-colors: (
+  // Base
+  base-bg: color(accent-dark),
+  base-color: color(light),
+
+  // Buttons
+  button-light-color: color(accent),
+  button-light-color-hover: color(white),
+  button-light-bg-hover: color(accent),
+
+  button-accent-color: color(light),
+  button-accent-color-hover: color(accent),
+  button-accent-bg-hover: color(light),
+
+  button-dark-color: color(light),
+  button-dark-color-hover: color(dark),
+  button-dark-bg-hover: color(light),
+
+  // Header
+  header-bg: color(white),
+
+  // Hero
+  hero-bg: color(accent-dark),
+  hero-title-color: color(accent),
+  hero-color: color(light),
+
+  // Image
+  image-bg: color(dark),
+
+  // Link
+  link-accent: red,
+);
+
+
+/* ==|== Colors ==========================
+  Social
+========================================== */
+
+$social-colors: (
+  twitter:   #00ACED,
+  facebook:  #3B5998,
+  instagram: #d93175,
+  gplus:     #CC3732,
+  dribbble:  #EA4C89,
+  pinterest: #CC2127,
+  tumblr:    #44546B,
+  vine:      #00B489,
+  youtube:   #CD201F,
+  medium:    #1A1919,
+  vimeo:     #1AB7EA,
+  linkedin:  #0077B4,
+);

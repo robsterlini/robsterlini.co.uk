@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  Typography
+========================================================================== */
+
+
+/* ==|== Typography ======================
+  Extends
+========================================== */
+
+%heading {
+  display: block;
+  line-height: $line-height-heading;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
+  margin: 2em 0 0.75em;
+  max-width: 28em;
+}
+
+%h1 {
+  @extend %heading;
+
+  @include font-sizes($h1-font-size-s, $h1-font-size-l);
+}
+
+%paragraph {
+  display: block;
+  line-height: $line-height-body;
+  font-weight: 400; // TODO: Var
+  margin: 1em 0 0.5em;
+  max-width: 42em;
+}
+
+%size-huge {
+  @include font-sizes($huge-font-size-s, $huge-font-size-l);
+}
+
+%size-large {
+  @include font-sizes($large-font-size-s, $large-font-size-l);
+}
+
+%huge {
+  @extend %paragraph;
+  @extend %size-huge;
+}
+
+%large {
+  @extend %paragraph;
+  @extend %size-large;
+}
+
+/* ==|== Typography ======================
+  Classes
+========================================== */
+
+.h1 {
+  @extend %h1;
+}
+
+.huge {
+  @extend %huge;
+}
+
+.large {
+  @extend %large;
+}
+
+
+/* ==|== Typography ======================
+  Extras
+========================================== */
+
+abbr {
+  border: 0;
+  text-decoration: none;
+}
+
+.sc {
+  font-variant-caps: all-small-caps;
+}

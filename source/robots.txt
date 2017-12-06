@@ -1,5 +1,0 @@
-User-agent: *
-Disallow:
-
-Host: robsterlini.co.uk
-Sitemap: https://robsterlini.co.uk/sitemap.xml

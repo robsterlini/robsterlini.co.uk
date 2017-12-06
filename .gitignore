@@ -42,3 +42,7 @@ jspm_packages
 # build
 dist/
 vendor/
+
+# Safeguard fonts
+/static/fonts/*.woff2
+/static/fonts/*.woff

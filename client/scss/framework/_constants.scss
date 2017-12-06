@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  Constants
+================================================g========================== */
+
+
+/* ==|== Constants =======================
+  Typography
+========================================== */
+
+// Fonts
+$font-default-size: 16;
+
+// Variables
+$line-height-body: 1.5;
+$line-height-heading: 1.2;
+
+$font-family-body: 'skolar-web', sans-serif;
+$font-family-heading: 'fira-mono', mono;
+
+$font-weight-heading: 500;
+
+$strong-weight: 600;
+
+// H1
+$h1-font-size-l: 54;
+$h1-font-size-s: 36;
+
+// Huge
+$huge-font-size-l: 26;
+$huge-font-size-s: 22;
+
+// Large
+$large-font-size-l: 20;
+$large-font-size-s: 18;
+
+
+/* ==|== Variables =================
+  Widths and gutters
+========================================== */
+
+// Dynamic type
+$base-dynamic-type: 1410;
+
+// Base
+$base-width: rem($base-dynamic-type);
+$base-gutter: rem(16);
+
+// Layout
+$grid-total-count: 18;
+$grid-items-count: 16;
+$layout-gutter: 100 / $grid-total-count * ($grid-total-count - $grid-items-count) / 2;
+
+$grid-gutter: $base-gutter * 2;
+
+
+/* ==|== Variables =================
+  Timing
+========================================== */
+
+$timing: 300ms;
+
+$timing-link: 125ms;
+$timing-state: 1000ms;
+$timing-hero: 1000ms;
+
+
+/* ==|== Variables =================
+  Easing
+========================================== */
+
+$easing: cubic-bezier(0.25, 0.1, 0.25, 1);
+$easing-spring: cubic-bezier(0.17, 0.89, 0.36, 2.00);
+
+$easing-link: $easing;
+
+
+/* ==|== Constants =======================
+  Breakpoints and Tweakpoints
+========================================== */
+
+$breakpoints: (
+  0:         0, //    0
+  xxs: 16 * 16, //  256
+  xs:  32 * 16, //  512
+  s:   48 * 16, //  768
+  m:   64 * 16, // 1024
+  l:   96 * 16, // 1536
+  xl: 102 * 16, // 1632
+);
+
+$tweakpoints: (
+
+  // Base
+  base-layout-wide: bp(s),
+  base-dynamic-type: $base-dynamic-type,
+);
