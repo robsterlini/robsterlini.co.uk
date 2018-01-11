@@ -18,7 +18,7 @@ a/*,
 	cursor: pointer;
 	color: inherit;
 	fill: currentColor;
-	text-decoration-color: rgba(color(accent), 0.5);
+	text-decoration-color: color(accent);
 	text-decoration-skip: ink;
 	transition:
 		opacity $timing-link $easing-link;

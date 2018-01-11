@@ -15,15 +15,15 @@ $base-colors: (
   black: #000000,
 
   // Greyscale
-  light: #cde4e6,
-  mid-light: mix(#161616, #F5F5F1, 25%),
-  mid: #37486b,
-  dark: #161616,
+  light: #E9EDF8,
+  mid-light: mix(#161616, #F5F5F1, 25%), // TODO: Remove
+  mid: #687290,
+  dark: #272A34,
 
   // Brand
-  accent: #65dcea,
+  accent: rgb(191, 110, 166),
   accent-light: #d2daec,
-  accent-dark: #002946,
+  accent-dark: #140a11,
 );
 
 
@@ -33,8 +33,9 @@ $base-colors: (
 
 $module-colors: (
   // Base
-  base-bg: color(accent-dark),
+  base-bg: color(dark),
   base-color: color(light),
+  base-color-alt: color(mid),
 
   // Buttons
   button-light-color: color(accent),
@@ -53,7 +54,7 @@ $module-colors: (
   header-bg: color(white),
 
   // Hero
-  hero-bg: color(accent-dark),
+  hero-image-bg: darken(color(dark), 2%),
   hero-title-color: color(accent),
   hero-color: color(light),
 

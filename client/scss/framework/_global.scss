@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-/* =======================================================================
-  Global
-========================================================================== */
+// ==== Framework ========================================================
+// Hero
+// =======================================================================
 
 
-/* ==|== Global ==========================
-  Box sizing fix
-========================================== */
+// ==== Global ==============================
+// Resets
+// ==========================================
 
 * {
   margin: 0;
@@ -21,51 +21,9 @@
 }
 
 
-/* ==|== Global ==========================
-  Base setup
-========================================== */
-
-html,
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-body,
-/*input,
-button,*/ {
-  font-family: 'skolar-web';
-}
-
-
-/* ==|== Global ==========================
-  Base layout
-========================================== */
-
-html {
-  display: flex;
-  min-height: 100%;
-
-  @include min-width(tp(base-dynamic-type)) {
-    font-size: calc(0.56rem + 0.5vw);
-  }
-}
-
-body {
-  background: module-color(base-bg) center no-repeat;
-  color: module-color(base-color);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  font-size: em($font-default-size);
-  width: 100%;
-}
-
-
-/* ==|== Global ==========================
-  Extras
-========================================== */
+// ==== Global ==============================
+// Extras
+// ==========================================
 
 ::selection {
   background: color(accent);

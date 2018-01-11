@@ -1,27 +1,72 @@
 @charset "UTF-8";
 
-/* =======================================================================
+/* ==== Framework ========================================================
   Layout
 ========================================================================== */
 
 
-/* ==|== Layout ==========================
-  Page
-========================================== */
+// ==== Layout ==============================
+// Base
+// ==========================================
 
-.page {
+html {
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  min-height: 100%;
+
+  @include min-width(tp(base-dynamic-type)) {
+    font-size: calc(0.56rem + 0.5vw);
+  }
 }
 
+body {
+  background: module-color(base-bg) center no-repeat;
+  color: module-color(base-color);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: em($font-default-size);
+  width: 100%;
+}
+
+
+// ==== Layout ==============================
+// Page
+// ==========================================
+
+.page {
+  display: inherit;
+  flex-direction: inherit;
+  flex: inherit;
+  width: inherit;
+}
+
+
+// ==== Layout ==============================
+// Main (grid)
+// ==========================================
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(12, [col] 1fr);
+  grid-column-gap: $grid-gutter;
+  margin: 0 $grid-gutter;
+  min-height: 100%;
+  position: relative;
+}
+
+.grid {
+    display: inherit;
+    grid-column: 1 / -1;
+    grid-gap: inherit;
+    grid-template-columns: inherit;
+}
 
 /* ==|== Layout ==========================
   Group
 ========================================== */
 
 .group {
-  margin: auto auto 0;
+  margin: auto;
   padding: 0;
   width: 100%;
   position: relative;

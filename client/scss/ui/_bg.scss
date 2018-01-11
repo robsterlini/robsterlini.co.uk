@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* =======================================================================
+  UI – Background
+========================================================================== */
+
+
+/* ==|== Background ======================
+  Base
+========================================== */
+
+.bg {
+	@include cover(fixed);
+
+	// background: linear-gradient(to top right, #4e484e, #440f33);
+	background: linear-gradient(to top right, #591a6d, #2a799e);
+	height: 120%;
+	top: -10%;
+
+	&__image {
+		@include cover;
+
+		background: center no-repeat;
+		background-size: cover;
+		filter: grayscale(1);
+		opacity: 0;
+		transition:
+			opacity $timing-bg $easing,
+			transform $timing-bg * 10 $easing-spring-small;
+
+		.bg--active & {
+			opacity: 1;
+		}
+
+		@supports(mix-blend-mode: overlay) {
+			mix-blend-mode: overlay;
+		}
+
+		&--1 {
+
+		}
+
+		&--2 {
+			display: none;
+			filter: blur(5px) grayscale(1);
+		}
+
+		@supports(background-clip: content-box) {
+			background-clip: content-box;
+
+			&--1 {
+				padding-right: 50%;
+
+				.bg--active & {
+					transform: translate3d(0, #{$grid-gutter * -0.5}, 0);
+				}
+			}
+
+			&--2 {
+				display: block;
+				padding-left: 50%;
+
+				.bg--active & {
+					opacity: 0.5;
+					transform: translate3d(0, #{$grid-gutter}, 0);
+				}
+			}
+		}
+	}
+
+	&__overlay {
+		@include cover;
+
+		background: black;
+		transition:
+			opacity $timing-bg $easing;
+
+		.bg--active > & {
+			opacity: 0;
+		}
+	}
+}

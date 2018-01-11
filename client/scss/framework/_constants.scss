@@ -13,11 +13,13 @@
 $font-default-size: 16;
 
 // Variables
-$line-height-body: 1.5;
-$line-height-heading: 1.2;
+$line-height-base: 1.5;
+$line-height-alt: 1.2;
 
-$font-family-body: 'skolar-web', sans-serif;
-$font-family-heading: 'fira-mono', mono;
+$font-family-base: 'freight-web', sans-serif;
+$font-family-alt: 'fira-mono', mono;
+
+$weight-regular: 400;
 
 $font-weight-heading: 500;
 
@@ -28,17 +30,25 @@ $h1-font-size-l: 54;
 $h1-font-size-s: 36;
 
 // Huge
-$huge-font-size-l: 26;
-$huge-font-size-s: 22;
+$huge-font-size-l: 84;
+$huge-font-size-s: 64;
 
 // Large
-$large-font-size-l: 20;
-$large-font-size-s: 18;
+$large-font-size-l: 28;
+$large-font-size-s: 22;
+
+// Paragraph
+$p-font-size-l: 20;
+$p-font-size-s: 18;
 
 
 /* ==|== Variables =================
   Widths and gutters
 ========================================== */
+
+// Grid
+$grid-gutter: rem(16);
+$grid-columns: 12;
 
 // Dynamic type
 $base-dynamic-type: 1410;
@@ -52,9 +62,6 @@ $grid-total-count: 18;
 $grid-items-count: 16;
 $layout-gutter: 100 / $grid-total-count * ($grid-total-count - $grid-items-count) / 2;
 
-$grid-gutter: $base-gutter * 2;
-
-
 /* ==|== Variables =================
   Timing
 ========================================== */
@@ -64,6 +71,7 @@ $timing: 300ms;
 $timing-link: 125ms;
 $timing-state: 1000ms;
 $timing-hero: 1000ms;
+$timing-bg: 500ms;
 
 
 /* ==|== Variables =================
@@ -72,6 +80,7 @@ $timing-hero: 1000ms;
 
 $easing: cubic-bezier(0.25, 0.1, 0.25, 1);
 $easing-spring: cubic-bezier(0.17, 0.89, 0.36, 2.00);
+$easing-spring-small: cubic-bezier(0.17, 0.5, 0.36, 1.25);
 
 $easing-link: $easing;
 

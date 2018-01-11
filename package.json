@@ -7,7 +7,9 @@
     "test": "",
     "build": "webpack --config build/webpack.prod.js",
     "dev": "node build/server.js",
-    "lint": "eslint **/client/**/*.{vue,js} !node_modules/**"
+    "lint": "npm-run-all --parallel lintJs lintScss",
+    "lintJs": "eslint **/client/**/*.{vue,js} !node_modules/**",
+    "lintScss": "sass-lint **/client/scss/**/*.scss -v -q"
   },
   "author": "Rob Sterlini <hi@robsterlini.co.uk>",
   "license": "MIT",

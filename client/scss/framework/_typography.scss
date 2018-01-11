@@ -5,31 +5,100 @@
 ========================================================================== */
 
 
+// ==== Typography ==========================
+// Global
+// ==========================================
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin type-base {
+  font-family: $font-family-base;
+}
+
+@mixin type-alt {
+  font-family: $font-family-alt;
+}
+
+%type-base {
+  @include type-base;
+
+  line-height: $line-height-base;
+}
+
+%type-alt {
+  @include type-alt;
+
+  line-height: $line-height-alt;
+}
+
+html,
+body {
+  @extend %type-base;
+}
+
+.type {
+
+  &--base {
+    @extend %type-base;
+  }
+
+  &--alt {
+    @extend %type-alt;
+  }
+}
+
+
 /* ==|== Typography ======================
   Extends
 ========================================== */
 
 %heading {
   display: block;
-  line-height: $line-height-heading;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
   margin: 2em 0 0.75em;
   max-width: 28em;
 }
 
 %h1 {
+  @extend %type-alt;
   @extend %heading;
 
   @include font-sizes($h1-font-size-s, $h1-font-size-l);
 }
 
+%h2 {
+  @extend %heading;
+
+  @include font-sizes(32, 24);
+
+  color: module-color(base-color-alt);
+  font-weight: 600; // TODO: Var
+}
+
+%h3 {
+  @extend %type-alt;
+  @extend %heading;
+
+  @include font-sizes(20, 16);
+
+  color: module-color(base-color-alt);
+  font-weight: 500; // TODO: Var
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
 %paragraph {
   display: block;
-  line-height: $line-height-body;
   font-weight: 400; // TODO: Var
   margin: 1em 0 0.5em;
   max-width: 42em;
+}
+
+%size-p {
+  @include font-sizes($p-font-size-s, $p-font-size-l);
 }
 
 %size-huge {
@@ -38,6 +107,11 @@
 
 %size-large {
   @include font-sizes($large-font-size-s, $large-font-size-l);
+}
+
+%p {
+  @extend %paragraph;
+  @extend %size-p;
 }
 
 %huge {
@@ -58,12 +132,35 @@
   @extend %h1;
 }
 
+.h2 {
+  @extend %h2;
+}
+
+.h3 {
+  @extend %h3;
+}
+
+.p {
+  @extend %p;
+}
+
 .huge {
   @extend %huge;
 }
 
 .large {
   @extend %large;
+}
+
+
+/* ==|== Typography ======================
+  Modifiers
+========================================== */
+
+.h--side {
+  text-orientation: sideways;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
 }
 
 
